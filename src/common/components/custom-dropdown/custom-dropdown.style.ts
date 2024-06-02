@@ -97,4 +97,15 @@ export const styles = {
       width: "100%",
     },
   },
+  moreSelected:{
+    borderRadius: "10px",
+    color: "#667085",
+    fontWeight: 500,
+    border: "1px solid #D1D5DB",
+    padding: "0 17px",
+    fontSize:" 12px",
+    textTransform: "capitalize",
+    display: "flex",
+    gap: "10px"
+  }
 };

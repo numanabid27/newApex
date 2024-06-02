@@ -53,6 +53,7 @@ import add from "@/common/assets/images/add-query.svg"
 import MultiSelect from "@/components/create-policy/component/multiselect/Mutiselect.component";
 import ClearIcon from '@mui/icons-material/Clear';
 import del from "@/common/assets/images/delete.svg";
+import filter from "@/common/assets/images/more-filters.svg";
 
 export default function Message() {
   const {
@@ -493,141 +494,119 @@ export default function Message() {
   //   ],
   // };
 
-
+const a = [];
   
+// const options = {
+//     tooltip: {
+//         trigger: 'item',
+//         triggerOn: 'mousemove',
+//     },
+//     series: [
+//         {
+//             type: 'sankey',
+//             layout: 'none',
+//             nodeAlign: 'left',
+//             data: [
+//                 { name: 'ChatGPT', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
+//                 { name: 'Github Copilot', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
+//                 { name: 'Google Gemini', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
+//                 { name: 'Strategy', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
+//                 { name: 'Revenue', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
+//                 { name: 'Legal', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
+//                 { name: 'Healthcare', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
+//                 { name: 'Positive', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
+//                 { name: 'Negative', itemStyle: { color: '#A6F4C5' }, emphasis: { itemStyle: { color: '#A6F4C5' } } },
+//             ],
+//             links: [
+//                 { source: 'ChatGPT', target: 'Strategy', value: 1000, lineStyle: { color: '#027A48', emphasis: { lineStyle: { color: '#027A48' } } } },
+//                 { source: 'ChatGPT', target: 'Legal', value: 1000, lineStyle: { color: '#2BB877', emphasis: { lineStyle: { color: '#2BB877' } } } },
+//                 { source: 'ChatGPT', target: 'Revenue', value: 1000, lineStyle: { color: '#2BB877', emphasis: { lineStyle: { color: '#2BB877' } } } },
+//                 { source: 'Github Copilot', target: 'Revenue', value: 1000, lineStyle: { color: '#2BB877', emphasis: { lineStyle: { color: '#2BB877' } } } },
+//                 { source: 'Google Gemini', target: 'Healthcare', value: 1000, lineStyle: { color: '#2BB877', emphasis: { lineStyle: { color: '#2BB877' } } } },
+//                 { source: 'Strategy', target: 'Positive', value: 1000, lineStyle: { color: '#037C49', emphasis: { lineStyle: { color: '#037C49' } } } },
+//                 { source: 'Revenue', target: 'Positive', value: 1000, lineStyle: { color: '#037C49', emphasis: { lineStyle: { color: '#037C49' } } } },
+//                 { source: 'Legal', target: 'Negative', value: 1000, lineStyle: { color: '#A6F4C5', emphasis: { lineStyle: { color: '#A6F4C5' } } } },
+//                 { source: 'Healthcare', target: 'Positive', value: 650, lineStyle: { color: '#037C49', emphasis: { lineStyle: { color: '#037C49' } } } },
+//                 { source: 'Healthcare', target: 'Negative', value: 350, lineStyle: { color: '#A6F4C5', emphasis: { lineStyle: { color: '#A6F4C5' } } } },
+//             ],
+//             lineStyle: {
+//                 color: 'gradient',
+//                 curveness: 0.5,
+//             },
+//             itemStyle: {
+//                 borderWidth: 1,
+//             },
+//             label: {
+//                 show: true,
+//                 color: '#000',
+//                 position: 'right',
+//                 fontSize: 12,
+//             },
+//             nodeWidth: 20,
+//             nodeGap: 25,
+//             layoutIterations: 2,
+//         },
+//     ],
+// };
 
-  const options = {
-    tooltip: {
+
+const options = {
+  tooltip: {
       trigger: 'item',
       triggerOn: 'mousemove',
-    },
-    series: [
+  },
+  series: [
       {
-        type: 'sankey',
-        layout: 'none',
-        nodeAlign: 'left',
-        data: [
-          { name: 'ChatGPT', x: 100, y: 10, itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-          { name: 'Github Copilot', x: 100, y: 40, itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-          { name: 'Google Gemini', x: 0, y: 0, itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-          { name: 'Strategy', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-          { name: 'Revenue', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-          { name: 'Legal', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-          { name: 'Healthcare', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-          { name: 'Positive', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-          { name: 'Negative', itemStyle: { color: '#A6F4C5' }, emphasis: { itemStyle: { color: '#A6F4C5' } } },
-        ],
-        links: [
-          {
-            source: 'ChatGPT',
-            target: 'Strategy',
-            value: 1000,
-            lineStyle: {
-              color: '#027A48',
-              emphasis: { lineStyle: { color: '#027A48' } }
-            },
+          type: 'sankey',
+          layout: 'none',
+          nodeAlign: 'left',
+          data: [
+              { name: 'ChatGPT 2,000', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
+              { name: 'Github Copilot 2,000', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
+              { name: 'Google Gemini 2,000', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
+              { name: 'Strategy 1,000', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
+              { name: 'Revenue 1,000', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
+              { name: 'Legal 1,000', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
+              { name: 'Healthcare 1,000', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
+              { name: 'Positive 1,650', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
+              { name: 'Negative 350', itemStyle: { color: '#A6F4C5' }, emphasis: { itemStyle: { color: '#A6F4C5' } } },
+          ],
+          links: [
+              { source: 'ChatGPT 2,000', target: 'Strategy 1,000', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
+              { source: 'ChatGPT 2,000', target: 'Legal 1,000', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
+              { source: 'ChatGPT 2,000', target: 'Revenue 1,000', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
+              { source: 'Github Copilot 2,000', target: 'Revenue 1,000', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
+              { source: 'Google Gemini 2,000', target: 'Healthcare 1,000', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
+              { source: 'Strategy 1,000', target: 'Positive 1,650', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
+              { source: 'Revenue 1,000', target: 'Positive 1,650', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
+              { source: 'Legal 1,000', target: 'Negative 350', value: 1000, lineStyle: { color: '#A6F4C5', emphasis: { lineStyle: { color: '#A6F4C5' } } } },
+              { source: 'Healthcare 1,000', target: 'Positive 1,650', value: 650, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
+              { source: 'Healthcare 1,000', target: 'Negative 350', value: 350, lineStyle: { color: '#A6F4C5', emphasis: { lineStyle: { color: '#A6F4C5' } } } },
+          ],
+          lineStyle: {
+              color: 'gradient',
+              curveness: 0.5,
           },
-          {
-            source: 'Github Copilot',
-            target: 'Revenue',
-            value: 1000,
-            lineStyle: {
-              color: '#2BB877',
-              emphasis: { lineStyle: { color: '#2BB877' } }
-            },
+          itemStyle: {
+              borderWidth: 1,
           },
-          {
-            source: 'Google Gemini',
-            target: 'Healthcare',
-            value: 1000,
-            lineStyle: {
-              color: '#2BB877',
-              emphasis: { lineStyle: { color: '#2BB877' } }
-            },
+          label: {
+              show: true,
+              color: '#000',
+              backgroundColor: '#fff',
+              borderRadius: 2,
+              padding: 3,
+              position: 'insideRight',
+              fontSize: 12,
           },
-          {
-            source: 'ChatGPT',
-            target: 'Legal',
-            value: 1000,
-            lineStyle: {
-              color: '#2BB877',
-              emphasis: { lineStyle: { color: '#2BB877' } }
-            },
-          },
-          {
-            source: 'Strategy',
-            target: 'Positive',
-            value: 1000,
-            lineStyle: {
-              color: '#037C49',
-              emphasis: { lineStyle: { color: '#037C49' } }
-            },
-          },
-          {
-            source: 'Revenue',
-            target: 'Positive',
-            value: 1000,
-            lineStyle: {
-              color: '#037C49',
-              emphasis: { lineStyle: { color: '#037C49' } }
-            },
-          },
-          {
-            source: 'Legal',
-            target: 'Negative',
-            value: 1000,
-            lineStyle: {
-              color: '#A6F4C5',
-              emphasis: { lineStyle: { color: '#A6F4C5' } }
-            },
-          },
-          {
-            source: 'Healthcare',
-            target: 'Positive',
-            value: 650,
-            lineStyle: {
-              color: '#037C49',
-              emphasis: { lineStyle: { color: '#037C49' } }
-            },
-          },
-          {
-            source: 'Healthcare',
-            target: 'Negative',
-            value: 350,
-            lineStyle: {
-              color: '#A6F4C5',
-              emphasis: { lineStyle: { color: '#A6F4C5' } }
-            },
-          },
-          {
-            source: 'ChatGPT',
-            target: 'Revenue',
-            value: 1000,
-            lineStyle: {
-              color: '#2BB877',
-              emphasis: { lineStyle: { color: '#2BB877' } }
-            },
-          },
-        ],
-        lineStyle: {
-          color: 'gradient',
-          curveness: 0.5,
-        },
-        itemStyle: {
-          borderWidth: 1,
-        },
-        label: {
-          show: true,
-          color: '#000',
-          position: 'right',
-          fontSize: 12,
-        },
-        nodeWidth: 20,
-        nodeGap: 25,
-        layoutIterations: 2,
+          nodeWidth: 20,
+          nodeGap: 25,
+          layoutIterations: 2,
       },
-    ],
-  };
+  ],
+};
+
+
  
   
   return (
@@ -963,7 +942,7 @@ export default function Message() {
           </FormControl>
         </Grid>
 
-        <Grid item sm={2} xs={12} sx={styles.user}>
+        {/* <Grid item sm={2} xs={12} sx={styles.user}>
           <FormControl fullWidth sx={styles.userFormControl}>
             <InputLabel id="demo-simple-select-label" sx={styles.userText}>
               User
@@ -994,7 +973,7 @@ export default function Message() {
               ))}
             </Select>
           </FormControl>
-        </Grid>
+        </Grid> */}
 
         <Grid item sm={2} xs={12} sx={styles.user}>
           <FormControl fullWidth sx={styles.userFormControl}>
@@ -1030,6 +1009,14 @@ export default function Message() {
             </Select>
           </FormControl>
         </Grid>
+
+        <Button
+            sx={styles.moreSelected}
+          >
+            <Image src={filter} alt="" width={15} height={15} />
+            More Filters
+
+          </Button>
 
        
 

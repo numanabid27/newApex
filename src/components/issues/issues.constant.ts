@@ -238,49 +238,56 @@ export const TOP_ISSUES_DATA = [
 export const FILTERS_DROPDOWN = [
   {
     id: 1,
-    value: "Engine",
-    keyValue: "engine",
-    options: ["GPT 4", "GPT 3.5"],
-  },
-  {
-    id: 2,
-    value: "User",
-    keyValue: "user",
-    options: [
-      "abc@untitledui.com",
-      "cdf@untitledui.com",
-      "annasmith@untitled.com",
-    ],
-  },
-  {
-    id: 3,
-    value: "Violation Category",
+    value: "Violation Type",
     keyValue: "violation",
     options: ["PII", "Code"],
   },
   {
-    id: 4,
-    value: "Source",
-    keyValue: "source",
-    options: ["Apexchat1", "Apexchat2", "Apexchat3", "Apexchat4"],
+    id: 2,
+    value: "Engine",
+    keyValue: "engine",
+    options: ["GPT 4", "GPT 3.5"],
   },
+  // {
+  //   id: 3,
+  //   value: "User",
+  //   keyValue: "user",
+  //   options: [
+  //     "abc@untitledui.com",
+  //     "cdf@untitledui.com",
+  //     "annasmith@untitled.com",
+  //   ],
+  // },
+  
+  // {
+  //   id:3,
+  //   value: "Source",
+  //   keyValue: "source",
+  //   options: ["Apexchat1", "Apexchat2", "Apexchat3", "Apexchat4"],
+  // },
   {
-    id: 5,
+    id: 3,
     value: "Severity",
     keyValue: "severity",
     options: ["Critical", "High", "Medium"],
   },
   {
-    id: 6,
-    value: "Conversation ID",
-    keyValue: "conversationalId",
-    options: [
-      "023fab19-bb0d-44f2-96a6-37a0a1cfc4a0",
-      "033fab19-bb0d-44f2-96a6-37a0a1cfc4a0",
-      "043fab19-bb0d-44f2-96a6-37a0a1cfc4a0",
-      "013fab19-bb0d-44f2-96a6-37a0a1cfc4a0",
-    ],
+    id: 4,
+    value: "Status",
+    keyValue: "status",
+    options: ["Active", "Disable"],
   },
+  // {
+  //   id: 6,
+  //   value: "Conversation ID",
+  //   keyValue: "conversationalId",
+  //   options: [
+  //     "023fab19-bb0d-44f2-96a6-37a0a1cfc4a0",
+  //     "033fab19-bb0d-44f2-96a6-37a0a1cfc4a0",
+  //     "043fab19-bb0d-44f2-96a6-37a0a1cfc4a0",
+  //     "013fab19-bb0d-44f2-96a6-37a0a1cfc4a0",
+  //   ],
+  // },
 ];
 
 export const ISSUES_TABLE_DATA = [

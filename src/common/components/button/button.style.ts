@@ -12,6 +12,9 @@ import Colors from "@/common/constants/color.constant";
         padding: "9px 13px",
         color:Colors.primary_101,
         textTransform:'capitalize',
-        boxShadow: "0px 1px 2px 0px #1018280D"
+        boxShadow: "0px 1px 2px 0px #1018280D",
+        "@media screen and (max-width:600px)":{
+            fontSize: "12px",
+        }
     }
 }   

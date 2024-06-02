@@ -59,10 +59,10 @@ export const ModelData = ({ selectedRow, setIsModel, setOpenModal}: any) => {
         {/* policy suggestions */}
         <Box sx={ModalDataStyle.suggestion}>
           <Grid container justifyContent="space-between" mb={3.2}>
-            <Grid xs={5.5}>
+            <Grid sm={5.5} xs={7}>
               <Typography variant="h6" fontWeight={400} color="#156FEE">Policy suggestion </Typography>
             </Grid>
-            <Grid xs={5.5} display="flex" justifyContent="flex-end">
+            <Grid sm={5.5} xs={5} display="flex" justifyContent="flex-end">
               <Button sx={ModalDataStyle.button}>Close</Button>
             </Grid>
           </Grid>

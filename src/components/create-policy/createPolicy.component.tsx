@@ -477,14 +477,14 @@ export default function CreatePolicy() {
   return (
     <Box sx={style.createPolicy}>
       <Grid container justifyContent="space-between" mb={6} mt={4}>
-        <Grid xs={4}>
+        <Grid sm={4} xs={12} mb={{sm:0, xs:3}}>
           <Link href="/policies/create-policy" className="addButton">
             <AddIcon />
             New policy
           </Link>
         </Grid>
-        <Grid xs={8}>
-          <Box display="flex" gap="10px" justifyContent="flex-end">
+        <Grid sm={8} xs={12}>
+          <Box display="flex" gap="10px" justifyContent={{sm:'flex-end', xs:"flex-start"}}>
             <ButtonComponent title="Restore" icon={restore} />
             <ButtonComponent title="Import" icon={importImg} />
             <ButtonComponent title="Export" icon={exportImg} />
@@ -493,13 +493,14 @@ export default function CreatePolicy() {
       </Grid>
 
       <Box sx={style.createPolicyGrid}>
-        <Grid container justifyContent="space-between" padding="0 28px" mb={10}>
-          <Grid xs={7} className="mutiSelect">
+        <Grid container justifyContent="space-between" padding="0 28px" mb={10} flexDirection={{lg:'row', xs:'column-reverse'}}>
+          <Grid lg={7} xs={12} className="mutiSelect">
             <Box
               display="flex"
-              alignItems="center"
-              gap="30px"
+              alignItems={{sm:'center', xs:'flex-start'}}
+              gap={{sm:'30px', xs:"13px"}}
               className="addField"
+              flexDirection={{sm:'row', xs:'column'}}
             >
               <InputLabel sx={style.label}>Name</InputLabel>
               <TextField
@@ -508,7 +509,8 @@ export default function CreatePolicy() {
                 variant="outlined"
               />
             </Box>
-            <Box sx={style.multiSelect}>
+            <Box sx={style.multiSelect}  alignItems={{sm:'center', xs:'flex-start'}}
+              flexDirection={{sm:'row', xs:'column'}}>
               <InputLabel sx={style.label}>Groups</InputLabel>
               <Select
                 isMulti
@@ -521,11 +523,14 @@ export default function CreatePolicy() {
             </Box>
           </Grid>
           <Grid
-            xs={4.8}
+            lg={4.8}
+            xs={12}
             display="flex"
             justifyContent="flex-end"
             alignItems="flex-start"
             gap="10px"
+            mb={{lg:0, xs:6}}
+            flexDirection={{md:'row', xs:'column-reverse'}}
           >
             {policiesTypes?.map((item, i) => {
               return (

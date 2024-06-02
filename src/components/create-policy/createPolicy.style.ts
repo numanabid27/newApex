@@ -19,7 +19,7 @@ export const style ={
     multiSelect:{
         display: "flex",
         alignItems: "center",
-        marginTop: "32px"
+        marginTop: "32px",
     },
     
     iconBtn: {

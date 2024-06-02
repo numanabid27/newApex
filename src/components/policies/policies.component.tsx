@@ -55,14 +55,14 @@ function Policies() {
   return (
     <Grid container item xs={12} sx={styles.pliciesSec}>
       <Grid container justifyContent="space-between" mb={6} mt={4}>
-        <Grid xs={4}>
+        <Grid sm={4} xs={12} mb={{sm:0, xs:3}}>
           <Link href="/policies/create-policy" className="addButton">
             <AddIcon />
             New policy
           </Link>
         </Grid>
-        <Grid xs={8}>
-          <Box display="flex" gap="10px" justifyContent="flex-end">
+        <Grid sm={8} xs={12}>
+        <Box display="flex" gap="10px" justifyContent={{sm:'flex-end', xs:"flex-start"}}>
             <ButtonComponent title="Restore" icon={restore} />
             <ButtonComponent title="Import" icon={importImg} />
             <ButtonComponent title="Export" icon={exportImg} />
@@ -98,7 +98,7 @@ function Policies() {
               setSelectedRow(items);
             }}
           >
-            <Grid xs={5.8} display="flex" alignItems="center" gap="48px">
+            <Grid sm={5.8} xs={12} display="flex" alignItems="center" gap="48px">
               <Box onClick={(e: any) => e.stopPropagation()}>
                 <CustomSwitch defaultChecked />
               </Box>
@@ -110,7 +110,7 @@ function Policies() {
                 </Box>
               </Box>
             </Grid>
-            <Grid xs={5.8} sx={styles.group}>
+            <Grid sm={5.8} xs={12} sx={styles.group}>
               <Typography variant="h6" mb={2}>
                 {items.groups.title}
               </Typography>

@@ -8,6 +8,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import {
   Autocomplete,
   Box,
+  Button,
   Chip,
   FormControl,
   Grid,
@@ -35,6 +36,7 @@ import {
 import { SESSION_USER_CHART, USER_1, USER_2, USER_3 } from "./session.constant";
 import { styles } from "./sessions.style";
 import useSessions from "./use-seesions.hook";
+import filter from "@/common/assets/images/more-filters.svg"
 
 export default function Sessions() {
   const {
@@ -482,7 +484,7 @@ useEffect(()=>{
           </FormControl>
         </Grid>
 
-        <Grid item sm={2} xs={12} sx={styles.user}>
+        {/* <Grid item sm={2} xs={12} sx={styles.user}>
           <FormControl fullWidth sx={styles.userFormControl}>
             <InputLabel id="demo-simple-select-label" sx={styles.userText}>
               User
@@ -513,7 +515,7 @@ useEffect(()=>{
               ))}
             </Select>
           </FormControl>
-        </Grid>
+        </Grid> */}
 
         <Grid item sm={2} xs={12} sx={styles.user}>
           <FormControl fullWidth sx={styles.userFormControl}>
@@ -550,11 +552,13 @@ useEffect(()=>{
           </FormControl>
         </Grid>
 
-        <Grid item sm={2} xs={12} sx={styles.clearBtnGrid}>
-          <Typography onClick={handleClearAll} sx={styles.clearAll}>
-            Clear All
-          </Typography>
-        </Grid>
+        <Button
+            sx={styles.moreSelected}
+          >
+            <Image src={filter} alt="" width={15} height={15} />
+            More Filters
+
+          </Button>
       </Grid>
       <Box sx={styles.sessionTableRow}>
         <CustomTable

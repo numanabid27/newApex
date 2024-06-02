@@ -4,12 +4,18 @@ export const ModalDataStyle = {
   ModalGrid: {
     padding: "20px 27px 21px",
     justifyContent: "space-between",
+    "@media screen and (max-width:767px)":{
+      padding: "20px 23px 21px",
+    }
   },
   ModalTypo: {
     color: Colors.primary_101,
     fontSize: "42px",
     fontWeight: 500,
-    paddingBottom:'22px'
+    paddingBottom:'22px',
+    "@media screen and (max-width:767px)":{
+      fontSize: "32px",
+    }
   },
   ModalDesc:{
     color:'#667084',
@@ -76,6 +82,9 @@ export const ModalDataStyle = {
     borderTop:"1px dashed #CFD4DC",
     padding:'20px 0 0 20px',
     marginBottom:'20px',
+    "@media screen and (max-width:767px)":{
+      padding:'20px 0 0 6px',
+    },
     "h6":{
       color:Colors.primary_101,
       fontSize:'14px',

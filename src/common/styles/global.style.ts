@@ -146,7 +146,8 @@ export const styles = {
     },
     ".MuiCheckbox-root":{
       color:'#98A1B2'
-    }
+    },
+    
   },
   checkboxLabel2:{
     border: "1px solid #31D583",
@@ -159,7 +160,7 @@ export const styles = {
     },
     ".MuiCheckbox-root":{
       color:'#98A1B2'
-    }
+    },
   },
   policyChecked:{
     background:"#F2F3F6",
@@ -171,6 +172,9 @@ export const styles = {
     },
     ".MuiCheckbox-root":{
       color:'#027947'
+    },
+    "@media screen and (max-width:600px)":{
+      marginBottom:'10px'
     }
   }
 };

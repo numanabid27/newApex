@@ -147,6 +147,10 @@ export const styles = {
       "& .css-a0md3q-MuiStack-root": {
         flexWrap: " unset",
       },
+      ".MuiInputBase-root":{
+        display:'flex',
+        gap:'10px',
+      }
     },
     formControl: {
       width: "100%",
@@ -416,6 +420,18 @@ export const styles = {
       "img":{
         cursor : "pointer"
       }
+    },
+    moreSelected:{
+      borderRadius: "10px",
+      color: "#667085",
+      fontWeight: 500,
+      border: "1px solid #D1D5DB",
+      padding: "11px 17px",
+      fontSize:" 12px",
+      textTransform: "capitalize",
+      display: "flex",
+      gap: "10px",
+      marginTop:'13px'
     }
   };
   

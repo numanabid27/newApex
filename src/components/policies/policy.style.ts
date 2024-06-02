@@ -42,7 +42,13 @@ export const styles = {
     alignItems:'center',
     marginTop:'13px',
     boxShadow: '0px 1px 2px 0px #1018280F',
-    cursor:'pointer'
+    cursor:'pointer',
+    gap:'15px',
+    "@media screen and (max-width:767px)":{
+      padding:'9px 18px',
+      overflowX:'scroll',
+      flexWrap:'unset'
+    }
   },
   policies_info:{
     "h5":{
@@ -59,7 +65,11 @@ export const styles = {
   },
   group:{
     borderLeft:'1px solid #CFD4DC',
-    paddingLeft:'25px'
+    paddingLeft:'25px',
+    "@media screen and (max-width:899px)":{
+      borderLeft:'unset',
+      paddingLeft:'0px',
+    }
   },
   deleteBackdrop:{
     position: "fixed",
