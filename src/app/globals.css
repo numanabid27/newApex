@@ -477,6 +477,13 @@ body {
 .shadows{
   box-shadow: unset !important;
 }
+.sesson-search .MuiButtonBase-root{
+  display: none !important;
+}
+.session-paginate{
+  padding: 17px 17px;
+  border-top: 1px solid #EAECF0;
+}
 
 
 

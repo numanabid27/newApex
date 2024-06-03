@@ -176,5 +176,6 @@ export const styles = {
     "@media screen and (max-width:600px)":{
       marginBottom:'10px'
     }
-  }
+  },
+  
 };

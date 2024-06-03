@@ -1,6 +1,5 @@
 export const styles = {
   sessionTableRow: {
-    px: "3.5%",
     mt: 8,
     width:'100%'
     // table: {

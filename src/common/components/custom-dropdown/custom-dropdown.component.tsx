@@ -21,7 +21,7 @@ import { useCustom } from "./use-custom-dropdown.hook";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import Image from "next/image";
-import filter from "@/common/assets/images/more-filters.svg"
+import filter from "@/common/assets/images/more-filters.svg";
 /**
  * Take in dropdownData and return a dropdown
  * @param { dropdownData, searchQuery, setSearchQuery, selectedFilters, setSelectedFilters } props
@@ -132,12 +132,9 @@ export const CustomDropdown = ({
               </FormControl>
             </Grid>
           ))}
-          <Button
-            sx={styles.moreSelected}
-          >
+          <Button sx={styles.moreSelected}>
             <Image src={filter} alt="" width={15} height={15} />
-           More Filters
-           
+            More Filters
           </Button>
         </Grid>
 

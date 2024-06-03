@@ -1,3 +1,9 @@
+import {
+  USER_1,
+  USER_2,
+  USER_3,
+} from "../sessions/session.constant";
+
 export const SESSION_USER_DATA = [
     {
       id: 1,
@@ -91,3 +97,38 @@ export const SESSION_USER_DATA = [
       usage:""
     },
 ];
+
+
+
+export const SESSION_GRAPH = [
+  {
+    id:1,
+    title:"John White",
+    value:'100',
+    chart:USER_1,
+  },
+  {
+    id:2,
+    title:"George Mayer",
+    value:'100',
+    chart:USER_2,
+  },
+  {
+    id:3,
+    title:"Cindy Sherman",
+    value:'100',
+    chart:USER_1,
+  },
+  {
+    id:4,
+    title:"Barbara Kruger",
+    value:'100',
+    chart:USER_2,
+  },
+  {
+    id:5,
+    title:"Michael Black",
+    value:'100',
+    chart:USER_3,
+  }
+]

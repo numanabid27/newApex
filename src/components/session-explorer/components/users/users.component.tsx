@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
   Autocomplete,
   Box,
@@ -13,6 +12,12 @@ import useUsers from "./use-users.hook";
 import Colors from "@/common/constants/color.constant";
 import CircleIcon from "@mui/icons-material/Circle";
 import { userStyle } from "./users.style";
+import Filters from "../filters/filter.component";
+import ReactEcharts from "echarts-for-react";
+import {
+  SESSION_USER_CHART
+} from "../sessions/session.constant";
+import { SESSION_GRAPH } from "./session-user.constant";
 
 export default function Users() {
   const {
@@ -203,21 +208,56 @@ export default function Users() {
     { id: 10, header: "Usage", accessor: "usage" },
   ];
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
-
-  const totalPages = Math.ceil(finalData.length / itemsPerPage);
-
-  const handlePageChange = (newPage: number) => {
-    setCurrentPage(newPage);
-  };
-
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const usersToDisplay = finalData.slice(startIndex, endIndex);
-
   return (
     <>
+      <Grid container item xs={12} justifyContent="space-between">
+        <Grid
+          item
+          xs={12}
+          md={5.85}
+          lg={7.5}
+          className="border border-radius bg-white engine-usage"
+          sx={styles.GridShadow}
+        >
+          <Box sx={styles.BoxStyling}>
+            <Typography sx={styles.SessionHeader}>
+              Engines Usage over time
+            </Typography>
+          </Box>
+          <Box className="sessionEchart" sx={userStyle.sessionUser}>
+            <ReactEcharts option={SESSION_USER_CHART} />
+          </Box>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={5.85}
+          lg={4.4}
+          sx={userStyle.SessionEngine}
+          className="border border-radius bg-white"
+        >
+          <Typography variant="h5" mb={4} sx={userStyle.text}>
+            Top 5 Active Users
+          </Typography>
+          {
+            SESSION_GRAPH.map((item:any, i:number)=>{
+              return(
+                <Grid container sx={userStyle.activeUser} key={i.toString()}>
+                  <Grid xl={8} xs={7}>
+                    <Typography>{item.title}</Typography>
+                  </Grid>
+                  <Grid xl={4} xs={5}>
+                    <Box sx={userStyle.user1}>
+                      <Typography>{item.value}</Typography>
+                      <ReactEcharts option={item.chart} />
+                    </Box>
+                  </Grid>
+                </Grid>
+              )
+            })
+          }
+        </Grid>
+      </Grid>
       {/* search */}
       <Box sx={styles.searchBox} className="sesson-search">
         <Typography sx={styles.searchText}>
@@ -248,43 +288,20 @@ export default function Users() {
         </Box>
       </Box>
 
+      {/* filters */}
+
+      <Filters />
+
       <Box sx={styles.sessionTableRow}>
         <CustomTable
-          rows={usersToDisplay}
+          rows={finalData}
           column={SESSION_EXPLORE_TABLE_HEADER}
           setOpenModal={setOpenModal}
           isSwitch={false}
           setSelectedRow={setSelectedRow}
           isTableHead={true}
+          isPagination={true}
         />
-
-        <Grid container sx={{padding:"20px 0px"}}>
-          <Grid lg={5} sm={3} xs={4}>
-            <button
-              className="prev"
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-            >
-              Previous
-            </button>
-          </Grid>
-          <Grid lg={5.5} sm={3} xs={5}>
-            <Typography>
-              <span className="current">
-                {currentPage} Out of {totalPages}
-              </span>
-            </Typography>
-          </Grid>
-          <Grid lg={1.5} sm={3} xs={3} textAlign="right">
-            <button
-              className="next"
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-            >
-              Next
-            </button>
-          </Grid>
-        </Grid>
       </Box>
     </>
   );

@@ -7,6 +7,7 @@ import Colors from "@/common/constants/color.constant";
 import CircleIcon from "@mui/icons-material/Circle";
 import { FileStyle } from "./file.style";
 import Image from "next/image";
+import Filters from "../filters/filter.component";
 
 export default function Files() {
   const {
@@ -101,18 +102,7 @@ export default function Files() {
       accessor: "path",
     },
   ];
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
 
-  const totalPages = Math.ceil(finalData.length / itemsPerPage);
-
-  const handlePageChange = (newPage: number) => {
-    setCurrentPage(newPage);
-  };
-
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const usersToDisplay = finalData.slice(startIndex, endIndex);
   return (
     <>
       {/* search */}
@@ -144,43 +134,19 @@ export default function Files() {
           />
         </Box>
       </Box>
+      {/* filter */}
+      <Filters />
 
       <Box sx={styles.sessionTableRow}>
         <CustomTable
-          rows={usersToDisplay}
+          rows={finalData}
           column={SESSION_EXPLORE_TABLE_HEADER}
           setOpenModal={setOpenModal}
           isSwitch={false}
           setSelectedRow={setSelectedRow}
           isTableHead={true}
+          isPagination={true}
         />
-        <Grid container sx={{padding:"20px 0px"}}>
-          <Grid lg={5} sm={3} xs={4}>
-            <button
-              className="prev"
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-            >
-              Previous
-            </button>
-          </Grid>
-          <Grid lg={5.5} sm={3} xs={5}>
-            <Typography>
-              <span className="current">
-                {currentPage} Out of {totalPages}
-              </span>
-            </Typography>
-          </Grid>
-          <Grid lg={1.5} sm={3} xs={3} textAlign="right">
-            <button
-              className="next"
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-            >
-              Next
-            </button>
-          </Grid>
-        </Grid>
       </Box>
     </>
   );
