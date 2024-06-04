@@ -270,16 +270,16 @@ export const POLICIES_ACCESS_USAGE_DATA = [
 export const POLICIES_LISTENING = [
   {
     id:1,
-    policyName : 'Policy name is here',
-    policyDesc : "This is the description of the policy",
-    longDesc: "This is the description of the policy lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et This is the description of the policy lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et ",
+    policyName : 'Remote code execution',
+    policyDesc : "This policy intended to protect our organization from Remote code execution.",
+    longDesc: "This policy intended to protect our organization from Remote code execution.",
     groups:{
       title:'Groups',
       groupName:[{
-        name1:"Group name 1"
+        name1:"Api costumers"
       },
       {
-        name1:"Group name 2"
+        name1:"services accounts"
       }]
     },
     count:"195",
@@ -289,15 +289,15 @@ export const POLICIES_LISTENING = [
   },
   {
     id:2,
-    policyName : 'Policy 2',
-    policyDesc : "This is the longest description of the policy you can right a lot but you will see o...",
-    longDesc: "This is the description of the policy lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et This is the description of the policy lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et ",
+    policyName : 'Data Leakage',
+    policyDesc : "This policy intended to prevent Data Leakage attacks on our engines.",
+    longDesc: "This policy intended to prevent Data Leakage attacks on our engines.",
     groups:{
       title:'Groups',
       groupName:[{
-        name1:"Group name 1",
+        name1:"Marketing",
       },
-    {name1:"Group name 2"}]
+    {name1:"Strategy"}]
     },
     count:"195",
     highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
@@ -306,13 +306,13 @@ export const POLICIES_LISTENING = [
   },
   {
     id:3,
-    policyName : 'Policy 3',
-    policyDesc : "This is the description of the policy",
-    longDesc: "This is the description of the policy lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et This is the description of the policy lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et ",
+    policyName : 'Compliance Risk',
+    policyDesc : "This policy created to notify with slack when a Compliance Risk detected.",
+    longDesc: "This policy created to notify with slack when a Compliance Risk detected.",
     groups:{
       title:'Groups',
       groupName:[{
-        name1:"Group name 1"
+        name1:"ALL Groups"
       }]
     },
     count:"100",
@@ -322,16 +322,13 @@ export const POLICIES_LISTENING = [
   },
   {
     id:4,
-    policyName : 'Policy 4',
-    policyDesc : "This is the description of the policy",
-    longDesc: "This is the description of the policy lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et This is the description of the policy lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et ",
+    policyName : 'Notify Sexual, Violence and Harmful content',
+    policyDesc : "His policy intended to detect toxic content that is forbidden in our company",
+    longDesc: "His policy intended to detect toxic content that is forbidden in our company",
     groups:{
       title:'Groups',
       groupName:[{
-        name1:"Group name 1"
-      },
-      {
-        name1:"Group name 2"
+        name1:"Api customers"
       }]
     },
     count:"200",
@@ -341,19 +338,13 @@ export const POLICIES_LISTENING = [
   },
   {
     id:5,
-    policyName : 'New policy name is here and can be long if we want',
-    policyDesc : "This is the description of the policy",
-    longDesc: "This is the description of the policy lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et This is the description of the policy lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et ",
+    policyName : 'AI-BOM policy',
+    policyDesc : "His policy intended to detect when a sensitive/strategy related file is being written by AI engine",
+    longDesc: "His policy intended to detect when a sensitive/strategy related file is being written by AI engine",
     groups:{
       title:'Groups',
       groupName:[{
-        name1:"Group name 1"
-      },
-      {
-        name1:"Group name 2"
-      },
-      {
-        name1:"Group name 3"
+        name1:"Executives Team"
       }]
     },
     count:"150",

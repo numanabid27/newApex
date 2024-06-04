@@ -50,5 +50,73 @@ export const styles = {
     Icon : {
         fontSize: "8px",
         ml: 1,
+    },
+    leftText:{
+        "h6":{
+            color:"#374151",
+            fotnSize:'24px',textAlign:'center'
+        }
+    },
+    rightText:{
+        "h6":{
+            color:"#374151",
+            fotnSize:'24px',
+            textAlign:'center',
+            userSelect:'none'
+        }
+    },
+    typography:{
+        color:"#98A2B3",
+        fontSize:'14px',
+        userSelect:'none'
+    },
+    dangerText:{
+        border:" 1px solid #F04438",
+        borderRadius: "17px",
+        padding: "3px 13px",
+        alignItems: "center",
+        gap: "6px",
+        fontSize:'12px',
+        marginBottom: "6px",
+        marginLeft:'auto',
+        width:'fit-content',
+        "span":{
+            fontWeight:600
+        }
+    },
+    multiSide:{
+        border:'1px solid #12B76A',
+        padding:'3px 16px',
+        borderRadius:'23px',
+        fontSize:'12px',
+        width:'fit-content',
+        "span":{
+            fontWeight:700,
+            fontSize:'20px',
+        }
+    },
+    switchBox:{
+        cursor: "pointer"
+    },
+    openIssue:{
+        color:"#98A2B3",
+        fontSize:'14px'
+    },
+    voilation:{
+        "span":{
+            width: "15px",
+            height: "15px",
+            borderRadius: "4px",
+        },
+        "h6":{
+            fontSize:'15px',
+            fontWeight: 700
+        }
+    },
+    sp:{
+        marginTop: "29px"
+    },
+    voilationTitle:{
+        fontSize:'14px'
     }
 }

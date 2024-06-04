@@ -1,224 +1,12 @@
 import * as echarts from "echarts";
-
-export const USER_1 = {
-  height: 50,
-  width: 100,
-  tooltip: {
-    trigger: "axis",
-    show: false,
-    axisPointer: {
-      show: false,
-      type: "cross",
-      label: {
-        backgroundColor: "#FEF3F2",
-      },
-    },
-  },
-  legend: {
-    show: false,
-    data: ["Email"],
-  },
-  toolbox: {
-    show: false,
-  },
-  grid: {
-    show: false,
-  },
-  xAxis: {
-    type: "category",
-    boundaryGap: false,
-    show: true,
-    data: Array.from({ length: 20 }, (_, i) => i + 1),
-    axisLabel: {
-      formatter: function (value:any) {
-        const visibleLabels = [1, 4, 8, 12, 16, 20, 24, 28];
-        return visibleLabels.includes(Number(value)) ? value : '';
-      },
-    },
-  },
-  yAxis: [
-    {
-      show: false,
-      type: "value",
-    },
-  ],
-  series: [
-    {
-      name: "Union Ads",
-      type: "line",
-      cursor: "default",
-      stack: "Total",
-      data: [
-        1.5, 1.5, 1.5, 2, 2.5, 2.5, 2.5, 3, 2, 1.5, 1.5, 1.5, 3.7, 3.7, 2, 1.5, 1.5, 2, 2, 3
-      ],
-      color: ["#12B76A"],
-      gradientColor: ["#65DFA2"],
-      areaStyle: {
-        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-          {
-            offset: 0,
-            color: "#65DFA2",
-          },
-          {
-            offset: 1,
-            color: "#fef9f86e",
-          },
-        ]),
-      },
-      step: false,
-      smooth: false,
-      showSymbol: false,
-    },
-  ],
-};
-
-export const USER_2 = {
-  height: 50,
-  width: 100,
-  tooltip: {
-    trigger: "axis",
-    show: false,
-    axisPointer: {
-      show: false,
-      type: "cross",
-      label: {
-        backgroundColor: "#FEF3F2",
-      },
-    },
-  },
-  legend: {
-    show: false,
-    data: ["Email"],
-  },
-  toolbox: {
-    show: false,
-  },
-  grid: {
-    show: false,
-  },
-  xAxis: [
-    {
-      show: false,
-      type: "category",
-      boundaryGap: false,
-      data: Array.from({ length: 20 }, (_, i) => i + 1),
-      axisLabel: {
-        formatter: function (value:any) {
-          const visibleLabels = [1, 4, 8, 12, 16, 20, 24, 28];
-          return visibleLabels.includes(Number(value)) ? value : '';
-        },
-      },
-    },
-  ],
-  yAxis: [
-    {
-      show: false,
-      type: "value",
-    },
-  ],
-  series: [
-    {
-      name: "Union Ads",
-      type: "line",
-      cursor: "default",
-      stack: "Total",
-      data: [
-        3.2, 3, 3, 3, 3.5, 2.5, 2.5, 2, 2, 1.5, 1.5, 1.5, 1.5, 1.5, 1.7, 1.9, 1.6, 1, 1, 1
-      ],
-      color: ["#F04438"],
-      gradientColor: ["#f0443869"],
-      areaStyle: {
-        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-          {
-            offset: 0,
-            color: "#f0443869",
-          },
-          {
-            offset: 1,
-            color: "#f0443812",
-          },
-        ]),
-      },
-      step: false,
-      smooth: false,
-      showSymbol: false,
-    },
-  ],
-};
-
-export const USER_3 = {
-  height: 50,
-  width: 100,
-  tooltip: {
-    trigger: "axis",
-    show: false,
-    axisPointer: {
-      show: false,
-      type: "cross",
-      label: {
-        backgroundColor: "#FEF3F2",
-      },
-    },
-  },
-  legend: {
-    show: false,
-    data: ["Email"],
-  },
-  toolbox: {
-    show: false,
-  },
-  grid: {
-    show: false,
-  },
-  xAxis: [
-    {
-      show: false,
-      type: "category",
-      boundaryGap: false,
-      data: Array.from({ length: 20 }, (_, i) => i + 1),
-      axisLabel: {
-        formatter: function (value:any) {
-          const visibleLabels = [1, 4, 8, 12, 16, 20, 24, 28];
-          return visibleLabels.includes(Number(value)) ? value : '';
-        },
-      },
-    },
-  ],
-  yAxis: [
-    {
-      show: false,
-      type: "value",
-    },
-  ],
-  series: [
-    {
-      name: "Union Ads",
-      type: "line",
-      cursor: "default",
-      stack: "Total",
-      data: [
-        3,2,2,1.5,1.5,2,3.7,3.7,1.5,1.5,1.5,2,3,2.5,2.5,2.5,2,1.5,1.5,1.5
-      ],
-      color: ["#12B76A"],
-      gradientColor: ["#65DFA2"],
-      areaStyle: {
-        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-          {
-            offset: 0,
-            color: "#65DFA2",
-          },
-          {
-            offset: 1,
-            color: "#fef9f86e",
-          },
-        ]),
-      },
-      step: false,
-      smooth: false,
-      showSymbol: false,
-    },
-  ],
-};
+import { USER_1, USER_2, USER_3 } from "../sessions/session.constant";
+import code from "@/common/assets/images/code.svg";
+import coin from "@/common/assets/images/coins.svg";
+import bag from "@/common/assets/images/briefcase-business.svg";
+import shield from "@/common/assets/images/shield-check.svg";
+import scale from "@/common/assets/images/scale.svg";
+import scrollText from "@/common/assets/images/scroll-text.svg";
+import pie from "@/common/assets/images/pie-chart.svg";
 
 export const TOTAL_SESSIONS_CHART = {
   height: 50,
@@ -377,7 +165,18 @@ export const MESSAGE_DATA = [
     context:"repo/filepath.py",
     sessionId:"123456",
     active:"Active",
-    topics:["Code","Finance"],
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Finance',
+        img:coin
+      }
+    ],
 
     violation: "12",
     violationCat: "ChatGPT",
@@ -392,7 +191,18 @@ export const MESSAGE_DATA = [
     context:"repo/filepath.py",
     sessionId:"",
     active:"Active",
-    topics:["Finance","Hiring"],
+    topics:[
+      {
+        id:1,
+        title:'Finance',
+        img:coin,
+      },
+      {
+        id:2,
+        title:'Hiring',
+        img:bag
+      }
+    ],
 
     violation: "8",
     violationCat: "Bard",
@@ -407,7 +217,18 @@ export const MESSAGE_DATA = [
     context:"repo/filepath.py",
     sessionId:"",
     active:"Active",
-    topics:["Code","Security"],
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Security',
+        img:shield
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
@@ -422,7 +243,18 @@ export const MESSAGE_DATA = [
     context:"repo/filepath.py",
     sessionId:"123456",
     active:"Active",
-    topics:["Contracts & Agreements","Legal"],
+    topics:[
+      {
+        id:1,
+        title:'Contracts & Agreements',
+        img:scrollText,
+      },
+      {
+        id:2,
+        title:'Legal',
+        img:scale
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
@@ -437,7 +269,18 @@ export const MESSAGE_DATA = [
     context:"repo/filepath.py",
     sessionId:"123456",
     active:"Active",
-    topics:["Code","Security"],
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Security',
+        img:shield
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
@@ -452,7 +295,13 @@ export const MESSAGE_DATA = [
     context:"repo/filepath.py",
     sessionId:"123456",
     active:"Active",
-    topics:["Data analysis"],
+    topics:[
+      {
+        id:1,
+        title:'Data analysis',
+        img:pie,
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
@@ -467,7 +316,18 @@ export const MESSAGE_DATA = [
     context:"repo/filepath.py",
     sessionId:"123456",
     active:"Active",
-    topics:["Code","Security"],
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Security',
+        img:shield
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
@@ -482,7 +342,18 @@ export const MESSAGE_DATA = [
     context:"repo/filepath.py",
     sessionId:"123456",
     active:"Active",
-    topics:["Contracts & Agreements","Legal"],
+    topics:[
+      {
+        id:1,
+        title:'Contracts & Agreements',
+        img:scrollText,
+      },
+      {
+        id:2,
+        title:'Legal',
+        img:scale
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
@@ -497,7 +368,18 @@ export const MESSAGE_DATA = [
     context:"repo/filepath.py",
     sessionId:"123456",
     active:"Active",
-    topics:["Code","Security"],
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Security',
+        img:shield
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
@@ -512,7 +394,18 @@ export const MESSAGE_DATA = [
     context:"repo/filepath.py",
     sessionId:"123456",
     active:"Active",
-    topics:["Code","Security", "Contracts & Agreements"],
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Finance',
+        img:coin
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
@@ -527,7 +420,23 @@ export const MESSAGE_DATA = [
     context:"repo/filepath.py",
     sessionId:"123456",
     active:"Active",
-    topics:["Code","Security"],
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Finance',
+        img:coin
+      },
+      {
+        id:3,
+        title:'Contracts & Agreements',
+        img:scrollText
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
@@ -542,7 +451,18 @@ export const MESSAGE_DATA = [
     context:"repo/filepath.py",
     sessionId:"123456",
     active:"Active",
-    topics:["Code","Security"],
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Finance',
+        img:coin
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
@@ -588,3 +508,38 @@ export const EQUALS = [
     label: "Does not contain",
   },
 ];
+
+
+
+export const MESSAGES_GRAPH = [
+  {
+    id:1,
+    title:"John White",
+    value:'2K',
+    chart:USER_1,
+  },
+  {
+    id:2,
+    title:"George Mayer",
+    value:'2K',
+    chart:USER_2,
+  },
+  {
+    id:3,
+    title:"Cindy Sherman",
+    value:'2K',
+    chart:USER_1,
+  },
+  {
+    id:4,
+    title:"Barbara Kruger",
+    value:'2K',
+    chart:USER_2,
+  },
+  {
+    id:5,
+    title:"Michael Black",
+    value:'2K',
+    chart:USER_3,
+  }
+]

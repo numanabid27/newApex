@@ -11,9 +11,13 @@ import CircleIcon from "@mui/icons-material/Circle";
 import { Box, Chip, Grid, Typography } from "@mui/material";
 import CollapsibleTable from "./components/issue-table/issuesTable.component";
 import TopIssuesChart from "./components/top-issues-chart/top-issues-chart.component";
-import { FILTERS_DROPDOWN, rows } from "./issues.constant";
+import { FILTERS_DROPDOWN, rows, SWITCH } from "./issues.constant";
 import { styles } from "./issues.style";
 import useIssues from "./use-issues.hook";
+import switchGraph from "@/common/assets/images/switchGraph.svg";
+import { useState } from "react";
+import SwitchGraph from "./components/switch-graph/switchGrpah.component";
+
 
 function Issues() {
   const {
@@ -143,16 +147,30 @@ function Issues() {
     },
   ];
 
+  const [isSwitch, setIsSwitch] = useState(false);
+  const handleClick = () => {
+    setIsSwitch(!isSwitch);
+  };
+
+  
   return (
     <Box sx={styles.issueGrid}>
       <Box display="flex" gap="10px" justifyContent="flex-end" mt={5}>
+        <ButtonComponent
+          title="Switch graph"
+          icon={switchGraph}
+          handleClick={handleClick}
+        />
         <ButtonComponent title="Collapse" icon={collapse} />
         <ButtonComponent title="Export" icon={exportImg} />
       </Box>
 
-      <TopIssuesChart />
-      {/* <ExportPage />
-      <IssuesHeader />  */}
+      {isSwitch ? (
+          <SwitchGraph />
+      ) : (
+        <TopIssuesChart />
+      )}
+
       <Grid container>
         <CustomDropdown
           dropdownData={FILTERS_DROPDOWN}
@@ -164,19 +182,6 @@ function Issues() {
           thead={true}
           setOpenModal={setOpenModal}
         />
-        {/* <CustomTable
-          rows={filteredTableRows.slice(
-            (currentPage - 1) * rowsPerPage,
-            currentPage * rowsPerPage
-          )}
-          column={ISSUES_TABLE_HEADER}
-          setOpenModal={setOpenModal}
-          isSwitch={false}
-          setSelectedRow={setSelectedRow}
-          isTableHead={true}
-          isTableDate={true}
-          issues={false}
-        /> */}
         <CollapsibleTable
           filteredTableRows={filteredTableRows.slice(
             (currentPage - 1) * rowsPerPage,

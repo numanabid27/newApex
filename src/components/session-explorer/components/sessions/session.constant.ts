@@ -1,4 +1,11 @@
 import * as echarts from "echarts";
+import code from "@/common/assets/images/code.svg";
+import coin from "@/common/assets/images/coins.svg";
+import bag from "@/common/assets/images/briefcase-business.svg";
+import shield from "@/common/assets/images/shield-check.svg";
+import scale from "@/common/assets/images/scale.svg";
+import scrollText from "@/common/assets/images/scroll-text.svg";
+import pie from "@/common/assets/images/pie-chart.svg";
 
 export const USER_1 = {
   height: 50,
@@ -371,189 +378,356 @@ export const SESSION_USER_CHART = {
 export const SESSION_EXPLORE_DATA = [
   {
     id: 1,
-    title: "Is fifa good for my husband?",
-    mails: "uesr@email.com",
-    lastUpdate: "Aug 12, 2023 10:46 AM",
-    interface: "Github Copilot",
-    engineType: "OpenAI Codex",
-    context: "repo/filepath.py",
-    sessionId: "123456",
-    active: "Active",
-    topics: ["Marketing content", "drug", "cancer", "Pfizer"],
+    title: "Content Strategy Development",
+    mails:"cindy@email.com",
+    lastUpdate:"Apr 24, 2024 10:46 PM",
+    interface:"Apex Chat",
+    engineType:"Google Gemini",
+    context:"repo/filepath.py",
+    sessionId:"123456",
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Finance',
+        img:coin
+      }
+    ],
 
     violation: "12",
     violationCat: "ChatGPT",
-    prompt: [
-      {
-        id: 1,
-        time: "15:41:03 Sunday 25 March 2024",
-      },
-      {},
-    ],
   },
   {
     id: 2,
-    title: "Is fifa good for my husband?",
-    mails: "uesr@email.com",
-    lastUpdate: "Aug 12, 2023 10:46 AM",
-    interface: "Github Copilot",
-    engineType: "OpenAI Codex",
-    context: "repo/filepath.py",
-    sessionId: "123456",
-    active: "Active",
-    topics: ["Marketing content", "drug", "cancer", "Pfizer"],
+    title: "SEO Best Practices",
+    mails:"james@email.com",
+    lastUpdate:"Apr 12, 2024 09:21 PM",
+    interface:"Apex Chat",
+    engineType:"OpenAI GPT4",
+    context:"repo/filepath.py",
+    sessionId:"",
+    topics:[
+      {
+        id:1,
+        title:'Finance',
+        img:coin,
+      },
+      {
+        id:2,
+        title:'Hiring',
+        img:bag
+      }
+    ],
 
     violation: "8",
     violationCat: "Bard",
   },
   {
     id: 3,
-    title: "Is fifa good for my husband?",
-    mails: "uesr@email.com",
-    lastUpdate: "Aug 12, 2023 10:46 AM",
-    interface: "Github Copilot",
-    engineType: "OpenAI Codex",
-    context: "repo/filepath.py",
-    sessionId: "123456",
-    active: "Active",
-    topics: ["Marketing content", "drug", "cancer", "Pfizer"],
+    title: "Social Media Campaign Ideas",
+    mails:"george@email.com",
+    lastUpdate:"Apr 12, 2024 07:42 AM",
+    interface:"Github Copilot",
+    engineType:"OpenAI Codex",
+    context:"repo/filepath.py",
+    sessionId:"",
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Security',
+        img:shield
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
   },
   {
     id: 4,
-    title: "Is fifa good for my husband?",
-    mails: "uesr@email.com",
-    lastUpdate: "Aug 12, 2023 10:46 AM",
-    interface: "Github Copilot",
-    engineType: "OpenAI Codex",
-    context: "repo/filepath.py",
-    sessionId: "123456",
-    active: "Active",
-    topics: ["Marketing content", "drug", "cancer", "Pfizer"],
+    title: "Effective Email Marketing",
+    mails:"barbara@email.com",
+    lastUpdate:"Apr 11, 2024 8:30 AM",
+    interface:"365 Copilot",
+    engineType:"365 Copilot",
+    context:"repo/filepath.py",
+    sessionId:"123456",
+    topics:[
+      {
+        id:1,
+        title:'Contracts & Agreements',
+        img:scrollText,
+      },
+      {
+        id:2,
+        title:'Legal',
+        img:scale
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
   },
   {
     id: 5,
-    title: "Is fifa good for my husband?",
-    mails: "uesr@email.com",
-    lastUpdate: "Aug 12, 2023 10:46 AM",
-    interface: "Github Copilot",
-    engineType: "OpenAI Codex",
-    context: "repo/filepath.py",
-    sessionId: "123456",
-    active: "Active",
-    topics: ["Marketing content", "drug", "cancer", "Pfizer"],
+    title: " Product Launch Planning",
+    mails:"john@email.com",
+    lastUpdate:"Apr 10, 2024 11:45 AM",
+    interface:"Apex Chat",
+    engineType:"OpenAI Codex",
+    context:"repo/filepath.py",
+    sessionId:"123456",
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Security',
+        img:shield
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
   },
   {
     id: 6,
-    title: "Is fifa good for my husband?",
-    mails: "uesr@email.com",
-    lastUpdate: "Aug 12, 2023 10:46 AM",
-    interface: "Github Copilot",
-    engineType: "OpenAI Codex",
-    context: "repo/filepath.py",
-    sessionId: "123456",
-    active: "Active",
-    topics: ["Marketing content", "drug", "cancer", "Pfizer"],
+    title: "Competitive Market Analysis",
+    mails:"john@email.com",
+    lastUpdate:"Aug 12, 2023 10:46 AM",
+    interface:"Apex API",
+    engineType:"OpenAI GPT3.5",
+    context:"repo/filepath.py",
+    sessionId:"123456",
+    topics:[
+      {
+        id:1,
+        title:'Data analysis',
+        img:pie,
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
   },
   {
     id: 7,
-    title: "Is fifa good for my husband?",
-    mails: "uesr@email.com",
-    lastUpdate: "Aug 12, 2023 10:46 AM",
-    interface: "Github Copilot",
-    engineType: "OpenAI Codex",
-    context: "repo/filepath.py",
-    sessionId: "123456",
-    active: "Active",
-    topics: ["Marketing content", "drug", "cancer", "Pfizer"],
+    title: "Customer Feedback Interpretation",
+    mails:"ben@email.com",
+    lastUpdate:"Aug 12, 2023 10:46 AM",
+    interface:"Apex Chat",
+    engineType:"OpenAI GPT4",
+    context:"repo/filepath.py",
+    sessionId:"123456",
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Security',
+        img:shield
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
   },
   {
     id: 8,
-    title: "Is fifa good for my husband?",
-    mails: "uesr@email.com",
-    lastUpdate: "Aug 12, 2023 10:46 AM",
-    interface: "Github Copilot",
-    engineType: "OpenAI Codex",
-    context: "repo/filepath.py",
-    sessionId: "123456",
-    active: "Active",
-    topics: ["Marketing content", "drug", "cancer", "Pfizer"],
+    title: "Team Building Activities",
+    mails:"rita@email.com",
+    lastUpdate:"Aug 12, 2023 10:46 AM",
+    interface:"365 Copilot",
+    engineType:"365 Copilot",
+    context:"repo/filepath.py",
+    sessionId:"123456",
+    topics:[
+      {
+        id:1,
+        title:'Contracts & Agreements',
+        img:scrollText,
+      },
+      {
+        id:2,
+        title:'Legal',
+        img:scale
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
   },
   {
     id: 9,
-    title: "Is fifa good for my husband?",
-    mails: "uesr@email.com",
-    lastUpdate: "Aug 12, 2023 10:46 AM",
-    interface: "Github Copilot",
-    engineType: "OpenAI Codex",
-    context: "repo/filepath.py",
-    sessionId: "123456",
-    active: "Active",
-    topics: ["Marketing content", "drug", "cancer", "Pfizer"],
+    title: " Leadership Skills Enhancement",
+    mails:"sarah@email.com",
+    lastUpdate:"Aug 12, 2023 10:46 AM",
+    interface:"Apex Chat",
+    engineType:"Claude",
+    context:"repo/filepath.py",
+    sessionId:"123456",
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Security',
+        img:shield
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
   },
   {
     id: 10,
-    title: "Is fifa good for my husband?",
-    mails: "uesr@email.com",
-    lastUpdate: "Aug 12, 2023 10:46 AM",
-    interface: "Github Copilot",
-    engineType: "OpenAI Codex",
-    context: "repo/filepath.py",
-    sessionId: "123456",
-    active: "Active",
-    topics: ["Marketing content", "drug", "cancer", "Pfizer"],
+    title: "Time Management Techniques",
+    mails:"li@email.com",
+    lastUpdate:"Aug 12, 2023 10:46 AM",
+    interface:"Glean",
+    engineType:"Glean",
+    context:"repo/filepath.py",
+    sessionId:"123456",
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Finance',
+        img:coin
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
   },
   {
     id: 11,
-    title: "Is fifa good for my husband?",
-    mails: "uesr@email.com",
-    lastUpdate: "Aug 12, 2023 10:46 AM",
-    interface: "Github Copilot",
-    engineType: "OpenAI Codex",
-    context: "repo/filepath.py",
-    sessionId: "123456",
-    active: "Active",
-    topics: ["Marketing content", "drug", "cancer", "Pfizer"],
+    title: "Advanced Data Analytics",
+    mails:"ben@email.com",
+    lastUpdate:"Aug 12, 2023 10:46 AM",
+    interface:"Apex Chat",
+    engineType:"OpenAI GPT4",
+    context:"repo/filepath.py",
+    sessionId:"123456",
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Finance',
+        img:coin
+      },
+      {
+        id:3,
+        title:'Contracts & Agreements',
+        img:scrollText
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
   },
   {
     id: 12,
-    title: "Is fifa good for my husband?",
-    mails: "uesr@email.com",
-    lastUpdate: "Aug 12, 2023 10:46 AM",
-    interface: "Github Copilot",
-    engineType: "OpenAI Codex",
-    context: "repo/filepath.py",
-    sessionId: "123456",
-    active: "Active",
-    topics: ["Marketing content", "drug", "cancer", "Pfizer"],
+    title: "Sales Pitch Preparation",
+    mails:"ben@email.com",
+    lastUpdate:"Aug 12, 2023 10:46 AM",
+    interface:"Apex Chat",
+    engineType:"OpenAI GPT4",
+    context:"repo/filepath.py",
+    sessionId:"123456",
+    topics:[
+      {
+        id:1,
+        title:'Code',
+        img:code,
+      },
+      {
+        id:2,
+        title:'Finance',
+        img:coin
+      }
+    ],
 
     violation: "6",
     violationCat: "OpenAI",
   },
 ];
+
+export const MESSAGES = [
+  {
+    id:1,
+    userMsg:'hey',
+    time:'04:53 PM',
+    reply:'Hello! How can i Assist you today?'
+  },
+  {
+    id:2,
+    userMsg:'hey',
+    time:'04:53 PM',
+    reply:'Hello! How can i Assist you today?'
+  },
+  {
+    id:3,
+    userMsg:'hey',
+    time:'04:53 PM',
+    reply:'Hello! How can i Assist you today?'
+  }
+]
+
+export const SESSION_GRAPH = [
+  {
+    id:1,
+    title:"John White",
+    value:'100',
+    chart:USER_1,
+  },
+  {
+    id:2,
+    title:"George Mayer",
+    value:'100',
+    chart:USER_2,
+  },
+  {
+    id:3,
+    title:"Cindy Sherman",
+    value:'100',
+    chart:USER_1,
+  },
+  {
+    id:4,
+    title:"Barbara Kruger",
+    value:'100',
+    chart:USER_2,
+  },
+  {
+    id:5,
+    title:"Michael Black",
+    value:'100',
+    chart:USER_3,
+  }
+]

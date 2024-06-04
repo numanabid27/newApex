@@ -2,16 +2,16 @@
 
 import React, { useEffect, useState } from "react";
 import { styles } from "./style";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, List, ListItem, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 export const Py = ({ items, handleClick, hoveredIndex }: any) => {
   return (
     <>
       {hoveredIndex && (
-        <Box sx={styles.pyBg}>
-          {items.endsWith(".txt") ? (
-            <>
+        <Box >
+          {items.endsWith(".docx") && items.endsWith(".docx") ? (
+            <Box sx={styles.pyBg}>
               <Grid container justifyContent="space-between">
                 <Grid xs={11}>
                   <Typography>{items}</Typography>
@@ -22,37 +22,21 @@ export const Py = ({ items, handleClick, hoveredIndex }: any) => {
               </Grid>
               <Box sx={{...styles.desc, padding:"12px 12px"}}>
                 <Typography sx={{ ...styles.paragraph, paddingBottom: "10px" }}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Scelerisque eu ultrices vitae auctor eu augue ut. Hac
-                  habitasse platea dictumst quisque sagittis purus. Convallis
-                  aenean et tortor at. Bibendum ut tristique et egestas quis
-                  ipsum suspendisse ultrices. Sem integer vitae justo eget magna
-                  fermentum iaculis. Quis ipsum suspendisse ultrices gravida
-                  dictum fusce ut placerat orci. Tellus integer feugiat
-                  scelerisque varius morbi enim nunc faucibus a. Sit amet
-                  aliquam id diam maecenas ultricies mi. Malesuada fames ac
-                  turpis egestas. Leo vel fringilla est ullamcorper eget nulla
-                  facilisi etiam.
+                Analysis and Detection Over Language and Text: Enhancing AI Security with Apex
                 </Typography>
-                <Typography sx={styles.paragraph}>
-                  Sit amet tellus cras adipiscing enim eu. Facilisis magna etiam
-                  tempor orci eu lobortis elementum. In tellus integer feugiat
-                  scelerisque varius morbi. Duis ultricies lacus sed turpis
-                  tincidunt id aliquet. Cursus eget nunc scelerisque viverra
-                  mauris. Posuere lorem ipsum dolor sit amet consectetur
-                  adipiscing elit duis. Integer quis auctor elit sed. Libero
-                  enim sed faucibus turpis in eu. Duis ultricies lacus sed
-                  turpis tincidunt id aliquet. At varius vel pharetra vel.
-                  Consequat mauris nunc congue nisi vitae suscipit. Cras
-                  adipiscing enim eu turpis egestas pretium aenean pharetra
-                  magna. Lectus arcu bibendum at varius vel pharetra vel turpis
-                  nunc. Aliquet risus feugiat in ante metus dictum at tempor.
+                <Typography sx={{ ...styles.paragraph, paddingBottom: "10px" }}>
+                  In 2024, Apex will be leveraging advanced AI capabilities to provide enriched analysis and detection over language and text. This ensures that our customers benefit from a comprehensive understanding of their interactions, enhancing security and user experience. Here’s a detailed look at the various enrichments that can be performed over chat conversations with large language models (LLMs) and how these integrate into the Apex roadmap.
                 </Typography>
+                <Typography sx={{ ...styles.paragraph, paddingBottom: "10px" }}>1. Topic Detection</Typography>
+                <ul className="list">
+                  <li>Description: Identifies the main topics or themes within a conversation.</li>
+                  <li>Customer Value: Allows users to quickly understand the primary subjects being discussed, facilitating efficient content categorization and decision-making.</li>
+                  <li>Apex Integration: Our roadmap includes deploying advanced topic detection algorithms that provide real-time topic analysis, helping businesses streamline their workflows and improve content management.</li>
+                </ul>
               </Box>
-            </>
-          ) : items.endsWith(".py") ? (
-            <>
+            </Box>
+          ) : items.endsWith(".xlsx") && items.endsWith(".xlsx") ? (
+            <Box sx={styles.pyBg}>
               <Grid container justifyContent="space-between">
                 <Grid xs={11}>
                   <Typography>{items}</Typography>
@@ -121,7 +105,7 @@ function intAlea(mini, maxi) {
                   </pre> */}
                 </Box>
               </Box>
-            </>
+            </Box>
           ) : null}
         </Box>
       )}

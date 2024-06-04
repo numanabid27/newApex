@@ -11,6 +11,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SouthIcon from "@mui/icons-material/South";
+import hub from "@/common/assets/images/hub.svg";
 import {
   Accordion,
   AccordionDetails,
@@ -38,11 +39,11 @@ import ReactEcharts from "echarts-for-react";
 import EastIcon from "@mui/icons-material/East";
 
 function ModelAccordian({ modelData }: any) {
-  console.log("openModal", modelData);
+
+
   const { expanded, handleChange } = useModalAccordion();
   const [ishide, setIsHide] = useState(false);
   const [isValue, setIsValue] = useState("New");
-  console.log("modelData.name", modelData.name);
 
   const handleClick = () => {
     setIsHide(!ishide);
@@ -111,9 +112,29 @@ function ModelAccordian({ modelData }: any) {
             <Button sx={styles.resolved}>Resolve</Button>
           </Grid>
         </Grid>
-        <Box>
-          {modelData.graph && <ReactEcharts option={modelData.graph} />}
-        </Box>
+       
+        <Accordion
+          expanded={expanded.includes("panel1")}
+          onChange={handleChange("panel1")}
+          className="shadows"
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1bh-content"
+            id="panel1bh-header"
+            sx={styles.accordianBg}
+          >
+            <Typography sx={styles.title}>
+              <Image src={hub} alt="" style={styles.icon} />
+              Issue map
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails sx={styles.desc}>
+            <Box>
+              {modelData.graph && <ReactEcharts option={modelData.graph} />}
+            </Box>
+          </AccordionDetails>
+        </Accordion>
         <Accordion
           expanded={expanded.includes("panel1")}
           onChange={handleChange("panel1")}
@@ -158,7 +179,12 @@ function ModelAccordian({ modelData }: any) {
                     <Typography sx={styles.label}>Mesages</Typography>
                     <Box display="flex" alignItems="center" gap="11px">
                       <Typography variant="h6">{items.messages[0]}</Typography>
-                      <Image src={arrowUp} alt="" width={15} height={15} />
+                      {
+                        items.messages && items.messages[1].includes("+") ?  
+                        <Image src={arrowUp} alt="" width={15} height={15} />
+                        :
+                        <Image src={arrowDown} alt="" width={15} height={15} />
+                      }
                       <Typography sx={styles.msg}>
                         {items.messages[1]}
                         <span>from org</span>
@@ -168,10 +194,14 @@ function ModelAccordian({ modelData }: any) {
                   <Box sx={styles.box}>
                     <Typography sx={styles.label}>Sessions</Typography>
                     <Box display="flex" alignItems="center" gap="11px">
-                      <Typography variant="h6">{items.messages[0]}</Typography>
-                      <Image src={arrowDown} alt="" width={15} height={15} />
+                      <Typography variant="h6">{items.sessions[0]}</Typography>
+                      {items.sessions && items.sessions[1].includes("-") ?  
+                        <Image src={arrowDown} alt="" width={15} height={15} />
+                        :
+                        <Image src={arrowUp} alt="" width={15} height={15} />
+                      }
                       <Typography sx={styles.msg}>
-                        {items.messages[1]}
+                        {items.sessions[1]}
                         <span>from org</span>
                       </Typography>
                     </Box>
@@ -183,27 +213,27 @@ function ModelAccordian({ modelData }: any) {
                         return (
                           <IconButton sx={styles.iconBtn} key={i.toString()}>
                             <Chip
-                              label={innerItem.name}
+                              label={<><span style={{fontWeight:600, paddingRight:'5px'}}>{innerItem.value}</span>{innerItem.name}</>}
                               sx={{
                                 ...styles.severityChip,
                                 color:
-                                  innerItem.name === "1 Medium"
+                                  innerItem.name === "Medium"
                                     ? Colors.brown
-                                    : innerItem.name === "1 Critical"
+                                    : innerItem.name === "Critical"
                                     ? Colors.darkBrown
-                                    : innerItem.name === "80 Low"
+                                    : innerItem.name === "Low"
                                     ? Colors.textGreen
-                                    : innerItem.name === "2 High"
+                                    : innerItem.name === "High"
                                     ? Colors.textHigh
                                     : "",
                                 bgcolor:
-                                  innerItem.name === "1 Medium"
+                                  innerItem.name === "Medium"
                                     ? Colors.primaryWhite
-                                    : innerItem.name === "1 Critical"
+                                    : innerItem.name === "Critical"
                                     ? Colors.secondaryWhite
-                                    : innerItem.name === "80 Low"
+                                    : innerItem.name === "Low"
                                     ? Colors.primaryGreen
-                                    : innerItem.name === "2 High"
+                                    : innerItem.name === "High"
                                     ? Colors.defaultWhite
                                     : "",
                                 p: 0,
@@ -212,13 +242,13 @@ function ModelAccordian({ modelData }: any) {
                                 <CircleIcon
                                   sx={{
                                     fill:
-                                      innerItem.name === "1 Medium"
+                                      innerItem.name === "Medium"
                                         ? `${Colors.orange} !important`
-                                        : innerItem.name === "1 Critical"
+                                        : innerItem.name === "Critical"
                                         ? `${Colors.darkBrown} !important`
-                                        : innerItem.name === "2 High"
+                                        : innerItem.name === "High"
                                         ? Colors.textHight_102
-                                        : innerItem.name === "80 Low"
+                                        : innerItem.name === "Low"
                                         ? Colors.circleLow
                                         : `${Colors.defaultBrown} !important`,
 
@@ -235,8 +265,8 @@ function ModelAccordian({ modelData }: any) {
                   <Box sx={styles.box}>
                     <Typography sx={styles.label}>Categories</Typography>
                     <Box display="flex">
-                      <Typography>{items.categories[0]}</Typography>,
-                      <Typography>{items.categories[1]}</Typography>
+                      <Typography fontSize="14px">{items.categories[0]}</Typography>,
+                      <Typography fontSize="14px">{items.categories[1]}</Typography>
                     </Box>
                   </Box>
                 </Box>
@@ -269,9 +299,9 @@ function ModelAccordian({ modelData }: any) {
                       Secrets
                     </Grid>
                     <Grid xs={8} >
-                      <Typography variant="h6" pb={2}>OpenAI API key: 7GubVRG******************************vdrRxb</Typography>
-                      <Typography variant="h6" pb={2}>OpenAI API key: 7GubVRG******************************vdrRxb</Typography>
-                      <Typography variant="h6">OpenAI API key: 7GubVRG******************************vdrRxb</Typography>
+                      <Typography variant="h6" pb={2}>api_key_1 = "ABC12345DEF67890GHIJ"</Typography>
+                      <Typography variant="h6" pb={2}>api_key_2 = "JKL98765MNO43210PQRS"</Typography>
+                      <Typography variant="h6">api_key_3 = "TUV54321WXY09876ZABC"</Typography>
                     </Grid>
                   </Grid>
               </>
@@ -282,13 +312,13 @@ function ModelAccordian({ modelData }: any) {
                       Email
                     </Grid>
                     <Grid xs={8} display="flex" gap="10px">
-                      <Chip label="user@ax.com" />
-                      <Chip label="user@ax.com" />
-                      <Chip label="user@ax.com" />
-                      <Chip label="user@ax.com" />
-                      <Chip label="user@ax.com" />
-                      <Chip label="user@ax.com" />
-                      <Chip label="user@ax.com" />
+                      {
+                        modelData?.email?.map((item:any, i:number)=>{
+                          return(
+                            <Chip label={item} key={i.toString()} />
+                          )
+                        })
+                      }
                     </Grid>
                   </Grid>
                   <Grid container alignItems="center" sx={styles.evidance_grid}>
@@ -379,27 +409,27 @@ export default function handler(req, res) {...
                   <Typography sx={styles.voilation}>Severity</Typography>
                   <IconButton sx={styles.iconBtn}>
                     <Chip
-                      label={modelData.severity}
+                      label={modelData.issues && modelData.issues[0]}
                       sx={{
                         ...styles.severityChip,
                         color:
-                          modelData.severity === "Medium"
+                        modelData.issues && modelData.issues[0] === "Medium"
                             ? Colors.brown
-                            : modelData.severity === "Critical"
+                            : modelData.issues && modelData.issues[0] === "Critical"
                             ? Colors.darkBrown
-                            : modelData.severity === "Low"
+                            : modelData.issues && modelData.issues[0] === "Low"
                             ? Colors.textGreen
-                            : modelData.severity === "High"
+                            : modelData.issues && modelData.issues[0] === "High"
                             ? Colors.textHigh
                             : "",
                         bgcolor:
-                          modelData.severity === "Medium"
+                        modelData.issues && modelData.issues[0] === "Medium"
                             ? Colors.primaryWhite
-                            : modelData.severity === "Critical"
+                            : modelData.issues && modelData.issues[0] === "Critical"
                             ? Colors.secondaryWhite
-                            : modelData.severity === "Low"
+                            : modelData.issues && modelData.issues[0] === "Low"
                             ? Colors.primaryGreen
-                            : modelData.severity === "High"
+                            : modelData.issues && modelData.issues[0] === "High"
                             ? Colors.defaultWhite
                             : "",
                         p: 0,
@@ -408,13 +438,13 @@ export default function handler(req, res) {...
                         <CircleIcon
                           sx={{
                             fill:
-                              modelData.severity === "Medium"
+                            modelData.issues &&  modelData.issues[0] === "Medium"
                                 ? `${Colors.orange} !important`
-                                : modelData.severity === "Critical"
+                                : modelData.issues && modelData.issues[0] === "Critical"
                                 ? `${Colors.darkBrown} !important`
-                                : modelData.severity === "High"
+                                : modelData.issues && modelData.issues[0] === "High"
                                 ? Colors.textHight_102
-                                : modelData.severity === "Low"
+                                : modelData.issues && modelData.issues[0] === "Low"
                                 ? Colors.circleLow
                                 : `${Colors.defaultBrown} !important`,
 
@@ -435,48 +465,51 @@ export default function handler(req, res) {...
                   gap="10px"
                 >
                   <Typography sx={styles.voilation}>Direction</Typography>
-                  <Typography sx={styles.appex}>Inbound</Typography>
+                  <Typography sx={styles.appex}>{modelData.issues && modelData.issues[5]}</Typography>
                 </Grid>
                 <Grid item sm={3} xs={7} sx={styles.margin}>
                   <Typography sx={styles.voilation}>Last event</Typography>
                   <Typography sx={styles.appex}>
-                    {modelData.lastEvent}
+                    {modelData.issues && modelData.issues[9]}
                   </Typography>
                 </Grid>
                 <Grid item sm={5} xs={4} sx={styles.margin}>
                   <Typography sx={styles.voilation}>Name</Typography>
-                  <Typography sx={styles.appex}>{modelData.name}</Typography>
+                  <Typography sx={styles.appex}>{modelData.issues && modelData.issues[1]}</Typography>
                 </Grid>
                 <Grid item sm={4} xs={7} sx={styles.margin}>
                   <Typography sx={styles.voilation}>Users</Typography>
-                  <Box display="flex" gap="5px">
-                    {modelData.users?.map((item: any, i: number) => {
-                      const isLastItem = i === modelData.users.length - 1;
-                      return (
-                        <Typography sx={styles.appex} key={i.toString()}>
-                          {item}
-                          {!isLastItem && ","}
-                        </Typography>
-                      );
-                    })}
-                  </Box>
+                  <Typography sx={styles.appex} >
+                    {modelData.issues && modelData.issues[6]}
+                  </Typography>
                 </Grid>
                 <Grid item sm={3} xs={4} sx={styles.margin}>
                   <Typography sx={styles.voilation}>Last event</Typography>
                   <Typography sx={styles.appex}>
-                    {modelData.lastEvent}
+                    {modelData.issues && modelData.issues[10]}
                   </Typography>
                 </Grid>
                 <Grid item sm={5} xs={8} sx={styles.margin}>
                   <Typography sx={styles.voilation}>
                     Violation category
                   </Typography>
-                  <Typography sx={styles.appex}>PII, PCI</Typography>
+                  {
+                    modelData.issues && modelData.issues[2].map((item:any,i:number)=>{
+                      const isLastItem = i === modelData.users.length - 1;
+                      return(
+                        <Typography sx={styles.appex} key={i.toString()}>
+                          {item}
+                          {!isLastItem && ","}
+                        </Typography>
+                      )
+                    })
+                  }
+                 
                 </Grid>
                 <Grid item sm={4} xs={8} sx={styles.margin}>
                   <Typography sx={styles.voilation}>Source</Typography>
                   <Typography sx={styles.appex}>
-                    {modelData.policiesData && modelData.policiesData[0].source}
+                    {modelData.issues && modelData.issues[7]}
                   </Typography>
                 </Grid>
                 <Grid item sm={3} xs={4} sx={styles.margin}>
@@ -487,7 +520,7 @@ export default function handler(req, res) {...
                     alignItems="center"
                     gap="10px"
                   >
-                    Multiple session IDs
+                    {modelData.issues && modelData.issues[11]}
                     <Link
                       href="#"
                       style={{
@@ -512,31 +545,30 @@ export default function handler(req, res) {...
                     alignItems="center"
                     gap="10px"
                   >
-                    17
+                    {modelData.issues && modelData.issues[3]}
                     <EastIcon style={{ width: "18px", color: "#2E90FA" }} />
                   </Typography>
                 </Grid>
                 <Grid item sm={4} xs={8} sx={styles.margin}>
                   <Typography sx={styles.voilation}>Engine</Typography>
                   <Typography sx={styles.appex} display="flex" gap="10px">
-                    <Chip
-                      label="Azure"
-                      variant="outlined"
-                      sx={{
-                        ...styles.severityChip2,
-                        color: "#374151",
-                        p: 0,
-                      }}
-                    />
-                    <Chip
-                      label="ChatGPT"
-                      variant="outlined"
-                      sx={{
-                        ...styles.severityChip2,
-                        color: "#374151",
-                        p: 0,
-                      }}
-                    />
+                    {
+                      modelData.issues && modelData.issues[8].map((items:any, i:number)=>{
+                       return(
+                        <Chip
+                        key={i.toString()}
+                        label={items}
+                        variant="outlined"
+                        sx={{
+                          ...styles.severityChip2,
+                          color: "#374151",
+                          p: 0,
+                        }}
+                      />
+                       )
+                      })
+                    }
+                    
                   </Typography>
                 </Grid>
                 <Grid item sm={3} xs={4} sx={styles.margin}>
@@ -547,26 +579,33 @@ export default function handler(req, res) {...
                     alignItems="center"
                     gap="10px"
                   >
-                    Hadar Amran
+                    {modelData.issues && modelData.issues[12]}
                   </Typography>
                 </Grid>
 
                 <Grid item sm={5} xs={8} sx={styles.margin}>
                   <Typography sx={styles.voilation}>Sub-Categories</Typography>
-                  <Typography
-                    sx={styles.appex}
-                    display="flex"
-                    alignItems="center"
-                    gap="10px"
-                  >
-                    Email, SSN
-                    <EastIcon style={{ width: "18px", color: "#2E90FA" }} />
-                  </Typography>
+                  {
+                    modelData.issues && modelData.issues[4].map((item:any,i:number)=>{
+                      const isLastItem = i === modelData.users.length - 1;
+                      return(
+                        <Typography sx={styles.appex}
+                          display="flex"
+                          alignItems="center"
+                          gap="10px" key={i.toString()}>
+                          {item}
+                          {!isLastItem && ","}
+                          
+                        </Typography>
+                      )
+                    })
+                  }
+                  <EastIcon style={{ width: "18px", color: "#2E90FA" }} />
                 </Grid>
                 <Grid item sm={4} xs={8} sx={styles.margin}>
                   <Typography sx={styles.voilation}>First event</Typography>
                   <Typography sx={styles.appex}>
-                    Feb 8, 2024, 08:57 PM
+                    {modelData.issues && modelData.issues[9]}
                   </Typography>
                 </Grid>
                 <Grid item sm={3} xs={4} sx={styles.margin}>
@@ -579,7 +618,7 @@ export default function handler(req, res) {...
                   >
                     <IconButton sx={styles.iconBtn}>
                       <Chip
-                        label={modelData.status}
+                        label={modelData.issues && modelData.issues[13]}
                         sx={{
                           ...styles.severityChip,
                           color: Colors.textGreen,
@@ -631,7 +670,7 @@ export default function handler(req, res) {...
                               {items.date}
                             </Typography>
                           </TableCell>
-                          <TableCell>Subject of the chat</TableCell>
+                          <TableCell>{items.chat}</TableCell>
                           <TableCell>{items.role}</TableCell>
                           <TableCell>
                             <Chip

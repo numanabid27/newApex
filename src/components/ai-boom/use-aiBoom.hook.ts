@@ -10,7 +10,7 @@ export default function useAiboom() {
     const [hoveredIndex, setHoveredIndex] = useState(false);
     const [isClicked, setIsClicked] = useState(null);
     const [value, setIsValue] = useState<any>(0);
-    const [repo, setRepo] = useState('')
+    const [repo, setRepo] = useState<any>('')
 
     const handleChange = (event:any, newValue:any) => {
         setIsValue(newValue);

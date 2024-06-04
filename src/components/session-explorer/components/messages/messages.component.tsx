@@ -37,10 +37,8 @@ import {
 import {
   SESSION_USER_CHART,
   SEVERITY,
-  USER_1,
-  USER_2,
-  USER_3,
   EQUALS,
+  MESSAGES_GRAPH,
 } from "./message.constant";
 import { styles } from "./messages.style";
 import useSessions from "./use-message.hook";
@@ -147,64 +145,32 @@ export default function Message() {
       accessor: "topics",
       cell: (data: any) => {
         return (
-          <Box display="flex" gap="12px">
+          <Box display="flex" className="issueTbaleChip">
             {data?.map((item: any, i:number) => {
               return (
-                <Chip
-                  key={i.toString()}
-                  sx={{
-                    color: "#1849A9",
-                    background: "#D1E9FF",
-                    height: "26px",
-                    borderRadius: "16px",
-                    fontSize: "11.59px",
-                    fontWeight: 700,
-                    border: "unset",
-                  }}
-                  label={item}
-                  variant="outlined"
-                />
+                <IconButton key={i.toString()}>
+                  <Chip
+                    sx={{
+                      color: "#1849A9",
+                      background: "#D1E9FF",
+                      height: "26px",
+                      borderRadius: "16px",
+                      fontSize: "11.59px",
+                      fontWeight: 700,
+                      border: "unset",
+                    }}
+                    icon={
+                      <>
+                        <Image src={item.img} width={20} height={20} alt="" />
+                      </>
+                    }
+                    label={item.title}
+                    variant="outlined"
+                  />
+                </IconButton>
+                
               );
             })}
-            {/* <Chip
-              sx={{
-                color: "#1849A9",
-                background: "#D1E9FF",
-                height: "26px",
-                borderRadius: "16px",
-                fontSize: "11.59px",
-                fontWeight: 700,
-                border: "unset",
-              }}
-              label={data[1]}
-              variant="outlined"
-            />
-            <Chip
-              sx={{
-                color: "#1849A9",
-                background: "#D1E9FF",
-                height: "26px",
-                borderRadius: "16px",
-                fontSize: "11.59px",
-                fontWeight: 700,
-                border: "unset",
-              }}
-              label={data[2]}
-              variant="outlined"
-            />
-            <Chip
-              sx={{
-                color: "#1849A9",
-                background: "#D1E9FF",
-                height: "26px",
-                borderRadius: "16px",
-                fontSize: "11.59px",
-                fontWeight: 700,
-                border: "unset",
-              }}
-              label={data[3]}
-              variant="outlined"
-            /> */}
           </Box>
         );
       },
@@ -215,16 +181,6 @@ export default function Message() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
   const [selectDrawerValue, setSelectedDrawerValue] = useState();
-
-  const totalPages = Math.ceil(finalData.length / itemsPerPage);
-
-  const handlePageChange = (newPage: number) => {
-    setCurrentPage(newPage);
-  };
-
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const usersToDisplay = finalData.slice(startIndex, endIndex);
 
   useEffect(() => {
     if (selectedRow?.id) {
@@ -572,7 +528,7 @@ const options = {
               { name: 'Negative 350', itemStyle: { color: '#A6F4C5' }, emphasis: { itemStyle: { color: '#A6F4C5' } } },
           ],
           links: [
-              { source: 'ChatGPT 2,000', target: 'Strategy 1,000', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
+              { source: 'ChatGPT 2,000', target: 'Strategy 1,000', value: 1000, lineStyle: { color: '#039855',  offset: [100, -70], emphasis: { lineStyle: { color: '#039855' } } } },
               { source: 'ChatGPT 2,000', target: 'Legal 1,000', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
               { source: 'ChatGPT 2,000', target: 'Revenue 1,000', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
               { source: 'Github Copilot 2,000', target: 'Revenue 1,000', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
@@ -598,6 +554,7 @@ const options = {
               padding: 3,
               position: 'insideRight',
               fontSize: 12,
+       
           },
           nodeWidth: 20,
           nodeGap: 25,
@@ -745,65 +702,26 @@ const options = {
           <Typography variant="h5" mb={4}>
             Top 5 Weekly Active Users
           </Typography>
-          <Grid container sx={styles.activeUser}>
-            <Grid xl={8} xs={7}>
-              <Typography>John White</Typography>
-            </Grid>
-            <Grid xl={4} xs={5}>
-              <Box sx={styles.user1}>
-                <Typography>2K</Typography>
-                <ReactEcharts option={USER_1} />
-              </Box>
-            </Grid>
-          </Grid>
+          {
+            MESSAGES_GRAPH.map((item:any, i:number)=>{
+              return(
+                <Grid container sx={styles.activeUser} key={i.toString()}>
+                  <Grid xl={8} xs={7}>
+                    <Typography sx={styles.typography}>{item.title}</Typography>
+                  </Grid>
+                  <Grid xl={4} xs={5}>
+                    <Box sx={styles.user1}>
+                      <Typography sx={styles.typography}>{item.value}</Typography>
+                      <ReactEcharts option={item.chart} />
+                    </Box>
+                  </Grid>
+                </Grid>
+              )
+            })
+          }
+         
 
-          <Grid container sx={styles.activeUser}>
-            <Grid xl={8} xs={7}>
-              <Typography>George Mayer</Typography>
-            </Grid>
-            <Grid xl={4} xs={5}>
-              <Box sx={styles.user1}>
-                <Typography>1.6K</Typography>
-                <ReactEcharts option={USER_2} />
-              </Box>
-            </Grid>
-          </Grid>
 
-          <Grid container sx={styles.activeUser}>
-            <Grid xl={8} xs={7}>
-              <Typography>Cindy Sherman</Typography>
-            </Grid>
-            <Grid xl={4} xs={5}>
-              <Box sx={styles.user1}>
-                <Typography>1.1K</Typography>
-                <ReactEcharts option={USER_1} />
-              </Box>
-            </Grid>
-          </Grid>
-
-          <Grid container sx={styles.activeUser}>
-            <Grid xl={8} xs={7}>
-              <Typography>Barbara Kruger</Typography>
-            </Grid>
-            <Grid xl={4} xs={5}>
-              <Box sx={styles.user1}>
-                <Typography>0.9K</Typography>
-                <ReactEcharts option={USER_2} />
-              </Box>
-            </Grid>
-          </Grid>
-
-          <Grid container sx={styles.activeUser}>
-            <Grid xl={8} xs={7}>
-              <Typography>Michael Black</Typography>
-            </Grid>
-            <Grid xl={4} xs={5}>
-              <Box sx={styles.user1}>
-                <Typography>0.8K</Typography>
-                <ReactEcharts option={USER_3} />
-              </Box>
-            </Grid>
-          </Grid>
         </Grid>
       </Grid>
       {/* search */}
@@ -1047,45 +965,21 @@ const options = {
       </Grid>
       <Box sx={styles.sessionTableRow}>
         <CustomTable
-          rows={usersToDisplay}
+          rows={finalData}
           column={SESSION_EXPLORE_TABLE_HEADER}
           setOpenModal={setOpenModal}
           isSwitch={false}
           setSelectedRow={setSelectedRow}
           isTableHead={true}
+          isPagination={true}
         />
-        <Grid container justifyContent="space-between" mt={5}>
-          <Grid lg={5.5} sm={3} xs={4}>
-            <button
-              className="prev"
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-            >
-              Previous
-            </button>
-          </Grid>
-          <Grid lg={5} sm={3} xs={5}>
-            <Typography>
-              <span className="current">
-                {currentPage} Out of {totalPages}
-              </span>
-            </Typography>
-          </Grid>
-          <Grid lg={1.5} sm={3} xs={3} textAlign="right">
-            <button
-              className="next"
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-            >
-              Next
-            </button>
-          </Grid>
-        </Grid>
+        
         <CustomDialog
           thead={"session"}
           openModal={openModal}
           newData={selectedRow}
           setOpenModal={setOpenModal}
+          isMessage={true}
         />
       </Box>
     </Box>

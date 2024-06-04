@@ -66,7 +66,7 @@ export default function useSessions() {
       if (isInterface === "" || item.interface === isInterface) {
         interfaceFlag = true;
       }
-
+      // @ts-ignore
       if (isStatus === "" || item.active === isStatus) {
         statusFlag = true;
       }

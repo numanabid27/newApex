@@ -35,5 +35,9 @@ export const styles = {
             }
         }
     },
-    
+    list:{
+        "li":{
+            
+        }
+    }
 }

@@ -23,6 +23,7 @@ export const styles = {
         fontWeight:500,
         padding:'9px 18px'
     },
+   
     container:{
         background:'#F9FAFB',
         borderBottom: "1px solid rgba(224, 224, 224, 1)",

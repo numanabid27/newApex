@@ -33,10 +33,10 @@ import {
   TOPICS,
   USER_DATA,
 } from "../../session-explore.constant";
-import { SESSION_USER_CHART, USER_1, USER_2, USER_3 } from "./session.constant";
+import { SESSION_USER_CHART, SESSION_GRAPH } from "./session.constant";
 import { styles } from "./sessions.style";
 import useSessions from "./use-seesions.hook";
-import filter from "@/common/assets/images/more-filters.svg"
+import filter from "@/common/assets/images/more-filters.svg";
 
 export default function Sessions() {
   const {
@@ -128,90 +128,53 @@ export default function Sessions() {
       accessor: "topics",
       cell: (data: any) => {
         return (
-          <Box display="flex" gap="12px">
-            <Chip
-              sx={{
-                color: "#374151",
-                background: "#ECFDF3",
-                height: "26px",
-                borderRadius: "4px",
-                fontSize: "14px",
-                fontWeight: 500,
-                border: "unset",
-              }}
-              label={data[0]}
-              variant="outlined"
-            />
-            <Chip
-              sx={{
-                color: "#374151",
-                background: "#ECFDF3",
-                height: "26px",
-                borderRadius: "4px",
-                fontSize: "14px",
-                fontWeight: 500,
-                border: "unset",
-              }}
-              label={data[1]}
-              variant="outlined"
-            />
-            <Chip
-              sx={{
-                color: "#374151",
-                background: "#ECFDF3",
-                height: "26px",
-                borderRadius: "4px",
-                fontSize: "14px",
-                fontWeight: 500,
-                border: "unset",
-              }}
-              label={data[2]}
-              variant="outlined"
-            />
-            <Chip
-              sx={{
-                color: "#374151",
-                background: "#ECFDF3",
-                height: "26px",
-                borderRadius: "4px",
-                fontSize: "14px",
-                fontWeight: 500,
-                border: "unset",
-              }}
-              label={data[3]}
-              variant="outlined"
-            />
-          </Box>
+          <Box display="flex" className="issueTbaleChip">
+          {data?.map((item: any, i:number) => {
+            return (
+              <IconButton key={i.toString()}>
+                <Chip
+                  sx={{
+                    color: "#1849A9",
+                    background: "#D1E9FF",
+                    height: "26px",
+                    borderRadius: "16px",
+                    fontSize: "11.59px",
+                    fontWeight: 700,
+                    border: "unset",
+                  }}
+                  icon={
+                    <>
+                      <Image src={item.img} width={20} height={20} alt="" />
+                    </>
+                  }
+                  label={item.title}
+                  variant="outlined"
+                />
+              </IconButton>
+              
+            );
+          })}
+        </Box>
         );
       },
     },
     { id: 11, header: "Session ID", accessor: "sessionId" },
-    { id: 12, header: "Status", accessor: "active" },
+    
   ];
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
   const [selectDrawerValue, setSelectedDrawerValue] = useState();
 
-  const totalPages = Math.ceil(finalData.length / itemsPerPage);
-
-  const handlePageChange = (newPage: number) => {
-    setCurrentPage(newPage);
-  };
-
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const usersToDisplay = finalData.slice(startIndex, endIndex);
   
-useEffect(()=>{
-  if(selectedRow?.id){
-    const res = finalData.find(
-      (item: any) => item.id === selectedRow?.id
-    );
-    setSelectedDrawerValue(res)
-  }else{
-    setSelectedDrawerValue(undefined)
-  }
-},[selectedRow, selectDrawerValue])
+
+  useEffect(() => {
+    if (selectedRow?.id) {
+      const res = finalData.find((item: any) => item.id === selectedRow?.id);
+      setSelectedDrawerValue(res);
+    } else {
+      setSelectedDrawerValue(undefined);
+    }
+  }, [selectedRow, selectDrawerValue]);
 
   return (
     <>
@@ -245,7 +208,7 @@ useEffect(()=>{
               </Select>
             </FormControl>
           </Box>
-          <Box className="sessionEchart" sx={styles.sessionUser}>
+          <Box className="sessionEchart" sx={styles.sessionUser2}>
             <ReactEcharts option={SESSION_USER_CHART} />
           </Box>
         </Grid>
@@ -260,65 +223,21 @@ useEffect(()=>{
           <Typography variant="h5" mb={4}>
             Top 5 Active Users
           </Typography>
-          <Grid container sx={styles.activeUser}>
-            <Grid xl={8} xs={7}>
-              <Typography>John White</Typography>
-            </Grid>
-            <Grid xl={4} xs={5}>
-              <Box sx={styles.user1}>
-                <Typography>100</Typography>
-                <ReactEcharts option={USER_1} />
-              </Box>
-            </Grid>
-          </Grid>
-
-          <Grid container sx={styles.activeUser}>
-            <Grid xl={8} xs={7}>
-              <Typography>George Mayer</Typography>
-            </Grid>
-            <Grid xl={4} xs={5}>
-              <Box sx={styles.user1}>
-                <Typography>100</Typography>
-                <ReactEcharts option={USER_2} />
-              </Box>
-            </Grid>
-          </Grid>
-
-          <Grid container sx={styles.activeUser}>
-            <Grid xl={8} xs={7}>
-              <Typography>Cindy Sherman</Typography>
-            </Grid>
-            <Grid xl={4} xs={5}>
-              <Box sx={styles.user1}>
-                <Typography>100</Typography>
-                <ReactEcharts option={USER_1} />
-              </Box>
-            </Grid>
-          </Grid>
-
-          <Grid container sx={styles.activeUser}>
-            <Grid xl={8} xs={7}>
-              <Typography>Barbara Kruger</Typography>
-            </Grid>
-            <Grid xl={4} xs={5}>
-              <Box sx={styles.user1}>
-                <Typography>100</Typography>
-                <ReactEcharts option={USER_2} />
-              </Box>
-            </Grid>
-          </Grid>
-
-          <Grid container sx={styles.activeUser}>
-            <Grid xl={8} xs={7}>
-              <Typography>Michael Black</Typography>
-            </Grid>
-            <Grid xl={4} xs={5}>
-              <Box sx={styles.user1}>
-                <Typography>100</Typography>
-                <ReactEcharts option={USER_3} />
-              </Box>
-            </Grid>
-          </Grid>
+          {SESSION_GRAPH.map((item: any, i: number) => {
+            return (
+              <Grid container sx={styles.activeUser} key={i.toString()}>
+                <Grid xl={8} xs={7}>
+                  <Typography sx={styles.typography}>{item.title}</Typography>
+                </Grid>
+                <Grid xl={4} xs={5}>
+                  <Box sx={styles.user1}>
+                    <Typography sx={styles.typography}>{item.value}</Typography>
+                    <ReactEcharts option={item.chart} />
+                  </Box>
+                </Grid>
+              </Grid>
+            );
+          })}
         </Grid>
       </Grid>
       {/* search */}
@@ -552,24 +471,22 @@ useEffect(()=>{
           </FormControl>
         </Grid>
 
-        <Button
-            sx={styles.moreSelected}
-          >
-            <Image src={filter} alt="" width={15} height={15} />
-            More Filters
-
-          </Button>
+        <Button sx={styles.moreSelected}>
+          <Image src={filter} alt="" width={15} height={15} />
+          More Filters
+        </Button>
       </Grid>
       <Box sx={styles.sessionTableRow}>
         <CustomTable
-          rows={usersToDisplay}
+          rows={finalData}
           column={SESSION_EXPLORE_TABLE_HEADER}
           setOpenModal={setOpenModal}
           isSwitch={false}
           setSelectedRow={setSelectedRow}
           isTableHead={true}
+          isPagination={true}
         />
-        <Grid container justifyContent="space-between" mt={5}>
+        {/* <Grid container justifyContent="space-between" mt={5}>
           <Grid lg={5.5} sm={3} xs={4}>
             <button
               className="prev"
@@ -579,7 +496,7 @@ useEffect(()=>{
               Previous
             </button>
           </Grid>
-          <Grid lg={5} sm={3} xs={5} >
+          <Grid lg={5} sm={3} xs={5}>
             <Typography>
               <span className="current">
                 {currentPage} Out of {totalPages}
@@ -595,7 +512,7 @@ useEffect(()=>{
               Next
             </button>
           </Grid>
-        </Grid>
+        </Grid> */}
         <CustomDialog
           thead={"session"}
           openModal={openModal}

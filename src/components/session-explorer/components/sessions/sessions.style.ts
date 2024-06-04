@@ -303,8 +303,8 @@ export const styles = {
     activeUser:{
       borderBottom: "1px solid #D0D5DD",
       paddingBottom:'9px',
-      marginBottom:'11px',
-      height:'37px',
+      marginBottom:'15px',
+      height:'34px',
       "&:last-child":{
         borderBottom: "unset",
         paddingBottom:'0px',
@@ -316,6 +316,19 @@ export const styles = {
         "canvas":{
           left: "-3vw !important",
           width: "65vw !important"
+        }
+      }
+    },
+    sessionUser2:{
+      ".echarts-for-react":{
+        "canvas":{
+          left: "-2vw !important",
+          width: "68vw !important",
+          top: "3vw !important",
+          "@media screen and (max-width:1440px)":{
+            left: "-4vw !important",
+            width:" 66vw !important"
+          }
         }
       }
     },
@@ -340,6 +353,9 @@ export const styles = {
       display: "flex",
       gap: "10px",
       marginTop: "13px"
+    },
+    typography:{
+      fontSize:'14px'
     }
   };
   

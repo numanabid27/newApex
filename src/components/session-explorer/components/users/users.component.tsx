@@ -18,6 +18,7 @@ import {
   SESSION_USER_CHART
 } from "../sessions/session.constant";
 import { SESSION_GRAPH } from "./session-user.constant";
+import Image from "next/image";
 
 export default function Users() {
   const {
@@ -205,7 +206,15 @@ export default function Users() {
       header: "Sessions",
       accessor: "sessions",
     },
-    { id: 10, header: "Usage", accessor: "usage" },
+    { id: 10, 
+      header: "Usage", 
+      accessor: "usage",
+      cell: (data: any) => {
+        return (
+          <Image src={data} alt="" width={100} height={35} />
+        )
+      }
+    },
   ];
 
   return (

@@ -65,7 +65,7 @@ function CustomTable({
         sx={{ ...styles.tableSecInner }}
         className={!isPolicy ? "tables" : ""}
       >
-        <Box>
+        <Box className="tableOverflow">
           <Table sx={styles.table} size="medium" width="100%">
             {isTableHead && (
               <TableHead>

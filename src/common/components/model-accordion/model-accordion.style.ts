@@ -199,7 +199,7 @@ export const styles = {
   },
   label:{
     color:"#667085",
-    fotmSize:'12px',
+    fontSize:'12px',
     fontWeight:400,
     paddingBottom:'4px'
   },

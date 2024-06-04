@@ -37,8 +37,10 @@ function Policies() {
 
   const policiesTypes = [
     { id: 1, value: "GDPR", checkedValue: true, enable: true },
-    { id: 2, value: "HIPAA", checkedValue: false, enable: false },
+    { id: 2, value: "Nist Ai RMF", checkedValue: true, enable: true },
     { id: 3, value: "HIPAA", checkedValue: false, enable: false },
+    { id: 4, value: "EU AI Act", checkedValue: false, enable: false },
+    { id: 5, value: "Mitre ATLAS", checkedValue: true, enable: true },
   ];
 
   // for future purpose

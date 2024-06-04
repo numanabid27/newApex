@@ -509,7 +509,7 @@ export default function CreatePolicy() {
                 variant="outlined"
               />
             </Box>
-            <Box sx={style.multiSelect}  alignItems={{sm:'center', xs:'flex-start'}}
+            <Box sx={style.multiSelect} className="multiSelectField"  alignItems={{sm:'center', xs:'flex-start'}}
               flexDirection={{sm:'row', xs:'column'}}>
               <InputLabel sx={style.label}>Groups</InputLabel>
               <Select

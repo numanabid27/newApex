@@ -32,6 +32,7 @@ export default function CustomDialog({
   selectedRow,
   setIsModel,
   issues,
+  isMessage=false
 }: any) {
   const [expandValue, setExpandValue] = useState(true);
   return (
@@ -52,7 +53,7 @@ export default function CustomDialog({
               setOpenModal={setOpenModal}
             />
           )}
-          {thead === "session" && <SessionAccordion newData={newData} />}
+          {thead === "session" && <SessionAccordion newData={newData} isMessage={isMessage} />}
           {thead === "issue" && <ModelAccordian modelData={openModal} />}
         </DialogContent>
         {thead == "session" && (

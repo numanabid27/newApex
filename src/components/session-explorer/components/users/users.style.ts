@@ -19,16 +19,19 @@ export const userStyle = {
       },
     },
   },
-  activeUser: {
+  typography:{
+    fontSize:'14px',
+  },
+  activeUser:{
     borderBottom: "1px solid #D0D5DD",
-    paddingBottom: "9px",
-    marginBottom: "11px",
-    height: "37px",
-    "&:last-child": {
+    paddingBottom:'9px',
+    marginBottom:'15px',
+    height:'34px',
+    "&:last-child":{
       borderBottom: "unset",
-      paddingBottom: "0px",
-      marginBottom: "0px",
-    },
+      paddingBottom:'0px',
+      marginBottom:'0px',
+    }
   },
   user1: {
     ".echarts-for-react": {

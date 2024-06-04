@@ -25,7 +25,13 @@ export const modelStyle = {
             color:"#1849A9",
             fontWeight:700,
             height:'27px',
-            background:"#D1E9FF"
+            background:"#D1E9FF",
+            padding:"10px 12px",
+            display: "flex",
+            gap: "6px"
+        },
+        "span":{
+            padding:"0px"
         }
     },
     insites:{
@@ -97,5 +103,30 @@ export const modelStyle = {
                 fontWeight:700,
             }
         }
+    },
+    message:{
+        padding:'9px 20px'
+    },
+    receiveBox:{
+        background:"#F2F4F7",
+        padding:'13px 20px',
+        borderRadius:'8px'
+    },
+    mesg:{
+        color:"#374151",
+        fontSize:'14px',
+    },
+    msgTime:{
+        color:"#98A2B3",
+        fontSize:'14px',
+        paddingTop: "4px"
+    },
+    copyIcon:{
+        cursor:'pointer',
+        color:"#98A2B3",
+    },
+    chatHeader:{
+       
+        
     }
 }

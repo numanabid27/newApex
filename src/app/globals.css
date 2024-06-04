@@ -441,7 +441,7 @@ body {
 
 .mutiSelect .basic-multi-select {
   position: absolute !important;
-  right: -7px;
+  right: 34px;
   width: 89%;
 }
 .addField .MuiTextField-root{
@@ -449,7 +449,7 @@ body {
 }
 .mutiSelect .select__control{
   height: 56px;
-  width: 44%;
+  width: 44.8%;
 }
 .mutiSelect .select__menu{
   width: 44% !important;
@@ -484,8 +484,48 @@ body {
   padding: 17px 17px;
   border-top: 1px solid #EAECF0;
 }
-
-
+.tableOverflow{
+  overflow-x: scroll;
+}
+.tableOverflow::-webkit-scrollbar {
+  width: 2px;
+  height: 10px;
+}
+.tableOverflow::-webkit-scrollbar-track {
+  background: #fff; 
+}
+.tableOverflow::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+.list{
+  margin: 0;
+}
+.list li{
+  font-size: 12px;
+  padding-bottom: 7px;
+}
+.addField .MuiInputBase-root{
+  border-radius: 8px;
+}
+.multiSelectField .select__control{
+  border-radius: 8px;
+}
+.issueTbaleChip button span{
+  padding: 0px;
+}
+.issueTbaleChip button .MuiChip-root{
+  gap: 6px;
+  padding: 15px 11px;
+}
+.issueTbaleChip button:hover{
+  background-color: transparent !important;
+}
+.chatHeader .MuiSvgIcon-root{
+  opacity: 0;
+}
+.chatHeader:hover .MuiSvgIcon-root{
+  opacity: 1;
+}
 
 @media screen and (min-width: 1600px) {
   .sessionEchart .echarts-for-react {
@@ -516,6 +556,12 @@ body {
 @media screen and (max-width:1440px){
   .box_title{
     font-size: 16px !important;
+  }
+  .mutiSelect .basic-multi-select {
+    right: -6px;
+  }
+  .mutiSelect .select__control{
+    width: 44.2%;
   }
 }
 @media screen and (max-width: 1100px) {
