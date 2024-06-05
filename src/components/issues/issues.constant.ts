@@ -2125,6 +2125,7 @@ return response.json()
     engine: ["Gpt 3 5 Turbo"],
     tags: "LLM06",
     status: "Open",
+    email: ["sara.loh@company.com"],
     context: "File path",
     policiesData: [
       {
@@ -2273,6 +2274,7 @@ return response.json()
     engine: ["Gpt 3 5 Turbo"],
     tags: "LLM06",
     status: "Open",
+    email:["jane.doe@company.com"],
     context: "File path",
     code:
     `
@@ -2419,6 +2421,7 @@ void useVulnerablePackage() {
     engine: ["Gpt 3 5 Turbo"],
     tags: "LLM06",
     status: "Open",
+    email:["alex.kim@company.com"],
     context: "File path",
     policiesData: [
       {
@@ -2552,6 +2555,7 @@ void useVulnerablePackage() {
     engine: ["Gpt 3 5 Turbo"],
     tags: "LLM06",
     status: "Open",
+    email:["alex.kim@company.com"],
     context: "File path",
     code:`
 // Function call example
@@ -2689,6 +2693,7 @@ uploadSensitiveFiles('alex.kim@company.com', ['Customer_Data_List.xlsx', 'Employ
     engine: ["Gpt 3 5 Turbo"],
     tags: "LLM06",
     status: "Open",
+    email:["sara.leh@company.com"],
     context: "File path",
     code:`
 # Example of text containing private keys
