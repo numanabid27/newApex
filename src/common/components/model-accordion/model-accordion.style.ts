@@ -145,7 +145,12 @@ export const styles = {
   listBox:{
     border: "1px solid #D0D5DD",
     padding: "9px 23px",
-    borderRadius: "8px"
+    borderRadius: "8px",
+    "span":{
+      width:'10px',
+      height:'10px',
+      borderRadius:"50%"
+    }
   },
   resolved:{
     background:"#027A48",

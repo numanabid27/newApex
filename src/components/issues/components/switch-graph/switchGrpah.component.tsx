@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import apx from "@/common/assets/images/apx.svg";
 import Image from "next/image";
 import leftarrow from "@/common/assets/images/rightArrow.png";
@@ -11,6 +11,10 @@ import safe from "@/common/assets/images/safe-gaurd.svg";
 import { styles } from "../../issues.style";
 
 const SwitchGraph = () => {
+  const [isHover, setIsHover] = useState(false)
+  useEffect(()=>{
+    setIsHover(true);
+  }, [])
   const data = [
     {
       id: 1,
@@ -71,7 +75,7 @@ const SwitchGraph = () => {
       alignItems="center"
       justifyContent="center"
       margin="27px 0px"
-      sx={styles.switchBox}
+      sx={!isHover ? styles.switchBox2 : styles.switchBox}
     >
       <Box display="flex" alignItems="flex-end">
         <Box>

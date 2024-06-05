@@ -97,6 +97,8 @@ export const styles = {
     },
     switchBox:{
         cursor: "pointer",
+       transform:'scale(1)',
+       transition:'1s',
         "@media screen and (max-width:767px)":{
             zoom: 0.34,
             margin: "57px 0"
@@ -122,5 +124,10 @@ export const styles = {
     },
     voilationTitle:{
         fontSize:'14px'
+    },
+    switchBox2:{
+        transform:'scale(0.4)',
+        transformOrigin:"left",
+        transition:'1s',
     }
 }

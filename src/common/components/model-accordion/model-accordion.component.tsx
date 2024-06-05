@@ -42,7 +42,7 @@ import EastIcon from "@mui/icons-material/East";
 function ModelAccordian({ modelData }: any) {
   const { expanded, handleChange } = useModalAccordion();
   const [ishide, setIsHide] = useState(false);
-  const [isValue, setIsValue] = useState("New");
+  const [isValue, setIsValue] = useState<any>("New");
   const [isShow, setIsShow] = useState(false);
 
   const handleClick = () => {
@@ -62,6 +62,8 @@ function ModelAccordian({ modelData }: any) {
     },
   ];
 
+
+
   return (
     <Box sx={styles.modelGradient}>
       <Box sx={styles.sideModel}>
@@ -71,14 +73,13 @@ function ModelAccordian({ modelData }: any) {
           <Grid xs={7.5} display="flex" alignItems="center" gap="18px">
             <Box position="relative">
               <Button onClick={handleClick} sx={styles.listBox}>
-                {isValue ? (
-                  <>{isValue}</>
-                ) : (
-                  <>
-                    {" "}
-                    New <KeyboardArrowDownIcon />
-                  </>
-                )}
+              <span
+                style={{
+                  backgroundColor: isValue === "New" ? "#FACF15" : isValue === "In progress" ? "#2E90FA" : "",
+                  marginRight:'10px'
+                }}
+              ></span>
+              {isValue}
               </Button>
               {ishide && (
                 <List sx={styles.list}>
