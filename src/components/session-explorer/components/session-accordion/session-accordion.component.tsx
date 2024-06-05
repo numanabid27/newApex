@@ -23,9 +23,13 @@ import users from "@/common/assets/images/user-round.svg";
 import saprk from "@/common/assets/images/reply-user.svg";
 import { MESSAGES } from "../sessions/session.constant";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import useSessionAccordion from "./use-session-accordion.hook";
+import DoneIcon from '@mui/icons-material/Done';
 
 export const SessionAccordion = ({ newData, isMessage }: any) => {
-  const { expanded, handleChange } = useModalAccordion();
+  const { expanded, handleChange} = useModalAccordion();
+  const { handleCopy, isCopy } = useSessionAccordion()
+ 
   return (
     <Box>
       <Accordion
@@ -168,7 +172,12 @@ export const SessionAccordion = ({ newData, isMessage }: any) => {
                           </Typography>
                         </Box>
                         <Box sx={modelStyle.copyIcon}>
-                          <ContentCopyIcon /> 
+                          {
+                            isCopy === item.id ?
+                            <DoneIcon />
+                            :
+                            <ContentCopyIcon onClick={()=>handleCopy(item.id, item)} /> 
+                          }
                         </Box>
                       </Box>
                     </Box>

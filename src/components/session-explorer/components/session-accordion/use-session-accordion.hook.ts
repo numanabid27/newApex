@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SESSION_ACCORDION_DATA } from "../../session-explore.constant";
 
 export default function useSessionAccordion() {
@@ -27,9 +27,36 @@ export default function useSessionAccordion() {
     }
   };
 
+  const [isCopy, setIsCopy] = useState('');
+  const handleCopy = async (id: any,data:any) => {
+    try {
+      let textToCopy = `${data.reply}\n\n`;
+      if(data.replyList && data.replyList.length >= 0){
+        data.replyList.forEach((replyItem:any) => {
+          textToCopy += `- ${replyItem.list}\n`;
+        });
+      }
+     
+      await navigator.clipboard.writeText(textToCopy);
+      setIsCopy(id);
+    
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+  };
+
+  useEffect(() => {
+    setTimeout(()=>{
+      setIsCopy('')
+    }, 1000)
+  }, [isCopy])
+  
+
   return {
     itemStates,
     copyToClipboard,
     SESSION_ACCORDION_DATA,
+    isCopy,
+    handleCopy
   };
 }
