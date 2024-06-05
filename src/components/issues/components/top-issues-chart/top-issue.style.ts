@@ -78,6 +78,10 @@ export const TopIssuesStyling = {
     fontSize:'50px',
     fontWeight:200,
     lineHeight: 0.7,
+    "@media screen and (max-width:800px)":{
+      fontSize:'32px',
+      padding: "32px 0 0"
+    }
   },
   borders:{
     borderRight:" 1px solid #D0D5DD",

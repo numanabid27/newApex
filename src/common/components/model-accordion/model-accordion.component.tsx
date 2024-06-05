@@ -44,6 +44,7 @@ function ModelAccordian({ modelData }: any) {
   const { expanded, handleChange } = useModalAccordion();
   const [ishide, setIsHide] = useState(false);
   const [isValue, setIsValue] = useState("New");
+  const [isShow, setIsShow] = useState(false);
 
   const handleClick = () => {
     setIsHide(!ishide);
@@ -61,15 +62,7 @@ function ModelAccordian({ modelData }: any) {
       title: isValue == "New" ? "In progress" : "New",
     },
   ];
-  // const [string, setString] = useState([]);
-  // const string1 = [];
-  // const addstring = (value) => {
-  //   setString((prev) => [...prev, value]);
-  //   string1.unshift(value);
-  //   string1.push(value);
-
-  //   // setString([...string,value])
-  // };
+  
   return (
     <Box sx={styles.modelGradient}>
       <Box sx={styles.sideModel}>
@@ -334,7 +327,8 @@ function ModelAccordian({ modelData }: any) {
 
             <Grid container alignItems="center" sx={styles.evidance_grid}>
               <Grid xs={12}>Code</Grid>
-              <Grid xs={12} sx={styles.code}>
+            
+                <Grid xs={12} sx={styles.code}>
                 <pre style={{ margin: "0px", color: "#374151" }}>
                   {`
 // Import the package here
@@ -343,16 +337,30 @@ import MyPackage from 'my-package';
 export default function handler(req, res) {...
                   `}
                 </pre>
+                {
+                isShow &&
+                <pre style={{ margin: "0px", color: "#374151" }}>
+                  {`
+// Import the package here
+import MyPackage from 'my-package';
+// You can then use your package within this API route
+export default function handler(req, res) {...
+                  `}
+                </pre>
+                 }
                 <Button
                   sx={{
                     color: "#2E90FA",
                     fontSize: "14px",
                     textTransform: "capitalize",
                   }}
+                  onClick={()=>{setIsShow(!isShow)}}
                 >
-                  Show more...
+                  {isShow ? "Show less..." : "Show more..."}
                 </Button>
               </Grid>
+             
+             
               <Button sx={styles.more}>
                 Show more Evidence <SouthIcon />
               </Button>

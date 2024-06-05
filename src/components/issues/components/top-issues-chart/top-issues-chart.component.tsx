@@ -72,7 +72,7 @@ function TopIssuesChart({ aiBoom }: any) {
         </>
       ) : (
         <>
-          <Box display="flex" alignItems="center" justifyContent="center" gap="18px">
+          <Box display="flex" alignItems="center" flexDirection={{sm:'row', xs:'column'}} justifyContent="center" gap="18px">
             <Typography sx={TopIssuesStyling.headerText}>
               Unresolved issues
             </Typography>

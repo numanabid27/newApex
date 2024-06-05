@@ -96,7 +96,11 @@ export const styles = {
         }
     },
     switchBox:{
-        cursor: "pointer"
+        cursor: "pointer",
+        "@media screen and (max-width:767px)":{
+            zoom: 0.34,
+            margin: "57px 0"
+        }
     },
     openIssue:{
         color:"#98A2B3",

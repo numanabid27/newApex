@@ -155,7 +155,7 @@ function Issues() {
   
   return (
     <Box sx={styles.issueGrid}>
-      <Box display="flex" gap="10px" justifyContent="flex-end" mt={5}>
+      <Box display="flex" gap="10px" justifyContent="flex-end" flexDirection={{sm:'row', xs:'column'}} mt={5}>
         <ButtonComponent
           title="Switch graph"
           icon={switchGraph}
