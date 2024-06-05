@@ -12,6 +12,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SouthIcon from "@mui/icons-material/South";
 import hub from "@/common/assets/images/hub.svg";
+import NorthIcon from "@mui/icons-material/North";
 import {
   Accordion,
   AccordionDetails,
@@ -39,8 +40,6 @@ import ReactEcharts from "echarts-for-react";
 import EastIcon from "@mui/icons-material/East";
 
 function ModelAccordian({ modelData }: any) {
-
-
   const { expanded, handleChange } = useModalAccordion();
   const [ishide, setIsHide] = useState(false);
   const [isValue, setIsValue] = useState("New");
@@ -62,7 +61,7 @@ function ModelAccordian({ modelData }: any) {
       title: isValue == "New" ? "In progress" : "New",
     },
   ];
-  
+
   return (
     <Box sx={styles.modelGradient}>
       <Box sx={styles.sideModel}>
@@ -105,7 +104,7 @@ function ModelAccordian({ modelData }: any) {
             <Button sx={styles.resolved}>Resolve</Button>
           </Grid>
         </Grid>
-       
+
         <Accordion
           expanded={expanded.includes("panel1")}
           onChange={handleChange("panel1")}
@@ -172,12 +171,11 @@ function ModelAccordian({ modelData }: any) {
                     <Typography sx={styles.label}>Mesages</Typography>
                     <Box display="flex" alignItems="center" gap="11px">
                       <Typography variant="h6">{items.messages[0]}</Typography>
-                      {
-                        items.messages && items.messages[1].includes("+") ?  
+                      {items.messages && items.messages[1].includes("+") ? (
                         <Image src={arrowUp} alt="" width={15} height={15} />
-                        :
+                      ) : (
                         <Image src={arrowDown} alt="" width={15} height={15} />
-                      }
+                      )}
                       <Typography sx={styles.msg}>
                         {items.messages[1]}
                         <span>from org</span>
@@ -188,11 +186,11 @@ function ModelAccordian({ modelData }: any) {
                     <Typography sx={styles.label}>Sessions</Typography>
                     <Box display="flex" alignItems="center" gap="11px">
                       <Typography variant="h6">{items.sessions[0]}</Typography>
-                      {items.sessions && items.sessions[1].includes("-") ?  
+                      {items.sessions && items.sessions[1].includes("-") ? (
                         <Image src={arrowDown} alt="" width={15} height={15} />
-                        :
+                      ) : (
                         <Image src={arrowUp} alt="" width={15} height={15} />
-                      }
+                      )}
                       <Typography sx={styles.msg}>
                         {items.sessions[1]}
                         <span>from org</span>
@@ -206,7 +204,19 @@ function ModelAccordian({ modelData }: any) {
                         return (
                           <IconButton sx={styles.iconBtn} key={i.toString()}>
                             <Chip
-                              label={<><span style={{fontWeight:600, paddingRight:'5px'}}>{innerItem.value}</span>{innerItem.name}</>}
+                              label={
+                                <>
+                                  <span
+                                    style={{
+                                      fontWeight: 600,
+                                      paddingRight: "5px",
+                                    }}
+                                  >
+                                    {innerItem.value}
+                                  </span>
+                                  {innerItem.name}
+                                </>
+                              }
                               sx={{
                                 ...styles.severityChip,
                                 color:
@@ -258,8 +268,13 @@ function ModelAccordian({ modelData }: any) {
                   <Box sx={styles.box}>
                     <Typography sx={styles.label}>Categories</Typography>
                     <Box display="flex">
-                      <Typography fontSize="14px">{items.categories[0]}</Typography>,
-                      <Typography fontSize="14px">{items.categories[1]}</Typography>
+                      <Typography fontSize="14px">
+                        {items.categories[0]}
+                      </Typography>
+                      ,
+                      <Typography fontSize="14px">
+                        {items.categories[1]}
+                      </Typography>
                     </Box>
                   </Box>
                 </Box>
@@ -284,86 +299,100 @@ function ModelAccordian({ modelData }: any) {
             </Typography>
           </AccordionSummary>
           <AccordionDetails sx={styles.desc}>
-            {
-              modelData?.name?.includes("Github Copilot collected and sent 3 API keys") ? 
+            {modelData?.name?.includes(
+              "Github Copilot collected and sent 3 API keys"
+            ) ? (
               <>
-                 <Grid container alignItems="flex-start" sx={styles.evidance_grid}>
-                    <Grid xs={3}>
-                      Secrets
-                    </Grid>
-                    <Grid xs={8} >
-                      <Typography variant="h6" pb={2}>api_key_1 = "ABC12345DEF67890GHIJ"</Typography>
-                      <Typography variant="h6" pb={2}>api_key_2 = "JKL98765MNO43210PQRS"</Typography>
-                      <Typography variant="h6">api_key_3 = "TUV54321WXY09876ZABC"</Typography>
-                    </Grid>
-                  </Grid>
-              </>
-              :
-              <>
-                  <Grid container alignItems="center" sx={styles.evidance_grid}>
-                    <Grid xs={3}>
-                      Email
-                    </Grid>
-                    <Grid xs={8} display="flex" gap="10px">
-                      {
-                        modelData?.email?.map((item:any, i:number)=>{
-                          return(
-                            <Chip label={item} key={i.toString()} />
-                          )
-                        })
-                      }
-                    </Grid>
-                  </Grid>
-                  <Grid container alignItems="center" sx={styles.evidance_grid}>
-                    <Grid xs={3}>Credit Card</Grid>
-                    <Grid xs={8} display="flex" gap="10px">
-                      <Typography variant="h6">1008-****-****-****-9449</Typography>
-                    </Grid>
-                  </Grid>
-              </>
-              
-            }
-           
-
-            <Grid container alignItems="center" sx={styles.evidance_grid}>
-              <Grid xs={12}>Code</Grid>
-            
-                <Grid xs={12} sx={styles.code}>
-                <pre style={{ margin: "0px", color: "#374151" }}>
-                  {`
-// Import the package here
-import MyPackage from 'my-package';
-// You can then use your package within this API route
-export default function handler(req, res) {...
-                  `}
-                </pre>
-                {
-                isShow &&
-                <pre style={{ margin: "0px", color: "#374151" }}>
-                  {`
-// Import the package here
-import MyPackage from 'my-package';
-// You can then use your package within this API route
-export default function handler(req, res) {...
-                  `}
-                </pre>
-                 }
-                <Button
-                  sx={{
-                    color: "#2E90FA",
-                    fontSize: "14px",
-                    textTransform: "capitalize",
-                  }}
-                  onClick={()=>{setIsShow(!isShow)}}
+                <Grid
+                  container
+                  alignItems="flex-start"
+                  sx={styles.evidance_grid}
                 >
-                  {isShow ? "Show less..." : "Show more..."}
+                  <Grid xs={3}>Secrets</Grid>
+                  <Grid xs={8}>
+                    <Typography variant="h6" pb={2}>
+                      api_key_1 = "ABC12345DEF67890GHIJ"
+                    </Typography>
+                    <Typography variant="h6" pb={2}>
+                      api_key_2 = "JKL98765MNO43210PQRS"
+                    </Typography>
+                    <Typography variant="h6">
+                      api_key_3 = "TUV54321WXY09876ZABC"
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </>
+            ) : (
+              <>
+                <Grid container alignItems="center" sx={styles.evidance_grid}>
+                  <Grid xs={3}>Email</Grid>
+                  <Grid xs={8} display="flex" gap="10px">
+                    {modelData?.email?.map((item: any, i: number) => {
+                      return <Chip label={item} key={i.toString()} />;
+                    })}
+                  </Grid>
+                </Grid>
+                <Grid container alignItems="center" sx={styles.evidance_grid}>
+                  <Grid xs={3}>Credit Card</Grid>
+                  <Grid xs={8} display="flex" gap="10px">
+                    <Typography variant="h6">
+                      1008-****-****-****-9449
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </>
+            )}
+            <Grid container alignItems="center" sx={styles.evidance_grid}>
+              {modelData.code && (
+                <>
+                  <Grid xs={12}>Code</Grid>
+                  <Grid xs={12} sx={styles.code}>
+                    <pre style={{ margin: "0px", color: "#374151" }}>
+                      {modelData.code}
+                    </pre>
+                    {/* <Button
+                    sx={{
+                      color: "#2E90FA",
+                      fontSize: "14px",
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    Show more...
+                  </Button> */}
+                  </Grid>
+                </>
+              )}
+
+              {modelData.shareFile && (
+                <>
+                  {isShow && (
+                    <Grid xs={12} sx={styles.code}>
+                      <pre style={{ margin: "0px", color: "#374151" }}>
+                        {modelData.shareFile}
+                      </pre>
+                    </Grid>
+                  )}
+                </>
+              )}
+
+              {modelData.shareFile && modelData.shareFile ? (
+                <Button
+                  sx={styles.more}
+                  onClick={() => {
+                    setIsShow(!isShow);
+                  }}
+                >
+                  {isShow ? (
+                    <>
+                      Show less Evidence <NorthIcon />
+                    </>
+                  ) : (
+                    <>
+                      Show more Evidence <SouthIcon />
+                    </>
+                  )}
                 </Button>
-              </Grid>
-             
-             
-              <Button sx={styles.more}>
-                Show more Evidence <SouthIcon />
-              </Button>
+              ) : null}
             </Grid>
           </AccordionDetails>
         </Accordion>
@@ -384,21 +413,23 @@ export default function handler(req, res) {...
             </Typography>
           </AccordionSummary>
           <AccordionDetails sx={styles.desc}>
-            {
-             modelData && modelData?.name?.includes("Github Copilot collected and sent 3 API keys") ? 
+            {modelData &&
+            modelData?.name?.includes(
+              "Github Copilot collected and sent 3 API keys"
+            ) ? (
               <Box sx={styles.issuesInfoBox}>
                 <Typography variant="h6">Violations</Typography>
                 <Typography variant="h5">4</Typography>
               </Box>
-              :
-              modelData && modelData?.name?.includes("Github Copilot suggestion for vulnerable package was approved") ? 
+            ) : modelData &&
+              modelData?.name?.includes(
+                "Github Copilot suggestion for vulnerable package was approved"
+              ) ? (
               <Box sx={styles.issuesInfoBox}>
                 <Typography variant="h6">Violations</Typography>
                 <Typography variant="h5">3</Typography>
               </Box>
-              :
-              null
-            }
+            ) : null}
             <Box>
               <Grid
                 container
@@ -421,9 +452,10 @@ export default function handler(req, res) {...
                       sx={{
                         ...styles.severityChip,
                         color:
-                        modelData.issues && modelData.issues[0] === "Medium"
+                          modelData.issues && modelData.issues[0] === "Medium"
                             ? Colors.brown
-                            : modelData.issues && modelData.issues[0] === "Critical"
+                            : modelData.issues &&
+                              modelData.issues[0] === "Critical"
                             ? Colors.darkBrown
                             : modelData.issues && modelData.issues[0] === "Low"
                             ? Colors.textGreen
@@ -431,9 +463,10 @@ export default function handler(req, res) {...
                             ? Colors.textHigh
                             : "",
                         bgcolor:
-                        modelData.issues && modelData.issues[0] === "Medium"
+                          modelData.issues && modelData.issues[0] === "Medium"
                             ? Colors.primaryWhite
-                            : modelData.issues && modelData.issues[0] === "Critical"
+                            : modelData.issues &&
+                              modelData.issues[0] === "Critical"
                             ? Colors.secondaryWhite
                             : modelData.issues && modelData.issues[0] === "Low"
                             ? Colors.primaryGreen
@@ -446,13 +479,17 @@ export default function handler(req, res) {...
                         <CircleIcon
                           sx={{
                             fill:
-                            modelData.issues &&  modelData.issues[0] === "Medium"
+                              modelData.issues &&
+                              modelData.issues[0] === "Medium"
                                 ? `${Colors.orange} !important`
-                                : modelData.issues && modelData.issues[0] === "Critical"
+                                : modelData.issues &&
+                                  modelData.issues[0] === "Critical"
                                 ? `${Colors.darkBrown} !important`
-                                : modelData.issues && modelData.issues[0] === "High"
+                                : modelData.issues &&
+                                  modelData.issues[0] === "High"
                                 ? Colors.textHight_102
-                                : modelData.issues && modelData.issues[0] === "Low"
+                                : modelData.issues &&
+                                  modelData.issues[0] === "Low"
                                 ? Colors.circleLow
                                 : `${Colors.defaultBrown} !important`,
 
@@ -473,7 +510,9 @@ export default function handler(req, res) {...
                   gap="10px"
                 >
                   <Typography sx={styles.voilation}>Direction</Typography>
-                  <Typography sx={styles.appex}>{modelData.issues && modelData.issues[5]}</Typography>
+                  <Typography sx={styles.appex}>
+                    {modelData.issues && modelData.issues[5]}
+                  </Typography>
                 </Grid>
                 <Grid item sm={3} xs={7} sx={styles.margin}>
                   <Typography sx={styles.voilation}>Last event</Typography>
@@ -483,11 +522,13 @@ export default function handler(req, res) {...
                 </Grid>
                 <Grid item sm={5} xs={4} sx={styles.margin}>
                   <Typography sx={styles.voilation}>Name</Typography>
-                  <Typography sx={styles.appex}>{modelData.issues && modelData.issues[1]}</Typography>
+                  <Typography sx={styles.appex}>
+                    {modelData.issues && modelData.issues[1]}
+                  </Typography>
                 </Grid>
                 <Grid item sm={4} xs={7} sx={styles.margin}>
                   <Typography sx={styles.voilation}>Users</Typography>
-                  <Typography sx={styles.appex} >
+                  <Typography sx={styles.appex}>
                     {modelData.issues && modelData.issues[6]}
                   </Typography>
                 </Grid>
@@ -501,18 +542,16 @@ export default function handler(req, res) {...
                   <Typography sx={styles.voilation}>
                     Violation category
                   </Typography>
-                  {
-                    modelData.issues && modelData.issues[2].map((item:any,i:number)=>{
+                  {modelData.issues &&
+                    modelData.issues[2].map((item: any, i: number) => {
                       const isLastItem = i === modelData.users.length - 1;
-                      return(
+                      return (
                         <Typography sx={styles.appex} key={i.toString()}>
                           {item}
                           {!isLastItem && ","}
                         </Typography>
-                      )
-                    })
-                  }
-                 
+                      );
+                    })}
                 </Grid>
                 <Grid item sm={4} xs={8} sx={styles.margin}>
                   <Typography sx={styles.voilation}>Source</Typography>
@@ -560,23 +599,21 @@ export default function handler(req, res) {...
                 <Grid item sm={4} xs={8} sx={styles.margin}>
                   <Typography sx={styles.voilation}>Engine</Typography>
                   <Typography sx={styles.appex} display="flex" gap="10px">
-                    {
-                      modelData.issues && modelData.issues[8].map((items:any, i:number)=>{
-                       return(
-                        <Chip
-                        key={i.toString()}
-                        label={items}
-                        variant="outlined"
-                        sx={{
-                          ...styles.severityChip2,
-                          color: "#374151",
-                          p: 0,
-                        }}
-                      />
-                       )
-                      })
-                    }
-                    
+                    {modelData.issues &&
+                      modelData.issues[8].map((items: any, i: number) => {
+                        return (
+                          <Chip
+                            key={i.toString()}
+                            label={items}
+                            variant="outlined"
+                            sx={{
+                              ...styles.severityChip2,
+                              color: "#374151",
+                              p: 0,
+                            }}
+                          />
+                        );
+                      })}
                   </Typography>
                 </Grid>
                 <Grid item sm={3} xs={4} sx={styles.margin}>
@@ -593,21 +630,22 @@ export default function handler(req, res) {...
 
                 <Grid item sm={5} xs={8} sx={styles.margin}>
                   <Typography sx={styles.voilation}>Sub-Categories</Typography>
-                  {
-                    modelData.issues && modelData.issues[4].map((item:any,i:number)=>{
+                  {modelData.issues &&
+                    modelData.issues[4].map((item: any, i: number) => {
                       const isLastItem = i === modelData.users.length - 1;
-                      return(
-                        <Typography sx={styles.appex}
+                      return (
+                        <Typography
+                          sx={styles.appex}
                           display="flex"
                           alignItems="center"
-                          gap="10px" key={i.toString()}>
+                          gap="10px"
+                          key={i.toString()}
+                        >
                           {item}
                           {!isLastItem && ","}
-                          
                         </Typography>
-                      )
-                    })
-                  }
+                      );
+                    })}
                   <EastIcon style={{ width: "18px", color: "#2E90FA" }} />
                 </Grid>
                 <Grid item sm={4} xs={8} sx={styles.margin}>

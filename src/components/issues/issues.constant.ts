@@ -1642,6 +1642,7 @@ const SARAH_LEI = {
   ],
 };
 
+
 export const rows = [
   {
     id: 1,
@@ -1656,6 +1657,21 @@ export const rows = [
     status: "Open",
     context: "File path",
     email: ["john.doe@company.com"],
+    code:`
+# Example of text containing sensitive financial information
+financial_files = [
+  "Q1_Financial_Report.xlsx",
+  "Budget_Projections_2024.pdf",
+  "Expense_Analysis_Q1.docx",
+  "Financial_Strategy_Meeting_Notes.txt"
+]               
+  `,
+   shareFile:`
+# Function to share files
+def share_files_with_rd(user_id, files):
+for file in files:
+print(f"Sharing {file} with {user_id}")
+   `,
     policiesData: [
       {
         id: 1,
@@ -1805,6 +1821,21 @@ export const rows = [
     status: "Open",
     context: "File path",
     email: ["john.doe@company.com"],
+    code:`
+# Example of text containing sensitive financial information
+financial_files = [
+  "Q1_Financial_Report.xlsx",
+  "Budget_Projections_2024.pdf",
+  "Expense_Analysis_Q1.docx",
+  "Financial_Strategy_Meeting_Notes.txt"
+]               
+  `,
+   shareFile:`
+# Function to share files
+def share_files_with_rd(user_id, files):
+for file in files:
+print(f"Sharing {file} with {user_id}")
+   `,
     policiesData: [
       {
         id: 1,
@@ -1953,6 +1984,15 @@ export const rows = [
     tags: "LLM06",
     status: "Resolved",
     context: "File path",
+    code:`
+# Function to use API keys
+def access_sensitive_api():
+headers = {
+  "Authorization": f"Bearer {api_key_1}"
+  }
+response = requests.get("https://sensitive-api.com/data", headers=headers)
+return response.json()              
+  `,
     policiesData: [
       {
         id: 1,
@@ -2234,6 +2274,19 @@ export const rows = [
     tags: "LLM06",
     status: "Open",
     context: "File path",
+    code:
+    `
+**Code Snippet in secretSauce.c:**
+
+// Import the package here
+#include <actinis-django-storages.h>
+    
+// Function utilizing the vulnerable package
+void useVulnerablePackage() {
+  // Code that leverages the vulnerable functions
+  VulnerableFunction();
+}               
+  `,
     policiesData: [
       {
         id: 1,
@@ -2500,6 +2553,10 @@ export const rows = [
     tags: "LLM06",
     status: "Open",
     context: "File path",
+    code:`
+// Function call example
+uploadSensitiveFiles('alex.kim@company.com', ['Customer_Data_List.xlsx', 'Employee_Salary_Info.pdf', 'Client_Contracts.docx']);             
+  `,
     policiesData: [
       {
         id: 1,
@@ -2633,6 +2690,16 @@ export const rows = [
     tags: "LLM06",
     status: "Open",
     context: "File path",
+    code:`
+# Example of text containing private keys
+private_keys = [
+  "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEArJq1t...",
+  "-----BEGIN RSA PRIVATE KEY----- MIIEpAIBAAKCAQEArJq1t...",
+  "api_key=12345-ABCDE-67890-FGHIJ-12345"
+]
+for key in private_keys:
+print(key)               
+  `,
     policiesData: [
       {
         id: 1,
