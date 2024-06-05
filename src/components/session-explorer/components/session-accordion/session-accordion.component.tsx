@@ -146,11 +146,23 @@ export const SessionAccordion = ({ newData, isMessage }: any) => {
                       sx={modelStyle.receiveBox}
                     >
                       <Image src={saprk} alt="" />
-                      <Box display="flex" justifyContent="space-between" alignItems="center" width="100%" className="chatHeader">
+                      <Box display="flex" justifyContent="space-between" alignItems="flex-start" width="100%" className="chatHeader">
                         <Box>
                           <Typography variant="h6" sx={modelStyle.mesg}>
                             {item.reply}
                           </Typography>
+                          <ul className="msgList">
+                            {
+                              item.replyList?.map((items:any, i:number)=>{
+                                return(
+                                  <li key={i.toString()}>
+                                    {items.list}
+                                  </li>
+                                )
+                              })
+                            }
+                          </ul>
+                          
                           <Typography sx={modelStyle.msgTime}>
                           {item.time}
                           </Typography>

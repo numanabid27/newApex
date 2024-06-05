@@ -105,7 +105,7 @@ export const modelStyle = {
         }
     },
     message:{
-        padding:'9px 20px'
+        padding:'13px 20px'
     },
     receiveBox:{
         background:"#F2F4F7",

@@ -681,21 +681,92 @@ export const SESSION_EXPLORE_DATA = [
 export const MESSAGES = [
   {
     id:1,
-    userMsg:'hey',
+    userMsg:'Hi ChatGPT, I need some help with hiring content. I am looking at a CV and want to make sure I am asking the right questions in the interview. Can you help me with that?',
     time:'04:53 PM',
-    reply:'Hello! How can i Assist you today?'
+    reply:'Of course! Id be happy to help. Can you tell me a bit about the role you are hiring for and the CV you are reviewing?'
   },
   {
     id:2,
-    userMsg:'hey',
+    userMsg:'Sure. The role is for a Senior Content Manager. The CV has a lot of experience in content creation, team management, and SEO. The candidate has worked at a few well-known companies in the industry. Attached - the hire CV. ',
     time:'04:53 PM',
-    reply:'Hello! How can i Assist you today?'
+    reply:'Great! For a Senior Content Manager, you will want to focus on their strategic thinking, leadership skills, and ability to drive content performance. Here are a few questions you might consider:',
+    replyList:[
+      {
+        id:1,
+        list:'Can you tell me about a time when you developed a content strategy that significantly improved your companys engagement metrics?',
+      },
+      {
+        id:2,
+        list:'How do you prioritize content projects and manage deadlines for a team?',
+      },
+      {
+        id:3,
+        list:'Can you give an example of how you have used SEO to increase organic traffic?',
+      },
+      {
+        id:4,
+        list:' How do you measure the success of your content initiatives?',
+      },
+      {
+        id:5,
+        list:'Can you describe your experience with cross-functional collaboration, particularly with marketing and product teams?',
+      },
+    ]
   },
   {
     id:3,
-    userMsg:'hey',
+    userMsg:' Those are really good questions. The CV also mentions that they have led a team of writers and editors. How can I dig deeper into their leadership skills?',
     time:'04:53 PM',
-    reply:'Hello! How can i Assist you today?'
+    reply:' Leadership is crucial for a Senior Content Manager. Here are some targeted questions to explore their leadership abilities:',
+    replyList:[
+      {
+        id:1,
+        list:'Can you describe your approach to mentoring and developing your team members?',
+      },
+      {
+        id:2,
+        list:'How do you handle conflicts or disagreements within your team?',
+      },
+      {
+        id:3,
+        list:'Can you give an example of a challenging project and how you led your team to overcome obstacles?',
+      },
+      {
+        id:4,
+        list:' How do you ensure your team stays motivated and productive, especially during tight deadlines?',
+      },
+      {
+        id:5,
+        list:'How do you handle feedback, both giving and receiving it?',
+      },
+    ]
+  },
+  {
+    id:4,
+    userMsg:' These are very helpful. The CV also mentions experience with content analytics tools. Should I ask about that too?',
+    time:'04:53 PM',
+    reply:'Absolutely. Understanding their proficiency with content analytics tools is important. You can ask questions like:',
+    replyList:[
+      {
+        id:1,
+        list:'Which content analytics tools are you most familiar with, and how have you used them to drive content strategy?',
+      },
+      {
+        id:2,
+        list:'Can you walk me through a time when you used data to pivot your content approach?',
+      },
+      {
+        id:3,
+        list:'How do you stay updated with the latest trends and tools in content analytics?',
+      }
+    ]
+  },
+  {
+    id:5,
+    userMsg:'This is perfect. Thanks for your help, ChatGPT!',
+    time:'04:53 PM',
+    reply:'You’re welcome! If you have any more questions or need further assistance, feel free to ask. Good luck with your interview!',
+    
   }
 ]
 

@@ -520,12 +520,18 @@ body {
 .issueTbaleChip button:hover{
   background-color: transparent !important;
 }
-.chatHeader .MuiSvgIcon-root{
-  opacity: 0;
+
+.msgList{
+  margin: 0;
 }
-.chatHeader:hover .MuiSvgIcon-root{
-  opacity: 1;
+.msgList li{
+  list-style-type: auto;
+  color: #374151;
+  font-size: 14px;
+  padding-top: 12px;
+  font-weight: 500;
 }
+
 
 @media screen and (min-width: 1600px) {
   .sessionEchart .echarts-for-react {
