@@ -4,7 +4,7 @@ import React, { useState } from "react";
 export const SessionPagination = ({handlePageChange,currentPage , totalPages}:any) => {
     return (
         <>
-            <Grid container alignItems="center" className="session-paginate">
+            <Grid container alignItems="center" className="session-paginate session-paginate2">
                 <Grid lg={5} sm={3} xs={4}>
                 <button
                     className="prev"

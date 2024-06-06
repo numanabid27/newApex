@@ -5,7 +5,7 @@ export const styles = {
        
     },
     mainGrid : {
-        px: "3.5%",
+        px: "4%",
         mb: 8,
         mt:5
     },

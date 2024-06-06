@@ -71,7 +71,7 @@ export const styles = {
     searchInner: {
       border: "1px solid rgba(0, 0, 0, 0.23)",
       borderRadius: "8px",
-      padding: "1px 14px",
+      padding: "0px 14px",
       display: "flex",
       alignItems: "center",
     },
@@ -121,6 +121,7 @@ export const styles = {
       "& .MuiMenuItem-root": {
         fontSize: " 12px !important",
       },
+
     },
     datePicker: {
       paddingLeft: "0px !important",
@@ -158,6 +159,7 @@ export const styles = {
     },
     engine: {
       fontSize: "12px",
+      top: "-4px"
     },
     chip: {
       color: "#027A48",
@@ -229,6 +231,7 @@ export const styles = {
       boxShadow: "0px 1px 3px #8080804a",
       marginBottom: { md: "unset", xs: "10px" },
       padding:'15px 19px',
+      overflow:'hidden',
       "h5":{
         color:Colors.primary_101,
         fontWeight:600,
@@ -326,7 +329,13 @@ export const styles = {
         "canvas":{
           top: "-93px !important",
           width: "14vw !important",
-          left: "33px !important"
+          left: "33px !important",
+          "@media screen and (max-width:1820px)":{
+            width: "12.5vw !important",
+          },
+          "@media screen and (max-width:1440px)":{
+            width: "14vw !important",
+          }
         }
       }
     },
@@ -422,11 +431,11 @@ export const styles = {
       }
     },
     moreSelected:{
-      borderRadius: "10px",
+      borderRadius: "8px",
       color: "#667085",
       fontWeight: 500,
       border: "1px solid #D1D5DB",
-      padding: "11px 17px",
+      padding: "8.5px 17px",
       fontSize:" 12px",
       textTransform: "capitalize",
       display: "flex",

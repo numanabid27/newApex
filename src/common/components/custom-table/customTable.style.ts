@@ -27,7 +27,7 @@ export const styles = {
     bgcolor: "#F9FAFB",
   },
   headcell: {
-    bgcolor: "#F9FAFB",
+    bgcolor: "#F3F4F6",
     py: 2,
     color: "#667085",
     fontWeight: 500,

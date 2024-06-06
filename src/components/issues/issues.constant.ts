@@ -248,12 +248,6 @@ export const FILTERS_DROPDOWN = [
     keyValue: "wengine",
     options: ["GPT 4", "GPT 3.5"],
   },
-  {
-    id: 3,
-    value: "Engine",
-    keyValue: "engine",
-    options: ["GPT 4"],
-  },
   // {
   //   id: 3,
   //   value: "User",

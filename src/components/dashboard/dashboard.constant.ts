@@ -18,7 +18,7 @@ export const ISSUES_PER_ENGINE_DATA = [
     value: 5,
     color: "#D92D20",
   },
-  { id: 3, name: "Github Co-Pilot", value: 3, color: "#F97066" },
+  { id: 3, name: "Github Copilot", value: 3, color: "#F97066" },
   { id: 4, name: "OpenAI GPT4", value: 2, color: "#FDA29B" },
   { id: 5, name: "Google Bard", value: 1, color: "#FEE4E2" },
 ];
@@ -162,14 +162,14 @@ export const ACTIVE_ENGINE_DATA = [
   },
   {
     id: 2,
-    value: "HuggingFace OpenAssistant Llama",
+    value: "HuggingFace OpenAssistant",
     icon: AssistantIcon,
     res: "High amounts of PII sent",
     notification: 5,
   },
   {
     id: 3,
-    value: "Github Co-Pilot",
+    value: "Github Copilot",
     icon: CopilotIcon,
     res: "Access token leakage detected",
     notification: 3,
@@ -185,7 +185,8 @@ export const ACTIVE_ENGINE_DATA = [
     id: 5,
     value: "Google Bard Marketing",
     icon: BardIcon,
-    notification: 1,
+    res: "Good posture",
+    notification: 4,
   },
 ];
 

@@ -16,6 +16,9 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Colors from "@/common/constants/color.constant";
 import CircleIcon from "@mui/icons-material/Circle";
 import { Box, Chip, Typography } from "@mui/material";
+import setting from "@/common/assets/images/settings.svg";
+import Image from "next/image";
+import useWidth from "./use-width.hook";
 
 function Row(props: {
   row: any;
@@ -36,7 +39,7 @@ function Row(props: {
     rowsPerPage,
   } = props;
   const [open, setOpen] = React.useState(false);
-
+  const { windowWidth } = useWidth();
   return (
     <>
       <TableRow sx={styles.tableRow}>
@@ -52,7 +55,14 @@ function Row(props: {
         <TableCell component="th" scope="row">
           {row.lastEvent}
         </TableCell>
-        <TableCell>{row.name}</TableCell>
+        <TableCell width="19%">
+          {
+            windowWidth && windowWidth < 1440 ? 
+            <>{row.name.slice(0, 15) + " ..."}</>
+            :
+            <>{row.name}</>
+          }
+        </TableCell>
         <TableCell>{row.subcategories}</TableCell>
         <TableCell>
           <IconButton sx={styles.iconBtn}>
@@ -129,6 +139,7 @@ function Row(props: {
         </TableCell>
         <TableCell>{row.status}</TableCell>
         <TableCell>{row.context}</TableCell>
+        <TableCell>Aug 14, 2023 10:46 AM</TableCell>
       </TableRow>
 
       <TableRow>
@@ -272,7 +283,7 @@ export default function CollapsibleTable({
   rowsPerPage,
 }: any) {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} className="collapsibeTable">
       <Table aria-label="collapsible table">
         <TableHead>
           <TableRow sx={styles.headerRow}>
@@ -287,6 +298,7 @@ export default function CollapsibleTable({
             <TableCell>Tags</TableCell>
             <TableCell>Status</TableCell>
             <TableCell>Context</TableCell>
+            <TableCell><Box display="flex" alignItems="center" gap="10px"><Image src={setting} alt="" /> First Event</Box></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

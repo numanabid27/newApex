@@ -2,7 +2,7 @@ import Colors from "@/common/constants/color.constant";
 
 export const style ={
     createPolicy:{
-        px: "3.5%",
+        px: "4%",
         my: 5,
     },
     createPolicyGrid:{

@@ -23,7 +23,8 @@ export const CustomLineChart = ({
   title,
   dropdown,
   percentage,
-  aiBoom
+  aiBoom,
+  issuesEngine
 }: any) => {
   const [session, setSession] = useState<any>("All Models");
   const SessionHandler = (event: any) => {
@@ -78,7 +79,7 @@ export const CustomLineChart = ({
           ))}
         </Box>
 
-        <Grid item justifyContent={aiBoom ? "unset": "space-around"} gap={aiBoom ? "16px": "0px"} className="d-flex">
+        <Grid item justifyContent={aiBoom ? "unset": "space-around"} gap={aiBoom ? "16px": "0px"} className={`${aiBoom && "borderTop"} ${issuesEngine && "isssuesEngine"} d-flex`}>
           {chartData.map((item: any) => (
             <Box
               key={item.id}

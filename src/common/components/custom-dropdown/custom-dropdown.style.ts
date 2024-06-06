@@ -26,6 +26,7 @@ export const styles = {
     fontSize: "12px",
     lineHeight: "1.19",
     fontWeight: 600,
+    top: "-3px !important"
   },
   itemText: {
     width: "70px",
@@ -34,7 +35,7 @@ export const styles = {
   options: {
     height: "0px",
     borderRadius: "10px",
-    padding: "21px 6px",
+    padding: "20px 6px",
     color: "#667085",
     fontWeight: "500",
     "& .MuiSvgIcon-root": {
@@ -98,7 +99,7 @@ export const styles = {
     },
   },
   moreSelected:{
-    borderRadius: "10px",
+    borderRadius: "8px",
     color: "#667085",
     fontWeight: 500,
     border: "1px solid #D1D5DB",
@@ -107,5 +108,23 @@ export const styles = {
     textTransform: "capitalize",
     display: "flex",
     gap: "10px"
-  }
+  },
+  datePicker: {
+    paddingLeft: "0px !important",
+    maxWidth: "unset !important",
+    position: "relative",
+    "& .MuiInputLabel-shrink": {
+      top: "2px",
+      margin: "0 0 0 0 !important",
+    },
+    "& .MuiFormLabel-root": {
+      margin: "-2px 0 0 22px",
+    },
+    "& .MuiInputBase-formControl": {
+      flexDirection: "row-reverse",
+    },
+    "& .MuiTextField-root": {
+      minWidth: "unset",
+    },
+  },
 };

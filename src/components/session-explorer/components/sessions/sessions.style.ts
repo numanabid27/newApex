@@ -43,7 +43,7 @@ export const styles = {
       },
     },
     sessionEngineFilter: {
-      padding: "11px 10px",
+      padding: "8.5px 10px",
       borderRadius: "8px",
       "& .MuiSelect-select": {
         padding: "0 18px",
@@ -71,7 +71,7 @@ export const styles = {
     searchInner: {
       border: "1px solid rgba(0, 0, 0, 0.23)",
       borderRadius: "8px",
-      padding: "1px 14px",
+      padding: "0px 14px",
       display: "flex",
       alignItems: "center",
       ".MuiButtonBase-root":{
@@ -227,7 +227,7 @@ export const styles = {
     },
   
     SessionEngine: {
-      
+      overflow:'hidden',
       ml: { lg: 2, md: 1, sm: 0 },
       boxShadow: "0px 1px 3px #8080804a",
       marginBottom: { md: "unset", xs: "10px" },
@@ -236,7 +236,7 @@ export const styles = {
         color:Colors.primary_101,
         fontWeight:600,
         fontSize:'16px',
-        paddingBottom:'10px'
+
       }
     },
     SessionByEngine: {
@@ -343,11 +343,11 @@ export const styles = {
       }
     },
     moreSelected:{
-      borderRadius: "10px",
+      borderRadius: "8px",
       color: "#667085",
       fontWeight: 500,
       border: "1px solid #D1D5DB",
-      padding: "10px 17px",
+      padding: "8.5px 17px",
       fontSize:" 12px",
       textTransform: "capitalize",
       display: "flex",

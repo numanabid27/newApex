@@ -1,4 +1,4 @@
-import { Button, Chip, FormControl, Grid, IconButton, InputLabel, MenuItem, OutlinedInput, Select, Stack } from "@mui/material";
+import { Box, Button, Chip, FormControl, Grid, IconButton, InputLabel, MenuItem, OutlinedInput, Select, Stack } from "@mui/material";
 import DatePicker from "react-datepicker";
 import Image from "next/image";
 import React from "react";
@@ -35,7 +35,7 @@ const Filters = () => {
       >
         <Grid item sm={2} xs={12} sx={styles.engineFilter}>
           <FormControl fullWidth sx={styles.userFormControl}>
-            <InputLabel id="demo-simple-select-label-2" sx={styles.userText}>
+            <InputLabel id="demo-simple-select-label-2" className="interLable" sx={styles.userText}>
               Interface
             </InputLabel>
 
@@ -82,7 +82,7 @@ const Filters = () => {
         </Grid>
         <Grid item sm={2} xs={12} sx={styles.engineFilter}>
           <FormControl sx={styles.formControl}>
-            <InputLabel sx={styles.engine}>Engine</InputLabel>
+            <InputLabel sx={styles.engine} className="interLable2">Engine</InputLabel>
             <Select
               sx={styles.sessionEngineFilter}
               multiple
@@ -122,7 +122,7 @@ const Filters = () => {
 
         <Grid item sm={2} xs={12} sx={styles.engineFilter}>
           <FormControl sx={styles.formControl}>
-            <InputLabel sx={styles.engine}>Topics</InputLabel>
+            <InputLabel sx={styles.engine} className="interLable2">Topics</InputLabel>
             <Select
               sx={styles.sessionEngineFilter}
               multiple
@@ -162,7 +162,7 @@ const Filters = () => {
 
         <Grid item sm={2} xs={12} sx={styles.user}>
           <FormControl fullWidth sx={styles.userFormControl}>
-            <InputLabel id="demo-simple-select-label-3" sx={styles.userText}>
+            <InputLabel id="demo-simple-select-label-3" className="interLable" sx={styles.userText}>
               Status
             </InputLabel>
 
@@ -199,6 +199,8 @@ const Filters = () => {
           <Image src={filter} alt="" width={15} height={15} />
           More Filters
         </Button>
+
+      
       </Grid>
     </>
   );

@@ -230,7 +230,7 @@ export default function Users() {
         >
           <Box sx={styles.BoxStyling}>
             <Typography sx={styles.SessionHeader}>
-              Engines Usage over time
+              Traffic last month
             </Typography>
           </Box>
           <Box className="sessionEchart" sx={userStyle.sessionUser}>

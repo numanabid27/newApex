@@ -190,7 +190,7 @@ export default function Sessions() {
         >
           <Box sx={styles.BoxStyling}>
             <Typography sx={styles.SessionHeader}>
-              Engines Usage over time
+              Traffic last month
             </Typography>
             <FormControl variant="standard" sx={styles.engineOverTime}>
               <Select
@@ -220,9 +220,15 @@ export default function Sessions() {
           sx={styles.SessionEngine}
           className="border border-radius bg-white"
         >
-          <Typography variant="h5" mb={4}>
-            Top 5 Active Users
-          </Typography>
+         <Grid mb={4} display="flex" alignItems="center">
+          <Grid xl={8} xs={7}>
+            <Typography variant="h5">Top 5 Active Users</Typography>
+          </Grid>
+          <Grid xl={4} xs={5}>
+            <Typography className="sessions_state">Sessions</Typography>
+          </Grid>
+           
+         </Grid>
           {SESSION_GRAPH.map((item: any, i: number) => {
             return (
               <Grid container sx={styles.activeUser} key={i.toString()}>
@@ -278,7 +284,7 @@ export default function Sessions() {
       >
         <Grid item sm={2} xs={12} sx={styles.engineFilter}>
           <FormControl fullWidth sx={styles.userFormControl}>
-            <InputLabel id="demo-simple-select-label-2" sx={styles.userText}>
+            <InputLabel id="demo-simple-select-label-2" className="interLable" sx={styles.userText}>
               Interface
             </InputLabel>
 
@@ -325,7 +331,7 @@ export default function Sessions() {
         </Grid>
         <Grid item sm={2} xs={12} sx={styles.engineFilter}>
           <FormControl sx={styles.formControl}>
-            <InputLabel sx={styles.engine}>Engine</InputLabel>
+            <InputLabel sx={styles.engine} className="interLable2">Engine</InputLabel>
             <Select
               sx={styles.sessionEngineFilter}
               multiple
@@ -365,7 +371,7 @@ export default function Sessions() {
 
         <Grid item sm={2} xs={12} sx={styles.engineFilter}>
           <FormControl sx={styles.formControl}>
-            <InputLabel sx={styles.engine}>Topics</InputLabel>
+            <InputLabel sx={styles.engine} className="interLable2">Topics</InputLabel>
             <Select
               sx={styles.sessionEngineFilter}
               multiple
@@ -438,7 +444,7 @@ export default function Sessions() {
 
         <Grid item sm={2} xs={12} sx={styles.user}>
           <FormControl fullWidth sx={styles.userFormControl}>
-            <InputLabel id="demo-simple-select-label-3" sx={styles.userText}>
+            <InputLabel id="demo-simple-select-label-3" className="interLable" sx={styles.userText}>
               Status
             </InputLabel>
 
@@ -475,6 +481,31 @@ export default function Sessions() {
           <Image src={filter} alt="" width={15} height={15} />
           More Filters
         </Button>
+
+        <Grid sx={{...styles.searchBox, margin: "0 0 0 auto"}} className="sesson-search" xs={3}>
+          <Box sx={styles.searchInner} className="session-search-input">
+            <Box sx={styles.searchIcon}>
+              <Image src={search} alt="" />
+            </Box>
+            <Autocomplete
+              options={allOptions}
+              value={searchQuery}
+              onChange={handleAutocompleteChange}
+              style={{ flexGrow: "1", width:"100%" }}
+              renderInput={(params: any) => (
+                <TextField
+                  {...params}
+                  size="small"
+                  type="search"
+                  placeholder="Search by session id or free text"
+                  sx={styles.searchInput}
+                  onChange={handleSearch}
+                  value={searchQuery}
+                />
+              )}
+            />
+          </Box>
+        </Grid>
       </Grid>
       <Box sx={styles.sessionTableRow}>
         <CustomTable

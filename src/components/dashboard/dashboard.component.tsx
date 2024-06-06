@@ -73,6 +73,7 @@ function Dashboard() {
           <CustomLineChart
             title="Issues per Engine"
             chartData={ISSUES_PER_ENGINE_DATA}
+            issuesEngine={true}
           />
         </Grid>
         <Grid
@@ -87,6 +88,7 @@ function Dashboard() {
             title="Issues by Department"
             chartData={ISSUES_BY_DEPARTMENT}
             dropdown={true}
+            issuesEngine={true}
           />
         </Grid>
         <Grid sx={DashboardStyles.TopIssuesMain} container>

@@ -699,9 +699,14 @@ const options = {
           sx={styles.SessionEngine}
           className="border border-radius bg-white"
         >
-          <Typography variant="h5" mb={4}>
-            Top 5 Weekly Active Users
-          </Typography>
+          <Grid mb={4} display="flex" alignItems="center">
+            <Grid xl={8} xs={7}>
+              <Typography variant="h5">Top 5 Weekly Active Users</Typography>
+            </Grid>
+            <Grid xl={4} xs={5}>
+              <Typography className="sessions_state">Messages</Typography>
+            </Grid>
+          </Grid>
           {
             MESSAGES_GRAPH.map((item:any, i:number)=>{
               return(
@@ -734,8 +739,8 @@ const options = {
         sx={styles.session_filters}
       >
         <Grid item sm={2} xs={12} sx={styles.engineFilter}>
-          <FormControl fullWidth sx={styles.userFormControl}>
-            <InputLabel id="demo-simple-select-label-2" sx={styles.userText}>
+          <FormControl fullWidth sx={styles.userFormControl} >
+            <InputLabel id="demo-simple-select-label-2" className="interLable" sx={styles.userText}>
               Interface
             </InputLabel>
 
@@ -745,6 +750,7 @@ const options = {
               id="demo-simple-select-2"
               value={isInterface}
               label="Interface"
+              className="session-search-input2"
               onChange={(event) => {
                 setIsInterface(event.target.value as string);
               }}
@@ -787,6 +793,7 @@ const options = {
               sx={styles.sessionEngineFilter}
               multiple
               value={engineName}
+              className="session-search-input2"
               onChange={(e: any) => setEngineName(e.target.value)}
               input={<OutlinedInput label="Engine" />}
               renderValue={(selected) => (
@@ -829,6 +836,7 @@ const options = {
               value={topicName}
               onChange={(e: any) => setTopicName(e.target.value)}
               input={<OutlinedInput label="Topics" />}
+              className="session-search-input2"
               renderValue={(selected) => (
                 <Stack gap={1} direction="row" flexWrap="wrap">
                   {selected.map((value: any) => (
@@ -904,6 +912,7 @@ const options = {
               labelId="demo-simple-select-label-3"
               id="demo-simple-select-3"
               value={isStatus}
+              className="session-search-input2"
               label="Status"
               onChange={(event) => {
                 setIsStatus(event.target.value as string);
@@ -935,8 +944,6 @@ const options = {
             More Filters
 
           </Button>
-
-       
 
         <Grid sx={{...styles.searchBox, margin: "0 0 0 auto"}} className="sesson-search" xs={3}>
           <Box sx={styles.searchInner} className="session-search-input">

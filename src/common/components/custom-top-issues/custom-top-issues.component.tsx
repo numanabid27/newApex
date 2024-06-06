@@ -138,7 +138,7 @@ function CustomTopIssues({
                     ${
                       item.notification === 3 ? Colors.primaryOrange 
                       : 
-                      item.notification === 1 || item.notification === 2  ? Colors.secondaryGreen 
+                      item.notification === 1 || item.notification === 2 || item.notification === 4  ? Colors.secondaryGreen 
                       :
                       Colors.primaryRed
                     }` ,
@@ -172,10 +172,10 @@ function CustomTopIssues({
                         sx={{ 
                           bgcolor:item.notification === 3 ? Colors.defaultWhite
                           :
-                          item.notification === 2 ? Colors.primaryGreen : Colors.secondaryWhite,
+                          item.notification === 2 || item.notification === 4 ? Colors.primaryGreen : Colors.secondaryWhite,
                           ...topStyles.overviewLevel
                           }}
-                          avatar={<Image src={item.notification !== 2 ? warning : good} alt="" />}
+                          avatar={<Image src={item.notification == 2 || item.notification == 4 ? good : warning} alt="" />}
                           label={item.res}
                           variant="outlined"
                         />
@@ -183,13 +183,10 @@ function CustomTopIssues({
                         null
                       )}
                     </Box>
-                    <Box>
-                      <Typography sx={topStyles.countText}>{item.notification}</Typography>
-                    </Box>
-                    <Box>
+                    <Box marginTop="7px">
                       <Image 
                         src={
-                          item.notification === 2 ? bell 
+                          item.notification === 2 || item.notification === 4 ? bell 
                           : 
                           item.notification === 1 ? bell 
                           :
@@ -197,6 +194,10 @@ function CustomTopIssues({
                         } alt="" 
                       />
                     </Box>
+                    <Box>
+                      <Typography sx={topStyles.countText}>{item.notification}</Typography>
+                    </Box>
+                    
                   </Box>
                 </Box>
               </Link>

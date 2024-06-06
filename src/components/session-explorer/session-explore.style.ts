@@ -264,7 +264,7 @@ export const styles = {
 
   // new styling 5-24-2024
   mainGrid : {
-    px: "3.5%",
+    px: "4%",
     mb: 8,
     mt:5
   },

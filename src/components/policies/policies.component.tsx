@@ -120,6 +120,7 @@ function Policies() {
                 {items.groups.groupName.map((innerItem: any, i: number) => (
                   <Chip
                     label={innerItem.name1}
+                    sx={styles.groupChip}
                     variant="outlined"
                     key={i.toString()}
                   />

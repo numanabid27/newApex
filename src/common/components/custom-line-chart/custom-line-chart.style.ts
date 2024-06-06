@@ -12,7 +12,7 @@ export const chartStyle = {
     marginBlock: "48px",
   },
   chartDataMain2: {
-    marginBlock: "30px",
+    marginBlock: "20px",
   },
   lineChartDetails : {
     color: "#344054",

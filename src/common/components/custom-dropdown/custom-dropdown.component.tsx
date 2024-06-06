@@ -19,9 +19,12 @@ import CrossIcon from "@/common/assets/images/close.svg";
 import { styles } from "./custom-dropdown.style";
 import { useCustom } from "./use-custom-dropdown.hook";
 import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import filter from "@/common/assets/images/more-filters.svg";
+import calender from "@/common/assets/images/calendar.svg";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 /**
  * Take in dropdownData and return a dropdown
  * @param { dropdownData, searchQuery, setSearchQuery, selectedFilters, setSelectedFilters } props
@@ -59,10 +62,26 @@ export const CustomDropdown = ({
     checkAndSetMatchingItem();
   }, [paramsData]);
 
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [startDate, endDate] = dateRange;
+
   return (
     <Box sx={styles.searchFilter}>
       <FormControl sx={styles.formControl}>
         <Grid container item sx={styles.filterGrid}>
+          <Grid item sm={2} xs={12} sx={styles.datePicker} className="dateRange dateRangeIssue">
+            <Image src={calender} alt="" />
+            <DatePicker
+              selectsRange={true}
+              startDate={startDate}
+              endDate={endDate}
+              onChange={(update: any) => {
+                setDateRange(update);
+              }}
+              placeholderText="Last updated"
+              
+            />
+          </Grid>
           {dropdownData?.map((item: any) => (
             <Grid
               item

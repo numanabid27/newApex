@@ -50,7 +50,7 @@ export const userStyle = {
     paddingBottom: "10px"
   },
   SessionEngine: {
-      
+    overflow:'hidden',
     ml: { lg: 2, md: 1, sm: 0 },
     boxShadow: "0px 1px 3px #8080804a",
     marginBottom: { md: "unset", xs: "10px" },

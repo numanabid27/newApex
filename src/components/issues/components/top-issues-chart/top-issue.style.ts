@@ -88,7 +88,8 @@ export const TopIssuesStyling = {
     display: "flex",
     alignItems: "center",
     borderLeft: "1px solid #D0D5DD",
-    padding: "0 19px"
+    padding: "0 19px",
+    height:'34px'
   },
   severityChip: {
     height: "25px",

@@ -45,7 +45,7 @@ export const styles = {
     } ,
     issueGrid : { 
         my: 3, 
-        px: "3.5%" 
+        px: "4%" 
     },
     Icon : {
         fontSize: "8px",

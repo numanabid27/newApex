@@ -9,7 +9,9 @@
 
   display: none;
 }
-
+body {
+  padding-right: 0 !important;
+}
 .border {
   border: 1px solid #eaecf0;
 }
@@ -93,6 +95,9 @@ html {
   font-weight: 600;
   color: #344054;
 }
+.enginDropdown::after{
+  border-bottom: unset !important;
+}
 .custom-dialogue_class .MuiDialog-paper {
   position: absolute;
     top: 0;
@@ -150,6 +155,12 @@ html {
 .profile-main-box {
   padding: 0px;
 }
+.profile-main-box .MuiBox-root{
+  margin-right: 0px !important;
+}
+.profile-main-box .MuiButtonBase-root{
+  padding: 0 0px 0 8px !important;
+}
 .profile-data-icon {
   flex-grow: 0;
   display: flex;
@@ -159,6 +170,9 @@ html {
   border-radius: 8px;
   padding: 1;
   margin-left: 2;
+}
+.enginDropdown{
+  margin-left: auto;
 }
 .profile-name-avatar {
   color: #667085;
@@ -288,15 +302,17 @@ button.navBar-list:not(.selected):hover::after {
 .filter-search .MuiInputBase-root {
   border-radius: 8px;
   padding-right: 13px !important;
+  padding-left: 17px !important;
 }
 .filter-search .MuiInputBase-input {
   min-width: 165px !important;
 }
+
 .dateRange {
   max-width: fit-content !important;
 }
 .dateRange input[type="text"] {
-  padding: 12px 0px 12px 32px;
+  padding: 12px 0px 11px 32px;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.23);
   outline: none;
@@ -309,6 +325,9 @@ button.navBar-list:not(.selected):hover::after {
   bottom: -5px;
   margin: auto;
   left: 10px;
+}
+.dateRange.dateRangeIssue img{
+  bottom: 0px;
 }
 .css-9zyops-MuiTabs-indicator {
   background-color: unset !important;
@@ -531,6 +550,50 @@ body {
   padding-top: 12px;
   font-weight: 500;
 }
+.borderTop{
+  border-top: 1px solid #EAECF0;
+  padding: 16px 0 0;
+}
+.session-search-input .MuiInputBase-root{
+  padding: 8px 3px !important;
+}
+.session-search-input2{
+  padding: 8.5px 10px;
+}
+.sesson-search{
+  padding-top: 8px;
+}
+.interLable{
+  top: -2px;
+}
+.interLable2{
+  top: -4px;
+}
+.isssuesEngine{
+  margin: 0 auto;
+  max-width: 710px;
+}
+.collapsibeTable{
+  box-shadow: 0px 2px 2px -1px rgb(0 0 0 / 5%), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  border: 1px solid #EAECF0;
+}
+.sessions_state{
+  color: #667085;
+  font-size: 14px;
+}
+.session-paginate2 button{
+  color: #667085;
+  font-size: 14px;
+  font-weight: 600;
+}
+.session-paginate2 button:disabled{
+  color: #D1D5DB;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid #EAECF0;
+}
+
+
 
 
 @media screen and (min-width: 1600px) {

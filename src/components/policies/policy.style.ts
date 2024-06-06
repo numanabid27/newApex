@@ -2,7 +2,7 @@ import Colors from "@/common/constants/color.constant";
 
 export const styles = {
   pliciesSec: {
-    px: "3.5%",
+    px: "4%",
     my: 5,
   },
   policies_grid: {
@@ -66,6 +66,11 @@ export const styles = {
   group:{
     borderLeft:'1px solid #CFD4DC',
     paddingLeft:'25px',
+    "h6":{
+      color:"#667084",
+      fontSize:'14px',
+      fontWeight:400
+    },
     "@media screen and (max-width:899px)":{
       borderLeft:'unset',
       paddingLeft:'0px',
@@ -120,5 +125,9 @@ export const styles = {
   },
   cancel:{
     border:" 1px solid #D0D5DD",
+  },
+  groupChip:{
+    color: "#374151",
+    fontWeight: 500
   }
 };
