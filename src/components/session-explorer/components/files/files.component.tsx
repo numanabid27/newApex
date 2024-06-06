@@ -135,7 +135,7 @@ export default function Files() {
         </Box>
       </Box>
       {/* filter */}
-      <Filters />
+      <Filters users={false} />
 
       <Box sx={styles.sessionTableRow}>
         <CustomTable

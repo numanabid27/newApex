@@ -1,6 +1,5 @@
 export const styles = {
   sessionTableRow: {
-    mt: 8,
     width:'100%'
     // table: {
     //   tbody: {

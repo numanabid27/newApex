@@ -267,39 +267,12 @@ export default function Users() {
           }
         </Grid>
       </Grid>
-      {/* search */}
-      <Box sx={styles.searchBox} className="sesson-search">
-        <Typography sx={styles.searchText}>
-          Try searching using keywords, session id, engine, user, date range,
-          contains issues
-        </Typography>
-        <Box sx={styles.searchInner} className="session-search-input">
-          <Box sx={styles.searchIcon}>
-            {/* <Image src={search} alt="" /> */}
-          </Box>
-          <Autocomplete
-            options={allOptions}
-            value={searchQuery}
-            onChange={handleAutocompleteChange}
-            style={{ flexGrow: "1" }}
-            renderInput={(params: any) => (
-              <TextField
-                {...params}
-                size="small"
-                type="search"
-                placeholder="Search by session id or free text"
-                sx={styles.searchInput}
-                onChange={handleSearch}
-                value={searchQuery}
-              />
-            )}
-          />
-        </Box>
-      </Box>
+    
 
       {/* filters */}
 
-      <Filters />
+      <Filters users={true} />
+
 
       <Box sx={styles.sessionTableRow}>
         <CustomTable

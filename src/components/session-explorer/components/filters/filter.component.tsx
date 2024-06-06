@@ -1,4 +1,4 @@
-import { Box, Button, Chip, FormControl, Grid, IconButton, InputLabel, MenuItem, OutlinedInput, Select, Stack } from "@mui/material";
+import { Autocomplete, Box, Button, Chip, FormControl, Grid, IconButton, InputLabel, MenuItem, OutlinedInput, Select, Stack, TextField } from "@mui/material";
 import DatePicker from "react-datepicker";
 import Image from "next/image";
 import React from "react";
@@ -9,8 +9,9 @@ import {styles} from "../sessions/sessions.style";
 import ClearIcon from "@mui/icons-material/Clear";
 import calender from "@/common/assets/images/calendar.svg";
 import CancelIcon from "@mui/icons-material/Cancel";
+import search from "@/common/assets/images/search.svg";
 
-const Filters = () => {
+const Filters = ({users}:any) => {
     const {
         engineName,
         setEngineName,
@@ -23,6 +24,7 @@ const Filters = () => {
         setIsStatus,
         setTopicName,
         topicName,
+        allOptions
       } = useSessions();
   return (
     <>
@@ -200,7 +202,33 @@ const Filters = () => {
           More Filters
         </Button>
 
-      
+        {
+          users &&
+          <Grid sx={{...styles.searchBox, margin: "0 0 0 auto"}} className="sesson-search" xs={3}>
+            <Box sx={styles.searchInner} className="session-search-input">
+              <Box sx={styles.searchIcon}>
+                <Image src={search} alt="" />
+              </Box>
+              <Autocomplete
+                options={allOptions}
+                value={''}
+                
+                style={{ flexGrow: "1", width:"100%" }}
+                renderInput={(params: any) => (
+                  <TextField
+                    {...params}
+                    size="small"
+                    type="search"
+                    placeholder="Search by session id or free text"
+                    sx={styles.searchInput}
+                    
+                    value={''}
+                  />
+                )}
+              />
+            </Box>
+          </Grid>
+        } 
       </Grid>
     </>
   );

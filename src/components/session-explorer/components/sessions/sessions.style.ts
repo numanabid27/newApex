@@ -3,7 +3,6 @@ import Colors from "@/common/constants/color.constant";
 export const styles = {
     sessionTableRow: {
      width:'100%',
-      mt: 8,
       // table: {
       //   tbody: {
       //     tr: {
