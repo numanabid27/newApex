@@ -563,9 +563,6 @@ const options = {
   ],
 };
 
-
- 
-  
   return (
     <Box position="relative" width="100%">
       {/*query builder  */}

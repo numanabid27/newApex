@@ -41,10 +41,36 @@ export default function CustomDialog({
         onClose={() => setOpenModal(false)}
         aria-labelledby="customized-dialog-title"
         open={openModal}
-        className={`${
-          issues ? "issuesWidth" : ""
-        } custom-dialogue_class z_index`}
+        className={`${expandValue ? "demo" : "collapse"} ${issues ? "issuesWidth" : ""} custom-dialogue_class z_index`}
       >
+        {
+          thead === "session" ?
+          <Box sx={styles.sec}>
+          <Box
+            sx={styles.collapseBtn}
+            onClick={() => setExpandValue(!expandValue)}
+          >
+            {expandValue ? (
+              <OpenInFullIcon sx={styles.icon} />
+            ) : (
+              <CloseFullscreenIcon sx={styles.icon} />
+            )}
+            <Typography sx={styles.expand}>
+              {" "}
+              {expandValue ? "Expand" : "Collapse"}
+            </Typography>
+          </Box>
+          <CloseIcon
+            onClick={() => {
+              setOpenModal(false);
+              setExpandValue(true);
+            }}
+            sx={styles.closeCursour}
+          />
+        </Box>
+        :
+        null
+        }
         <DialogContent dividers sx={{ padding: "0px !important" }}>
           {thead === "policy" && (
             <ModelData
