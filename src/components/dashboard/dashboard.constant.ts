@@ -6,6 +6,7 @@ import AzureIcon from "@/common/assets/images/azure.svg";
 import AssistantIcon from "@/common/assets/images/emoji.svg";
 
 import CodeIcon from "@/common/assets/images/code-icon.svg";
+import CodeIcon2 from "@/common/assets/images/codeicon2.svg";
 import PIIIcon from "@/common/assets/images/pll-icon.svg";
 import PCIIcon from "@/common/assets/images/pci-icon.svg";
 import AccessDataIcon from "@/common/assets/images/access-data-icon.svg";
@@ -24,7 +25,7 @@ export const ISSUES_PER_ENGINE_DATA = [
 ];
 
 export const USAGE_BY_DEPARTMENT = [
-  { id: 1, value: 49.1, name: "Dev", icon: CodeIcon },
+  { id: 1, value: 49.1, name: "Dev", icon: CodeIcon2 },
   { id: 2, value: 25.2, name: "IT", icon: PIIIcon },
   { id: 3, value: 14.6, name: "QA", icon: PCIIcon },
   { id: 4, value: 11.1, name: "HR", icon: AccessDataIcon },
@@ -82,7 +83,7 @@ export const SENSITIVE_DATATYPE_CHART = {
         { value: 14.6, name: "QA" },
         { value: 11.1, name: "HR" },
       ],
-      color: ["#7F56D9", "#E31B54", "#EC4A0A", "#12B76A"],
+      color: ["#53B1FD", "#E31B54", "#EC4A0A", "#12B76A"],
     },
   ],
 };
