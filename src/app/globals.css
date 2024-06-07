@@ -656,6 +656,15 @@ body {
   }
 }
 @media screen and (max-width: 767px) {
+  .dateRange{
+    max-width: 100% !important;
+  }
+  .dateRange input[type="text"] {
+    width: 100% !important;
+  }
+  .dateRange .react-datepicker-wrapper{
+    width: 100% !important;
+  }
   .custom-dialogue_class .MuiDialog-paper{
     width: 96vw;
   }

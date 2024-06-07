@@ -53,6 +53,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import del from "@/common/assets/images/delete.svg";
 import filter from "@/common/assets/images/more-filters.svg";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import useWidth from "@/components/issues/components/issue-table/use-width.hook";
 
 export default function Message() {
   const {
@@ -87,6 +88,8 @@ export default function Message() {
     isBuilder,
     setIsBuilder,
   } = useSessions();
+
+  const {windowWidth} = useWidth();
 
   const SESSION_EXPLORE_TABLE_HEADER = [
     {
@@ -584,7 +587,7 @@ const options = {
               <Typography variant="h6">Query builder</Typography>
               <ClearIcon onClick={() => setIsBuilder(false)} />
             </Box>
-            <Box display="flex" gap="10px" sx={styles.filterRow}>
+            <Box display="flex" flexWrap={{xs:'wrap', sm:'unset'}} gap="10px" sx={styles.filterRow}>
               <Severity
                 title="Select Department"
                 img={downArrow}
@@ -604,7 +607,7 @@ const options = {
               <Toggle />
             </Box>
             <Box sx={styles.filterRow} display="flex" gap="10px" justifyContent="space-between" alignItems="center">
-              <Box display="flex" gap="10px">
+              <Box display="flex" gap="10px" flexWrap={{xs:'wrap', sm:'unset'}}>
                 <Severity
                   title="Topic"
                   img={downArrow}
@@ -635,7 +638,7 @@ const options = {
             </Box>
 
             <Box sx={styles.filterRow} display="flex" gap="10px" justifyContent="space-between" alignItems="center">
-              <Box display="flex" gap="10px">
+              <Box display="flex" gap="10px" flexWrap={{xs:'wrap', sm:'unset'}}>
                 <Severity
                   title="Sentiment"
                   img={downArrow}
@@ -664,10 +667,10 @@ const options = {
             </Box>
 
             <Grid container pt={3} pb={3} alignItems="center">
-              <Grid xs={3}>
-                <Image src={add} alt="" width={40} height={40} style={{cursor:"pointer"}} />
+              <Grid sm={3} xs={12}>
+                <Image src={add} alt="" width={windowWidth > 767 ? 40 : 30} height={40} style={{cursor:"pointer"}} />
               </Grid>
-              <Grid xs={9} display="flex" gap="10px" justifyContent="flex-end" sx={styles.actionSubmit}>
+              <Grid sm={9} xs={12} display="flex" gap="10px" justifyContent="flex-end" sx={styles.actionSubmit}>
                 <Button>Create detection rule</Button>
                 <Button>Run query</Button>
               </Grid>
@@ -939,15 +942,17 @@ const options = {
           </FormControl>
         </Grid>
 
-        <Button
+        <Grid item sm={2} xs={12} paddingLeft="0px !important">
+          <Button
             sx={styles.moreSelected}
           >
             <Image src={filter} alt="" width={15} height={15} />
             More Filters
 
           </Button>
+        </Grid>
 
-        <Grid sx={{...styles.searchBox, margin: "0 0 0 auto"}} className="sesson-search" xs={3}>
+        <Grid sx={{...styles.searchBox, margin: "0 0 0 auto"}} className="sesson-search" sm={3} xs={12}>
           <Box sx={styles.searchInner} className="session-search-input">
             <Box sx={styles.searchIcon}>
               <Image src={search} alt="" />

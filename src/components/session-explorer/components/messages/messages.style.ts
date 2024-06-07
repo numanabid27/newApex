@@ -57,7 +57,7 @@ export const styles = {
     },
     searchBox: {
       textAlign: "center",
-      padding: { sm: "0 20px", xs: "0 13px" },
+      padding: { sm: "0 0px 0 20px", xs: "0 0px" },
       width: { sm: "65%", xs: "100%" },
       margin: "auto",
       "& .MuiInputBase-root": {
@@ -343,6 +343,12 @@ export const styles = {
       position: "absolute",
       right: "0",
       top: "-67px",
+      "@media screen and (max-width:767px)":{
+        position: "unset",
+        display:'flex',
+        justifyContent:'flex-end',
+        marginBottom: "20px"
+      }
     },
     queryBuilderButton:{
       background:"#039855",
@@ -364,6 +370,12 @@ export const styles = {
       right: "-2px",
       padding:"14px 23px",
       zIndex:'99',
+      "@media screen and (max-width:1100px)":{
+        width: "57vw",
+      },
+      "@media screen and (max-width:767px)":{
+        width: "100%",
+      }
     },
     header:{
       borderBottom:'1px solid #D0D5DD',
@@ -397,11 +409,15 @@ export const styles = {
     },
     actionSubmit:{
       "button" : {
+        fontSize:"14px",
+        "@media screen and (max-width:767px)":{
+          fontSize:"12px",
+          marginTop:'10px'
+        },
         "&:first-child":{
           background:'#fff',
           color:"#667085",
           fontWeight:600,
-          fontSize:"14px",
           border: "1px solid #D0D5DD",
           boxShadow: "0px 1px 2px 0px #1018280D",
           textTransform:"capitalize",
@@ -412,7 +428,6 @@ export const styles = {
           background:'#027A48',
           color:"#fff",
           fontWeight:600,
-          fontSize:"14px",
           border: "1px solid #027A48",
           boxShadow: "0px 1px 2px 0px #1018280D",
           textTransform:"capitalize",
@@ -440,7 +455,12 @@ export const styles = {
       textTransform: "capitalize",
       display: "flex",
       gap: "10px",
-      marginTop:'13px'
+      marginTop: "3.1px",
+      "@media screen and (max-width:767px)":{
+        width: "100%",
+        display: "flex",
+        justifyContent: "flex-start"
+      }
     },
     typography:{
       fontSize:'14px'

@@ -271,6 +271,9 @@ export const styles = {
     ".MuiTabs-flexContainer":{
         gap: "8px",
         marginBottom: "20px",
+        "@media screen and (max-width:767px)":{
+          overflowX:'scroll',
+        },
         "button":{
             border: "1px solid #D0D5DD",
             borderRadius: "30px",

@@ -44,6 +44,8 @@ function ModelAccordian({ modelData }: any) {
   const [ishide, setIsHide] = useState(false);
   const [isValue, setIsValue] = useState<any>("New");
   const [isShow, setIsShow] = useState(false);
+  const [showCode, setShowCode] = useState(false);
+  const [showShareFile, setShowShareFile] = useState(false);
 
   const handleClick = () => {
     setIsHide(!ishide);
@@ -348,18 +350,24 @@ function ModelAccordian({ modelData }: any) {
                 <>
                   <Grid xs={12}>Code</Grid>
                   <Grid xs={12} sx={styles.code}>
-                    <pre style={{ margin: "0px", color: "#374151" }}>
+                    <pre 
+                      style={{ 
+                        margin: "0px", color: "#374151" ,
+                        height:!showCode ? "70px" : "100%",
+                        overflow:'hidden'
+                      }}>
                       {modelData.code}
                     </pre>
-                    {/* <Button
+                    <Button
+                    onClick={()=>setShowCode(!showCode)}
                     sx={{
                       color: "#2E90FA",
                       fontSize: "14px",
                       textTransform: "capitalize",
                     }}
                   >
-                    Show more...
-                  </Button> */}
+                    {!showCode ? "Show more..." : "Show less..."}
+                  </Button>
                   </Grid>
                 </>
               )}
@@ -368,9 +376,21 @@ function ModelAccordian({ modelData }: any) {
                 <>
                   {isShow && (
                     <Grid xs={12} sx={styles.code}>
-                      <pre style={{ margin: "0px", color: "#374151" }}>
+                      <pre style={{ margin: "0px", color: "#374151", height:!showShareFile ? "70px" : "100%",
+                        overflow:'hidden' }}>
                         {modelData.shareFile}
                       </pre>
+
+                      <Button
+                      onClick={()=>setShowShareFile(!showShareFile)}
+                      sx={{
+                        color: "#2E90FA",
+                        fontSize: "14px",
+                        textTransform: "capitalize",
+                      }}
+                    >
+                      {!showShareFile ? "Show more..." : "Show less..."}
+                    </Button>
                     </Grid>
                   )}
                 </>

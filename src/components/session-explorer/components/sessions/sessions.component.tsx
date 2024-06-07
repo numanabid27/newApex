@@ -482,12 +482,14 @@ export default function Sessions() {
           </FormControl>
         </Grid>
 
-        <Button sx={styles.moreSelected}>
-          <Image src={filter} alt="" width={15} height={15} />
-          More Filters
-        </Button>
-
-        <Grid sx={{...styles.searchBox, margin: "0 0 0 auto"}} className="sesson-search" xs={3}>
+        <Grid item sm={2} xs={12} paddingLeft="0px !important">
+          <Button sx={styles.moreSelected}>
+            <Image src={filter} alt="" width={15} height={15} />
+            More Filters
+          </Button>
+        </Grid>
+        
+        <Grid sx={{...styles.searchBox, margin: "0 0 0 auto"}} className="sesson-search" sm={3} xs={12}>
           <Box sx={styles.searchInner} className="session-search-input">
             <Box sx={styles.searchIcon}>
               <Image src={search} alt="" />

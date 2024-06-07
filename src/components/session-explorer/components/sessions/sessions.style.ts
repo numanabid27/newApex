@@ -56,7 +56,7 @@ export const styles = {
     },
     searchBox: {
       textAlign: "center",
-      padding: { sm: "0 20px", xs: "0 13px" },
+      padding: { sm: "0 0px 0 20px", xs: "0 0px" },
       width: { sm: "65%", xs: "100%" },
       margin: "auto",
       "& .MuiInputBase-root": {
@@ -351,7 +351,12 @@ export const styles = {
       textTransform: "capitalize",
       display: "flex",
       gap: "10px",
-      marginTop: "13px"
+      marginTop: "3.1px",
+      "@media screen and (max-width:767px)":{
+        width: "100%",
+        display: "flex",
+        justifyContent: "flex-start"
+      }
     },
     typography:{
       fontSize:'14px'

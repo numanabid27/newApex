@@ -107,7 +107,13 @@ export const styles = {
     fontSize:" 12px",
     textTransform: "capitalize",
     display: "flex",
-    gap: "10px"
+    gap: "10px",
+    "@media screen and (max-width:767px)":{
+      width: "100%",
+      display: "flex",
+      justifyContent: "flex-start",
+      padding:'8.5px 14px',
+    }
   },
   datePicker: {
     paddingLeft: "0px !important",

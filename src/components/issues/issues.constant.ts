@@ -1636,12 +1636,179 @@ const SARAH_LEI = {
   ],
 };
 
+const FILES = {
+  tooltip: {},
+  animationDurationUpdate: 1500,
+  animationEasingUpdate: "quinticInOut",
+  series: [
+    {
+      type: "graph",
+      layout: "none",
+      symbolSize: 50,
+      roam: true,
+      zoom: 0.6,
+      label: {
+        show: true,
+        position: "bottom",
+        formatter: "{b}",
+      },
+      edgeSymbol: ["circle", "arrow"],
+      edgeSymbolSize: [4, 10],
+      edgeLabel: {
+        fontSize: 20,
+      },
+      data: [
+        {
+          name: "Node 1",
+          x: 170,
+          y: 80,
+          symbol: `image://image/pines.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|Pinecone}\n{additionalHeading|Vector DB}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 2",
+          x: 460,
+          y: 80,
+          symbol: `image://image/updated_file.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            offset: [0, -7],
+            formatter: "{htmlContent|3 Files}\n{additionalHeading|Content}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [7, 0, 0, 0],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 0, 3, 0],
+                backgroundColor: "#fff",
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 3",
+          x: 720,
+          y: 80,
+          symbol: `image://image/user.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter:
+              "{htmlContent|Multiple}\n{additionalHeading|User}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 4",
+          x: 460,
+          y: 320,
+          symbol: `image://image/secrete.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter:
+              "{htmlContent|Potential Data Poisoning}\n{additionalHeading|Violation}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+      ],
+      links: [
+        {
+          source: "Node 1",
+          target: "Node 2",
+        },
+        {
+          source: "Node 2",
+          target: "Node 3",
+        },
+        {
+          source: "Node 2",
+          target: "Node 4",
+        },
+      ],
+      lineStyle: {
+        opacity: 0.9,
+        width: 2,
+        curveness: 0,
+      },
+    },
+  ],
+};
+
 
 export const rows = [
   {
     id: 1,
     lastEvent: "Aug 14, 2023 10:46 AM",
-    name: "Oren did 18 PII violations",
+    name: "3 Files repetitively retrieved from your RAG database",
     subcategories: "Email",
     severity: "High",
     users: ["user@x.com", "user2@x.com", "+20"],
@@ -1650,72 +1817,70 @@ export const rows = [
     tags: "LLM06",
     status: "Open",
     context: "File path",
-    email: ["john.doe@company.com"],
+    email: [" user@gs.com", "user2@gs.com", "user3@gs.com"],
     code:`
-# Example of text containing sensitive financial information
-financial_files = [
-  "Q1_Financial_Report.xlsx",
-  "Budget_Projections_2024.pdf",
-  "Expense_Analysis_Q1.docx",
-  "Financial_Strategy_Meeting_Notes.txt"
-]               
+// Example of code accessing the RAG database
+import RAGDatabase from 'ragdb';
+// Function to retrieve sensitive files
+function retrieveSensitiveFiles(userId) {
+    let files = RAGDatabase.getFiles(userId, ['Employee_Personal_Information.xlsx', 'Financial_Records_Q1_2024.pdf', 'Client_Contact_List.docx']);
+    return files;
+}
+
+// Function call example
+retrieveSensitiveFiles('user@gs.com');
   `,
-   shareFile:`
-# Function to share files
-def share_files_with_rd(user_id, files):
-for file in files:
-print(f"Sharing {file} with {user_id}")
-   `,
+
     policiesData: [
       {
         id: 1,
-        date: "April 20, 2024, 09:10 AM",
-        chat: "Financial Report Access",
+        date: "Aug 14, 2023 8:46 AM",
+        chat: "Employee Personal Data Access",
         role: "User",
-        voilationType: "Unauthorized Data Sharing",
-        severity: "High",
-        userEmail: "john.doe@company.com",
-        sessionId: "99876-session-id",
-        model: "Copilot",
+        voilationType: "Repetitive Data Retrieval",
+        severity: "Critical",
+        userEmail: "olivia@unittled.io",
+        sessionId: "05fa319-b0d1...",
+        model: "GPT-4",
         source: "ApexChat",
         status: "Open",
       },
       {
         id: 2,
-        date: "April 20, 2024, 09:25 AM",
-        chat: "Budget Projections Review",
+        date: "Aug 14, 2023 10:46 AM",
+        chat: "Financial Records Extraction",
         role: "User",
-        voilationType: "Confidential Information Sharing",
+        voilationType: "Repetitive Data Retrieval",
         severity: "High",
-        userEmail: "john.doe@company.com",
-        sessionId: "99876-session-id",
-        model: "Copilot",
+        userEmail: "phoeni@unittled.io",
+        sessionId: "05fa319-b0d1...",
+        model: "GPT-3.5",
         source: "Apexchat",
         status: "Open",
       },
       {
         id: 3,
-        date: "April 20, 2024, 09:45 AM",
-        chat: "Expense Analysis Discussion",
+        date: "Aug 14, 2023 10:46 AM",
+        chat: "Client Contact List Download",
         role: "User",
-        voilationType: "Unauthorized Data Sharing",
-        severity: "Medium",
-        userEmail: " john.doe@company.com",
-        sessionId: "99876-session-id",
-        model: "Copilot",
+        voilationType: "Repetitive Data Retrieval",
+        severity: "High",
+        userEmail: "nathan@unittled.io",
+        sessionId: "14f3a8-9401..",
+        model: "GPT-4",
         source: "ApexChat",
         status: "Open",
       },
       {
         id: 4,
-        date: "April 20, 2024, 10:10 AM",
-        chat: "Financial Strategy Meeting Recap",
+        date: "Aug 14, 2023 2:06 PM",
+        chat: "Sensitive Data Review",
         role: "User",
-        voilationType: "Confidential Information Sharing",
+        voilationType: "Repetitive Data Retrieval",
         severity: "Medium",
-        userEmail: " john.doe@company.com",
-        sessionId: "99876-session-id",
-        model: "Copilot",
+        userEmail: "drew@unittled.io",
+        sessionId: "05fa319-b0d1...",
+        model: "GPT-4",
         source: "ApexChat",
         status: "Open",
       },
@@ -1726,8 +1891,8 @@ print(f"Sharing {file} with {user_id}")
         user: "User",
         image: user,
         name: "John Doe",
-        messages: ["28", "+8%"],
-        sessions: ["15", "+5%"],
+        messages: ["28", "+13%"],
+        sessions: ["23", "+9%"],
         vilations: [
           {
             id: 1,
@@ -1747,18 +1912,18 @@ print(f"Sharing {file} with {user_id}")
           {
             id: 4,
             name: "Low",
-            value: "80",
+            value: "8",
           },
         ],
-        categories: ["Unauthorized Data Sharing", "Confidential Information"],
+        categories: ["Data Leakage", "Unauthorized Access"],
       },
       {
         id: 2,
         user: "Engine",
         image: engine,
         name: "Copilot",
-        messages: ["80", "+20%"],
-        sessions: ["30", "+18%"],
+        messages: ["28", "+13%"],
+        sessions: ["23", "+9%"],
         vilations: [
           {
             id: 1,
@@ -1773,31 +1938,31 @@ print(f"Sharing {file} with {user_id}")
           {
             id: 3,
             name: "Medium",
-            value: "1 ",
+            value: "1",
           },
           {
             id: 4,
             name: "Low",
-            value: "1 ",
+            value: "8",
           },
         ],
-        categories: ["Unauthorized Data Sharing", "Confidential Information"],
+        categories: ["Data Leakage", "Unauthorized Access"],
       },
     ],
-    graph: OPTIONS,
+    graph: FILES,
     issues: [
       "High",
-      "Unauthorized Financial Information Sharing",
-      ["Unauthorized Data Sharing", "Confidential Information"],
-      "6",
-      ["Financial Reports", "Budget Projections", "Expense Analysis"],
-      "Outbound",
-      "john.doe@company.com",
+      "Repetitive Data Retrieval",
+      ["Data Leakage", "Unauthorized Access"],
+      "4",
+      ["Email", "Sensitive Financial Data"],
+      "Inbound",
+      "user1@gs.com, user2@gs.com +20",
       "ApexChat_AzureOpenAI",
-      ["Copilot"],
-      "April 20, 2024, 09:00 AM",
-      "April 20, 2024, 10:30 AM",
-      "99876-session-id",
+      ["Azure", "ChatGPT"],
+      "Feb 8, 2024, 08:57 PM",
+      "Feb 10, 2024, 08:57 PM",
+      "Multiple session IDs (Get all)",
       "Hadar Arnon",
       "Resolved",
     ],

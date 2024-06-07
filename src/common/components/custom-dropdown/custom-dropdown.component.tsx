@@ -29,7 +29,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 /**
  * Take in dropdownData and return a dropdown
- * @param { dropdownData, searchQuery, setSearchQuery, selectedFilters, setSelectedFilters } props
+ * @param {dropdownData, searchQuery, setSearchQuery, selectedFilters, setSelectedFilters } props
  * @returns dropdown component
  */
 
@@ -154,6 +154,8 @@ export const CustomDropdown = ({
               </FormControl>
             </Grid>
           ))}
+
+          
           <Button sx={styles.moreSelected}>
             <Image src={filter} alt="" width={15} height={15} />
             More Filters
