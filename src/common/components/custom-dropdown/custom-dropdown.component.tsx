@@ -93,7 +93,7 @@ export const CustomDropdown = ({
               sm={3.88}
               sx={{
                 flexBasis: {
-                  sm: `${item.value.length * 10}px !important`,
+                  sm: `${item.value.length * 11}px !important`,
                   xs: "100% !important",
                 },
               }}
