@@ -52,6 +52,7 @@ import MultiSelect from "@/components/create-policy/component/multiselect/Mutise
 import ClearIcon from '@mui/icons-material/Clear';
 import del from "@/common/assets/images/delete.svg";
 import filter from "@/common/assets/images/more-filters.svg";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export default function Message() {
   const {
@@ -752,6 +753,7 @@ const options = {
                 setIsInterface(event.target.value as string);
               }}
               renderValue={() => isInterface}
+              IconComponent={KeyboardArrowDownIcon}
             >
               {INTERFACE_NAME.map((item: any) => (
                 <MenuItem value={item.name} sx={styles.enginItem} key={item.id}>
@@ -814,6 +816,7 @@ const options = {
                   ))}
                 </Stack>
               )}
+              IconComponent={KeyboardArrowDownIcon}
             >
               {ENGINE_NAMES.map((item: any) => (
                 <MenuItem key={item.id} value={item.name}>
@@ -855,6 +858,7 @@ const options = {
                   ))}
                 </Stack>
               )}
+              IconComponent={KeyboardArrowDownIcon}
             >
               {STATUS.map((item: any) => (
                 <MenuItem key={item.id} value={item.name}>
@@ -915,6 +919,7 @@ const options = {
                 setIsStatus(event.target.value as string);
               }}
               renderValue={() => isStatus}
+              IconComponent={KeyboardArrowDownIcon}
             >
               {TOPICS.map((item: any) => (
                 <MenuItem value={item.name} sx={styles.enginItem} key={item.id}>

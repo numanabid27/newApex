@@ -25,6 +25,8 @@ import filter from "@/common/assets/images/more-filters.svg";
 import calender from "@/common/assets/images/calendar.svg";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
 /**
  * Take in dropdownData and return a dropdown
  * @param { dropdownData, searchQuery, setSearchQuery, selectedFilters, setSelectedFilters } props
@@ -133,6 +135,7 @@ export const CustomDropdown = ({
                       />
                     </Box>
                   )}
+                  IconComponent={KeyboardArrowDownIcon}
                   sx={styles.options}
                 >
                   {item.options.map((items: any) => (

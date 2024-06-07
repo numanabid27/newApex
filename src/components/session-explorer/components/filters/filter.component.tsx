@@ -10,6 +10,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import calender from "@/common/assets/images/calendar.svg";
 import CancelIcon from "@mui/icons-material/Cancel";
 import search from "@/common/assets/images/search.svg";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const Filters = ({users}:any) => {
     const {
@@ -51,6 +52,7 @@ const Filters = ({users}:any) => {
                 setIsInterface(event.target.value as string);
               }}
               renderValue={() => isInterface}
+              IconComponent={KeyboardArrowDownIcon}
             >
               {INTERFACE_NAME.map((item: any) => (
                 <MenuItem value={item.name} sx={styles.enginItem} key={item.id}>
@@ -112,6 +114,7 @@ const Filters = ({users}:any) => {
                   ))}
                 </Stack>
               )}
+              IconComponent={KeyboardArrowDownIcon}
             >
               {ENGINE_NAMES.map((item: any) => (
                 <MenuItem key={item.id} value={item.name}>
@@ -152,6 +155,7 @@ const Filters = ({users}:any) => {
                   ))}
                 </Stack>
               )}
+              IconComponent={KeyboardArrowDownIcon}
             >
               {STATUS.map((item: any) => (
                 <MenuItem key={item.id} value={item.name}>
@@ -178,6 +182,7 @@ const Filters = ({users}:any) => {
                 setIsStatus(event.target.value as string);
               }}
               renderValue={() => isStatus}
+              IconComponent={KeyboardArrowDownIcon}
             >
               {TOPICS.map((item: any) => (
                 <MenuItem value={item.name} sx={styles.enginItem} key={item.id}>

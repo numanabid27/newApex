@@ -37,6 +37,7 @@ import { SESSION_USER_CHART, SESSION_GRAPH } from "./session.constant";
 import { styles } from "./sessions.style";
 import useSessions from "./use-seesions.hook";
 import filter from "@/common/assets/images/more-filters.svg";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export default function Sessions() {
   const {
@@ -298,6 +299,7 @@ export default function Sessions() {
                 setIsInterface(event.target.value as string);
               }}
               renderValue={() => isInterface}
+              IconComponent={KeyboardArrowDownIcon}
             >
               {INTERFACE_NAME.map((item: any) => (
                 <MenuItem value={item.name} sx={styles.enginItem} key={item.id}>
@@ -359,6 +361,7 @@ export default function Sessions() {
                   ))}
                 </Stack>
               )}
+              IconComponent={KeyboardArrowDownIcon}
             >
               {ENGINE_NAMES.map((item: any) => (
                 <MenuItem key={item.id} value={item.name}>
@@ -399,6 +402,7 @@ export default function Sessions() {
                   ))}
                 </Stack>
               )}
+              IconComponent={KeyboardArrowDownIcon}
             >
               {STATUS.map((item: any) => (
                 <MenuItem key={item.id} value={item.name}>
@@ -458,6 +462,7 @@ export default function Sessions() {
                 setIsStatus(event.target.value as string);
               }}
               renderValue={() => isStatus}
+              IconComponent={KeyboardArrowDownIcon}
             >
               {TOPICS.map((item: any) => (
                 <MenuItem value={item.name} sx={styles.enginItem} key={item.id}>

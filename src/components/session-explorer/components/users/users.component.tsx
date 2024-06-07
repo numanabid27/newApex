@@ -20,6 +20,7 @@ import {
 import { SESSION_GRAPH } from "./session-user.constant";
 import Image from "next/image";
 
+
 export default function Users() {
   const {
     setOpenModal,
