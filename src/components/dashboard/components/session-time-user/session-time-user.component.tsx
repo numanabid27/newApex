@@ -7,6 +7,7 @@ import ReactEcharts from "echarts-for-react";
 import { SESSION_USER_CHART } from "../../dashboard.constant";
 import { SessionTimeStyle } from "./session-time-user.style";
 import {useState} from "react"
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 /**
  * Renders the Session over Time & Active User data
  * This component displays Session over Time & Active User & its chart
@@ -31,10 +32,13 @@ function SessionTimeUser() {
               ...SessionTimeStyle.SessionOvertimeBoxComponent,
             }}
           >
-            <span style={SessionTimeStyle.Letterspacing}>57,813</span>{" "}
-            <Typography sx={SessionTimeStyle.SessionTrendingValue}>
-              <TrendingUpIcon sx={SessionTimeStyle.TrendingIcon} /> 16%
-            </Typography>
+            <span style={SessionTimeStyle.Letterspacing}>57.8M</span>{" "}
+            <Box>
+              <Typography sx={SessionTimeStyle.SessionTrendingValue}>
+                <TrendingUpIcon sx={SessionTimeStyle.TrendingIcon} /> 14.2%
+              </Typography>
+              <Typography sx={SessionTimeStyle.increaseSession}>increase session</Typography>
+            </Box>
           </Box>
         </Box>
         <Box>
@@ -44,9 +48,10 @@ function SessionTimeUser() {
               value={session}
               onChange={SessionHandler}
               className="enginDropdown"
+              IconComponent={KeyboardArrowDownIcon}
             >
               <MenuItem value="All Models" sx={SessionTimeStyle.SessionText}>
-                All Models
+                All Engines
               </MenuItem>
               <MenuItem value="CHAT GPT" sx={SessionTimeStyle.SessionText}>
                 CHAT GPT

@@ -135,13 +135,7 @@ function CustomTopIssues({
                 <Box
                   sx={{
                     borderLeft: `4px solid 
-                    ${
-                      item.notification === 3 ? Colors.primaryOrange 
-                      : 
-                      item.notification === 1 || item.notification === 2 || item.notification === 4  ? Colors.secondaryGreen 
-                      :
-                      Colors.primaryRed
-                    }` ,
+                    ${item.borders}`,
                     ...topStyles.topIssuesitem
                   }}
                   style={issueData && topStyles.toIssuesData}
@@ -157,7 +151,7 @@ function CustomTopIssues({
                     />
                     <Box sx={topStyles.topIssuesBox}>
                       <Typography
-                        className="tertiary-title"
+                        className="tertiary-title2"
                         sx={topStyles.topIssuesValue}
                       >
                         {item.value}
@@ -170,12 +164,10 @@ function CustomTopIssues({
                       {item.res ? (
                         <Chip
                         sx={{ 
-                          bgcolor:item.notification === 3 ? Colors.defaultWhite
-                          :
-                          item.notification === 2 || item.notification === 4 ? Colors.primaryGreen : Colors.secondaryWhite,
+                          bgcolor:item.bgChipColor,
                           ...topStyles.overviewLevel
                           }}
-                          avatar={<Image src={item.notification == 2 || item.notification == 4 ? good : warning} alt="" />}
+                          avatar={<Image src={item.voilationImg} alt="" />}
                           label={item.res}
                           variant="outlined"
                         />
@@ -185,14 +177,7 @@ function CustomTopIssues({
                     </Box>
                     <Box marginTop="7px">
                       <Image 
-                        src={
-                          item.notification === 2 || item.notification === 4 ? bell 
-                          : 
-                          item.notification === 1 ? bell 
-                          :
-                          notification
-                        } alt="" 
-                      />
+                        src={item.bell} alt="" height={16}  />
                     </Box>
                     <Box>
                       <Typography sx={topStyles.countText}>{item.notification}</Typography>

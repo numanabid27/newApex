@@ -45,6 +45,9 @@ body {
 .tertiary-title {
   font-size: 14px;
 }
+.tertiary-title2{
+  font-size: 19px;
+}
 .cursor-pointer {
   cursor: pointer;
 }
@@ -593,8 +596,18 @@ body {
   font-weight: 600;
   border: 1px solid #EAECF0;
 }
-
-
+.dashboardTopIssue{
+  font-size: 17px;
+  color: #344054 !important; 
+  line-height:1.8
+}
+.detection{
+  font-size: 23.31px;
+}
+.borderUsage{
+  border-right: 1px solid #EAECF0;
+  padding: 0px 14px 0 0;
+}
 
 
 @media screen and (min-width: 1600px) {
@@ -603,6 +616,7 @@ body {
     margin: 0 0 0 -4%;
   }
 }
+
 @media screen and (min-width:1700px){
   .graph-map{
     height: 70vh;
@@ -620,6 +634,15 @@ body {
   }
   .searchBox input {
     font-size: 12px;
+  }
+  .tertiary-title2{
+    font-size: 15px;
+  }
+  .dashboardTopIssue{
+    font-size: 15px;
+  }
+  .detection{
+    font-size: 16px;
   }
 }
 

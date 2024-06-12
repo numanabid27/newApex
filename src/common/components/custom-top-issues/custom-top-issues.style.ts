@@ -2,7 +2,11 @@ export const topStyles = {
   topIssuesTitle: {
     color: "#344054",
     fontWeight: 600,
-    padding: "15px 0 20px",
+    padding: "13px 0px 10px",
+    fontSize:'23.31px',
+    "@media screen and (max-width:1600px)":{
+      fontSize:'18px',
+    }
   },
   link: {
     textDecoration: "none",
@@ -90,17 +94,17 @@ export const topStyles = {
     border: "1px solid #d0d5dd",
   },
   grid:{
-    marginBottom:'20px',
+    marginTop:'18px',
     "@media screen and (max-width:1440px)" : {
-      marginBottom:'13px',
+      marginTop:'14.5px',
     },
   },
   overviewLevel : {
     borderRadius : "5px",
-    padding : "0px 10px",
+    padding : "0px 10px !important",
     border:'none',
     color:"#344054",
-    fontSize:"14px",
+    fontSize:"17px !important",
     "& .MuiChip-avatar":{
       marginRight : "0px"
     },
@@ -116,8 +120,8 @@ export const topStyles = {
         height: "16px"
       },
     },
-    "@media screen and (max-width:1440px)" : {
-      fontSize:"12px",
+    "@media screen and (max-width:1600px)" : {
+      fontSize:"12px !important",
       padding : "0px 4px",
     },
   },
@@ -132,8 +136,11 @@ export const topStyles = {
   },
   countText : {
     color:"#344054",
-    fontSize:"14px",
-    fontWeight:700
+    fontSize:"17px",
+    fontWeight:700,
+    "@media screen and (max-width:1440px)" : {
+      fontSize:"13px",
+    },
   },
   "@media screen and (max-width:1100px)" : {
     countRow :{

@@ -20,26 +20,14 @@ export const ThirdComponent = ({ paramsFlag }: any) => {
         }
         style={styles.linkStyle}
       >
-        <Typography sx={{ color: "#344054", fontSize: "14px !important" }}>
+        <Typography className="dashboardTopIssue">
+          Github Copilot returned
+          <span style={{ fontWeight: 700 }}> 3 non-public API keys </span>
+          and
+          <span style={{ fontWeight: 700 }}> 16 malicious packages </span>
+           to 32 users - suspicious data was blocked
           <span
-            style={{
-              backgroundColor: "#F2F4F7",
-              color: "#344054",
-              fontSize: "14px",
-              fontWeight: 500,
-              padding: "3px 6px",
-              borderRadius: "2px",
-            }}
-          >
-            Suspicious Behavior
-          </span>
-          <span style={{ marginLeft: "7px" }}>
-            5 encrypted and 4 non-textual responses received across 4
-          </span>
-          <span style={{ color: "#1570EF" }}> Google Bard</span>
-          <span> users from Marketing department</span>
-          <span
-            style={{ color: "#98A2B3", fontSize: "14px", marginLeft: "13px" }}
+            style={{ color: "#98A2B3", fontSize: "14px", display:'block', paddingTop:'9px' }}
           >
             4 days ago
           </span>

@@ -18,7 +18,10 @@ export const SecondComponent = ({ paramsFlag }: any) => {
         }
         style={styles.linkStyle}
       >
-        <Typography sx={{ color: "#344054 ", fontSize: "14px !important" }}>
+        <Typography className="dashboardTopIssue">
+          
+          <span>Prompt injection detected on</span>
+          <span style={{ color: "#1570EF" }}> Azure OpenAI General </span>
           <span
             style={{
               backgroundColor: "#F2F4F7",
@@ -31,11 +34,9 @@ export const SecondComponent = ({ paramsFlag }: any) => {
           >
             Suspicious Behavior
           </span>
-          <span>Prompt injection detected on</span>
-          <span style={{ color: "#1570EF" }}> Azure OpenAI General </span>
-          potential data leakage
+          of Q2 
           <span
-            style={{ color: "#98A2B3", fontSize: "14px", marginLeft: "13px" }}
+            style={{ color: "#98A2B3", fontSize: "14px", display:'block', paddingTop:'9px' }}
           >
             {" "}
             5 hours ago{" "}

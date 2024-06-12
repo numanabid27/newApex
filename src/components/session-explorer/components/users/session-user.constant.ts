@@ -11,7 +11,7 @@ export const SESSION_USER_DATA = [
     {
       id: 1,
       name: "John Smith",
-      violation: ["1 Critical", "2 High"],
+      violation: ["5 Critical", "9 High"],
       violationCat: "ChatGPT",
       mails: "john@email.com",
       department: "R&D",
@@ -24,7 +24,7 @@ export const SESSION_USER_DATA = [
     {
       id: 2,
       name: "Sarah Johnson",
-      violation: ["1 Critical", "2 High"],
+      violation: ["1 High", "4 Medium"],
       violationCat: "Bard",
       mails: "james@email.com",
       department: "R&D",
@@ -37,7 +37,7 @@ export const SESSION_USER_DATA = [
     {
       id: 3,
       name: "Michael Brown",
-      violation: ["1 Critical", "2 High"],
+      violation: ["1 Critical", "1 Low"],
       violationCat: "OpenAI",
       mails: "emily@email.com",
       department: "HR",
@@ -50,7 +50,7 @@ export const SESSION_USER_DATA = [
     {
       id: 4,
       name: "Emily Davis",
-      violation: ["1 Critical", "2 High"],
+      violation: ["3 Critical", "6 High"],
       violationCat: "OpenAI",
       mails: "michael@email.com",
       department: "IT",
@@ -63,7 +63,7 @@ export const SESSION_USER_DATA = [
     {
       id: 5,
       name: "David Wilson",
-      violation: ["1 Critical", "2 High"],
+      violation: ["1 Critical", "2 Medium"],
       violationCat: "OpenAI",
       mails: "jesicca@email.com",
       department: "Operations",
@@ -76,7 +76,7 @@ export const SESSION_USER_DATA = [
     {
       id: 6,
       name: "Jessica Garcia",
-      violation: ["1 Critical", "2 High"],
+      violation: ["3 Critical", "5 Medium"],
       violationCat: "OpenAI",
       mails: "ashley@email.com",
       department: "R&D",
@@ -89,7 +89,7 @@ export const SESSION_USER_DATA = [
     {
       id: 7,
       name: "Daniel Martinez",
-      violation: ["1 Critical", "2 High"],
+      violation: ["8 Low"],
       violationCat: "OpenAI",
       mails: "chris@email.com",
       department: "HR",
@@ -102,7 +102,7 @@ export const SESSION_USER_DATA = [
     {
       id: 8,
       name: "Ashley Hernandez",
-      violation: ["1 Critical", "2 High"],
+      violation: ["1 Critical", "3 Low"],
       violationCat: "OpenAI",
       mails: "chris@email.com",
       department: "HR",
@@ -115,7 +115,7 @@ export const SESSION_USER_DATA = [
     {
       id: 9,
       name: "James Lopez",
-      violation: ["1 Critical", "2 High"],
+      violation: ["2 Critical", "2 Low"],
       violationCat: "OpenAI",
       mails: "chris@email.com",
       department: "HR",
@@ -128,7 +128,7 @@ export const SESSION_USER_DATA = [
     {
       id: 10,
       name: "Laura Thompson",
-      violation: ["1 Critical", "2 High"],
+      violation: ["2 Critical", "2 Low"],
       violationCat: "OpenAI",
       mails: "chris@email.com",
       department: "HR",
@@ -141,7 +141,7 @@ export const SESSION_USER_DATA = [
     {
       id: 11,
       name: "Robert Anderson",
-      violation: ["1 Critical", "2 High"],
+      violation: ["1 Critical", "1 Low"],
       violationCat: "OpenAI",
       mails: "chris@email.com",
       department: "HR",
@@ -154,7 +154,7 @@ export const SESSION_USER_DATA = [
     {
       id: 12,
       name: "Michelle Taylor",
-      violation: ["1 Critical", "2 High"],
+      violation: ["1 Critical", "1 Low"],
       violationCat: "OpenAI",
       mails: "chris@email.com",
       department: "HR",
@@ -167,7 +167,7 @@ export const SESSION_USER_DATA = [
     {
       id: 13,
       name: "Thomas Harris",
-      violation: ["1 Critical", "2 High"],
+      violation: ["1 Critical", "1 Low"],
       violationCat: "OpenAI",
       mails: "chris@email.com",
       department: "HR",
@@ -180,7 +180,7 @@ export const SESSION_USER_DATA = [
     {
       id: 14,
       name: "Jennifer Clark",
-      violation: ["1 Critical", "2 High"],
+      violation: ["1 Critical", "1 Low"],
       violationCat: "OpenAI",
       mails: "chris@email.com",
       department: "HR",
@@ -193,7 +193,7 @@ export const SESSION_USER_DATA = [
     {
       id: 15,
       name: "Charles Lewis",
-      violation: ["1 Critical", "2 High"],
+      violation: ["1 Critical", "1 Low"],
       violationCat: "OpenAI",
       mails: "chris@email.com",
       department: "HR",

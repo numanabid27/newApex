@@ -10,7 +10,7 @@ export default function useIssues(tableRows: any) {
   const [filteredTableRows, setFilteredTableRows] = useState<any[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [rowsPerPage, setRowsPerPage] = useState(3);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
   const [sortConfig, setSortConfig] = useState<{
     key: string;
     direction: "asc" | "desc";

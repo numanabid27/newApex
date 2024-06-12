@@ -170,11 +170,6 @@ export const MESSAGE_DATA = [
         id:1,
         title:'Code',
         img:code,
-      },
-      {
-        id:2,
-        title:'Finance',
-        img:coin
       }
     ],
 

@@ -3,6 +3,21 @@ export const styles = {
     padding: "12px 20px",
     borderTop: "1px solid #EAECF0",
   },
+  top_issue_row2: {
+    padding: "20.3px 20px",
+    borderTop: "1px solid #EAECF0",
+
+    "&:first-child":{
+      borderTop: "unset",
+    },
+    "@media screen and (max-width:1600px)" : {
+      padding: "12px 20px",
+    },
+  },
+  topIssuesBox:{
+    boxShadow: "0px 1px 3px #8080804a",
+    borderRadius:'8px',
+  },
   top_rows: {
     padding: "15px 20px 20px",
   },
@@ -15,7 +30,8 @@ export const styles = {
   },
   topbadge: {
     color: "#344054",
-    fontSize: "12px",
+    fontSize: "14.28px",
+    fontWeight:500,
     textAlign: "right",
     display: "flex",
     justifyContent: "flex-end",
@@ -53,6 +69,9 @@ export const styles = {
       },
       "&:hover": {
         boxShadow: " rgba(0, 0, 0, 0.35) 0px 5px 15px",
+      },
+      "@media screen and (max-width:1600px)": {
+        padding: "9px 8px",
       },
     },
     "@media screen and (max-width:767px)": {

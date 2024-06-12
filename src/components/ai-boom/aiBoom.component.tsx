@@ -8,7 +8,8 @@ import {
   AIBOOM_TABLE_DATA,
   SESSION_EXPLORER_DATA,
   SESSION_EXPLORER_DATA2,
-  TABS_DATA
+  AIBOOM_TABLE_BOX,
+  TABS_DATA,
 } from "./aiBoom.constant";
 import { styles } from "./aiBoom.style";
 import { File } from "./components/files/file.component";
@@ -45,7 +46,12 @@ export default function AiBoom() {
   return (
     <Box sx={styles.mainGrid}>
       {/* tabs */}
-      <Tabs value={value} onChange={handleChange} aria-label="code tabs" sx={styles.tabs}>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        aria-label="code tabs"
+        sx={styles.tabs}
+      >
         <Tab label="Box" />
         <Tab label="Github Copilot" />
         <Tab label="Sharepoint" />
@@ -64,8 +70,15 @@ export default function AiBoom() {
             title={
               <>
                 <Box display="flex" alignItems="center" gap="5px">
-                  <Typography sx={{ fontSize: {lg:'42px', sm:'30px'}, fontWeight:600 }}>45%</Typography> of total code
-                  written with Copilot
+                  <Typography
+                    sx={{
+                      fontSize: { lg: "42px", sm: "30px" },
+                      fontWeight: 600,
+                    }}
+                  >
+                    45%
+                  </Typography>{" "}
+                  of total code written with Copilot
                 </Box>
               </>
             }
@@ -82,8 +95,12 @@ export default function AiBoom() {
           <CustomLineChart
             title={
               <Box display="flex" alignItems="center" gap="5px">
-                <Typography sx={{ fontSize: {lg:'42px', sm:'30px'}, fontWeight:600 }}>65%</Typography> of code written in
-                copilot over last month
+                <Typography
+                  sx={{ fontSize: { lg: "42px", sm: "30px" }, fontWeight: 600 }}
+                >
+                  65%
+                </Typography>{" "}
+                of code written in copilot over last month
               </Box>
             }
             chartData={SESSION_EXPLORER_DATA2}
@@ -99,9 +116,9 @@ export default function AiBoom() {
           <TopIssuesChart aiBoom={true} />
         </Grid>
       </Grid>
-      
+
       {/* tabs content */}
-      {
+      {/* {
         TABS_DATA.map((items:any, i:any)=>{
           return(
             <TabPanel value={value} index={items.indexes}  key={i.toString()}>
@@ -114,12 +131,55 @@ export default function AiBoom() {
             </TabPanel>
           )
         })
-      }
+      } */}
+      <TabPanel value={value} index={0}>
+        <Box display="flex" alignItems="center" mt={6} mb={2} gap="7px">
+          <Typography sx={styles.font_700}>Repo Name</Typography>
+          <Typography sx={styles.repo}>|</Typography>
+          <Typography sx={[styles.repo, styles.font_700]}>
+            Branch: <span>Master</span>
+          </Typography>
+        </Box>
+        {/* <AiBox /> */}
+        {tableData(AIBOOM_TABLE_BOX)}
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <Box display="flex" alignItems="center" mt={6} mb={2} gap="7px">
+          <Typography sx={styles.font_700}>Repo Name</Typography>
+          <Typography sx={styles.repo}>|</Typography>
+          <Typography sx={[styles.repo, styles.font_700]}>
+            Branch: <span>Master</span>
+          </Typography>
+        </Box>
+        {/* <AiTableListening /> */}
+        {tableData(AIBOOM_TABLE_DATA)}
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <Box display="flex" alignItems="center" mt={6} mb={2} gap="7px">
+          <Typography sx={styles.font_700}>Repo Name</Typography>
+          <Typography sx={styles.repo}>|</Typography>
+          <Typography sx={[styles.repo, styles.font_700]}>
+            Branch: <span>Master</span>
+          </Typography>
+        </Box>
+        <AiBox />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <Box display="flex" alignItems="center" mt={6} mb={2} gap="7px">
+          <Typography sx={styles.font_700}>Repo Name</Typography>
+          <Typography sx={styles.repo}>|</Typography>
+          <Typography sx={[styles.repo, styles.font_700]}>
+            Branch: <span>Master</span>
+          </Typography>
+        </Box>
+        <AiTableListening />
+      </TabPanel>
     </Box>
   );
 }
 
-export const AiTableListening = () => {
+// BOX
+export const AiBox= () => {
   const {
     isDetail,
     handleClick,
@@ -129,12 +189,16 @@ export const AiTableListening = () => {
     setHoveredIndex,
     setIsClicked,
     repo,
-    isColor
+    isColor,
   } = useAiboom();
   return (
     <Grid container gap="10px" mt={4} justifyContent="space-between">
       <Grid xs={12} lg={7.5}>
-        <Folder data={AIBOOM_TABLE_DATA} handleClick={handleClick} isColor={isColor} />
+        <Folder
+          data={AIBOOM_TABLE_BOX}
+          handleClick={handleClick}
+          isColor={isColor}
+        />
       </Grid>
       <Grid xs={12} lg={4.3}>
         {isLoading ? (
@@ -159,3 +223,91 @@ export const AiTableListening = () => {
     </Grid>
   );
 };
+
+// GITHUB
+export const AiTableListening = () => {
+  const {
+    isDetail,
+    handleClick,
+    isLoading,
+    hoveredIndex,
+    isClicked,
+    setHoveredIndex,
+    setIsClicked,
+    repo,
+    isColor,
+  } = useAiboom();
+  return (
+    <Grid container gap="10px" mt={4} justifyContent="space-between">
+      <Grid xs={12} lg={7.5}>
+        <Folder
+          data={AIBOOM_TABLE_DATA}
+          handleClick={handleClick}
+          isColor={isColor}
+        />
+      </Grid>
+      <Grid xs={12} lg={4.3}>
+        {isLoading ? (
+          <Image
+            src={loader}
+            alt="loader"
+            width={100}
+            height={100}
+            style={{ margin: "0 auto", display: "block" }}
+          />
+        ) : (
+          <File
+            isDetail={isDetail}
+            hoveredIndex={hoveredIndex}
+            isClicked={isClicked}
+            setHoveredIndex={setHoveredIndex}
+            setIsClicked={setIsClicked}
+            repo={repo}
+          />
+        )}
+      </Grid>
+    </Grid>
+  );
+};
+
+
+const tableData = (data:any)=>{
+  console.log("res", data)
+  return (
+    <Grid container gap="10px" mt={4} justifyContent="space-between">
+      <Grid xs={12} lg={7.5}>
+        <Folder
+          data={data}
+          // handleClick={handleClick}
+          // isColor={isColor}
+        />
+      </Grid>
+      <Grid xs={12} lg={4.3}>
+        {false ? (
+          <Image
+            src={loader}
+            alt="loader"
+            width={100}
+            height={100}
+            style={{ margin: "0 auto", display: "block" }}
+          />
+        ) : (
+          <File
+            isDetail={data[0].files}
+            // hoveredIndex={hoveredIndex}
+            // isClicked={isClicked}
+            // setHoveredIndex={setHoveredIndex}
+            // setIsClicked={setIsClicked}
+            // repo={repo}
+          />
+        )}
+      </Grid>
+    </Grid>
+  )
+}
+
+
+
+
+
+

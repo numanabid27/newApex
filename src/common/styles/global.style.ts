@@ -81,7 +81,10 @@ export const styles = {
   SessionOverTimeText: {
     color: Colors.primary,
     fontWeight: "600",
-    fontSize: { sm: "16px", xs: "14px" },
+    fontSize: "23.21px",
+    "@media screen and (max-width:1600px)":{
+      fontSize: "16px",
+    }
   },
   SessionOverTimeBox: {
     fontSize: { sm: "42px", xs: "29px" },

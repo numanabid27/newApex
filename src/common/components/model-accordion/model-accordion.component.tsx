@@ -45,6 +45,7 @@ function ModelAccordian({ modelData }: any) {
   const [isValue, setIsValue] = useState<any>("New");
   const [isShow, setIsShow] = useState(false);
   const [showCode, setShowCode] = useState(false);
+  const [showMore, setShowMore] = useState("");
   const [showShareFile, setShowShareFile] = useState(false);
 
   const handleClick = () => {
@@ -64,8 +65,6 @@ function ModelAccordian({ modelData }: any) {
     },
   ];
 
-
-
   return (
     <Box sx={styles.modelGradient}>
       <Box sx={styles.sideModel}>
@@ -75,13 +74,18 @@ function ModelAccordian({ modelData }: any) {
           <Grid xs={7.5} display="flex" alignItems="center" gap="18px">
             <Box position="relative">
               <Button onClick={handleClick} sx={styles.listBox}>
-              <span
-                style={{
-                  backgroundColor: isValue === "New" ? "#FACF15" : isValue === "In progress" ? "#2E90FA" : "",
-                  marginRight:'10px'
-                }}
-              ></span>
-              {isValue}
+                <span
+                  style={{
+                    backgroundColor:
+                      isValue === "New"
+                        ? "#FACF15"
+                        : isValue === "In progress"
+                        ? "#2E90FA"
+                        : "",
+                    marginRight: "10px",
+                  }}
+                ></span>
+                {isValue}
               </Button>
               {ishide && (
                 <List sx={styles.list}>
@@ -149,28 +153,30 @@ function ModelAccordian({ modelData }: any) {
           <AccordionDetails sx={styles.desc}>
             {modelData?.insights?.map((items: any, i: number) => {
               return (
-                <Box
+                <Grid
                   key={i.toString()}
-                  display="flex"
-                  gap="24px"
+                  container
+                  // display="flex"
+                  // gap="24px"
                   alignItems="center"
                   justifyContent="space-between"
                   sx={styles.mainBox}
                 >
-                  <Box
+                  <Grid
                     display="flex"
                     gap="10px"
                     alignItems="center"
-                    sx={styles.box}
+                    xl={1.1}
+                    xs={1.1}
                   >
                     <Image src={items.image} alt="" width={40} height={40} />
                     <Typography>{items.user}</Typography>
-                  </Box>
-                  <Box sx={styles.box}>
+                  </Grid>
+                  <Grid xl={1.4} xs={1.2}>
                     <Typography sx={styles.label}>Name</Typography>
                     <Typography variant="h6">{items.name}</Typography>
-                  </Box>
-                  <Box sx={styles.box}>
+                  </Grid>
+                  <Grid xl={1.8} xs={1.6}>
                     <Typography sx={styles.label}>Mesages</Typography>
                     <Box display="flex" alignItems="center" gap="11px">
                       <Typography variant="h6">{items.messages[0]}</Typography>
@@ -184,8 +190,8 @@ function ModelAccordian({ modelData }: any) {
                         <span>from org</span>
                       </Typography>
                     </Box>
-                  </Box>
-                  <Box sx={styles.box}>
+                  </Grid>
+                  <Grid xl={1.7} xs={1.6}>
                     <Typography sx={styles.label}>Sessions</Typography>
                     <Box display="flex" alignItems="center" gap="11px">
                       <Typography variant="h6">{items.sessions[0]}</Typography>
@@ -199,8 +205,8 @@ function ModelAccordian({ modelData }: any) {
                         <span>from org</span>
                       </Typography>
                     </Box>
-                  </Box>
-                  <Box sx={styles.box}>
+                  </Grid>
+                  <Grid xl={3.5} xs={4}>
                     <Typography sx={styles.label}>Violations</Typography>
                     <Box display="flex" gap="10px">
                       {items?.vilations?.map((innerItem: any, i: number) => {
@@ -267,20 +273,22 @@ function ModelAccordian({ modelData }: any) {
                         );
                       })}
                     </Box>
-                  </Box>
-                  <Box sx={styles.box}>
+                  </Grid>
+                  <Grid xl={2.5} xs={2.2}>
                     <Typography sx={styles.label}>Categories</Typography>
                     <Box display="flex">
-                      <Typography fontSize="14px">
-                        {items.categories[0]}
-                      </Typography>
-                      ,
-                      <Typography fontSize="14px">
-                        {items.categories[1]}
-                      </Typography>
+                      {items.categories.map((item: any, i: number) => {
+                        const isLastItem = i === items.categories.length - 1;
+                        return (
+                          <Typography fontSize="14px" key={i.toString()}>
+                            {item}
+                            {!isLastItem && ",\u00A0"}
+                          </Typography>
+                        );
+                      })}
                     </Box>
-                  </Box>
-                </Box>
+                  </Grid>
+                </Grid>
               );
             })}
           </AccordionDetails>
@@ -311,8 +319,8 @@ function ModelAccordian({ modelData }: any) {
                   alignItems="flex-start"
                   sx={styles.evidance_grid}
                 >
-                  <Grid xs={3}>Secrets</Grid>
-                  <Grid xs={8}>
+                  <Grid xs={1.5}>Secrets</Grid>
+                  <Grid xs={9}>
                     <Typography variant="h6" pb={2}>
                       api_key_1 = "ABC12345DEF67890GHIJ"
                     </Typography>
@@ -325,19 +333,91 @@ function ModelAccordian({ modelData }: any) {
                   </Grid>
                 </Grid>
               </>
+            ) : modelData?.name?.includes(
+                "Github Copilot suggestion for vulnerable package was approved"
+              ) ? (
+              <>
+                <Grid container alignItems="center" sx={styles.evidance_grid}>
+                  <Grid xs={1.5}>Package</Grid>
+                  <Grid xs={9}>
+                    <Typography sx={{ color: "#374151", fontSize: "14px" }}>
+                      actinis-django-storages
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </>
+            ) : modelData?.name?.includes(
+                "Strategic decision making session was detected"
+              ) ? (
+              <>
+                <Grid container alignItems="center" sx={styles.evidance_grid}>
+                  <Grid xs={12}>Code</Grid>
+                  <Grid xs={12} sx={styles.code}>
+                    <pre
+                      style={{
+                        margin: "0px",
+                        color: "#374151",
+                        height: !showShareFile ? "70px" : "100%",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {`
+// Example of code accessing strategic data
+import StrategicData from 'companydb';
+// Function to retrieve strategic documents
+function retrieveStrategicDocs(userId) {
+    let docs = StrategicData.getDocuments(userId, ['Financial_Projections_Q3_2024.xlsx', 'Market_Analysis_Report.pdf', 'Strategic_Plan_2024.docx']);
+    return docs;
+}
+// Function call example
+retrieveStrategicDocs('alex.kim@company.com');
+`}
+                    </pre>
+                    <Button
+                      onClick={() => setShowShareFile(!showShareFile)}
+                      sx={{
+                        color: "#2E90FA",
+                        fontSize: "14px",
+                        textTransform: "capitalize",
+                      }}
+                    >
+                      {!showShareFile ? "Show less..." : "Show more..."}
+                    </Button>
+                  </Grid>
+                </Grid>
+              </>
+            ) : modelData?.name?.includes(
+                "3 Files repetitively retrieved from your RAG database"
+              ) ? (
+              <>
+                <Grid container alignItems="center" sx={styles.evidance_grid}>
+                  <Grid xs={12} mb={4}>File</Grid>
+                  {
+                    modelData.files.map((item:any, i:number)=>{
+                      return(
+                        <Grid xs={12} key={i.toString()} display="flex" alignItems="center" gap="10px" mb={3}>
+                          <Image src={item.fileImg} alt="" width={25} height={25} />
+                          <Typography sx={{color:"#374151", fontSize:"14px"}}>{item.file}</Typography>
+                        </Grid>
+                      )
+                    })
+                  }
+                  
+                </Grid>
+              </>
             ) : (
               <>
                 <Grid container alignItems="center" sx={styles.evidance_grid}>
-                  <Grid xs={3}>Email</Grid>
-                  <Grid xs={8} display="flex" gap="10px">
+                  <Grid xs={1.5}>Email</Grid>
+                  <Grid xs={9} display="flex" gap="10px">
                     {modelData?.email?.map((item: any, i: number) => {
                       return <Chip label={item} key={i.toString()} />;
                     })}
                   </Grid>
                 </Grid>
                 <Grid container alignItems="center" sx={styles.evidance_grid}>
-                  <Grid xs={3}>Credit Card</Grid>
-                  <Grid xs={8} display="flex" gap="10px">
+                  <Grid xs={1.5}>Credit Card</Grid>
+                  <Grid xs={9} display="flex" gap="10px">
                     <Typography variant="h6">
                       1008-****-****-****-9449
                     </Typography>
@@ -346,57 +426,53 @@ function ModelAccordian({ modelData }: any) {
               </>
             )}
             <Grid container alignItems="center" sx={styles.evidance_grid}>
-              {modelData.code && (
-                <>
-                  <Grid xs={12}>Code</Grid>
-                  <Grid xs={12} sx={styles.code}>
-                    <pre 
-                      style={{ 
-                        margin: "0px", color: "#374151" ,
-                        height:!showCode ? "70px" : "100%",
-                        overflow:'hidden'
-                      }}>
-                      {modelData.code}
-                    </pre>
-                    <Button
-                    onClick={()=>setShowCode(!showCode)}
-                    sx={{
-                      color: "#2E90FA",
-                      fontSize: "14px",
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    {!showCode ? "Show more..." : "Show less..."}
-                  </Button>
-                  </Grid>
-                </>
-              )}
+              <>
+                {modelData.code && (
+                  <>
+                    <Grid xs={12}>{modelData.propmpt ? "Prompt" : "Code"}</Grid>
+                    {(isShow
+                      ? modelData.code
+                      : modelData.code && [modelData.code[0]]
+                    )?.map((item: any, i: number) => {
+                      return (
+                        <Grid xs={12} sx={styles.code} key={i.toString()}>
+                          <pre
+                            style={{
+                              margin: "0px",
+                              color: "#374151",
+                              height: showMore === item.id ? "100%" : "70px",
+                              overflow: "hidden",
+                            }}
+                          >
+                            {item.title}
 
-              {modelData.shareFile && (
-                <>
-                  {isShow && (
-                    <Grid xs={12} sx={styles.code}>
-                      <pre style={{ margin: "0px", color: "#374151", height:!showShareFile ? "70px" : "100%",
-                        overflow:'hidden' }}>
-                        {modelData.shareFile}
-                      </pre>
+                            {item.ans && <Box>{item.ans}</Box>}
+                          </pre>
 
-                      <Button
-                      onClick={()=>setShowShareFile(!showShareFile)}
-                      sx={{
-                        color: "#2E90FA",
-                        fontSize: "14px",
-                        textTransform: "capitalize",
-                      }}
-                    >
-                      {!showShareFile ? "Show more..." : "Show less..."}
-                    </Button>
-                    </Grid>
-                  )}
-                </>
-              )}
+                          {modelData.propmpt && modelData.propmpt ? null : (
+                            <Button
+                              onClick={() =>
+                                setShowMore(showMore === item.id ? "" : item.id)
+                              }
+                              sx={{
+                                color: "#2E90FA",
+                                fontSize: "14px",
+                                textTransform: "capitalize",
+                              }}
+                            >
+                              {showMore === item.id
+                                ? "Show less..."
+                                : "Show more..."}
+                            </Button>
+                          )}
+                        </Grid>
+                      );
+                    })}
+                  </>
+                )}
+              </>
 
-              {modelData.shareFile && modelData.shareFile ? (
+              {modelData.code && modelData.code.length > 1 ? (
                 <Button
                   sx={styles.more}
                   onClick={() => {

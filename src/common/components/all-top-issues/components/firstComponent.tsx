@@ -18,16 +18,18 @@ export const FirstComponent = ({ paramsFlag }: any) => {
             : { pathname: "/issues" }
         }
       >
-        <Typography sx={{ fontSize: "14px", color: "#344054" }}>
-          <span style={{ color: "#1570EF" }}>Anna Smith</span>
+        <Typography className="dashboardTopIssue">
+          <span style={{ color: "#1570EF" }}>@Anna Smith</span>
           <span> uploaded 43 files to OpenAI</span>
           <span style={{ color: "#F04438" }}> Public </span>
-          GPT4, 5<span style={{ fontWeight: 700 }}> contain PII </span>
+          GPT4, 5
+          <span style={{ fontWeight: 700 }}>
+            8 contain PII, 3 on HR, candidates data was redacted{" "}
+          </span>
           <span
             style={{ color: "#98A2B3", fontSize: "14px", marginLeft: "13px" }}
           >
-            {" "}
-            5 hours ago{" "}
+            5 hours ago
           </span>
         </Typography>
       </Link>

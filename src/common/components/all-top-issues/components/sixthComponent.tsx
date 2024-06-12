@@ -20,25 +20,19 @@ export const SixthComponent = ({ paramsFlag }: any) => {
         }
         style={styles.linkStyle}
       >
-        <Typography sx={{ fontSize: "14px !important", color: "#344054" }}>
+        <Typography className="dashboardTopIssue">
+          <span style={{ fontWeight: 700 }}> 67 violations </span>
+          to companys policy detected,
+          <span style={{ fontWeight: 700 }}> 49 remediated </span>
           <span
             style={{
-              border: "1px solid #EAECF0",
-              borderRadius: "16px",
-              padding: "2px 8px",
-              marginRight: "4px",
+              color: "#98A2B3",
+              fontSize: "14px",
+              display: "block",
+              paddingTop: "9px",
             }}
           >
-            Google Bard
-          </span>
-          is trending -
-          <span style={{ color: "#1570EF" }}>
-            see what your users are using it for{" "}
-          </span>
-          <span
-            style={{ color: "#98A2B3", fontSize: "14px", marginLeft: "13px" }}
-          >
-            5 hours ago
+            3 days ago
           </span>
         </Typography>
       </Link>

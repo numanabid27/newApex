@@ -4,6 +4,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import ReactEcharts from "echarts-for-react";
 import Image from "next/image";
 import { PieChartStyle } from "./pie-chart.style";
+import { usePathname } from "next/navigation";
 
 function PieChart({
   chartLabels,
@@ -11,7 +12,9 @@ function PieChart({
   title,
   usageDepartment,
   lgHeight,
+  border
 }: any) {
+  const pathname = usePathname();
   return (
     <Grid
       item
@@ -25,17 +28,25 @@ function PieChart({
       }
       className="border border-radius issues-pie__chart"
     >
-      <Typography sx={PieChartStyle.PieHeaderStyling}>{title}</Typography>
-      {usageDepartment && (
-        <Box sx={PieChartStyle.active_users}>
-          <Typography sx={PieChartStyle.active_users_count}>3,523</Typography>
-          <Typography sx={PieChartStyle.active_users_status}>
-            Active users
-          </Typography>
-        </Box>
+      {pathname === "/dashboard" ? null : (
+        <>
+          <Typography sx={PieChartStyle.PieHeaderStyling}>{title}</Typography>
+          {usageDepartment && (
+            <Box sx={PieChartStyle.active_users}>
+              <Typography sx={PieChartStyle.active_users_count}>
+                3,523
+              </Typography>
+              <Typography sx={PieChartStyle.active_users_status}>
+                Active users
+              </Typography>
+            </Box>
+          )}
+        </>
       )}
+
       <Grid
         item
+        className={`${border && "borderUsage"}`}
         sx={{
           height: {
             lg: `${lgHeight}px !important`,
@@ -53,11 +64,22 @@ function PieChart({
           alignItems: "center",
           justifyContent: "space-between",
           width: "100%",
+          gap:"15px"
         }}
       >
-        <Grid item xs={12} sm={12} md={12} lg={7.5} sx={{ width: "100%" }}>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={5.5}
+          sx={PieChartStyle.PieChartDataStyling}
+        >
+          <ReactEcharts option={chartData} />
+        </Grid>
+        <Grid item xs={12} sm={12} md={12} lg={6.5} sx={{ width: "100%" }}>
           {chartLabels.map((item: any) => (
-            <Grid key={item.id} item xs={12} sx={PieChartStyle.PieChartLabel}>
+            <Grid key={item.id} item xs={12} sx={PieChartStyle.PieChartLabel} gap="19px">
               <Grid item xs={7}>
                 <Typography sx={PieChartStyle.PieLabelStyling}>
                   <Image
@@ -75,16 +97,6 @@ function PieChart({
               </Grid>
             </Grid>
           ))}
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={4.5}
-          sx={PieChartStyle.PieChartDataStyling}
-        >
-          <ReactEcharts option={chartData} />
         </Grid>
       </Grid>
     </Grid>

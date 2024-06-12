@@ -2,6 +2,8 @@ export const SessionTimeStyle = {
   SessionTimeMain: {
     display: "flex",
     justifyContent: "space-between",
+    borderBottom:'1px solid #EAECF0',
+    paddingBottom: "17px"
   },
 
   SessionOvertimeBoxComponent: {
@@ -10,10 +12,15 @@ export const SessionTimeStyle = {
     display: "flex",
     height: "50px",
     alignItems: "center",
+    marginTop:'15px',
+    gap:'10px'
   },
   SessionOverTimeBox: {
-    fontSize: { sm: "42px", xs: "29px" },
+    fontSize: "51px",
     flexDirection: { sm: "unset", xs: "column" },
+    "@media screen and (max-width:1600px)":{
+      fontSize: "36px",
+    }
   },
 
   SessionTrendingValue: {
@@ -21,9 +28,10 @@ export const SessionTimeStyle = {
     backgroundColor: "#ecfdf3",
     borderRadius: "16px",
     display: "flex",
-    padding: "4px",
+    padding: "4px 10px",
     fontSize: "12px",
     marginLeft: "2px",
+    width:'fit-content'
   },
   SessionOverTimeData: {
     fontSize: { sm: "42px", xs: "29px" },
@@ -63,7 +71,10 @@ export const SessionTimeStyle = {
     },
   },
   engineOverTime : { 
-    width: { sm: "100%", xs: "100%" }
+    width: { sm: "100%", xs: "100%" },
+    "svg":{
+      color:"#344054"
+    }
   },
   SessionText: {
     color: "#344054",
@@ -85,4 +96,8 @@ export const SessionTimeStyle = {
       },
     },
   },
+  increaseSession:{
+    color:"#667085",
+    fontSize:"13.11px"
+  }
 };

@@ -10,7 +10,7 @@ export const Py = ({ items, handleClick, hoveredIndex }: any) => {
     <>
       {hoveredIndex && (
         <Box >
-          {items.endsWith(".docx") && items.endsWith(".docx") ? (
+          {items.endsWith(".txt") && items.endsWith(".txt") ? (
             <Box sx={styles.pyBg}>
               <Grid container justifyContent="space-between">
                 <Grid xs={11}>
@@ -35,7 +35,7 @@ export const Py = ({ items, handleClick, hoveredIndex }: any) => {
                 </ul>
               </Box>
             </Box>
-          ) : items.endsWith(".xlsx") && items.endsWith(".xlsx") ? (
+          ) : items.endsWith(".py") && items.endsWith(".py") ? (
             <Box sx={styles.pyBg}>
               <Grid container justifyContent="space-between">
                 <Grid xs={11}>

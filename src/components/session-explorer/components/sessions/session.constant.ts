@@ -390,11 +390,6 @@ export const SESSION_EXPLORE_DATA = [
         id:1,
         title:'Code',
         img:code,
-      },
-      {
-        id:2,
-        title:'Finance',
-        img:coin
       }
     ],
 

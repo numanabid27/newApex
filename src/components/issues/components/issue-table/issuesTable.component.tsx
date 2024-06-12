@@ -55,7 +55,7 @@ function Row(props: {
         <TableCell component="th" scope="row">
           {row.lastEvent}
         </TableCell>
-        <TableCell width="19%">
+        <TableCell width="19%" sx={{fontWeight:'500 !important'}}>
           {
             windowWidth && windowWidth < 1440 ? 
             <>{row.name.slice(0, 15) + " ..."}</>

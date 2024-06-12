@@ -20,17 +20,16 @@ export const FifthComponent = ({ paramsFlag }: any) => {
         }
         style={styles.linkStyle}
       >
-        <Typography sx={{ fontSize: "14px !important", color: "#344054" }}>
-          You are reaching your usage limit on
-          <span style={{ color: "#1570EF" }}> Azure OpenAI R&D, </span>
-          with 3 users (one machine)
-          <span style={{ fontWeight: 700 }}> using 43% </span>
-          of it
+        <Typography className="dashboardTopIssue">
+          Microsoft Copilot
+          <span style={{ fontWeight: 700 }}> shared sensitive finance information </span>
+          with
+          <span style={{ color: "#1570EF" }}> @Max Bard </span>
+          from R&D
           <span
-            style={{ color: "#98A2B3", fontSize: "14px", marginLeft: "13px" }}
+            style={{ color: "#98A2B3", fontSize: "14px", display:'block', paddingTop:'9px' }}
           >
-            {" "}
-            3 days ago{" "}
+            2 hours ago
           </span>
         </Typography>
       </Link>

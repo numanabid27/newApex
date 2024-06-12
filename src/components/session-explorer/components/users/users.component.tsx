@@ -93,87 +93,65 @@ export default function Users() {
       },
     },
     {
-      id: 6,
-      header: "Issues",
-      accessor: "issues",
-      cell: (issuesData: any) => {
-        return (
-          <Box display="flex" gap="10px">
-            <Chip
-              label={issuesData[0]}
-              sx={{
-                ...userStyle.severityChip,
-                color: issuesData[0] === "1 Critical" ? Colors.darkBrown : "",
-                bgcolor:
-                  issuesData[0] === "1 Critical" ? Colors.secondaryWhite : "",
-                p: 0,
-              }}
-              icon={
-                <CircleIcon
-                  sx={{
-                    fill:
-                      issuesData[0] === "1 Critical"
-                        ? `${Colors.darkBrown} !important`
-                        : "",
-                    ...userStyle.severityLevel,
-                  }}
-                />
-              }
-            />
-            <Chip
-              label={issuesData[1]}
-              sx={{
-                ...userStyle.severityChip,
-                color: issuesData[1] === "2 High" ? Colors.textHigh : "",
-                bgcolor: issuesData[1] === "2 High" ? Colors.defaultWhite : "",
-                p: 0,
-              }}
-              icon={
-                <CircleIcon
-                  sx={{
-                    fill: issuesData[1] === "2 High" ? Colors.circleHigh : "",
-
-                    ...userStyle.severityLevel,
-                  }}
-                />
-              }
-            />
-          </Box>
-        );
-      },
-    },
-    {
       id: 7,
       header: "Violations",
       accessor: "violation",
       cell: (voilationData: any) => {
         return (
           <Box display="flex" gap="10px">
-            <Chip
-              label={voilationData[0]}
-              sx={{
-                ...userStyle.severityChip,
-                color:
-                  voilationData[0] === "1 Critical" ? Colors.darkBrown : "",
-                bgcolor:
-                  voilationData[0] === "1 Critical"
-                    ? Colors.secondaryWhite
-                    : "",
-                p: 0,
-              }}
-              icon={
-                <CircleIcon
-                  sx={{
-                    fill:
-                      voilationData[0] === "1 Critical"
-                        ? `${Colors.darkBrown} !important`
-                        : "",
-                    ...userStyle.severityLevel,
-                  }}
-                />
-              }
-            />
-            <Chip
+            {
+              voilationData.map((item:any, i:number)=>{
+                return(
+                  <Chip
+                    key={i.toString()}
+                    label={item}
+                    sx={{
+                      ...userStyle.severityChip,
+                      color:
+                        item.includes('Critical') ? Colors.darkBrown 
+                        : 
+                        item.includes('High') ? Colors.textHigh 
+                        :
+                        item.includes('Medium') ? Colors.darkBrown 
+                        :
+                        item.includes('Low') ? Colors.textGreen 
+                        :
+                        "",
+                      bgcolor:
+                        item.includes('Critical') ? Colors.secondaryWhite
+                        : 
+                        item.includes('High') ? Colors.defaultWhite 
+                        :
+                        item.includes('Medium') ? Colors.primaryWhite 
+                        :
+                        item.includes('Low') ? Colors.primaryGreen 
+                        :
+                        "",
+                      p: 0,
+                    }}
+                    icon={
+                      <CircleIcon
+                        sx={{
+                          fill:
+                          item.includes('Critical') ? `${Colors.darkBrown} !important`
+                          : 
+                          item.includes('High') ? `${Colors.circleHigh}` 
+                          :
+                          item.includes('Medium') ? `${Colors.orange}` 
+                          :
+                          item.includes('Medium') ? `${Colors.circleLow}` 
+                          :
+                          "",
+                          ...userStyle.severityLevel,
+                        }}
+                      />
+                    }
+                  />
+                )
+              })
+            }
+           
+            {/* <Chip
               label={voilationData[1]}
               sx={{
                 ...userStyle.severityChip,
@@ -192,7 +170,7 @@ export default function Users() {
                   }}
                 />
               }
-            />
+            /> */}
           </Box>
         );
       },

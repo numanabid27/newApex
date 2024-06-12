@@ -10,24 +10,24 @@ import { DataFlowStyles } from "./data-flow.style";
  * @returns The DataChart component
  */
 
-function DataFlow() {
+function DataFlow(detection:any) {
   return (
     <Grid
       item
       xs={12}
       md={12}
       lg={12}
-      sx={DataFlowStyles.DataFlowMain}
+      sx={detection ? DataFlowStyles.DataFlowMain2 : DataFlowStyles.DataFlowMain}
       className="border border-radius bg-white"
     >
       <Typography
-        className="tertiary-title"
+        className={`${detection && "detection"} tertiary-title`}
         sx={{
           ...DataFlowStyles.DataFlowText,
           ...DataFlowStyles.DataFlowTextComponent,
         }}
       >
-        Data
+        Detection
       </Typography>
       <Box sx={DataFlowStyles.DataFlowChart}>
         <ReactEcharts option={DATA_DASHBOARD_CHART} />

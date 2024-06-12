@@ -35,7 +35,1265 @@ export const SESSION_EXPLORER_DATA2 = [
   }
 ];
 
+// GITHUB
 export const AIBOOM_TABLE_DATA = [
+  {
+    id:1,
+    folderName: "R",
+    code: "85",
+    voilation: [2, "violations"],
+    comment: "21 hours",
+    files:[
+      {
+        id:1,
+        fileName:'codefile.txt',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:2,
+        fileName:'code.py',
+        fileVoilation: [1, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:3,
+        fileName:'api.py',
+        fileVoilation: [15, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:4,
+        fileName:'core.py',
+        fileVoilation: [3, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:5,
+        fileName:'codefile.txt',
+        fileVoilation: [5, "violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:6,
+        fileName:'new_code.py',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:7,
+        fileName:'runandstop.py',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:8,
+        fileName:'runscript.py',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:9,
+        fileName:'txt.txt',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:10,
+        fileName:'readme.txt',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:11,
+        fileName:'runscript.py',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:12,
+        fileName:'java.py',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+     
+    ]
+  },
+  {
+    id:2,
+    folderName: "Data",
+    code: "23",
+    voilation: [15, "violations"],
+    comment: "25 sceonds ago",
+    files:[
+      {
+        id:1,
+        fileName:'codefile.txt',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:2,
+        fileName:'code.py',
+        fileVoilation: [1, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:3,
+        fileName:'api.py',
+        fileVoilation: [15, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:4,
+        fileName:'core.py',
+        fileVoilation: [3, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:5,
+        fileName:'codefile.txt',
+        fileVoilation: [5, "violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:6,
+        fileName:'new_code.py',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:7,
+        fileName:'runandstop.py',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:8,
+        fileName:'runscript.py',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:9,
+        fileName:'txt.txt',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:10,
+        fileName:'readme.txt',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:11,
+        fileName:'runscript.py',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:12,
+        fileName:'java.py',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+     
+    ]
+  },
+  {
+    id:3,
+    folderName: "doc",
+    code: "18",
+    voilation: [1, "violations"],
+    comment: "25 sceonds ago",
+    files:[
+      {
+        id:1,
+        fileName:'Q1_Sales_Report.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:2,
+        fileName:'Marketing_Strategy_Plan.docx',
+        fileVoilation: [1, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:3,
+        fileName:'Client_Agreement_2024.pdf',
+        fileVoilation: [15, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:4,
+        fileName:'Product_Roadmap.pptx',
+        fileVoilation: [3, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:5,
+        fileName:'Design_Specs_Spring2024.pdf',
+        fileVoilation: [5, "violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:6,
+        fileName:'Annual_Budget.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:7,
+        fileName:'Research_Summary.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:8,
+        fileName:'Employee_Handbook.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:9,
+        fileName:'Legal_Contract_Template.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:10,
+        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:11,
+        fileName:'Customer_Survey_Results.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:12,
+        fileName:'Project_Timeline_Schedule.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:13,
+        fileName:'Training_Session_Agenda.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:14,
+        fileName:'Team_Meeting_Notes_05152024.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:15,
+        fileName:'Product_Feature_List.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      }
+    ]
+  },
+  {
+    id:4,
+    folderName: "ext",
+    code: "22",
+    voilation: [3, "violations"],
+    comment: "25 sceonds ago",
+    files:[
+      {
+        id:1,
+        fileName:'Q1_Sales_Report.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:2,
+        fileName:'Marketing_Strategy_Plan.docx',
+        fileVoilation: [1, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:3,
+        fileName:'Client_Agreement_2024.pdf',
+        fileVoilation: [15, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:4,
+        fileName:'Product_Roadmap.pptx',
+        fileVoilation: [3, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:5,
+        fileName:'Design_Specs_Spring2024.pdf',
+        fileVoilation: [5, "violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:6,
+        fileName:'Annual_Budget.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:7,
+        fileName:'Research_Summary.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:8,
+        fileName:'Employee_Handbook.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:9,
+        fileName:'Legal_Contract_Template.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:10,
+        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:11,
+        fileName:'Customer_Survey_Results.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:12,
+        fileName:'Project_Timeline_Schedule.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:13,
+        fileName:'Training_Session_Agenda.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:14,
+        fileName:'Team_Meeting_Notes_05152024.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:15,
+        fileName:'Product_Feature_List.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      }
+    ]
+  },
+  {
+    id:5,
+    folderName: "output",
+    code: "8",
+    voilation: [22, "violations"],
+    comment: "22 hours ago",
+    files:[
+      {
+        id:1,
+        fileName:'Q1_Sales_Report.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:2,
+        fileName:'Marketing_Strategy_Plan.docx',
+        fileVoilation: [1, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:3,
+        fileName:'Client_Agreement_2024.pdf',
+        fileVoilation: [15, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:4,
+        fileName:'Product_Roadmap.pptx',
+        fileVoilation: [3, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:5,
+        fileName:'Design_Specs_Spring2024.pdf',
+        fileVoilation: [5, "violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:6,
+        fileName:'Annual_Budget.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:7,
+        fileName:'Research_Summary.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:8,
+        fileName:'Employee_Handbook.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:9,
+        fileName:'Legal_Contract_Template.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:10,
+        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:11,
+        fileName:'Customer_Survey_Results.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:12,
+        fileName:'Project_Timeline_Schedule.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:13,
+        fileName:'Training_Session_Agenda.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:14,
+        fileName:'Team_Meeting_Notes_05152024.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:15,
+        fileName:'Product_Feature_List.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      }
+    ]
+  },
+  {
+    id:6,
+    folderName: "qa",
+    code: "13",
+    voilation: ["","No violations"],
+    comment: "22 hours ago",
+    files:[
+      {
+        id:1,
+        fileName:'Q1_Sales_Report.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:2,
+        fileName:'Marketing_Strategy_Plan.docx',
+        fileVoilation: [1, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:3,
+        fileName:'Client_Agreement_2024.pdf',
+        fileVoilation: [15, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:4,
+        fileName:'Product_Roadmap.pptx',
+        fileVoilation: [3, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:5,
+        fileName:'Design_Specs_Spring2024.pdf',
+        fileVoilation: [5, "violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:6,
+        fileName:'Annual_Budget.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:7,
+        fileName:'Research_Summary.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:8,
+        fileName:'Employee_Handbook.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:9,
+        fileName:'Legal_Contract_Template.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:10,
+        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:11,
+        fileName:'Customer_Survey_Results.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:12,
+        fileName:'Project_Timeline_Schedule.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:13,
+        fileName:'Training_Session_Agenda.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:14,
+        fileName:'Team_Meeting_Notes_05152024.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:15,
+        fileName:'Product_Feature_List.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      }
+    ]
+  },
+  {
+    id:7,
+    folderName: "qa",
+    code: "8",
+    voilation: [15, "violations"],
+    comment: "25 sceonds ago",
+    files:[
+      {
+        id:1,
+        fileName:'Q1_Sales_Report.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:2,
+        fileName:'Marketing_Strategy_Plan.docx',
+        fileVoilation: [1, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:3,
+        fileName:'Client_Agreement_2024.pdf',
+        fileVoilation: [15, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:4,
+        fileName:'Product_Roadmap.pptx',
+        fileVoilation: [3, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:5,
+        fileName:'Design_Specs_Spring2024.pdf',
+        fileVoilation: [5, "violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:6,
+        fileName:'Annual_Budget.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:7,
+        fileName:'Research_Summary.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:8,
+        fileName:'Employee_Handbook.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:9,
+        fileName:'Legal_Contract_Template.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:10,
+        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:11,
+        fileName:'Customer_Survey_Results.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:12,
+        fileName:'Project_Timeline_Schedule.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:13,
+        fileName:'Training_Session_Agenda.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:14,
+        fileName:'Team_Meeting_Notes_05152024.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:15,
+        fileName:'Product_Feature_List.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      }
+    ]
+  },
+  {
+    id:8,
+    folderName: "ext",
+    code: "30",
+    voilation: [1, "violations"],
+    comment: "22 hours ago",
+    files:[
+      {
+        id:1,
+        fileName:'Q1_Sales_Report.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:2,
+        fileName:'Marketing_Strategy_Plan.docx',
+        fileVoilation: [1, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:3,
+        fileName:'Client_Agreement_2024.pdf',
+        fileVoilation: [15, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:4,
+        fileName:'Product_Roadmap.pptx',
+        fileVoilation: [3, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:5,
+        fileName:'Design_Specs_Spring2024.pdf',
+        fileVoilation: [5, "violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:6,
+        fileName:'Annual_Budget.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:7,
+        fileName:'Research_Summary.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:8,
+        fileName:'Employee_Handbook.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:9,
+        fileName:'Legal_Contract_Template.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:10,
+        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:11,
+        fileName:'Customer_Survey_Results.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:12,
+        fileName:'Project_Timeline_Schedule.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:13,
+        fileName:'Training_Session_Agenda.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:14,
+        fileName:'Team_Meeting_Notes_05152024.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:15,
+        fileName:'Product_Feature_List.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      }
+    ]
+  },
+  {
+    id:9,
+    folderName: "doc",
+    code: "18",
+    voilation: ["", "No violations"],
+    comment: "25 sceonds ago",
+    files:[
+      {
+        id:1,
+        fileName:'Q1_Sales_Report.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:2,
+        fileName:'Marketing_Strategy_Plan.docx',
+        fileVoilation: [1, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:3,
+        fileName:'Client_Agreement_2024.pdf',
+        fileVoilation: [15, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:4,
+        fileName:'Product_Roadmap.pptx',
+        fileVoilation: [3, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:5,
+        fileName:'Design_Specs_Spring2024.pdf',
+        fileVoilation: [5, "violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:6,
+        fileName:'Annual_Budget.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:7,
+        fileName:'Research_Summary.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:8,
+        fileName:'Employee_Handbook.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:9,
+        fileName:'Legal_Contract_Template.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:10,
+        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:11,
+        fileName:'Customer_Survey_Results.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:12,
+        fileName:'Project_Timeline_Schedule.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:13,
+        fileName:'Training_Session_Agenda.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:14,
+        fileName:'Team_Meeting_Notes_05152024.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:15,
+        fileName:'Product_Feature_List.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      }
+    ]
+  },
+  {
+    id:10,
+    folderName: "output",
+    code: "13",
+    voilation: ["15", "Violations"],
+    comment: "22 hours ago",
+    files:[
+      {
+        id:1,
+        fileName:'Q1_Sales_Report.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:2,
+        fileName:'Marketing_Strategy_Plan.docx',
+        fileVoilation: [1, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:3,
+        fileName:'Client_Agreement_2024.pdf',
+        fileVoilation: [15, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:4,
+        fileName:'Product_Roadmap.pptx',
+        fileVoilation: [3, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:5,
+        fileName:'Design_Specs_Spring2024.pdf',
+        fileVoilation: [5, "violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:6,
+        fileName:'Annual_Budget.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:7,
+        fileName:'Research_Summary.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:8,
+        fileName:'Employee_Handbook.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:9,
+        fileName:'Legal_Contract_Template.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:10,
+        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:11,
+        fileName:'Customer_Survey_Results.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:12,
+        fileName:'Project_Timeline_Schedule.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:13,
+        fileName:'Training_Session_Agenda.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:14,
+        fileName:'Team_Meeting_Notes_05152024.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:15,
+        fileName:'Product_Feature_List.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      }
+    ]
+  },
+  {
+    id:11,
+    folderName: "Data",
+    code: "23",
+    voilation: ["2", "Violations"],
+    comment: "25 sceonds ago",
+    files:[
+      {
+        id:1,
+        fileName:'Q1_Sales_Report.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:2,
+        fileName:'Marketing_Strategy_Plan.docx',
+        fileVoilation: [1, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:3,
+        fileName:'Client_Agreement_2024.pdf',
+        fileVoilation: [15, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:4,
+        fileName:'Product_Roadmap.pptx',
+        fileVoilation: [3, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:5,
+        fileName:'Design_Specs_Spring2024.pdf',
+        fileVoilation: [5, "violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:6,
+        fileName:'Annual_Budget.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:7,
+        fileName:'Research_Summary.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:8,
+        fileName:'Employee_Handbook.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:9,
+        fileName:'Legal_Contract_Template.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:10,
+        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:11,
+        fileName:'Customer_Survey_Results.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:12,
+        fileName:'Project_Timeline_Schedule.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:13,
+        fileName:'Training_Session_Agenda.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:14,
+        fileName:'Team_Meeting_Notes_05152024.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:15,
+        fileName:'Product_Feature_List.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      }
+    ]
+  },
+  {
+    id:12,
+    folderName: "Data",
+    code: "53",
+    voilation: ["4", "Violations"],
+    comment: "25 sceonds ago",
+    files:[
+      {
+        id:1,
+        fileName:'Q1_Sales_Report.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:2,
+        fileName:'Marketing_Strategy_Plan.docx',
+        fileVoilation: [1, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:3,
+        fileName:'Client_Agreement_2024.pdf',
+        fileVoilation: [15, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:4,
+        fileName:'Product_Roadmap.pptx',
+        fileVoilation: [3, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:5,
+        fileName:'Design_Specs_Spring2024.pdf',
+        fileVoilation: [5, "violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:6,
+        fileName:'Annual_Budget.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:7,
+        fileName:'Research_Summary.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:8,
+        fileName:'Employee_Handbook.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:9,
+        fileName:'Legal_Contract_Template.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:10,
+        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:11,
+        fileName:'Customer_Survey_Results.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:12,
+        fileName:'Project_Timeline_Schedule.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:13,
+        fileName:'Training_Session_Agenda.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:14,
+        fileName:'Team_Meeting_Notes_05152024.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:15,
+        fileName:'Product_Feature_List.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      }
+    ]
+  },
+  {
+    id:13,
+    folderName: "output",
+    code: "53",
+    voilation: ["4", "Violations"],
+    comment: "25 sceonds ago",
+    files:[
+      {
+        id:1,
+        fileName:'Q1_Sales_Report.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:2,
+        fileName:'Marketing_Strategy_Plan.docx',
+        fileVoilation: [1, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:3,
+        fileName:'Client_Agreement_2024.pdf',
+        fileVoilation: [15, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:4,
+        fileName:'Product_Roadmap.pptx',
+        fileVoilation: [3, "violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:5,
+        fileName:'Design_Specs_Spring2024.pdf',
+        fileVoilation: [5, "violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:6,
+        fileName:'Annual_Budget.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:7,
+        fileName:'Research_Summary.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:8,
+        fileName:'Employee_Handbook.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "21 hours"
+      },
+      {
+        id:9,
+        fileName:'Legal_Contract_Template.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:10,
+        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:11,
+        fileName:'Customer_Survey_Results.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "25 sceonds ago"
+      },
+      {
+        id:12,
+        fileName:'Project_Timeline_Schedule.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:13,
+        fileName:'Training_Session_Agenda.docx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:14,
+        fileName:'Team_Meeting_Notes_05152024.pdf',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      },
+      {
+        id:15,
+        fileName:'Product_Feature_List.xlsx',
+        fileVoilation: [null, "No violations"],
+        fileCommit: "22 hours ago"
+      }
+    ]
+  }
+]
+
+// BOX
+export const AIBOOM_TABLE_BOX = [
   {
     id:1,
     folderName: "Project_Delta",

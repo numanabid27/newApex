@@ -3,15 +3,12 @@ import { styles } from "./allTop-issues.style";
 import { Box, Typography, Grid, Chip, Button } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
-import language from "@/common/assets/images/language.svg";
-import keys from "@/common/assets/images/key_off.svg";
-import danger from "@/common/assets/images/danger.svg";
-import hand from "@/common/assets/images/hand.svg";
-import searching from "@/common/assets/images/searching.svg";
+import danger from "@/common/assets/images/g-danger.svg";
+import hand from "@/common/assets/images/g-hand.svg";
+import searching from "@/common/assets/images/feature_search.svg";
 import { FirstComponent } from "./components/firstComponent";
 import { SecondComponent } from "./components/secondComponent";
 import { ThirdComponent } from "./components/thirdComponent";
-import { FourthComponent } from "./components/fourthComponent";
 import { FifthComponent } from "./components/fifthComponent";
 import { SixthComponent } from "./components/sixthComponent";
 import more from "@/common/assets/images/more_vert.svg";
@@ -35,34 +32,27 @@ const All_TOP_ISSUES = [
   {
     id: 3,
     value: ThirdComponent,
-    linkText: "Investigate",
+    linkText: "View AI-BoM",
     url: "",
     btnImage: searching,
   },
   {
     id: 4,
-    value: FourthComponent,
-    linkText: "Restrict Access",
-    url: "",
-    btnImage: keys,
-  },
-  {
-    id: 5,
     value: FifthComponent,
     linkText: "Investigate",
     url: "",
     btnImage: searching,
   },
   {
-    id: 6,
+    id: 5,
     value: SixthComponent,
-    linkText: "Sessions Explorer",
+    linkText: "Configure Policies",
     url: "",
-    btnImage: language,
+    btnImage: searching,
   },
 ];
 
-export const AllTopIssues = ({ hideElement, pagination, paramsFlag }: any) => {
+export const AllTopIssues = ({ hideElement, pagination, paramsFlag, update }: any) => {
   const {
     currentItems,
     handleNext,
@@ -72,27 +62,29 @@ export const AllTopIssues = ({ hideElement, pagination, paramsFlag }: any) => {
   } = useTopIssues({ All_TOP_ISSUES });
   return (
     <>
-      <Box>
-        <Grid
-          container
-          justifyContent="space-between"
-          alignItems="center"
-          sx={styles.top_rows}
-        >
-          <Grid item xs={5}>
-            <Typography sx={styles.topText}>Top Issues</Typography>
-          </Grid>
-          <Grid item xs={5} sx={styles.more_row}>
-            {hideElement && (
-              <Typography sx={styles.topbadge}>
-                <span style={styles.bold}> All </span> / Posture / Runtime /
-                Usage
-              </Typography>
-            )}
+      <Box className="border border-radius"> 
+        {
+          update &&
+          <Grid
+            container
+            justifyContent="space-between"
+            alignItems="center"
+            sx={styles.top_rows}
+          >
+            <Grid item xs={4}>
+              <Typography sx={styles.topText}>Top Issues</Typography>
+            </Grid>
+            <Grid item xs={6} sx={styles.more_row}>
+              {hideElement && (
+                <Typography sx={styles.topbadge}>
+                  All / Posture / Runtime / FinOps
+                </Typography>
+              )}
 
-            <Image src={more} alt="" onClick={() => alert("APEX")} />
+              <Image src={more} alt="" onClick={() => alert("APEX")} />
+            </Grid>
           </Grid>
-        </Grid>
+        }
 
         <>
           {pagination ? (
@@ -136,7 +128,7 @@ export const AllTopIssues = ({ hideElement, pagination, paramsFlag }: any) => {
               })}
             </Box>
           ) : (
-            <Box>
+            <Box sx={styles.topIssuesBox}>
               {All_TOP_ISSUES.map((item: any) => {
                 return (
                   <Grid
@@ -144,7 +136,7 @@ export const AllTopIssues = ({ hideElement, pagination, paramsFlag }: any) => {
                     container
                     justifyContent="space-between"
                     alignItems="center"
-                    sx={styles.top_issue_row}
+                    sx={styles.top_issue_row2}
                   >
                     <Grid item sm={8.7} xs={12}>
                       <item.value paramsFlag={paramsFlag} />
