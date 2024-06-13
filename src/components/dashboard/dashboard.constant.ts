@@ -227,7 +227,7 @@ export const USER_ACCESS = [
 export const ACTIVE_ENGINE_DATA = [
   {
     id: 1,
-    value: "Azure OpenAI General",
+    value: "Azure OpenAI GPT-4",
     icon: AzureIcon,
     res: "High risk engine",
     notification: 16,

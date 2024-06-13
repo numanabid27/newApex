@@ -41,7 +41,7 @@ function SessionTimeUser() {
             </Box>
           </Box>
         </Box>
-        <Box>
+        <Box className="dropdown-margin">
           <FormControl variant="standard" sx={SessionTimeStyle.engineOverTime}>
             <Select
               labelId="demo-simple-select-autowidth-label"

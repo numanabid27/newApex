@@ -13,7 +13,10 @@ export const SessionTimeStyle = {
     height: "50px",
     alignItems: "center",
     marginTop:'15px',
-    gap:'10px'
+    gap:'10px',
+    "@media screen and (max-width:767px)":{
+      flexDirection:"row"
+    }
   },
   SessionOverTimeBox: {
     fontSize: "51px",

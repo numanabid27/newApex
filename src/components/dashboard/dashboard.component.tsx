@@ -90,10 +90,11 @@ function Dashboard() {
                 </Box>
               </Box>
             </Box>
-            <Box>
+            <Box className="dropdown-margin">
               <FormControl
                 variant="standard"
                 sx={SessionTimeStyle.engineOverTime}
+                
               >
                 <Select
                   labelId="demo-simple-select-autowidth-label"
@@ -115,7 +116,7 @@ function Dashboard() {
               </FormControl>
             </Box>
           </Box>
-          <Box display="flex" marginTop="7px">
+          <Box display="flex" flexDirection={{sm:'row', xs:'column'}} marginTop="7px">
             <PieChart
               chartData={SENSITIVE_DATATYPE_CHART}
               chartLabels={USAGE_BY_DEPARTMENT}

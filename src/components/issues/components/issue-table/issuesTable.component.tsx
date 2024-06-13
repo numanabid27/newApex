@@ -42,12 +42,17 @@ function Row(props: {
   const { windowWidth } = useWidth();
   return (
     <>
-      <TableRow sx={styles.tableRow}>
+      <TableRow
+        sx={styles.tableRow}
+        onClick={() => {
+          setOpenModal(row), console.log("row", row);
+        }}
+      >
         <TableCell>
           <IconButton
             aria-label="expand row"
             size="small"
-            onClick={() => setOpen(!open)}
+            onClick={(e) => {setOpen(!open), e.stopPropagation()}}
           >
             {open ? <KeyboardArrowDownIcon /> : <ChevronRightIcon />}
           </IconButton>
@@ -55,13 +60,12 @@ function Row(props: {
         <TableCell component="th" scope="row">
           {row.lastEvent}
         </TableCell>
-        <TableCell width="19%" sx={{fontWeight:'500 !important'}}>
-          {
-            windowWidth && windowWidth < 1440 ? 
+        <TableCell width="19%" sx={{ fontWeight: "500 !important" }}>
+          {windowWidth && windowWidth < 1440 ? (
             <>{row.name.slice(0, 15) + " ..."}</>
-            :
+          ) : (
             <>{row.name}</>
-          }
+          )}
         </TableCell>
         <TableCell>{row.subcategories}</TableCell>
         <TableCell>
@@ -179,9 +183,9 @@ function Row(props: {
                     <TableRow
                       key={items.id}
                       sx={styles.nestedTbody}
-                      onClick={() => {
-                        setOpenModal(row), console.log("row", row);
-                      }}
+                      // onClick={() => {
+                      //   setOpenModal(row), console.log("row", row);
+                      // }}
                     >
                       <TableCell component="th" scope="row">
                         {items.id}
@@ -298,7 +302,11 @@ export default function CollapsibleTable({
             <TableCell>Tags</TableCell>
             <TableCell>Status</TableCell>
             <TableCell>Context</TableCell>
-            <TableCell><Box display="flex" alignItems="center" gap="10px"><Image src={setting} alt="" /> First Event</Box></TableCell>
+            <TableCell>
+              <Box display="flex" alignItems="center" gap="10px">
+                <Image src={setting} alt="" /> First Event
+              </Box>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

@@ -9,6 +9,7 @@ export const styles = {
         }
     },
     tableRow:{
+        cursor:'pointer',
         "td":{
             color:"#374151",
             fontSize:"14px",

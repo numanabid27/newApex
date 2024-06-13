@@ -102,6 +102,11 @@ html {
 .enginDropdown::after{
   border-bottom: unset !important;
 }
+.enginDropdown .MuiSelect-select{
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-size: 17px;
+}
 .custom-dialogue_class .MuiDialog-paper {
   position: absolute;
     top: 0;
@@ -612,12 +617,17 @@ body {
   font-size: 14px;
   color: #344054 !important; 
 }
+.dropdown-margin{
+  margin-top: 4px;
+}
 
 @media screen and (min-width: 1600px) {
   .sessionEchart .echarts-for-react {
     width: 102%;
     margin: 0 0 0 -4%;
   }
+  
+  
 }
 
 @media screen and (min-width:1700px){
@@ -631,6 +641,12 @@ body {
   }
 }
 @media screen and (max-width: 1600px) {
+  .dropdown-margin{
+    margin-top: 0px;
+  }
+  .enginDropdown .MuiSelect-select{
+    font-size: 15px;
+  }
   .searchBox {
     width: 8vw;
     padding: 3px 13px;
@@ -682,6 +698,7 @@ body {
   }
 }
 @media screen and (max-width: 767px) {
+ 
   .dateRange{
     max-width: 100% !important;
   }
