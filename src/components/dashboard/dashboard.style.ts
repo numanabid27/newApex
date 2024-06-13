@@ -46,7 +46,10 @@ export const DashboardStyles = {
   },
   top_rows: {
     padding: "13px 0px 10px",
-    marginBottom:'13px'
+    marginBottom:'19px',
+    "@media screen and (max-width:1600px)":{
+      marginBottom:'14px',
+    }
   },
   topText: {
     color: "#344054",

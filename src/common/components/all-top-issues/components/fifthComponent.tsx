@@ -20,7 +20,7 @@ export const FifthComponent = ({ paramsFlag }: any) => {
         }
         style={styles.linkStyle}
       >
-        <Typography className="dashboardTopIssue">
+        <Typography className={`${paramsFlag ? "dashboardTopIssue" : "engineTopIssues"}`}>
           Microsoft Copilot
           <span style={{ fontWeight: 700 }}> shared sensitive finance information </span>
           with

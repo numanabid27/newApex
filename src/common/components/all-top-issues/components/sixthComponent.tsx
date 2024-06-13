@@ -20,7 +20,7 @@ export const SixthComponent = ({ paramsFlag }: any) => {
         }
         style={styles.linkStyle}
       >
-        <Typography className="dashboardTopIssue">
+        <Typography className={`${paramsFlag ? "dashboardTopIssue" : "engineTopIssues"}`}>
           <span style={{ fontWeight: 700 }}> 67 violations </span>
           to companys policy detected,
           <span style={{ fontWeight: 700 }}> 49 remediated </span>

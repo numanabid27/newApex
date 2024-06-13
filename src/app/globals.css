@@ -608,7 +608,10 @@ body {
   border-right: 1px solid #EAECF0;
   padding: 0px 14px 0 0;
 }
-
+.engineTopIssues{
+  font-size: 14px;
+  color: #344054 !important; 
+}
 
 @media screen and (min-width: 1600px) {
   .sessionEchart .echarts-for-react {

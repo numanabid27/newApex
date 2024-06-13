@@ -62,7 +62,7 @@ export const AllTopIssues = ({ hideElement, pagination, paramsFlag, update }: an
   } = useTopIssues({ All_TOP_ISSUES });
   return (
     <>
-      <Box className="border border-radius"> 
+      <Box className={`${update && "border"} border-radius`}> 
         {
           update &&
           <Grid
@@ -139,7 +139,7 @@ export const AllTopIssues = ({ hideElement, pagination, paramsFlag, update }: an
                     sx={styles.top_issue_row2}
                   >
                     <Grid item sm={8.7} xs={12}>
-                      <item.value paramsFlag={paramsFlag} />
+                      <item.value paramsFlag={paramsFlag} dashboard={true} />
                     </Grid>
                     <Grid item sm={3.3} xs={12} sx={styles.badgeBtn}>
                       <Link

@@ -18,7 +18,7 @@ export const SecondComponent = ({ paramsFlag }: any) => {
         }
         style={styles.linkStyle}
       >
-        <Typography className="dashboardTopIssue">
+        <Typography className={`${paramsFlag ? "dashboardTopIssue" : "engineTopIssues"}`}>
           
           <span>Prompt injection detected on</span>
           <span style={{ color: "#1570EF" }}> Azure OpenAI General </span>

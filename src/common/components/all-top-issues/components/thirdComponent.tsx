@@ -20,7 +20,7 @@ export const ThirdComponent = ({ paramsFlag }: any) => {
         }
         style={styles.linkStyle}
       >
-        <Typography className="dashboardTopIssue">
+        <Typography className={`${paramsFlag ? "dashboardTopIssue" : "engineTopIssues"}`}>
           Github Copilot returned
           <span style={{ fontWeight: 700 }}> 3 non-public API keys </span>
           and

@@ -1,6 +1,6 @@
 export const styles = {
   top_issue_row: {
-    padding: "12px 20px",
+    padding: "7px 20px",
     borderTop: "1px solid #EAECF0",
   },
   top_issue_row2: {
@@ -15,7 +15,7 @@ export const styles = {
     },
   },
   topIssuesBox:{
-    boxShadow: "0px 1px 3px #8080804a",
+    boxShadow: "0px 1px 5px 0px #00000026",
     borderRadius:'8px',
   },
   top_rows: {

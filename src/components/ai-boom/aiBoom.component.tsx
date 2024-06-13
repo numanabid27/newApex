@@ -42,7 +42,20 @@ function TabPanel(props: TabPanelProps) {
 }
 
 export default function AiBoom() {
-  const { handleChange, value } = useAiboom();
+  const {
+    handleChange,
+    value,
+    isDetail,
+    handleClick,
+    isLoading,
+    hoveredIndex,
+    isClicked,
+    setHoveredIndex,
+    setIsClicked,
+    repo,
+    isColor,
+    nestTableData,
+  } = useAiboom();
   return (
     <Box sx={styles.mainGrid}>
       {/* tabs */}
@@ -140,8 +153,19 @@ export default function AiBoom() {
             Branch: <span>Master</span>
           </Typography>
         </Box>
-        {/* <AiBox /> */}
-        {tableData(AIBOOM_TABLE_BOX)}
+        <AiBox
+          isDetail={isDetail}
+          handleClick={handleClick}
+          isLoading={isLoading}
+          hoveredIndex={hoveredIndex}
+          isClicked={isClicked}
+          setHoveredIndex={setHoveredIndex}
+          setIsClicked={setIsClicked}
+          repo={repo}
+          isColor={isColor}
+          nestTableData={nestTableData}
+        />
+        {/* {tableData(AIBOOM_TABLE_BOX)} */}
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Box display="flex" alignItems="center" mt={6} mb={2} gap="7px">
@@ -151,8 +175,19 @@ export default function AiBoom() {
             Branch: <span>Master</span>
           </Typography>
         </Box>
-        {/* <AiTableListening /> */}
-        {tableData(AIBOOM_TABLE_DATA)}
+        <AiTableListening
+          isDetail={isDetail}
+          handleClick={handleClick}
+          isLoading={isLoading}
+          hoveredIndex={hoveredIndex}
+          isClicked={isClicked}
+          setHoveredIndex={setHoveredIndex}
+          setIsClicked={setIsClicked}
+          repo={repo}
+          isColor={isColor}
+          nestTableData={nestTableData}
+        />
+        {/* {tableData(AIBOOM_TABLE_DATA)} */}
       </TabPanel>
       <TabPanel value={value} index={2}>
         <Box display="flex" alignItems="center" mt={6} mb={2} gap="7px">
@@ -179,23 +214,24 @@ export default function AiBoom() {
 }
 
 // BOX
-export const AiBox= () => {
-  const {
-    isDetail,
-    handleClick,
-    isLoading,
-    hoveredIndex,
-    isClicked,
-    setHoveredIndex,
-    setIsClicked,
-    repo,
-    isColor,
-  } = useAiboom();
+export const AiBox = ({
+  isDetail,
+  handleClick,
+  isLoading,
+  hoveredIndex,
+  isClicked,
+  setHoveredIndex,
+  setIsClicked,
+  repo,
+  isColor,
+  nestTableData,
+}: any) => {
+
   return (
     <Grid container gap="10px" mt={4} justifyContent="space-between">
       <Grid xs={12} lg={7.5}>
         <Folder
-          data={AIBOOM_TABLE_BOX}
+          data={nestTableData}
           handleClick={handleClick}
           isColor={isColor}
         />
@@ -225,23 +261,23 @@ export const AiBox= () => {
 };
 
 // GITHUB
-export const AiTableListening = () => {
-  const {
-    isDetail,
-    handleClick,
-    isLoading,
-    hoveredIndex,
-    isClicked,
-    setHoveredIndex,
-    setIsClicked,
-    repo,
-    isColor,
-  } = useAiboom();
+export const AiTableListening = ({
+  isDetail,
+  handleClick,
+  isLoading,
+  hoveredIndex,
+  isClicked,
+  setHoveredIndex,
+  setIsClicked,
+  repo,
+  isColor,
+  nestTableData,
+}: any) => {
   return (
     <Grid container gap="10px" mt={4} justifyContent="space-between">
       <Grid xs={12} lg={7.5}>
         <Folder
-          data={AIBOOM_TABLE_DATA}
+          data={nestTableData}
           handleClick={handleClick}
           isColor={isColor}
         />
@@ -269,45 +305,5 @@ export const AiTableListening = () => {
     </Grid>
   );
 };
-
-
-const tableData = (data:any)=>{
-  console.log("res", data)
-  return (
-    <Grid container gap="10px" mt={4} justifyContent="space-between">
-      <Grid xs={12} lg={7.5}>
-        <Folder
-          data={data}
-          // handleClick={handleClick}
-          // isColor={isColor}
-        />
-      </Grid>
-      <Grid xs={12} lg={4.3}>
-        {false ? (
-          <Image
-            src={loader}
-            alt="loader"
-            width={100}
-            height={100}
-            style={{ margin: "0 auto", display: "block" }}
-          />
-        ) : (
-          <File
-            isDetail={data[0].files}
-            // hoveredIndex={hoveredIndex}
-            // isClicked={isClicked}
-            // setHoveredIndex={setHoveredIndex}
-            // setIsClicked={setIsClicked}
-            // repo={repo}
-          />
-        )}
-      </Grid>
-    </Grid>
-  )
-}
-
-
-
-
 
 
