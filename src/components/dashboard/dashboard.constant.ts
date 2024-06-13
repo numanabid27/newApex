@@ -17,6 +17,10 @@ import claudwarning from "@/common/assets/images/o-warning.svg";
 import claudbell from "@/common/assets/images/o-bell.svg";
 import greenBell from "@/common/assets/images/green-bell.svg";
 import posterUser from "@/common/assets/images/poster-user.svg";
+import useWidth from "../issues/components/issue-table/use-width.hook";
+
+
+
 
 export const ISSUES_PER_ENGINE_DATA = [
   { id: 1, name: "Azure OpenAI General", value: 16, color: "#B42318" },
@@ -45,6 +49,7 @@ export const USAGE_BY_DEPARTMENT2 = [
   { id: 4, value: 12, name: "Companie’s Strategy", icon: AccessDataIcon },
 ];
 
+
 export const SENSITIVE_DATATYPE_CHART = {
   tooltip: {
     trigger: "item",
@@ -64,6 +69,16 @@ export const SENSITIVE_DATATYPE_CHART = {
       padding: [0, 0, 0, 7],
     },
   },
+  title: {
+        text: 'Department',
+        left: 'center',
+        top: '22%',
+        textStyle: {
+          color: '#667085',
+          fontSize: '3vw',
+          fontWeight:600
+        },
+      },
   series: [
     {
       name: "Sensitive data types",
@@ -80,12 +95,10 @@ export const SENSITIVE_DATATYPE_CHART = {
       },
       label: {
         show: false,
-        position: "center",
       },
       emphasis: {
         label: {
-          show: true,
-          fontSize: 12,
+          show: false,
         },
       },
       labelLine: {
@@ -101,6 +114,8 @@ export const SENSITIVE_DATATYPE_CHART = {
     },
   ],
 };
+
+
 
 export const SENSITIVE_DATATYPE_CHART2 = {
   tooltip: {
@@ -121,6 +136,16 @@ export const SENSITIVE_DATATYPE_CHART2 = {
       padding: [0, 0, 0, 7],
     },
   },
+  title: {
+        text: 'Topics',
+        left: 'center',
+        top: '22%',
+        textStyle: {
+          color: '#667085',
+          fontSize: '3vw',
+          fontWeight:600
+        },
+      },
   series: [
     {
       name: "Sensitive data types",
@@ -137,12 +162,10 @@ export const SENSITIVE_DATATYPE_CHART2 = {
       },
       label: {
         show: false,
-        position: "center",
       },
       emphasis: {
         label: {
-          show: true,
-          fontSize: 12,
+          show: false,
         },
       },
       labelLine: {

@@ -138,6 +138,7 @@ export const topStyles = {
     color:"#344054",
     fontSize:"17px",
     fontWeight:700,
+    paddingTop:'4px',
     "@media screen and (max-width:1440px)" : {
       fontSize:"13px",
     },

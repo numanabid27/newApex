@@ -177,7 +177,7 @@ function CustomTopIssues({
                     </Box>
                     <Box marginTop="7px">
                       <Image 
-                        src={item.bell} alt="" height={16}  />
+                        src={item.bell} alt="" height={19} width={14}  />
                     </Box>
                     <Box>
                       <Typography sx={topStyles.countText}>{item.notification}</Typography>
