@@ -422,6 +422,8 @@ export const SESSION_USER_CHART = {
   ],
 };
 
+
+
 export const DATA_DASHBOARD_CHART = {
   height: 200,
   tooltip: {

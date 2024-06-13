@@ -4,11 +4,14 @@ export const styles = {
     borderTop: "1px solid #EAECF0",
   },
   top_issue_row2: {
-    padding: "20.3px 20px",
+    padding: "26.7px 20px",
     borderTop: "1px solid #EAECF0",
 
     "&:first-child":{
       borderTop: "unset",
+    },
+    "@media screen and (max-width:2112px)" : {
+      padding: "20.5px 20px",
     },
     "@media screen and (max-width:1600px)" : {
       padding: "12px 20px",
