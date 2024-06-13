@@ -12,7 +12,7 @@ function PieChart({
   title,
   usageDepartment,
   lgHeight,
-  border
+  border,
 }: any) {
   const pathname = usePathname();
   return (
@@ -64,7 +64,7 @@ function PieChart({
           alignItems: "center",
           justifyContent: "space-between",
           width: "100%",
-          gap:"15px"
+          gap: "15px",
         }}
       >
         <Grid
@@ -79,20 +79,26 @@ function PieChart({
         </Grid>
         <Grid item xs={12} sm={12} md={12} lg={6.5} sx={{ width: "100%" }}>
           {chartLabels.map((item: any) => (
-            <Grid key={item.id} item xs={12} sx={PieChartStyle.PieChartLabel} gap="19px">
-              <Grid item xs={7}>
-                <Typography sx={PieChartStyle.PieLabelStyling}>
+            <Grid
+              key={item.id}
+              item
+              xs={12}
+              sx={PieChartStyle.PieChartLabel}
+              gap="19px"
+            >
+              <Grid item xs={4} sx={{ textAlign: { md: "center", xs: "end" } }}>
+                <Typography sx={PieChartStyle.PiePercentageStyling} display="flex">
                   <Image
                     src={item.icon}
                     alt="pci-icon"
                     style={{ marginRight: "10px" }}
                   />
-                  {item.name}
+                  {item.value}%
                 </Typography>
               </Grid>
-              <Grid item xs={5} sx={{ textAlign: { md: "center", xs: "end" } }}>
-                <Typography sx={PieChartStyle.PiePercentageStyling}>
-                  {item.value}%
+              <Grid item xs={8}>
+                <Typography sx={PieChartStyle.PieLabelStyling}>
+                  {item.name}
                 </Typography>
               </Grid>
             </Grid>
