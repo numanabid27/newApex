@@ -261,7 +261,7 @@ export const ACTIVE_ENGINE_DATA = [
   },
   {
     id: 4,
-    value: "OpenAI GPT4",
+    value: "OpenAI GPT-4",
     icon: ChatGPTIcon,
     res: "Good posture",
     notification: 2,
@@ -306,7 +306,7 @@ export const ACTIVE_ENGINE_DATA = [
   },
   {
     id: 8,
-    value: "HuggingFace OpenAssistant",
+    value: "Hugging Face",
     icon: AssistantIcon,
     res: "High amounts of PII sent",
     notification: 5,
