@@ -405,7 +405,13 @@ retrieveStrategicDocs('alex.kim@company.com');
                   
                 </Grid>
               </>
-            ) : (
+            ) : 
+              modelData?.name?.includes(
+                "Suspicious prompt injection was detected in your Azure OpenAI based application"
+              ) ?
+              (<></>)
+              :
+            (
               <>
                 <Grid container alignItems="center" sx={styles.evidance_grid}>
                   <Grid xs={1.5}>Email</Grid>
