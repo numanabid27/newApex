@@ -130,21 +130,6 @@ export default function AiBoom() {
         </Grid>
       </Grid>
 
-      {/* tabs content */}
-      {/* {
-        TABS_DATA.map((items:any, i:any)=>{
-          return(
-            <TabPanel value={value} index={items.indexes}  key={i.toString()}>
-              <Box display="flex" alignItems="center" mt={6} mb={2} gap="7px">
-                <Typography sx={styles. font_700}>Repo Name</Typography>
-                <Typography sx={styles.repo}>|</Typography>
-                <Typography sx={[styles.repo, styles.font_700]}>Branch: <span>Master</span></Typography>
-              </Box>
-              <AiTableListening />
-            </TabPanel>
-          )
-        })
-      } */}
       <TabPanel value={value} index={0}>
         <Box display="flex" alignItems="center" mt={6} mb={2} gap="7px">
           <Typography sx={styles.font_700}>Repo Name</Typography>
@@ -175,7 +160,7 @@ export default function AiBoom() {
             Branch: <span>Master</span>
           </Typography>
         </Box>
-        <AiTableListening
+        <AiBox
           isDetail={isDetail}
           handleClick={handleClick}
           isLoading={isLoading}
@@ -207,7 +192,7 @@ export default function AiBoom() {
             Branch: <span>Master</span>
           </Typography>
         </Box>
-        <AiTableListening />
+        <AiBox />
       </TabPanel>
     </Box>
   );
@@ -260,50 +245,5 @@ export const AiBox = ({
   );
 };
 
-// GITHUB
-export const AiTableListening = ({
-  isDetail,
-  handleClick,
-  isLoading,
-  hoveredIndex,
-  isClicked,
-  setHoveredIndex,
-  setIsClicked,
-  repo,
-  isColor,
-  nestTableData,
-}: any) => {
-  return (
-    <Grid container gap="10px" mt={4} justifyContent="space-between">
-      <Grid xs={12} lg={7.5}>
-        <Folder
-          data={nestTableData}
-          handleClick={handleClick}
-          isColor={isColor}
-        />
-      </Grid>
-      <Grid xs={12} lg={4.3}>
-        {isLoading ? (
-          <Image
-            src={loader}
-            alt="loader"
-            width={100}
-            height={100}
-            style={{ margin: "0 auto", display: "block" }}
-          />
-        ) : (
-          <File
-            isDetail={isDetail}
-            hoveredIndex={hoveredIndex}
-            isClicked={isClicked}
-            setHoveredIndex={setHoveredIndex}
-            setIsClicked={setIsClicked}
-            repo={repo}
-          />
-        )}
-      </Grid>
-    </Grid>
-  );
-};
 
 

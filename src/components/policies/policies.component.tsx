@@ -6,9 +6,7 @@ import {
   Button,
   Chip,
   Grid,
-  IconButton,
-  Switch,
-  Typography,
+  Typography
 } from "@mui/material";
 import { POLICIES_LISTENING } from "./policies.constant";
 import usePolicies from "./use-policies.hook";
@@ -23,7 +21,9 @@ import { CustomSwitch } from "@/common/components/custom-switch/custom-switch.co
 import Image from "next/image";
 import policies from "@/common/assets/images/policies.svg";
 import CheckBoxComponent from "../create-policy/component/checkbox.component";
-import { useState } from "react";
+import pencil from "@/common/assets/images/pencil.svg";
+import play from "@/common/assets/images/play-btn.svg";
+import Filters from "../session-explorer/components/filters/filter.component";
 
 function Policies() {
   const {
@@ -36,11 +36,11 @@ function Policies() {
   } = usePolicies();
 
   const policiesTypes = [
-    { id: 1, value: "GDPR", checkedValue: true, enable: true },
-    { id: 2, value: "Nist Ai RMF", checkedValue: true, enable: true },
-    { id: 3, value: "HIPAA", checkedValue: false, enable: false },
-    { id: 4, value: "EU AI Act", checkedValue: false, enable: false },
-    { id: 5, value: "Mitre ATLAS", checkedValue: true, enable: true },
+    { id: 1, value: "GDPR", checkedValue: true, enable: true, check:true},
+    { id: 2, value: "Nist Ai RMF", checkedValue: true, enable: true, check:true },
+    { id: 3, value: "HIPAA", checkedValue: false, enable: false, check:false },
+    { id: 4, value: "EU AI Act", checkedValue: false, enable: false, check:false },
+    { id: 5, value: "Mitre ATLAS", checkedValue: true, enable: true, check:true },
   ];
 
   // for future purpose
@@ -78,6 +78,7 @@ function Policies() {
               id={item?.id}
               key={i.toString()}
               label={item?.value}
+              check={item?.check}
               policy={true}
               checkedValue={item?.checkedValue}
               enable={item?.enable}
@@ -88,6 +89,8 @@ function Policies() {
         {/* <CheckBoxComponent label="HIPAA" policy={true} />
         <CheckBoxComponent label="HIPAA" policy={true} /> */}
       </Box>
+
+      <Filters users={false} policies={true} />
 
       {POLICIES_LISTENING.map((items: any, i: number) => {
         return (
@@ -108,16 +111,16 @@ function Policies() {
                 <Image src={policies} alt="policies" width={79} height={80} />
                 <Box sx={styles.policies_info}>
                   <Typography variant="h5">{items.policyName}</Typography>
-                  <Typography variant="h6">{items.policyDesc}</Typography>
+                  <Typography variant="h6">{items.policyDesc.slice(0, 80) + " ..."}</Typography>
                 </Box>
               </Box>
             </Grid>
-            <Grid sm={5.8} xs={12} sx={styles.group}>
+            <Grid sm={4.3} xs={12} sx={styles.group}>
               <Typography variant="h6" mb={2}>
                 {items.groups.title}
               </Typography>
               <Box display="flex" gap="8px">
-                {items.groups.groupName.map((innerItem: any, i: number) => (
+                {items.groups.groupName?.map((innerItem: any, i: number) => (
                   <Chip
                     label={innerItem.name1}
                     sx={styles.groupChip}
@@ -125,6 +128,15 @@ function Policies() {
                     key={i.toString()}
                   />
                 ))}
+              </Box>
+            </Grid>
+            <Grid sm={1.5} sx={styles.actionText}>
+              <Box onClick={(e)=>{e.stopPropagation()}}>
+                <Image src={pencil} alt="" width={18} height={18} />
+              </Box>
+              <Box onClick={(e)=>{e.stopPropagation()}} display="flex" gap="10px" alignItems="center">
+                <Image src={play} alt="" width={18} height={18} />
+                Test
               </Box>
             </Grid>
           </Grid>

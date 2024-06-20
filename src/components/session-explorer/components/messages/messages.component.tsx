@@ -95,9 +95,16 @@ export default function Message() {
     {
       id: 1,
       header: "Flagged",
-      accessor: "time",
+      accessor: "flag",
       cell: (data: any) => {
-        return <Image src={flag} alt="" width={20} height={20} />;
+        return<>
+        {
+          data ?
+          <Image src={data} alt="" width={20} height={20} />
+          :
+          null
+        }
+        </>;
       },
     },
     {

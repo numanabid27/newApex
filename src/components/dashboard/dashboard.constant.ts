@@ -263,7 +263,7 @@ export const ACTIVE_ENGINE_DATA = [
     id: 2,
     value: "Claude by Anthropic",
     icon: claud,
-    res: "used against your policy",
+    res: "Used against your policy",
     notification: 3,
     bell:claudbell,
     voilationImg:claudwarning,

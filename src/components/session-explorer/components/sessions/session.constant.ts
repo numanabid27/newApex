@@ -6,6 +6,7 @@ import shield from "@/common/assets/images/shield-check.svg";
 import scale from "@/common/assets/images/scale.svg";
 import scrollText from "@/common/assets/images/scroll-text.svg";
 import pie from "@/common/assets/images/pie-chart.svg";
+import flag from "@/common/assets/images/flag.svg";
 
 export const USER_1 = {
   height: 50,

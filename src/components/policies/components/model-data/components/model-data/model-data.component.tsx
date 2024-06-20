@@ -41,15 +41,21 @@ export const ModelData = ({ selectedRow, setIsModel, setOpenModal}: any) => {
         <Typography sx={ModalDataStyle.ModalTypo}>
           {selectedRow?.policyName}
         </Typography>
-        <Typography sx={ModalDataStyle.ModalDesc}>
-          {selectedRow?.longDesc}
-        </Typography>
-
+        {
+          selectedRow?.longDesc?.map((item:any, i: number)=>{
+            return(
+              <Typography sx={ModalDataStyle.ModalDesc} key={i.toString()} pb={2}>
+                {item.desc}
+              </Typography>
+            )
+          })
+        }
+       
         <Box mt={6}>
           <Typography pb={3} fontSize="14px" color="#667084">Groups</Typography>
           <Box display="flex" gap="10px">
             {
-              selectedRow.groups.groupName.map((items:any, i:number)=>(
+              selectedRow.groups.groupName?.map((items:any, i:number)=>(
                 <Typography variant="h6" key={i.toString()} sx={ModalDataStyle.groupNames}>{items.name1}</Typography>
               ))
             }

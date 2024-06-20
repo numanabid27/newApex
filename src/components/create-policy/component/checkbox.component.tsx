@@ -9,19 +9,21 @@ export default function CheckBoxComponent({
   onChangeValue,
   enable,
   checkedValue,
+  check
 }: any) {
   const [isChecked, setIsChecked] = useState(false);
-
   return (
     <>
       <FormControlLabel
-        sx={
-          !policy
+        sx={{
+          ...(!policy
             ? !isChecked
               ? styles.checkboxLabel
               : styles.checkboxLabel2
-            : styles.policyChecked
-        }
+            : styles.policyChecked)
+            
+        }}
+        checked={check}
         disabled={!enable}
         onChange={() => {
           setIsChecked(!isChecked);

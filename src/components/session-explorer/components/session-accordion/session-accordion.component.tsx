@@ -28,7 +28,7 @@ import DoneIcon from '@mui/icons-material/Done';
 
 export const SessionAccordion = ({ newData, isMessage }: any) => {
   const { expanded, handleChange} = useModalAccordion();
-  const { handleCopy, isCopy } = useSessionAccordion()
+  const { handleCopy, isCopy } = useSessionAccordion();
  
   return (
     <Box>

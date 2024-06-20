@@ -42,6 +42,11 @@ export const  TOPICS = [
   { id: 2, name: "Disable" }
 ];
 
+export const  POLICY_TOPICS = [
+  { id: 1, name: "Policy 1" },
+  { id: 2, name: "Policy 2" }
+];
+
 export const ACTIVE_USER_DATA = [
   { id: 1, username: "Ben Nathan", usermail: "benn@untitledui.com" },
   { id: 2, username: "Anna Smith", usermail: "annasmith@untitled.com" },

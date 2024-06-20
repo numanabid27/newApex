@@ -7,6 +7,7 @@ import shield from "@/common/assets/images/shield-check.svg";
 import scale from "@/common/assets/images/scale.svg";
 import scrollText from "@/common/assets/images/scroll-text.svg";
 import pie from "@/common/assets/images/pie-chart.svg";
+import flag from "@/common/assets/images/flag.svg";
 
 export const TOTAL_SESSIONS_CHART = {
   height: 50,
@@ -157,6 +158,7 @@ export const SESSION_USER_CHART = {
 export const MESSAGE_DATA = [
   {
     id: 1,
+    flag:flag,
     title: "Learn AWS",
     mails:"cindy@email.com",
     lastUpdate:"Apr 24, 2024 10:46 PM",
@@ -178,6 +180,7 @@ export const MESSAGE_DATA = [
   },
   {
     id: 2,
+   
     title: "JIRA ticket",
     mails:"james@email.com",
     lastUpdate:"Apr 12, 2024 09:21 PM",
@@ -204,6 +207,7 @@ export const MESSAGE_DATA = [
   },
   {
     id: 3,
+    flag:flag,
     title: "Python",
     mails:"george@email.com",
     lastUpdate:"Apr 12, 2024 07:42 AM",
@@ -230,6 +234,7 @@ export const MESSAGE_DATA = [
   },
   {
     id: 4,
+    flag:flag,
     title: "Write email",
     mails:"barbara@email.com",
     lastUpdate:"Apr 11, 2024 8:30 AM",
@@ -256,6 +261,7 @@ export const MESSAGE_DATA = [
   },
   {
     id: 5,
+    flag:flag,
     title: "Summarize Q4 strategy",
     mails:"john@email.com",
     lastUpdate:"Apr 10, 2024 11:45 AM",
@@ -282,6 +288,7 @@ export const MESSAGE_DATA = [
   },
   {
     id: 6,
+   
     title: "Hi, how are you?",
     mails:"john@email.com",
     lastUpdate:"Aug 12, 2023 10:46 AM",
@@ -303,6 +310,7 @@ export const MESSAGE_DATA = [
   },
   {
     id: 7,
+    flag:flag,
     title: "Script analysis",
     mails:"ben@email.com",
     lastUpdate:"Aug 12, 2023 10:46 AM",
@@ -329,6 +337,7 @@ export const MESSAGE_DATA = [
   },
   {
     id: 8,
+    flag:flag,
     title: "Insights from file",
     mails:"rita@email.com",
     lastUpdate:"Aug 12, 2023 10:46 AM",
@@ -355,6 +364,7 @@ export const MESSAGE_DATA = [
   },
   {
     id: 9,
+    flag:flag,
     title: "What does this API call do",
     mails:"sarah@email.com",
     lastUpdate:"Aug 12, 2023 10:46 AM",
@@ -381,6 +391,7 @@ export const MESSAGE_DATA = [
   },
   {
     id: 10,
+    flag:flag,
     title: "Write a contract",
     mails:"li@email.com",
     lastUpdate:"Aug 12, 2023 10:46 AM",
@@ -407,6 +418,7 @@ export const MESSAGE_DATA = [
   },
   {
     id: 11,
+    
     title: "Script analysis",
     mails:"ben@email.com",
     lastUpdate:"Aug 12, 2023 10:46 AM",
@@ -438,6 +450,7 @@ export const MESSAGE_DATA = [
   },
   {
     id: 12,
+    flag:flag,
     title: "Script analysis",
     mails:"ben@email.com",
     lastUpdate:"Aug 12, 2023 10:46 AM",
@@ -469,20 +482,45 @@ export const MESSAGE_DATA = [
 export const SEVERITY = [
   {
     id: 1,
-    label: "User department",
+    label: "Finance",
   },
   {
     id: 2,
-    label: "Option 2",
+    label: "Hiring",
   },
   {
     id: 3,
-    label: "Option 3",
+    label: "Marketing",
   },
   {
-    id: 4,
-    label: "Option 4",
+    id: 5,
+    label: "Corporate Sabotage",
   },
+  {
+    id: 6,
+    label: "Profanity",
+  },
+  {
+    id: 7,
+    label: "Legal",
+  },
+  {
+    id: 8,
+    label: "Security",
+  },
+  {
+    id: 9,
+    label: "Data analysis",
+  },
+  {
+    id: 10,
+    label: "Medical",
+  },
+  {
+    id: 11,
+    label: "Customer files",
+  }
+
 ];
 
 export const EQUALS = [

@@ -129,5 +129,12 @@ export const styles = {
   groupChip:{
     color: "#374151",
     fontWeight: 500
+  },
+  actionText:{
+    display:'flex',
+    gap:'12px',
+    fontWeight: "500",
+    fontSize: "14px",
+    justifyContent:'flex-end'
   }
 };

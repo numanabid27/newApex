@@ -20,11 +20,11 @@ export const FirstComponent = ({ paramsFlag }: any) => {
       >
         <Typography className={`${paramsFlag ? "dashboardTopIssue" : "engineTopIssues"}`}>
           <span style={{ color: "#1570EF" }}>@Anna Smith</span>
-          <span> uploaded 43 files to OpenAI</span>
+          <span> uploaded 43 files to OpenAI </span>
           <span style={{ color: "#F04438" }}> Public </span>
-          GPT4, 5
+           GPT4,  
           <span style={{ fontWeight: 700 , marginRight: "13px" }}>
-            8 contain PII, 3 on HR, candidates data was redacted{" "}
+             58 contain PII, 3 on HR, candidates data was redacted{" "}
           </span>
           <span
             style={{ color: "#98A2B3", fontSize: "14px", }}

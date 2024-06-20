@@ -57,10 +57,8 @@ function Row(props: {
             {open ? <KeyboardArrowDownIcon /> : <ChevronRightIcon />}
           </IconButton>
         </TableCell>
-        <TableCell component="th" scope="row">
-          {row.lastEvent}
-        </TableCell>
-        <TableCell width="19%" sx={{ fontWeight: "500 !important" }}>
+       
+        <TableCell width="19%" sx={{ fontWeight: "bold !important" }}>
           {windowWidth && windowWidth < 1440 ? (
             <>{row.name.slice(0, 15) + " ..."}</>
           ) : (
@@ -117,15 +115,7 @@ function Row(props: {
             />
           </IconButton>
         </TableCell>
-        <TableCell>
-          <Typography sx={styles.font_14}>{row.users[0]}</Typography>
-          <Box display="flex" alignItems="center">
-            <Typography sx={styles.font_14}>{row.users[1]},</Typography>
-            <Typography sx={{ ...styles.font_14, color: Colors.skyBlue }}>
-              {row.users[2]}
-            </Typography>
-          </Box>
-        </TableCell>
+       
         <TableCell>
           <Typography sx={styles.font_14}>{row.interface[0]}</Typography>
           <Typography sx={styles.font_14}>{row.interface[1]}</Typography>
@@ -142,8 +132,11 @@ function Row(props: {
           <Chip label={row.tags} sx={styles.tagChip} />
         </TableCell>
         <TableCell>{row.status}</TableCell>
-        <TableCell>{row.context}</TableCell>
+       
         <TableCell>Aug 14, 2023 10:46 AM</TableCell>
+        <TableCell component="th" scope="row">
+          {row.lastEvent}
+        </TableCell>
       </TableRow>
 
       <TableRow>
@@ -292,21 +285,22 @@ export default function CollapsibleTable({
         <TableHead>
           <TableRow sx={styles.headerRow}>
             <TableCell />
-            <TableCell>Last event</TableCell>
+            
             <TableCell>Name</TableCell>
             <TableCell>Subcategories</TableCell>
             <TableCell>Severity</TableCell>
-            <TableCell>Users</TableCell>
+ 
             <TableCell>Interface</TableCell>
             <TableCell>Engine</TableCell>
             <TableCell>Tags</TableCell>
             <TableCell>Status</TableCell>
-            <TableCell>Context</TableCell>
+    
             <TableCell>
               <Box display="flex" alignItems="center" gap="10px">
                 <Image src={setting} alt="" /> First Event
               </Box>
             </TableCell>
+            <TableCell>Last event</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

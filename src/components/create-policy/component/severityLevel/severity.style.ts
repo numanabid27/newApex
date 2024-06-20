@@ -15,7 +15,7 @@ export const styles = {
         textTransform:"capitalize",
         border: "1px solid #CFD4DC",
         boxShadow: "0px 1px 2px 0px #1018280D",
-       
+        whiteSpace:"nowrap",
         "&:hover":{
             background: "#fff",
         }
