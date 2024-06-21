@@ -37,9 +37,9 @@ export const  STATUS = [
   { id: 4, name: "Pfizer" }
 ];
 
+
 export const  TOPICS = [
-  { id: 1, name: "Active" },
-  { id: 2, name: "Disable" }
+  { id: 1, name: "Hiring" }
 ];
 
 export const  POLICY_TOPICS = [

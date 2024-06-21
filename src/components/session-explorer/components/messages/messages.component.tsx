@@ -87,6 +87,8 @@ export default function Message() {
     topicName,
     isBuilder,
     setIsBuilder,
+    isTopic,
+    setIsTopic
   } = useSessions();
 
   const {windowWidth} = useWidth();
@@ -686,7 +688,7 @@ const options = {
         )}
       </Box>
       {/* graphs */}
-      <Grid container justifyContent="space-between">
+      <Grid container justifyContent="space-between" mt={10}>
         <Grid
           item
           xs={12}
@@ -696,6 +698,24 @@ const options = {
           sx={styles.GridShadow}
         >
           <Box className="sessionEchart" sx={styles.sessionUser}>
+            <Box sx={styles.shankyFilter}>
+              <Box sx={styles.filter1}>
+                <Severity
+                  title="Topics"
+                  img={downArrow}
+                  severity={SEVERITY}
+                  ltr={true}
+                />
+              </Box>
+              <Box sx={styles.filter2}>
+                <Severity
+                  title="Sentiment"
+                  img={downArrow}
+                  severity={SEVERITY}
+                  ltr={true}
+                />
+              </Box>
+            </Box>
             <ReactEcharts option={options} />
           </Box>
         </Grid>
@@ -838,41 +858,36 @@ const options = {
         </Grid>
 
         <Grid item sm={2} xs={12} sx={styles.engineFilter}>
-          <FormControl sx={styles.formControl}>
-            <InputLabel sx={styles.engine}>Topics</InputLabel>
+          <FormControl fullWidth sx={styles.userFormControl} >
+            <InputLabel id="demo-simple-select-label-222" className="interLable" sx={styles.userText}>
+              Topics
+            </InputLabel>
+
             <Select
               sx={styles.sessionEngineFilter}
-              multiple
-              value={topicName}
-              onChange={(e: any) => setTopicName(e.target.value)}
-              input={<OutlinedInput label="Topics" />}
-              className="session-search-input2"
-              renderValue={(selected) => (
-                <Stack gap={1} direction="row" flexWrap="wrap">
-                  {selected.map((value: any) => (
-                    <Chip
-                      sx={styles.chip}
-                      key={value}
-                      label={value}
-                      onDelete={() =>
-                        setTopicName(
-                          topicName.filter((item: any) => item !== value)
-                        )
-                      }
-                      deleteIcon={
-                        <CancelIcon
-                          onMouseDown={(event) => event.stopPropagation()}
-                        />
-                      }
-                    />
-                  ))}
-                </Stack>
-              )}
+              labelId="demo-simple-select-label-222"
+              id="demo-simple-select-222"
+              value={isTopic}
+              label="Topics"
+              className="session-search-input222"
+              onChange={(event) => {
+                setIsTopic(event.target.value as string);
+              }}
+              renderValue={() => isTopic}
               IconComponent={KeyboardArrowDownIcon}
             >
-              {STATUS.map((item: any) => (
-                <MenuItem key={item.id} value={item.name}>
+              {TOPICS.map((item: any) => (
+                <MenuItem value={item.name} sx={styles.enginItem} key={item.id}>
                   {item.name}
+                  {isTopic === item.name && (
+                    <IconButton
+                      sx={styles.iconBtn}
+                      aria-label="delete"
+                      onClick={() => setIsTopic("")}
+                    >
+                      <ClearIcon sx={styles.closeIcon} />
+                    </IconButton>
+                  )}
                 </MenuItem>
               ))}
             </Select>
@@ -931,7 +946,7 @@ const options = {
               renderValue={() => isStatus}
               IconComponent={KeyboardArrowDownIcon}
             >
-              {TOPICS.map((item: any) => (
+              {STATUS.map((item: any) => (
                 <MenuItem value={item.name} sx={styles.enginItem} key={item.id}>
                   {item.name}
                   {isStatus === item.name && (

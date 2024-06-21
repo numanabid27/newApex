@@ -171,6 +171,7 @@ export const MESSAGE_DATA = [
       {
         id:1,
         title:'Code',
+        codes:true,
         img:code,
       }
     ],
@@ -193,11 +194,13 @@ export const MESSAGE_DATA = [
       {
         id:1,
         title:'Finance',
+        codes:false,
         img:coin,
       },
       {
         id:2,
         title:'Hiring',
+        codes:false,
         img:bag
       }
     ],

@@ -37,17 +37,19 @@ export const styles = {
         flexDirection:'column',
         position:'absolute',
         zIndex: 99,
+        boxShadow:" 0px 2px 6px #80808047"
     },
     dropdownStyle2:{
         background:"#fff",
         padding: "4px 10px",
-        width:'185x',
+        width:'185px',
         borderRadius: "8px",
         marginTop: "10px",
         display:'flex',
         flexDirection:'column',
         position:'absolute',
         zIndex: 99,
+        boxShadow:" 0px 2px 6px #80808047"
     },
     typography:{
         color:Colors.primary_101,

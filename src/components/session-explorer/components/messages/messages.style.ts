@@ -43,7 +43,7 @@ export const styles = {
       },
     },
     sessionEngineFilter: {
-      padding: "11px 10px",
+      padding: "8px 10px",
       borderRadius: "8px",
       "& .MuiSelect-select": {
         padding: "0 18px",
@@ -464,6 +464,21 @@ export const styles = {
     },
     typography:{
       fontSize:'14px'
+    },
+    shankyFilter:{
+      display:"flex",
+      marginTop:"-48px",
+      justifyContent:"center"
+    },
+    filter1:{
+      width: "56%",
+      justifyContent: "center",
+      display: "flex",
+    },
+    filter2:{
+      width: "17%",
+      justifyContent: "flex-end",
+      display: "flex",
     }
   };
   

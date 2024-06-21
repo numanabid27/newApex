@@ -10,6 +10,7 @@ export default function useMessage() {
   const [topicName, setTopicName] = useState<any>([]);
   const [userName, setUserName] = useState("");
   const [isInterface, setIsInterface] = useState("");
+  const [isTopic, setIsTopic] = useState<any>("");
   const [isStatus, setIsStatus] = useState("");
   const [openModal, setOpenModal] = useState(false);
   const [selectedRow, setSelectedRow] = useState<any>();
@@ -53,8 +54,10 @@ export default function useMessage() {
       let interfaceFlag = false;
       let statusFlag = false;
       let topicFlag = false;
+      let topicsFlag = false;
   
-      if (engineName.length === 0 || engineName.includes(item.engineType)) {
+  
+      if (engineName.length === 0 || engineName.includes(item.topics)) {
         engineFlag = true;
       }
 
@@ -66,6 +69,13 @@ export default function useMessage() {
         interfaceFlag = true;
       }
 
+      // if (isTopic === "" || item.topics === isTopic) {
+      //   topicsFlag = true;
+      // }
+      if (isTopic === "" || item.topics.some((topic: any) => topic.title === isTopic)) {
+        topicsFlag = true;
+      }
+      
       if (isStatus === "" || item.active === isStatus) {
         statusFlag = true;
       }
@@ -86,7 +96,7 @@ export default function useMessage() {
       const itemText = Object.values(item).join(" ").toLowerCase();
       textFlag = itemText.includes(searchQuery);
   
-      return engineFlag && userFlag && dateFlag && textFlag && interfaceFlag && statusFlag && topicFlag;
+      return engineFlag && userFlag && dateFlag && textFlag && interfaceFlag && statusFlag && topicFlag && topicsFlag;
     });
   
     return filteredData;
@@ -96,7 +106,7 @@ export default function useMessage() {
   useEffect(() => {
     setFinalData(filterData());
    
-  }, [engineName, topicName, userName, dateShow, dateRange, searchQuery, isInterface, isInterface, isStatus]);
+  }, [engineName, topicName, userName, dateShow, dateRange, searchQuery, isTopic, isInterface, isStatus]);
 
   const handleClearAll = () => {
     setUserName("");
@@ -105,6 +115,7 @@ export default function useMessage() {
     setDateShow(undefined);
     setEngineName([]);
     setTopicName([]);
+    setIsTopic('')
     setDateRange([null, null]);
   };
 
@@ -152,6 +163,8 @@ export default function useMessage() {
     topicName,
     setTopicName,
     setIsBuilder,
-    isBuilder
+    isBuilder,
+    isTopic,
+    setIsTopic
   };
 }
