@@ -54,8 +54,12 @@ export const TopIssuesStyling = {
     width: "auto",
     ".echarts-for-react":{
       "canvas":{
-        left: "-14vw !important",
-        width: "133vw !important",
+        left: "-17vw !important",
+        width: "157vw !important",
+        "@media screen and (max-width:2500px)":{
+          left: "-14vw !important",
+          width: "130vw !important",
+        },
         "@media screen and (max-width:1440px)":{
           left: "-12vw !important",
           width: "101vw !important",

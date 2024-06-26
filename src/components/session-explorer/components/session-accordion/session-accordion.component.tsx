@@ -169,8 +169,8 @@ export const SessionAccordion = ({ newData, isMessage }: any) => {
                               >
                                 <pre>
                                   {`
-           // Import the package here
-           import MyPackage from 'my-package';...
+  // Import the package here
+  import MyPackage from 'my-package';...
                          `}
                                 </pre>
                               </Box>
@@ -194,8 +194,8 @@ export const SessionAccordion = ({ newData, isMessage }: any) => {
                               >
                                 <pre style={{ color: "#fff" }}>
                                   {`
-           // You can then use your package within this API route
-           export default function handler(req, res) {...
+  // You can then use your package within this API route
+  export default function handler(req, res) {...
                          `}
                                 </pre>
                               </Box>

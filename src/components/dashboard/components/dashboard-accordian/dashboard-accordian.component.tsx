@@ -34,12 +34,12 @@ import IconButton from "@mui/material/IconButton";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { styles } from "./model-accordion.style";
-import useModalAccordion from "./use-modal-accordion.hook";
+import { styles } from "./dashboard.style";
 import ReactEcharts from "echarts-for-react";
 import EastIcon from "@mui/icons-material/East";
+import useModalAccordion from "@/common/components/model-accordion/use-modal-accordion.hook";
 
-function ModelAccordian({ modelData }: any) {
+function DashboardDrawer({ modelData }: any) {
   const { expanded, handleChange } = useModalAccordion();
   const [ishide, setIsHide] = useState(false);
   const [isValue, setIsValue] = useState<any>("New");
@@ -68,7 +68,7 @@ function ModelAccordian({ modelData }: any) {
   return (
     <Box sx={styles.modelGradient}>
       <Box sx={styles.sideModel}>
-        <Typography sx={styles.modelTitle}>{modelData.name}</Typography>
+        <Typography sx={styles.modelTitle}>{modelData.title}</Typography>
 
         <Grid container justifyContent="space-between" mt={6} mb={8}>
           <Grid xs={7.5} display="flex" alignItems="center" gap="18px">
@@ -310,8 +310,8 @@ function ModelAccordian({ modelData }: any) {
             </Typography>
           </AccordionSummary>
           <AccordionDetails sx={styles.desc}>
-            {modelData?.name?.includes(
-              "Github Copilot collected and sent 3 API keys"
+            {modelData?.title?.includes(
+              "Github Copilot collected and sent 3 API keys out of the organization"
             ) ? (
               <>
                 <Grid
@@ -333,97 +333,7 @@ function ModelAccordian({ modelData }: any) {
                   </Grid>
                 </Grid>
               </>
-            ) : modelData?.name?.includes(
-                "Github Copilot suggestion for vulnerable package was approved"
-              ) ? (
-              <>
-                <Grid container alignItems="center" sx={styles.evidance_grid}>
-                  <Grid xs={1.5}>Package</Grid>
-                  <Grid xs={9}>
-                    <Typography sx={{ color: "#374151", fontSize: "14px" }}>
-                      actinis-django-storages
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </>
-            ) : modelData?.name?.includes(
-                "Strategic decision making session was detected"
-              ) ? (
-              <>
-                <Grid container alignItems="center" sx={styles.evidance_grid}>
-                  <Grid xs={12}>Code</Grid>
-                  <Grid xs={12} sx={styles.code}>
-                    <pre
-                      style={{
-                        margin: "0px",
-                        color: "#374151",
-                        height: !showShareFile ? "70px" : "100%",
-                        overflow: "hidden",
-                      }}
-                    >
-                      {`
-// Example of code accessing strategic data
-import StrategicData from 'companydb';
-// Function to retrieve strategic documents
-function retrieveStrategicDocs(userId) {
-    let docs = StrategicData.getDocuments(userId, ['Financial_Projections_Q3_2024.xlsx', 'Market_Analysis_Report.pdf', 'Strategic_Plan_2024.docx']);
-    return docs;
-}
-// Function call example
-retrieveStrategicDocs('alex.kim@company.com');
-`}
-                    </pre>
-                    <Button
-                      onClick={() => setShowShareFile(!showShareFile)}
-                      sx={{
-                        color: "#2E90FA",
-                        fontSize: "14px",
-                        textTransform: "capitalize",
-                      }}
-                    >
-                      {!showShareFile ? "Show less..." : "Show more..."}
-                    </Button>
-                  </Grid>
-                </Grid>
-              </>
-            ) : modelData?.name?.includes(
-                "3 Files repetitively retrieved from your RAG database"
-              ) ||
-              modelData?.name?.includes(
-                "Anna Smith uploaded 43 files, including 3 related to HR and candidates data, and 36 pieces of PII were redacted"
-              ) ? (
-              <>
-                <Grid container alignItems="center" sx={styles.evidance_grid}>
-                  <Grid xs={12} mb={4}>
-                    File
-                  </Grid>
-                  {modelData.files.map((item: any, i: number) => {
-                    return (
-                      <Grid
-                        xs={12}
-                        key={i.toString()}
-                        display="flex"
-                        alignItems="center"
-                        gap="10px"
-                        mb={3}
-                      >
-                        <Image
-                          src={item.fileImg}
-                          alt=""
-                          width={25}
-                          height={25}
-                        />
-                        <Typography sx={{ color: "#374151", fontSize: "14px" }}>
-                          {item.file}
-                        </Typography>
-                      </Grid>
-                    );
-                  })}
-                </Grid>
-              </>
-            ) : 
-              modelData?.name?.includes("Unauthorized automatic PR generation by GitHub Copilot Docker extension")?
-              <></>
+            ) 
               :
             (
               <>
@@ -445,19 +355,6 @@ retrieveStrategicDocs('alex.kim@company.com');
                 </Grid>
               </>
             )}
-            {modelData?.name?.includes(
-              "Anna Smith uploaded 43 files, including 3 related to HR and candidates data, and 36 pieces of PII were redacted"
-            ) && (
-              <Grid container alignItems="center" sx={styles.evidance_grid}>
-                <Grid xs={1.5}>Email</Grid>
-                <Grid xs={9} display="flex" gap="10px">
-                  {modelData?.email?.map((item: any, i: number) => {
-                    return <Chip label={item} key={i.toString()} />;
-                  })}
-                </Grid>
-              </Grid>
-            )}
-
             <Grid container alignItems="center" sx={styles.evidance_grid}>
               <>
                 {modelData.code && (
@@ -475,7 +372,6 @@ retrieveStrategicDocs('alex.kim@company.com');
                               color: "#374151",
                               height: showMore === item.id ? "100%" : "70px",
                               overflow: "hidden",
-                              marginBottom:'10px'
                             }}
                           >
                             {item.title}
@@ -527,9 +423,7 @@ retrieveStrategicDocs('alex.kim@company.com');
             </Grid>
           </AccordionDetails>
         </Accordion>
-        {
-          modelData.issues &&
-          <Accordion
+        <Accordion
           expanded={expanded.includes("panel2")}
           onChange={handleChange("panel2")}
           sx={{ boxShadow: "unset !important" }}
@@ -547,22 +441,14 @@ retrieveStrategicDocs('alex.kim@company.com');
           </AccordionSummary>
           <AccordionDetails sx={styles.desc}>
             {modelData &&
-            modelData?.name?.includes(
+            modelData?.title?.includes(
               "Github Copilot collected and sent 3 API keys"
             ) ? (
               <Box sx={styles.issuesInfoBox}>
                 <Typography variant="h6">Violations</Typography>
                 <Typography variant="h5">4</Typography>
               </Box>
-            ) : modelData &&
-              modelData?.name?.includes(
-                "Github Copilot suggestion for vulnerable package was approved"
-              ) ? (
-              <Box sx={styles.issuesInfoBox}>
-                <Typography variant="h6">Violations</Typography>
-                <Typography variant="h5">3</Typography>
-              </Box>
-            ) : null}
+            )  : null}
             <Box>
               <Grid
                 container
@@ -676,8 +562,8 @@ retrieveStrategicDocs('alex.kim@company.com');
                     Violation category
                   </Typography>
                   {modelData.issues &&
-                    modelData.issues[2].map((item: any, i: number) => {
-                      const isLastItem = i === modelData.users.length - 1;
+                    modelData.issues[2]?.map((item: any, i: number) => {
+                      const isLastItem = i === modelData.issues[2].length - 1;
                       return (
                         <Typography sx={styles.appex} key={i.toString()}>
                           {item}
@@ -764,8 +650,8 @@ retrieveStrategicDocs('alex.kim@company.com');
                 <Grid item sm={5} xs={8} sx={styles.margin}>
                   <Typography sx={styles.voilation}>Sub-Categories</Typography>
                   {modelData.issues &&
-                    modelData.issues[4].map((item: any, i: number) => {
-                      const isLastItem = i === modelData.users.length - 1;
+                    modelData.issues[4]?.map((item: any, i: number) => {
+                      const isLastItem = i === modelData.issues[4].length - 1;
                       return (
                         <Typography
                           sx={styles.appex}
@@ -928,11 +814,9 @@ retrieveStrategicDocs('alex.kim@company.com');
               </Box>
             </Box>
           </AccordionDetails>
-          </Accordion>
-        }
-        
+        </Accordion>
       </Box>
     </Box>
   );
 }
-export default ModelAccordian;
+export default DashboardDrawer;

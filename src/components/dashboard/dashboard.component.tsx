@@ -27,19 +27,28 @@ import useDashboard from "./use-dashboard.hook";
 import { AllTopIssues } from "@/common/components/all-top-issues/all-top-issues.component";
 import PieChart from "../issues/components/pie-chart/pie-chart.component";
 import { SessionTimeStyle } from "./components/session-time-user/session-time-user.style";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { styles } from "@/common/styles/global.style";
 import Image from "next/image";
 import more from "@/common/assets/images/more_vert.svg";
+import TopIssues from "./components/top-issues/topIssues.component";
+import { ALL_TOP_ISSUES } from "@/common/components/all-top-issues/all-top-issues.constant";
+import CustomDialog from "@/common/components/custom-dialog/custom-dialog.component";
 
 function Dashboard() {
-  const { welcomeAlert, setWelcomeAlert } = useDashboard();
+  const { welcomeAlert, setWelcomeAlert, openModal, setOpenModal } =
+    useDashboard();
   const [session, setSession] = useState<any>("All Models");
   const SessionHandler = (event: any) => {
     setSession(event.target.value as string);
   };
+
+  const [isModel, setIsModel] = useState("");
+  useEffect(() => {
+    console.log("isModel", isModel);
+  }, [isModel]);
   return (
     <>
       <Grid sx={DashboardStyles.DashboardGrid}>
@@ -94,7 +103,6 @@ function Dashboard() {
               <FormControl
                 variant="standard"
                 sx={SessionTimeStyle.engineOverTime}
-                
               >
                 <Select
                   labelId="demo-simple-select-autowidth-label"
@@ -116,7 +124,11 @@ function Dashboard() {
               </FormControl>
             </Box>
           </Box>
-          <Box display="flex" flexDirection={{sm:'row', xs:'column'}} marginTop="7px">
+          <Box
+            display="flex"
+            flexDirection={{ sm: "row", xs: "column" }}
+            marginTop="7px"
+          >
             <PieChart
               chartData={SENSITIVE_DATATYPE_CHART}
               chartLabels={USAGE_BY_DEPARTMENT}
@@ -168,15 +180,32 @@ function Dashboard() {
                 <Image src={more} alt="" onClick={() => alert("APEX")} />
               </Grid>
             </Grid>
-            <AllTopIssues
-              pagination={false}
-              paramsFlag={true}
-              hideElement={true}
-              update={false}
-            />
+            <Box sx={DashboardStyles.topIssues}>
+              {ALL_TOP_ISSUES.map((item: any, i: number) => {
+                return (
+                  <TopIssues
+                    item={item}
+                    setIsModel={setIsModel}
+                    i={i}
+                    isModel={isModel}
+                    key={item.id}
+                    handleClick={item}
+                    setOpenModal={setOpenModal}
+                  />
+                );
+              })}
+            </Box>
           </Grid>
         </Grid>
       </Grid>
+
+      <CustomDialog
+        thead={"dashboard"}
+        modelData={isModel}
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+        issues={true}
+      />
     </>
   );
 }

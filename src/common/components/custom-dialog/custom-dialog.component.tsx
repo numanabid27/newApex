@@ -14,6 +14,7 @@ import { styles } from "./custom-dialogue.style";
 import slack from "@/common/assets/images/slacke.svg"
 
 import Image from "next/image";
+import DashboardDrawer from "@/components/dashboard/components/dashboard-accordian/dashboard-accordian.component";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -32,7 +33,8 @@ export default function CustomDialog({
   selectedRow,
   setIsModel,
   issues,
-  isMessage=false
+  isMessage=false,
+  modelData
 }: any) {
   const [expandValue, setExpandValue] = useState(true);
   return (
@@ -81,6 +83,7 @@ export default function CustomDialog({
           )}
           {thead === "session" && <SessionAccordion newData={newData} isMessage={isMessage} />}
           {thead === "issue" && <ModelAccordian modelData={openModal} />}
+          {thead === "dashboard" && <DashboardDrawer modelData={modelData} />}
         </DialogContent>
         {thead == "session" && (
           <Grid container spacing={2} sx={styles.policyModel} gap="5px">

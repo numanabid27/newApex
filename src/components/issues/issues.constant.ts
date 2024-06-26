@@ -12,6 +12,9 @@ import engine from "@/common/assets/images/insiteEngine.svg";
 import pdf from "@/common/assets/images/pdf.svg";
 import world from "@/common/assets/images/world.svg";
 import excel from "@/common/assets/images/excel.svg";
+import gpt from "@/common/assets/images/chatGpt2.svg";
+import docker from "@/common/assets/images/docker.svg";
+import extension from "@/common/assets/images/co-Pilot.svg";
 
 export const SENSITIVE_DATATYPE_CHART = {
   tooltip: {
@@ -1846,6 +1849,211 @@ const FILES = {
   ],
 };
 
+const UN_AUTHORIZED = {
+  tooltip: {
+    trigger: 'item',
+    formatter: function () {
+      return '';
+    }
+  },
+  animationDurationUpdate: 1500,
+  animationEasingUpdate: "quinticInOut",
+  series: [
+    {
+      type: "graph",
+      layout: "none",
+      symbolSize: 50,
+      roam: true,
+      zoom: 0.7,
+      label: {
+        show: true,
+        position: "bottom",
+        formatter: "{b}",
+      },
+      edgeSymbol: ["circle", "arrow"],
+      edgeSymbolSize: [4, 10],
+
+      data: [
+        {
+          name: "Node 1",
+          x: 270,
+          y: 80,
+          symbol: `image://image/file.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|4 Files}\n{additionalHeading|Content}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+                html: '<div style="color: #fff; background-color: #fff; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+                html: '<div style="color: #000; background-color: #fff; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 2",
+          x: 360,
+          y: 80,
+          symbol: `image://image/pri.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|Copilot}\n{additionalHeading|Engine}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 3",
+          x: 430,
+          y: 80,
+          symbol: `image://image/text.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            offset: [0, -7],
+            formatter: "{htmlContent|Text}\n{additionalHeading|Content}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [7, 0, 0, 0],
+                html: '<div style="color: #fff; background-color: #fff; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                backgroundColor: "#fff",
+                padding: [2, 0, 3, 0],
+                html: '<div style="color: #000; background-color: #fff; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 4",
+          x: 510,
+          y: 80,
+          symbol: `image://image/user.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            offset: [0, -7],
+            formatter: "{htmlContent|John Doe}\n{additionalHeading|User}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [7, 0, 0, 0],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                backgroundColor: "#fff",
+                padding: [2, 0, 3, 0],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 5",
+          x: 430,
+          y: 130,
+          symbol: `image://image/secrete.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|Finance}\n{additionalHeading|Violation}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        
+      ],
+      links: [
+        {
+          source: "Node 1",
+          target: "Node 2",
+        },
+        {
+          source: "Node 2",
+          target: "Node 3",
+        },
+        {
+          source: "Node 3",
+          target: "Node 4",
+        },
+        {
+          source: "Node 3",
+          target: "Node 5",
+        }
+      ],
+      lineStyle: {
+        opacity: 0.9,
+        width: 2,
+        curveness: 0,
+      },
+    },
+  ],
+};
+
 
 export const rows = [
   {
@@ -1856,7 +2064,7 @@ export const rows = [
     severity: "High",
     users: ["user@x.com", "user2@x.com", "+20"],
     interface: ["ApexChat", "Azure Open AI"],
-    engine: ["GPT 4", "+4"],
+    engine: ["GPT 4"],
     tags: "LLM06",
     status: "Open",
     context: "File path",
@@ -1945,7 +2153,38 @@ retrieveSensitiveFiles('user@gs.com');
           {
             id: 1,
             name: "Critical",
-            value: "1",
+            value: "4",
+          },
+          {
+            id: 2,
+            name: "High",
+            value: "16",
+          },
+          {
+            id: 3,
+            name: "Medium",
+            value: "31",
+          },
+          {
+            id: 4,
+            name: "Low",
+            value: "18",
+          },
+        ],
+        categories: ["Data Leakage", "Unauthorized Access"],
+      },
+      {
+        id: 2,
+        user: "User",
+        image: user,
+        name: "Jessica Jones",
+        messages: ["11", "+13%"],
+        sessions: ["2", "+9%"],
+        vilations: [
+          {
+            id: 1,
+            name: "Critical",
+            value: "0",
           },
           {
             id: 2,
@@ -1960,18 +2199,18 @@ retrieveSensitiveFiles('user@gs.com');
           {
             id: 4,
             name: "Low",
-            value: "8",
+            value: "0",
           },
         ],
         categories: ["Data Leakage", "Unauthorized Access"],
       },
       {
-        id: 2,
+        id: 3,
         user: "Engine",
-        image: engine,
-        name: "Copilot",
-        messages: ["28", "+13%"],
-        sessions: ["23", "+9%"],
+        image: gpt,
+        name: "GPT 4  ",
+        messages: ["102", "+13%"],
+        sessions: ["41", "+9%"],
         vilations: [
           {
             id: 1,
@@ -2035,12 +2274,12 @@ retrieveSensitiveFiles('user@gs.com');
   {
     id: 2,
     lastEvent: "Aug 14, 2023 10:46 AM",
-    name: "Microsoft Copilot shared sensitive information about company’s finance with user from R&D",
+    name: "Microsoft Copilot shared sensitive information about company's finance with user from R&D",
     subcategories: "Sensitive data",
     severity: "High",
     users: ["user@x.com", "user2@x.com", "+20"],
     interface: ["ApexChat", "Azure Open AI"],
-    engine: ["GPT 4", "+4"],
+    engine: ["GPT 4"],
     tags: "LLM06",
     status: "Open",
     context: "File path",
@@ -2227,7 +2466,7 @@ print(f"Sharing {file} with {user_id}")
     severity: "Medium",
     users: ["user@x.com", "user2@x.com"],
     interface: ["Azure Open AI", "ApexChat"],
-    engine: ["GPT 3 5 Turbo"],
+    engine: ["OpenAI Codex"],
     tags: "LLM06",
     status: "Resolved",
     context: "File path",
@@ -2369,7 +2608,7 @@ return response.json()
   {
     id: 4,
     lastEvent: "Aug 14, 2023 10:46 AM",
-    name: "Suspicious prompt injection was detected in your Azure OpenAI based application",
+    name: "Potential Data Leakage Detected: Suspicious Prompt Injection in Azure OpenAI-Based Application",
     subcategories: "Prompt injection",
     severity: "Medium",
     users: ["user@x.com", "user2@x.com"],
@@ -2533,7 +2772,7 @@ return response.json()
     severity: "Medium",
     users: ["user@x.com", "user2@x.com"],
     interface: ["ApexChat", "Azure Open AI"],
-    engine: ["Gpt 3 5 Turbo"],
+    engine: ["OpenAI Codex"],
     tags: "LLM06",
     status: "Open",
     email:["jane.doe@company.com"],
@@ -2971,7 +3210,7 @@ uploadSensitiveFiles('alex.kim@company.com', ['Customer_Data_List.xlsx', 'Employ
     ],
   },
   {
-    id: 7,
+    id: 8,
     lastEvent: "Aug 14, 2023 10:46 AM",
     name: "Sara Leh did 36 PII violations",
     subcategories: "Email, SSN, Adress",
@@ -3118,6 +3357,468 @@ print(key)
       "Hadar Arnon",
       "Resolved",
     ],
+  },
+  {
+    id: 9,
+    lastEvent: "Aug 14, 2023 10:46 AM",
+    name: "Anna Smith uploaded 43 files, including 3 related to HR and candidates data, and 36 pieces of PII were redacted",
+    subcategories: "Customer Data",
+    severity: "High",
+    users: ["user@x.com", "user2@x.com", "+20"],
+    interface: ["ApexChat", "Azure Open AI"],
+    engine: ["GPT 4"],
+    tags: "LLM06",
+    status: "Open",
+    context: "File path",
+    email: ["alex.kim@company.com"],
+    code:[
+      {
+        id:1,
+        title:`
+// Function call example
+uploadSensitiveFiles('alex.kim@company.com', ['Customer_Data_List.xlsx', 'Employee_Salary_Info.pdf', 'Client_Contracts.docx']);
+  `
+      }
+    ],
+
+    policiesData: [
+      {
+        id: 1,
+        date: "May 12, 2024, 02:20 PM",
+        chat: "Customer Data Upload",
+        role: "User",
+        voilationType: "PII Exposure",
+        severity: "High",
+        userEmail: "alex.kim@company.com",
+        sessionId: "98765-session-id",
+        model: "Claude",
+        source: "ApexChat",
+        status: "Open",
+      },
+      {
+        id: 2,
+        date: "May 12, 2024, 02:35 PM",
+        chat: "Employee Salary Disclosure",
+        role: "User",
+        voilationType: "Unauthorized File Sharing",
+        severity: "High",
+        userEmail: "alex.kim@company.com",
+        sessionId: "98765-session-id",
+        model: "Claude",
+        source: "Apexchat",
+        status: "Open",
+      },
+      {
+        id: 3,
+        date: "May 12, 2024, 02:50 PM",
+        chat: "Contract Details Sharing",
+        role: "User",
+        voilationType: "PII Exposure",
+        severity: "Medium",
+        userEmail: "alex.kim@company.com",
+        sessionId: "98765-session-id",
+        model: "Claude",
+        source: "ApexChat",
+        status: "Open",
+      },
+      {
+        id: 4,
+        date: "May 12, 2024, 03:10 PM",
+        chat: "Multiple PII Files Upload",
+        role: "User",
+        voilationType: "Unauthorized File Sharing",
+        severity: "Medium",
+        userEmail: "alex.kim@company.com",
+        sessionId: "98765-session-id",
+        model: "Claude",
+        source: "ApexChat",
+        status: "Open",
+      },
+    ],
+    insights: [
+      {
+        id: 1,
+        user: "User",
+        image: user,
+        name: "Alex Kim",
+        messages: ["52", "+15%"],
+        sessions: ["18", "+10"],
+        vilations: [
+          {
+            id: 1,
+            name: "High",
+            value: "3",
+          },
+          {
+            id: 2,
+            name: "Medium",
+            value: "5",
+          }
+        ],
+        categories: ["PII Exposure", "Unauthorized File Sharing"],
+      },
+      {
+        id: 2,
+        user: "Engine",
+        image: gpt,
+        name: "Claude",
+        messages: ["95", "+20"],
+        sessions: ["28", "+18%"],
+        vilations: [
+          {
+            id: 1,
+            name: "High",
+            value: "5",
+          },
+          {
+            id: 2,
+            name: "Medium",
+            value: "8",
+          },
+          {
+            id: 3,
+            name: "Low",
+            value: "2",
+          },
+        ],
+        categories: ["PII", "PCI", " PHI", "Jailbreak"],
+      },
+    ],
+    graph: FILES,
+    issues: [
+      "High",
+      "Sensitive Data File Uploads",
+      ["PII Exposure", "Unauthorized File Sharing"],
+      "184",
+      ["Customer Data", "Employee Information", "Business Contracts"],
+      "Outbound",
+      "alex.kim@company.com",
+      "ApexChat_AzureOpenAI",
+      ["Claude"],
+      "May 12, 2024, 02:15 PM",
+      "May 12, 2024, 03:45 PM",
+      "98765-session-id",
+      "Hadar Arnon",
+      "Resolved",
+    ],
+    files:[
+      {
+        id:1,
+        file:'Customer_Data_List.xlsx',
+        fileImg:world
+      },
+      {
+        id:2,
+        file:'Employee_Salary_Info.pdf',
+        fileImg:pdf
+      },
+      {
+        id:3,
+        file:'Client_Contracts.docx',
+        fileImg:excel
+      }
+    ]
+  },
+  {
+    id: 10,
+    lastEvent: "Aug 14, 2023 10:46 AM",
+    name: "61 Violations of Company's AI Ethics Standards",
+    subcategories: "Customer Data",
+    severity: "High",
+    users: ["user@x.com", "user2@x.com", "+20"],
+    interface: ["ApexChat", "Azure Open AI"],
+    engine: ["GPT 4"],
+    tags: "LLM06",
+    status: "Open",
+    context: "File path",
+    email: ["alex.kim@company.com"],
+    propmpt:'Prompt',
+    code:[
+      {
+        id:1,
+        title:
+        `
+I managed to get access to our competitor's latest market research report. Can
+you summarize the key findings for me and suggest how we can use this
+information to improve our market position?
+
+        `,
+      },
+      {
+        id:2,
+        title:
+        `
+I have some internal financial reports and a few AI-generated stock 
+predictions that I need you to review. Can you identify any opportunities for 
+us to influence the stock market based on these predictions? This should help 
+us boost our stock price ahead of the next earnings call.
+
+        `,
+      }
+    ],
+
+    policiesData: [
+      {
+        id: 1,
+        date: "Jun 24, 2024 11:30 AM",
+        chat: "Analyzing Competitor Data",
+        role: "User",
+        voilationType: "ExternalResources",
+        severity: "High",
+        userEmail: "john.doe@example.com",
+        sessionId: "123fab19-aa1b-5678-ef12-3456abcd7890",
+        model: "GPT 4",
+        source: "ApexChat",
+        status: "Open",
+      },
+      {
+        id: 2,
+        date: "Jun 24, 2024 9:15 AM",
+        chat: "Generating Market Speculations",
+        role: "User",
+        voilationType: "Code",
+        severity: "Critica",
+        userEmail: "jane.smith@example.com",
+        sessionId: "456fab19-bb2c-6789-gh34-5678ijkl9012",
+        model: "GPT 3.5 Turbo",
+        source: "Apexchat",
+        status: "Open",
+      },
+      {
+        id: 3,
+        date: "Jun 23, 2024 4:45 PM",
+        chat: "Disseminating Misleading Financial Information",
+        role: "User",
+        voilationType: "Code",
+        severity: "High",
+        userEmail: "alice.jones@example.com",
+        sessionId: "789fab19-cc3d-7890-ij56-7890mnop1234",
+        model: "GPT 4",
+        source: "ApexChat",
+        status: "Open",
+      },
+      {
+        id: 4,
+        date: "Jun 23, 2024 1:30 PM",
+        chat: "Unauthorized Competitive Analysis",
+        role: "User",
+        voilationType: "ExternalResources",
+        severity: "Medium",
+        userEmail: "bob.brown@example.com",
+        sessionId: "012fab19-dd4e-8901-kl78-9012qrst3456",
+        model: "GPT 3.5 Turbo",
+        source: "ApexChat",
+        status: "Open",
+      },
+      {
+        id: 5,
+        date: "Jun 22, 2024 3:20 PM",
+        chat: "Influencing Stock Prices",
+        role: "User",
+        voilationType: "Code",
+        severity: "Critical",
+        userEmail: "charlie.davis@example.com",
+        sessionId: "45fab19-ee5f-9012-mn90-1234uvwx5678",
+        model: "GPT 4",
+        source: "ApexChat",
+        status: "Open",
+      },
+    ],
+    insights: [
+      {
+        id: 1,
+        user: "User",
+        image: user,
+        name: "Chai Hain",
+        messages: ["16", "-39%"],
+        sessions: ["3", "-29%"],
+        vilations: [
+          {
+            id: 1,
+            name: "Critical",
+            value: "5",
+          },
+          {
+            id: 2,
+            name: "High",
+            value: "0",
+          },
+          {
+            id: 2,
+            name: "Medium",
+            value: "1",
+          },
+          {
+            id: 3,
+            name: "Low",
+            value: "8",
+          },
+        ],
+        categories: ["AI ethics", "Banned topics"],
+      },
+      {
+        id: 2,
+        user: "Engine",
+        image: gpt,
+        name: "Claude",
+        messages: ["95", "+20"],
+        sessions: ["28", "+18%"],
+        vilations: [
+          {
+            id: 1,
+            name: "Critical",
+            value: "21",
+          },
+          {
+            id: 2,
+            name: "High",
+            value: "2",
+          },
+          {
+            id: 2,
+            name: "Medium",
+            value: "91",
+          },
+          {
+            id: 3,
+            name: "Low",
+            value: "117",
+          },
+        ],
+        categories: ["AI ethics", "Banned topics", "PII"],
+      },
+    ],
+    graph: FILES,
+    issues: [
+      "High",
+      "Sensitive Data File Uploads",
+      ["PII Exposure", "Unauthorized File Sharing"],
+      "184",
+      ["Customer Data", "Employee Information", "Business Contracts"],
+      "Outbound",
+      "alex.kim@company.com",
+      "ApexChat_AzureOpenAI",
+      ["Claude"],
+      "May 12, 2024, 02:15 PM",
+      "May 12, 2024, 03:45 PM",
+      "98765-session-id",
+      "Hadar Arnon",
+      "Resolved",
+    ],
+    files:[
+      {
+        id:1,
+        file:'Customer_Data_List.xlsx',
+        fileImg:world
+      },
+      {
+        id:2,
+        file:'Employee_Salary_Info.pdf',
+        fileImg:pdf
+      },
+      {
+        id:3,
+        file:'Client_Contracts.docx',
+        fileImg:excel
+      }
+    ]
+  },
+  {
+    id: 10,
+    lastEvent: "Aug 14, 2023 10:46 AM",
+    name: "Unauthorized automatic PR generation by GitHub Copilot Docker extension",
+    subcategories: "Customer Data",
+    severity: "High",
+    users: ["user@x.com", "user2@x.com", "+20"],
+    interface: ["ApexChat", "Azure Open AI"],
+    engine: ["GPT 4"],
+    tags: "LLM06",
+    status: "Open",
+    context: "File path",
+    email: ["alex.kim@company.com"],
+    code:[
+      {
+        id:1,
+        title:
+        `
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+
+        `,
+      }
+    ],
+  
+    insights: [
+      {
+        id: 1,
+        user: "Extension",
+        image: docker,
+        name: "Docker",
+        messages: ["163", "+13%"],
+        sessions: ["45", "-9%"],
+        vilations: [
+          {
+            id: 1,
+            name: "Critical",
+            value: "1",
+          },
+          {
+            id: 2,
+            name: "High",
+            value: "0",
+          },
+          {
+            id: 2,
+            name: "Medium",
+            value: "1",
+          },
+          {
+            id: 3,
+            name: "Low",
+            value: "8",
+          },
+        ],
+        categories: ["Unauthorized actions"],
+      },
+      {
+        id: 2,
+        user: "Engine",
+        image: extension,
+        name: "GitHub Copilot",
+        messages: ["8.4K", "+13"],
+        sessions: ["291", "-9%"],
+        vilations: [
+          {
+            id: 1,
+            name: "Critical",
+            value: "21",
+          },
+          {
+            id: 2,
+            name: "High",
+            value: "2",
+          },
+          {
+            id: 2,
+            name: "Medium",
+            value: "91",
+          },
+          {
+            id: 3,
+            name: "Low",
+            value: "117",
+          },
+        ],
+        categories: ["Unauthorized actions", "Data leakage"],
+      },
+    ],
+    graph: UN_AUTHORIZED,
+   
+   
   },
 ];
 

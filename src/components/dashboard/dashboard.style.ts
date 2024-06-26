@@ -74,4 +74,9 @@ export const DashboardStyles = {
     display: "flex",
     justifyContent: "flex-end",
   },
+  topIssues:{
+    background:"#fff",
+    boxShadow: "0px 1px 5px 0px #00000026",
+    borderRadius:'10px'
+  },
 };
