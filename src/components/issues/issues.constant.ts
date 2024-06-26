@@ -8,13 +8,15 @@ import GPT3Icon from "@/common/assets/images/gpt3-icon.svg";
 import AzureIcon from "@/common/assets/images/azure-icon.svg";
 import BardIcon from "@/common/assets/images/bard-icon.svg";
 import user from "@/common/assets/images/insiteUser.svg";
-import engine from "@/common/assets/images/insiteEngine.svg";
+import engine from "@/common/assets/images/co-pilot.svg";
+import enginezure from "@/common/assets/images/azure.svg";
 import pdf from "@/common/assets/images/pdf.svg";
 import world from "@/common/assets/images/world.svg";
 import excel from "@/common/assets/images/excel.svg";
 import gpt from "@/common/assets/images/chatGpt2.svg";
 import docker from "@/common/assets/images/docker.svg";
 import extension from "@/common/assets/images/co-Pilot.svg";
+import openAi from "@/common/assets/images/chatGpt2.svg";
 
 export const SENSITIVE_DATATYPE_CHART = {
   tooltip: {
@@ -830,7 +832,7 @@ const VULNURBLE_PKG = {
           label: {
             show: true,
             position: "bottom",
-            formatter: "{htmlContent|Github Copilot}",
+            formatter: "{htmlContent|GitHub Copilot}",
             rich: {
               htmlContent: {
                 align: "center",
@@ -2215,22 +2217,22 @@ retrieveSensitiveFiles('user@gs.com');
           {
             id: 1,
             name: "Critical",
-            value: "1",
+            value: "4",
           },
           {
             id: 2,
             name: "High",
-            value: "2",
+            value: "16",
           },
           {
             id: 3,
             name: "Medium",
-            value: "1",
+            value: "31",
           },
           {
             id: 4,
             name: "Low",
-            value: "8",
+            value: "18",
           },
         ],
         categories: ["Data Leakage", "Unauthorized Access"],
@@ -2461,7 +2463,7 @@ print(f"Sharing {file} with {user_id}")
   {
     id: 3,
     lastEvent: "Aug 14, 2023 10:46 AM",
-    name: "Github Copilot collected and sent 3 API keys out of the organization",
+    name: "GitHub Copilot collected and sent 3 API keys out of the organization",
     subcategories: "Secrets",
     severity: "Medium",
     users: ["user@x.com", "user2@x.com"],
@@ -2706,8 +2708,8 @@ return response.json()
       },
       {
         id: 2,
-        user: "Engine",
-        image: engine,
+        user: "Azure OpenAI GPT3.5",
+        image: enginezure,
         name: "Copilot",
         messages: ["8.2k", "+13%"],
         sessions: ["1.4k", "+9%"],
@@ -2767,7 +2769,7 @@ return response.json()
   {
     id: 5,
     lastEvent: "Aug 14, 2023 10:46 AM",
-    name: "Github Copilot suggestion for vulnerable package was approved",
+    name: "GitHub Copilot suggestion for vulnerable package was approved",
     subcategories: "Vulnerable code",
     severity: "Medium",
     users: ["user@x.com", "user2@x.com"],
@@ -2872,11 +2874,11 @@ void useVulnerablePackage() {
       },
       {
         id: 2,
-        user: "Engine",
+        user: "GitHub Copilot",
         image: engine,
         name: "Copilot",
-        messages: ["120", "+25%"],
-        sessions: ["35", "+18%"],
+        messages: ["880", "+25%"],
+        sessions: ["76", "+18%"],
         vilations: [
           {
             id: 1,
@@ -2987,7 +2989,7 @@ void useVulnerablePackage() {
         id: 1,
         user: "User",
         image: user,
-        name: "John Doe",
+        name: "Sarh Leh",
         messages: ["37", "+8%"],
         sessions: ["10", "+4%"],
         vilations: [
@@ -3006,8 +3008,8 @@ void useVulnerablePackage() {
       },
       {
         id: 2,
-        user: "Engine",
-        image: engine,
+        user: "OpenAI GPT 4",
+        image: openAi,
         name: "Copilot",
         messages: ["75", "+12%"],
         sessions: ["22", "+15%"],
