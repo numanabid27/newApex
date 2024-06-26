@@ -480,7 +480,21 @@ export const MESSAGE_DATA = [
   },
 ];
 
+export const SENTIMENT = [
+  {
+    id: 1,
+    label: "Positive",
+  },
+  {
+    id: 2,
+    label: "Neutral",
+  },
+  {
+    id: 3,
+    label: "Negative",
+  }
 
+];
 
 export const SEVERITY = [
   {
@@ -551,31 +565,31 @@ export const MESSAGES_GRAPH = [
   {
     id:1,
     title:"John White",
-    value:'2K',
+    value:'9.8K',
     chart:USER_1,
   },
   {
     id:2,
     title:"George Mayer",
-    value:'2K',
+    value:'4K',
     chart:USER_2,
   },
   {
     id:3,
     title:"Cindy Sherman",
-    value:'2K',
+    value:'3.7K',
     chart:USER_1,
   },
   {
     id:4,
     title:"Barbara Kruger",
-    value:'2K',
+    value:'3.6K',
     chart:USER_2,
   },
   {
     id:5,
     title:"Michael Black",
-    value:'2K',
+    value:'3.1K',
     chart:USER_3,
   }
 ]

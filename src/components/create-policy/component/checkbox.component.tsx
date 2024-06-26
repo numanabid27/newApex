@@ -25,9 +25,9 @@ export default function CheckBoxComponent({
         }}
         checked={check}
         disabled={!enable}
-        onChange={() => {
-          setIsChecked(!isChecked);
-        }}
+        // onChange={() => {
+        //   setIsChecked(!isChecked);
+        // }}
         control={
           <Checkbox
             sx={!policy ? styles.checkBox : styles.checkBox2}

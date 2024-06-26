@@ -36,7 +36,7 @@ const Severity = ({ title, img, severity, ltr }: any) => {
         </Button>
         {isHide && (
           <Box sx={ltr ? styles.dropdownStyle2 : styles.dropdownStyle}>
-            {severity.map((item: any, i: number) => (
+            {severity?.map((item: any, i: number) => (
               <Button
                 key={i.toString()}
                 sx={[

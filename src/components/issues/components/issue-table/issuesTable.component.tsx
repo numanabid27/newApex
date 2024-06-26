@@ -10,13 +10,11 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { rows } from "../../issues.constant";
-import CustomTable from "@/common/components/custom-table/custom-table.component";
 import { styles } from "./issuesTable.style";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Colors from "@/common/constants/color.constant";
 import CircleIcon from "@mui/icons-material/Circle";
 import { Box, Chip, Typography } from "@mui/material";
-import setting from "@/common/assets/images/settings.svg";
 import Image from "next/image";
 import useWidth from "./use-width.hook";
 
@@ -116,8 +114,7 @@ function Row(props: {
           </IconButton>
         </TableCell>
         <TableCell>
-          <Typography sx={styles.font_14}>{row.interface[0]}</Typography>
-          <Typography sx={styles.font_14}>{row.interface[1]}</Typography>
+          <Image src={row.interface} alt="" width={27} height={27} />
         </TableCell>
         <TableCell>
           <Box display="flex" alignItems="center" gap="10px">
@@ -128,7 +125,10 @@ function Row(props: {
           </Box>
         </TableCell>
         <TableCell>
-          <Chip label={row.tags} sx={styles.tagChip} />
+          <Box display="flex" gap="6px">
+              <Image src={row.tags.icon} alt="" width={27} height={27} />
+              <Typography>{row.tags.title}</Typography>
+          </Box>
         </TableCell>
         <TableCell>{row.status}</TableCell>
         <TableCell component="th" scope="row">

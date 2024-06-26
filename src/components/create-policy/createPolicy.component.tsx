@@ -44,6 +44,7 @@ import redat from "@/common/assets/images/shield-minus.svg";
 import synk from "@/common/assets/images/snyk.svg";
 import check from "@/common/assets/images/check-check.svg";
 import { severity } from "./createPolicy.constant";
+import CustomizedAccordions from "./component/customizeAccordian/index.component";
 
 function Row(props: { Rows: any }) {
   const { Rows } = props;
@@ -78,8 +79,20 @@ function Row(props: { Rows: any }) {
           )}
         </TableCell>
         <TableCell>
-          {typeof Rows.engines === "string" ? (
-            <Typography sx={style.engineCell}>{Rows.engines}</Typography>
+          {typeof Rows.engines === "object" ? (
+            <Box display="flex" gap="5px">
+              {
+                Rows.engines?.map((item:any, i:number)=>{
+                  return(
+                    <Box display="flex" gap="5px" key={i.toString()}>
+                      <Image src={item.icon} alt="" />
+                      <Typography sx={style.engineCell}>{item.text}</Typography>
+                    </Box>
+                  ) 
+                })
+              }
+            </Box>
+            
           ) : (
             <Rows.engines />
           )}
@@ -87,13 +100,13 @@ function Row(props: { Rows: any }) {
         <TableCell>
           {typeof Rows.headerAssets === "string" ? (
             <Box display="flex" alignItems="center" gap="10px">
-              {Rows.headerAssets === "File" ? (
+              {/* {Rows.headerAssets === "File" ? (
                 <Image src={file} alt="" />
               ) : Rows.headerAssets === "Message" ? (
                 <Image src={msg} alt="" />
               ) : (
                 ""
-              )}
+              )} */}
               <Typography sx={style.engineCell}>{Rows.headerAssets}</Typography>
             </Box>
           ) : (
@@ -101,8 +114,12 @@ function Row(props: { Rows: any }) {
           )}
         </TableCell>
         <TableCell align="right">
-          {typeof Rows.integration === "string" ? (
-            <Typography>{Rows.integration}</Typography>
+          {typeof Rows.integration === "object" ? (
+            <Box display="flex" gap="5px"> 
+              {Rows.integration.map((item: any, i: number) => {
+                return <Typography key={i.toString()} fontSize="12px" sx={style.integration}>{item}</Typography>;
+              })}
+            </Box>
           ) : (
             <Rows.integration />
           )}
@@ -110,65 +127,73 @@ function Row(props: { Rows: any }) {
         <TableCell>
           {typeof Rows.headerSeverityevel === "string" ? (
             <IconButton sx={style.iconBtn}>
-            <Chip
-              label={Rows.headerSeverityevel}
-              sx={{
-                ...style.severityChip,
-                color:
-                  Rows.headerSeverityevel === "Medium"
-                    ? Colors.brown
-                    : Rows.headerSeverityevel === "Critical"
-                    ? Colors.darkBrown
-                    : Rows.headerSeverityevel === "Low"
-                    ? Colors.textGreen
-                    : Rows.headerSeverityevel === "High"
-                    ? Colors.textHigh
-                    : "",
-                bgcolor:
-                  Rows.headerSeverityevel === "Medium"
-                    ? Colors.primaryWhite
-                    : Rows.headerSeverityevel === "Critical"
-                    ? Colors.secondaryWhite
-                    : Rows.headerSeverityevel === "Low"
-                    ? Colors.primaryGreen
-                    : Rows.headerSeverityevel === "High"
-                    ? Colors.defaultWhite
-                    : "",
-                p: 0,
-              }}
-              icon={
-                <CircleIcon
-                  sx={{
-                    fill:
-                      Rows.headerSeverityevel === "Medium"
-                        ? `${Colors.orange} !important`
-                        : Rows.headerSeverityevel === "Critical"
-                        ? `${Colors.darkBrown} !important`
-                        : Rows.headerSeverityevel === "High"
-                        ? Colors.circleHigh
-                        : Rows.headerSeverityevel === "Low"
-                        ? Colors.circleLow
-                        : `${Colors.defaultBrown} !important`,
+              <Chip
+                label={Rows.headerSeverityevel}
+                sx={{
+                  ...style.severityChip,
+                  color:
+                    Rows.headerSeverityevel === "Medium"
+                      ? Colors.brown
+                      : Rows.headerSeverityevel === "Critical"
+                      ? Colors.darkBrown
+                      : Rows.headerSeverityevel === "Low"
+                      ? Colors.textGreen
+                      : Rows.headerSeverityevel === "High"
+                      ? Colors.textHigh
+                      : "",
+                  bgcolor:
+                    Rows.headerSeverityevel === "Medium"
+                      ? Colors.primaryWhite
+                      : Rows.headerSeverityevel === "Critical"
+                      ? Colors.secondaryWhite
+                      : Rows.headerSeverityevel === "Low"
+                      ? Colors.primaryGreen
+                      : Rows.headerSeverityevel === "High"
+                      ? Colors.defaultWhite
+                      : "",
+                  p: 0,
+                }}
+                icon={
+                  <CircleIcon
+                    sx={{
+                      fill:
+                        Rows.headerSeverityevel === "Medium"
+                          ? `${Colors.orange} !important`
+                          : Rows.headerSeverityevel === "Critical"
+                          ? `${Colors.darkBrown} !important`
+                          : Rows.headerSeverityevel === "High"
+                          ? Colors.circleHigh
+                          : Rows.headerSeverityevel === "Low"
+                          ? Colors.circleLow
+                          : `${Colors.defaultBrown} !important`,
 
-                    ...style.severityLevel,
-                  }}
-                />
-              }
-            />
+                      ...style.severityLevel,
+                    }}
+                  />
+                }
+              />
             </IconButton>
-            ) : (
-              <Rows.headerSeverityevel title="Set for all" img={check} severity={severity} ltr={false} />
-            )}
-          
+          ) : (
+            <Rows.headerSeverityevel
+              title="Set for all"
+              img={check}
+              severity={severity}
+              ltr={false}
+            />
+          )}
         </TableCell>
       </TableRow>
 
       {/* nested row */}
       <TableRow>
-        <TableCell style={{ padding:'0px' }} colSpan={8}>
+        <TableCell style={{ padding: "0px" }} colSpan={8}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box>
-              <Table size="small" aria-label="purchases" sx={style.nestedTableRow}>
+              <Table
+                size="small"
+                aria-label="purchases"
+                sx={style.nestedTableRow}
+              >
                 <TableBody sx={style.thBorder}>
                   {Rows.policiesData?.map((historyRow: any) => (
                     <TableRow key={historyRow.date}>
@@ -179,11 +204,7 @@ function Row(props: { Rows: any }) {
                       >
                         <Box display="flex" alignItems="center" gap="16px">
                           {<historyRow.component defaultChecked />}
-                          {
-                            historyRow.keyWord 
-                            &&
-                            <historyRow.keyWord />
-                          }
+                          {historyRow.keyWord && <historyRow.keyWord />}
                           {historyRow.policyName}
                         </Box>
                       </TableCell>
@@ -193,11 +214,9 @@ function Row(props: { Rows: any }) {
                             <Image src={block} alt="" />
                           ) : historyRow.type === "Redact" ? (
                             <Image src={redat} alt="" />
-                          ) : 
-                          historyRow.type === "Notify" ? (
+                          ) : historyRow.type === "Notify" ? (
                             <Image src={bell} alt="" />
-                          ) :
-                          (
+                          ) : (
                             ""
                           )}
                           {historyRow.type}
@@ -220,9 +239,9 @@ function Row(props: { Rows: any }) {
                       </TableCell>
                       <TableCell sx={style.nestedCell}>
                         <Box display="flex" gap="10px">
-                          {historyRow.integration === "Snyk" &&
+                          {historyRow.integration === "Snyk" && (
                             <Image src={synk} alt="" />
-                          }
+                          )}
                           {historyRow.integration}
                         </Box>
                       </TableCell>
@@ -288,219 +307,68 @@ function Row(props: { Rows: any }) {
 }
 
 export default function CreatePolicy() {
-  const { openModal, setOpenModal, selectedRow, setSelectedRow } =
-    usePolicies();
-  const ACCESS_USAGE_HEADER = [
-    { id: 1, header: "Policy name", accessor: "policyName" },
-    { id: 2, header: "Category", accessor: "category" },
-    { id: 3, header: "Engines", accessor: "engine" },
+  const policiesTypes = [
+    { id: 1, value: "GDPR", checkedValue: true, enable: true, check: true },
+    {
+      id: 2,
+      value: "Nist Ai RMF",
+      checkedValue: true,
+      enable: true,
+      check: true,
+    },
+    { id: 3, value: "HIPAA", checkedValue: false, enable: false, check: false },
     {
       id: 4,
-      header: "Severity Level",
-      accessor: "severityLevel",
-      cell: (data: any) => {
-        return (
-          <IconButton sx={style.iconBtn}>
-            <Chip
-              label={data}
-              sx={{
-                ...style.severityChip,
-                color:
-                  data === "Medium"
-                    ? Colors.brown
-                    : data === "Critical"
-                    ? Colors.darkBrown
-                    : Colors.defaultBrown,
-                bgcolor:
-                  data === "Medium"
-                    ? Colors.primaryWhite
-                    : data === "Critical"
-                    ? Colors.secondaryWhite
-                    : Colors.defaultWhite,
-                p: 0,
-              }}
-              icon={
-                <CircleIcon
-                  sx={{
-                    color:
-                      data === "Medium"
-                        ? `${Colors.orange} !important`
-                        : data === "Critical"
-                        ? `${Colors.darkBrown} !important`
-                        : data === "High"
-                        ? `${Colors.orange} !important`
-                        : `${Colors.defaultBrown} !important`,
-                    ...style.severityLevel,
-                  }}
-                />
-              }
-            />
-          </IconButton>
-        );
-      },
+      value: "EU AI Act",
+      checkedValue: false,
+      enable: false,
+      check: false,
     },
     {
       id: 5,
-      header: "",
-      accessor: "status",
-      cell: (data: any) => {
-        return (
-          <>
-            {data ? (
-              <IconButton sx={style.iconBtn}>
-                <Chip
-                  label={data}
-                  sx={{
-                    ...style.statusChip,
-                    color: data === "New" ? Colors.white : Colors.defaultBrown,
-                    bgcolor: data === "New" ? Colors.blue : Colors.defaultWhite,
-                    p: 0,
-                  }}
-                />
-              </IconButton>
-            ) : (
-              ""
-            )}
-          </>
-        );
-      },
+      value: "Mitre ATLAS",
+      checkedValue: true,
+      enable: true,
+      check: true,
     },
-  ];
-
-  const POLICY_TABLE_HEADER = [
-    { id: 1, header: "Policy name", accessor: "policyName" },
-    { id: 2, header: "Action ", accessor: "type" },
-    {
-      id: 3,
-      header: "Engines",
-      accessor: "engine",
-      cell: (data: any) => {
-        return (
-          <IconButton sx={style.engine}>
-            <Typography sx={style.chip}>{data}</Typography>
-          </IconButton>
-        );
-      },
-    },
-    { id: 4, header: "Assets ", accessor: "assets" },
-    { id: 5, header: "Assets ", accessor: "integration" },
-    {
-      id: 6,
-      header: "Severity Level",
-      accessor: "severityLevel",
-      cell: (data: any) => {
-        return (
-          <IconButton sx={style.iconBtn}>
-            <Chip
-              label={data}
-              sx={{
-                ...style.severityChip,
-                color:
-                  data === "Medium"
-                    ? Colors.brown
-                    : data === "Critical"
-                    ? Colors.darkBrown
-                    : data === "Low"
-                    ? Colors.textGreen
-                    : data === "High"
-                    ? Colors.textHigh
-                    : "",
-                bgcolor:
-                  data === "Medium"
-                    ? Colors.primaryWhite
-                    : data === "Critical"
-                    ? Colors.secondaryWhite
-                    : data === "Low"
-                    ? Colors.primaryGreen
-                    : data === "High"
-                    ? Colors.defaultWhite
-                    : "",
-                p: 0,
-              }}
-              icon={
-                <CircleIcon
-                  sx={{
-                    fill:
-                      data === "Medium"
-                        ? `${Colors.orange} !important`
-                        : data === "Critical"
-                        ? `${Colors.darkBrown} !important`
-                        : data === "High"
-                        ? Colors.circleHigh
-                        : data === "Low"
-                        ? Colors.circleLow
-                        : `${Colors.defaultBrown} !important`,
-
-                    ...style.severityLevel,
-                  }}
-                />
-              }
-            />
-          </IconButton>
-        );
-      },
-    },
-    {
-      id: 7,
-      header: "",
-      accessor: "status",
-      cell: (data: any) => {
-        return (
-          <>
-            {data ? (
-              <IconButton sx={style.iconBtn}>
-                <Chip
-                  label={data}
-                  sx={{
-                    ...style.statusChip,
-                    color: data === "New" ? Colors.white : Colors.defaultBrown,
-                    bgcolor: data === "New" ? Colors.blue : Colors.defaultWhite,
-                    p: 0,
-                  }}
-                />
-              </IconButton>
-            ) : (
-              ""
-            )}
-          </>
-        );
-      },
-    },
-  ];
-
-  const policiesTypes = [
-    { id: 1, value: "GDPR", checkedValue: false, enable: true },
-    { id: 2, value: "HIPAA", checkedValue: false, enable: true },
-    { id: 3, value: "HIPAA", checkedValue: false, enable: true },
   ];
 
   return (
     <Box sx={style.createPolicy}>
       <Grid container justifyContent="space-between" mb={6} mt={4}>
-        <Grid sm={4} xs={12} mb={{sm:0, xs:3}}>
+        <Grid sm={4} xs={12} mb={{ sm: 0, xs: 3 }}>
           <Link href="/policies/create-policy" className="addButton">
             <AddIcon />
             New policy
           </Link>
         </Grid>
         <Grid sm={8} xs={12}>
-          <Box display="flex" gap="10px" justifyContent={{sm:'flex-end', xs:"flex-start"}}>
-            <ButtonComponent title="Restore" icon={restore} />
-            <ButtonComponent title="Import" icon={importImg} />
+          <Box
+            display="flex"
+            gap="10px"
+            justifyContent={{ sm: "flex-end", xs: "flex-start" }}
+          >
+            <ButtonComponent title="Import company policy" icon={importImg} />
             <ButtonComponent title="Export" icon={exportImg} />
           </Box>
         </Grid>
       </Grid>
 
       <Box sx={style.createPolicyGrid}>
-        <Grid container justifyContent="space-between" padding="0 28px" mb={10} flexDirection={{lg:'row', xs:'column-reverse'}}>
+        {/* <Grid
+          container
+          justifyContent="space-between"
+          padding="0 28px"
+          mb={10}
+          flexDirection={{ lg: "row", xs: "column-reverse" }}
+        >
           <Grid lg={7} xs={12} className="mutiSelect">
             <Box
               display="flex"
-              alignItems={{sm:'center', xs:'flex-start'}}
-              gap={{sm:'30px', xs:"13px"}}
+              alignItems={{ sm: "center", xs: "flex-start" }}
+              gap={{ sm: "30px", xs: "13px" }}
               className="addField"
-              flexDirection={{sm:'row', xs:'column'}}
+              flexDirection={{ sm: "row", xs: "column" }}
             >
               <InputLabel sx={style.label}>Name</InputLabel>
               <TextField
@@ -509,8 +377,12 @@ export default function CreatePolicy() {
                 variant="outlined"
               />
             </Box>
-            <Box sx={style.multiSelect} className="multiSelectField"  alignItems={{sm:'center', xs:'flex-start'}}
-              flexDirection={{sm:'row', xs:'column'}}>
+            <Box
+              sx={style.multiSelect}
+              className="multiSelectField"
+              alignItems={{ sm: "center", xs: "flex-start" }}
+              flexDirection={{ sm: "row", xs: "column" }}
+            >
               <InputLabel sx={style.label}>Groups</InputLabel>
               <Select
                 isMulti
@@ -529,8 +401,8 @@ export default function CreatePolicy() {
             justifyContent="flex-end"
             alignItems="flex-start"
             gap="10px"
-            mb={{lg:0, xs:6}}
-            flexDirection={{md:'row', xs:'column-reverse'}}
+            mb={{ lg: 0, xs: 6 }}
+            flexDirection={{ md: "row", xs: "column-reverse" }}
           >
             {policiesTypes?.map((item, i) => {
               return (
@@ -544,33 +416,72 @@ export default function CreatePolicy() {
               );
             })}
           </Grid>
-        </Grid>
+        </Grid> */}
 
-        <TableContainer component={Paper}>
-          <Table aria-label="collapsible table">
-            <TableHead>
-              <TableRow sx={style.tableRow}>
-                <TableCell></TableCell>
-                <TableCell sx={style.typography}>Type</TableCell>
-                <TableCell sx={style.typography}>Action</TableCell>
-                <TableCell sx={style.typography}>Engines</TableCell>
-                <TableCell sx={style.typography}>Asset</TableCell>
-                <TableCell sx={style.typography}>Integration</TableCell>
-                <TableCell sx={style.typography}>Criticality</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {Rows.map((Rows: any) => (
-                <Row key={Rows.name} Rows={Rows} />
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      
+        <Box
+          sx={{
+            marginLeft: "auto",
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
+          {policiesTypes?.map((item, i) => {
+            return (
+              <CheckBoxComponent
+                id={item?.id}
+                key={i.toString()}
+                label={item?.value}
+                check={item?.check}
+                policy={true}
+                checkedValue={item?.checkedValue}
+                enable={item?.enable}
+              />
+            );
+          })}
+        </Box>
+
+        {Rows.map((item: any) => {
+          return (
+            <Box key={item.id}>
+              <CustomizedAccordions
+                id={item.id}
+                title={item.value}
+                component={
+                  <TableContainer component={Paper}>
+                    <Table aria-label="collapsible table">
+                      <TableHead>
+                        <TableRow sx={style.tableRow}>
+                          <TableCell></TableCell>
+                          <TableCell sx={style.typography}>Type</TableCell>
+                          <TableCell sx={style.typography}>Action</TableCell>
+                          <TableCell sx={style.typography}>Engines</TableCell>
+                          <TableCell sx={style.typography}>Groups</TableCell>
+                          <TableCell sx={style.typography}>Tags</TableCell>
+                          <TableCell sx={style.typography}>
+                            Criticality
+                          </TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {item?.policiesMainData?.map((Rows: any) => (
+                          <Row key={Rows.name} Rows={Rows} />
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                }
+              />
+            </Box>
+          );
+        })}
       </Box>
       <Box sx={style.desc}>
         <Typography variant="h6">
-          This is the description of the policy lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et This is the description of the policy lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et 
+          This is the description of the policy lorem ipsum dolor sit amet
+          consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore
+          et This is the description of the policy lorem ipsum dolor sit amet
+          consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore
+          et
         </Typography>
       </Box>
       <Button sx={style.save}>Save</Button>

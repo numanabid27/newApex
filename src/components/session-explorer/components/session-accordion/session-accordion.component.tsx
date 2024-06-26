@@ -106,289 +106,162 @@ export const SessionAccordion = ({ newData, isMessage }: any) => {
       </Accordion>
       {isMessage && (
         <>
-          {newData.topics.map((item: any, i: number) => {
-            return (
-              <Box key={i.toString()}>
-                {item.title &&
-                  item.title.includes("Code") &&
-                  newData.topics.length == 1 && (
-                    <Accordion
-                      expanded={expanded.includes("panel3")}
-                      onChange={handleChange("panel3")}
-                      sx={{ boxShadow: "none" }}
-                    >
-                      <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel3bh-content"
-                        id="panel3bh-header"
-                        sx={styles.accordianBg}
-                      >
-                        <Typography sx={styles.title}>
-                          <Image src={chat} alt="" style={styles.icon} />
-                          Prompt
-                        </Typography>
-                      </AccordionSummary>
-                      <AccordionDetails sx={modelStyle.desc2}>
-                        {Array.from({ length: 3 }, (_, i: any) => (
-                          <>
-                            <Box key={i} sx={modelStyle.promptBox}>
-                              {i < 2 && (
-                                <Box sx={modelStyle.voilationBox}>
-                                  <Typography variant="h6">
-                                    <span>3 Violations:</span> Email, Private
-                                    key{" "}
-                                  </Typography>
-                                  <Image
-                                    src={right}
-                                    alt=""
-                                    width={25}
-                                    height={25}
-                                  />
-                                </Box>
-                              )}
-
-                              <Typography sx={modelStyle.promptDate}>
-                                <span>15:41:03</span> Sunday 25 March 2024
-                              </Typography>
-                              <Box sx={modelStyle.promptName}>
-                                <Image
-                                  src={user}
-                                  alt=""
-                                  width={20}
-                                  height={20}
-                                />
-                                <Typography variant="h6">
-                                  Sent prompt{" "}
-                                </Typography>
-                              </Box>
-                              <Box
-                                sx={{
-                                  ...modelStyle.codeBox,
-                                  background: "#fff",
-                                }}
-                              >
-                                <pre>
-                                  {`
-  // Import the package here
-  import MyPackage from 'my-package';...
-                         `}
-                                </pre>
-                              </Box>
-
-                              <Box sx={modelStyle.promptName}>
-                                <Image
-                                  src={panda}
-                                  alt=""
-                                  width={20}
-                                  height={20}
-                                />
-                                <Typography variant="h6">
-                                  Github Copilot
-                                </Typography>
-                              </Box>
-                              <Box
-                                sx={{
-                                  ...modelStyle.codeBox,
-                                  background: "#475467",
-                                }}
-                              >
-                                <pre style={{ color: "#fff" }}>
-                                  {`
-  // You can then use your package within this API route
-  export default function handler(req, res) {...
-                         `}
-                                </pre>
-                              </Box>
-                            </Box>
-                          </>
-                        ))}
-                      </AccordionDetails>
-                    </Accordion>
-                  )}
-
-                {item.title &&
-                  item.title.includes("Data analysis") &&
-                  newData.topics.length == 1 && (
-                    <Accordion
-                      expanded={expanded.includes("panel1")}
-                      onChange={handleChange("panel1")}
-                      className="accordians"
-                    >
-                      <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1bh-content"
-                        id="panel1bh-header"
-                        sx={styles.accordianBg}
-                      >
-                        <Typography sx={styles.title}>
-                          <Image src={msgs} alt="" style={styles.icon} />
-                          Session messages
-                        </Typography>
-                      </AccordionSummary>
-                      <AccordionDetails sx={modelStyle.desc2}>
-                        {MESSAGES.map((item: any, i: number) => {
-                          return (
-                            <>
-                              <Box
-                                display="flex"
-                                gap="10px"
-                                alignItems="flex-start"
-                                sx={modelStyle.message}
-                              >
-                                <Image src={users} alt="" />
-                                <Box>
-                                  <Typography variant="h6" sx={modelStyle.mesg}>
-                                    {item.userMsg}
-                                  </Typography>
-                                  <Typography sx={modelStyle.msgTime}>
-                                    {item.time}
-                                  </Typography>
-                                </Box>
-                              </Box>
-
-                              <Box
-                                display="flex"
-                                gap="10px"
-                                alignItems="flex-start"
-                                sx={modelStyle.receiveBox}
-                              >
-                                <Image src={saprk} alt="" />
-                                <Box
-                                  display="flex"
-                                  justifyContent="space-between"
-                                  alignItems="flex-start"
-                                  width="100%"
-                                  className="chatHeader"
-                                >
-                                  <Box>
-                                    <Typography
-                                      variant="h6"
-                                      sx={modelStyle.mesg}
-                                    >
-                                      {item.reply}
-                                    </Typography>
-                                    <ul className="msgList">
-                                      {item.replyList?.map(
-                                        (items: any, i: number) => {
-                                          return (
-                                            <li key={i.toString()}>
-                                              {items.list}
-                                            </li>
-                                          );
-                                        }
-                                      )}
-                                    </ul>
-
-                                    <Typography sx={modelStyle.msgTime}>
-                                      {item.time}
-                                    </Typography>
-                                  </Box>
-                                  <Box sx={modelStyle.copyIcon}>
-                                    {isCopy === item.id ? (
-                                      <DoneIcon />
-                                    ) : (
-                                      <ContentCopyIcon
-                                        onClick={() =>
-                                          handleCopy(item.id, item)
-                                        }
-                                      />
-                                    )}
-                                  </Box>
-                                </Box>
-                              </Box>
-                            </>
-                          );
-                        })}
-                      </AccordionDetails>
-                    </Accordion>
-                  )}
-              </Box>
-            );
-          })}
-
-          {newData.topics.length > 1 && (
+          {newData.interface.includes("Github Copilot") ? 
             <Accordion
-              expanded={expanded.includes("panel1")}
-              onChange={handleChange("panel1")}
-              className="accordians"
+              expanded={expanded.includes("panel3")}
+              onChange={handleChange("panel3")}
+              sx={{ boxShadow: "none" }}
             >
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1bh-content"
-                id="panel1bh-header"
+                aria-controls="panel3bh-content"
+                id="panel3bh-header"
                 sx={styles.accordianBg}
               >
                 <Typography sx={styles.title}>
-                  <Image src={msgs} alt="" style={styles.icon} />
-                  Session messages
+                  <Image src={chat} alt="" style={styles.icon} />
+                  Prompt
                 </Typography>
               </AccordionSummary>
               <AccordionDetails sx={modelStyle.desc2}>
-                {MESSAGES.map((item: any, i: number) => {
-                  return (
-                    <>
+                {Array.from({ length: 3 }, (_, i: any) => (
+                  <>
+                    <Box key={i} sx={modelStyle.promptBox}>
+                      {i < 2 && (
+                        <Box sx={modelStyle.voilationBox}>
+                          <Typography variant="h6">
+                            <span>3 Violations:</span> Email, Private key{" "}
+                          </Typography>
+                          <Image src={right} alt="" width={25} height={25} />
+                        </Box>
+                      )}
+
+                      <Typography sx={modelStyle.promptDate}>
+                        <span>15:41:03</span> Sunday 25 March 2024
+                      </Typography>
+                      <Box sx={modelStyle.promptName}>
+                        <Image src={user} alt="" width={20} height={20} />
+                        <Typography variant="h6">Sent prompt </Typography>
+                      </Box>
+                      <Box
+                        sx={{
+                          ...modelStyle.codeBox,
+                          background: "#fff",
+                        }}
+                      >
+                        <pre>
+                          {`
+  // Import the package here
+  import MyPackage from 'my-package';...
+                         `}
+                        </pre>
+                      </Box>
+
+                      <Box sx={modelStyle.promptName}>
+                        <Image src={panda} alt="" width={20} height={20} />
+                        <Typography variant="h6">Github Copilot</Typography>
+                      </Box>
+                      <Box
+                        sx={{
+                          ...modelStyle.codeBox,
+                          background: "#475467",
+                        }}
+                      >
+                        <pre style={{ color: "#fff" }}>
+                          {`
+  // You can then use your package within this API route
+  export default function handler(req, res) {...
+                         `}
+                        </pre>
+                      </Box>
+                    </Box>
+                  </>
+                ))}
+              </AccordionDetails>
+            </Accordion>
+            :
+            <Accordion
+            expanded={expanded.includes("panel1")}
+            onChange={handleChange("panel1")}
+            className="accordians"
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+              sx={styles.accordianBg}
+            >
+              <Typography sx={styles.title}>
+                <Image src={msgs} alt="" style={styles.icon} />
+                Session messages
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails sx={modelStyle.desc2}>
+              {MESSAGES.map((item: any, i: number) => {
+                return (
+                  <>
+                    <Box
+                      display="flex"
+                      gap="10px"
+                      alignItems="flex-start"
+                      sx={modelStyle.message}
+                    >
+                      <Image src={users} alt="" />
+                      <Box>
+                        <Typography variant="h6" sx={modelStyle.mesg}>
+                          {item.userMsg}
+                        </Typography>
+                        <Typography sx={modelStyle.msgTime}>
+                          {item.time}
+                        </Typography>
+                      </Box>
+                    </Box>
+
+                    <Box
+                      display="flex"
+                      gap="10px"
+                      alignItems="flex-start"
+                      sx={modelStyle.receiveBox}
+                    >
+                      <Image src={saprk} alt="" />
                       <Box
                         display="flex"
-                        gap="10px"
+                        justifyContent="space-between"
                         alignItems="flex-start"
-                        sx={modelStyle.message}
+                        width="100%"
+                        className="chatHeader"
                       >
-                        <Image src={users} alt="" />
                         <Box>
                           <Typography variant="h6" sx={modelStyle.mesg}>
-                            {item.userMsg}
+                            {item.reply}
                           </Typography>
+                          <ul className="msgList">
+                            {item.replyList?.map((items: any, i: number) => {
+                              return <li key={i.toString()}>{items.list}</li>;
+                            })}
+                          </ul>
+
                           <Typography sx={modelStyle.msgTime}>
                             {item.time}
                           </Typography>
                         </Box>
-                      </Box>
-
-                      <Box
-                        display="flex"
-                        gap="10px"
-                        alignItems="flex-start"
-                        sx={modelStyle.receiveBox}
-                      >
-                        <Image src={saprk} alt="" />
-                        <Box
-                          display="flex"
-                          justifyContent="space-between"
-                          alignItems="flex-start"
-                          width="100%"
-                          className="chatHeader"
-                        >
-                          <Box>
-                            <Typography variant="h6" sx={modelStyle.mesg}>
-                              {item.reply}
-                            </Typography>
-                            <ul className="msgList">
-                              {item.replyList?.map((items: any, i: number) => {
-                                return <li key={i.toString()}>{items.list}</li>;
-                              })}
-                            </ul>
-
-                            <Typography sx={modelStyle.msgTime}>
-                              {item.time}
-                            </Typography>
-                          </Box>
-                          <Box sx={modelStyle.copyIcon}>
-                            {isCopy === item.id ? (
-                              <DoneIcon />
-                            ) : (
-                              <ContentCopyIcon
-                                onClick={() => handleCopy(item.id, item)}
-                              />
-                            )}
-                          </Box>
+                        <Box sx={modelStyle.copyIcon}>
+                          {isCopy === item.id ? (
+                            <DoneIcon />
+                          ) : (
+                            <ContentCopyIcon
+                              onClick={() => handleCopy(item.id, item)}
+                            />
+                          )}
                         </Box>
                       </Box>
-                    </>
-                  );
-                })}
-              </AccordionDetails>
+                    </Box>
+                  </>
+                );
+              })}
+            </AccordionDetails>
             </Accordion>
-          )}
+          }
         </>
       )}
       {!isMessage && (

@@ -6,9 +6,8 @@ export const style ={
         my: 5,
     },
     createPolicyGrid:{
-        border: "1px solid #CFD4DC",
-        boxShadow: "0px 1px 2px 0px #1018280F",
-        borderRadius:'8px',
+      
+       
         padding: "31px 0px 0px"
     },
     label:{
@@ -127,5 +126,10 @@ export const style ={
             fontSize:'14px'
         }
         
+    },
+    integration:{
+        border:'1px solid #D5D9EB',
+        padding: "2px 9px",
+        borderRadius: "14px",
     }
 }

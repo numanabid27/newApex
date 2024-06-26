@@ -37,18 +37,30 @@ export const  STATUS = [
   { id: 4, name: "Pfizer" }
 ];
 
+export const  CONVERSATION = [
+  { id: 1, name: "Low" },
+  { id: 2, name: "Medium" },
+  { id: 3, name: "High" }
+];
+
+export const SENTIMENT = [
+  { id: 1, name: "Positive" },
+  { id: 2, name: "Neutral" },
+  { id: 3, name: "Negative" }
+];
+
 
 export const  TOPICS = [
   { id: 1, name: "Finance" },
   { id: 2, name: "Hiring" },
   { id: 3, name: "Marketing" },
-  { id: 4, name: "Corporate Sabotage"},
+  { id: 4, name: "Corporate Sabotage" },
   { id: 5, name: "Profanity" },
   { id: 6, name: "Legal" },
   { id: 7, name: "Security" },
   { id: 8, name: "Data analysis" },
   { id: 9, name: "Medical" },
-  { id: 10, name: "Customer files" },
+  { id: 10, name: "Customer files" }
 ];
 
 export const  POLICY_TOPICS = [
@@ -63,7 +75,6 @@ export const ACTIVE_USER_DATA = [
   { id: 4, username: "Conor Oberst", usermail: "Conoroberst@untitledui.com" },
   { id: 5, username: "Marry Brown", usermail: "Marrybrown@untitledui.com" },
 ];
-
 export const SESSION_EXPLORER_DATA = [
   {
     id: 1,

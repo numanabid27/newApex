@@ -152,9 +152,8 @@ export default function AiBoom() {
           repo={repo}
           isColor={isColor}
           nestTableData={nestTableData}
-          selectedFileData={selectedFileData}
+          
         />
-        {/* {tableData(AIBOOM_TABLE_BOX)} */}
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Grid container gap="10px" justifyContent="space-between">
@@ -274,7 +273,7 @@ export const AiBox = ({
   nestTableData,
   selectedFileData
 }: any) => {
-console.log(selectedFileData, "selectedFileData aiBoom")
+
   return (
     <Grid container gap="10px" mt={4} justifyContent="space-between">
       <Grid xs={12} lg={7.5}>

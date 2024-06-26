@@ -119,5 +119,51 @@ export const ModalDataStyle = {
   model:{
     background:"#fff",
     
+  },
+  run_test:{
+    background:"#F4F9FF",
+    padding: "27px 19px",
+    margin:" 18px 27px 20px",
+    borderRadius: "10px",
+  },
+  promptBox:{
+    borderTop:'1px solid #EAECF0',
+    borderBottom:'1px solid #EAECF0',
+    margin: "25px 0",
+    padding: "27px 0",
+    "h6":{
+      fontWeight: 600,
+      paddingBottom:"15px"
+    },
+    "button":{
+      background:"#98A2B3",
+      color: "#fff",
+      padding: "9px 27px",
+      borderRadius: "8px",
+      textTransform: "capitalize",
+    },
+    "textarea":{
+      border: "1px solid #CFD4DC",
+      boxShadow: "0px 1px 2px 0px #1018280D",
+      display:'block',
+      width:'100%',
+      padding:" 9px 18px",
+      borderRadius: "8px",
+      marginTop: "27px",
+      resize:'none'
+    },
+    
+  },
+  testBtn:{
+    background:"#027947",
+    color:"#fff",
+    padding: "7px 33px",
+    borderRadius: "8px",
+    display:'block',
+    margin:'0 auto',
+    textTransform:"capitalize",
+    "&:hover":{
+      background:"#027947",
+    }
   }
 };

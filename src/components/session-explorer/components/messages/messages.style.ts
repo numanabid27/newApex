@@ -166,10 +166,11 @@ export const styles = {
       bgcolor: "#ECFDF3",
       borderRadius: "5px",
     },
-    user: {
+    userConsistancy: {
       paddingLeft: "0px !important",
       maxWidth: "unset !important",
       flexBasis: { sm: "unset !important", xs: "100% !important" },
+      width:'200px'
     },
     userFormControl: {
       paddingTop: "3.1px",

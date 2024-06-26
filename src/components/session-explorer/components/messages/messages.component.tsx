@@ -28,6 +28,7 @@ import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {
+  CONVERSATION,
   ENGINE_NAMES,
   INTERFACE_NAME,
   STATUS,
@@ -39,6 +40,7 @@ import {
   SEVERITY,
   EQUALS,
   MESSAGES_GRAPH,
+  SENTIMENT,
 } from "./message.constant";
 import { styles } from "./messages.style";
 import useSessions from "./use-message.hook";
@@ -88,7 +90,9 @@ export default function Message() {
     isBuilder,
     setIsBuilder,
     isTopic,
-    setIsTopic
+    setIsTopic,
+    setisSentiment,
+    isSentiment
   } = useSessions();
 
   const {windowWidth} = useWidth();
@@ -187,9 +191,7 @@ export default function Message() {
           </Box>
         );
       },
-    },
-    { id: 11, header: "Session ID", accessor: "sessionId" },
-    { id: 12, header: "Status", accessor: "active" },
+    }
   ];
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
@@ -204,321 +206,7 @@ export default function Message() {
     }
   }, [selectedRow, selectDrawerValue]);
 
-  // const options = {
-  //   tooltip: {
-  //     trigger: 'item',
-  //     triggerOn: 'mousemove',
-  //   },
-    
-  //   series: [
-  //     {
-  //       type: 'sankey',
-  //       layout: 'none',
-  //       nodeAlign: 'left',
-  //       data: [
-  //         { name: 'Total prompts', itemStyle: { color: '#037C49' } },
-  //         { name: 'R&D', itemStyle: { color: '#2BB877' } },
-  //         { name: 'Marketing', itemStyle: { color: '#6CE9A6' } },
-  //         { name: 'Code', itemStyle: { color: '#6CE9A6' } },
-  //         { name: 'Email', itemStyle: { color: '#039855' } },
-  //         { name: 'Legal', itemStyle: { color: '#05603A' } },
-  //         { name: 'Positive', itemStyle: { color: '#037C49' } },
-  //         { name: 'Negative', itemStyle: { color: '#A6F4C5' } },
-  //       ],
-  //       links: [
-  //         {
-  //           source: 'Total prompts',
-  //           target: 'R&D',
-  //           value: 500,
-  //           lineStyle: {
-  //             color: {
-  //               type: 'linear',
-  //               x: 0,
-  //               y: 0,
-  //               x2: 1,
-  //               y2: 0,
-  //               colorStops: [
-  //                 {
-  //                   offset: 0,
-  //                   color: '#027A48', 
-  //                 },
-  //                 {
-  //                   offset: 1,
-  //                   color: '#6CE9A6', 
-  //                 },
-  //               ],
-  //             },
-  //           },
-  //         },
-  //         {
-  //           source: 'Total prompts',
-  //           target: 'Marketing',
-  //           value: 500,
-  //           lineStyle: {
-  //             color: {
-  //               type: 'linear',
-  //               x: 0,
-  //               y: 0,
-  //               x2: 1,
-  //               y2: 0,
-  //               colorStops: [
-  //                 {
-  //                   offset: 0,
-  //                   color: '#027A48', 
-  //                 },
-  //                 {
-  //                   offset: 1,
-  //                   color: '#6CE9A6', 
-  //                 },
-  //               ],
-  //             },
-  //           },
-  //         },
-  //         {
-  //           source: 'R&D',
-  //           target: 'Code',
-  //           value: 400,
-  //           lineStyle: {
-  //             color: {
-  //               type: 'linear',
-  //               x: 0,
-  //               y: 0,
-  //               x2: 1,
-  //               y2: 0,
-  //               colorStops: [
-  //                 {
-  //                   offset: 0,
-  //                   color: '#2BB877',
-  //                 },
-  //                 {
-  //                   offset: 1,
-  //                   color: '#6CE9A6',
-  //                 },
-  //               ],
-  //             },
-  //           },
-  //         },
-  //         {
-  //           source: 'R&D',
-  //           target: 'Email',
-  //           value: 200,
-  //           lineStyle: {
-  //             color: {
-  //               type: 'linear',
-  //               x: 0,
-  //               y: 0,
-  //               x2: 1,
-  //               y2: 0,
-  //               colorStops: [
-  //                 {
-  //                   offset: 0,
-  //                   color: '#2BB877',
-  //                 },
-  //                 {
-  //                   offset: 1,
-  //                   color: '#039855',
-  //                 },
-  //               ],
-  //             },
-  //           },
-  //         },
-  //         {
-  //           source: 'Marketing',
-  //           target: 'Legal',
-  //           value: 200,
-  //           lineStyle: {
-  //             color: {
-  //               type: 'linear',
-  //               x: 0,
-  //               y: 0,
-  //               x2: 1,
-  //               y2: 0,
-  //               colorStops: [
-  //                 {
-  //                   offset: 0,
-  //                   color: '#6CE9A6',
-  //                 },
-  //                 {
-  //                   offset: 1,
-  //                   color: '#05603A',
-  //                 },
-  //               ],
-  //             },
-  //           },
-  //         },
-  //         {
-  //           source: 'Code',
-  //           target: 'Positive',
-  //           value: 900,
-  //           lineStyle: {
-  //             color: {
-  //               type: 'linear',
-  //               x: 0,
-  //               y: 0,
-  //               x2: 1,
-  //               y2: 0,
-  //               colorStops: [
-  //                 {
-  //                   offset: 0,
-  //                   color: '#6CE9A6',
-  //                 },
-  //                 {
-  //                   offset: 1,
-  //                   color: '#037C49',
-  //                 },
-  //               ],
-  //             },
-  //           },
-  //         },
-  //         {
-  //           source: 'Email',
-  //           target: 'Positive',
-  //           value: 400,
-  //           lineStyle: {
-  //             color: {
-  //               type: 'linear',
-  //               x: 0,
-  //               y: 0,
-  //               x2: 1,
-  //               y2: 0,
-  //               colorStops: [
-  //                 {
-  //                   offset: 0,
-  //                   color: '#039855',
-  //                 },
-  //                 {
-  //                   offset: 1,
-  //                   color: '#037C49',
-  //                 },
-  //               ],
-  //             },
-  //           },
-  //         },
-  //         {
-  //           source: 'Legal',
-  //           target: 'Negative',
-  //           value: 350,
-  //           lineStyle: {
-  //             color: {
-  //               type: 'linear',
-  //               x: 0,
-  //               y: 0,
-  //               x2: 1,
-  //               y2: 0,
-  //               colorStops: [
-  //                 {
-  //                   offset: 0,
-  //                   color: '#05603A',
-  //                 },
-  //                 {
-  //                   offset: 1,
-  //                   color: '#A6F4C5',
-  //                 },
-  //               ],
-  //             },
-  //           },
-  //         },
-  //         {
-  //           source: 'R&D',
-  //           target: 'Legal',
-  //           value: 350,
-  //           lineStyle: {
-  //             color: {
-  //               type: 'linear',
-  //               x: 0,
-  //               y: 0,
-  //               x2: 1,
-  //               y2: 0,
-  //               colorStops: [
-  //                 {
-  //                   offset: 0,
-  //                   color: '#05603A',
-  //                 },
-  //                 {
-  //                   offset: 1,
-  //                   color: '#A6F4C5',
-  //                 },
-  //               ],
-  //             },
-  //           },
-  //         },
-  //       ],
-  //       lineStyle: {
-  //         color: 'gradient',
-  //         curveness: 0.5,
-  //       },
-  //       itemStyle: {
-  //         borderWidth: 1,
-  //       },
-  //       label: {
-  //         show: true,
-  //         color: '#000',
-  //         position: 'right',
-  //         fontSize: 12,
-  //       },
-  //       nodeWidth: 20,  
-  //       nodeGap: 25,  
-  //     },
-     
-  //   ],
-  // };
-
-const a = [];
   
-// const options = {
-//     tooltip: {
-//         trigger: 'item',
-//         triggerOn: 'mousemove',
-//     },
-//     series: [
-//         {
-//             type: 'sankey',
-//             layout: 'none',
-//             nodeAlign: 'left',
-//             data: [
-//                 { name: 'ChatGPT', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-//                 { name: 'Github Copilot', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-//                 { name: 'Google Gemini', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-//                 { name: 'Strategy', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-//                 { name: 'Revenue', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-//                 { name: 'Legal', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-//                 { name: 'Healthcare', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-//                 { name: 'Positive', itemStyle: { color: '#037C49' }, emphasis: { itemStyle: { color: '#037C49' } } },
-//                 { name: 'Negative', itemStyle: { color: '#A6F4C5' }, emphasis: { itemStyle: { color: '#A6F4C5' } } },
-//             ],
-//             links: [
-//                 { source: 'ChatGPT', target: 'Strategy', value: 1000, lineStyle: { color: '#027A48', emphasis: { lineStyle: { color: '#027A48' } } } },
-//                 { source: 'ChatGPT', target: 'Legal', value: 1000, lineStyle: { color: '#2BB877', emphasis: { lineStyle: { color: '#2BB877' } } } },
-//                 { source: 'ChatGPT', target: 'Revenue', value: 1000, lineStyle: { color: '#2BB877', emphasis: { lineStyle: { color: '#2BB877' } } } },
-//                 { source: 'Github Copilot', target: 'Revenue', value: 1000, lineStyle: { color: '#2BB877', emphasis: { lineStyle: { color: '#2BB877' } } } },
-//                 { source: 'Google Gemini', target: 'Healthcare', value: 1000, lineStyle: { color: '#2BB877', emphasis: { lineStyle: { color: '#2BB877' } } } },
-//                 { source: 'Strategy', target: 'Positive', value: 1000, lineStyle: { color: '#037C49', emphasis: { lineStyle: { color: '#037C49' } } } },
-//                 { source: 'Revenue', target: 'Positive', value: 1000, lineStyle: { color: '#037C49', emphasis: { lineStyle: { color: '#037C49' } } } },
-//                 { source: 'Legal', target: 'Negative', value: 1000, lineStyle: { color: '#A6F4C5', emphasis: { lineStyle: { color: '#A6F4C5' } } } },
-//                 { source: 'Healthcare', target: 'Positive', value: 650, lineStyle: { color: '#037C49', emphasis: { lineStyle: { color: '#037C49' } } } },
-//                 { source: 'Healthcare', target: 'Negative', value: 350, lineStyle: { color: '#A6F4C5', emphasis: { lineStyle: { color: '#A6F4C5' } } } },
-//             ],
-//             lineStyle: {
-//                 color: 'gradient',
-//                 curveness: 0.5,
-//             },
-//             itemStyle: {
-//                 borderWidth: 1,
-//             },
-//             label: {
-//                 show: true,
-//                 color: '#000',
-//                 position: 'right',
-//                 fontSize: 12,
-//             },
-//             nodeWidth: 20,
-//             nodeGap: 25,
-//             layoutIterations: 2,
-//         },
-//     ],
-// };
-
-
 const options = {
   tooltip: {
       trigger: 'item',
@@ -650,7 +338,7 @@ const options = {
                 <Severity
                   title="Sentiment"
                   img={downArrow}
-                  severity={SEVERITY}
+                  severity={SENTIMENT}
                   ltr={true}
                 />
                 <Severity
@@ -710,7 +398,7 @@ const options = {
                 <Severity
                   title="Sentiment"
                   img={downArrow}
-                  severity={SEVERITY}
+                  severity={SENTIMENT}
                   ltr={true}
                 />
               </Box>
@@ -893,43 +581,10 @@ const options = {
           </FormControl>
         </Grid>
 
-        {/* <Grid item sm={2} xs={12} sx={styles.user}>
-          <FormControl fullWidth sx={styles.userFormControl}>
-            <InputLabel id="demo-simple-select-label" sx={styles.userText}>
-              User
-            </InputLabel>
-
-            <Select
-              sx={styles.sessionEngineFilter}
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={userName}
-              label="User"
-              onChange={handleChange}
-              renderValue={() => userName}
-            >
-              {USER_DATA.map((item: any) => (
-                <MenuItem value={item.name} sx={styles.enginItem} key={item.id}>
-                  {item.name}
-                  {userName === item.name && (
-                    <IconButton
-                      sx={styles.iconBtn}
-                      aria-label="delete"
-                      onClick={() => setUserName("")}
-                    >
-                      <ClearIcon sx={styles.closeIcon} />
-                    </IconButton>
-                  )}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid> */}
-
-        <Grid item sm={2} xs={12} sx={styles.user}>
+        <Grid item sm={2} xs={12} sx={styles.userConsistancy}>
           <FormControl fullWidth sx={styles.userFormControl}>
             <InputLabel id="demo-simple-select-label-3" sx={styles.userText}>
-              Status
+              Conversation consistency
             </InputLabel>
 
             <Select
@@ -938,14 +593,14 @@ const options = {
               id="demo-simple-select-3"
               value={isStatus}
               className="session-search-input2"
-              label="Status"
+              label="Conversation consistency"
               onChange={(event) => {
                 setIsStatus(event.target.value as string);
               }}
               renderValue={() => isStatus}
               IconComponent={KeyboardArrowDownIcon}
             >
-              {STATUS.map((item: any) => (
+              {CONVERSATION.map((item: any) => (
                 <MenuItem value={item.name} sx={styles.enginItem} key={item.id}>
                   {item.name}
                   {isStatus === item.name && (
@@ -963,14 +618,78 @@ const options = {
           </FormControl>
         </Grid>
 
-        <Grid item sm={2} xs={12} paddingLeft="0px !important">
-          <Button
-            sx={styles.moreSelected}
-          >
-            <Image src={filter} alt="" width={15} height={15} />
-            More Filters
+        <Grid item sm={2} xs={12} sx={styles.engineFilter}>
+          <FormControl fullWidth sx={styles.userFormControl}>
+            <InputLabel id="demo-simple-select-label-3" sx={styles.userText}>
+              Sentiment
+            </InputLabel>
 
-          </Button>
+            <Select
+              sx={styles.sessionEngineFilter}
+              labelId="demo-simple-select-label-3"
+              id="demo-simple-select-3"
+              value={isSentiment}
+              className="session-search-input2"
+              label="Sentiment"
+              onChange={(event) => {
+                setisSentiment(event.target.value as string);
+              }}
+              renderValue={() => isSentiment}
+              IconComponent={KeyboardArrowDownIcon}
+            >
+              {SENTIMENT.map((item: any) => (
+                <MenuItem value={item.label} sx={styles.enginItem} key={item.id}>
+                  {item.label}
+                  {isSentiment === item.label && (
+                    <IconButton
+                      sx={styles.iconBtn}
+                      aria-label="delete"
+                      onClick={() => setisSentiment("")}
+                    >
+                      <ClearIcon sx={styles.closeIcon} />
+                    </IconButton>
+                  )}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+
+        <Grid item sm={2} xs={12} sx={styles.engineFilter}>
+          <FormControl fullWidth sx={styles.userFormControl}>
+            <InputLabel id="demo-simple-select-label-3" sx={styles.userText}>
+              Intent
+            </InputLabel>
+
+            <Select
+              sx={styles.sessionEngineFilter}
+              labelId="demo-simple-select-label-3"
+              id="demo-simple-select-3"
+              value={isSentiment}
+              className="session-search-input2"
+              label="Intent"
+              onChange={(event) => {
+                setisSentiment(event.target.value as string);
+              }}
+              renderValue={() => isSentiment}
+              IconComponent={KeyboardArrowDownIcon}
+            >
+              {CONVERSATION.map((item: any) => (
+                <MenuItem value={item.name} sx={styles.enginItem} key={item.id}>
+                  {item.name}
+                  {isSentiment === item.name && (
+                    <IconButton
+                      sx={styles.iconBtn}
+                      aria-label="delete"
+                      onClick={() => setisSentiment("")}
+                    >
+                      <ClearIcon sx={styles.closeIcon} />
+                    </IconButton>
+                  )}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
         </Grid>
 
         <Grid sx={{...styles.searchBox, margin: "0 0 0 auto"}} className="sesson-search" sm={3} xs={12}>

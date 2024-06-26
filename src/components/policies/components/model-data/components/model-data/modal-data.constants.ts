@@ -91,3 +91,15 @@ export const ISSUES_DATA = (highData: any, mediumData: any, lowData: any) => {
     ],
   };
 };
+
+
+export const POLICIES_GPT =[
+  {
+    id: 1,
+    label: "GPT",
+  },
+  {
+    id: 2,
+    label: "Co pilot",
+  },
+]

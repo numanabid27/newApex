@@ -619,6 +619,30 @@ body {
 .dropdown-margin{
   margin-top: 4px;
 }
+.runTest{
+  background: #98A2B3;
+  color: #fff;
+  padding: 9px 27px;
+  border-radius: 8px;
+  text-transform: capitalize;
+}
+.runTest:hover{
+  background: #98A2B3;
+}
+.testBtn{
+  font-weight: 600;
+  text-transform: capitalize;
+  padding:8px 16px;
+  border-radius:8px;
+  border:1px solid #CFD4DC;
+  box-shadow:0px 1px 2px 0px #1018280D;
+  gap:6px;
+}
+.demooo{
+  overflow-y: scroll;
+  height: 96vh;
+
+}
 
 @media screen and (min-width: 1600px) {
   .sessionEchart .echarts-for-react {

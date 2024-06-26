@@ -12,6 +12,7 @@ export default function useMessage() {
   const [isInterface, setIsInterface] = useState("");
   const [isTopic, setIsTopic] = useState<any>("");
   const [isStatus, setIsStatus] = useState("");
+  const [isSentiment, setisSentiment] = useState("");
   const [openModal, setOpenModal] = useState(false);
   const [selectedRow, setSelectedRow] = useState<any>();
   const [dateShow, setDateShow] = useState<any>();
@@ -55,7 +56,7 @@ export default function useMessage() {
       let statusFlag = false;
       let topicFlag = false;
       let topicsFlag = false;
-  
+      let sentimentFlag = false;
   
       if (engineName.length === 0 || engineName.includes(item.topics)) {
         engineFlag = true;
@@ -80,6 +81,10 @@ export default function useMessage() {
         statusFlag = true;
       }
 
+      if (isSentiment === "" || item.active === isSentiment) {
+        sentimentFlag = true;
+      }
+
       // if()
       if (userName === "" || item.mails === userName) {
         userFlag = true;
@@ -96,7 +101,7 @@ export default function useMessage() {
       const itemText = Object.values(item).join(" ").toLowerCase();
       textFlag = itemText.includes(searchQuery);
   
-      return engineFlag && userFlag && dateFlag && textFlag && interfaceFlag && statusFlag && topicFlag && topicsFlag;
+      return engineFlag && userFlag && dateFlag && textFlag && sentimentFlag && interfaceFlag && statusFlag && topicFlag && topicsFlag;
     });
   
     return filteredData;
@@ -106,12 +111,13 @@ export default function useMessage() {
   useEffect(() => {
     setFinalData(filterData());
    
-  }, [engineName, topicName, userName, dateShow, dateRange, searchQuery, isTopic, isInterface, isStatus]);
+  }, [engineName, topicName, userName, dateShow, dateRange, searchQuery, isTopic, isSentiment, isInterface, isStatus]);
 
   const handleClearAll = () => {
     setUserName("");
     setIsInterface("");
     setIsStatus("");
+    setisSentiment(""),
     setDateShow(undefined);
     setEngineName([]);
     setTopicName([]);
@@ -165,6 +171,8 @@ export default function useMessage() {
     setIsBuilder,
     isBuilder,
     isTopic,
-    setIsTopic
+    setIsTopic,
+    setisSentiment,
+    isSentiment
   };
 }

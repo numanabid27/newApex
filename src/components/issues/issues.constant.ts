@@ -8,15 +8,23 @@ import GPT3Icon from "@/common/assets/images/gpt3-icon.svg";
 import AzureIcon from "@/common/assets/images/azure-icon.svg";
 import BardIcon from "@/common/assets/images/bard-icon.svg";
 import user from "@/common/assets/images/insiteUser.svg";
-import engine from "@/common/assets/images/co-pilot.svg";
-import enginezure from "@/common/assets/images/azure.svg";
+import engine from "@/common/assets/images/insiteEngine.svg";
 import pdf from "@/common/assets/images/pdf.svg";
 import world from "@/common/assets/images/world.svg";
 import excel from "@/common/assets/images/excel.svg";
 import gpt from "@/common/assets/images/chatGpt2.svg";
 import docker from "@/common/assets/images/docker.svg";
 import extension from "@/common/assets/images/co-Pilot.svg";
-import openAi from "@/common/assets/images/chatGpt2.svg";
+import fav from "@/common/assets/images/fav-logo.svg";
+import robot from "@/common/assets/images/robot.svg";
+import vs from "@/common/assets/images/vs.svg";
+import demini from "@/common/assets/images/claud.svg";
+import microsoft from "@/common/assets/images/microsoft.svg";
+import dataPos from "@/common/assets/images/datapois.svg";
+import dataDanger from "@/common/assets/images/datadang.svg";
+import dataKey from "@/common/assets/images/datakey.svg";
+import dataLeak from "@/common/assets/images/dataleak.svg";
+import dataPro from "@/common/assets/images/datapro.svg";
 
 export const SENSITIVE_DATATYPE_CHART = {
   tooltip: {
@@ -832,7 +840,7 @@ const VULNURBLE_PKG = {
           label: {
             show: true,
             position: "bottom",
-            formatter: "{htmlContent|GitHub Copilot}",
+            formatter: "{htmlContent|Github Copilot}",
             rich: {
               htmlContent: {
                 align: "center",
@@ -2065,9 +2073,9 @@ export const rows = [
     subcategories: "Data retrieval anomaly",
     severity: "High",
     users: ["user@x.com", "user2@x.com", "+20"],
-    interface: ["ApexChat", "Azure Open AI"],
+    interface: fav,
     engine: ["GPT 4"],
-    tags: "LLM06",
+    tags: {title:'Data poisoning', icon:dataPos},
     status: "Open",
     context: "File path",
     email: [" user@gs.com", "user2@gs.com", "user3@gs.com"],
@@ -2217,22 +2225,22 @@ retrieveSensitiveFiles('user@gs.com');
           {
             id: 1,
             name: "Critical",
-            value: "4",
+            value: "1",
           },
           {
             id: 2,
             name: "High",
-            value: "16",
+            value: "2",
           },
           {
             id: 3,
             name: "Medium",
-            value: "31",
+            value: "1",
           },
           {
             id: 4,
             name: "Low",
-            value: "18",
+            value: "8",
           },
         ],
         categories: ["Data Leakage", "Unauthorized Access"],
@@ -2280,9 +2288,9 @@ retrieveSensitiveFiles('user@gs.com');
     subcategories: "Sensitive data",
     severity: "High",
     users: ["user@x.com", "user2@x.com", "+20"],
-    interface: ["ApexChat", "Azure Open AI"],
+    interface: microsoft,
     engine: ["GPT 4"],
-    tags: "LLM06",
+    tags: {title:'Data leakage', icon:dataLeak},
     status: "Open",
     context: "File path",
     email: ["john.doe@company.com"],
@@ -2463,13 +2471,13 @@ print(f"Sharing {file} with {user_id}")
   {
     id: 3,
     lastEvent: "Aug 14, 2023 10:46 AM",
-    name: "GitHub Copilot collected and sent 3 API keys out of the organization",
+    name: "Github Copilot collected and sent 3 API keys out of the organization",
     subcategories: "Secrets",
     severity: "Medium",
     users: ["user@x.com", "user2@x.com"],
-    interface: ["Azure Open AI", "ApexChat"],
+    interface: robot,
     engine: ["OpenAI Codex"],
-    tags: "LLM06",
+    tags: {title:'Data leakage', icon:dataLeak},
     status: "Resolved",
     context: "File path",
     code:[
@@ -2614,9 +2622,9 @@ return response.json()
     subcategories: "Prompt injection",
     severity: "Medium",
     users: ["user@x.com", "user2@x.com"],
-    interface: ["ApexChat", "Azure Open AI"],
+    interface: vs,
     engine: ["Gpt 3 5 Turbo"],
-    tags: "LLM06",
+    tags: {title:'Excessive agency ', icon:dataKey},
     status: "Open",
     email: ["sara.loh@company.com"],
     context: "File path",
@@ -2708,8 +2716,8 @@ return response.json()
       },
       {
         id: 2,
-        user: "Azure OpenAI GPT3.5",
-        image: enginezure,
+        user: "Engine",
+        image: engine,
         name: "Copilot",
         messages: ["8.2k", "+13%"],
         sessions: ["1.4k", "+9%"],
@@ -2769,13 +2777,13 @@ return response.json()
   {
     id: 5,
     lastEvent: "Aug 14, 2023 10:46 AM",
-    name: "GitHub Copilot suggestion for vulnerable package was approved",
+    name: "Github Copilot suggestion for vulnerable package was approved",
     subcategories: "Vulnerable code",
     severity: "Medium",
     users: ["user@x.com", "user2@x.com"],
-    interface: ["ApexChat", "Azure Open AI"],
+    interface: robot,
     engine: ["OpenAI Codex"],
-    tags: "LLM06",
+    tags: {title:'Insecure output handlin', icon:dataDanger},
     status: "Open",
     email:["jane.doe@company.com"],
     context: "File path",
@@ -2874,11 +2882,11 @@ void useVulnerablePackage() {
       },
       {
         id: 2,
-        user: "GitHub Copilot",
+        user: "Engine",
         image: engine,
         name: "Copilot",
-        messages: ["880", "+25%"],
-        sessions: ["76", "+18%"],
+        messages: ["120", "+25%"],
+        sessions: ["35", "+18%"],
         vilations: [
           {
             id: 1,
@@ -2924,9 +2932,9 @@ void useVulnerablePackage() {
     subcategories: "Over reliance",
     severity: "Medium",
     users: ["user@x.com", "user2@x.com"],
-    interface: ["ApexChat", "Azure Open AI"],
+    interface: fav,
     engine: ["Gpt 3 5 Turbo"],
-    tags: "LLM06",
+    tags: {title:'Over reliance ', icon:dataPro},
     status: "Open",
     email:["alex.kim@company.com"],
     context: "File path",
@@ -2989,7 +2997,7 @@ void useVulnerablePackage() {
         id: 1,
         user: "User",
         image: user,
-        name: "Sarh Leh",
+        name: "John Doe",
         messages: ["37", "+8%"],
         sessions: ["10", "+4%"],
         vilations: [
@@ -3008,8 +3016,8 @@ void useVulnerablePackage() {
       },
       {
         id: 2,
-        user: "OpenAI GPT 4",
-        image: openAi,
+        user: "Engine",
+        image: engine,
         name: "Copilot",
         messages: ["75", "+12%"],
         sessions: ["22", "+15%"],
@@ -3075,9 +3083,9 @@ void useVulnerablePackage() {
     subcategories: "Sensitive data",
     severity: "Medium",
     users: ["user@x.com", "user2@x.com"],
-    interface: ["ApexChat", "Azure Open AI"],
+    interface: demini,
     engine: ["Gpt 3 5 Turbo"],
-    tags: "LLM06",
+    tags: {title:'Data leakage', icon:dataLeak},
     status: "Open",
     email:["alex.kim@company.com"],
     context: "File path",
@@ -3218,9 +3226,9 @@ uploadSensitiveFiles('alex.kim@company.com', ['Customer_Data_List.xlsx', 'Employ
     subcategories: "Email, SSN, Adress",
     severity: "Medium",
     users: ["user@x.com", "user2@x.com"],
-    interface: ["ApexChat", "Azure Open AI"],
+    interface: microsoft,
     engine: ["Gpt 3 5 Turbo"],
-    tags: "LLM06",
+    tags: {title:'Data leakage', icon:dataKey},
     status: "Open",
     email:["sara.leh@company.com"],
     context: "File path",
@@ -3367,9 +3375,9 @@ print(key)
     subcategories: "Customer Data",
     severity: "High",
     users: ["user@x.com", "user2@x.com", "+20"],
-    interface: ["ApexChat", "Azure Open AI"],
+    interface: microsoft,
     engine: ["GPT 4"],
-    tags: "LLM06",
+    tags: {title:'Data leakage', icon:dataDanger},
     status: "Open",
     context: "File path",
     email: ["alex.kim@company.com"],
@@ -3528,9 +3536,9 @@ uploadSensitiveFiles('alex.kim@company.com', ['Customer_Data_List.xlsx', 'Employ
     subcategories: "Customer Data",
     severity: "High",
     users: ["user@x.com", "user2@x.com", "+20"],
-    interface: ["ApexChat", "Azure Open AI"],
+    interface: vs,
     engine: ["GPT 4"],
-    tags: "LLM06",
+    tags: {title:'Data leakage', icon:dataPro},
     status: "Open",
     context: "File path",
     email: ["alex.kim@company.com"],
@@ -3732,9 +3740,9 @@ us boost our stock price ahead of the next earnings call.
     subcategories: "Customer Data",
     severity: "High",
     users: ["user@x.com", "user2@x.com", "+20"],
-    interface: ["ApexChat", "Azure Open AI"],
+    interface: microsoft,
     engine: ["GPT 4"],
-    tags: "LLM06",
+    tags: {title:'Data leakage', icon:dataLeak},
     status: "Open",
     context: "File path",
     email: ["alex.kim@company.com"],
