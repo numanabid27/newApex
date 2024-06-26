@@ -36,6 +36,7 @@ export const styles = {
     container:{
         borderBottom:'1px solid #EAECF0',
         padding: "23.5px 30px",
+        cursor:'pointer',
         "&:last-child":{
             borderBottom:'unset',
         },

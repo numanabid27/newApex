@@ -1,17 +1,21 @@
 import * as echarts from "echarts";
-
+import git from "@/common/assets/images/copilot.svg";
+import apache from "@/common/assets/images/apache.svg";
+import warn from "@/common/assets/images/warning.svg";
+import gitLite from "@/common/assets/images/gitLite.svg";
+import angle from "@/common/assets/images/angle.svg";
 
 export const SESSION_EXPLORER_DATA = [
     {
       id: 1,
-      name: "Written with Copilot",
+      name: "Written with AI",
       value: 45,
       color: "#7F56D9",
       percentage: "%",
     },
     {
       id: 2,
-      name: "Written by dev",
+      name: "Written by employees",
       value: 55,
       color: "#53B1FD",
       percentage: "%",
@@ -28,7 +32,48 @@ export const SESSION_EXPLORER_DATA2 = [
   },
   {
     id: 2,
+    name: "Written by employees",
+    value: 35,
+    color: "#FD853A",
+    percentage: "%",
+  }
+];
+
+export const SESSION_EXPLORER_DATA3 = [
+  {
+    id: 1,
+    name: "Written with Copilot",
+    value: 45,
+    color: "#7F56D9",
+    percentage: "%",
+  },
+  {
+    id: 2,
+    name: "OSS similarity",
+    value: 15,
+    color: "#FD853A",
+    percentage: "%",
+  },
+  {
+    id: 3,
     name: "Written by dev",
+    value: 40,
+    color: "#53B1FD",
+    percentage: "%",
+  }
+];
+
+export const SESSION_EXPLORER_DATA4 = [
+  {
+    id: 1,
+    name: "Written with Copilot",
+    value: 65,
+    color: "#7F56D9",
+    percentage: "%",
+  },
+  {
+    id: 2,
+    name: "Written by employees",
     value: 35,
     color: "#FD853A",
     percentage: "%",
@@ -43,6 +88,9 @@ export const AIBOOM_TABLE_DATA = [
     code: "85",
     voilation: [2, "violations"],
     comment: "21 hours",
+    osSimilarity:{label:"27 blocks"},
+    osLicience:{label:"Apache"},
+    engines:git,
     files:[
       {
         id:1,
@@ -125,6 +173,9 @@ export const AIBOOM_TABLE_DATA = [
     code: "23",
     voilation: [15, "violations"],
     comment: "25 sceonds ago",
+    osSimilarity:{icon:warn, label:"27 blocks"},
+    osLicience:{icon:warn, label:"GPL, MIT, Apache"},
+    engines:apache,
     files:[
       {
         id:1,
@@ -207,6 +258,9 @@ export const AIBOOM_TABLE_DATA = [
     code: "18",
     voilation: [1, "violations"],
     comment: "25 sceonds ago",
+    osSimilarity:{label:"1 block"},
+    osLicience:{label:"MIT"},
+    engines:angle,
     files:[
       {
         id:1,
@@ -306,6 +360,7 @@ export const AIBOOM_TABLE_DATA = [
     code: "22",
     voilation: [3, "violations"],
     comment: "25 sceonds ago",
+    engines:gitLite,
     files:[
       {
         id:1,
@@ -405,6 +460,9 @@ export const AIBOOM_TABLE_DATA = [
     code: "8",
     voilation: [22, "violations"],
     comment: "22 hours ago",
+    osSimilarity:{icon:warn, label:"19 blocks"},
+    osLicience:{icon:warn, label:"LGPL"},
+    engines:git,
     files:[
       {
         id:1,
@@ -504,6 +562,7 @@ export const AIBOOM_TABLE_DATA = [
     code: "13",
     voilation: ["","No violations"],
     comment: "22 hours ago",
+    engines:apache,
     files:[
       {
         id:1,
@@ -603,6 +662,7 @@ export const AIBOOM_TABLE_DATA = [
     code: "8",
     voilation: [15, "violations"],
     comment: "25 sceonds ago",
+    engines:angle,
     files:[
       {
         id:1,
@@ -702,6 +762,7 @@ export const AIBOOM_TABLE_DATA = [
     code: "30",
     voilation: [1, "violations"],
     comment: "22 hours ago",
+    engines:gitLite,
     files:[
       {
         id:1,
@@ -801,6 +862,9 @@ export const AIBOOM_TABLE_DATA = [
     code: "18",
     voilation: ["", "No violations"],
     comment: "25 sceonds ago",
+    osSimilarity:{label:"3 blocks"},
+    osLicience:{label:"BSD"},
+    engines:git,
     files:[
       {
         id:1,
@@ -900,6 +964,7 @@ export const AIBOOM_TABLE_DATA = [
     code: "13",
     voilation: ["15", "Violations"],
     comment: "22 hours ago",
+    engines:apache,
     files:[
       {
         id:1,
@@ -999,6 +1064,9 @@ export const AIBOOM_TABLE_DATA = [
     code: "23",
     voilation: ["2", "Violations"],
     comment: "25 sceonds ago",
+    osSimilarity:{label:"7 blocks"},
+    osLicience:{label:"MIT, Apache"},
+    engines:angle,
     files:[
       {
         id:1,
@@ -1098,6 +1166,7 @@ export const AIBOOM_TABLE_DATA = [
     code: "53",
     voilation: ["4", "Violations"],
     comment: "25 sceonds ago",
+    engines:gitLite,
     files:[
       {
         id:1,
@@ -1197,6 +1266,7 @@ export const AIBOOM_TABLE_DATA = [
     code: "53",
     voilation: ["4", "Violations"],
     comment: "25 sceonds ago",
+    engines:gitLite,
     files:[
       {
         id:1,

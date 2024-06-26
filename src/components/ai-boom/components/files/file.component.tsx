@@ -1,9 +1,12 @@
-import { Box, Grid, Typography } from "@mui/material";
-import { styles } from "./style";
-import Image from "next/image";
-import { Py } from "../py/py";
 import draft from "@/common/assets/images/draft.svg";
 import warning from "@/common/assets/images/warning.svg";
+import { handleAiBoomData } from "@/provider/features/aiBoom/aiBoom.slice";
+import { useAppDispatch } from "@/provider/store";
+import { Box, Grid, Typography } from "@mui/material";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { Py } from "../py/py";
+import { styles } from "./style";
 
 export const File = ({
   isDetail,
@@ -12,10 +15,14 @@ export const File = ({
   setHoveredIndex,
   setIsClicked,
   repo,
+  selectedFileData,
 }: any) => {
+  const router = useRouter();
+  const dispatch = useAppDispatch();
+  console.log(selectedFileData, "selectedFileData file");
   return (
     <>
-      <Box sx={{...styles.tableContainer}}>
+      <Box sx={{ ...styles.tableContainer }}>
         <Typography sx={styles.repo_info}>
           <span>{repo}</span> / Data /{" "}
         </Typography>
@@ -47,9 +54,20 @@ export const File = ({
                     xs={6}
                     sx={styles.gridInner}
                     className="gridInner"
-                    onClick={() => {
+                    onMouseEnter={() => {
                       setIsClicked(item.id);
                       setHoveredIndex(!hoveredIndex);
+                    }}
+                    onMouseLeave={() => {
+                      setHoveredIndex(false);
+                    }}
+                    onClick={() => {
+                      let finalData: any = {
+                        file: item,
+                        mainData: selectedFileData,
+                      };
+                      dispatch(handleAiBoomData(finalData));
+                      router.push(`ai-boom/ai-boom-detail`);
                     }}
                   >
                     <Box sx={styles.tableCell}>

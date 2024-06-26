@@ -1878,12 +1878,12 @@ const UN_AUTHORIZED = {
           name: "Node 1",
           x: 270,
           y: 80,
-          symbol: `image://image/file.svg`,
+          symbol: `image://image/co-pilot.svg`,
           symbolSize: [80, 80],
           label: {
             show: true,
             position: "bottom",
-            formatter: "{htmlContent|4 Files}\n{additionalHeading|Content}",
+            formatter: "{htmlContent|Github Copilot}",
             rich: {
               htmlContent: {
                 align: "center",
@@ -1907,12 +1907,12 @@ const UN_AUTHORIZED = {
           name: "Node 2",
           x: 360,
           y: 80,
-          symbol: `image://image/pri.svg`,
+          symbol: `image://image/docker.svg`,
           symbolSize: [80, 80],
           label: {
             show: true,
             position: "bottom",
-            formatter: "{htmlContent|Copilot}\n{additionalHeading|Engine}",
+            formatter: "{htmlContent|Docker}\n{additionalHeading|Extension}",
             rich: {
               htmlContent: {
                 align: "center",
@@ -1936,13 +1936,13 @@ const UN_AUTHORIZED = {
           name: "Node 3",
           x: 430,
           y: 80,
-          symbol: `image://image/text.svg`,
+          symbol: `image://image/docker-code.svg`,
           symbolSize: [80, 80],
           label: {
             show: true,
             position: "bottom",
             offset: [0, -7],
-            formatter: "{htmlContent|Text}\n{additionalHeading|Content}",
+            formatter: "{htmlContent|Add Docker configuration files}\n{additionalHeading|Pull Request}",
             rich: {
               htmlContent: {
                 align: "center",
@@ -1968,13 +1968,13 @@ const UN_AUTHORIZED = {
           name: "Node 4",
           x: 510,
           y: 80,
-          symbol: `image://image/user.svg`,
+          symbol: `image://image/file.svg`,
           symbolSize: [80, 80],
           label: {
             show: true,
             position: "bottom",
             offset: [0, -7],
-            formatter: "{htmlContent|John Doe}\n{additionalHeading|User}",
+            formatter: "{htmlContent|docker-compose.yml}\n{additionalHeading|Files}",
             rich: {
               htmlContent: {
                 align: "center",
@@ -2000,12 +2000,12 @@ const UN_AUTHORIZED = {
           name: "Node 5",
           x: 430,
           y: 130,
-          symbol: `image://image/secrete.svg`,
+          symbol: `image://image/docker-un.svg`,
           symbolSize: [80, 80],
           label: {
             show: true,
             position: "bottom",
-            formatter: "{htmlContent|Finance}\n{additionalHeading|Violation}",
+            formatter: "{htmlContent|Unauthorized PR generation}\n{additionalHeading|Violation}",
             rich: {
               htmlContent: {
                 align: "center",

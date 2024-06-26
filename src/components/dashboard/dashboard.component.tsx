@@ -49,6 +49,7 @@ function Dashboard() {
   useEffect(() => {
     console.log("isModel", isModel);
   }, [isModel]);
+  
   return (
     <>
       <Grid sx={DashboardStyles.DashboardGrid}>

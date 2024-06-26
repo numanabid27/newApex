@@ -12,7 +12,7 @@ import { AIBOOM_CHART } from "@/components/ai-boom/aiBoom.constant";
 import trending from "@/common/assets/images/trendingup.svg";
 import currentRate from "@/common/assets/images/current-stock.svg";
 
-function TopIssuesChart({ aiBoom }: any) {
+function TopIssuesChart({ aiBoom , title}: any) {
   return (
     <Grid
       item
@@ -30,7 +30,7 @@ function TopIssuesChart({ aiBoom }: any) {
               padding: "15px 0px 0px 0px",
             }}
           >
-            Amount of code lines written by copilot trend
+            {title}
           </Typography>
           <Grid container className="d-flex">
             <Grid item xl={12} lg={12} md={12} xs={12} textAlign="center">

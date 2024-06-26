@@ -12,7 +12,8 @@ export default function useAiboom() {
   const [value, setIsValue] = useState<any>(0);
   const [repo, setRepo] = useState<any>("");
   const [nestTableData, setNestTableData] = useState<any>(AIBOOM_TABLE_BOX);
-
+  const [selectedFileData, setSelectedFileData] = useState<any>();
+console.log(selectedFileData, "selectedFileData")
   const handleChange = (event: any, newValue: any) => {
     setIsDetail(null);
     setIsValue(newValue);
@@ -31,6 +32,7 @@ export default function useAiboom() {
     const res = nestTableData.find((item: any) => item.id === parseInt(id));
     if (res) {
       setRepo(res.folderName);
+      setSelectedFileData(res);
       setIsDetail(res.files); // Set nested files data
       setIsColor(id);
       setTimeout(() => {
@@ -44,6 +46,7 @@ export default function useAiboom() {
   useEffect(() => {
     if (!isDetail && nestTableData.length > 0) {
       const initialData = nestTableData[0];
+      setSelectedFileData(initialData);
       setIsDetail(initialData.files);
       setRepo(initialData.folderName);
       setIsColor(initialData.id);
@@ -63,5 +66,6 @@ export default function useAiboom() {
     repo,
     isColor,
     nestTableData,
+    selectedFileData
   };
 }
