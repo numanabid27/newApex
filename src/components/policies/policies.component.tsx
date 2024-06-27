@@ -260,7 +260,7 @@ function Policies() {
               </Box>
             </Box>
 
-            <Box display="flex" justifyContent="center" gap="10.1px">
+            <Box display="flex" justifyContent="center" gap="10px">
               <Button className="runTest">Run Test</Button>
               <Button
                 className="testBtn"

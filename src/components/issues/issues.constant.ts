@@ -14,7 +14,7 @@ import world from "@/common/assets/images/world.svg";
 import excel from "@/common/assets/images/excel.svg";
 import gpt from "@/common/assets/images/chatGpt2.svg";
 import docker from "@/common/assets/images/docker.svg";
-import extension from "@/common/assets/images/co-pilot.svg";
+import extension from "@/common/assets/images/co-Pilot.svg";
 import fav from "@/common/assets/images/fav-logo.svg";
 import robot from "@/common/assets/images/robot.svg";
 import vs from "@/common/assets/images/vs.svg";
@@ -25,6 +25,8 @@ import dataDanger from "@/common/assets/images/datadang.svg";
 import dataKey from "@/common/assets/images/datakey.svg";
 import dataLeak from "@/common/assets/images/dataleak.svg";
 import dataPro from "@/common/assets/images/datapro.svg";
+import copilot from "@/common/assets/images/co-pilot.svg";
+// import gpt from "@/common/assets/images/co-pilot.svg";
 
 export const SENSITIVE_DATATYPE_CHART = {
   tooltip: {
@@ -840,7 +842,7 @@ const VULNURBLE_PKG = {
           label: {
             show: true,
             position: "bottom",
-            formatter: "{htmlContent|Github Copilot}",
+            formatter: "{htmlContent|GitHub Copilot}",
             rich: {
               htmlContent: {
                 align: "center",
@@ -2883,10 +2885,10 @@ void useVulnerablePackage() {
       {
         id: 2,
         user: "Engine",
-        image: engine,
+        image: copilot,
         name: "Copilot",
-        messages: ["120", "+25%"],
-        sessions: ["35", "+18%"],
+        messages: ["80", "+25%"],
+        sessions: ["76", "+18%"],
         vilations: [
           {
             id: 1,
@@ -2997,7 +2999,7 @@ void useVulnerablePackage() {
         id: 1,
         user: "User",
         image: user,
-        name: "John Doe",
+        name: "Sara Leh",
         messages: ["37", "+8%"],
         sessions: ["10", "+4%"],
         vilations: [
@@ -3017,8 +3019,8 @@ void useVulnerablePackage() {
       {
         id: 2,
         user: "Engine",
-        image: engine,
-        name: "Copilot",
+        image: gpt,
+        name: "OpenAI GPT 4",
         messages: ["75", "+12%"],
         sessions: ["22", "+15%"],
         vilations: [
