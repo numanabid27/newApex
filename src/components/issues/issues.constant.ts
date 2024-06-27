@@ -14,7 +14,7 @@ import world from "@/common/assets/images/world.svg";
 import excel from "@/common/assets/images/excel.svg";
 import gpt from "@/common/assets/images/chatGpt2.svg";
 import docker from "@/common/assets/images/docker.svg";
-import extension from "@/common/assets/images/co-Pilot.svg";
+import extension from "@/common/assets/images/co-pilot.svg";
 import fav from "@/common/assets/images/fav-logo.svg";
 import robot from "@/common/assets/images/robot.svg";
 import vs from "@/common/assets/images/vs.svg";
