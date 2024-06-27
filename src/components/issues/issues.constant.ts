@@ -26,7 +26,7 @@ import dataKey from "@/common/assets/images/datakey.svg";
 import dataLeak from "@/common/assets/images/dataleak.svg";
 import dataPro from "@/common/assets/images/datapro.svg";
 import copilot from "@/common/assets/images/co-pilot.svg";
-// import gpt from "@/common/assets/images/co-pilot.svg";
+
 
 export const SENSITIVE_DATATYPE_CHART = {
   tooltip: {
