@@ -158,8 +158,7 @@ export default function Sessions() {
         </Box>
         );
       },
-    },
-    { id: 11, header: "Session ID", accessor: "sessionId" },
+    }
     
   ];
   const [currentPage, setCurrentPage] = useState(1);
@@ -412,39 +411,6 @@ export default function Sessions() {
             </Select>
           </FormControl>
         </Grid>
-
-        {/* <Grid item sm={2} xs={12} sx={styles.user}>
-          <FormControl fullWidth sx={styles.userFormControl}>
-            <InputLabel id="demo-simple-select-label" sx={styles.userText}>
-              User
-            </InputLabel>
-
-            <Select
-              sx={styles.sessionEngineFilter}
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={userName}
-              label="User"
-              onChange={handleChange}
-              renderValue={() => userName}
-            >
-              {USER_DATA.map((item: any) => (
-                <MenuItem value={item.name} sx={styles.enginItem} key={item.id}>
-                  {item.name}
-                  {userName === item.name && (
-                    <IconButton
-                      sx={styles.iconBtn}
-                      aria-label="delete"
-                      onClick={() => setUserName("")}
-                    >
-                      <ClearIcon sx={styles.closeIcon} />
-                    </IconButton>
-                  )}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid> */}
 
         <Grid item sm={2} xs={12} sx={styles.user}>
           <FormControl fullWidth sx={styles.userFormControl}>

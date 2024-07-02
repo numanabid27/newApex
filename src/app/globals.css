@@ -643,6 +643,10 @@ body {
   height: 96vh;
 
 }
+.session_filters{
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
 
 @media screen and (min-width: 1600px) {
   .sessionEchart .echarts-for-react {

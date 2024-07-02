@@ -1,12 +1,20 @@
 import { Box, Button } from "@mui/material";
 import Image from "next/image";
 import { styles } from "./severity.style";
-import useCreatePolicies from "../../use-createPolicies.hook";
+// import useCreatePolicies from "../../use-createPolicies.hook";
 import downArrow from "@/common/assets/images/downs.svg";
+import useCreatePolicies from "./use-severity.hook";
 
-const Severity = ({ title, img, severity, ltr }: any) => {
+const Severity = ({ title, img, severity, ltr , onItemClick}: any) => {
   const { handleClick, isHide, handleClicked, isValue, dropdownRef } =
     useCreatePolicies();
+
+    const handleItemClick = (label: any) => {
+      handleClicked(label);
+      if (onItemClick) {
+        onItemClick(label);
+      }
+    };
 
   return (
     <>
@@ -43,7 +51,7 @@ const Severity = ({ title, img, severity, ltr }: any) => {
                   styles.typography,
                   isValue == item.label && styles.selected,
                 ]}
-                onClick={() => handleClicked(item.label)}
+                onClick={() => handleItemClick(item.label)}
               >
                 {item.label}
               </Button>

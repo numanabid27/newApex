@@ -3,7 +3,8 @@ import Image from 'next/image'
 import check from "@/common/assets/images/check-check.svg";
 import {styles} from "./assetsDropdown.style";
 import { assets } from '../../createPolicy.constant';
-import useCreatePolicies from '../../use-createPolicies.hook';
+import useCreatePolicies from '../severityLevel/use-severity.hook';
+// import useCreatePolicies from '../../use-createPolicies.hook';
 
 const AssetsDropdown = () => {
   

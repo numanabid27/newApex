@@ -12,14 +12,13 @@ import useUsers from "./use-users.hook";
 import Colors from "@/common/constants/color.constant";
 import CircleIcon from "@mui/icons-material/Circle";
 import { userStyle } from "./users.style";
-import Filters from "../filters/filter.component";
+
 import ReactEcharts from "echarts-for-react";
-import {
-  SESSION_USER_CHART
-} from "../sessions/session.constant";
+import { SESSION_USER_CHART } from "../sessions/session.constant";
 import { SESSION_GRAPH } from "./session-user.constant";
 import Image from "next/image";
-
+import useFilterPolicy from "@/components/create-policy/use-createPolicies.hook";
+import Filters from "../filters/filter.component";
 
 export default function Users() {
   const {
@@ -31,6 +30,20 @@ export default function Users() {
     allOptions,
     handleAutocompleteChange,
   } = useUsers();
+
+  // const {
+  //   engineName,
+  //   setEngineName,
+  //   startDate,
+  //   endDate,
+  //   setDateRange,
+  //   setIsInterface,
+  //   isInterface,
+  //   isStatus,
+  //   setIsStatus,
+  //   setTopicName,
+  //   topicName} = useFilterPolicy();
+
   const SESSION_EXPLORE_TABLE_HEADER = [
     { id: 1, header: "#", accessor: "id" },
     { id: 2, header: "Name", accessor: "name" },
@@ -99,58 +112,53 @@ export default function Users() {
       cell: (voilationData: any) => {
         return (
           <Box display="flex" gap="10px">
-            {
-              voilationData.map((item:any, i:number)=>{
-                return(
-                  <Chip
-                    key={i.toString()}
-                    label={item}
-                    sx={{
-                      ...userStyle.severityChip,
-                      color:
-                        item.includes('Critical') ? Colors.darkBrown 
-                        : 
-                        item.includes('High') ? Colors.textHigh 
-                        :
-                        item.includes('Medium') ? Colors.darkBrown 
-                        :
-                        item.includes('Low') ? Colors.textGreen 
-                        :
-                        "",
-                      bgcolor:
-                        item.includes('Critical') ? Colors.secondaryWhite
-                        : 
-                        item.includes('High') ? Colors.defaultWhite 
-                        :
-                        item.includes('Medium') ? Colors.primaryWhite 
-                        :
-                        item.includes('Low') ? Colors.primaryGreen 
-                        :
-                        "",
-                      p: 0,
-                    }}
-                    icon={
-                      <CircleIcon
-                        sx={{
-                          fill:
-                          item.includes('Critical') ? `${Colors.darkBrown} !important`
-                          : 
-                          item.includes('High') ? `${Colors.circleHigh}` 
-                          :
-                          item.includes('Medium') ? `${Colors.orange}` 
-                          :
-                          item.includes('Medium') ? `${Colors.circleLow}` 
-                          :
-                          "",
-                          ...userStyle.severityLevel,
-                        }}
-                      />
-                    }
-                  />
-                )
-              })
-            }
-           
+            {voilationData.map((item: any, i: number) => {
+              return (
+                <Chip
+                  key={i.toString()}
+                  label={item}
+                  sx={{
+                    ...userStyle.severityChip,
+                    color: item.includes("Critical")
+                      ? Colors.darkBrown
+                      : item.includes("High")
+                      ? Colors.textHigh
+                      : item.includes("Medium")
+                      ? Colors.darkBrown
+                      : item.includes("Low")
+                      ? Colors.textGreen
+                      : "",
+                    bgcolor: item.includes("Critical")
+                      ? Colors.secondaryWhite
+                      : item.includes("High")
+                      ? Colors.defaultWhite
+                      : item.includes("Medium")
+                      ? Colors.primaryWhite
+                      : item.includes("Low")
+                      ? Colors.primaryGreen
+                      : "",
+                    p: 0,
+                  }}
+                  icon={
+                    <CircleIcon
+                      sx={{
+                        fill: item.includes("Critical")
+                          ? `${Colors.darkBrown} !important`
+                          : item.includes("High")
+                          ? `${Colors.circleHigh}`
+                          : item.includes("Medium")
+                          ? `${Colors.orange}`
+                          : item.includes("Medium")
+                          ? `${Colors.circleLow}`
+                          : "",
+                        ...userStyle.severityLevel,
+                      }}
+                    />
+                  }
+                />
+              );
+            })}
+
             {/* <Chip
               label={voilationData[1]}
               sx={{
@@ -185,14 +193,13 @@ export default function Users() {
       header: "Sessions",
       accessor: "sessions",
     },
-    { id: 10, 
-      header: "Usage", 
+    {
+      id: 10,
+      header: "Usage",
       accessor: "usage",
       cell: (data: any) => {
-        return (
-          <Image src={data} alt="" width={100} height={35} />
-        )
-      }
+        return <Image src={data} alt="" width={100} height={35} />;
+      },
     },
   ];
 
@@ -227,31 +234,42 @@ export default function Users() {
           <Typography variant="h5" mb={4} sx={userStyle.text}>
             Top 5 Active Users
           </Typography>
-          {
-            SESSION_GRAPH.map((item:any, i:number)=>{
-              return(
-                <Grid container sx={userStyle.activeUser} key={i.toString()}>
-                  <Grid xl={8} xs={7}>
-                    <Typography>{item.title}</Typography>
-                  </Grid>
-                  <Grid xl={4} xs={5}>
-                    <Box sx={userStyle.user1}>
-                      <Typography>{item.value}</Typography>
-                      <ReactEcharts option={item.chart} />
-                    </Box>
-                  </Grid>
+          {SESSION_GRAPH.map((item: any, i: number) => {
+            return (
+              <Grid container sx={userStyle.activeUser} key={i.toString()}>
+                <Grid xl={8} xs={7}>
+                  <Typography>{item.title}</Typography>
                 </Grid>
-              )
-            })
-          }
+                <Grid xl={4} xs={5}>
+                  <Box sx={userStyle.user1}>
+                    <Typography>{item.value}</Typography>
+                    <ReactEcharts option={item.chart} />
+                  </Box>
+                </Grid>
+              </Grid>
+            );
+          })}
         </Grid>
       </Grid>
-    
 
       {/* filters */}
 
+      {/* <Filters
+        users={true}
+        policies={false}
+        engineName={engineName}
+        setEngineName={setEngineName}
+        startDate={startDate}
+        endDate={endDate}
+        setDateRange={setDateRange}
+        setIsInterface={setIsInterface}
+        isInterface={isInterface}
+        isStatus={isStatus}
+        setIsStatus={setIsStatus}
+        setTopicName={setTopicName}
+        topicName={topicName}
+      /> */}
       <Filters users={true} />
-
 
       <Box sx={styles.sessionTableRow}>
         <CustomTable

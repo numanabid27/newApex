@@ -264,94 +264,77 @@ export const AIBOOM_TABLE_DATA = [
     files:[
       {
         id:1,
-        fileName:'Q1_Sales_Report.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:2,
-        fileName:'Marketing_Strategy_Plan.docx',
+        fileName:'code.py',
         fileVoilation: [1, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:3,
-        fileName:'Client_Agreement_2024.pdf',
+        fileName:'api.py',
         fileVoilation: [15, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:4,
-        fileName:'Product_Roadmap.pptx',
+        fileName:'core.py',
         fileVoilation: [3, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:5,
-        fileName:'Design_Specs_Spring2024.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [5, "violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:6,
-        fileName:'Annual_Budget.xlsx',
+        fileName:'new_code.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:7,
-        fileName:'Research_Summary.docx',
+        fileName:'runandstop.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:8,
-        fileName:'Employee_Handbook.pdf',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:9,
-        fileName:'Legal_Contract_Template.docx',
+        fileName:'txt.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:10,
-        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileName:'readme.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:11,
-        fileName:'Customer_Survey_Results.xlsx',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:12,
-        fileName:'Project_Timeline_Schedule.xlsx',
+        fileName:'java.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
-      {
-        id:13,
-        fileName:'Training_Session_Agenda.docx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:14,
-        fileName:'Team_Meeting_Notes_05152024.pdf',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:15,
-        fileName:'Product_Feature_List.xlsx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      }
+     
     ]
   },
   {
@@ -364,94 +347,77 @@ export const AIBOOM_TABLE_DATA = [
     files:[
       {
         id:1,
-        fileName:'Q1_Sales_Report.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:2,
-        fileName:'Marketing_Strategy_Plan.docx',
+        fileName:'code.py',
         fileVoilation: [1, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:3,
-        fileName:'Client_Agreement_2024.pdf',
+        fileName:'api.py',
         fileVoilation: [15, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:4,
-        fileName:'Product_Roadmap.pptx',
+        fileName:'core.py',
         fileVoilation: [3, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:5,
-        fileName:'Design_Specs_Spring2024.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [5, "violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:6,
-        fileName:'Annual_Budget.xlsx',
+        fileName:'new_code.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:7,
-        fileName:'Research_Summary.docx',
+        fileName:'runandstop.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:8,
-        fileName:'Employee_Handbook.pdf',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:9,
-        fileName:'Legal_Contract_Template.docx',
+        fileName:'txt.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:10,
-        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileName:'readme.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:11,
-        fileName:'Customer_Survey_Results.xlsx',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:12,
-        fileName:'Project_Timeline_Schedule.xlsx',
+        fileName:'java.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
-      {
-        id:13,
-        fileName:'Training_Session_Agenda.docx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:14,
-        fileName:'Team_Meeting_Notes_05152024.pdf',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:15,
-        fileName:'Product_Feature_List.xlsx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      }
+     
     ]
   },
   {
@@ -466,94 +432,77 @@ export const AIBOOM_TABLE_DATA = [
     files:[
       {
         id:1,
-        fileName:'Q1_Sales_Report.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:2,
-        fileName:'Marketing_Strategy_Plan.docx',
+        fileName:'code.py',
         fileVoilation: [1, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:3,
-        fileName:'Client_Agreement_2024.pdf',
+        fileName:'api.py',
         fileVoilation: [15, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:4,
-        fileName:'Product_Roadmap.pptx',
+        fileName:'core.py',
         fileVoilation: [3, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:5,
-        fileName:'Design_Specs_Spring2024.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [5, "violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:6,
-        fileName:'Annual_Budget.xlsx',
+        fileName:'new_code.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:7,
-        fileName:'Research_Summary.docx',
+        fileName:'runandstop.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:8,
-        fileName:'Employee_Handbook.pdf',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:9,
-        fileName:'Legal_Contract_Template.docx',
+        fileName:'txt.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:10,
-        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileName:'readme.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:11,
-        fileName:'Customer_Survey_Results.xlsx',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:12,
-        fileName:'Project_Timeline_Schedule.xlsx',
+        fileName:'java.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
-      {
-        id:13,
-        fileName:'Training_Session_Agenda.docx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:14,
-        fileName:'Team_Meeting_Notes_05152024.pdf',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:15,
-        fileName:'Product_Feature_List.xlsx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      }
+     
     ]
   },
   {
@@ -566,94 +515,77 @@ export const AIBOOM_TABLE_DATA = [
     files:[
       {
         id:1,
-        fileName:'Q1_Sales_Report.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:2,
-        fileName:'Marketing_Strategy_Plan.docx',
+        fileName:'code.py',
         fileVoilation: [1, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:3,
-        fileName:'Client_Agreement_2024.pdf',
+        fileName:'api.py',
         fileVoilation: [15, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:4,
-        fileName:'Product_Roadmap.pptx',
+        fileName:'core.py',
         fileVoilation: [3, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:5,
-        fileName:'Design_Specs_Spring2024.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [5, "violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:6,
-        fileName:'Annual_Budget.xlsx',
+        fileName:'new_code.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:7,
-        fileName:'Research_Summary.docx',
+        fileName:'runandstop.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:8,
-        fileName:'Employee_Handbook.pdf',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:9,
-        fileName:'Legal_Contract_Template.docx',
+        fileName:'txt.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:10,
-        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileName:'readme.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:11,
-        fileName:'Customer_Survey_Results.xlsx',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:12,
-        fileName:'Project_Timeline_Schedule.xlsx',
+        fileName:'java.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
-      {
-        id:13,
-        fileName:'Training_Session_Agenda.docx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:14,
-        fileName:'Team_Meeting_Notes_05152024.pdf',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:15,
-        fileName:'Product_Feature_List.xlsx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      }
+     
     ]
   },
   {
@@ -666,94 +598,77 @@ export const AIBOOM_TABLE_DATA = [
     files:[
       {
         id:1,
-        fileName:'Q1_Sales_Report.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:2,
-        fileName:'Marketing_Strategy_Plan.docx',
+        fileName:'code.py',
         fileVoilation: [1, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:3,
-        fileName:'Client_Agreement_2024.pdf',
+        fileName:'api.py',
         fileVoilation: [15, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:4,
-        fileName:'Product_Roadmap.pptx',
+        fileName:'core.py',
         fileVoilation: [3, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:5,
-        fileName:'Design_Specs_Spring2024.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [5, "violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:6,
-        fileName:'Annual_Budget.xlsx',
+        fileName:'new_code.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:7,
-        fileName:'Research_Summary.docx',
+        fileName:'runandstop.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:8,
-        fileName:'Employee_Handbook.pdf',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:9,
-        fileName:'Legal_Contract_Template.docx',
+        fileName:'txt.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:10,
-        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileName:'readme.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:11,
-        fileName:'Customer_Survey_Results.xlsx',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:12,
-        fileName:'Project_Timeline_Schedule.xlsx',
+        fileName:'java.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
-      {
-        id:13,
-        fileName:'Training_Session_Agenda.docx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:14,
-        fileName:'Team_Meeting_Notes_05152024.pdf',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:15,
-        fileName:'Product_Feature_List.xlsx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      }
+     
     ]
   },
   {
@@ -766,94 +681,77 @@ export const AIBOOM_TABLE_DATA = [
     files:[
       {
         id:1,
-        fileName:'Q1_Sales_Report.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:2,
-        fileName:'Marketing_Strategy_Plan.docx',
+        fileName:'code.py',
         fileVoilation: [1, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:3,
-        fileName:'Client_Agreement_2024.pdf',
+        fileName:'api.py',
         fileVoilation: [15, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:4,
-        fileName:'Product_Roadmap.pptx',
+        fileName:'core.py',
         fileVoilation: [3, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:5,
-        fileName:'Design_Specs_Spring2024.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [5, "violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:6,
-        fileName:'Annual_Budget.xlsx',
+        fileName:'new_code.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:7,
-        fileName:'Research_Summary.docx',
+        fileName:'runandstop.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:8,
-        fileName:'Employee_Handbook.pdf',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:9,
-        fileName:'Legal_Contract_Template.docx',
+        fileName:'txt.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:10,
-        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileName:'readme.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:11,
-        fileName:'Customer_Survey_Results.xlsx',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:12,
-        fileName:'Project_Timeline_Schedule.xlsx',
+        fileName:'java.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
-      {
-        id:13,
-        fileName:'Training_Session_Agenda.docx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:14,
-        fileName:'Team_Meeting_Notes_05152024.pdf',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:15,
-        fileName:'Product_Feature_List.xlsx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      }
+     
     ]
   },
   {
@@ -868,94 +766,77 @@ export const AIBOOM_TABLE_DATA = [
     files:[
       {
         id:1,
-        fileName:'Q1_Sales_Report.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:2,
-        fileName:'Marketing_Strategy_Plan.docx',
+        fileName:'code.py',
         fileVoilation: [1, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:3,
-        fileName:'Client_Agreement_2024.pdf',
+        fileName:'api.py',
         fileVoilation: [15, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:4,
-        fileName:'Product_Roadmap.pptx',
+        fileName:'core.py',
         fileVoilation: [3, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:5,
-        fileName:'Design_Specs_Spring2024.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [5, "violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:6,
-        fileName:'Annual_Budget.xlsx',
+        fileName:'new_code.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:7,
-        fileName:'Research_Summary.docx',
+        fileName:'runandstop.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:8,
-        fileName:'Employee_Handbook.pdf',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:9,
-        fileName:'Legal_Contract_Template.docx',
+        fileName:'txt.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:10,
-        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileName:'readme.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:11,
-        fileName:'Customer_Survey_Results.xlsx',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:12,
-        fileName:'Project_Timeline_Schedule.xlsx',
+        fileName:'java.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
-      {
-        id:13,
-        fileName:'Training_Session_Agenda.docx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:14,
-        fileName:'Team_Meeting_Notes_05152024.pdf',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:15,
-        fileName:'Product_Feature_List.xlsx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      }
+     
     ]
   },
   {
@@ -968,94 +849,77 @@ export const AIBOOM_TABLE_DATA = [
     files:[
       {
         id:1,
-        fileName:'Q1_Sales_Report.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:2,
-        fileName:'Marketing_Strategy_Plan.docx',
+        fileName:'code.py',
         fileVoilation: [1, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:3,
-        fileName:'Client_Agreement_2024.pdf',
+        fileName:'api.py',
         fileVoilation: [15, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:4,
-        fileName:'Product_Roadmap.pptx',
+        fileName:'core.py',
         fileVoilation: [3, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:5,
-        fileName:'Design_Specs_Spring2024.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [5, "violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:6,
-        fileName:'Annual_Budget.xlsx',
+        fileName:'new_code.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:7,
-        fileName:'Research_Summary.docx',
+        fileName:'runandstop.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:8,
-        fileName:'Employee_Handbook.pdf',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:9,
-        fileName:'Legal_Contract_Template.docx',
+        fileName:'txt.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:10,
-        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileName:'readme.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:11,
-        fileName:'Customer_Survey_Results.xlsx',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:12,
-        fileName:'Project_Timeline_Schedule.xlsx',
+        fileName:'java.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
-      {
-        id:13,
-        fileName:'Training_Session_Agenda.docx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:14,
-        fileName:'Team_Meeting_Notes_05152024.pdf',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:15,
-        fileName:'Product_Feature_List.xlsx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      }
+     
     ]
   },
   {
@@ -1070,94 +934,77 @@ export const AIBOOM_TABLE_DATA = [
     files:[
       {
         id:1,
-        fileName:'Q1_Sales_Report.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:2,
-        fileName:'Marketing_Strategy_Plan.docx',
+        fileName:'code.py',
         fileVoilation: [1, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:3,
-        fileName:'Client_Agreement_2024.pdf',
+        fileName:'api.py',
         fileVoilation: [15, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:4,
-        fileName:'Product_Roadmap.pptx',
+        fileName:'core.py',
         fileVoilation: [3, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:5,
-        fileName:'Design_Specs_Spring2024.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [5, "violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:6,
-        fileName:'Annual_Budget.xlsx',
+        fileName:'new_code.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:7,
-        fileName:'Research_Summary.docx',
+        fileName:'runandstop.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:8,
-        fileName:'Employee_Handbook.pdf',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:9,
-        fileName:'Legal_Contract_Template.docx',
+        fileName:'txt.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:10,
-        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileName:'readme.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:11,
-        fileName:'Customer_Survey_Results.xlsx',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:12,
-        fileName:'Project_Timeline_Schedule.xlsx',
+        fileName:'java.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
-      {
-        id:13,
-        fileName:'Training_Session_Agenda.docx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:14,
-        fileName:'Team_Meeting_Notes_05152024.pdf',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:15,
-        fileName:'Product_Feature_List.xlsx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      }
+     
     ]
   },
   {
@@ -1170,94 +1017,77 @@ export const AIBOOM_TABLE_DATA = [
     files:[
       {
         id:1,
-        fileName:'Q1_Sales_Report.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:2,
-        fileName:'Marketing_Strategy_Plan.docx',
+        fileName:'code.py',
         fileVoilation: [1, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:3,
-        fileName:'Client_Agreement_2024.pdf',
+        fileName:'api.py',
         fileVoilation: [15, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:4,
-        fileName:'Product_Roadmap.pptx',
+        fileName:'core.py',
         fileVoilation: [3, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:5,
-        fileName:'Design_Specs_Spring2024.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [5, "violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:6,
-        fileName:'Annual_Budget.xlsx',
+        fileName:'new_code.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:7,
-        fileName:'Research_Summary.docx',
+        fileName:'runandstop.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:8,
-        fileName:'Employee_Handbook.pdf',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:9,
-        fileName:'Legal_Contract_Template.docx',
+        fileName:'txt.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:10,
-        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileName:'readme.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:11,
-        fileName:'Customer_Survey_Results.xlsx',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:12,
-        fileName:'Project_Timeline_Schedule.xlsx',
+        fileName:'java.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
-      {
-        id:13,
-        fileName:'Training_Session_Agenda.docx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:14,
-        fileName:'Team_Meeting_Notes_05152024.pdf',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:15,
-        fileName:'Product_Feature_List.xlsx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      }
+     
     ]
   },
   {
@@ -1270,94 +1100,77 @@ export const AIBOOM_TABLE_DATA = [
     files:[
       {
         id:1,
-        fileName:'Q1_Sales_Report.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:2,
-        fileName:'Marketing_Strategy_Plan.docx',
+        fileName:'code.py',
         fileVoilation: [1, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:3,
-        fileName:'Client_Agreement_2024.pdf',
+        fileName:'api.py',
         fileVoilation: [15, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:4,
-        fileName:'Product_Roadmap.pptx',
+        fileName:'core.py',
         fileVoilation: [3, "violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:5,
-        fileName:'Design_Specs_Spring2024.pdf',
+        fileName:'codefile.txt',
         fileVoilation: [5, "violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:6,
-        fileName:'Annual_Budget.xlsx',
+        fileName:'new_code.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:7,
-        fileName:'Research_Summary.docx',
+        fileName:'runandstop.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:8,
-        fileName:'Employee_Handbook.pdf',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "21 hours"
       },
       {
         id:9,
-        fileName:'Legal_Contract_Template.docx',
+        fileName:'txt.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:10,
-        fileName:'Vendor_Payment_Invoice_1234.pdf',
+        fileName:'readme.txt',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
       {
         id:11,
-        fileName:'Customer_Survey_Results.xlsx',
+        fileName:'runscript.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "25 sceonds ago"
       },
       {
         id:12,
-        fileName:'Project_Timeline_Schedule.xlsx',
+        fileName:'java.py',
         fileVoilation: [null, "No violations"],
         fileCommit: "22 hours ago"
       },
-      {
-        id:13,
-        fileName:'Training_Session_Agenda.docx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:14,
-        fileName:'Team_Meeting_Notes_05152024.pdf',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      },
-      {
-        id:15,
-        fileName:'Product_Feature_List.xlsx',
-        fileVoilation: [null, "No violations"],
-        fileCommit: "22 hours ago"
-      }
+     
     ]
   }
 ]

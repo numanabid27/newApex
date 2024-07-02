@@ -11,7 +11,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 import { Box, Chip, Grid, Typography } from "@mui/material";
 import CollapsibleTable from "./components/issue-table/issuesTable.component";
 import TopIssuesChart from "./components/top-issues-chart/top-issues-chart.component";
-import { FILTERS_DROPDOWN, rows, SWITCH } from "./issues.constant";
+import { FILTERS_DROPDOWN, rows } from "./issues.constant";
 import { styles } from "./issues.style";
 import useIssues from "./use-issues.hook";
 import switchGraph from "@/common/assets/images/switchGraph.svg";

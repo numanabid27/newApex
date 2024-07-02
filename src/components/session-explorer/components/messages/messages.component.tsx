@@ -18,8 +18,6 @@ import {
   Select,
   Stack,
   TextField,
-  ToggleButton,
-  ToggleButtonGroup,
   Typography,
 } from "@mui/material";
 import ReactEcharts from "echarts-for-react";
@@ -30,17 +28,18 @@ import "react-datepicker/dist/react-datepicker.css";
 import {
   CONVERSATION,
   ENGINE_NAMES,
+  INTEND,
   INTERFACE_NAME,
-  STATUS,
   TOPICS,
-  USER_DATA,
 } from "../../session-explore.constant";
 import {
-  SESSION_USER_CHART,
   SEVERITY,
   EQUALS,
   MESSAGES_GRAPH,
   SENTIMENT,
+  HIRING,
+  options,
+  MARKETING,
 } from "./message.constant";
 import { styles } from "./messages.style";
 import useSessions from "./use-message.hook";
@@ -49,30 +48,23 @@ import downArrow from "@/common/assets/images/downs.svg";
 import equal from "@/common/assets/images/equal.svg";
 import check from "@/common/assets/images/check.svg";
 import { Toggle } from "./toggle/togle.component";
-import add from "@/common/assets/images/add-query.svg"
+import add from "@/common/assets/images/add-query.svg";
 import MultiSelect from "@/components/create-policy/component/multiselect/Mutiselect.component";
-import ClearIcon from '@mui/icons-material/Clear';
+import ClearIcon from "@mui/icons-material/Clear";
 import del from "@/common/assets/images/delete.svg";
 import filter from "@/common/assets/images/more-filters.svg";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import useWidth from "@/components/issues/components/issue-table/use-width.hook";
 
 export default function Message() {
   const {
     engineName,
     setEngineName,
-    userName,
-    handleChange,
     openModal,
     setOpenModal,
     selectedRow,
     setSelectedRow,
-    dateHandler,
     finalData,
-    session,
-    SessionHandler,
-    handleClearAll,
-    setUserName,
     startDate,
     endDate,
     setDateRange,
@@ -80,22 +72,19 @@ export default function Message() {
     searchQuery,
     allOptions,
     handleAutocompleteChange,
-    value,
     setIsInterface,
     isInterface,
     isStatus,
     setIsStatus,
-    setTopicName,
-    topicName,
     isBuilder,
     setIsBuilder,
     isTopic,
     setIsTopic,
     setisSentiment,
-    isSentiment
+    isSentiment,
   } = useSessions();
 
-  const {windowWidth} = useWidth();
+  const { windowWidth } = useWidth();
 
   const SESSION_EXPLORE_TABLE_HEADER = [
     {
@@ -103,14 +92,11 @@ export default function Message() {
       header: "Flagged",
       accessor: "flag",
       cell: (data: any) => {
-        return<>
-        {
-          data ?
-          <Image src={data} alt="" width={20} height={20} />
-          :
-          null
-        }
-        </>;
+        return (
+          <>
+            {data ? <Image src={data} alt="" width={20} height={20} /> : null}
+          </>
+        );
       },
     },
     {
@@ -163,7 +149,7 @@ export default function Message() {
       cell: (data: any) => {
         return (
           <Box display="flex" className="issueTbaleChip">
-            {data?.map((item: any, i:number) => {
+            {data?.map((item: any, i: number) => {
               return (
                 <IconButton key={i.toString()}>
                   <Chip
@@ -185,16 +171,14 @@ export default function Message() {
                     variant="outlined"
                   />
                 </IconButton>
-                
               );
             })}
           </Box>
         );
       },
-    }
+    },
   ];
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
+  const [isClick, setIsClick] = useState("");
   const [selectDrawerValue, setSelectedDrawerValue] = useState();
 
   useEffect(() => {
@@ -205,63 +189,6 @@ export default function Message() {
       setSelectedDrawerValue(undefined);
     }
   }, [selectedRow, selectDrawerValue]);
-
-  
-const options = {
-  tooltip: {
-      trigger: 'item',
-      triggerOn: 'mousemove',
-  },
-  series: [
-      {
-          type: 'sankey',
-          layout: 'none',
-          nodeAlign: 'left',
-          data: [
-              { name: 'ChatGPT 2,000', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
-              { name: 'Github Copilot 2,000', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
-              { name: 'Google Gemini 2,000', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
-              { name: 'Strategy 1,000', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
-              { name: 'Revenue 1,000', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
-              { name: 'Legal 1,000', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
-              { name: 'Healthcare 1,000', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
-              { name: 'Positive 1,650', itemStyle: { color: '#039855' }, emphasis: { itemStyle: { color: '#039855' } } },
-              { name: 'Negative 350', itemStyle: { color: '#A6F4C5' }, emphasis: { itemStyle: { color: '#A6F4C5' } } },
-          ],
-          links: [
-              { source: 'ChatGPT 2,000', target: 'Strategy 1,000', value: 1000, lineStyle: { color: '#039855',  offset: [100, -70], emphasis: { lineStyle: { color: '#039855' } } } },
-              { source: 'ChatGPT 2,000', target: 'Legal 1,000', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
-              { source: 'ChatGPT 2,000', target: 'Revenue 1,000', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
-              { source: 'Github Copilot 2,000', target: 'Revenue 1,000', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
-              { source: 'Google Gemini 2,000', target: 'Healthcare 1,000', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
-              { source: 'Strategy 1,000', target: 'Positive 1,650', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
-              { source: 'Revenue 1,000', target: 'Positive 1,650', value: 1000, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
-              { source: 'Legal 1,000', target: 'Negative 350', value: 1000, lineStyle: { color: '#A6F4C5', emphasis: { lineStyle: { color: '#A6F4C5' } } } },
-              { source: 'Healthcare 1,000', target: 'Positive 1,650', value: 650, lineStyle: { color: '#039855', emphasis: { lineStyle: { color: '#039855' } } } },
-              { source: 'Healthcare 1,000', target: 'Negative 350', value: 350, lineStyle: { color: '#A6F4C5', emphasis: { lineStyle: { color: '#A6F4C5' } } } },
-          ],
-          lineStyle: {
-              color: 'gradient',
-              curveness: 0.5,
-          },
-          itemStyle: {
-              borderWidth: 1,
-          },
-          label: {
-            show: true,
-            color: '#000',
-            backgroundColor: '#fff',
-            borderRadius: 2,
-            padding: 3,
-            position: 'insideRight',
-            fontSize: 12,
-          },
-          nodeWidth: 20,
-          nodeGap: 25,
-          layoutIterations: 2,
-      },
-  ],
-};
 
   return (
     <Box position="relative" width="100%">
@@ -283,7 +210,12 @@ const options = {
               <Typography variant="h6">Query builder</Typography>
               <ClearIcon onClick={() => setIsBuilder(false)} />
             </Box>
-            <Box display="flex" flexWrap={{xs:'wrap', sm:'unset'}} gap="10px" sx={styles.filterRow}>
+            <Box
+              display="flex"
+              flexWrap={{ xs: "wrap", sm: "unset" }}
+              gap="10px"
+              sx={styles.filterRow}
+            >
               <Severity
                 title="Select Department"
                 img={downArrow}
@@ -302,8 +234,18 @@ const options = {
             <Box sx={styles.filterRow}>
               <Toggle />
             </Box>
-            <Box sx={styles.filterRow} display="flex" gap="10px" justifyContent="space-between" alignItems="center">
-              <Box display="flex" gap="10px" flexWrap={{xs:'wrap', sm:'unset'}}>
+            <Box
+              sx={styles.filterRow}
+              display="flex"
+              gap="10px"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <Box
+                display="flex"
+                gap="10px"
+                flexWrap={{ xs: "wrap", sm: "unset" }}
+              >
                 <Severity
                   title="Topic"
                   img={downArrow}
@@ -333,8 +275,18 @@ const options = {
               <Toggle />
             </Box>
 
-            <Box sx={styles.filterRow} display="flex" gap="10px" justifyContent="space-between" alignItems="center">
-              <Box display="flex" gap="10px" flexWrap={{xs:'wrap', sm:'unset'}}>
+            <Box
+              sx={styles.filterRow}
+              display="flex"
+              gap="10px"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <Box
+                display="flex"
+                gap="10px"
+                flexWrap={{ xs: "wrap", sm: "unset" }}
+              >
                 <Severity
                   title="Sentiment"
                   img={downArrow}
@@ -358,15 +310,26 @@ const options = {
                 <ClearIcon />
                 <Image src={del} alt="" width={20} height={20} />
               </Box>
-
-             
             </Box>
 
             <Grid container pt={3} pb={3} alignItems="center">
               <Grid sm={3} xs={12}>
-                <Image src={add} alt="" width={windowWidth > 767 ? 40 : 30} height={40} style={{cursor:"pointer"}} />
+                <Image
+                  src={add}
+                  alt=""
+                  width={windowWidth > 767 ? 40 : 30}
+                  height={40}
+                  style={{ cursor: "pointer" }}
+                />
               </Grid>
-              <Grid sm={9} xs={12} display="flex" gap="10px" justifyContent="flex-end" sx={styles.actionSubmit}>
+              <Grid
+                sm={9}
+                xs={12}
+                display="flex"
+                gap="10px"
+                justifyContent="flex-end"
+                sx={styles.actionSubmit}
+              >
                 <Button>Create detection rule</Button>
                 <Button>Run query</Button>
               </Grid>
@@ -386,15 +349,40 @@ const options = {
         >
           <Box className="sessionEchart" sx={styles.sessionUser}>
             <Box sx={styles.shankyFilter}>
-              <Box sx={styles.filter1}>
+              {isClick === "Marketing" ? null : (
+                <Box sx={styles.hiring}>
+                  <Severity
+                    title="User department"
+                    img={downArrow}
+                    severity={SENTIMENT}
+                    ltr={true}
+                  />
+                </Box>
+              )}
+
+              <Box
+                sx={{
+                  ...styles.filter1,
+                  ...(isClick === "Marketing" ? styles.filter5 : {}),
+                }}
+              >
                 <Severity
                   title="Topics"
                   img={downArrow}
                   severity={SEVERITY}
                   ltr={true}
+                  onItemClick={(label: any) => {
+                    setIsClick(label);
+                  }}
                 />
               </Box>
-              <Box sx={styles.filter2}>
+              <Box
+                sx={{
+                  ...styles.filter2,
+                  ...(isClick === "Hiring" ? styles.filter3 : {}),
+                  ...(isClick === "Marketing" ? styles.filter4 : {}),
+                }}
+              >
                 <Severity
                   title="Sentiment"
                   img={downArrow}
@@ -403,7 +391,14 @@ const options = {
                 />
               </Box>
             </Box>
-            <ReactEcharts option={options} />
+            {isClick === "Hiring" ? (
+              <ReactEcharts option={HIRING} />
+            ) : isClick === "Marketing" ? (
+              <ReactEcharts option={options} />
+            ) : (
+              <ReactEcharts option={MARKETING} />
+            )}
+     
           </Box>
         </Grid>
         <Grid
@@ -422,30 +417,25 @@ const options = {
               <Typography className="sessions_state">Messages</Typography>
             </Grid>
           </Grid>
-          {
-            MESSAGES_GRAPH.map((item:any, i:number)=>{
-              return(
-                <Grid container sx={styles.activeUser} key={i.toString()}>
-                  <Grid xl={8} xs={7}>
-                    <Typography sx={styles.typography}>{item.title}</Typography>
-                  </Grid>
-                  <Grid xl={4} xs={5}>
-                    <Box sx={styles.user1}>
-                      <Typography sx={styles.typography}>{item.value}</Typography>
-                      <ReactEcharts option={item.chart} />
-                    </Box>
-                  </Grid>
+          {MESSAGES_GRAPH.map((item: any, i: number) => {
+            return (
+              <Grid container sx={styles.activeUser} key={i.toString()}>
+                <Grid xl={8} xs={7}>
+                  <Typography sx={styles.typography}>{item.title}</Typography>
                 </Grid>
-              )
-            })
-          }
-         
-
-
+                <Grid xl={4} xs={5}>
+                  <Box sx={styles.user1}>
+                    <Typography sx={styles.typography}>{item.value}</Typography>
+                    <ReactEcharts option={item.chart} />
+                  </Box>
+                </Grid>
+              </Grid>
+            );
+          })}
         </Grid>
       </Grid>
       {/* search */}
-      
+
       {/* filters */}
       <Grid
         container
@@ -454,8 +444,12 @@ const options = {
         sx={styles.session_filters}
       >
         <Grid item sm={2} xs={12} sx={styles.engineFilter}>
-          <FormControl fullWidth sx={styles.userFormControl} >
-            <InputLabel id="demo-simple-select-label-2" className="interLable" sx={styles.userText}>
+          <FormControl fullWidth sx={styles.userFormControl}>
+            <InputLabel
+              id="demo-simple-select-label-2"
+              className="interLable"
+              sx={styles.userText}
+            >
               Interface
             </InputLabel>
 
@@ -545,8 +539,12 @@ const options = {
         </Grid>
 
         <Grid item sm={2} xs={12} sx={styles.engineFilter}>
-          <FormControl fullWidth sx={styles.userFormControl} >
-            <InputLabel id="demo-simple-select-label-222" className="interLable" sx={styles.userText}>
+          <FormControl fullWidth sx={styles.userFormControl}>
+            <InputLabel
+              id="demo-simple-select-label-222"
+              className="interLable"
+              sx={styles.userText}
+            >
               Topics
             </InputLabel>
 
@@ -638,7 +636,11 @@ const options = {
               IconComponent={KeyboardArrowDownIcon}
             >
               {SENTIMENT.map((item: any) => (
-                <MenuItem value={item.label} sx={styles.enginItem} key={item.id}>
+                <MenuItem
+                  value={item.label}
+                  sx={styles.enginItem}
+                  key={item.id}
+                >
                   {item.label}
                   {isSentiment === item.label && (
                     <IconButton
@@ -674,7 +676,7 @@ const options = {
               renderValue={() => isSentiment}
               IconComponent={KeyboardArrowDownIcon}
             >
-              {CONVERSATION.map((item: any) => (
+              {INTEND.map((item: any) => (
                 <MenuItem value={item.name} sx={styles.enginItem} key={item.id}>
                   {item.name}
                   {isSentiment === item.name && (
@@ -692,7 +694,12 @@ const options = {
           </FormControl>
         </Grid>
 
-        <Grid sx={{...styles.searchBox, margin: "0 0 0 auto"}} className="sesson-search" sm={3} xs={12}>
+        <Grid
+          sx={{ ...styles.searchBox, margin: "0 0 0 auto" }}
+          className="sesson-search"
+          sm={3}
+          xs={12}
+        >
           <Box sx={styles.searchInner} className="session-search-input">
             <Box sx={styles.searchIcon}>
               <Image src={search} alt="" />
@@ -701,7 +708,7 @@ const options = {
               options={allOptions}
               value={searchQuery}
               onChange={handleAutocompleteChange}
-              style={{ flexGrow: "1", width:"100%" }}
+              style={{ flexGrow: "1", width: "100%" }}
               renderInput={(params: any) => (
                 <TextField
                   {...params}
@@ -727,7 +734,7 @@ const options = {
           isTableHead={true}
           isPagination={true}
         />
-        
+
         <CustomDialog
           thead={"session"}
           openModal={openModal}

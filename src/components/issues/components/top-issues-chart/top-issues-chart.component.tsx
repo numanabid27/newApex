@@ -12,7 +12,33 @@ import { AIBOOM_CHART } from "@/components/ai-boom/aiBoom.constant";
 import trending from "@/common/assets/images/trendingup.svg";
 import currentRate from "@/common/assets/images/current-stock.svg";
 
-function TopIssuesChart({ aiBoom , title}: any) {
+function TopIssuesChart({ aiBoom, title }: any) {
+  const data = [
+    {
+      id: 1,
+      title: "Critical",
+      value: 10,
+      color: "#912018",
+    },
+    {
+      id: 2,
+      title: "High",
+      value: 20,
+      color: "#D92D20",
+    },
+    {
+      id: 3,
+      title: "Medium",
+      value: 30,
+      color: "#FB6514",
+    },
+    {
+      id: 4,
+      title: "Low",
+      value: 40,
+      color: "#FACF15",
+    },
+  ];
   return (
     <Grid
       item
@@ -59,12 +85,7 @@ function TopIssuesChart({ aiBoom , title}: any) {
               </Box>
             </Grid>
             <Grid item xl={12} lg={12} md={12} xs={12}>
-              <Box
-                sx={
-                 
-                  TopIssuesStyling.TopIssuesChart2
-                }
-              >
+              <Box sx={TopIssuesStyling.TopIssuesChart2}>
                 <ReactEcharts option={AIBOOM_CHART} />
               </Box>
             </Grid>
@@ -72,12 +93,17 @@ function TopIssuesChart({ aiBoom , title}: any) {
         </>
       ) : (
         <>
-          <Box display="flex" alignItems="center" flexDirection={{sm:'row', xs:'column'}} justifyContent="center" gap="18px">
+          <Box
+            display="flex"
+            alignItems="center"
+            flexDirection={{ sm: "row", xs: "column" }}
+            justifyContent="center"
+            gap="18px"
+          >
             <Typography sx={TopIssuesStyling.headerText}>
               Unresolved issues
             </Typography>
             <Box sx={TopIssuesStyling.borders}>
-              <Typography sx={TopIssuesStyling.TopIssueTrending}>95</Typography>
               <Box display="flex" alignItems="center" flexDirection="column">
                 <Typography sx={TopIssuesStyling.TopTrendingPercentage}>
                   <Image
@@ -93,7 +119,7 @@ function TopIssuesChart({ aiBoom , title}: any) {
               </Box>
             </Box>
 
-            <IconButton sx={TopIssuesStyling.iconBtn}>
+            {/* <IconButton sx={TopIssuesStyling.iconBtn}>
               <Chip
                 label={<Typography sx={TopIssuesStyling.chip}><span>10</span>Critical</Typography>}
                 sx={{
@@ -112,8 +138,19 @@ function TopIssuesChart({ aiBoom , title}: any) {
                   />
                 }
               />
-          </IconButton>
+          </IconButton> */}
 
+            <Box display="flex" gap="13px">
+              {data.map((item: any, i: number) => {
+                return (
+                  <Box sx={TopIssuesStyling.values} key={i.toString()}>
+                    <Typography variant="h5" color={item.color}>{item.value}</Typography>
+                    <span style={{background:item.color}}></span>
+                    <Typography variant="h6">{item.title}</Typography>
+                  </Box>
+                );
+              })}
+            </Box>
           </Box>
 
           <Box sx={TopIssuesStyling.TopIssuesChart}>

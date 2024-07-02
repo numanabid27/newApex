@@ -13,12 +13,10 @@ export const Py = ({ items, handleClick, hoveredIndex }: any) => {
           {items.endsWith(".txt") && items.endsWith(".txt") ? (
             <Box sx={styles.pyBg}>
               <Grid container justifyContent="space-between">
-                <Grid xs={11}>
+                <Grid xs={12}>
                   <Typography>{items}</Typography>
                 </Grid>
-                <Grid xs={1}>
-                  <CloseIcon cursor="pointer" onClick={handleClick} />
-                </Grid>
+                
               </Grid>
               <Box sx={{...styles.desc, padding:"12px 12px"}}>
                 <Typography sx={{ ...styles.paragraph, paddingBottom: "10px" }}>
@@ -38,12 +36,10 @@ export const Py = ({ items, handleClick, hoveredIndex }: any) => {
           ) : items.endsWith(".py") && items.endsWith(".py") ? (
             <Box sx={styles.pyBg}>
               <Grid container justifyContent="space-between">
-                <Grid xs={11}>
+                <Grid xs={12}>
                   <Typography>{items}</Typography>
                 </Grid>
-                <Grid xs={1}>
-                  <CloseIcon cursor="pointer" onClick={handleClick} />
-                </Grid>
+                
               </Grid>
 
               <Box sx={styles.descCode}>
@@ -110,12 +106,10 @@ function intAlea(mini, maxi) {
           items.endsWith(".pdf") && items.endsWith(".pdf") ? (
             <Box sx={styles.pyBg}>
               <Grid container justifyContent="space-between">
-                <Grid xs={11}>
+                <Grid xs={12}>
                   <Typography>{items}</Typography>
                 </Grid>
-                <Grid xs={1}>
-                  <CloseIcon cursor="pointer" onClick={handleClick} />
-                </Grid>
+                
               </Grid>
 
               <Box sx={styles.descCode}>
@@ -151,30 +145,6 @@ function intAlea(mini, maxi) {
 // - - - - - - - - - - - - - - - - - - - - - - -
   `}
 </pre>
-
-                  {/* <pre>
-                    {`function alea(mini, maxi) {
-    // random number in given range
-
-    if (typeof maxi == "undefined") return mini * mrandom(); 
-    // range 0..mini
-
-    return mini + mrandom() * (maxi - mini); 
-    // range mini..maxi
-}
-// - - - - - - - - - - - - - - - - - - - - - - -
-function intAlea(mini, maxi) {
-    // random integer in given range (mini..maxi - 1 or 
-    0..mini - 1)
-    //
-    if (typeof maxi == "undefined") return mfloor(mini * 
-        mrandom()); // range 0..mini - 1
-    return mini + mfloor(mrandom() * (maxi - mini)); // 
-    range mini .. maxi - 1
-}
-// - - - - - - - - - - - - - - - - - - - - - - -  
-`}
-                  </pre> */}
                 </Box>
               </Box>
             </Box>
@@ -183,12 +153,10 @@ function intAlea(mini, maxi) {
           items.endsWith(".docx") && items.endsWith(".docx") ? (
             <Box sx={styles.pyBg}>
               <Grid container justifyContent="space-between">
-                <Grid xs={11}>
+                <Grid xs={12}>
                   <Typography>{items}</Typography>
                 </Grid>
-                <Grid xs={1}>
-                  <CloseIcon cursor="pointer" onClick={handleClick} />
-                </Grid>
+                
               </Grid>
               <Box sx={{...styles.desc2, padding:"12px 12px"}}>
                 <Typography sx={{ ...styles.paragraph, paddingBottom: "10px" }}>
@@ -210,12 +178,10 @@ function intAlea(mini, maxi) {
           items.endsWith(".pptx") && items.endsWith(".pptx") ? (
             <Box sx={styles.pyBg}>
               <Grid container justifyContent="space-between">
-                <Grid xs={11}>
+                <Grid xs={12}>
                   <Typography>{items}</Typography>
                 </Grid>
-                <Grid xs={1}>
-                  <CloseIcon cursor="pointer" onClick={handleClick} />
-                </Grid>
+               
               </Grid>
               <Box sx={{...styles.desc, padding:"12px 12px"}}>
                 <Typography sx={{ ...styles.paragraph, paddingBottom: "10px" }}>

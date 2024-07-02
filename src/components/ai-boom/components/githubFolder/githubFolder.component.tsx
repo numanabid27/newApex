@@ -58,9 +58,7 @@ export const GithubFolder = ({ data, handleClick, isColor }: any) => {
             <TableCell sx={styles.cellHeader}>OSS similarity</TableCell>
             <TableCell sx={styles.cellHeader}>OSS Licenses</TableCell>
             <TableCell sx={styles.cellHeader}>Engines</TableCell>
-            <TableCell align="right" sx={styles.cellHeader}>
-              Last commit
-            </TableCell>
+            <TableCell align="right" sx={styles.cellHeader}>Last commit</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

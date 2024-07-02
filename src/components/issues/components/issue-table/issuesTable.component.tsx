@@ -84,7 +84,7 @@ function Row(props: {
                   row.severity === "Medium"
                     ? Colors.primaryWhite
                     : row.severity === "Critical"
-                    ? Colors.secondaryWhite
+                    ? `${Colors.secondaryWhite} !important`
                     : row.severity === "Low"
                     ? Colors.primaryGreen
                     : row.severity === "High"
@@ -287,7 +287,7 @@ export default function CollapsibleTable({
             <TableCell>Severity</TableCell>
             <TableCell>Interface</TableCell>
             <TableCell>Engine</TableCell>
-            <TableCell>Tags</TableCell>
+            <TableCell>Risk</TableCell>
             <TableCell>Status</TableCell>
             <TableCell>Last event</TableCell>
           </TableRow>

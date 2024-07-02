@@ -5,11 +5,8 @@ import { CustomLineChart } from "@/common/components/custom-line-chart/custom-li
 import { Box, Grid, Tab, Tabs, Typography } from "@mui/material";
 import Image from "next/image";
 import {
-  AIBOOM_TABLE_DATA,
   SESSION_EXPLORER_DATA,
   SESSION_EXPLORER_DATA2,
-  AIBOOM_TABLE_BOX,
-  TABS_DATA,
   SESSION_EXPLORER_DATA4,
   SESSION_EXPLORER_DATA3,
 } from "./aiBoom.constant";
@@ -19,6 +16,7 @@ import { Folder } from "./components/folder/folder.component";
 import useAiboom from "./use-aiBoom.hook";
 import TopIssuesChart from "../issues/components/top-issues-chart/top-issues-chart.component";
 import { GithubFolder } from "./components/githubFolder/githubFolder.component";
+import Graphs from "./components/graphs";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -58,7 +56,7 @@ export default function AiBoom() {
     repo,
     isColor,
     nestTableData,
-    selectedFileData
+    selectedFileData,
   } = useAiboom();
   return (
     <Box sx={styles.mainGrid}>
@@ -75,65 +73,17 @@ export default function AiBoom() {
         <Tab label="Notion" />
       </Tabs>
 
-
       <TabPanel value={value} index={0}>
-        <Grid container gap="10px" justifyContent="space-between">
-          <Grid
-            xs={12}
-            md={3.9}
-            className="border border-radius bg-white"
-            sx={styles.aiEngine}
-          >
-            <CustomLineChart
-              title={
-                <>
-                  <Box display="flex" alignItems="center" gap="5px">
-                    <Typography
-                      sx={{
-                        fontSize: { lg: "42px", sm: "30px" },
-                        fontWeight: 600,
-                      }}
-                    >
-                      45%
-                    </Typography>{" "}
-                    of total content written with AI
-                  </Box>
-                </>
-              }
-              chartData={SESSION_EXPLORER_DATA}
-              aiBoom={true}
-            />
-          </Grid>
-          <Grid
-            xs={12}
-            md={3.9}
-            sx={styles.aiEngine}
-            className="border border-radius bg-white"
-          >
-            <CustomLineChart
-              title={
-                <Box display="flex" alignItems="center" gap="5px">
-                  <Typography
-                    sx={{ fontSize: { lg: "42px", sm: "30px" }, fontWeight: 600 }}
-                  >
-                    65%
-                  </Typography>{" "}
-                  of words written in AI over last month
-                </Box>
-              }
-              chartData={SESSION_EXPLORER_DATA2}
-              aiBoom={true}
-            />
-          </Grid>
-          <Grid
-            xs={12}
-            md={3.9}
-            sx={styles.aiEngine}
-            className="border border-radius bg-white"
-          >
-            <TopIssuesChart aiBoom={true} title="Amount of words written by AI assistants trend" />
-          </Grid>
-        </Grid>
+
+        <Graphs
+          chart1={SESSION_EXPLORER_DATA}
+          chart2={SESSION_EXPLORER_DATA2}
+          firstValue="45%"
+          secondValue="65%"
+          firstValueText="of total content written with AI"
+          secondValueText="of words written in AI over last month"
+          topChart1="Amount of words written by AI assistants trend"
+        />
         <Box display="flex" alignItems="center" mt={6} mb={2} gap="7px">
           <Typography sx={styles.font_700}>Repo Name</Typography>
           <Typography sx={styles.repo}>|</Typography>
@@ -152,67 +102,18 @@ export default function AiBoom() {
           repo={repo}
           isColor={isColor}
           nestTableData={nestTableData}
-          
         />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Grid container gap="10px" justifyContent="space-between">
-          <Grid
-            xs={12}
-            md={3.9}
-            className="border border-radius bg-white"
-            sx={styles.aiEngine}
-          >
-            <CustomLineChart
-              title={
-                <>
-                  <Box display="flex" alignItems="center" gap="5px">
-                    <Typography
-                      sx={{
-                        fontSize: { lg: "42px", sm: "30px" },
-                        fontWeight: 600,
-                      }}
-                    >
-                      60%
-                    </Typography>{" "}
-                    of total code written with Copilot
-                  </Box>
-                </>
-              }
-              chartData={SESSION_EXPLORER_DATA3}
-              aiBoom={true}
-            />
-          </Grid>
-          <Grid
-            xs={12}
-            md={3.9}
-            sx={styles.aiEngine}
-            className="border border-radius bg-white"
-          >
-            <CustomLineChart
-              title={
-                <Box display="flex" alignItems="center" gap="5px">
-                  <Typography
-                    sx={{ fontSize: { lg: "42px", sm: "30px" }, fontWeight: 600 }}
-                  >
-                    65%
-                  </Typography>{" "}
-                  of code written in copilot over last month
-                </Box>
-              }
-              chartData={SESSION_EXPLORER_DATA4}
-              aiBoom={true}
-            />
-          </Grid>
-          <Grid
-            xs={12}
-            md={3.9}
-            sx={styles.aiEngine}
-            className="border border-radius bg-white"
-          >
-            <TopIssuesChart aiBoom={true} title="Amount of code lines written by copilot trend" />
-          </Grid>
-        </Grid>
+        <Graphs
+          chart1={SESSION_EXPLORER_DATA3}
+          chart2={SESSION_EXPLORER_DATA4}
+          firstValue="60%"
+          secondValue="65%"
+          firstValueText="of total code written with Copilot"
+          secondValueText="of code written in copilot over last month"
+          topChart1="Amount of code lines written by copilot trend"
+        />
         <Box display="flex" alignItems="center" mt={6} mb={2} gap="7px">
           <Typography sx={styles.font_700}>Repo Name</Typography>
           <Typography sx={styles.repo}>|</Typography>
@@ -233,7 +134,6 @@ export default function AiBoom() {
           nestTableData={nestTableData}
           selectedFileData={selectedFileData}
         />
-        {/* {tableData(AIBOOM_TABLE_DATA)} */}
       </TabPanel>
       <TabPanel value={value} index={2}>
         <Box display="flex" alignItems="center" mt={6} mb={2} gap="7px">
@@ -271,9 +171,8 @@ export const AiBox = ({
   repo,
   isColor,
   nestTableData,
-  selectedFileData
+  selectedFileData,
 }: any) => {
-
   return (
     <Grid container gap="10px" mt={4} justifyContent="space-between">
       <Grid xs={12} lg={7.5}>
@@ -320,9 +219,8 @@ export const GitHub = ({
   repo,
   isColor,
   nestTableData,
-  selectedFileData
+  selectedFileData,
 }: any) => {
-
   return (
     <Grid container gap="10px" mt={4} justifyContent="space-between">
       <Grid xs={12} lg={7.5}>
@@ -356,6 +254,3 @@ export const GitHub = ({
     </Grid>
   );
 };
-
-
-

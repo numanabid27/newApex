@@ -2,7 +2,6 @@ import { ModelData } from "@/components/policies/components/model-data/component
 import { SessionAccordion } from "@/components/session-explorer/components/session-accordion/session-accordion.component";
 import CloseIcon from "@mui/icons-material/Close";
 import CloseFullscreenIcon from "@mui/icons-material/CloseFullscreen";
-import DoneAllIcon from "@mui/icons-material/DoneAll";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 import { Box, Dialog, DialogContent, Grid, Typography } from "@mui/material";
@@ -35,7 +34,9 @@ export default function CustomDialog({
   issues,
   isMessage=false,
   modelData,
-  setIsPrompt
+  setIsPrompt,
+  setIsGenerate,
+  isGenerate
 }: any) {
   const [expandValue, setExpandValue] = useState(true);
   return (
@@ -81,6 +82,8 @@ export default function CustomDialog({
               setIsModel={setIsModel}
               setOpenModal={setOpenModal}
               setIsPrompt={setIsPrompt}
+              setIsGenerate={setIsGenerate}
+              isGenerate={isGenerate}
             />
           )}
           {thead === "session" && <SessionAccordion newData={newData} isMessage={isMessage} />}

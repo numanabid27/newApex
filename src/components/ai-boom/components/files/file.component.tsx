@@ -19,7 +19,7 @@ export const File = ({
 }: any) => {
   const router = useRouter();
   const dispatch = useAppDispatch();
-  console.log(selectedFileData, "selectedFileData file");
+
   return (
     <>
       <Box sx={{ ...styles.tableContainer }}>
@@ -61,13 +61,17 @@ export const File = ({
                     onMouseLeave={() => {
                       setHoveredIndex(false);
                     }}
+                    
                     onClick={() => {
-                      let finalData: any = {
-                        file: item,
-                        mainData: selectedFileData,
-                      };
-                      dispatch(handleAiBoomData(finalData));
-                      router.push(`ai-boom/ai-boom-detail`);
+                      if(item.fileName.endsWith('.py')){
+                        let finalData: any = {
+                          file: item,
+                          mainData: selectedFileData,
+                        };
+                        localStorage.setItem("code", JSON.stringify(finalData));
+                        // dispatch(handleAiBoomData(finalData));
+                        router.push(`ai-boom/code-view`);
+                      }
                     }}
                   >
                     <Box sx={styles.tableCell}>

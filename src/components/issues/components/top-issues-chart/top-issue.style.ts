@@ -57,12 +57,13 @@ export const TopIssuesStyling = {
         left: "-17vw !important",
         width: "157vw !important",
         "@media screen and (max-width:2500px)":{
-          left: "-14vw !important",
-          width: "130vw !important",
+          left: "-10vw !important",
+          width: "110vw !important",
+          top:'-37px !important'
         },
         "@media screen and (max-width:1440px)":{
-          left: "-12vw !important",
-          width: "101vw !important",
+          left: "-9vw !important",
+          width: "106vw !important",
         }
       }
     }
@@ -117,6 +118,26 @@ export const TopIssuesStyling = {
       fontWeight:700,
       fontSize:'14px',
       paddingRight:'4px'
+    }
+  },
+  values:{
+    "span":{
+      width:'90px',
+      height:'12px',
+      display:'block',
+      borderRadius: "13px",
+      margin: "6px 0"
+    },
+    "h5":{
+      fontSize:"16px",
+      fontWeight:600,
+      textAlign:'center'
+    },
+    "h6":{
+      fontSize:"16px",
+      fontWeight:400,
+      color:"#374151",
+       textAlign:'center'
     }
   }
 };

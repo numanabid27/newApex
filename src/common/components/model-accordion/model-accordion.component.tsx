@@ -421,11 +421,11 @@ retrieveStrategicDocs('alex.kim@company.com');
                   })}
                 </Grid>
               </>
-            ) : 
-              modelData?.name?.includes("Unauthorized automatic PR generation by GitHub Copilot Docker extension")?
+            ) : modelData?.name?.includes(
+                "Unauthorized automatic PR generation by GitHub Copilot Docker extension"
+              ) ? (
               <></>
-              :
-            (
+            ) : (
               <>
                 <Grid container alignItems="center" sx={styles.evidance_grid}>
                   <Grid xs={1.5}>Email</Grid>
@@ -475,7 +475,7 @@ retrieveStrategicDocs('alex.kim@company.com');
                               color: "#374151",
                               height: showMore === item.id ? "100%" : "70px",
                               overflow: "hidden",
-                              marginBottom:'10px'
+                              marginBottom: "10px",
                             }}
                           >
                             {item.title}
@@ -527,9 +527,7 @@ retrieveStrategicDocs('alex.kim@company.com');
             </Grid>
           </AccordionDetails>
         </Accordion>
-        {
-          modelData.issues &&
-          <Accordion
+        <Accordion
           expanded={expanded.includes("panel2")}
           onChange={handleChange("panel2")}
           sx={{ boxShadow: "unset !important" }}
@@ -827,8 +825,18 @@ retrieveStrategicDocs('alex.kim@company.com');
                     <TableRow>
                       <TableCell>#</TableCell>
                       <TableCell>Last event</TableCell>
-                      <TableCell>Chat</TableCell>
-                      <TableCell>Role</TableCell>
+
+                      {modelData?.name?.includes(
+                        "Unauthorized automatic PR generation by GitHub Copilot Docker extension"
+                      ) ? (
+                        <TableCell>Name</TableCell>
+                      ) : (
+                        <>
+                          <TableCell>Chat</TableCell>
+                          <TableCell>Role</TableCell>
+                        </>
+                      )}
+
                       <TableCell>Violation Type</TableCell>
                       <TableCell>Severity</TableCell>
                       <TableCell>User Email</TableCell>
@@ -850,7 +858,8 @@ retrieveStrategicDocs('alex.kim@company.com');
                             </Typography>
                           </TableCell>
                           <TableCell>{items.chat}</TableCell>
-                          <TableCell>{items.role}</TableCell>
+                          {items.role && <TableCell>{items.role}</TableCell>}
+
                           <TableCell>
                             <Chip
                               label={items.voilationType}
@@ -928,9 +937,7 @@ retrieveStrategicDocs('alex.kim@company.com');
               </Box>
             </Box>
           </AccordionDetails>
-          </Accordion>
-        }
-        
+        </Accordion>
       </Box>
     </Box>
   );

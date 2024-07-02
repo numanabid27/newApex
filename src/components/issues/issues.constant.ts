@@ -14,7 +14,7 @@ import world from "@/common/assets/images/world.svg";
 import excel from "@/common/assets/images/excel.svg";
 import gpt from "@/common/assets/images/chatGpt2.svg";
 import docker from "@/common/assets/images/docker.svg";
-import extension from "@/common/assets/images/co-pilot.svg";
+import extension from "@/common/assets/images/co-Pilot.svg";
 import fav from "@/common/assets/images/fav-logo.svg";
 import robot from "@/common/assets/images/robot.svg";
 import vs from "@/common/assets/images/vs.svg";
@@ -26,7 +26,9 @@ import dataKey from "@/common/assets/images/datakey.svg";
 import dataLeak from "@/common/assets/images/dataleak.svg";
 import dataPro from "@/common/assets/images/datapro.svg";
 import copilot from "@/common/assets/images/co-pilot.svg";
-
+import git from "@/common/assets/images/copilot.svg";
+import azure from "@/common/assets/images/azure-engine.svg";
+import claud from "@/common/assets/images/claude-bg.svg";
 
 export const SENSITIVE_DATATYPE_CHART = {
   tooltip: {
@@ -166,7 +168,7 @@ export const ISSUES_BY_ENGINE_CHART = {
 
 export const TOTAL_ISSUES_CHART = {
   height: 120,
-  width: 1600,
+ 
   tooltip: {
     trigger: "axis",
     show: false,
@@ -190,16 +192,19 @@ export const TOTAL_ISSUES_CHART = {
   },
   xAxis: [
     {
-      show: false,
+      show: true,
       type: "category",
       boundaryGap: false,
-      data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      data: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     },
   ],
   yAxis: [
     {
-      show: false,
+      show: true,
       type: "value",
+      min: 0,
+      max: 100,
+      interval: 50,
     },
   ],
   series: [
@@ -208,7 +213,7 @@ export const TOTAL_ISSUES_CHART = {
       type: "line",
       cursor: "default",
       stack: "Total",
-      data: [20, 10, 13, 18, 11, 8, 0],
+      data: [100, 93, 65, 35, 25, 28, 40, 45, 47, 35, 25, 10],
       color: ["#12B76A"],
       gradientColor: ["#65DFA2"],
       areaStyle: {
@@ -229,6 +234,106 @@ export const TOTAL_ISSUES_CHART = {
     },
   ],
 };
+
+// export const TOTAL_ISSUES_CHART = {
+//   height: 120,
+//   width: 1600,
+//   tooltip: {
+//     trigger: "axis",
+//     show: true,
+//     axisPointer: {
+//       show: true,
+//       type: "line",
+//       label: {
+//         backgroundColor: "#FEF3F2",
+//       },
+//     },
+//   },
+//   legend: {
+//     show: false,
+//     data: ["Email"],
+//   },
+//   toolbox: {
+//     show: false,
+//   },
+//   grid: {
+//     show: false,
+//     left: '3%',
+//     right: '4%',
+//     bottom: '3%',
+//     containLabel: true
+//   },
+//   xAxis: [
+//     {
+//       show: true,
+//       type: "category",
+//       boundaryGap: false,
+//       data: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+//       axisLine: {
+//         show: true,
+//         lineStyle: {
+//           color: '#ccc'
+//         }
+//       },
+//       axisTick: {
+//         show: true,
+//         lineStyle: {
+//           color: '#ccc'
+//         }
+//       },
+//       axisLabel: {
+//         show: true,
+//         color: '#000'
+//       }
+//     },
+//   ],
+//   yAxis: [
+//     {
+//       show: true,
+//       type: "value",
+//       axisLine: {
+//         show: true,
+//         lineStyle: {
+//           color: '#ccc'
+//         }
+//       },
+//       axisTick: {
+//         show: true,
+//         lineStyle: {
+//           color: '#ccc'
+//         }
+//       },
+//       axisLabel: {
+//         show: true,
+//         color: '#000'
+//       }
+//     },
+//   ],
+//   series: [
+//     {
+//       name: "Total Issues",
+//       type: "line",
+//       cursor: "default",
+//       stack: "Total",
+//       data: [100, 90, 80, 70, 60, 55, 50, 60, 65, 70, 60, 50],
+//       color: ["#12B76A"],
+//       areaStyle: {
+//         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+//           {
+//             offset: 0,
+//             color: "#12B76A",
+//           },
+//           {
+//             offset: 1,
+//             color: "#fef9f86e",
+//           },
+//         ]),
+//       },
+//       smooth: true,
+//       showSymbol: false,
+//     },
+//   ],
+// };
 
 export const SEVERITY_DATA = [
   { id: 1, name: "Critical", value: 10, color: "#912018" },
@@ -1861,6 +1966,404 @@ const FILES = {
   ],
 };
 
+// const VOILATIONS = {
+//   tooltip: {
+//     trigger: 'item',
+//     formatter: function () {
+//       return '';
+//     }
+//   },
+//   animationDurationUpdate: 1500,
+//   animationEasingUpdate: "quinticInOut",
+//   series: [
+//     {
+//       type: "graph",
+//       layout: "none",
+//       symbolSize: 50,
+//       roam: true,
+//       zoom: 0.6,
+//       label: {
+//         show: true,
+//         position: "bottom",
+//         formatter: "{b}",
+//       },
+//       edgeSymbol: ["circle", "arrow"],
+//       edgeSymbolSize: [4, 10],
+//       edgeLabel: {
+//         fontSize: 20,
+//       },
+//       data: [
+//         {
+//           name: "Node 1",
+//           x: 170,
+//           y: 80,
+//           symbol: `image://image/user.svg`,
+//           symbolSize: [80, 80],
+//           label: {
+//             show: true,
+//             position: "bottom",
+//             formatter: "{htmlContent|Multiple users}\n{additionalHeading|User}",
+//             rich: {
+//               htmlContent: {
+//                 align: "center",
+//                 color: "#475467",
+//                 fontSize: "14px",
+//                 fontWeight: 500,
+//                 padding: [2, 4],
+//                 html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+//               },
+//               additionalHeading: {
+//                 align: "center",
+//                 color: "#98A2B3",
+//                 fontSize: "12px",
+//                 padding: [2, 4],
+//                 html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+//               },
+//             },
+//           },
+//         },
+//         {
+//           name: "Node 2",
+//           x: 460,
+//           y: 80,
+//           symbol: `image://image/text.svg`,
+//           symbolSize: [80, 80],
+//           label: {
+//             show: true,
+//             position: "bottom",
+//             offset: [0, -7],
+//             formatter: "{htmlContent|Text}\n{additionalHeading|Content}",
+//             rich: {
+//               htmlContent: {
+//                 align: "center",
+//                 color: "#475467",
+//                 fontSize: "14px",
+//                 fontWeight: 500,
+//                 backgroundColor: "#fff",
+//                 padding: [7, 0, 0, 0],
+//                 html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+//               },
+//               additionalHeading: {
+//                 align: "center",
+//                 color: "#98A2B3",
+//                 fontSize: "12px",
+//                 padding: [2, 0, 3, 0],
+//                 backgroundColor: "#fff",
+//                 html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+//               },
+//             },
+//           },
+//         },
+//         {
+//           name: "Node 3",
+//           x: 720,
+//           y: 80,
+//           symbol: `image://image/gpt-public.svg`,
+//           symbolSize: [77, 85],
+//           label: {
+//             show: true,
+//             position: "bottom",
+//             formatter:
+//               "{htmlContent|OpenAI GPT 4o}\n{additionalHeading|Engine}",
+//             rich: {
+//               htmlContent: {
+//                 align: "center",
+//                 color: "#475467",
+//                 fontSize: "14px",
+//                 fontWeight: 500,
+//                 padding: [2, 4],
+//                 html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+//               },
+//               additionalHeading: {
+//                 align: "center",
+//                 color: "#98A2B3",
+//                 fontSize: "12px",
+//                 padding: [2, 4],
+//                 html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+//               },
+//             },
+//           },
+//         },
+//         {
+//           name: "Node 4",
+//           x: 460,
+//           y: 320,
+//           symbol: `image://image/secrete.svg`,
+//           symbolSize: [80, 80],
+//           label: {
+//             show: true,
+//             position: "bottom",
+//             formatter:
+//               "{htmlContent|AI Ethics policy}\n{additionalHeading|Violation}",
+//             rich: {
+//               htmlContent: {
+//                 align: "center",
+//                 color: "#475467",
+//                 fontSize: "14px",
+//                 fontWeight: 500,
+//                 padding: [2, 4],
+//                 html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+//               },
+//               additionalHeading: {
+//                 align: "center",
+//                 color: "#98A2B3",
+//                 fontSize: "12px",
+//                 padding: [2, 4],
+//                 html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+//               },
+//             },
+//           },
+//         },
+//       ],
+//       links: [
+//         {
+//           source: "Node 1",
+//           target: "Node 2",
+//         },
+//         {
+//           source: "Node 2",
+//           target: "Node 3",
+//         },
+//         {
+//           source: "Node 2",
+//           target: "Node 4",
+//         },
+//       ],
+//       lineStyle: {
+//         opacity: 0.9,
+//         width: 2,
+//         curveness: 0,
+//       },
+//     },
+//   ],
+// };
+
+const VOILATIONS = {
+  tooltip: {
+    trigger: 'item',
+    formatter: function () {
+      return '';
+    }
+  },
+  animationDurationUpdate: 1500,
+  animationEasingUpdate: "quinticInOut",
+  series: [
+    {
+      type: "graph",
+      layout: "none",
+      symbolSize: 50,
+      roam: true,
+      zoom: 0.6,
+      label: {
+        show: true,
+        position: "bottom",
+        formatter: "{b}",
+      },
+      edgeSymbol: ["circle", "arrow"],
+      edgeSymbolSize: [4, 10],
+      edgeLabel: {
+        fontSize: 20,
+      },
+      data: [
+        {
+          name: "Node 1",
+          x: 170,
+          y: 80,
+          symbol: `image://image/user.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|Multiple users}\n{additionalHeading|User}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+              },
+            },
+          },
+        },
+        {
+          name: "Node 2",
+          x: 460,
+          y: 80,
+          symbol: `image://image/text.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            offset: [0, -7],
+            formatter: "{htmlContent|Text}\n{additionalHeading|Content}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [7, 0, 0, 0],
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 0, 3, 0],
+                backgroundColor: "#fff",
+              },
+            },
+          },
+        },
+        {
+          name: "Node 3",
+          x: 720,
+          y: 80,
+          symbol: `image://image/gpt-public.svg`,
+          symbolSize: [77, 85],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|OpenAI GPT 4o}\n{additionalHeading|Engine}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+              },
+            },
+          },
+        },
+        {
+          name: "Node 4",
+          x: 460,
+          y: 320,
+          symbol: `image://image/secrete.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|AI Ethics policy}\n{additionalHeading|Violation}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+              },
+            },
+          },
+        },
+        {
+          name: "Node 5",
+          x: 320,
+          y: 500,
+          symbol: `image://image/secrete.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|Competitors}\n{additionalHeading|Banned topics}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+              },
+            },
+          },
+        },
+        {
+          name: "Node 6",
+          x: 600,
+          y: 500,
+          symbol: `image://image/secrete.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|Stock manipulation}\n{additionalHeading|Banned topics}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+              },
+            },
+          },
+        },
+      ],
+      links: [
+        {
+          source: "Node 1",
+          target: "Node 2",
+        },
+        {
+          source: "Node 2",
+          target: "Node 3",
+        },
+        {
+          source: "Node 2",
+          target: "Node 4",
+        },
+        {
+          source: "Node 4",
+          target: "Node 5",
+        },
+        {
+          source: "Node 4",
+          target: "Node 6",
+        },
+      ],
+      lineStyle: {
+        opacity: 0.9,
+        width: 2,
+        curveness: 0,
+      },
+    },
+  ],
+};
+
+
+
 const UN_AUTHORIZED = {
   tooltip: {
     trigger: 'item',
@@ -1887,15 +2390,47 @@ const UN_AUTHORIZED = {
 
       data: [
         {
-          name: "Node 1",
-          x: 270,
+          name: "Node 0",
+          x: 80,
           y: 80,
-          symbol: `image://image/co-pilot.svg`,
+          symbol: `image://image/docker-code.svg`,
           symbolSize: [80, 80],
           label: {
             show: true,
             position: "bottom",
-            formatter: "{htmlContent|Github Copilot}",
+            offset: [0, -7],
+            formatter: "{htmlContent|ourFunction.py}\n{additionalHeading|Code Suggestion}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [2, 4],
+                html: '<div style="color: #fff; background-color: #fff; padding: 2px 4px; border-radius: 3px;">Config</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                backgroundColor: "#fff",
+                padding: [2, 4],
+                html: '<div style="color: #000; background-color: #fff; padding: 2px 4px; border-radius: 3px;">File</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 1",
+          x: 210,
+          y: 80,
+          symbol: `image://image/copilot-chat.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|GitHub Copilot Chat}\n{additionalHeading|Extension}",
             rich: {
               htmlContent: {
                 align: "center",
@@ -1909,22 +2444,23 @@ const UN_AUTHORIZED = {
                 align: "center",
                 color: "#98A2B3",
                 fontSize: "12px",
+                backgroundColor: "#fff",
                 padding: [2, 4],
-                html: '<div style="color: #000; background-color: #fff; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+                html: '<div style="color: #000; background-color: #fff; padding: 2px 4px; border-radius: 3px;">Extension</div>',
               },
             },
           },
         },
         {
           name: "Node 2",
-          x: 360,
+          x: 320,
           y: 80,
-          symbol: `image://image/docker.svg`,
+          symbol: `image://image/docker-code.svg`,
           symbolSize: [80, 80],
           label: {
             show: true,
             position: "bottom",
-            formatter: "{htmlContent|Docker}\n{additionalHeading|Extension}",
+            formatter: "{htmlContent|docker-compose.yml}\n{additionalHeading|Code suggestion}",
             rich: {
               htmlContent: {
                 align: "center",
@@ -1948,13 +2484,13 @@ const UN_AUTHORIZED = {
           name: "Node 3",
           x: 430,
           y: 80,
-          symbol: `image://image/docker-code.svg`,
+          symbol: `image://image/docker.svg`,
           symbolSize: [80, 80],
           label: {
             show: true,
             position: "bottom",
             offset: [0, -7],
-            formatter: "{htmlContent|Add Docker configuration files}\n{additionalHeading|Pull Request}",
+            formatter: "{htmlContent|Docker}\n{additionalHeading|Copilot Extension}",
             rich: {
               htmlContent: {
                 align: "center",
@@ -1978,15 +2514,15 @@ const UN_AUTHORIZED = {
         },
         {
           name: "Node 4",
-          x: 510,
+          x: 550,
           y: 80,
-          symbol: `image://image/file.svg`,
+          symbol: `image://image/docker-code.svg`,
           symbolSize: [80, 80],
           label: {
             show: true,
             position: "bottom",
             offset: [0, -7],
-            formatter: "{htmlContent|docker-compose.yml}\n{additionalHeading|Files}",
+            formatter: "{htmlContent|Add Docker configuration files}\n{additionalHeading|Pull Request}",
             rich: {
               htmlContent: {
                 align: "center",
@@ -2007,17 +2543,219 @@ const UN_AUTHORIZED = {
               },
             },
           },
-        },
+        },  
+        // unauthorize pr extension
         {
-          name: "Node 5",
-          x: 430,
-          y: 130,
+          name: "Node 6",
+          x: 550,
+          y: 180,
           symbol: `image://image/docker-un.svg`,
           symbolSize: [80, 80],
           label: {
             show: true,
             position: "bottom",
+            offset: [0, -7],
             formatter: "{htmlContent|Unauthorized PR generation}\n{additionalHeading|Violation}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [7, 0, 0, 0],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 0, 3, 0],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        // malicious
+        {
+          name: "Node 7",
+          x: 80,
+          y: 180,
+          symbol: `image://image/malicious.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|Malicious input}\n{additionalHeading|Violation}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                backgroundColor: "#fff",
+                padding: [2, 0, 3, 0],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [7, 0, 0, 0],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 9",
+          x: 690,
+          y: 80,
+          symbol: `image://image/file.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            offset: [0, -7],
+            formatter: "{htmlContent|docker-compose.yml}\n{additionalHeading|Files}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                backgroundColor: "#fff",
+                padding: [7, 0, 3, 0],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [7, 0, 0, 0],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        // demand pack
+        {
+          name: "Node 10",
+          x: 690,
+          y: 180,
+          symbol: `image://image/extension.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|Exposed daemon socket}\n{additionalHeading|Violation}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                backgroundColor: "#fff",
+                padding: [2, 0, 3, 0],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [7, 0, 0, 0],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+      ],
+      links: [
+        {
+          source: "Node 0",
+          target: "Node 1",
+        },
+        {
+          source: "Node 1",
+          target: "Node 2",
+        },
+        {
+          source: "Node 2",
+          target: "Node 3",
+        },
+        {
+          source: "Node 3",
+          target: "Node 4",
+        },
+        {
+          source: "Node 4",
+          target: "Node 8",
+        },
+        {
+          source: "Node 4",
+          target: "Node 6",
+        },
+        {
+          source: "Node 0",
+          target: "Node 7",
+        },
+        {
+          source: "Node 4",
+          target: "Node 9",
+        },
+        {
+          source: "Node 9",
+          target: "Node 10",
+        }
+      ],
+      lineStyle: {
+        opacity: 0.9,
+        width: 2,
+        curveness: 0,
+      },
+    },
+  ],
+};
+
+const ANNA_SNITH = {
+  tooltip: {
+    trigger: 'item',
+    formatter: function () {
+      return '';
+    }
+  },
+  animationDurationUpdate: 1500,
+  animationEasingUpdate: "quinticInOut",
+  series: [
+    {
+      type: "graph",
+      layout: "none",
+      symbolSize: 50,
+      roam: true,
+      zoom: 0.6,
+      label: {
+        show: true,
+        position: "bottom",
+        formatter: "{b}",
+      },
+      edgeSymbol: ["circle", "arrow"],
+      edgeSymbolSize: [4, 10],
+      edgeLabel: {
+        fontSize: 20,
+      },
+      data: [
+        {
+          name: "Node 1",
+          x: 170,
+          y: 80,
+          symbol: `image://image/user.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|Anna Smith}\n{additionalHeading|User}",
             rich: {
               htmlContent: {
                 align: "center",
@@ -2037,7 +2775,98 @@ const UN_AUTHORIZED = {
             },
           },
         },
-        
+        {
+          name: "Node 2",
+          x: 460,
+          y: 80,
+          symbol: `image://image/updated_file.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            offset: [0, -7],
+            formatter: "{htmlContent|Multiple Files}\n{additionalHeading|Files}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [7, 0, 0, 0],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 0, 3, 0],
+                backgroundColor: "#fff",
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 3",
+          x: 720,
+          y: 80,
+          symbol: `image://image/public-claud.svg`,
+          symbolSize: [75, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter:
+              "{htmlContent|Claude}\n{additionalHeading|Engine}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 4",
+          x: 460,
+          y: 320,
+          symbol: `image://image/secrete.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter:
+              "{htmlContent|Potential Data Poisoning}\n{additionalHeading|Violation}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
       ],
       links: [
         {
@@ -2049,13 +2878,9 @@ const UN_AUTHORIZED = {
           target: "Node 3",
         },
         {
-          source: "Node 3",
+          source: "Node 2",
           target: "Node 4",
         },
-        {
-          source: "Node 3",
-          target: "Node 5",
-        }
       ],
       lineStyle: {
         opacity: 0.9,
@@ -2227,22 +3052,22 @@ retrieveSensitiveFiles('user@gs.com');
           {
             id: 1,
             name: "Critical",
-            value: "1",
+            value: "4",
           },
           {
             id: 2,
             name: "High",
-            value: "2",
+            value: "16",
           },
           {
             id: 3,
             name: "Medium",
-            value: "1",
+            value: "31",
           },
           {
             id: 4,
             name: "Low",
-            value: "8",
+            value: "18",
           },
         ],
         categories: ["Data Leakage", "Unauthorized Access"],
@@ -2477,7 +3302,7 @@ print(f"Sharing {file} with {user_id}")
     subcategories: "Secrets",
     severity: "Medium",
     users: ["user@x.com", "user2@x.com"],
-    interface: robot,
+    interface: git,
     engine: ["OpenAI Codex"],
     tags: {title:'Data leakage', icon:dataLeak},
     status: "Resolved",
@@ -2719,8 +3544,8 @@ return response.json()
       {
         id: 2,
         user: "Engine",
-        image: engine,
-        name: "Copilot",
+        image: azure,
+        name: "Azure OpenAI GPT3.5",
         messages: ["8.2k", "+13%"],
         sessions: ["1.4k", "+9%"],
         vilations: [
@@ -2783,7 +3608,7 @@ return response.json()
     subcategories: "Vulnerable code",
     severity: "Medium",
     users: ["user@x.com", "user2@x.com"],
-    interface: robot,
+    interface: git,
     engine: ["OpenAI Codex"],
     tags: {title:'Insecure output handlin', icon:dataDanger},
     status: "Open",
@@ -2887,7 +3712,7 @@ void useVulnerablePackage() {
         user: "Engine",
         image: copilot,
         name: "Copilot",
-        messages: ["80", "+25%"],
+        messages: ["880", "+25%"],
         sessions: ["76", "+18%"],
         vilations: [
           {
@@ -2934,7 +3759,7 @@ void useVulnerablePackage() {
     subcategories: "Over reliance",
     severity: "Medium",
     users: ["user@x.com", "user2@x.com"],
-    interface: fav,
+    interface: robot,
     engine: ["Gpt 3 5 Turbo"],
     tags: {title:'Over reliance ', icon:dataPro},
     status: "Open",
@@ -3472,7 +4297,7 @@ uploadSensitiveFiles('alex.kim@company.com', ['Customer_Data_List.xlsx', 'Employ
       {
         id: 2,
         user: "Engine",
-        image: gpt,
+        image: claud,
         name: "Claude",
         messages: ["95", "+20"],
         sessions: ["28", "+18%"],
@@ -3496,7 +4321,7 @@ uploadSensitiveFiles('alex.kim@company.com', ['Customer_Data_List.xlsx', 'Employ
         categories: ["PII", "PCI", " PHI", "Jailbreak"],
       },
     ],
-    graph: FILES,
+    graph: ANNA_SNITH,
     issues: [
       "High",
       "Sensitive Data File Uploads",
@@ -3672,9 +4497,9 @@ us boost our stock price ahead of the next earnings call.
         id: 2,
         user: "Engine",
         image: gpt,
-        name: "Claude",
-        messages: ["95", "+20"],
-        sessions: ["28", "+18%"],
+        name: "Gpt-4o",
+        messages: ["8.4K", "+13"],
+        sessions: ["291", "-9%"],
         vilations: [
           {
             id: 1,
@@ -3700,7 +4525,7 @@ us boost our stock price ahead of the next earnings call.
         categories: ["AI ethics", "Banned topics", "PII"],
       },
     ],
-    graph: FILES,
+    graph: VOILATIONS,
     issues: [
       "High",
       "Sensitive Data File Uploads",
@@ -3736,15 +4561,15 @@ us boost our stock price ahead of the next earnings call.
     ]
   },
   {
-    id: 10,
+    id: 11,
     lastEvent: "Aug 14, 2023 10:46 AM",
     name: "Unauthorized automatic PR generation by GitHub Copilot Docker extension",
-    subcategories: "Customer Data",
-    severity: "High",
+    subcategories: "Unauthorized action",
+    severity: "Critical",
     users: ["user@x.com", "user2@x.com", "+20"],
     interface: microsoft,
-    engine: ["GPT 4"],
-    tags: {title:'Data leakage', icon:dataLeak},
+    engine: ["OpenAI Codex"],
+    tags: {title:'Rogue agent', icon:dataLeak},
     status: "Open",
     context: "File path",
     email: ["alex.kim@company.com"],
@@ -3753,14 +4578,38 @@ us boost our stock price ahead of the next earnings call.
         id:1,
         title:
         `
-version: '3'
+version: '3.8'
 services:
-  web:
+  web: 
+      image: mywebapp:latest
+      container_name: web
     build: .
     ports:
       - "5000:5000"
-
+    volumes:
+      - ./src:/app
+      - /host/absolute/path:/data
+    environment:
+      - FLASK_ENV=development
+      - SECRET_KEY=mysecretkey
+    networks:
+      - app-network
+    privileged: true
+    restart: always
+      db:
+        image: postgres:13
+        container_name: db 
+        environment:
+          POSTGRES_USER: example
+          POSTGRES_PASSWORD: example
+          POSTGRES_DB: example 
+        volumes:
+          - db-data:/var/lib/postgresql/data
+        networks:
+          - app-network
+        restart: always
         `,
+        
       }
     ],
   
@@ -3829,8 +4678,65 @@ services:
       },
     ],
     graph: UN_AUTHORIZED,
-   
-   
+    issues: [
+      "High",
+      "Unauthorized automatic PR generation by GitHub Copilot Docker extension",
+      ["Vulnerable code"],
+      "2",
+      ["Unauthorized action", "malicious input"],
+      "Outbound, Inbound",
+      "sarah@company.com",
+      "GitHub Copilot",
+      ["OpenAI Codex v2024.1"],
+      "Jun 21, 2024, 08:57 PM	",
+      "Jun 23, 2024, 02:57 PM	",
+      "Multiple session IDs",
+      "Jim Jorge",
+      "Resolved",
+    ],
+    files:[
+      {
+        id:1,
+        file:'Customer_Data_List.xlsx',
+        fileImg:world
+      },
+      {
+        id:2,
+        file:'Employee_Salary_Info.pdf',
+        fileImg:pdf
+      },
+      {
+        id:3,
+        file:'Client_Contracts.docx',
+        fileImg:excel
+      }
+    ],
+    policiesData: [
+      {
+        id: 1,
+        date: "Jun 21, 2024, 08:57 PM	",
+        chat: "Malicious input",
+        voilationType: "Code",
+        severity: "Critical",
+        userEmail: "sarah@company.com",
+        sessionId: "053fab19-bb0d...",
+        model: "OpenAI Codex v2024.1",
+        source: "GitHub Copilot",
+        status: "Open",
+      },
+      {
+        id: 2,
+        date: "Jun 23, 2024, 02:57 PM	",
+        chat: "Unauthorized action ",
+        voilationType: "Atuomatic Pull request",
+        severity: "High",
+        userEmail: "sarah@company.com",
+        sessionId: "1af843b2-9401...",
+        model: "OpenAI Codex v2024.1",
+        source: "GitHub Copilot",
+        status: "Open",
+      }
+    ],
   },
 ];
 

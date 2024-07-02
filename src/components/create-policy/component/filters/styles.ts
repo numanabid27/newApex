@@ -1,24 +1,4 @@
-import Colors from "@/common/constants/color.constant";
-
 export const styles = {
-    sessionTableRow: {
-     width:'100%',
-      // table: {
-      //   tbody: {
-      //     tr: {
-      //       td: {
-      //         "&:nth-child(2)": {
-      //           width: "50%",
-      //           "@media screen and (max-width:1300px)": {
-      //             width: "unset",
-      //           },
-      //         },
-      //       },
-      //     },
-      //   },
-      // },
-    },
-  
     ebgineBtn: {
       display: "flex",
       justifyContent: "space-between",
@@ -42,7 +22,7 @@ export const styles = {
       },
     },
     sessionEngineFilter: {
-      padding: "8.5px 10px",
+      padding: "11px 10px",
       borderRadius: "8px",
       "& .MuiSelect-select": {
         padding: "0 18px",
@@ -56,7 +36,7 @@ export const styles = {
     },
     searchBox: {
       textAlign: "center",
-      padding: { sm: "0 0px 0 20px", xs: "0 0px" },
+      padding: { sm: "0 20px", xs: "0 13px" },
       width: { sm: "65%", xs: "100%" },
       margin: "auto",
       "& .MuiInputBase-root": {
@@ -70,12 +50,9 @@ export const styles = {
     searchInner: {
       border: "1px solid rgba(0, 0, 0, 0.23)",
       borderRadius: "8px",
-      padding: "0px 14px",
+      padding: "1px 14px",
       display: "flex",
       alignItems: "center",
-      ".MuiButtonBase-root":{
-        display:'none !important'
-      }
     },
     searchIcon: {
       marginTop: "5px",
@@ -144,13 +121,10 @@ export const styles = {
       maxWidth: " unset !important",
       paddingLeft: "0px !important",
       flexBasis: { sm: "unset !important", xs: "100% !important" },
+      width:'132px',
       "& .css-a0md3q-MuiStack-root": {
         flexWrap: " unset",
       },
-      ".MuiInputBase-root":{
-        display:'flex',
-        gap:'10px',
-      }
     },
     formControl: {
       width: "100%",
@@ -168,12 +142,20 @@ export const styles = {
       paddingLeft: "0px !important",
       maxWidth: "unset !important",
       flexBasis: { sm: "unset !important", xs: "100% !important" },
+      width:'111px',
+      ".MuiInputBase-root":{
+        lineHeight:'unset',
+        padding:"12px 13px"
+      },
+      ".MuiSelect-select":{
+        padding:"0 18px 0 0 !important"
+      }
     },
     userFormControl: {
       paddingTop: "3.1px",
     },
     userText: {
-      fontSize: "12px",
+      fontSize: "14px",
     },
     enginItem: {
       fontSize: "12px",
@@ -193,12 +175,7 @@ export const styles = {
     clearBtnGrid: {
       paddingLeft: "0px !important",
     },
-    GridMain: {
-      px: "3.5%",
-      my: 10,
-      gap: "9px",
-      justifyContent: "space-between",
-    },
+ 
     GridShadow: {
       padding: "16px 17px 25px",
       boxShadow: "0px 1px 3px #8080804a",
@@ -224,17 +201,10 @@ export const styles = {
     },
   
     SessionEngine: {
-      overflow:'hidden',
+      mx: { lg: 2, md: 0 },
       ml: { lg: 2, md: 1, sm: 0 },
       boxShadow: "0px 1px 3px #8080804a",
       marginBottom: { md: "unset", xs: "10px" },
-      padding:'15px 19px',
-      "h5":{
-        color:Colors.primary_101,
-        fontWeight:600,
-        fontSize:'16px',
-
-      }
     },
     SessionByEngine: {
       padding: "14px 17px 25px",
@@ -277,7 +247,7 @@ export const styles = {
   
     // new styling 5-24-2024
     mainGrid : {
-      px: "3.5%",
+      px: "4%",
       mb: 8,
       mt:5
     },
@@ -285,6 +255,9 @@ export const styles = {
       ".MuiTabs-flexContainer":{
           gap: "8px",
           marginBottom: "20px",
+          "@media screen and (max-width:767px)":{
+            overflowX:'scroll',
+          },
           "button":{
               border: "1px solid #D0D5DD",
               borderRadius: "30px",
@@ -297,67 +270,5 @@ export const styles = {
           }
       },
     },
-    activeUser:{
-      borderBottom: "1px solid #D0D5DD",
-      paddingBottom:'9px',
-      marginBottom:'15px',
-      height:'34px',
-      "&:last-child":{
-        borderBottom: "unset",
-        paddingBottom:'0px',
-        marginBottom:'0px',
-      }
-    },
-    sessionUser:{
-      ".echarts-for-react":{
-        "canvas":{
-          left: "-3vw !important",
-          width: "65vw !important"
-        }
-      }
-    },
-    sessionUser2:{
-      ".echarts-for-react":{
-        "canvas":{
-          left: "-2vw !important",
-          width: "68vw !important",
-          top: "3vw !important",
-          "@media screen and (max-width:1440px)":{
-            left: "-4vw !important",
-            width:" 66vw !important"
-          }
-        }
-      }
-    },
-    user1:{
-      ".echarts-for-react":{
-        height: "105px !important",
-        "canvas":{
-          top: "-93px !important",
-          width: "14vw !important",
-          left: "33px !important"
-        }
-      }
-    },
-    moreSelected:{
-      borderRadius: "8px",
-      color: "#667085",
-      fontWeight: 500,
-      border: "1px solid #D1D5DB",
-      padding: "8.5px 17px",
-      fontSize:" 12px",
-      textTransform: "capitalize",
-      display: "flex",
-      gap: "10px",
-      marginTop: "3.1px",
-      "@media screen and (max-width:767px)":{
-        width: "100%",
-        display: "flex",
-        justifyContent: "flex-start"
-      }
-    },
-    typography:{
-      fontSize:'14px'
-    }
   };
   

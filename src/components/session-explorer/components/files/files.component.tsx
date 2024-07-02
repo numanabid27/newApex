@@ -8,6 +8,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 import { FileStyle } from "./file.style";
 import Image from "next/image";
 import Filters from "../filters/filter.component";
+import useFilterPolicy from "@/components/create-policy/use-createPolicies.hook";
 
 export default function Files() {
   const {
@@ -19,6 +20,20 @@ export default function Files() {
     allOptions,
     handleAutocompleteChange,
   } = useFiles();
+
+  // const {
+  //   engineName,
+  //   setEngineName,
+  //   startDate,
+  //   endDate,
+  //   setDateRange,
+  //   setIsInterface,
+  //   isInterface,
+  //   isStatus,
+  //   setIsStatus,
+  //   setTopicName,
+  //   topicName} = useFilterPolicy();
+
   const SESSION_EXPLORE_TABLE_HEADER = [
     { id: 1, header: "#", accessor: "id" },
     { id: 2, header: "Filename", accessor: "fileName" },
@@ -136,7 +151,6 @@ export default function Files() {
       </Box>
       {/* filter */}
       <Filters users={false} />
-
       <Box sx={styles.sessionTableRow}>
         <CustomTable
           rows={finalData}

@@ -3,8 +3,9 @@ import Image from 'next/image'
 import check from "@/common/assets/images/check-check.svg";
 import {styles} from "./multiselect.style";
 import { actions, multiAction } from '../../createPolicy.constant';
-import useCreatePolicies from '../../use-createPolicies.hook';
+// import useCreatePolicies from '../../use-createPolicies.hook';
 import ClearIcon from '@mui/icons-material/Clear';
+import useCreatePolicies from '../severityLevel/use-severity.hook';
 
 const MultiSelect = () => {
   

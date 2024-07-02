@@ -43,11 +43,51 @@ export const  CONVERSATION = [
   { id: 3, name: "High" }
 ];
 
+
+export const INTEND = [
+  { id: 1, name: "Write email" },
+  { id: 2, name: "Code" },
+  { id: 3, name: "Write content" },
+  { id: 4, name: "Analyze data" },
+  { id: 5, name: "Generate report" },
+  { id: 6, name: "Summarize content" },
+  { id: 7, name: "Organize text" }
+];
+
 export const SENTIMENT = [
   { id: 1, name: "Positive" },
   { id: 2, name: "Neutral" },
   { id: 3, name: "Negative" }
 ];
+
+
+
+export const POLICY_ENGINE = [
+  { id: 1, name: "Azure GPT 4o" },
+  { id: 2, name: "GPT 4" },
+  { id: 3, name: "Liron Azure" },
+  { id: 4, name: "Gemini" }
+];
+export const POLICY_SEVERITY = [
+  { id: 1, name: "Hight" },
+  { id: 2, name: "Medium" },
+  { id: 3, name: "Low" }
+];
+
+export const POLICY_TAGS = [
+  { id: 1, name: "GDPR" },
+  { id: 2, name: "HIPPA" },
+  { id: 3, name: "NIST AI RMF" },
+  { id: 4, name: "Injection" },
+  { id: 5, name: "CSF - NIST" },
+  { id: 6, name: "EU AI ACTT" },
+];
+
+export const POLICY_ACTIONS = [
+  { id: 1, name: "Notify" }
+];
+
+
 
 
 export const  TOPICS = [

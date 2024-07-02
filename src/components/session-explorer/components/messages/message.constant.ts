@@ -8,6 +8,7 @@ import scale from "@/common/assets/images/scale.svg";
 import scrollText from "@/common/assets/images/scroll-text.svg";
 import pie from "@/common/assets/images/pie-chart.svg";
 import flag from "@/common/assets/images/flag.svg";
+import land from "@/common/assets/images/land-plot.svg";
 
 export const TOTAL_SESSIONS_CHART = {
   height: 50,
@@ -269,20 +270,20 @@ export const MESSAGE_DATA = [
     mails:"john@email.com",
     lastUpdate:"Apr 10, 2024 11:45 AM",
     interface:"Apex Chat",
-    engineType:"OpenAI Codex",
+    engineType:"Claude Sonnet 3.5",
     context:"repo/filepath.py",
     sessionId:"123456",
     active:"Active",
     topics:[
       {
         id:1,
-        title:'Code',
-        img:code,
+        title:'Finance',
+        img:coin,
       },
       {
         id:2,
-        title:'Security',
-        img:shield
+        title:'Strategy',
+        img:land
       }
     ],
 
@@ -593,3 +594,741 @@ export const MESSAGES_GRAPH = [
     chart:USER_3,
   }
 ]
+
+
+export const options = {
+  tooltip: {
+    trigger: "item",
+    triggerOn: "mousemove",
+  },
+  series: [
+    {
+      type: "sankey",
+      layout: "none",
+      nodeAlign: "left",
+      data: [
+        {
+          name: "ChatGPT 2,000",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [50, 0], 
+          },
+        },
+        {
+          name: "Github Copilot 2,000",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [50, 0], 
+          },
+        },
+        {
+          name: "Google Gemini 2,000",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [50, 0], 
+          },
+        },
+        {
+          name: "Strategy 1,000",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+        {
+          name: "Revenue 1,000",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+        {
+          name: "Legal 1,000",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+        {
+          name: "Healthcare 1,000",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+        {
+          name: "Positive 1,650",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+        {
+          name: "Negative 350",
+          itemStyle: { color: "#A6F4C5" },
+          emphasis: { itemStyle: { color: "#A6F4C5" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+      ],
+      links: [
+        {
+          source: "ChatGPT 2,000",
+          target: "Strategy 1,000",
+          value: 1000,
+          lineStyle: {
+            color: "#039855",
+            offset: [100, -70],
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "ChatGPT 2,000",
+          target: "Legal 1,000",
+          value: 1000,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "ChatGPT 2,000",
+          target: "Revenue 1,000",
+          value: 1000,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Github Copilot 2,000",
+          target: "Revenue 1,000",
+          value: 1000,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Google Gemini 2,000",
+          target: "Healthcare 1,000",
+          value: 1000,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Strategy 1,000",
+          target: "Positive 1,650",
+          value: 1000,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Revenue 1,000",
+          target: "Positive 1,650",
+          value: 1000,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Legal 1,000",
+          target: "Negative 350",
+          value: 1000,
+          lineStyle: {
+            color: "#A6F4C5",
+            emphasis: { lineStyle: { color: "#A6F4C5" } },
+          },
+        },
+        {
+          source: "Healthcare 1,000",
+          target: "Positive 1,650",
+          value: 650,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Healthcare 1,000",
+          target: "Negative 350",
+          value: 350,
+          lineStyle: {
+            color: "#A6F4C5",
+            emphasis: { lineStyle: { color: "#A6F4C5" } },
+          },
+        },
+      ],
+      lineStyle: {
+        color: "gradient",
+        curveness: 0.5,
+      },
+      itemStyle: {
+        borderWidth: 1,
+      },
+      label: {
+        show: true,
+        color: "#000",
+        backgroundColor: "#fff",
+        borderRadius: 2,
+        padding: 3,
+        position: "insideRight",
+        fontSize: 12,
+      },
+      nodeWidth: 20,
+      nodeGap: 25,
+      layoutIterations: 2,
+    },
+  ],
+};
+
+export const HIRING = {
+  tooltip: {
+    trigger: "item",
+    triggerOn: "mousemove",
+  },
+  series: [
+    {
+      type: "sankey",
+      layout: "none",
+      nodeAlign: "left",
+      data: [
+        {
+          name: "Total prompts 2,000",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [70, 0], 
+          },
+        },
+        {
+          name: "R&D 1,000",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [70, 0], 
+          },
+        },
+        {
+          name: "Marketing 1,000",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+        {
+          name: "Hiring 1,000",
+          itemStyle: { color: "#76cb98" },
+          emphasis: { itemStyle: { color: "#76cb98" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+        {
+          name: "Positive 1,650",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+        {
+          name: "Negative 350",
+          itemStyle: { color: "#76cb98" },
+          emphasis: { itemStyle: { color: "#76cb98" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+      ],
+      links: [
+        {
+          source: "Total prompts 2,000",
+          target: "R&D 1,000",
+          value: 950,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Total prompts 2,000",
+          target: "Marketing 1,000",
+          value: 1100,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "R&D 1,000",
+          target: "Hiring 1,000",
+          value: 400,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Marketing 1,000",
+          target: "Hiring 1,000",
+          value: 700,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Hiring 1,000",
+          target: "Negative 350",
+          value: 350,
+          lineStyle: {
+            color: "#A6F4C5",
+            emphasis: { lineStyle: { color: "#A6F4C5" } },
+          },
+        },
+        {
+          source: "Hiring 1,000",
+          target: "Negative 350",
+          value: 350,
+          lineStyle: {
+            color: "#05603A",
+            emphasis: { lineStyle: { color: "#05603A" } },
+          },
+        },
+        {
+          source: "Hiring 1,000",
+          target: "Positive 1,650",
+          value: 1000,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        
+        {
+          source: "Marketing 1,000",
+          target: "Negative 350",
+          value: 400,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "R&D 1,000",
+          target: "Positive 1,650",
+          value: 400,
+          lineStyle: {
+            color: "#76cb98",
+            emphasis: { lineStyle: { color: "#76cb98" } },
+          },
+        },
+        {
+          source: "R&D 1,000",
+          target: "Hiring 1,000",
+          value: 150,
+          lineStyle: {
+            color: "#76cb98",
+            emphasis: { lineStyle: { color: "#76cb98" } },
+          },
+        },
+      ],
+      lineStyle: {
+        color: "gradient",
+        curveness: 0.5,
+      },
+      itemStyle: {
+        borderWidth: 1,
+      },
+      label: {
+        show: true,
+        color: "#000",
+        backgroundColor: "#fff",
+        borderRadius: 2,
+        padding: 3,
+        position: "insideRight",
+        fontSize: 12,
+      },
+      nodeWidth: 15,
+      nodeGap: 110,
+      layoutIterations: 2,
+    },
+  ],
+};
+
+export const MARKETING = {
+  tooltip: {
+    trigger: "item",
+    triggerOn: "mousemove",
+  },
+  series: [
+    {
+      type: "sankey",
+      layout: "none",
+      nodeAlign: "left",
+      data: [
+        {
+          name: "Total prompts 2,000",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            opcaity:0,
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [70, 0], 
+          },
+        },
+        {
+          name: "R&D 1,000",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+        {
+          name: "Marketing 1,000",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+        {
+          name: "Code 1,000",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+        {
+          name: "Email 400",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+        {
+          name: "Legal 600",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+        {
+          name: "Positive 1,650",
+          itemStyle: { color: "#039855" },
+          emphasis: { itemStyle: { color: "#039855" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+        {
+          name: "Negative 350",
+          itemStyle: { color: "#A6F4C5" },
+          emphasis: { itemStyle: { color: "#A6F4C5" } },
+          label: {
+            show: true,
+            backgroundColor: "#fff",
+            borderRadius: 6,
+            padding: 6,
+            position: "insideRight",
+            offset: [20, 0], 
+          },
+        },
+      ],
+      links: [
+        {
+          source: "Total prompts 2,000",
+          target: "R&D 1,000",
+          value: 1500,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Total prompts 2,000",
+          target: "Marketing 1,000",
+          value: 1500,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "R&D 1,000",
+          target: "Code 1,000",
+          value: 1000,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "R&D 1,000",
+          target: "Email 400",
+          value: 400,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "R&D 1,000",
+          target: "Legal 600",
+          value: 600,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Marketing 1,000",
+          target: "Code 1,000",
+          value: 1000,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Marketing 1,000",
+          target: "Email 400",
+          value: 400,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Marketing 1,000",
+          target: "Legal 600",
+          value: 600,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Code 1,000",
+          target: "Positive 1650",
+          value: 1650,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Code 1000",
+          target: "Negative 350",
+          value: 350,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Email 400",
+          target: "Positive 1,650",
+          value: 1250,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Email 400",
+          target: "Negative 350",
+          value: 350,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Legal 600",
+          target: "Positive 1,650",
+          value: 1250,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Legal 600",
+          target: "Negative 350",
+          value: 350,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Code 1,000",
+          target: "Positive 1,650",
+          value: 1000,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+        {
+          source: "Code 1,000",
+          target: "Negative 350",
+          value: 700,
+          lineStyle: {
+            color: "#039855",
+            emphasis: { lineStyle: { color: "#039855" } },
+          },
+        },
+      ],
+      lineStyle: {
+        color: "gradient",
+        curveness: 0.5,
+      },
+      label: {
+        show: true,
+        color: "#000",
+        backgroundColor: "#fff",
+        borderRadius: 2,
+        padding: 3,
+        position: "insideRight",
+        fontSize: 12,
+      },
+      itemStyle: {
+        borderWidth: 1,
+      },
+      nodeWidth: 20,
+      nodeGap: 25,
+      layoutIterations: 2,
+    },
+  ],
+};

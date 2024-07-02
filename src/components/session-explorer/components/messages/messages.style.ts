@@ -315,11 +315,11 @@ export const styles = {
     sessionUser:{
       ".echarts-for-react":{
         "canvas":{
-          left: "1vw !important",
-          width: "70vw !important",
+          left: "3.7vw !important",
+          width: "68vw !important",
           "@media screen and (max-width:1440px)":{
-            left: "0vw !important",
-            width: "65vw !important",
+            left: "1vw !important",
+            width: "68vw !important",
           }
         }
       }
@@ -472,13 +472,33 @@ export const styles = {
       justifyContent:"center"
     },
     filter1:{
-      width: "56%",
+      width: "40%",
       justifyContent: "center",
       display: "flex",
     },
-    filter2:{
-      width: "17%",
+    hiring:{
+      width: "42%",
       justifyContent: "flex-end",
+      display: "flex",
+    },
+    filter2:{
+      width: "28%",
+      justifyContent: "flex-start",
+      display: "flex",
+    },
+    filter4:{
+      width: "35%",
+      justifyContent: "flex-end",
+      display: "flex",
+    },
+    filter5:{
+      width: "32%",
+      justifyContent: "flex-end",
+      display: "flex",
+    },
+    filter3:{
+      width: "30%",
+      justifyContent: "flex-start",
       display: "flex",
     }
   };

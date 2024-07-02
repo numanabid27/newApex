@@ -22,6 +22,10 @@ import downArrow from "@/common/assets/images/downs.svg";
 import { POLICIES_GPT } from "./components/model-data/components/model-data/modal-data.constants";
 import AddIcon from "@mui/icons-material/Add";
 import gemini from "@/common/assets/images/gemini.svg";
+import { useState } from "react";
+import { POLICIES_CHECKBOX_FILTER } from "../create-policy/createPolicy.constant";
+import PolicyFilters from "../create-policy/component/filters";
+import useFilterPolicy from "../create-policy/use-createPolicies.hook";
 
 function Policies() {
   const {
@@ -34,33 +38,18 @@ function Policies() {
     isPrompt,
     setIsPrompt,
   } = usePolicies();
-
-  const policiesTypes = [
-    { id: 1, value: "GDPR", checkedValue: true, enable: true, check: true },
-    {
-      id: 2,
-      value: "Nist Ai RMF",
-      checkedValue: true,
-      enable: true,
-      check: true,
-    },
-    { id: 3, value: "HIPAA", checkedValue: false, enable: false, check: false },
-    {
-      id: 4,
-      value: "EU AI Act",
-      checkedValue: false,
-      enable: false,
-      check: false,
-    },
-    {
-      id: 5,
-      value: "Mitre ATLAS",
-      checkedValue: true,
-      enable: true,
-      check: true,
-    },
-  ];
-
+  const [isGenerate, setIsGenerate] = useState(false);
+  const {
+    finalData,
+    engineName,
+    setEngineName,
+    startDate,
+    endDate,
+    setDateRange,
+    isStatus,
+    setIsStatus,
+    
+  } = useFilterPolicy();
   // for future purpose
   const updatePolicyType = (data: any, id: any) => {
     // return policiesTypes.map((policy) => {
@@ -71,30 +60,11 @@ function Policies() {
     //   return policy;
     // });
   };
-  // console.log(policiesTypes);
+
   return (
     <Grid container item xs={12} sx={styles.pliciesSec}>
-      <Grid container justifyContent="space-between" mb={6} mt={4}>
-        <Grid sm={4} xs={12} mb={{ sm: 0, xs: 3 }}>
-          <Link href="/policies/create-policy" className="addButton">
-            <AddIcon />
-            New policy
-          </Link>
-        </Grid>
-        <Grid sm={8} xs={12}>
-          <Box
-            display="flex"
-            gap="10px"
-            justifyContent={{ sm: "flex-end", xs: "flex-start" }}
-          >
-            <ButtonComponent title="Restore" icon={restore} />
-            <ButtonComponent title="Import" icon={importImg} />
-            <ButtonComponent title="Export" icon={exportImg} />
-          </Box>
-        </Grid>
-      </Grid>
       <Box sx={{ margin: "6px 0 15px 10px" }}>
-        {policiesTypes?.map((item, i) => {
+        {POLICIES_CHECKBOX_FILTER?.map((item: any, i: number) => {
           return (
             <CheckBoxComponent
               id={item?.id}
@@ -110,7 +80,19 @@ function Policies() {
         })}
       </Box>
 
-      <Filters users={false} policies={true} />
+      <PolicyFilters
+        users={false}
+        policies={true}
+        engineName={engineName}
+        setEngineName={setEngineName}
+        startDate={startDate}
+        endDate={endDate}
+        setDateRange={setDateRange}
+       
+        isStatus={isStatus}
+        setIsStatus={setIsStatus}
+        
+      />
 
       {POLICIES_LISTENING.map((items: any, i: number) => {
         return (
@@ -182,6 +164,7 @@ function Policies() {
         );
       })}
 
+      {/* delete policy model */}
       {isModel && (
         <Box sx={styles.deleteBackdrop}>
           <Box sx={{ ...styles.deleteModel, background: "#fff" }}>
@@ -208,14 +191,17 @@ function Policies() {
         </Box>
       )}
 
+      {/* prompt model */}
       {isPrompt && (
         <Box sx={styles.deleteBackdrop}>
-          <Box sx={{ ...styles.deleteModel, background: "#F9FAFB" }} className="demooo">
+          <Box
+            sx={{ ...styles.deleteModel, background: "#F9FAFB" }}
+            className="demooo"
+          >
             <Box
               position="relative"
               display="flex"
               justifyContent="space-between"
-              
             >
               <Severity
                 title="Select Engine"
@@ -239,8 +225,12 @@ function Policies() {
               <Box sx={styles.bard}>
                 <Image src={gemini} alt="" />
                 <Box>
-                  <Typography color="#374151" pb={1} fontWeight={500}>Your email is</Typography>
-                  <Typography color="#D92D20" fontWeight={500}>Jhon_doe@gmail.com</Typography>
+                  <Typography color="#374151" pb={1} fontWeight={500}>
+                    Your email is
+                  </Typography>
+                  <Typography color="#D92D20" fontWeight={500}>
+                    Jhon_doe@gmail.com
+                  </Typography>
                 </Box>
               </Box>
 
@@ -251,11 +241,20 @@ function Policies() {
                 </Typography>
                 <Box sx={styles.piBox}>
                   <Typography variant="h2">PII</Typography>
-                  <Typography color="#374151" pt={2}>Personally identifiable information (PII) is any information connected to a specific individual that can be used to uncover that individuals identity, such as their social security number, full name, email address or phone number.</Typography>
+                  <Typography color="#374151" pt={2}>
+                    Personally identifiable information (PII) is any information
+                    connected to a specific individual that can be used to
+                    uncover that individuals identity, such as their social
+                    security number, full name, email address or phone number.
+                  </Typography>
                 </Box>
-                <Box  sx={styles.piBox}>
+                <Box sx={styles.piBox}>
                   <Typography variant="h2">Email</Typography>
-                  <Typography color="#374151" pt={2}>Personally identifiable information (PII) is any information connected to a specific individual that can be used to uncover</Typography>
+                  <Typography color="#374151" pt={2}>
+                    Personally identifiable information (PII) is any information
+                    connected to a specific individual that can be used to
+                    uncover
+                  </Typography>
                 </Box>
               </Box>
             </Box>
@@ -282,6 +281,8 @@ function Policies() {
         setOpenModal={setOpenModal}
         setIsModel={setIsModel}
         setIsPrompt={setIsPrompt}
+        setIsGenerate={setIsGenerate}
+        isGenerate={isGenerate}
       />
     </Grid>
   );

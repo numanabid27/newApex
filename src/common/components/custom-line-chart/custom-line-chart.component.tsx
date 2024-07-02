@@ -30,7 +30,7 @@ export const CustomLineChart = ({
   const SessionHandler = (event: any) => {
     setSession(event.target.value as string);
   };
-  const totalValue = chartData.reduce(
+  const totalValue = chartData?.reduce(
     (total: any, item: any) => total + item.value,
     0
   );
@@ -66,7 +66,7 @@ export const CustomLineChart = ({
       )}
       <Box>
         <Box className="d-flex" sx={aiBoom ? chartStyle.chartDataMain2 : chartStyle.chartDataMain}>
-          {chartData.map((item: any) => (
+          {chartData?.map((item: any) => (
             <Box
               key={item.id}
               sx={{
@@ -80,7 +80,7 @@ export const CustomLineChart = ({
         </Box>
 
         <Grid item justifyContent={aiBoom ? "unset": "space-around"} gap={aiBoom ? "16px": "0px"} className={`${aiBoom && "borderTop"} ${issuesEngine && "isssuesEngine"} d-flex`}>
-          {chartData.map((item: any) => (
+          {chartData?.map((item: any) => (
             <Box
               key={item.id}
               sx={{ ...chartStyle.Row, borderLeft: `3px solid ${item.color}` }}

@@ -141,6 +141,9 @@ export const ModalDataStyle = {
       padding: "9px 27px",
       borderRadius: "8px",
       textTransform: "capitalize",
+      "&:hover":{
+        background:"#98A2B3",
+      }
     },
     "textarea":{
       border: "1px solid #CFD4DC",
@@ -150,7 +153,8 @@ export const ModalDataStyle = {
       padding:" 9px 18px",
       borderRadius: "8px",
       marginTop: "27px",
-      resize:'none'
+      resize:'none',
+      outline:'none'
     },
     
   },

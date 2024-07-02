@@ -13,7 +13,7 @@ export default function useAiboom() {
   const [repo, setRepo] = useState<any>("");
   const [nestTableData, setNestTableData] = useState<any>(AIBOOM_TABLE_BOX);
   const [selectedFileData, setSelectedFileData] = useState<any>();
-console.log(selectedFileData, "selectedFileData")
+
   const handleChange = (event: any, newValue: any) => {
     setIsDetail(null);
     setIsValue(newValue);

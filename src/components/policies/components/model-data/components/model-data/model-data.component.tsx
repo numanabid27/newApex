@@ -10,12 +10,19 @@ import { ButtonComponent } from "@/common/components/button/button";
 import pencil from "@/common/assets/images/pencil.svg";
 import view from "@/common/assets/images/view.svg";
 import copy from "@/common/assets/images/copy.svg";
-import { useState } from "react";
 import Severity from "@/components/create-policy/component/severityLevel/severty.component";
 import downArrow from "@/common/assets/images/downs.svg";
 import { POLICIES_GPT } from "./modal-data.constants";
+import { useRouter } from "next/navigation";
 
-export const ModelData = ({ selectedRow, setIsModel, setOpenModal, setIsPrompt }: any) => {
+export const ModelData = ({
+  selectedRow,
+  setIsModel,
+  setOpenModal,
+  setIsPrompt,
+  setIsGenerate,
+  isGenerate,
+}: any) => {
   const PolicyData = [
     {
       id: 1,
@@ -23,7 +30,7 @@ export const ModelData = ({ selectedRow, setIsModel, setOpenModal, setIsPrompt }
       desc: Issue,
     },
   ];
-
+  const router = useRouter();
   return (
     <>
       <Box sx={ModalDataStyle.ModalGrid}>
@@ -87,7 +94,6 @@ export const ModelData = ({ selectedRow, setIsModel, setOpenModal, setIsPrompt }
           </Grid>
 
           <Box sx={ModalDataStyle.morePolicy}>
-           
             <Typography fontWeight={500}>
               This is the description of the policy lorem ipsum dolor sit amet
               consectetur adipiscing elit sed do eiusmod tempor incididunt ut
@@ -97,7 +103,6 @@ export const ModelData = ({ selectedRow, setIsModel, setOpenModal, setIsPrompt }
           </Box>
 
           <Box sx={ModalDataStyle.morePolicy}>
-            
             <Typography fontWeight={500}>
               This is the description of the policy lorem ipsum dolor sit amet
               consectetur adipiscing elit sed do eiusmod tempor incididunt ut
@@ -125,7 +130,7 @@ export const ModelData = ({ selectedRow, setIsModel, setOpenModal, setIsPrompt }
 
       {/* run test model */}
       <Box sx={ModalDataStyle.run_test}>
-        <Box position='relative'>
+        <Box position="relative">
           <Severity
             title="Select Engine"
             img={downArrow}
@@ -136,14 +141,34 @@ export const ModelData = ({ selectedRow, setIsModel, setOpenModal, setIsPrompt }
 
         <Box sx={ModalDataStyle.promptBox}>
           <Typography variant="h6">Prompt</Typography>
-          <Button>Auto generate</Button>
-          <textarea placeholder="Write a prompt" rows={7}></textarea>
+          <Button
+            onClick={() => {
+              setIsGenerate(true);
+            }}
+          >
+            Auto generate
+          </Button>
+          <textarea
+            placeholder={
+              isGenerate
+                ? "Auto generating in progress. Click on Run Test"
+                : "Write a prompt"
+            }
+            disabled={isGenerate ? true : false}
+            rows={7}
+          ></textarea>
         </Box>
 
         <Button
           sx={ModalDataStyle.testBtn}
           onClick={() => {
-            setIsPrompt(true), setOpenModal(false);
+            if (isGenerate) {
+              setIsPrompt(false);
+              router.push("/policies/prompt");
+            } else {
+              setIsPrompt(true);
+              setOpenModal(false);
+            }
           }}
         >
           Run Test

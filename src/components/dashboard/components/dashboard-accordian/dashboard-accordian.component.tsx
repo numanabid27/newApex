@@ -68,7 +68,13 @@ function DashboardDrawer({ modelData }: any) {
   return (
     <Box sx={styles.modelGradient}>
       <Box sx={styles.sideModel}>
-        <Typography sx={styles.modelTitle}>{modelData.title}</Typography>
+        <Typography sx={styles.modelTitle}>
+          {modelData.id === 1 ? (
+            <>Anna Smith {modelData.title}</>
+          ) : (
+            <>{modelData.title}</>
+          )}
+        </Typography>
 
         <Grid container justifyContent="space-between" mt={6} mb={8}>
           <Grid xs={7.5} display="flex" alignItems="center" gap="18px">
@@ -333,9 +339,7 @@ function DashboardDrawer({ modelData }: any) {
                   </Grid>
                 </Grid>
               </>
-            ) 
-              :
-            (
+            ) : (
               <>
                 <Grid container alignItems="center" sx={styles.evidance_grid}>
                   <Grid xs={1.5}>Email</Grid>
@@ -448,7 +452,7 @@ function DashboardDrawer({ modelData }: any) {
                 <Typography variant="h6">Violations</Typography>
                 <Typography variant="h5">4</Typography>
               </Box>
-            )  : null}
+            ) : null}
             <Box>
               <Grid
                 container
