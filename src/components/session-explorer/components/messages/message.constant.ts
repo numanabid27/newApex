@@ -76,9 +76,7 @@ export const TOTAL_SESSIONS_CHART = {
   ],
 };
 
-
 export const SESSION_USER_CHART = {
-  
   height: 90,
   tooltip: {
     trigger: "axis",
@@ -108,16 +106,7 @@ export const SESSION_USER_CHART = {
       show: true,
       type: "category",
       boundaryGap: false,
-      data: [
-        "1",
-        "4",
-        "8",
-        "12",
-        "16",
-        "20",
-        "24",
-        "28"
-      ],
+      data: ["1", "4", "8", "12", "16", "20", "24", "28"],
     },
   ],
   yAxis: [
@@ -134,7 +123,7 @@ export const SESSION_USER_CHART = {
       name: "Session over time, Active User",
       type: "line",
       stack: "Total",
-      data: [10, 10, 23, 28, 11, 40, 20, 22, 21, 24, 26, 28,32,38],
+      data: [10, 10, 23, 28, 11, 40, 20, 22, 21, 24, 26, 28, 32, 38],
       color: ["#1570EF"],
       gradientColor: ["#DAEFFF"],
       areaStyle: {
@@ -159,22 +148,22 @@ export const SESSION_USER_CHART = {
 export const MESSAGE_DATA = [
   {
     id: 1,
-    flag:flag,
+    flag: flag,
     title: "Learn AWS",
-    mails:"cindy@email.com",
-    lastUpdate:"Apr 24, 2024 10:46 PM",
-    interface:"Apex Chat",
-    engineType:"Google Gemini",
-    context:"repo/filepath.py",
-    sessionId:"123456",
-    active:"Active",
-    topics:[
+    mails: "cindy@email.com",
+    lastUpdate: "Apr 24, 2024 10:46 PM",
+    interface: "Apex Chat",
+    engineType: "Google Gemini",
+    context: "repo/filepath.py",
+    sessionId: "123456",
+    active: "Active",
+    topics: [
       {
-        id:1,
-        title:'Code',
-        codes:true,
-        img:code,
-      }
+        id: 1,
+        title: "Code",
+        codes: true,
+        img: code,
+      },
     ],
 
     violation: "12",
@@ -182,28 +171,28 @@ export const MESSAGE_DATA = [
   },
   {
     id: 2,
-   
+
     title: "JIRA ticket",
-    mails:"james@email.com",
-    lastUpdate:"Apr 12, 2024 09:21 PM",
-    interface:"Apex Chat",
-    engineType:"OpenAI GPT4",
-    context:"repo/filepath.py",
-    sessionId:"",
-    active:"Active",
-    topics:[
+    mails: "james@email.com",
+    lastUpdate: "Apr 12, 2024 09:21 PM",
+    interface: "Apex Chat",
+    engineType: "OpenAI GPT4",
+    context: "repo/filepath.py",
+    sessionId: "",
+    active: "Active",
+    topics: [
       {
-        id:1,
-        title:'Finance',
-        codes:false,
-        img:coin,
+        id: 1,
+        title: "Finance",
+        codes: false,
+        img: coin,
       },
       {
-        id:2,
-        title:'Hiring',
-        codes:false,
-        img:bag
-      }
+        id: 2,
+        title: "Hiring",
+        codes: false,
+        img: bag,
+      },
     ],
 
     violation: "8",
@@ -211,26 +200,26 @@ export const MESSAGE_DATA = [
   },
   {
     id: 3,
-    flag:flag,
+    flag: flag,
     title: "Python",
-    mails:"george@email.com",
-    lastUpdate:"Apr 12, 2024 07:42 AM",
-    interface:"Github Copilot",
-    engineType:"OpenAI Codex",
-    context:"repo/filepath.py",
-    sessionId:"",
-    active:"Active",
-    topics:[
+    mails: "george@email.com",
+    lastUpdate: "Apr 12, 2024 07:42 AM",
+    interface: "Github Copilot",
+    engineType: "OpenAI Codex",
+    context: "repo/filepath.py",
+    sessionId: "",
+    active: "Active",
+    topics: [
       {
-        id:1,
-        title:'Code',
-        img:code,
+        id: 1,
+        title: "Code",
+        img: code,
       },
       {
-        id:2,
-        title:'Security',
-        img:shield
-      }
+        id: 2,
+        title: "Security",
+        img: shield,
+      },
     ],
 
     violation: "6",
@@ -238,26 +227,26 @@ export const MESSAGE_DATA = [
   },
   {
     id: 4,
-    flag:flag,
+    flag: flag,
     title: "Write email",
-    mails:"barbara@email.com",
-    lastUpdate:"Apr 11, 2024 8:30 AM",
-    interface:"365 Copilot",
-    engineType:"365 Copilot",
-    context:"repo/filepath.py",
-    sessionId:"123456",
-    active:"Active",
-    topics:[
+    mails: "barbara@email.com",
+    lastUpdate: "Apr 11, 2024 8:30 AM",
+    interface: "365 Copilot",
+    engineType: "365 Copilot",
+    context: "repo/filepath.py",
+    sessionId: "123456",
+    active: "Active",
+    topics: [
       {
-        id:1,
-        title:'Contracts & Agreements',
-        img:scrollText,
+        id: 1,
+        title: "Contracts & Agreements",
+        img: scrollText,
       },
       {
-        id:2,
-        title:'Legal',
-        img:scale
-      }
+        id: 2,
+        title: "Legal",
+        img: scale,
+      },
     ],
 
     violation: "6",
@@ -265,26 +254,26 @@ export const MESSAGE_DATA = [
   },
   {
     id: 5,
-    flag:flag,
+    flag: flag,
     title: "Summarize Q4 strategy",
-    mails:"john@email.com",
-    lastUpdate:"Apr 10, 2024 11:45 AM",
-    interface:"Apex Chat",
-    engineType:"Claude Sonnet 3.5",
-    context:"repo/filepath.py",
-    sessionId:"123456",
-    active:"Active",
-    topics:[
+    mails: "john@email.com",
+    lastUpdate: "Apr 10, 2024 11:45 AM",
+    interface: "Apex Chat",
+    engineType: "Claude Sonnet 3.5",
+    context: "repo/filepath.py",
+    sessionId: "123456",
+    active: "Active",
+    topics: [
       {
-        id:1,
-        title:'Finance',
-        img:coin,
+        id: 1,
+        title: "Finance",
+        img: coin,
       },
       {
-        id:2,
-        title:'Strategy',
-        img:land
-      }
+        id: 2,
+        title: "Strategy",
+        img: land,
+      },
     ],
 
     violation: "6",
@@ -292,21 +281,21 @@ export const MESSAGE_DATA = [
   },
   {
     id: 6,
-   
+
     title: "Hi, how are you?",
-    mails:"john@email.com",
-    lastUpdate:"Aug 12, 2023 10:46 AM",
-    interface:"Apex API",
-    engineType:"OpenAI GPT3.5",
-    context:"repo/filepath.py",
-    sessionId:"123456",
-    active:"Active",
-    topics:[
+    mails: "john@email.com",
+    lastUpdate: "Aug 12, 2023 10:46 AM",
+    interface: "Apex API",
+    engineType: "OpenAI GPT3.5",
+    context: "repo/filepath.py",
+    sessionId: "123456",
+    active: "Active",
+    topics: [
       {
-        id:1,
-        title:'Data analysis',
-        img:pie,
-      }
+        id: 1,
+        title: "Data analysis",
+        img: pie,
+      },
     ],
 
     violation: "6",
@@ -314,26 +303,26 @@ export const MESSAGE_DATA = [
   },
   {
     id: 7,
-    flag:flag,
+    flag: flag,
     title: "Script analysis",
-    mails:"ben@email.com",
-    lastUpdate:"Aug 12, 2023 10:46 AM",
-    interface:"Apex Chat",
-    engineType:"OpenAI GPT4",
-    context:"repo/filepath.py",
-    sessionId:"123456",
-    active:"Active",
-    topics:[
+    mails: "ben@email.com",
+    lastUpdate: "Aug 12, 2023 10:46 AM",
+    interface: "Apex Chat",
+    engineType: "OpenAI GPT4",
+    context: "repo/filepath.py",
+    sessionId: "123456",
+    active: "Active",
+    topics: [
       {
-        id:1,
-        title:'Code',
-        img:code,
+        id: 1,
+        title: "Code",
+        img: code,
       },
       {
-        id:2,
-        title:'Security',
-        img:shield
-      }
+        id: 2,
+        title: "Security",
+        img: shield,
+      },
     ],
 
     violation: "6",
@@ -341,26 +330,26 @@ export const MESSAGE_DATA = [
   },
   {
     id: 8,
-    flag:flag,
+    flag: flag,
     title: "Insights from file",
-    mails:"rita@email.com",
-    lastUpdate:"Aug 12, 2023 10:46 AM",
-    interface:"365 Copilot",
-    engineType:"365 Copilot",
-    context:"repo/filepath.py",
-    sessionId:"123456",
-    active:"Active",
-    topics:[
+    mails: "rita@email.com",
+    lastUpdate: "Aug 12, 2023 10:46 AM",
+    interface: "365 Copilot",
+    engineType: "365 Copilot",
+    context: "repo/filepath.py",
+    sessionId: "123456",
+    active: "Active",
+    topics: [
       {
-        id:1,
-        title:'Contracts & Agreements',
-        img:scrollText,
+        id: 1,
+        title: "Contracts & Agreements",
+        img: scrollText,
       },
       {
-        id:2,
-        title:'Legal',
-        img:scale
-      }
+        id: 2,
+        title: "Legal",
+        img: scale,
+      },
     ],
 
     violation: "6",
@@ -368,26 +357,26 @@ export const MESSAGE_DATA = [
   },
   {
     id: 9,
-    flag:flag,
+    flag: flag,
     title: "What does this API call do",
-    mails:"sarah@email.com",
-    lastUpdate:"Aug 12, 2023 10:46 AM",
-    interface:"Apex Chat",
-    engineType:"Claude",
-    context:"repo/filepath.py",
-    sessionId:"123456",
-    active:"Active",
-    topics:[
+    mails: "sarah@email.com",
+    lastUpdate: "Aug 12, 2023 10:46 AM",
+    interface: "Apex Chat",
+    engineType: "Claude",
+    context: "repo/filepath.py",
+    sessionId: "123456",
+    active: "Active",
+    topics: [
       {
-        id:1,
-        title:'Code',
-        img:code,
+        id: 1,
+        title: "Code",
+        img: code,
       },
       {
-        id:2,
-        title:'Security',
-        img:shield
-      }
+        id: 2,
+        title: "Security",
+        img: shield,
+      },
     ],
 
     violation: "6",
@@ -395,26 +384,26 @@ export const MESSAGE_DATA = [
   },
   {
     id: 10,
-    flag:flag,
+    flag: flag,
     title: "Write a contract",
-    mails:"li@email.com",
-    lastUpdate:"Aug 12, 2023 10:46 AM",
-    interface:"Glean",
-    engineType:"Glean",
-    context:"repo/filepath.py",
-    sessionId:"123456",
-    active:"Active",
-    topics:[
+    mails: "li@email.com",
+    lastUpdate: "Aug 12, 2023 10:46 AM",
+    interface: "Glean",
+    engineType: "Glean",
+    context: "repo/filepath.py",
+    sessionId: "123456",
+    active: "Active",
+    topics: [
       {
-        id:1,
-        title:'Code',
-        img:code,
+        id: 1,
+        title: "Code",
+        img: code,
       },
       {
-        id:2,
-        title:'Finance',
-        img:coin
-      }
+        id: 2,
+        title: "Finance",
+        img: coin,
+      },
     ],
 
     violation: "6",
@@ -422,31 +411,31 @@ export const MESSAGE_DATA = [
   },
   {
     id: 11,
-    
+
     title: "Script analysis",
-    mails:"ben@email.com",
-    lastUpdate:"Aug 12, 2023 10:46 AM",
-    interface:"Apex Chat",
-    engineType:"OpenAI GPT4",
-    context:"repo/filepath.py",
-    sessionId:"123456",
-    active:"Active",
-    topics:[
+    mails: "ben@email.com",
+    lastUpdate: "Aug 12, 2023 10:46 AM",
+    interface: "Apex Chat",
+    engineType: "OpenAI GPT4",
+    context: "repo/filepath.py",
+    sessionId: "123456",
+    active: "Active",
+    topics: [
       {
-        id:1,
-        title:'Code',
-        img:code,
+        id: 1,
+        title: "Code",
+        img: code,
       },
       {
-        id:2,
-        title:'Finance',
-        img:coin
+        id: 2,
+        title: "Finance",
+        img: coin,
       },
       {
-        id:3,
-        title:'Contracts & Agreements',
-        img:scrollText
-      }
+        id: 3,
+        title: "Contracts & Agreements",
+        img: scrollText,
+      },
     ],
 
     violation: "6",
@@ -454,26 +443,26 @@ export const MESSAGE_DATA = [
   },
   {
     id: 12,
-    flag:flag,
+    flag: flag,
     title: "Script analysis",
-    mails:"ben@email.com",
-    lastUpdate:"Aug 12, 2023 10:46 AM",
-    interface:"Apex Chat",
-    engineType:"OpenAI GPT4",
-    context:"repo/filepath.py",
-    sessionId:"123456",
-    active:"Active",
-    topics:[
+    mails: "ben@email.com",
+    lastUpdate: "Aug 12, 2023 10:46 AM",
+    interface: "Apex Chat",
+    engineType: "OpenAI GPT4",
+    context: "repo/filepath.py",
+    sessionId: "123456",
+    active: "Active",
+    topics: [
       {
-        id:1,
-        title:'Code',
-        img:code,
+        id: 1,
+        title: "Code",
+        img: code,
       },
       {
-        id:2,
-        title:'Finance',
-        img:coin
-      }
+        id: 2,
+        title: "Finance",
+        img: coin,
+      },
     ],
 
     violation: "6",
@@ -493,8 +482,7 @@ export const SENTIMENT = [
   {
     id: 3,
     label: "Negative",
-  }
-
+  },
 ];
 
 export const SEVERITY = [
@@ -537,8 +525,7 @@ export const SEVERITY = [
   {
     id: 11,
     label: "Customer files",
-  }
-
+  },
 ];
 
 export const EQUALS = [
@@ -560,41 +547,38 @@ export const EQUALS = [
   },
 ];
 
-
-
 export const MESSAGES_GRAPH = [
   {
-    id:1,
-    title:"John White",
-    value:'9.8K',
-    chart:USER_1,
+    id: 1,
+    title: "John White",
+    value: "9.8K",
+    chart: USER_1,
   },
   {
-    id:2,
-    title:"George Mayer",
-    value:'4K',
-    chart:USER_2,
+    id: 2,
+    title: "George Mayer",
+    value: "4K",
+    chart: USER_2,
   },
   {
-    id:3,
-    title:"Cindy Sherman",
-    value:'3.7K',
-    chart:USER_1,
+    id: 3,
+    title: "Cindy Sherman",
+    value: "3.7K",
+    chart: USER_1,
   },
   {
-    id:4,
-    title:"Barbara Kruger",
-    value:'3.6K',
-    chart:USER_2,
+    id: 4,
+    title: "Barbara Kruger",
+    value: "3.6K",
+    chart: USER_2,
   },
   {
-    id:5,
-    title:"Michael Black",
-    value:'3.1K',
-    chart:USER_3,
-  }
-]
-
+    id: 5,
+    title: "Michael Black",
+    value: "3.1K",
+    chart: USER_3,
+  },
+];
 
 export const options = {
   tooltip: {
@@ -617,7 +601,7 @@ export const options = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [50, 0], 
+            offset: [50, 0],
           },
         },
         {
@@ -630,7 +614,7 @@ export const options = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [50, 0], 
+            offset: [50, 0],
           },
         },
         {
@@ -643,7 +627,7 @@ export const options = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [50, 0], 
+            offset: [50, 0],
           },
         },
         {
@@ -656,7 +640,7 @@ export const options = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
         {
@@ -669,7 +653,7 @@ export const options = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
         {
@@ -682,7 +666,7 @@ export const options = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
         {
@@ -695,7 +679,7 @@ export const options = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
         {
@@ -708,7 +692,7 @@ export const options = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
         {
@@ -721,7 +705,7 @@ export const options = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
       ],
@@ -731,9 +715,34 @@ export const options = {
           target: "Strategy 1,000",
           value: 1000,
           lineStyle: {
-            color: "#039855",
-            offset: [100, -70],
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -741,8 +750,34 @@ export const options = {
           target: "Legal 1,000",
           value: 1000,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -750,8 +785,34 @@ export const options = {
           target: "Revenue 1,000",
           value: 1000,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -759,8 +820,34 @@ export const options = {
           target: "Revenue 1,000",
           value: 1000,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -768,8 +855,34 @@ export const options = {
           target: "Healthcare 1,000",
           value: 1000,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -777,8 +890,34 @@ export const options = {
           target: "Positive 1,650",
           value: 1000,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#A6F4C5" },
+                { offset: 1, color: "#30bf7cbf" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#A6F4C5" },
+                    { offset: 1, color: "#039855" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -786,17 +925,69 @@ export const options = {
           target: "Positive 1,650",
           value: 1000,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
-          },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#A6F4C5" },
+                { offset: 1, color: "#30bf7cbf" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#A6F4C5" },
+                    { offset: 1, color: "#039855" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
+          }
         },
         {
           source: "Legal 1,000",
           target: "Negative 350",
           value: 1000,
           lineStyle: {
-            color: "#A6F4C5",
-            emphasis: { lineStyle: { color: "#A6F4C5" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#a6f4c5c7" },
+                { offset: 1, color: "#6ce9a678" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#6ce9a678" },
+                    { offset: 1, color: "#a6f4c5c7" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -804,17 +995,69 @@ export const options = {
           target: "Positive 1,650",
           value: 650,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
-          },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#A6F4C5" },
+                { offset: 1, color: "#30bf7cbf" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#A6F4C5" },
+                    { offset: 1, color: "#039855" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
+          }
         },
         {
           source: "Healthcare 1,000",
           target: "Negative 350",
           value: 350,
           lineStyle: {
-            color: "#A6F4C5",
-            emphasis: { lineStyle: { color: "#A6F4C5" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#a6f4c5c7" },
+                { offset: 1, color: "#6ce9a678" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#6ce9a678" },
+                    { offset: 1, color: "#a6f4c5c7" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
       ],
@@ -862,7 +1105,7 @@ export const HIRING = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [70, 0], 
+            offset: [70, 0],
           },
         },
         {
@@ -875,7 +1118,7 @@ export const HIRING = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [70, 0], 
+            offset: [70, 0],
           },
         },
         {
@@ -888,7 +1131,7 @@ export const HIRING = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
         {
@@ -901,7 +1144,7 @@ export const HIRING = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
         {
@@ -914,7 +1157,7 @@ export const HIRING = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
         {
@@ -927,7 +1170,7 @@ export const HIRING = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
       ],
@@ -937,26 +1180,107 @@ export const HIRING = {
           target: "R&D 1,000",
           value: 950,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
+
         },
         {
           source: "Total prompts 2,000",
           target: "Marketing 1,000",
           value: 1100,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
+
         },
         {
           source: "R&D 1,000",
           target: "Hiring 1,000",
           value: 400,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#6ce9a678" },
+                { offset: 1, color: "#a6f4c5c7" },
+                
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#a6f4c5c7" },
+                    { offset: 1, color: "#6ce9a678" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -964,45 +1288,182 @@ export const HIRING = {
           target: "Hiring 1,000",
           value: 700,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
+
         },
         {
           source: "Hiring 1,000",
           target: "Negative 350",
           value: 350,
           lineStyle: {
-            color: "#A6F4C5",
-            emphasis: { lineStyle: { color: "#A6F4C5" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#6ce9a678" },
+                { offset: 1, color: "#a6f4c5c7" },
+                
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#a6f4c5c7" },
+                    { offset: 1, color: "#6ce9a678" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
+
+
         },
         {
           source: "Hiring 1,000",
           target: "Negative 350",
           value: 350,
           lineStyle: {
-            color: "#05603A",
-            emphasis: { lineStyle: { color: "#05603A" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#6ce9a678" },
+                { offset: 1, color: "#a6f4c5c7" },
+                
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#a6f4c5c7" },
+                    { offset: 1, color: "#6ce9a678" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
+
         },
         {
           source: "Hiring 1,000",
           target: "Positive 1,650",
           value: 1000,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#A6F4C5" },
+                { offset: 1, color: "#30bf7cbf" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#A6F4C5" },
+                    { offset: 1, color: "#039855" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
+
         },
-        
+
         {
           source: "Marketing 1,000",
           target: "Negative 350",
           value: 400,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#037c49a1" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#037c49a1" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1010,17 +1471,71 @@ export const HIRING = {
           target: "Positive 1,650",
           value: 400,
           lineStyle: {
-            color: "#76cb98",
-            emphasis: { lineStyle: { color: "#76cb98" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#0398558c" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
+
+
         },
         {
           source: "R&D 1,000",
           target: "Hiring 1,000",
           value: 150,
           lineStyle: {
-            color: "#76cb98",
-            emphasis: { lineStyle: { color: "#76cb98" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#037c49a1" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#037c49a1" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
       ],
@@ -1065,11 +1580,11 @@ export const MARKETING = {
           label: {
             show: true,
             backgroundColor: "#fff",
-            opcaity:0,
+            opcaity: 0,
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [70, 0], 
+            offset: [70, 0],
           },
         },
         {
@@ -1082,7 +1597,7 @@ export const MARKETING = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
         {
@@ -1095,7 +1610,7 @@ export const MARKETING = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
         {
@@ -1108,7 +1623,7 @@ export const MARKETING = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
         {
@@ -1121,7 +1636,7 @@ export const MARKETING = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
         {
@@ -1134,7 +1649,7 @@ export const MARKETING = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
         {
@@ -1147,7 +1662,7 @@ export const MARKETING = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
         {
@@ -1160,7 +1675,7 @@ export const MARKETING = {
             borderRadius: 6,
             padding: 6,
             position: "insideRight",
-            offset: [20, 0], 
+            offset: [20, 0],
           },
         },
       ],
@@ -1168,19 +1683,71 @@ export const MARKETING = {
         {
           source: "Total prompts 2,000",
           target: "R&D 1,000",
-          value: 1500,
+          value: 1800,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
           source: "Total prompts 2,000",
           target: "Marketing 1,000",
-          value: 1500,
+          value: 1800,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1188,8 +1755,34 @@ export const MARKETING = {
           target: "Code 1,000",
           value: 1000,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1197,8 +1790,34 @@ export const MARKETING = {
           target: "Email 400",
           value: 400,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1206,8 +1825,34 @@ export const MARKETING = {
           target: "Legal 600",
           value: 600,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1215,8 +1860,34 @@ export const MARKETING = {
           target: "Code 1,000",
           value: 1000,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#a6f4c5c7" },
+                { offset: 1, color: "#6ce9a678" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#6ce9a678" },
+                    { offset: 1, color: "#a6f4c5c7" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1224,8 +1895,34 @@ export const MARKETING = {
           target: "Email 400",
           value: 400,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1233,8 +1930,34 @@ export const MARKETING = {
           target: "Legal 600",
           value: 600,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1242,8 +1965,34 @@ export const MARKETING = {
           target: "Positive 1650",
           value: 1650,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1251,8 +2000,34 @@ export const MARKETING = {
           target: "Negative 350",
           value: 350,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#a6f4c5c7" },
+                { offset: 1, color: "#6ce9a678" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#6ce9a678" },
+                    { offset: 1, color: "#a6f4c5c7" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1260,8 +2035,34 @@ export const MARKETING = {
           target: "Positive 1,650",
           value: 1250,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1269,8 +2070,34 @@ export const MARKETING = {
           target: "Negative 350",
           value: 350,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1278,8 +2105,34 @@ export const MARKETING = {
           target: "Positive 1,650",
           value: 1250,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1287,8 +2140,34 @@ export const MARKETING = {
           target: "Negative 350",
           value: 350,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1296,8 +2175,34 @@ export const MARKETING = {
           target: "Positive 1,650",
           value: 1000,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#30bf7cbf" },
+                { offset: 1, color: "#A6F4C5" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#039855" },
+                    { offset: 1, color: "#A6F4C5" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
         {
@@ -1305,8 +2210,34 @@ export const MARKETING = {
           target: "Negative 350",
           value: 700,
           lineStyle: {
-            color: "#039855",
-            emphasis: { lineStyle: { color: "#039855" } },
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: "#a6f4c5c7" },
+                { offset: 1, color: "#6ce9a678" },
+              ],
+            },
+            opacity: 1,
+            emphasis: {
+              lineStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [
+                    { offset: 0, color: "#6ce9a678" },
+                    { offset: 1, color: "#a6f4c5c7" },
+                  ],
+                },
+                opacity: 1,
+              },
+            },
           },
         },
       ],
