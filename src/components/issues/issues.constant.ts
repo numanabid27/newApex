@@ -4414,7 +4414,7 @@ us boost our stock price ahead of the next earnings call.
         chat: "Generating Market Speculations",
         role: "User",
         voilationType: "Code",
-        severity: "Critica",
+        severity: "Critical",
         userEmail: "jane.smith@example.com",
         sessionId: "456fab19-bb2c-6789-gh34-5678ijkl9012",
         model: "GPT 3.5 Turbo",

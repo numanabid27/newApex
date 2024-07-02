@@ -339,6 +339,38 @@ function DashboardDrawer({ modelData }: any) {
                   </Grid>
                 </Grid>
               </>
+            ) : modelData?.title?.includes(
+                "uploaded 43 files, including 3 related to HR and candidates data, and 36 pieces of PII were redacted"
+              ) ? (
+              <>
+                <Grid container alignItems="center" sx={styles.evidance_grid}>
+                  <Grid xs={12} mb={4}>
+                    File
+                  </Grid>
+                  {modelData.files.map((item: any, i: number) => {
+                    return (
+                      <Grid
+                        xs={12}
+                        key={i.toString()}
+                        display="flex"
+                        alignItems="center"
+                        gap="10px"
+                        mb={3}
+                      >
+                        <Image
+                          src={item.fileImg}
+                          alt=""
+                          width={25}
+                          height={25}
+                        />
+                        <Typography sx={{ color: "#374151", fontSize: "14px" }}>
+                          {item.file}
+                        </Typography>
+                      </Grid>
+                    );
+                  })}
+                </Grid>
+              </>
             ) : (
               <>
                 <Grid container alignItems="center" sx={styles.evidance_grid}>
@@ -358,6 +390,19 @@ function DashboardDrawer({ modelData }: any) {
                   </Grid>
                 </Grid>
               </>
+            )}
+
+            {modelData?.title?.includes(
+              "uploaded 43 files, including 3 related to HR and candidates data, and 36 pieces of PII were redacted"
+            ) && (
+              <Grid container alignItems="center" sx={styles.evidance_grid}>
+                <Grid xs={1.5}>Email</Grid>
+                <Grid xs={9} display="flex" gap="10px">
+                  {modelData?.email?.map((item: any, i: number) => {
+                    return <Chip label={item} key={i.toString()} />;
+                  })}
+                </Grid>
+              </Grid>
             )}
             <Grid container alignItems="center" sx={styles.evidance_grid}>
               <>

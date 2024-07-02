@@ -179,7 +179,177 @@ const FILES = {
     },
   ],
 };
-
+const ANNA_SNITH = {
+  tooltip: {
+    trigger: 'item',
+    formatter: function () {
+      return '';
+    }
+  },
+  animationDurationUpdate: 1500,
+  animationEasingUpdate: "quinticInOut",
+  series: [
+    {
+      type: "graph",
+      layout: "none",
+      symbolSize: 50,
+      roam: true,
+      zoom: 0.6,
+      label: {
+        show: true,
+        position: "bottom",
+        formatter: "{b}",
+      },
+      edgeSymbol: ["circle", "arrow"],
+      edgeSymbolSize: [4, 10],
+      edgeLabel: {
+        fontSize: 20,
+      },
+      data: [
+        {
+          name: "Node 1",
+          x: 170,
+          y: 80,
+          symbol: `image://image/user.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|Anna Smith}\n{additionalHeading|User}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 2",
+          x: 460,
+          y: 80,
+          symbol: `image://image/updated_file.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            offset: [0, -7],
+            formatter: "{htmlContent|Multiple Files}\n{additionalHeading|Files}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [7, 0, 0, 0],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 0, 3, 0],
+                backgroundColor: "#fff",
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 3",
+          x: 720,
+          y: 80,
+          symbol: `image://image/public-claud.svg`,
+          symbolSize: [75, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter:
+              "{htmlContent|Claude}\n{additionalHeading|Engine}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 4",
+          x: 460,
+          y: 320,
+          symbol: `image://image/secrete.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter:
+              "{htmlContent|Potential Data Poisoning}\n{additionalHeading|Violation}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+      ],
+      links: [
+        {
+          source: "Node 1",
+          target: "Node 2",
+        },
+        {
+          source: "Node 2",
+          target: "Node 3",
+        },
+        {
+          source: "Node 2",
+          target: "Node 4",
+        },
+      ],
+      lineStyle: {
+        opacity: 0.9,
+        width: 2,
+        curveness: 0,
+      },
+    },
+  ],
+};
 const SUSPECIOUS_PROMPT = {
   tooltip: {
     trigger: "item",
@@ -490,6 +660,229 @@ const GITHUB_OPTIONS = {
         {
           source: "Node 3",
           target: "Node 4",
+        },
+      ],
+      lineStyle: {
+        opacity: 0.9,
+        width: 2,
+        curveness: 0,
+      },
+    },
+  ],
+};
+const VOILATIONS = {
+  tooltip: {
+    trigger: 'item',
+    formatter: function () {
+      return '';
+    }
+  },
+  animationDurationUpdate: 1500,
+  animationEasingUpdate: "quinticInOut",
+  series: [
+    {
+      type: "graph",
+      layout: "none",
+      symbolSize: 50,
+      roam: true,
+      zoom: 0.6,
+      label: {
+        show: true,
+        position: "bottom",
+        formatter: "{b}",
+      },
+      edgeSymbol: ["circle", "arrow"],
+      edgeSymbolSize: [4, 10],
+      edgeLabel: {
+        fontSize: 20,
+      },
+      data: [
+        {
+          name: "Node 1",
+          x: 170,
+          y: 80,
+          symbol: `image://image/user.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|Multiple users}\n{additionalHeading|User}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+              },
+            },
+          },
+        },
+        {
+          name: "Node 2",
+          x: 460,
+          y: 80,
+          symbol: `image://image/text.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            offset: [0, -7],
+            formatter: "{htmlContent|Text}\n{additionalHeading|Content}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [7, 0, 0, 0],
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 0, 3, 0],
+                backgroundColor: "#fff",
+              },
+            },
+          },
+        },
+        {
+          name: "Node 3",
+          x: 720,
+          y: 80,
+          symbol: `image://image/gpt-public.svg`,
+          symbolSize: [77, 85],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|OpenAI GPT 4o}\n{additionalHeading|Engine}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+              },
+            },
+          },
+        },
+        {
+          name: "Node 4",
+          x: 460,
+          y: 320,
+          symbol: `image://image/secrete.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|AI Ethics policy}\n{additionalHeading|Violation}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+              },
+            },
+          },
+        },
+        {
+          name: "Node 5",
+          x: 320,
+          y: 500,
+          symbol: `image://image/secrete.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|Competitors}\n{additionalHeading|Banned topics}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+              },
+            },
+          },
+        },
+        {
+          name: "Node 6",
+          x: 600,
+          y: 500,
+          symbol: `image://image/secrete.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|Stock manipulation}\n{additionalHeading|Banned topics}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+              },
+            },
+          },
+        },
+      ],
+      links: [
+        {
+          source: "Node 1",
+          target: "Node 2",
+        },
+        {
+          source: "Node 2",
+          target: "Node 3",
+        },
+        {
+          source: "Node 2",
+          target: "Node 4",
+        },
+        {
+          source: "Node 4",
+          target: "Node 5",
+        },
+        {
+          source: "Node 4",
+          target: "Node 6",
         },
       ],
       lineStyle: {
@@ -861,7 +1254,7 @@ uploadSensitiveFiles('alex.kim@company.com', ['Customer_Data_List.xlsx', 'Employ
         categories: ["PII", "PCI", " PHI", "Jailbreak"],
       },
     ],
-    graph: FILES,
+    graph: ANNA_SNITH,
     issues: [
       "High",
       "Sensitive Data File Uploads",
@@ -878,23 +1271,23 @@ uploadSensitiveFiles('alex.kim@company.com', ['Customer_Data_List.xlsx', 'Employ
       "Hadar Arnon",
       "Resolved",
     ],
-    files: [
+    files:[
       {
-        id: 1,
-        file: "Customer_Data_List.xlsx",
-        fileImg: world,
+        id:1,
+        file:'Customer_Data_List.xlsx',
+        fileImg:world
       },
       {
-        id: 2,
-        file: "Employee_Salary_Info.pdf",
-        fileImg: pdf,
+        id:2,
+        file:'Employee_Salary_Info.pdf',
+        fileImg:pdf
       },
       {
-        id: 3,
-        file: "Client_Contracts.docx",
-        fileImg: excel,
-      },
-    ],
+        id:3,
+        file:'Client_Contracts.docx',
+        fileImg:excel
+      }
+    ]
   },
   {
     id: 2,
@@ -1424,7 +1817,7 @@ us boost our stock price ahead of the next earnings call.
         chat: "Generating Market Speculations",
         role: "User",
         voilationType: "Code",
-        severity: "Critica",
+        severity: "Critical",
         userEmail: "jane.smith@example.com",
         sessionId: "456fab19-bb2c-6789-gh34-5678ijkl9012",
         model: "GPT 3.5 Turbo",
@@ -1507,9 +1900,9 @@ us boost our stock price ahead of the next earnings call.
         id: 2,
         user: "Engine",
         image: gpt,
-        name: "Claude",
-        messages: ["95", "+20"],
-        sessions: ["28", "+18%"],
+        name: "Gpt-4o",
+        messages: ["8.4K", "+13"],
+        sessions: ["291", "-9%"],
         vilations: [
           {
             id: 1,
@@ -1535,7 +1928,7 @@ us boost our stock price ahead of the next earnings call.
         categories: ["AI ethics", "Banned topics", "PII"],
       },
     ],
-    graph: FILES,
+    graph: VOILATIONS,
     issues: [
       "High",
       "Sensitive Data File Uploads",
