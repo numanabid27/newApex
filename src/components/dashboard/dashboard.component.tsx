@@ -1,6 +1,5 @@
 "use client";
 
-import { CustomLineChart } from "@/common/components/custom-line-chart/custom-line-chart.component";
 import CustomTopIssues from "@/common/components/custom-top-issues/custom-top-issues.component";
 import {
   Box,
@@ -15,19 +14,14 @@ import SessionTimeUser from "./components/session-time-user/session-time-user.co
 import WelcomeAlert from "./components/welcome-alert/welcome-alert.component";
 import {
   ACTIVE_ENGINE_DATA,
-  ISSUES_PER_ENGINE_DATA,
-  ISSUES_BY_DEPARTMENT,
   USAGE_BY_DEPARTMENT,
   USAGE_BY_DEPARTMENT2,
   SENSITIVE_DATATYPE_CHART,
   SENSITIVE_DATATYPE_CHART2,
 } from "./dashboard.constant";
 import { DashboardStyles } from "./dashboard.style";
-import useDashboard from "./use-dashboard.hook";
-import { AllTopIssues } from "@/common/components/all-top-issues/all-top-issues.component";
 import PieChart from "../issues/components/pie-chart/pie-chart.component";
 import { SessionTimeStyle } from "./components/session-time-user/session-time-user.style";
-import { useEffect, useState } from "react";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { styles } from "@/common/styles/global.style";
@@ -36,20 +30,20 @@ import more from "@/common/assets/images/more_vert.svg";
 import TopIssues from "./components/top-issues/topIssues.component";
 import { ALL_TOP_ISSUES } from "@/common/components/all-top-issues/all-top-issues.constant";
 import CustomDialog from "@/common/components/custom-dialog/custom-dialog.component";
+import useDashboard from "./use-dashboard.hook";
 
 function Dashboard() {
-  const { welcomeAlert, setWelcomeAlert, openModal, setOpenModal } =
-    useDashboard();
-  const [session, setSession] = useState<any>("All Models");
-  const SessionHandler = (event: any) => {
-    setSession(event.target.value as string);
-  };
+  const {
+    welcomeAlert,
+    setWelcomeAlert,
+    openModal,
+    setOpenModal,
+    setIsModel,
+    session,
+    SessionHandler,
+    isModel,
+  } = useDashboard();
 
-  const [isModel, setIsModel] = useState("");
-  useEffect(() => {
-    console.log("isModel", isModel);
-  }, [isModel]);
-  
   return (
     <>
       <Grid sx={DashboardStyles.DashboardGrid}>

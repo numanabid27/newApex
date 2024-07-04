@@ -5,18 +5,12 @@ import { Box, Button, Chip, Grid, Typography } from "@mui/material";
 import { POLICIES_LISTENING } from "./policies.constant";
 import usePolicies from "./use-policies.hook";
 import { styles } from "./policy.style";
-import Link from "next/link";
-import { ButtonComponent } from "@/common/components/button/button";
-import restore from "@/common/assets/images/restore.svg";
-import importImg from "@/common/assets/images/import.svg";
-import exportImg from "@/common/assets/images/export.svg";
 import { CustomSwitch } from "@/common/components/custom-switch/custom-switch.component";
 import Image from "next/image";
 import policies from "@/common/assets/images/policies.svg";
 import CheckBoxComponent from "../create-policy/component/checkbox.component";
 import pencil from "@/common/assets/images/pencil.svg";
 import play from "@/common/assets/images/play-btn.svg";
-import Filters from "../session-explorer/components/filters/filter.component";
 import Severity from "../create-policy/component/severityLevel/severty.component";
 import downArrow from "@/common/assets/images/downs.svg";
 import { POLICIES_GPT } from "./components/model-data/components/model-data/modal-data.constants";
@@ -26,6 +20,7 @@ import { useState } from "react";
 import { POLICIES_CHECKBOX_FILTER } from "../create-policy/createPolicy.constant";
 import PolicyFilters from "../create-policy/component/filters";
 import useFilterPolicy from "../create-policy/use-createPolicies.hook";
+import Link from "next/link";
 
 function Policies() {
   const {
@@ -48,7 +43,6 @@ function Policies() {
     setDateRange,
     isStatus,
     setIsStatus,
-    
   } = useFilterPolicy();
   // for future purpose
   const updatePolicyType = (data: any, id: any) => {
@@ -88,18 +82,16 @@ function Policies() {
         startDate={startDate}
         endDate={endDate}
         setDateRange={setDateRange}
-       
         isStatus={isStatus}
         setIsStatus={setIsStatus}
-        
       />
 
-      {POLICIES_LISTENING.map((items: any, i: number) => {
+      {POLICIES_LISTENING.map((items: any) => {
         return (
           <Grid
             container
             sx={styles.polices_grid}
-            key={i.toString()}
+            key={items.id}
             onClick={() => {
               setOpenModal(true);
               setSelectedRow(items);
@@ -141,13 +133,14 @@ function Policies() {
               </Box>
             </Grid>
             <Grid sm={1.5} sx={styles.actionText}>
-              <Box
+              <Link
+                href={`policies/edit-policy?title=${encodeURIComponent(items.policyName.replace(/\s+/g, '-'))}`}
                 onClick={(e) => {
                   e.stopPropagation();
                 }}
               >
                 <Image src={pencil} alt="" width={18} height={18} />
-              </Box>
+              </Link>
               <Box
                 onClick={(e) => {
                   e.stopPropagation();

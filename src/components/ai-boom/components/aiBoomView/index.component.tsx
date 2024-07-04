@@ -202,13 +202,23 @@ function intAlea(mini, maxi) {
   const BrandWatermark = memo<Omit<FlexboxProps, 'children'>>(({ style, ...rest }) => {
   const { styles, theme } = useStyles();
     return (
+    `}</pre> 
+    <pre style={{
+      padding: "0px 0 0 19px",
+      background: "rgb(50 213 131 / 6%)",
+      color: "#32D583",
+      margin: "-27px 0px 0px",
+    }}>{`           
       <Flexbox
         align={'center'}
         flex={'none'}
         gap={4}
         horizontal
-        style={{ color: theme.colorTextDescription, fontSize: 12, ...style }}
-        {...rest}
+        style={{ color: theme.colorTextDescription, 
+    `}</pre>
+    <pre style={{margin:"-14px 0 0 0"}}>{`
+    fontSize: 12, ...style }}
+      {...rest}
         >
       <span>Powered by</span>
       <Link className={styles.logoLink} href={'https://lobehub.com'} target={'_blank'}>

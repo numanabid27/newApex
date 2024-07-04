@@ -345,7 +345,8 @@ function Row(props: any) {
   );
 }
 
-export default function CreatePolicy() {
+export default function CreatePolicy(id:any) {
+
   const {
     selectedRow,
     setSelectedRow,
@@ -362,7 +363,7 @@ export default function CreatePolicy() {
     tags,
     setTags,
   } = useFilterPolicy();
-  console.log("finalData CreatePolicy", finalData);
+
   return (
     <>
       <Box sx={style.createPolicy}>
