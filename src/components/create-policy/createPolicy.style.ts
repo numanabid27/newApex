@@ -85,7 +85,21 @@ export const style ={
     },
     nestedTableRow:{
         margin:"0 0 0 auto", 
-        maxWidth:"1598px"
+        maxWidth:"2096px",
+        "tr":{
+            "td":{
+                width:'unset'
+            },
+            "th":{
+                width:'19%'
+            }
+        },
+        "@media screen and (max-width:2000px)":{
+            maxWidth: "1629px"
+        },
+        "@media screen and (max-width:1440px)":{
+            maxWidth: "1116px"
+        }
     },
     save:{
         background:"#027947",

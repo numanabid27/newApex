@@ -7,6 +7,7 @@ export const styles = {
         textTransform:'capitalize',
         padding: "7px 14px",
         borderRadius: "8px",
+        minWidth:'100px',
         "&:hover":{
             background:"#027947",
             color:"#fff"
