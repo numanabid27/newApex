@@ -151,7 +151,7 @@ export const ModelData = ({
           <textarea
             placeholder={
               isGenerate
-                ? "Auto generating in progress. Click on Run Test"
+                ? "Jhon_doe@gmail.com is auto generating progress. Click on Run Test"
                 : "Write a prompt"
             }
             disabled={isGenerate ? true : false}

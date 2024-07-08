@@ -23,8 +23,8 @@ export default function PromptView() {
 
         <Box sx={styles.voilationBox}>
           <Typography variant="h4">
-            <span>2 Violations: </span>
-            PII, Credit Card
+            <span>1 Violations: </span>
+            PII (email)
           </Typography>
           <Box sx={styles.piBox}>
             <Typography variant="h2">PII</Typography>

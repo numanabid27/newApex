@@ -74,10 +74,10 @@ function Row(props: any) {
         </TableCell>
         <TableCell>
           {typeof Rows.action === "string" ? (
-            <Box display="flex" alignItems="center" gap="10px">
+            <Button sx={{gap:'10px', textTransform:"capitalize"}}>
               <Image src={bell} alt="" />
               <Typography sx={style.engineCell}>{Rows.action}</Typography>
-            </Box>
+            </Button>
           ) : (
             <Rows.action />
           )}
@@ -87,10 +87,10 @@ function Row(props: any) {
             <Box display="flex" gap="5px">
               {Rows.engines?.map((item: any, i: number) => {
                 return (
-                  <Box display="flex" gap="5px" key={i.toString()}>
+                  <Button sx={{gap:'5px', textTransform:"capitalize"}} key={i.toString()}>
                     <Image src={item.icon} alt="" />
                     <Typography sx={style.engineCell}>{item.text}</Typography>
-                  </Box>
+                  </Button>
                 );
               })}
             </Box>
@@ -100,7 +100,7 @@ function Row(props: any) {
         </TableCell>
         <TableCell>
           {typeof Rows.headerAssets === "string" ? (
-            <Box display="flex" alignItems="center" gap="10px">
+            <Button sx={{ gap:'10px', textTransform:"capitalize"}}>
               {/* {Rows.headerAssets === "File" ? (
                 <Image src={file} alt="" />
               ) : Rows.headerAssets === "Message" ? (
@@ -109,7 +109,7 @@ function Row(props: any) {
                 ""
               )} */}
               <Typography sx={style.engineCell}>{Rows.headerAssets}</Typography>
-            </Box>
+            </Button>
           ) : (
             <Rows.headerAssets />
           )}
@@ -119,13 +119,7 @@ function Row(props: any) {
             <Box display="flex" gap="5px">
               {Rows.integration.map((item: any, i: number) => {
                 return (
-                  <Typography
-                    key={i.toString()}
-                    fontSize="12px"
-                    sx={style.integration}
-                  >
-                    {item}
-                  </Typography>
+                  <Chip label={item} variant="outlined" key={i.toString()} sx={style.integration} />
                 );
               })}
             </Box>
@@ -271,13 +265,7 @@ function Row(props: any) {
                             {historyRow.integration.map(
                               (item: any, i: number) => {
                                 return (
-                                  <Typography
-                                    key={i.toString()}
-                                    fontSize="12px"
-                                    sx={style.integration}
-                                  >
-                                    {item}
-                                  </Typography>
+                                  <Chip label={item} variant="outlined" key={i.toString()} sx={style.integration} />
                                 );
                               }
                             )}
@@ -440,7 +428,7 @@ export default function CreatePolicy(id:any) {
                   id={item.id}
                   title={item.value}
                   component={
-                    <TableContainer component={Paper}>
+                    <TableContainer component={Paper} className="scrollStyle">
                       <Table aria-label="collapsible table">
                         {item.value === "Responsible AI usage" ? (
                           <TableHead>
@@ -503,15 +491,7 @@ export default function CreatePolicy(id:any) {
             );
           })}
         </Box>
-        <Box sx={style.desc}>
-          <Typography variant="h6">
-            This is the description of the policy lorem ipsum dolor sit amet
-            consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-            labore et This is the description of the policy lorem ipsum dolor
-            sit amet consectetur adipiscing elit sed do eiusmod tempor
-            incididunt ut labore et
-          </Typography>
-        </Box>
+        
         <Button sx={style.save}>Save</Button>
       </Box>
     </>

@@ -228,10 +228,10 @@ function Policies() {
               </Box>
 
               <Box sx={styles.voilationBox}>
-                <Typography variant="h4">
-                  <span>2 Violations: </span>
-                  PII, Credit Card
-                </Typography>
+              <Typography variant="h4">
+                <span>1 Violations: </span>
+                PII (email)
+              </Typography>
                 <Box sx={styles.piBox}>
                   <Typography variant="h2">PII</Typography>
                   <Typography color="#374151" pt={2}>

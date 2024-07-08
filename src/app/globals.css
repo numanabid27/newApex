@@ -648,6 +648,17 @@ body {
   margin-bottom: 0px !important;
 }
 
+.scrollStyle::-webkit-scrollbar {
+  width: 2px;
+  height: 10px;
+}
+.scrollStyle::-webkit-scrollbar-track {
+  background: #fff; 
+}
+.scrollStyle::-webkit-scrollbar-thumb {
+  background: #8888889f; 
+}
+
 @media screen and (min-width: 1600px) {
   .sessionEchart .echarts-for-react {
     width: 102%;

@@ -143,7 +143,9 @@ export const style ={
     },
     integration:{
         border:'1px solid #D5D9EB',
-        padding: "2px 9px",
-        borderRadius: "14px",
+        padding: "0px 1px",
+        borderRadius: "28px",
+        fontSize:"12px",
+        height:'26px'
     }
 }
