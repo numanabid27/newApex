@@ -120,9 +120,9 @@ export const topStyles = {
         height: "16px"
       },
     },
-    "@media screen and (max-width:1600px)" : {
+    "@media screen and (max-width:1800px)" : {
       fontSize:"12px !important",
-      padding : "0px 4px",
+      padding : "0px 10px !important",
     },
   },
   countRow : {
