@@ -175,14 +175,14 @@ export const AiBox = ({
 }: any) => {
   return (
     <Grid container gap="10px" mt={4} justifyContent="space-between">
-      <Grid xs={12} lg={7.5}>
+      <Grid item xs={12} lg={7.5}>
         <Folder
           data={nestTableData}
           handleClick={handleClick}
           isColor={isColor}
         />
       </Grid>
-      <Grid xs={12} lg={4.3}>
+      <Grid item xs={12} lg={4.3}>
         {isLoading ? (
           <Image
             src={loader}
@@ -223,14 +223,14 @@ export const GitHub = ({
 }: any) => {
   return (
     <Grid container gap="10px" mt={4} justifyContent="space-between">
-      <Grid xs={12} lg={7.5}>
+      <Grid item xs={12} lg={7.5}>
         <GithubFolder
           data={nestTableData}
           handleClick={handleClick}
           isColor={isColor}
         />
       </Grid>
-      <Grid xs={12} lg={4.3}>
+      <Grid item xs={12} lg={4.3}>
         {isLoading ? (
           <Image
             src={loader}

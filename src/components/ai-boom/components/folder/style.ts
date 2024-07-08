@@ -6,11 +6,17 @@ export const styles = {
     },
     cellData : {
         color:"#374151",
-        fontSize:'14px'
+        fontSize:'14px',
+        "@media screen and (max-width:767px)":{
+            fontSize:"12px",
+        }
     },
     cellCommit:{
         color:"#667085",
-        fontSize:'14px'
+        fontSize:'14px',
+        "@media screen and (max-width:767px)":{
+            fontSize:"12px",
+        }
     },
     tableContainer:{
         border: "1px solid #EAECF0",

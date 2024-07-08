@@ -42,6 +42,9 @@ export const styles = {
         },
         "@media screen and (max-width:1600px)":{
             padding: "21.5px 30px",
+        },
+        "@media screen and (max-width:767px)":{
+            padding: "20px 13px",
         }
     },
     textGrid:{

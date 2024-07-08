@@ -369,7 +369,7 @@ export default function CreatePolicy(id:any) {
       <Box sx={style.createPolicy}>
         {/* right search bar and left side filters */}
         <Grid container justifyContent="space-between">
-          <Grid xs={8}>
+          <Grid sm={8} xs={11.7}>
             <PolicyFilters
               users={false}
               policies={true}
@@ -386,7 +386,7 @@ export default function CreatePolicy(id:any) {
               tags={tags}
             />
           </Grid>
-          <Grid xs={3.5}>
+          <Grid sm={3.5} xs={12}>
             <Paper
               component="form"
               sx={{
@@ -394,6 +394,7 @@ export default function CreatePolicy(id:any) {
                 border: "1px solid #CFD4DC",
                 boxShadow: "0px 1px 2px 0px #1018280D",
                 borderRadius: "8px",
+                display:{ sm:"block", xs:"none" }
               }}
             >
               <IconButton sx={{ p: "10px" }} aria-label="menu">
@@ -413,7 +414,8 @@ export default function CreatePolicy(id:any) {
             sx={{
               marginLeft: "auto",
               display: "flex",
-              justifyContent: "flex-end",
+              justifyContent: {sm:'flex-end', xs:'center'},
+              flexWrap:{sm:'unset', xs:'wrap'}
             }}
           >
             {POLICIES_CHECKBOX_FILTER?.map((item: any, i: number) => {

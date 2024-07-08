@@ -43,80 +43,77 @@ export const File = ({
         <Box>
           {isDetail?.map((item: any, i: number) => {
             return (
-              <>
+              <Grid
+                container
+                justifyContent="space-between"
+                sx={styles.grid}
+                key={i.toString()}
+              >
                 <Grid
-                  container
-                  justifyContent="space-between"
-                  sx={styles.grid}
-                  key={i.toString()}
+                  xs={6}
+                  sx={styles.gridInner}
+                  className="gridInner"
+                  onMouseEnter={() => {
+                    setIsClicked(item.id);
+                    setHoveredIndex(!hoveredIndex);
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredIndex(false);
+                  }}
+                  onClick={() => {
+                    if (item.fileName.endsWith(".py")) {
+                      let finalData: any = {
+                        file: item,
+                        mainData: selectedFileData,
+                      };
+                      localStorage.setItem("code", JSON.stringify(finalData));
+                      // dispatch(handleAiBoomData(finalData));
+                      router.push(`ai-boom/code-view`);
+                    }
+                  }}
                 >
-                  <Grid
-                    xs={6}
-                    sx={styles.gridInner}
-                    className="gridInner"
-                    onMouseEnter={() => {
-                      setIsClicked(item.id);
-                      setHoveredIndex(!hoveredIndex);
-                    }}
-                    onMouseLeave={() => {
-                      setHoveredIndex(false);
-                    }}
-                    
-                    onClick={() => {
-                      if(item.fileName.endsWith('.py')){
-                        let finalData: any = {
-                          file: item,
-                          mainData: selectedFileData,
-                        };
-                        localStorage.setItem("code", JSON.stringify(finalData));
-                        // dispatch(handleAiBoomData(finalData));
-                        router.push(`ai-boom/code-view`);
-                      }
-                    }}
-                  >
-                    <Box sx={styles.tableCell}>
-                      <Image src={draft} width={20} height={20} alt="" />
-                      <Typography sx={styles.cellData}>
-                        {item.fileName}
-                      </Typography>
-                    </Box>
-                    <Box>
-                      {isClicked === item.id && (
-                        <>
-                          <Py
-                            items={item.fileName}
-                            handleClick={() => setHoveredIndex(!hoveredIndex)}
-                            hoveredIndex={hoveredIndex}
-                          />
-                        </>
-                      )}
-                    </Box>
-                  </Grid>
-                  <Grid xs={3} sx={styles.gridInner}>
-                    <Box sx={styles.tableCell}>
-                      {item.fileVoilation[0] >= 15 && (
-                        <Image
-                          src={warning}
-                          width={20}
-                          height={20}
-                          alt="warning"
-                        />
-                      )}
-                      <Typography sx={{ ...styles.cellData, fontWeight: 700 }}>
-                        {item.fileVoilation[0]}
-                      </Typography>
-                      <Typography sx={styles.cellData}>
-                        {item.fileVoilation[1]}
-                      </Typography>
-                    </Box>
-                  </Grid>
-                  <Grid xs={3} sx={styles.gridInner}>
-                    <Typography sx={styles.cellCommit}>
-                      {item.fileCommit}
+                  <Box sx={styles.tableCell}>
+                    <Image src={draft} width={20} height={20} alt="" />
+                    <Typography sx={styles.cellData}>
+                      {item.fileName}
                     </Typography>
-                  </Grid>
+                  </Box>
+                  <Box>
+                    {isClicked === item.id && (
+                      <>
+                        <Py
+                          items={item.fileName}
+                          handleClick={() => setHoveredIndex(!hoveredIndex)}
+                          hoveredIndex={hoveredIndex}
+                        />
+                      </>
+                    )}
+                  </Box>
                 </Grid>
-              </>
+                <Grid xs={3} sx={styles.gridInner}>
+                  <Box sx={styles.tableCell}>
+                    {item.fileVoilation[0] >= 15 && (
+                      <Image
+                        src={warning}
+                        width={20}
+                        height={20}
+                        alt="warning"
+                      />
+                    )}
+                    <Typography sx={{ ...styles.cellData, fontWeight: 700 }}>
+                      {item.fileVoilation[0]}
+                    </Typography>
+                    <Typography sx={styles.cellData}>
+                      {item.fileVoilation[1]}
+                    </Typography>
+                  </Box>
+                </Grid>
+                <Grid xs={3} sx={styles.gridInner}>
+                  <Typography sx={styles.cellCommit}>
+                    {item.fileCommit}
+                  </Typography>
+                </Grid>
+              </Grid>
             );
           })}
         </Box>

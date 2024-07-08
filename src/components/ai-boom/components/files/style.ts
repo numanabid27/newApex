@@ -6,12 +6,18 @@ export const styles = {
     },
     cellData : {
         color:"#374151",
-        fontSize:'14px'
+        fontSize:'14px',
+        "@media screen and (max-width:767px)":{
+            fontSize:"12px",
+        }
     },
     cellCommit:{
         color:"#667085",
         fontSize:'14px',
-        textAlign:'right'
+        textAlign:'right',
+        "@media screen and (max-width:767px)":{
+            fontSize:"12px",
+        }
     },
     tableContainer:{
         border: "1px solid #EAECF0",
@@ -45,6 +51,9 @@ export const styles = {
         padding:'10px 14px',
         "span":{
             color:'#007effd6'
+        },
+        "@media screen and (max-width:767px)":{
+            fontSize:"12px",
         }
     }
 }

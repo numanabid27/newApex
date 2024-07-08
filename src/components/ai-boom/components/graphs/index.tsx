@@ -7,6 +7,7 @@ export default function Graphs({chart1, chart2, firstValue, secondValue, firstVa
   return (
     <Grid container gap="10px" justifyContent="space-between">
       <Grid
+        item
         xs={12}
         md={3.9}
         className="border border-radius bg-white"
@@ -33,6 +34,7 @@ export default function Graphs({chart1, chart2, firstValue, secondValue, firstVa
         />
       </Grid>
       <Grid
+        item
         xs={12}
         md={3.9}
         sx={styles.aiEngine}
@@ -54,6 +56,7 @@ export default function Graphs({chart1, chart2, firstValue, secondValue, firstVa
         />
       </Grid>
       <Grid
+        item
         xs={12}
         md={3.9}
         sx={styles.aiEngine}

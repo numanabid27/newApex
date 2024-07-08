@@ -14,12 +14,15 @@ export const ModalDataStyle = {
     fontWeight: 500,
     paddingBottom:'22px',
     "@media screen and (max-width:767px)":{
-      fontSize: "32px",
+      fontSize: "26px",
     }
   },
   ModalDesc:{
     color:'#667084',
     fontWeight: 400,
+    "@media screen and (max-width:767px)":{
+      fontSize: "14px",
+    }
   },  
   ModalSwitch: {
     display: "flex",

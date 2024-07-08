@@ -27,6 +27,7 @@ export const PolicyPage = () => {
             display="flex"
             gap="10px"
             justifyContent={{ sm: "flex-end", xs: "flex-start" }}
+            flexDirection={{ sm: "row", xs: "column" }}
           >
             <ButtonComponent
               title="Switch Policy"

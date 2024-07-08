@@ -126,18 +126,28 @@ export const TopIssuesStyling = {
       height:'12px',
       display:'block',
       borderRadius: "13px",
-      margin: "6px 0"
+      margin: "6px 0",
+      "@media screen and (max-width:767px)":{
+        width:'60px',
+        height:'8px',
+      }
     },
     "h5":{
       fontSize:"16px",
       fontWeight:600,
-      textAlign:'center'
+      textAlign:'center',
+      "@media screen and (max-width:767px)":{
+        fontSize:"12px",
+      }
     },
     "h6":{
       fontSize:"16px",
       fontWeight:400,
       color:"#374151",
-       textAlign:'center'
+       textAlign:'center',
+      "@media screen and (max-width:767px)":{
+        fontSize:"12px",
+      }
     }
   }
 };

@@ -35,12 +35,12 @@ export const ModelData = ({
     <>
       <Box sx={ModalDataStyle.ModalGrid}>
         <Grid container mb={8}>
-          <Grid xs={9} display="flex" gap="10px">
+          <Grid sm={9} xs={12} display="flex" gap="10px">
             <ButtonComponent title="Edit" icon={pencil} />
             <ButtonComponent title="View" icon={view} />
             <ButtonComponent title="Duplicate" icon={copy} />
           </Grid>
-          <Grid xs={3} display="flex" justifyContent="flex-end">
+          <Grid sm={3} xs={12} display="flex" justifyContent={{sm:'flex-end', xs:'flex-start'}} mt={{sm:0, xs:2}}>
             <Button
               sx={ModalDataStyle.delete}
               onClick={() => {
