@@ -275,11 +275,8 @@ export const POLICIES_LISTENING = [
       "This policy is intended to protect our code when using GitHub Copilot, and detect when the conversation topics with GitHub Copilot Chat arn’t aligned with code.",
     longDesc: [
       {
-        desc: "This policy is intended to protect our code when using GitHub Copilot, and detect when the conversation topics with GitHub Copilot Chat arn’t aligned with code.",
-      },
-      {
         desc: "By implementing this policy, we aim to enhance our code quality and safeguard our development processes using AI.Groups:",
-      },
+      }
     ],
     groups: {
       title: "Groups",
@@ -533,7 +530,7 @@ export const POLICIES_LISTENING = [
     id: 10,
     policyName: "AI-BOM policy",
     policyDesc:
-      "This policy is intended to protect our organization from risks associated with remote code execution, particularly those initiated or facilitated by AI systems. It will monitor activities to prevent unauthorized or malicious code from being executed remotely, which could compromise the security and integrity of our systems.",
+      "This policy is intended to detect when a sensitive or strategy-related file is being written by an AI engine, or when an important strategic decision is made with the help of an AI model. It will monitor AI interactions to ensure that critical company decisions and sensitive documents are handled appropriately.",
     longDesc: [
       {
         desc: "This policy is intended to detect when a sensitive or strategy-related file is being written by an AI engine, or when an important strategic decision is made with the help of an AI model. It will monitor AI interactions to ensure that critical company decisions and sensitive documents are handled appropriately.",

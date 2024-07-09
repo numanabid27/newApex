@@ -2263,14 +2263,14 @@ const VOILATIONS = {
               htmlContent: {
                 align: "center",
                 color: "#475467",
-                fontSize: "14px",
+                fontSize: "12px",
                 fontWeight: 500,
                 padding: [2, 4],
               },
               additionalHeading: {
                 align: "center",
                 color: "#98A2B3",
-                fontSize: "12px",
+                fontSize: "11px",
                 padding: [2, 4],
               },
             },
@@ -2278,8 +2278,8 @@ const VOILATIONS = {
         },
         {
           name: "Node 5",
-          x: 320,
-          y: 500,
+          x: 250,
+          y: 450,
           symbol: `image://image/secrete.svg`,
           symbolSize: [80, 80],
           label: {
@@ -2305,8 +2305,8 @@ const VOILATIONS = {
         },
         {
           name: "Node 6",
-          x: 600,
-          y: 500,
+          x: 680,
+          y: 450,
           symbol: `image://image/secrete.svg`,
           symbolSize: [80, 80],
           label: {
@@ -2734,7 +2734,7 @@ const ANNA_SNITH = {
       layout: "none",
       symbolSize: 50,
       roam: true,
-      zoom: 0.6,
+      zoom: 0.7,
       label: {
         show: true,
         position: "bottom",
@@ -2784,13 +2784,13 @@ const ANNA_SNITH = {
           label: {
             show: true,
             position: "bottom",
-            offset: [0, -7],
+            offset: [0, 60],
             formatter: "{htmlContent|Multiple Files}\n{additionalHeading|Files}",
             rich: {
               htmlContent: {
                 align: "center",
                 color: "#475467",
-                fontSize: "14px",
+                fontSize: "11px",
                 fontWeight: 500,
                 backgroundColor: "#fff",
                 padding: [7, 0, 0, 0],
@@ -2799,7 +2799,7 @@ const ANNA_SNITH = {
               additionalHeading: {
                 align: "center",
                 color: "#98A2B3",
-                fontSize: "12px",
+                fontSize: "11px",
                 padding: [2, 0, 3, 0],
                 backgroundColor: "#fff",
                 html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
@@ -2839,15 +2839,45 @@ const ANNA_SNITH = {
         },
         {
           name: "Node 4",
-          x: 460,
-          y: 320,
+          x: 350,
+          y: 380,
           symbol: `image://image/secrete.svg`,
           symbolSize: [80, 80],
           label: {
             show: true,
             position: "bottom",
             formatter:
-              "{htmlContent|Potential Data Poisoning}\n{additionalHeading|Violation}",
+              "{htmlContent|Hiring data}\n{additionalHeading|Violation}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                padding: [2, 4],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 5",
+          x: 570,
+          y: 380,
+          symbol: `image://image/secrete.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter:
+              "{htmlContent|36 PII}\n{additionalHeading|Violation}",
             rich: {
               htmlContent: {
                 align: "center",
@@ -2880,6 +2910,10 @@ const ANNA_SNITH = {
         {
           source: "Node 2",
           target: "Node 4",
+        },
+        {
+          source: "Node 2",
+          target: "Node 5",
         },
       ],
       lineStyle: {
@@ -4198,11 +4232,11 @@ print(key)
   {
     id: 9,
     lastEvent: "Aug 14, 2023 10:46 AM",
-    name: "Anna Smith uploaded 43 files, including 3 related to HR and candidates data, and 36 pieces of PII were redacted",
+    name: "Anna Smith uploaded 43 files, including 3 related to HR and candidates' data, and 36 pieces of PII were redacted",
     subcategories: "Customer Data",
     severity: "High",
     users: ["user@x.com", "user2@x.com", "+20"],
-    interface: microsoft,
+    interface: demini,
     engine: ["GPT 4"],
     tags: {title:'Data leakage', icon:dataDanger},
     status: "Open",

@@ -129,7 +129,19 @@ function ModelAccordian({ modelData }: any) {
             </Typography>
           </AccordionSummary>
           <AccordionDetails sx={styles.desc}>
-            <Box>
+            <Box
+              sx={
+                modelData?.name?.includes(
+                  "61 Violations of Company's AI Ethics Standards"
+                )
+                  ? styles.nodeGraph
+                  : modelData?.name?.includes(
+                      "Anna Smith uploaded 43 files, including 3 related to HR and candidates' data, and 36 pieces of PII were redacted"
+                    )
+                  ? styles.nodeGraph2
+                  : null
+              }
+            >
               {modelData.graph && <ReactEcharts option={modelData.graph} />}
             </Box>
           </AccordionDetails>
@@ -390,7 +402,7 @@ retrieveStrategicDocs('alex.kim@company.com');
                 "3 Files repetitively retrieved from your RAG database"
               ) ||
               modelData?.name?.includes(
-                "Anna Smith uploaded 43 files, including 3 related to HR and candidates data, and 36 pieces of PII were redacted"
+                "Anna Smith uploaded 43 files, including 3 related to HR and candidates' data, and 36 pieces of PII were redacted"
               ) ? (
               <>
                 <Grid container alignItems="center" sx={styles.evidance_grid}>
@@ -423,6 +435,9 @@ retrieveStrategicDocs('alex.kim@company.com');
               </>
             ) : modelData?.name?.includes(
                 "Unauthorized automatic PR generation by GitHub Copilot Docker extension"
+              ) ||
+              modelData?.name?.includes(
+                "61 Violations of Company's AI Ethics Standards"
               ) ? (
               <></>
             ) : (
@@ -446,7 +461,7 @@ retrieveStrategicDocs('alex.kim@company.com');
               </>
             )}
             {modelData?.name?.includes(
-              "Anna Smith uploaded 43 files, including 3 related to HR and candidates data, and 36 pieces of PII were redacted"
+              "Anna Smith uploaded 43 files, including 3 related to HR and candidates' data, and 36 pieces of PII were redacted"
             ) && (
               <Grid container alignItems="center" sx={styles.evidance_grid}>
                 <Grid xs={1.5}>Email</Grid>

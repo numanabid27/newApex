@@ -31,7 +31,11 @@ const PolicyFilters = ({
   setseverity,
   severity,
   isPolicyName,
-  setIsPolicyName
+  setIsPolicyName,
+  setPolicyAction,
+  PolicyAction,
+  setWokFlow,
+  workFlow
 }: any) => {
   return (
     <>
@@ -401,7 +405,7 @@ const PolicyFilters = ({
             <Grid item sm={2} xs={12} sx={styles.user}>
               <FormControl fullWidth sx={styles.userFormControl}>
                 <InputLabel
-                  id="demo-simple-select-label-3333"
+                  id="demo-simple-select-label-333311"
                   className="interLable"
                   sx={styles.userText}
                 >
@@ -410,14 +414,14 @@ const PolicyFilters = ({
 
                 <Select
                   sx={styles.sessionEngineFilter}
-                  labelId="demo-simple-select-label-3333"
-                  id="demo-simple-select-3333"
-                  value={actions}
+                  labelId="demo-simple-select-label-333311"
+                  id="demo-simple-select-333311"
+                  value={PolicyAction}
                   label="Actions"
                   onChange={(event) => {
-                    setActions(event.target.value as string);
+                    setPolicyAction(event.target.value as string);
                   }}
-                  renderValue={() => actions}
+                  renderValue={() => PolicyAction}
                   IconComponent={KeyboardArrowDownIcon}
                 >
                   {POLICY_ACTIONS.map((item: any) => (
@@ -427,11 +431,11 @@ const PolicyFilters = ({
                       key={item.id}
                     >
                       {item.name}
-                      {actions === item.name && (
+                      {PolicyAction === item.name && (
                         <IconButton
                           sx={styles.iconBtn}
                           aria-label="delete"
-                          onClick={() => setActions("")}
+                          onClick={() => setPolicyAction("")}
                         >
                           <ClearIcon sx={styles.closeIcon} />
                         </IconButton>
@@ -441,27 +445,27 @@ const PolicyFilters = ({
                 </Select>
               </FormControl>
             </Grid>
-            {/* severity */}
+            {/* work flow */}
             <Grid item sm={2} xs={12} sx={styles.user}>
               <FormControl fullWidth sx={styles.userFormControl}>
                 <InputLabel
-                  id="demo-simple-select-label-33331"
+                  id="demo-simple-select-label-333312"
                   className="interLable"
                   sx={styles.userText}
                 >
-                  Severity
+                  Work flow
                 </InputLabel>
 
                 <Select
                   sx={styles.sessionEngineFilter}
-                  labelId="demo-simple-select-label-33331"
-                  id="demo-simple-select-33331"
-                  value={severity}
-                  label="Actions"
+                  labelId="demo-simple-select-label-333312"
+                  id="demo-simple-select-333312"
+                  value={workFlow}
+                  label="Work flow"
                   onChange={(event) => {
-                    setseverity(event.target.value as string);
+                    setWokFlow(event.target.value as string);
                   }}
-                  renderValue={() => severity}
+                  renderValue={() => workFlow}
                   IconComponent={KeyboardArrowDownIcon}
                 >
                   {POLICY_SEVERITY.map((item: any) => (
@@ -471,11 +475,11 @@ const PolicyFilters = ({
                       key={item.id}
                     >
                       {item.name}
-                      {severity === item.name && (
+                      {workFlow === item.name && (
                         <IconButton
                           sx={styles.iconBtn}
                           aria-label="delete"
-                          onClick={() => setseverity("")}
+                          onClick={() => setWokFlow("")}
                         >
                           <ClearIcon sx={styles.closeIcon} />
                         </IconButton>

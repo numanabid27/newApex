@@ -81,36 +81,40 @@ export const ModelData = ({
         </Box>
 
         {/* policy suggestions */}
-        <Box sx={ModalDataStyle.suggestion}>
-          <Grid container justifyContent="space-between" mb={3.2}>
-            <Grid sm={5.5} xs={7}>
-              <Typography variant="h6" fontWeight={400} color="#156FEE">
-                Policy suggestion{" "}
+        {
+          selectedRow?.policyName.includes("Github Copilot Policy") &&
+          <Box sx={ModalDataStyle.suggestion}>
+            <Grid container justifyContent="space-between" mb={3.2}>
+              <Grid sm={5.5} xs={7}>
+                <Typography variant="h6" fontWeight={400} color="#156FEE">
+                  Policy suggestion{" "}
+                </Typography>
+              </Grid>
+              <Grid sm={5.5} xs={5} display="flex" justifyContent="flex-end">
+                <Button sx={ModalDataStyle.button}>Close</Button>
+              </Grid>
+            </Grid>
+
+            <Box sx={ModalDataStyle.morePolicy}>
+              <Typography fontWeight={500}>
+                This is the description of the policy lorem ipsum dolor sit amet
+                consectetur adipiscing elit sed do eiusmod tempor incididunt ut
+                labore et This is the description of the policy
               </Typography>
-            </Grid>
-            <Grid sm={5.5} xs={5} display="flex" justifyContent="flex-end">
-              <Button sx={ModalDataStyle.button}>Close</Button>
-            </Grid>
-          </Grid>
+              <Button>Active</Button>
+            </Box>
 
-          <Box sx={ModalDataStyle.morePolicy}>
-            <Typography fontWeight={500}>
-              This is the description of the policy lorem ipsum dolor sit amet
-              consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-              labore et This is the description of the policy
-            </Typography>
-            <Button>Active</Button>
+            <Box sx={ModalDataStyle.morePolicy}>
+              <Typography fontWeight={500}>
+                This is the description of the policy lorem ipsum dolor sit amet
+                consectetur adipiscing elit sed do eiusmod tempor incididunt ut
+                labore et This is the description of the policy
+              </Typography>
+              <Button>Active</Button>
+            </Box>
           </Box>
-
-          <Box sx={ModalDataStyle.morePolicy}>
-            <Typography fontWeight={500}>
-              This is the description of the policy lorem ipsum dolor sit amet
-              consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-              labore et This is the description of the policy
-            </Typography>
-            <Button>Active</Button>
-          </Box>
-        </Box>
+        }
+        
       </Box>
 
       <Box sx={ModalDataStyle.ModalData}>

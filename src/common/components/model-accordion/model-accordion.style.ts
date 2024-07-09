@@ -346,5 +346,17 @@ export const styles = {
       borderBottom: "1px solid #D0D5DD",
       paddingBottom:'10px'
     }
+  },
+  nodeGraph:{
+    ".echarts-for-react":{
+      height: "511px !important",
+      zoom: "1.2 !important",
+    }
+  },
+  nodeGraph2:{
+    ".echarts-for-react":{
+      height: "405px !important",
+      
+    }
   }
 };

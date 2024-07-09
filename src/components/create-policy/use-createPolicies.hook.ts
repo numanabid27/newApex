@@ -22,7 +22,8 @@ export default function useFilterPolicy() {
   const [startDate, endDate] = dateRange;
   const [isBuilder, setIsBuilder] = useState(false);
   const [isPolicyName, setIsPolicyName] = useState("");
-
+  const [PolicyAction, setPolicyAction] = useState("");
+  const [workFlow, setWokFlow] = useState("")
   const [value, setIsValue] = useState<any>(0);
 
   const [session, setSession] = useState<any>("All Engines");
@@ -152,6 +153,10 @@ export default function useFilterPolicy() {
     setisSentiment,
     isSentiment,
     setIsPolicyName,
-    isPolicyName
+    isPolicyName,
+    PolicyAction,
+    setPolicyAction,
+    workFlow,
+    setWokFlow
   };
 }

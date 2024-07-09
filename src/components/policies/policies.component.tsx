@@ -44,7 +44,11 @@ function Policies() {
     isStatus,
     setIsStatus,
     setIsPolicyName,
-    isPolicyName
+    isPolicyName,
+    setPolicyAction,
+    PolicyAction,
+    setWokFlow,
+    workFlow
   } = useFilterPolicy();
   // for future purpose
   const updatePolicyType = (data: any, id: any) => {
@@ -88,6 +92,10 @@ function Policies() {
         setIsStatus={setIsStatus}
         setIsPolicyName={setIsPolicyName}
         isPolicyName={isPolicyName}
+        setPolicyAction={setPolicyAction}
+        PolicyAction={PolicyAction}
+        setWokFlow={setWokFlow}
+        workFlow={workFlow}
       />
 
       {POLICIES_LISTENING.map((items: any) => {
