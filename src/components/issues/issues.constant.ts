@@ -2906,6 +2906,19 @@ const ANNA_SNITH = {
         {
           source: "Node 2",
           target: "Node 3",
+          label: {
+            show: true,
+            position: "bottom",
+            offset: [450, 60],
+            formatter: 'Redacted',
+            fontSize: 12,
+            fontWeight:500,
+            align: 'center',
+            color: '#12B76A',
+            backgroundColor: '#ECFDF3',
+            padding: [4, 9],
+            borderRadius: 21,
+          },
         },
         {
           source: "Node 2",
