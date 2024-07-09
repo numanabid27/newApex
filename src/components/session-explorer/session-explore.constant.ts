@@ -84,7 +84,20 @@ export const POLICY_TAGS = [
 ];
 
 export const POLICY_ACTIONS = [
-  { id: 1, name: "Notify" }
+  { id: 1, name: "Notify" },
+  { id: 2, name: "Block" },
+  { id: 3, name: "Redact" }
+];
+
+
+export const POLICY_NAMES = [
+  { id: 1, name: "Github Copilot Policy" },
+  { id: 2, name: "Marketing and strategy policy" },
+  { id: 3, name: "Files & Microsoft Copilot protection" },
+  { id: 4, name: "API Protection" },
+  { id: 5, name: "Sensitive Topics" },
+  { id: 6, name: "Data Leakage" },
+  { id: 7, name: "GDPR Policy" },
 ];
 
 

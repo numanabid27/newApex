@@ -101,13 +101,6 @@ function Row(props: any) {
         <TableCell>
           {typeof Rows.headerAssets === "string" ? (
             <Button sx={{ gap:'10px', textTransform:"capitalize"}}>
-              {/* {Rows.headerAssets === "File" ? (
-                <Image src={file} alt="" />
-              ) : Rows.headerAssets === "Message" ? (
-                <Image src={msg} alt="" />
-              ) : (
-                ""
-              )} */}
               <Typography sx={style.engineCell}>{Rows.headerAssets}</Typography>
             </Button>
           ) : (

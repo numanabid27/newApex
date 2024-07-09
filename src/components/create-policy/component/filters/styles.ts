@@ -142,7 +142,7 @@ export const styles = {
       paddingLeft: "0px !important",
       maxWidth: "unset !important",
       flexBasis: { sm: "unset !important", xs: "100% !important" },
-      width:'111px',
+      width:'120px',
       ".MuiInputBase-root":{
         lineHeight:'unset',
         padding:"12px 13px"

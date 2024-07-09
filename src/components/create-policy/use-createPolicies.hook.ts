@@ -21,6 +21,7 @@ export default function useFilterPolicy() {
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
   const [isBuilder, setIsBuilder] = useState(false);
+  const [isPolicyName, setIsPolicyName] = useState("");
 
   const [value, setIsValue] = useState<any>(0);
 
@@ -150,5 +151,7 @@ export default function useFilterPolicy() {
     setIsTopic,
     setisSentiment,
     isSentiment,
+    setIsPolicyName,
+    isPolicyName
   };
 }

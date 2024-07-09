@@ -107,3 +107,16 @@ export const  TOPICS = [
   { id: 2, name: "Hiring" },
 
 ];
+
+
+export const  POLICY_GROUPS = [
+  { id: 1, name: "R&D" },
+  { id: 2, name: "Data Science" },
+  { id: 3, name: "Marketing" },
+  { id: 4, name: "Strategy" },
+  { id: 5, name: "List" },
+  { id: 6, name: "Executives Team" },
+  { id: 7, name: "Api costumers" },
+  { id: 8, name: "Finance" },
+  { id: 9, name: "Strategy" },
+];

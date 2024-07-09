@@ -43,6 +43,8 @@ function Policies() {
     setDateRange,
     isStatus,
     setIsStatus,
+    setIsPolicyName,
+    isPolicyName
   } = useFilterPolicy();
   // for future purpose
   const updatePolicyType = (data: any, id: any) => {
@@ -76,7 +78,7 @@ function Policies() {
 
       <PolicyFilters
         users={false}
-        policies={true}
+        policies={false}
         engineName={engineName}
         setEngineName={setEngineName}
         startDate={startDate}
@@ -84,6 +86,8 @@ function Policies() {
         setDateRange={setDateRange}
         isStatus={isStatus}
         setIsStatus={setIsStatus}
+        setIsPolicyName={setIsPolicyName}
+        isPolicyName={isPolicyName}
       />
 
       {POLICIES_LISTENING.map((items: any) => {
