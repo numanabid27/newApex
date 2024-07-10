@@ -130,7 +130,7 @@ export const topStyles = {
     alignItems:"center",
     gap:"15px",
     marginRight:"20px",
-    "@media screen and (max-width:1440px)" : {
+    "@media screen and (max-width:1820px)" : {
       gap:"7px"
     }
   },
@@ -139,8 +139,8 @@ export const topStyles = {
     fontSize:"17px",
     fontWeight:700,
     paddingTop:'4px',
-    "@media screen and (max-width:1440px)" : {
-      fontSize:"13px",
+    "@media screen and (max-width:1820px)" : {
+      fontSize:"14px",
     },
   },
   "@media screen and (max-width:1100px)" : {

@@ -44,6 +44,19 @@ export default function useSessions() {
     setSearchQuery(e.target.value);
   }
 
+
+  
+  const [selectDrawerValue, setSelectedDrawerValue] = useState();
+
+  useEffect(() => {
+    if (selectedRow?.id) {
+      const res = finalData.find((item: any) => item.id === selectedRow?.id);
+      setSelectedDrawerValue(res);
+    } else {
+      setSelectedDrawerValue(undefined);
+    }
+  }, [selectedRow, selectDrawerValue]);
+
   
   const filterData = () => {
     const filteredData = SESSION_EXPLORE_DATA.filter((item) => {

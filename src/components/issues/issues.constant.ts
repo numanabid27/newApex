@@ -2379,7 +2379,7 @@ const UN_AUTHORIZED = {
       layout: "none",
       symbolSize: 50,
       roam: true,
-      zoom: 0.7,
+      zoom: 0.75,
       label: {
         show: true,
         position: "bottom",
@@ -2407,7 +2407,7 @@ const UN_AUTHORIZED = {
                 fontSize: "14px",
                 fontWeight: 500,
                 backgroundColor: "#fff",
-                padding: [2, 4],
+                padding: [7, 0, 0, 0],
                 html: '<div style="color: #fff; background-color: #fff; padding: 2px 4px; border-radius: 3px;">Config</div>',
               },
               additionalHeading: {
@@ -2415,7 +2415,7 @@ const UN_AUTHORIZED = {
                 color: "#98A2B3",
                 fontSize: "12px",
                 backgroundColor: "#fff",
-                padding: [2, 4],
+                padding: [2, 0, 3, 0],
                 html: '<div style="color: #000; background-color: #fff; padding: 2px 4px; border-radius: 3px;">File</div>',
               },
             },
@@ -2592,7 +2592,7 @@ const UN_AUTHORIZED = {
                 color: "#475467",
                 fontSize: "14px",
                 backgroundColor: "#fff",
-                padding: [2, 0, 3, 0],
+                padding: [2, 0, 0, 0],
                 html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
               },
               additionalHeading: {
@@ -2601,8 +2601,8 @@ const UN_AUTHORIZED = {
                 fontSize: "12px",
                 fontWeight: 500,
                 backgroundColor: "#fff",
-                padding: [7, 0, 0, 0],
-                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+                padding: [2, 0, 3, 0],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 0px; border-radius: 3px;">Additional Heading</div>',
               },
             },
           },
@@ -2633,7 +2633,7 @@ const UN_AUTHORIZED = {
                 fontSize: "12px",
                 fontWeight: 500,
                 backgroundColor: "#fff",
-                padding: [7, 0, 0, 0],
+                padding: [2, 0, 3, 0],
                 html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
               },
             },
@@ -2656,7 +2656,7 @@ const UN_AUTHORIZED = {
                 color: "#475467",
                 fontSize: "14px",
                 backgroundColor: "#fff",
-                padding: [2, 0, 3, 0],
+                padding: [2, 0, 0, 0],
                 html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
               },
               additionalHeading: {
@@ -2665,7 +2665,7 @@ const UN_AUTHORIZED = {
                 fontSize: "12px",
                 fontWeight: 500,
                 backgroundColor: "#fff",
-                padding: [7, 0, 0, 0],
+                padding: [2, 0, 3, 0],
                 html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
               },
             },
@@ -4907,3 +4907,6 @@ export const SWITCH = {
     },
   ],
 };
+
+
+

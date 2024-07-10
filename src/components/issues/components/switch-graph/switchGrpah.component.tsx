@@ -11,10 +11,10 @@ import safe from "@/common/assets/images/safe-gaurd.svg";
 import { styles } from "../../issues.style";
 
 const SwitchGraph = () => {
-  const [isHover, setIsHover] = useState(false)
-  useEffect(()=>{
+  const [isHover, setIsHover] = useState(false);
+  useEffect(() => {
     setIsHover(true);
-  }, [])
+  }, []);
   const data = [
     {
       id: 1,
@@ -145,12 +145,7 @@ const SwitchGraph = () => {
           />
         </Box>
         <Box>
-          <Typography
-            sx={styles.multiSide}
-            display="flex"
-            alignItems="center"
-            gap="6px"
-          >
+          <Typography sx={styles.multiSide}>
             <Image src={safe} alt="" width={22} height={22} draggable="false" />
             <span>51</span>
             Automatically Remediated

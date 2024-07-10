@@ -43,18 +43,13 @@ export default function Sessions() {
   const {
     engineName,
     setEngineName,
-    userName,
-    handleChange,
     openModal,
     setOpenModal,
     selectedRow,
     setSelectedRow,
-    dateHandler,
     finalData,
     session,
     SessionHandler,
-    handleClearAll,
-    setUserName,
     startDate,
     endDate,
     setDateRange,
@@ -62,7 +57,6 @@ export default function Sessions() {
     searchQuery,
     allOptions,
     handleAutocompleteChange,
-    value,
     setIsInterface,
     isInterface,
     isStatus,
@@ -90,7 +84,7 @@ export default function Sessions() {
       header: "User",
       accessor: "mails",
       cell: (data: any) => {
-        return <Typography sx={{ color: "#2E90FA" }}>{data}</Typography>;
+        return <Typography color="#2E90FA">{data}</Typography>;
       },
     },
     {
@@ -110,12 +104,7 @@ export default function Sessions() {
       cell: (data: any) => {
         return (
           <Chip
-            sx={{
-              color: "#344054",
-              border: "1px solid #bdbdbd",
-              "&:hover": { border: "1px solid #939291" },
-              height: "26px",
-            }}
+            sx={styles.engineItem}
             label={data}
             variant="outlined"
           />
@@ -134,15 +123,7 @@ export default function Sessions() {
             return (
               <IconButton key={i.toString()}>
                 <Chip
-                  sx={{
-                    color: "#1849A9",
-                    background: "#D1E9FF",
-                    height: "26px",
-                    borderRadius: "16px",
-                    fontSize: "11.59px",
-                    fontWeight: 700,
-                    border: "unset",
-                  }}
+                  sx={styles.topicItem}
                   icon={
                     <>
                       <Image src={item.img} width={20} height={20} alt="" />
@@ -161,20 +142,7 @@ export default function Sessions() {
     }
     
   ];
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
-  const [selectDrawerValue, setSelectedDrawerValue] = useState();
 
-  
-
-  useEffect(() => {
-    if (selectedRow?.id) {
-      const res = finalData.find((item: any) => item.id === selectedRow?.id);
-      setSelectedDrawerValue(res);
-    } else {
-      setSelectedDrawerValue(undefined);
-    }
-  }, [selectedRow, selectDrawerValue]);
 
   return (
     <>
@@ -490,33 +458,7 @@ export default function Sessions() {
           isTableHead={true}
           isPagination={true}
         />
-        {/* <Grid container justifyContent="space-between" mt={5}>
-          <Grid lg={5.5} sm={3} xs={4}>
-            <button
-              className="prev"
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-            >
-              Previous
-            </button>
-          </Grid>
-          <Grid lg={5} sm={3} xs={5}>
-            <Typography>
-              <span className="current">
-                {currentPage} Out of {totalPages}
-              </span>
-            </Typography>
-          </Grid>
-          <Grid lg={1.5} sm={3} xs={3} textAlign="right">
-            <button
-              className="next"
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-            >
-              Next
-            </button>
-          </Grid>
-        </Grid> */}
+        
         <CustomDialog
           thead={"session"}
           openModal={openModal}

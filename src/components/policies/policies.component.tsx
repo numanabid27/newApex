@@ -48,22 +48,12 @@ function Policies() {
     setPolicyAction,
     PolicyAction,
     setWokFlow,
-    workFlow
+    workFlow,
   } = useFilterPolicy();
-  // for future purpose
-  const updatePolicyType = (data: any, id: any) => {
-    // return policiesTypes.map((policy) => {
-    //   if (policy.id === id) {
-    //     return { ...policy, checkedValue: data };
-    //   }
-    //   console.log(policy);
-    //   return policy;
-    // });
-  };
 
   return (
     <Grid container item xs={12} sx={styles.pliciesSec}>
-      <Box sx={{ margin: "6px 0 15px 10px" }}>
+      <Box sx={styles.poiciesInner}>
         {POLICIES_CHECKBOX_FILTER?.map((item: any, i: number) => {
           return (
             <CheckBoxComponent
@@ -74,7 +64,6 @@ function Policies() {
               policy={true}
               checkedValue={item?.checkedValue}
               enable={item?.enable}
-              onChangeValue={updatePolicyType}
             />
           );
         })}
@@ -146,7 +135,9 @@ function Policies() {
             </Grid>
             <Grid sm={1.5} sx={styles.actionText}>
               <Link
-                href={`policies/edit-policy?title=${encodeURIComponent(items.policyName.replace(/\s+/g, '-'))}`}
+                href={`policies/edit-policy?title=${encodeURIComponent(
+                  items.policyName.replace(/\s+/g, "-")
+                )}`}
                 onClick={(e) => {
                   e.stopPropagation();
                 }}
@@ -188,9 +179,7 @@ function Policies() {
               >
                 Cancel
               </Button>
-              <Button sx={{ background: "#FEF3F2", color: "#B42318" }}>
-                Yes, delete it
-              </Button>
+              <Button sx={styles.del}>Yes, delete it</Button>
             </Box>
           </Box>
         </Box>
@@ -201,13 +190,9 @@ function Policies() {
         <Box sx={styles.deleteBackdrop}>
           <Box
             sx={{ ...styles.deleteModel, background: "#F9FAFB" }}
-            className="demooo"
+            className="modelMain"
           >
-            <Box
-              position="relative"
-              display="flex"
-              justifyContent="space-between"
-            >
+            <Box sx={styles.actionBtn}>
               <Severity
                 title="Select Engine"
                 img={downArrow}
@@ -240,10 +225,10 @@ function Policies() {
               </Box>
 
               <Box sx={styles.voilationBox}>
-              <Typography variant="h4">
-                <span>1 Violations: </span>
-                PII (email)
-              </Typography>
+                <Typography variant="h4">
+                  <span>1 Violations: </span>
+                  PII (email)
+                </Typography>
                 <Box sx={styles.piBox}>
                   <Typography variant="h2">PII</Typography>
                   <Typography color="#374151" pt={2}>

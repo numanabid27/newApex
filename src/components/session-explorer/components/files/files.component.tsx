@@ -21,19 +21,6 @@ export default function Files() {
     handleAutocompleteChange,
   } = useFiles();
 
-  // const {
-  //   engineName,
-  //   setEngineName,
-  //   startDate,
-  //   endDate,
-  //   setDateRange,
-  //   setIsInterface,
-  //   isInterface,
-  //   isStatus,
-  //   setIsStatus,
-  //   setTopicName,
-  //   topicName} = useFilterPolicy();
-
   const SESSION_EXPLORE_TABLE_HEADER = [
     { id: 1, header: "#", accessor: "id" },
     { id: 2, header: "Filename", accessor: "fileName" },

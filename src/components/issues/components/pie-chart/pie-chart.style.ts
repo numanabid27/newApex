@@ -20,6 +20,7 @@ export const PieChartStyle = {
     justifyContent: "space-between",
     mb: 1,
     width: "100%",
+    gap:"19px"
   },
   PieLabelStyling: {
     fontSize: "14px",
@@ -59,4 +60,10 @@ export const PieChartStyle = {
     color: "#667085",
     fontSize: "14px",
   },
+  chartLab:{
+    width: "100%"
+  },
+  icon:{
+    marginRight: "10px" 
+  }
 };

@@ -42,7 +42,7 @@ import {
   MARKETING,
 } from "./message.constant";
 import { styles } from "./messages.style";
-import useSessions from "./use-message.hook";
+import useMessage from "./use-message.hook";
 import Severity from "@/components/create-policy/component/severityLevel/severty.component";
 import downArrow from "@/common/assets/images/downs.svg";
 import equal from "@/common/assets/images/equal.svg";
@@ -52,11 +52,11 @@ import add from "@/common/assets/images/add-query.svg";
 import MultiSelect from "@/components/create-policy/component/multiselect/Mutiselect.component";
 import ClearIcon from "@mui/icons-material/Clear";
 import del from "@/common/assets/images/delete.svg";
-import filter from "@/common/assets/images/more-filters.svg";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import useWidth from "@/components/issues/components/issue-table/use-width.hook";
 
 export default function Message() {
+  const { windowWidth } = useWidth();
   const {
     engineName,
     setEngineName,
@@ -82,9 +82,9 @@ export default function Message() {
     setIsTopic,
     setisSentiment,
     isSentiment,
-  } = useSessions();
-
-  const { windowWidth } = useWidth();
+    isClick,
+    setIsClick
+  } = useMessage();
 
   const SESSION_EXPLORE_TABLE_HEADER = [
     {
@@ -129,12 +129,7 @@ export default function Message() {
       cell: (data: any) => {
         return (
           <Chip
-            sx={{
-              color: "#344054",
-              border: "1px solid #bdbdbd",
-              "&:hover": { border: "1px solid #939291" },
-              height: "26px",
-            }}
+            sx={styles.engineItem}
             label={data}
             variant="outlined"
           />
@@ -153,15 +148,7 @@ export default function Message() {
               return (
                 <IconButton key={i.toString()}>
                   <Chip
-                    sx={{
-                      color: "#1849A9",
-                      background: "#D1E9FF",
-                      height: "26px",
-                      borderRadius: "16px",
-                      fontSize: "11.59px",
-                      fontWeight: 700,
-                      border: "unset",
-                    }}
+                    sx={styles.topicItem}
                     icon={
                       <>
                         <Image src={item.img} width={20} height={20} alt="" />
@@ -178,18 +165,7 @@ export default function Message() {
       },
     },
   ];
-  const [isClick, setIsClick] = useState("");
-  const [selectDrawerValue, setSelectedDrawerValue] = useState();
-
-  useEffect(() => {
-    if (selectedRow?.id) {
-      const res = finalData.find((item: any) => item.id === selectedRow?.id);
-      setSelectedDrawerValue(res);
-    } else {
-      setSelectedDrawerValue(undefined);
-    }
-  }, [selectedRow, selectDrawerValue]);
-
+ 
   return (
     <Box position="relative" width="100%">
       {/*query builder  */}

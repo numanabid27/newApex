@@ -45,6 +45,19 @@ export default function useMessage() {
     setSearchQuery(e.target.value);
   }
 
+  // table filteration like selected row
+  const [isClick, setIsClick] = useState("");
+  const [selectDrawerValue, setSelectedDrawerValue] = useState();
+
+  useEffect(() => {
+    if (selectedRow?.id) {
+      const res = finalData.find((item: any) => item.id === selectedRow?.id);
+      setSelectedDrawerValue(res);
+    } else {
+      setSelectedDrawerValue(undefined);
+    }
+  }, [selectedRow, selectDrawerValue]);
+
   
   const filterData = () => {
     const filteredData = MESSAGE_DATA.filter((item) => {
@@ -173,6 +186,9 @@ export default function useMessage() {
     isTopic,
     setIsTopic,
     setisSentiment,
-    isSentiment
+    isSentiment,
+    setIsClick,
+    isClick
+
   };
 }

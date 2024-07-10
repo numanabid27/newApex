@@ -27,17 +27,18 @@ function Feedback() {
       </Box>
       <Image src={notification} alt="" />
       <Image src={support} alt="" />
-      <IconButton className="feedback-main">
+      <IconButton className="feedback-main" onClick={() => setFeedbackModal(true)}>
         <TextsmsOutlinedIcon
           className="feedback-icon"
-          onClick={() => setFeedbackModal(true)}
+          
         />
 
-        <FeedbackDialog
+        
+      </IconButton>
+      <FeedbackDialog
           feedbackModal={feedbackModal}
           setFeedbackModal={setFeedbackModal}
         />
-      </IconButton>
       <Image src={setting} alt="" />
     </Box>
   );

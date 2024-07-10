@@ -31,18 +31,6 @@ export default function Users() {
     handleAutocompleteChange,
   } = useUsers();
 
-  // const {
-  //   engineName,
-  //   setEngineName,
-  //   startDate,
-  //   endDate,
-  //   setDateRange,
-  //   setIsInterface,
-  //   isInterface,
-  //   isStatus,
-  //   setIsStatus,
-  //   setTopicName,
-  //   topicName} = useFilterPolicy();
 
   const SESSION_EXPLORE_TABLE_HEADER = [
     { id: 1, header: "#", accessor: "id" },

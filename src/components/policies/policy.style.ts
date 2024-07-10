@@ -190,6 +190,17 @@ export const styles = {
       fontSize:'16px',
       fontWeight:600
     }
+  },
+  poiciesInner:{
+    margin: "6px 0 15px 10px" 
+  },
+  del:{
+    background: "#FEF3F2", 
+    color: "#B42318" 
+  },
+  actionBtn:{
+    position:"relative",
+    display:"flex",
+    justifyContent:"space-between"
   }
-  
 };

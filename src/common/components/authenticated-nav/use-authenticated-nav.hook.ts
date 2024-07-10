@@ -10,7 +10,7 @@ export default function useAuthenticatedNav() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
   const [navValue, setNavValue] = useState(initialTab);
-  const [feedbackModal, setFeedbackModal] = useState(false);
+  const [feedbackModal, setFeedbackModal] = useState<any>(false);
 
   const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);

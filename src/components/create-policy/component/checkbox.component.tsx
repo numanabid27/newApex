@@ -6,7 +6,6 @@ export default function CheckBoxComponent({
   id,
   label,
   policy,
-  onChangeValue,
   enable,
   checkedValue,
   check
@@ -25,19 +24,11 @@ export default function CheckBoxComponent({
         }}
         checked={check}
         disabled={!enable}
-        // onChange={() => {
-        //   setIsChecked(!isChecked);
-        // }}
         control={
           <Checkbox
             sx={!policy ? styles.checkBox : styles.checkBox2}
             name={label}
             defaultChecked={checkedValue}
-            // onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-            //   onChangeValue(event.target.checked, id);
-            //   setIsChecked(!isChecked);
-            // }}
-            // disabled={disabled}
           />
         }
         label={label}

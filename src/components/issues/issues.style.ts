@@ -90,6 +90,9 @@ export const styles = {
         borderRadius:'23px',
         fontSize:'12px',
         width:'fit-content',
+        display:"flex",
+        alignItems:"center",
+        gap:"6px",
         "span":{
             fontWeight:700,
             fontSize:'20px',

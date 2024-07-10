@@ -132,7 +132,7 @@ export const AiBomView = () => {
         <Typography color="#374151" mb={4}>23% Copilot code in file</Typography>
         <Box sx={styles.descCode}>
           <Box sx={styles.code}>
-            <pre style={{ padding: "12px 19px", margin: "0" }}>
+            <pre className="viewCode">
               {`function alea(mini, maxi) {
     // random number in given range`}
             </pre>
@@ -149,7 +149,7 @@ export const AiBomView = () => {
   // range 0..mini
     `}
             </pre>
-            <pre style={{ padding: "0px 19px", margin: "0" }}>
+            <pre className="viewCode">
               {`
 return mini + mrandom() * (maxi - mini); 
 // range mini..maxi

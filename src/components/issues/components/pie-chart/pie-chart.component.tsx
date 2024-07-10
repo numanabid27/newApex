@@ -77,21 +77,20 @@ function PieChart({
         >
           <ReactEcharts option={chartData} />
         </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={6.5} sx={{ width: "100%" }}>
+        <Grid item xs={12} sm={12} md={12} lg={6.5} sx={PieChartStyle.chartLab}>
           {chartLabels.map((item: any) => (
             <Grid
               key={item.id}
               item
               xs={12}
               sx={PieChartStyle.PieChartLabel}
-              gap="19px"
             >
               <Grid item xs={4} sx={{ textAlign: { md: "center", xs: "end" } }}>
                 <Typography sx={PieChartStyle.PiePercentageStyling} display="flex">
                   <Image
                     src={item.icon}
                     alt="pci-icon"
-                    style={{ marginRight: "10px" }}
+                    style={PieChartStyle.icon}
                   />
                   {item.value}%
                 </Typography>

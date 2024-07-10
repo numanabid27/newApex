@@ -121,7 +121,7 @@ function CustomTopIssues({
         :
         <Grid container justifyContent="space-between">
           {issuesData.map((item: any, i:any) => (
-            <Grid xl={5.89} lg={5.9} xs={12} sx={topStyles.grid} key={i.toString()}>
+            <Grid item xl={5.89} lg={5.9} xs={12} sx={topStyles.grid} key={i.toString()}>
               <Link
                 key={item.id}
                 href={{

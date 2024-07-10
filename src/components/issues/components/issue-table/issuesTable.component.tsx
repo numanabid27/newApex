@@ -173,9 +173,6 @@ function Row(props: {
                     <TableRow
                       key={items.id}
                       sx={styles.nestedTbody}
-                      // onClick={() => {
-                      //   setOpenModal(row), console.log("row", row);
-                      // }}
                     >
                       <TableCell component="th" scope="row">
                         {items.id}

@@ -4,11 +4,7 @@ import HelloImg from "@/common/assets/images/hellow.svg";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import { welcomeStyles } from "./welcome-alert.style";
-/**
- * Renders the Welcome Alert chart component
- * This component displays Welcome Alert chart
- * @returns The Welcome Alert component
- */
+      
 function WelcomeAlert({ setWelcomeAlert }: any) {
   return (
     <Grid

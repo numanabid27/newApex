@@ -76,15 +76,7 @@ export default function CustomizedAccordions({
           ) : (
             <Action />
           )}
-          {/* {
-            <Action
-              setExpanded={setExpanded}
-              expanded={expanded}
-              handleChange={handleChange}
-            />
-            
-          } */}
-
+         
           <Typography>{HeaderEngines}</Typography>
 
           <Typography>{HeaderAssets}</Typography>

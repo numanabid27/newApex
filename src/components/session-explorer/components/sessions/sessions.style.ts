@@ -358,6 +358,21 @@ export const styles = {
     },
     typography:{
       fontSize:'14px'
+    },
+    engineItem:{
+      color: "#344054",
+      border: "1px solid #bdbdbd",
+      "&:hover": { border: "1px solid #939291" },
+      height: "26px",
+    },
+    topicItem:{
+      color: "#1849A9",
+      background: "#D1E9FF",
+      height: "26px",
+      borderRadius: "16px",
+      fontSize: "11.59px",
+      fontWeight: 700,
+      border: "unset",
     }
   };
   
