@@ -856,7 +856,7 @@ export const Rows: any = [
   },
   {
     id: 2,
-    value: "AI Threat",
+    value: "AI Threats",
     policiesMainData: [
       {
         type: "Jailbreak",

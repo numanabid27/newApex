@@ -193,6 +193,7 @@ function Row(props: any) {
                 <TableBody sx={style.thBorder}>
                   {Rows.policiesData?.map((historyRow: any) => (
                     <TableRow key={historyRow.date}>
+                      <TableCell></TableCell>
                       <TableCell
                         component="th"
                         scope="row"

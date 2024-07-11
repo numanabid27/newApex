@@ -1,151 +1,173 @@
 import Colors from "@/common/constants/color.constant";
 
-export const style ={
-    createPolicy:{
-        px: "4%",
-        my: 5,
+export const style = {
+  createPolicy: {
+    px: "4%",
+    my: 5,
+  },
+  createPolicyGrid: {
+    padding: "31px 0px 0px",
+  },
+  label: {
+    color: Colors.primary_101,
+    fontSize: "14px",
+    fontWeight: 500,
+  },
+  multiSelect: {
+    display: "flex",
+    alignItems: "center",
+    marginTop: "32px",
+  },
+
+  iconBtn: {
+    "&:hover": { backgroundColor: "transparent" },
+    pl: 0,
+    pr: 0,
+  },
+  severityChip: {
+    height: "25px",
+    border: "1px solid transparent",
+    // "&:hover": { border: "1px solid #B54708" },
+  },
+  severityLevel: {
+    fontSize: "8px",
+    ml: 1,
+  },
+  statusChip: {
+    height: "25px",
+    border: "1px solid transparent",
+  },
+  engine: {
+    "&:hover": { backgroundColor: "transparent" },
+    p: 0,
+  },
+  chip: {
+    color: "#667085",
+    fontSize: "14px",
+    height: "25px",
+  },
+  header: {
+    background: "#F8F9FB",
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "10px 20px",
+  },
+  typography: {
+    color: "#667084",
+    fontWeight: 500,
+    fontSize: "12px",
+    padding: "10px 22px",
+  },
+  tableRow: {
+    background: "#F8F9FB",
+  },
+  parentRow: {
+    background: "#F2F3F6",
+    ".MuiTableCell-root": {
+      padding: "15px 18px",
     },
-    createPolicyGrid:{
-      
-       
-        padding: "31px 0px 0px"
-    },
-    label:{
-        color:Colors.primary_101,
-        fontSize:'14px',
-        fontWeight:500
-    },
-    multiSelect:{
-        display: "flex",
-        alignItems: "center",
-        marginTop: "32px",
-    },
-    
-    iconBtn: {
-        "&:hover": { backgroundColor: "transparent" },
-        pl: 0,
-        pr: 0,
-    },
-    severityChip: {
-        height: "25px",
-        border: "1px solid transparent",
-        // "&:hover": { border: "1px solid #B54708" },
-    },
-    severityLevel: {
-        fontSize: "8px",
-        ml: 1,
-    },
-    statusChip: {
-        height: "25px",
-        border: "1px solid transparent",
-    },
-    engine: {
-        "&:hover": { backgroundColor: "transparent" },
-        p: 0,
-    },
-    chip: {
-        color: "#667085",
-        fontSize: "14px",
-        height: "25px",
-    },
-    header:{
-        background:"#F8F9FB",
-        display: "flex",
-        justifyContent: "space-between",
-        padding: "10px 20px",
-        
-    },
-    typography:{
-        color:'#667084',
-        fontWeight:500,
-        fontSize:'12px',
-        padding:'10px 22px'
-    },
-    tableRow:{
-        background: "#F8F9FB",
-    },
-    parentRow:{
-        background: "#F2F3F6",
-        ".MuiTableCell-root":{
-            padding:"15px 18px"
-        }
-    },
-    type:{
-        color:Colors.primary_101,
-        fontSize:'14px',
-        fontWeight:700
-    },
-    nestedCell:{
-        padding:"17px 16px"
-    },
-    engineCell:{
-        color:Colors.primary_101,
-        fontSize:'14px',
-        fontWeight:700
-    },
-    nestedTableRow:{
-        margin:"0 0 0 auto", 
-        maxWidth:"2096px",
-        "tr":{
-            "td":{
-                width:'unset'
-            },
-            "th":{
-                width:'19%'
-            }
+    "td":{
+        "&:nth-child(3)":{
+            width:"13%"
         },
-        "@media screen and (max-width:2000px)":{
-            maxWidth: "1629px"
+        "&:nth-child(4)":{
+            width:"13.5%"
         },
-        "@media screen and (max-width:1440px)":{
-            maxWidth: "1116px"
+        "&:nth-child(5)":{
+            width:"13.98%"
         }
     },
-    save:{
-        background:"#027947",
-        color:"#fff",
-        fontSize:'14px',
-        fontWeight:600,
-        padding: "8px 46px",
-        textTransform: "capitalize",
-        marginTop: "32px",
-        marginLeft: "auto",
-        display: "flex",
-        borderRadius: "8px",
-        "&:hover":{
-            background:"#027947",
-        }
-    },
-    thBorder:{
-        "tr":{
-            "&:last-child":{
-                "td":{
-                    borderBottom:'unset'
-                },
-                "th":{
-                    borderBottom:'unset'
-                }
-            }
-        }
-    },
-    desc:{
-        boxShadow: "0px 1px 2px 0px #1018280D",
-        border: "1px solid #CFD4DC",
-        padding: "13px 16px",
-        borderRadius: "8px",
-        marginTop: "24px",
-        "h6":{
-            color:"#374151",
-            fontWeight:600,
-            fontSize:'14px'
-        }
-        
-    },
-    integration:{
-        border:'1px solid #D5D9EB',
-        padding: "0px 1px",
-        borderRadius: "28px",
-        fontSize:"12px",
-        height:'26px'
+    "th":{
+        width:"17%",
     }
-}
+  },
+  type: {
+    color: Colors.primary_101,
+    fontSize: "14px",
+    fontWeight: 700,
+  },
+  nestedCell: {
+    padding: "17px 16px",
+  },
+  engineCell: {
+    color: Colors.primary_101,
+    fontSize: "14px",
+    fontWeight: 700,
+  },
+  nestedTableRow: {
+    margin: "0 0 0 auto",
+    tr: {
+        th: {
+            width: "15%",
+           
+        },
+        td: {
+            "&:nth-child(1)": {
+                width: "8%",
+                border:'none',
+                "@media screen and (max-width:1440px)":{
+                    width:"5%",
+                }
+            },
+            "&:nth-child(3)": {
+                width: "13%",
+            },
+            "&:nth-child(4)": {
+                width: "14.3%",
+            },
+            "&:nth-child(5)": {
+                width: "12.7%",
+            },
+            "&:nth-child(6)": {
+                width: "25%",
+            },
+        },
+    },
+  },
+  save: {
+    background: "#027947",
+    color: "#fff",
+    fontSize: "14px",
+    fontWeight: 600,
+    padding: "8px 46px",
+    textTransform: "capitalize",
+    marginTop: "32px",
+    marginLeft: "auto",
+    display: "flex",
+    borderRadius: "8px",
+    "&:hover": {
+      background: "#027947",
+    },
+  },
+  thBorder: {
+    tr: {
+      "&:last-child": {
+        td: {
+          borderBottom: "unset",
+        },
+        th: {
+          borderBottom: "unset",
+        },
+      },
+    },
+  },
+  desc: {
+    boxShadow: "0px 1px 2px 0px #1018280D",
+    border: "1px solid #CFD4DC",
+    padding: "13px 16px",
+    borderRadius: "8px",
+    marginTop: "24px",
+    h6: {
+      color: "#374151",
+      fontWeight: 600,
+      fontSize: "14px",
+    },
+  },
+  integration: {
+    border: "1px solid #D5D9EB",
+    padding: "0px 1px",
+    borderRadius: "28px",
+    fontSize: "12px",
+    height: "26px",
+  },
+};
