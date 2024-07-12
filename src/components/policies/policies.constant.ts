@@ -598,11 +598,16 @@ export const Rows: any = [
       {
         type: "PII",
         component: CustomSwitch,
-        action: ActionDropdown,
+        action: AssetsDropdown,
         engines: [{text:"Azure GPT 4o", icon:engine}],
         headerAssets: "R&D",
         integration: ["GDPR", "HIPPA", "NIST AI RMF"],
         headerSeverityevel: "Medium",
+        desc:"This policy is intended to mitigate data leakage. It will monitor when your users are including PII in their prompts, as they interact with LLMs. Your users will be notified, when they use ApexPortal, as they make these actions. You will be able to monitor these actions via Apex security platform.\nPII includes email addresses, social security numbers and US zip codes.",
+        count: "195",
+        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
+        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
+        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
         policiesData: [
           {
             id: 1,
@@ -694,6 +699,11 @@ export const Rows: any = [
         headerAssets: AssetsDropdown,
         integration: ["GDPR", "NIST AI RMF", "CSF - NIST"],
         headerSeverityevel: Severity,
+        desc:"This policy is intended to mitigate data leakage. It will monitor when your users are including access data in their prompts, as they interact with LLMs. Your users will be notified, when they use ApexPortal, as they make these actions. You will be able to monitor these actions via Apex security platform. Access data includes IPs, MAC address, DB connection strings, passwords, API tokens, API keys, Access tokens, refresh tokens, URLs and private keys.",
+        count: "200",
+        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
+        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
+        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
         policiesData: [
           {
             id: 1,
@@ -740,11 +750,16 @@ export const Rows: any = [
       {
         type: "PCI",
         component: CustomSwitch,
-        action: ActionDropdown,
+        action: AssetsDropdown,
         engines: [{text:"Gemini", icon:gemini}],
         headerAssets: "*",
         integration: ["GDPR", "HIPPA", "NIST AI RMF"],
         headerSeverityevel: "Medium",
+        desc:"This policy is intended to mitigate data leakage. It will monitor when your users are including PCI in their prompts, as they interact with LLMs.\nYour users will be notified, when they use ApexPortal, as they make these actions. You will be able to monitor these actions via Apex security platform. PCI includes credit card numbers, SWIFT, IBANs, and Bitcoin addresses.",
+        count: "150",
+        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
+        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
+        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
         policiesData: [
           {
             id: 1,
@@ -811,11 +826,16 @@ export const Rows: any = [
       {
         type: "Custom Policies",
         component: CustomSwitch,
-        action: ActionDropdown,
+        action: AssetsDropdown,
         engines: [{text:"GPT 4", icon:gpt}],
         headerAssets: "*",
         integration: ["EU AI Act", "NIST AI RMF", " CSF - NIST"],
         headerSeverityevel: Severity,
+        desc:"This policy is intended to ensure company policy compliance by monitoring file access and content being discussed. Notifications will be sent via ApexPortal and monitored through the Apex security platform. company custom policy include the following sub-types: Sensitive file patterns, Github copilot file access, custom words, file denial list.",
+        count: "150",
+        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
+        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
+        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
         policiesData: [
           {
             id: 1,
@@ -861,11 +881,16 @@ export const Rows: any = [
       {
         type: "Jailbreak",
         component: CustomSwitch,
-        action: ActionDropdown,
+        action: AssetsDropdown,
         engines: [{text:"Azure GPT 4o", icon:engine}],
         headerAssets: "R&D",
         integration: ["Broken Access Contro", "NIST AI RMF", "CSF - NIST"],
         headerSeverityevel: "Medium",
+        desc:"This policy is intended to mitigate jailbreak threats. It will monitor when your users are trying to jailbreak your AI models.\n Jailbreaking is a technique to manipulate AI outputs by providing crafted inputs.Jailbreaking can lead to the generation of harmful or misleading content, posing ethical, security, and trust risks\n You will be able to monitor Jailbreak techniques like DAN, DUDE, STAN and others via the Apex security platform.",
+        count: "150",
+        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
+        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
+        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
         policiesData: [
           {
             id: 1,
@@ -927,6 +952,11 @@ export const Rows: any = [
         headerAssets: AssetsDropdown,
         integration: ["Injection", "NIST AI RMF", "CSF - NIST"],
         headerSeverityevel: Severity,
+        desc:"This policy is designed to mitigate prompt injection threats. It will monitor attempts to inject prompts into your AI models.\nPrompt injection is a technique where a prompt includes crafted inputs to manipulate AI outputs. This can bypass alignment checks, resulting in the generation of harmful or misleading content, posing significant ethical, security, and trust risks.\nYou will be able to monitor prompt injection techniques, including methods like invisible characters, data exfiltration, and others via the Apex security platform.",
+        count: "150",
+        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
+        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
+        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
         policiesData: [
           {
             id: 1,
@@ -983,11 +1013,16 @@ export const Rows: any = [
       {
         type: "Malicious code",
         component: CustomSwitch,
-        action: ActionDropdown,
+        action: AssetsDropdown,
         engines: [{text:"Gemini", icon:gemini}],
         headerAssets: "*",
         integration: ["Software & Data Integrity ", "CSF - NIST", "NIST AI RMF"],
         headerSeverityevel: "Medium",
+        desc:"This policy is intended to monitor and mitigate the inclusion of malicious code in prompts. Notifications will be sent via ApexChat and monitored through the Apex security platform. Malicious code includes the following sub-types: Package hallucination, Model DOS, Typosquatting.",
+        count: "150",
+        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
+        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
+        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
         policiesData: [
           {
             id: 1,
@@ -1024,11 +1059,16 @@ export const Rows: any = [
       {
         type: "Rouge Agent",
         component: CustomSwitch,
-        action: ActionDropdown,
+        action: AssetsDropdown,
         engines: [{text:"GPT 4", icon:gpt}],
         headerAssets: "*",
         integration: ["NIST AI RMF","CSF - NIST"],
         headerSeverityevel: Severity,
+        desc:"This policy is intended to monitor and mitigate the use of insecure agents. It ensures that all agents interacting with AI systems are secure and compliant. Notifications will be sent via ApexChat and monitored through the Apex security platform.",
+        count: "150",
+        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
+        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
+        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
         policiesData: [
           {
             id: 1,
@@ -1051,11 +1091,16 @@ export const Rows: any = [
       {
         type: "Topics and content",
         component: CustomSwitch,
-        action: ActionDropdown,
+        action: AssetsDropdown,
         engines: [{text:"Azure GPT 4o", icon:engine}],
         headerAssets: "R&D",
         integration: ["GDPR", "EU AI Act", "CSF - NIST"],
         headerSeverityevel: "Medium",
+        desc:"This policy is intended to ensure that all prompts conform to approved topics and content guidelines. It will monitor the prompts to ensure they do not request content on unapproved or sensitive topics, and comply with the content standards set by the organization. You will be able to monitor these activities via the Apex security platform.",
+        count: "150",
+        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
+        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
+        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
         policiesData: [
           {
             id: 1,
@@ -1127,7 +1172,11 @@ export const Rows: any = [
         headerAssets: AssetsDropdown,
         integration: ["NIST AI RMF", "CSF - NIST"],
         headerSeverityevel: Severity,
-       
+        desc:"This policy is intended to monitor and mitigate issues related to data hallucination. It ensures the integrity of data being used and generated by AI systems. Notifications will be sent via ApexChat and monitored through the Apex security platform.",
+        count: "195",
+        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
+        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
+        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
       }
     ],
   }

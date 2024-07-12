@@ -22,6 +22,7 @@ export const ModelData = ({
   setIsPrompt,
   setIsGenerate,
   isGenerate,
+  createPolicy,
 }: any) => {
   const PolicyData = [
     {
@@ -40,7 +41,13 @@ export const ModelData = ({
             <ButtonComponent title="View" icon={view} />
             <ButtonComponent title="Duplicate" icon={copy} />
           </Grid>
-          <Grid sm={3} xs={12} display="flex" justifyContent={{sm:'flex-end', xs:'flex-start'}} mt={{sm:0, xs:2}}>
+          <Grid
+            sm={3}
+            xs={12}
+            display="flex"
+            justifyContent={{ sm: "flex-end", xs: "flex-start" }}
+            mt={{ sm: 0, xs: 2 }}
+          >
             <Button
               sx={ModalDataStyle.delete}
               onClick={() => {
@@ -52,69 +59,91 @@ export const ModelData = ({
           </Grid>
         </Grid>
 
-        <Typography sx={ModalDataStyle.ModalTypo}>
-          {selectedRow?.policyName}
-        </Typography>
-        {selectedRow?.longDesc?.map((item: any, i: number) => {
-          return (
-            <Typography sx={ModalDataStyle.ModalDesc} key={i.toString()} pb={2}>
-              {item.desc}
+        {createPolicy ? (
+          <>
+            <Typography sx={ModalDataStyle.ModalTypo}>
+              {selectedRow.type}
             </Typography>
-          );
-        })}
-
-        <Box mt={6}>
-          <Typography pb={3} fontSize="14px" color="#667084">
-            Groups
-          </Typography>
-          <Box display="flex" gap="10px">
-            {selectedRow.groups.groupName?.map((items: any, i: number) => (
-              <Typography
-                variant="h6"
-                key={i.toString()}
-                sx={ModalDataStyle.groupNames}
-              >
-                {items.name1}
+              <Typography sx={ModalDataStyle.ModalDesc} pb={2}>
+                {selectedRow.desc}
               </Typography>
-            ))}
-          </Box>
-        </Box>
-
-        {/* policy suggestions */}
-        {
-          selectedRow?.policyName.includes("Github Copilot Policy") &&
-          <Box sx={ModalDataStyle.suggestion}>
-            <Grid container justifyContent="space-between" mb={3.2}>
-              <Grid sm={5.5} xs={7}>
-                <Typography variant="h6" fontWeight={400} color="#156FEE">
-                  Policy suggestion{" "}
+          </>
+        ) : (
+          <>
+            <Typography sx={ModalDataStyle.ModalTypo}>
+              {selectedRow?.policyName}
+            </Typography>
+            {selectedRow?.longDesc?.map((item: any, i: number) => {
+              return (
+                <Typography
+                  sx={ModalDataStyle.ModalDesc}
+                  key={i.toString()}
+                  pb={2}
+                >
+                  {item.desc}
                 </Typography>
-              </Grid>
-              <Grid sm={5.5} xs={5} display="flex" justifyContent="flex-end">
-                <Button sx={ModalDataStyle.button}>Close</Button>
-              </Grid>
-            </Grid>
+              );
+            })}
 
-            <Box sx={ModalDataStyle.morePolicy}>
-              <Typography fontWeight={500}>
-                This is the description of the policy lorem ipsum dolor sit amet
-                consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-                labore et This is the description of the policy
+            <Box mt={6}>
+              <Typography pb={3} fontSize="14px" color="#667084">
+                Groups
               </Typography>
-              <Button>Active</Button>
+              <Box display="flex" gap="10px">
+                {selectedRow.groups.groupName?.map((items: any, i: number) => (
+                  <Typography
+                    variant="h6"
+                    key={i.toString()}
+                    sx={ModalDataStyle.groupNames}
+                  >
+                    {items.name1}
+                  </Typography>
+                ))}
+              </Box>
             </Box>
 
-            <Box sx={ModalDataStyle.morePolicy}>
-              <Typography fontWeight={500}>
-                This is the description of the policy lorem ipsum dolor sit amet
-                consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-                labore et This is the description of the policy
-              </Typography>
-              <Button>Active</Button>
-            </Box>
-          </Box>
-        }
-        
+            {/* policy suggestions */}
+            {selectedRow?.policyName.includes("Github Copilot Policy") && (
+              <Box sx={ModalDataStyle.suggestion}>
+                <Grid container justifyContent="space-between" mb={3.2}>
+                  <Grid sm={5.5} xs={7}>
+                    <Typography variant="h6" fontWeight={400} color="#156FEE">
+                      Policy suggestion{" "}
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    sm={5.5}
+                    xs={5}
+                    display="flex"
+                    justifyContent="flex-end"
+                  >
+                    <Button sx={ModalDataStyle.button}>Close</Button>
+                  </Grid>
+                </Grid>
+
+                <Box sx={ModalDataStyle.morePolicy}>
+                  <Typography fontWeight={500}>
+                    This is the description of the policy lorem ipsum dolor sit
+                    amet consectetur adipiscing elit sed do eiusmod tempor
+                    incididunt ut labore et This is the description of the
+                    policy
+                  </Typography>
+                  <Button>Active</Button>
+                </Box>
+
+                <Box sx={ModalDataStyle.morePolicy}>
+                  <Typography fontWeight={500}>
+                    This is the description of the policy lorem ipsum dolor sit
+                    amet consectetur adipiscing elit sed do eiusmod tempor
+                    incididunt ut labore et This is the description of the
+                    policy
+                  </Typography>
+                  <Button>Active</Button>
+                </Box>
+              </Box>
+            )}
+          </>
+        )}
       </Box>
 
       <Box sx={ModalDataStyle.ModalData}>

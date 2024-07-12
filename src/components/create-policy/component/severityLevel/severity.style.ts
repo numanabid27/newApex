@@ -56,9 +56,25 @@ export const styles = {
         fontWeight:500,
         textAlign:'left',
         textTransform:"capitalize",
-        justifyContent:'flex-start'
+        justifyContent:'flex-start',
+        padding:'8px 13px',
+        borderBottom:'1px solid #EAECF0',
+        borderRadius:'0px'
     },
     selected:{
         background:'#F9FAFB'
-    }
+    },
+    severityChip: {
+        height: "25px",
+        border: "1px solid transparent",
+    },
+    iconBtn: {
+        "&:hover": { backgroundColor: "transparent" },
+        pl: 0,
+        pr: 0,
+    },
+    severityLevel: {
+        fontSize: "8px",
+        ml: 1,
+    },
 }

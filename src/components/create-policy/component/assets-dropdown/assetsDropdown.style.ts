@@ -15,7 +15,6 @@ export const styles = {
         textTransform:"capitalize",
         border: "1px solid #CFD4DC",
         boxShadow: "0px 1px 2px 0px #1018280D",
-        width:'130px',
         whiteSpace:'nowrap',
         "&:hover":{
             background: "#fff",
@@ -29,16 +28,37 @@ export const styles = {
     },
     dropdownStyle:{
         background:"#fff",
-        padding: "4px 19px",
+        padding: "4px 0px",
         borderRadius: "8px",
         marginTop: "10px",
         display:'flex',
         flexDirection:'column',
         position:'absolute',
         zIndex: 99,
+        justifyContent:'flex-start',
+        width:'140px'
     },
     typography:{
         color:Colors.primary_101,
-        fontWeight:500
-    }
+        fontWeight:500,
+        textTransform:'capitalize',
+        justifyContent:'flex-start'
+    },
+    dropdownStyle2:{
+        background:"#fff",
+        padding: "4px 10px",
+        // width:'185px',
+        borderRadius: "8px",
+        marginTop: "10px",
+        display:'flex',
+        flexDirection:'column',
+        position:'absolute',
+        zIndex: 99,
+        boxShadow:" 0px 2px 6px #80808047",
+        justifyContent:'flex-start'
+    },
+    selected:{
+        background:'#F9FAFB',
+        justifyContent:'space-between'
+    },
 }

@@ -35,7 +35,7 @@ const ActionDropdown = () => {
                 <FormControlLabel
                   key={i.toString()}
                   label={<Box sx={styles.checkBoxItems}>
-                    <Image src={item.img} alt="" />
+                    <Image src={item.img} alt="" width={16} height={16} />
                     <Typography sx={styles.typography}>{item.label}</Typography>
                     </Box>}
                   control={

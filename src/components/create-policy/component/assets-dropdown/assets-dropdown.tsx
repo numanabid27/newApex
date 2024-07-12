@@ -1,59 +1,73 @@
-import { Box, Button, Checkbox, FormControlLabel, Typography } from '@mui/material'
-import Image from 'next/image'
-import check from "@/common/assets/images/check-check.svg";
-import {styles} from "./assetsDropdown.style";
-import { assets } from '../../createPolicy.constant';
-import useCreatePolicies from '../severityLevel/use-severity.hook';
-// import useCreatePolicies from '../../use-createPolicies.hook';
+import { Box, Button, Chip, IconButton } from "@mui/material";
+import Image from "next/image";
+import { styles } from "./assetsDropdown.style";
+import downArrow from "@/common/assets/images/downs.svg";
+import useCreatePolicies from "../severityLevel/use-severity.hook";
+import { assets } from "../../createPolicy.constant";
+import tick from "@/common/assets/images/tick.svg";
 
-const AssetsDropdown = () => {
-  
-  const {handleClick, handleChange, isHide, checkedValues} = useCreatePolicies();
- 
+const AssetsDropdown = ({ title, img, ltr, onItemClick, data }: any) => {
+  const { handleClick, isHide, handleClicked, isValue, dropdownRef } =
+    useCreatePolicies();
+
+  const handleItemClick = (label: any) => {
+    handleClicked(label);
+    if (onItemClick) {
+      onItemClick(label);
+    }
+  };
+
   return (
     <>
-      <Box>
+      <Box ref={dropdownRef}>
         <Button sx={styles.dropdwonButton} onClick={handleClick}>
-          {
-            checkedValues.length === 0 ?
+          {isValue ? (
+            <Box display="flex" alignItems="center" gap="10px">
+              {!ltr && <Image src={img} alt="" />}
+              {isValue.length > 9 ? isValue.slice(0, 9) + "..." : isValue}
+              <Image src={downArrow} alt="" />
+            </Box>
+          ) : (
             <>
-              <Image src={check} alt="" />
-              Set for all
+              {ltr ? (
+                <>
+                  {title}
+                  <Image src={img} alt="" />
+                </>
+              ) : (
+                <>
+                  <Image src={img} alt="" />
+                  {title}
+                </>
+              )}
             </>
-            :
-            checkedValues.map((item:any, i:any)=>(
-              <Typography key={i.toString()} sx={styles.typography}>{item}</Typography>
-            ))
-          }
-          
+          )}
         </Button>
-        {
-          isHide &&
-          <Box sx={styles.dropdownStyle}>
-            {
-              assets.map((item:any, i:number)=>(
-                <FormControlLabel
-                  key={i.toString()}
-                  label={<Box sx={styles.checkBoxItems}>
-                    
-                    <Typography sx={styles.typography}>{item.label}</Typography>
-                    </Box>}
-                  control={
-                    <Checkbox
-                      color="success"
-                      checked={checkedValues.includes(item.label)}
-                      onChange={() => handleChange(item.label)}
-                    />
-                  }
-                />
-              ))
-            }
+        {isHide && (
+          <Box sx={ltr ? styles.dropdownStyle2 : styles.dropdownStyle}>
+            {data?.map((item: any, i: number) => (
+              <Button
+                key={i.toString()}
+                sx={[
+                  styles.typography,
+                  isValue == item.label && styles.selected,
+                ]}
+                onClick={() => handleItemClick(item.label)}
+              >
+                <>
+                  <Box display="flex" alignItems="center" gap="10px">
+                    {item.actionImg && <Image src={item.actionImg} alt="" />}
+                    {item.label}
+                  </Box>
+                  {isValue == item.label && <Image src={tick} alt="" />}
+                </>
+              </Button>
+            ))}
           </Box>
-        }
-        
+        )}
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default AssetsDropdown
+export default AssetsDropdown;

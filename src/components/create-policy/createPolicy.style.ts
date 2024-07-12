@@ -63,6 +63,7 @@ export const style = {
   },
   parentRow: {
     background: "#F2F3F6",
+    cursor:'pointer',
     ".MuiTableCell-root": {
       padding: "15px 18px",
     },
@@ -169,5 +170,117 @@ export const style = {
     borderRadius: "28px",
     fontSize: "12px",
     height: "26px",
+  },
+  deleteBackdrop: {
+    position: "fixed",
+    zIndex: "999999",
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    margin: "auto",
+    height: "100%",
+    background: "#00000070",
+  },
+  deleteModel: {
+    padding: "22px 28px",
+    borderRadius: "8px",
+    maxWidth: "658px",
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    margin: "auto",
+    height: "fit-content",
+    "&:before": {
+      background: "#000",
+      content: `''`,
+      position: "absolute",
+    },
+    "h5": {
+      color: Colors.primary_101,
+      fontSize: "16px",
+      fontWeight: 700,
+    },
+    "h6": {
+      padding: "22px 0",
+      lineHeight: 1.6,
+      fontSize: "16px",
+      fontWeight: 400,
+    },
+    button: {
+      fontSize: "14px",
+      fontWeight: 600,
+      textTransform: "capitalize",
+      padding: "8px 16px",
+      borderRadius: "8px",
+    },
+  },
+  cancel: {
+    border: " 1px solid #D0D5DD",
+  },
+  del:{
+    background: "#FEF3F2", 
+    color: "#B42318" 
+  },
+  actionBtn:{
+    position:"relative",
+    display:"flex",
+    justifyContent:"space-between"
+  },
+  promptBox: {
+    borderTop: "1px solid #EAECF0",
+    borderBottom: "1px solid #EAECF0",
+    margin: "25px 0",
+    "h6": {
+      fontWeight: 600,
+      paddingBottom: "0px !important",
+    },
+
+    textarea: {
+      border: "1px solid #CFD4DC",
+      boxShadow: "0px 1px 2px 0px #1018280D",
+      background: "transparent",
+      display: "block",
+      width: "100%",
+      padding: " 9px 18px",
+      borderRadius: "8px",
+      marginTop: "18px",
+      resize: "none",
+    },
+  },
+  bard: {
+    background: "#fff",
+    display:'flex',
+    alignItems:'center',
+    padding:" 15px 19px",
+    borderRadius: "8px",
+    gap:'16px',
+    margin:'30px 0px',
+    boxShadow: "0px 1px 2px 0px #1018280D"
+
+  },
+  voilationBox:{
+    background:"#FEF3F2",
+    borderRadius:'8px',
+    padding: "16px 22px",
+    marginBottom: "30px",
+    "h4":{
+      color:"#D92D20",
+      fontSize:'14px',
+      fontWeight:500,
+      "span":{
+        fontWeight:600,
+      }
+    }
+  },
+  piBox:{
+    paddingTop:'22px',
+    "h2":{
+      color:"#374151",
+      fontSize:'16px',
+      fontWeight:600
+    }
   },
 };

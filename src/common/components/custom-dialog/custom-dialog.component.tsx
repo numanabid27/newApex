@@ -36,7 +36,8 @@ export default function CustomDialog({
   modelData,
   setIsPrompt,
   setIsGenerate,
-  isGenerate
+  isGenerate,
+  createPolicy
 }: any) {
   const [expandValue, setExpandValue] = useState(true);
   return (
@@ -84,6 +85,7 @@ export default function CustomDialog({
               setIsPrompt={setIsPrompt}
               setIsGenerate={setIsGenerate}
               isGenerate={isGenerate}
+              createPolicy={createPolicy}
             />
           )}
           {thead === "session" && <SessionAccordion newData={newData} isMessage={isMessage} />}

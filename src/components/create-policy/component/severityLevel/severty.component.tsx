@@ -1,20 +1,22 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Chip, IconButton } from "@mui/material";
 import Image from "next/image";
 import { styles } from "./severity.style";
 // import useCreatePolicies from "../../use-createPolicies.hook";
 import downArrow from "@/common/assets/images/downs.svg";
 import useCreatePolicies from "./use-severity.hook";
+import Colors from "@/common/constants/color.constant";
+import CircleIcon from "@mui/icons-material/Circle";
 
-const Severity = ({ title, img, severity, ltr , onItemClick}: any) => {
+const Severity = ({ title, img, severity, ltr, onItemClick }: any) => {
   const { handleClick, isHide, handleClicked, isValue, dropdownRef } =
     useCreatePolicies();
 
-    const handleItemClick = (label: any) => {
-      handleClicked(label);
-      if (onItemClick) {
-        onItemClick(label);
-      }
-    };
+  const handleItemClick = (label: any) => {
+    handleClicked(label);
+    if (onItemClick) {
+      onItemClick(label);
+    }
+  };
 
   return (
     <>
@@ -53,7 +55,53 @@ const Severity = ({ title, img, severity, ltr , onItemClick}: any) => {
                 ]}
                 onClick={() => handleItemClick(item.label)}
               >
-                {item.label}
+                <IconButton sx={styles.iconBtn}>
+                  <Chip
+                    label={item.label}
+                    sx={{
+                      ...styles.severityChip,
+                      color:
+                        item.label === "Medium"
+                          ? Colors.brown
+                          : item.label === "Critical"
+                          ? Colors.darkBrown
+                          : item.label === "Low"
+                          ? Colors.textGreen
+                          : item.label === "High"
+                          ? Colors.textHigh
+                          : "",
+                      bgcolor:
+                        item.label === "Medium"
+                          ? Colors.primaryWhite
+                          : item.label === "Critical"
+                          ? Colors.secondaryWhite
+                          : item.label === "Low"
+                          ? Colors.primaryGreen
+                          : item.label === "High"
+                          ? Colors.defaultWhite
+                          : "",
+                      p: 0,
+                    }}
+                    icon={
+                      <CircleIcon
+                        sx={{
+                          fill:
+                            item.label === "Medium"
+                              ? `${Colors.orange} !important`
+                              : item.label === "Critical"
+                              ? `${Colors.darkBrown} !important`
+                              : item.label === "High"
+                              ? Colors.circleHigh
+                              : item.label === "Low"
+                              ? Colors.circleLow
+                              : `${Colors.defaultBrown} !important`,
+
+                          ...styles.severityLevel,
+                        }}
+                      />
+                    }
+                  />
+                </IconButton>
               </Button>
             ))}
           </Box>

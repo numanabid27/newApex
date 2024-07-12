@@ -1,5 +1,13 @@
 import coppit from "@/common/assets/images/copilot.svg";
-import snyk from "@/common/assets/images/snyk.svg";
+import snyk from "@/common/assets/images/synk.svg";
+import gemini from "@/common/assets/images/gemini.svg";
+import AssistantIcon from "@/common/assets/images/emoji.svg";
+import claud from "@/common/assets/images/claud.svg";
+import meta from "@/common/assets/images/meta.svg";
+import microsoft from "@/common/assets/images/microsoft.svg";
+import bell from "@/common/assets/images/bell.svg";
+import block from "@/common/assets/images/shield-off.svg";
+import redat from "@/common/assets/images/shield-minus.svg";
 
 export const OPTIONS = [
   { value: "all-devops", label: "All-Devops" },
@@ -9,13 +17,38 @@ export const OPTIONS = [
 export const actions = [
   {
     id: 1,
-    label: "Copilot",
-    img: coppit,
+    label: "Google Gemini",
+    img: gemini,
   },
   {
     id: 2,
     label: "Snyk",
     img: snyk,
+  },
+  {
+    id: 3,
+    label: "Huggingface",
+    img: AssistantIcon,
+  },
+  {
+    id: 4,
+    label: "Claude",
+    img: claud,
+  },
+  {
+    id: 5,
+    label: "Llama",
+    img: meta,
+  },
+  {
+    id: 6,
+    label: "Co-pilot",
+    img: coppit,
+  },
+  {
+    id: 7,
+    label: "Co-pilot",
+    img: microsoft,
   },
 ];
 
@@ -41,15 +74,33 @@ export const multiAction = [
 export const assets = [
   {
     id: 1,
-    label: "Message",
+    label: "R&D",
   },
   {
     id: 2,
-    label: "Another one",
+    label: "Marketing",
   },
   {
     id: 3,
-    label: "File",
+    label: "Executives",
+  },
+];
+
+export const actionsAction = [
+  {
+    id: 1,
+    label: "Block",
+    actionImg:block,
+  },
+  {
+    id: 2,
+    label: "Reduct",
+    actionImg:redat,
+  },
+  {
+    id: 3,
+    label: "Notify",
+    actionImg:bell,
   },
 ];
 

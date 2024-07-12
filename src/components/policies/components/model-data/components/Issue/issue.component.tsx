@@ -6,7 +6,6 @@ import { ISSUES_DATA } from '../model-data/modal-data.constants';
 import { styles } from "./issue.style";
 
 export const Issue = ({selectedRow}:any) => {
- 
   const chartData = ISSUES_DATA(selectedRow?.highData, selectedRow?.mediumData, selectedRow?.lowData)
     return (
         <>

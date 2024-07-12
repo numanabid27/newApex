@@ -17,7 +17,7 @@ import {
   Typography,
 } from "@mui/material";
 import { style } from "./createPolicy.style";
-import { POLICIES_CHECKBOX_FILTER } from "./createPolicy.constant";
+import { actionsAction, assets, POLICIES_CHECKBOX_FILTER } from "./createPolicy.constant";
 import CheckBoxComponent from "./component/checkbox.component";
 import { Rows } from "../policies/policies.constant";
 import Colors from "@/common/constants/color.constant";
@@ -39,9 +39,17 @@ import Filters from "../session-explorer/components/filters/filter.component";
 import search from "@/common/assets/images/search.svg";
 import useFilterPolicy from "./use-createPolicies.hook";
 import PolicyFilters from "./component/filters";
+import CustomDialog from "@/common/components/custom-dialog/custom-dialog.component";
+import usePolicies from "../policies/use-policies.hook";
+import Severity from "./component/severityLevel/severty.component";
+import { POLICIES_GPT } from "../policies/components/model-data/components/model-data/modal-data.constants";
+import downArrow from "@/common/assets/images/downs.svg";
+import gemini from "@/common/assets/images/gemini.svg";
+import AddIcon from "@mui/icons-material/Add";
 
 function Row(props: any) {
-  const { Rows, selectedRow, setSelectedRow, finalData } = props;
+  const { Rows, selectedRow, setSelectedRow, finalData, setOpenModal, setAb } =
+    props;
   // const { selectedRow, setSelectedRow, finalData } = useFilterPolicy();
   // const { Rows } = props;
   const [open, setOpen] = useState(false);
@@ -52,14 +60,29 @@ function Row(props: any) {
     }
   }, [selectedRow]);
 
+  const [isOpenSwitch, setIsOpenSwitch] = useState(false);
+
+  const switchChange = (e: any) => {
+    setIsOpenSwitch(e.target.checked);
+  };
+
   return (
     <>
-      <TableRow sx={style.parentRow}>
+      <TableRow
+        sx={style.parentRow}
+        onClick={() => {
+          setOpenModal(true);
+          setSelectedRow(Rows);
+        }}
+      >
         <TableCell>
           <IconButton
             aria-label="expand row"
             size="small"
-            onClick={() => setOpen(!open)}
+            onClick={(e: any) => {
+              setOpen(!open);
+              e.stopPropagation();
+            }}
           >
             {Rows.policiesData ? (
               <>{open ? <KeyboardArrowDownIcon /> : <ChevronRightIcon />}</>
@@ -68,18 +91,31 @@ function Row(props: any) {
         </TableCell>
         <TableCell component="th" scope="row" sx={style.type}>
           <Box display="flex" gap="21px">
-            {<Rows.component />}
+            {
+              <Rows.component
+                onClick={(e: any) => e.stopPropagation()}
+                onChange={switchChange}
+              />
+            }
             {Rows.type}
           </Box>
         </TableCell>
         <TableCell>
           {typeof Rows.action === "string" ? (
-            <Button sx={{gap:'10px', textTransform:"capitalize"}}>
+            <Button sx={{ gap: "10px", textTransform: "capitalize" }}>
               <Image src={bell} alt="" />
               <Typography sx={style.engineCell}>{Rows.action}</Typography>
             </Button>
           ) : (
-            <Rows.action />
+            <Box onClick={(e: any) => e.stopPropagation()}>
+              <Rows.action
+                title="Set for all"
+                img={check}
+                severity={severity}
+                ltr={false}
+                data={actionsAction}
+              />
+            </Box>
           )}
         </TableCell>
         <TableCell>
@@ -87,7 +123,10 @@ function Row(props: any) {
             <Box display="flex" gap="5px">
               {Rows.engines?.map((item: any, i: number) => {
                 return (
-                  <Button sx={{gap:'5px', textTransform:"capitalize"}} key={i.toString()}>
+                  <Button
+                    sx={{ gap: "5px", textTransform: "capitalize" }}
+                    key={i.toString()}
+                  >
                     <Image src={item.icon} alt="" />
                     <Typography sx={style.engineCell}>{item.text}</Typography>
                   </Button>
@@ -95,16 +134,26 @@ function Row(props: any) {
               })}
             </Box>
           ) : (
-            <Rows.engines />
+            <Box onClick={(e: any) => e.stopPropagation()}>
+              <Rows.engines />
+            </Box>
           )}
         </TableCell>
         <TableCell>
           {typeof Rows.headerAssets === "string" ? (
-            <Button sx={{ gap:'10px', textTransform:"capitalize"}}>
+            <Button sx={{ gap: "10px", textTransform: "capitalize" }}>
               <Typography sx={style.engineCell}>{Rows.headerAssets}</Typography>
             </Button>
           ) : (
-            <Rows.headerAssets />
+            <Box onClick={(e: any) => e.stopPropagation()}>
+              <Rows.headerAssets
+                title="Set for all"
+                img={check}
+                severity={severity}
+                ltr={false}
+                data={assets}
+              />
+            </Box>
           )}
         </TableCell>
         <TableCell align="right">
@@ -112,12 +161,19 @@ function Row(props: any) {
             <Box display="flex" gap="5px">
               {Rows.integration.map((item: any, i: number) => {
                 return (
-                  <Chip label={item} variant="outlined" key={i.toString()} sx={style.integration} />
+                  <Chip
+                    label={item}
+                    variant="outlined"
+                    key={i.toString()}
+                    sx={style.integration}
+                  />
                 );
               })}
             </Box>
           ) : (
-            <Rows.integration />
+            <Box onClick={(e: any) => e.stopPropagation()}>
+              <Rows.integration />
+            </Box>
           )}
         </TableCell>
         <TableCell>
@@ -170,12 +226,14 @@ function Row(props: any) {
               />
             </IconButton>
           ) : (
-            <Rows.headerSeverityevel
-              title="Set for all"
-              img={check}
-              severity={severity}
-              ltr={false}
-            />
+            <Box onClick={(e: any) => e.stopPropagation()}>
+              <Rows.headerSeverityevel
+                title="Set for all"
+                img={check}
+                severity={severity}
+                ltr={false}
+              />
+            </Box>
           )}
         </TableCell>
       </TableRow>
@@ -200,7 +258,12 @@ function Row(props: any) {
                         sx={style.nestedCell}
                       >
                         <Box display="flex" alignItems="center" gap="16px">
-                          {<historyRow.component defaultChecked />}
+                          {isOpenSwitch && isOpenSwitch ? (
+                            <> {<historyRow.component defaultChecked />}</>
+                          ) : (
+                            <>{<historyRow.component />}</>
+                          )}
+
                           {historyRow.keyWord && <historyRow.keyWord />}
                           {historyRow.policyName}
                         </Box>
@@ -259,7 +322,12 @@ function Row(props: any) {
                             {historyRow.integration.map(
                               (item: any, i: number) => {
                                 return (
-                                  <Chip label={item} variant="outlined" key={i.toString()} sx={style.integration} />
+                                  <Chip
+                                    label={item}
+                                    variant="outlined"
+                                    key={i.toString()}
+                                    sx={style.integration}
+                                  />
                                 );
                               }
                             )}
@@ -327,8 +395,7 @@ function Row(props: any) {
   );
 }
 
-export default function CreatePolicy(id:any) {
-
+export default function CreatePolicy(id: any) {
   const {
     selectedRow,
     setSelectedRow,
@@ -346,6 +413,16 @@ export default function CreatePolicy(id:any) {
     setTags,
   } = useFilterPolicy();
 
+  const {
+    openModal,
+    setOpenModal,
+    setIsModel,
+    isModel,
+    isPrompt,
+    setIsPrompt,
+  } = usePolicies();
+  const [ab, setAb] = useState("");
+  const [isGenerate, setIsGenerate] = useState(false);
   return (
     <>
       <Box sx={style.createPolicy}>
@@ -376,7 +453,7 @@ export default function CreatePolicy(id:any) {
                 border: "1px solid #CFD4DC",
                 boxShadow: "0px 1px 2px 0px #1018280D",
                 borderRadius: "8px",
-                display:{ sm:"block", xs:"none" }
+                display: { sm: "block", xs: "none" },
               }}
             >
               <IconButton sx={{ p: "10px" }} aria-label="menu">
@@ -396,8 +473,8 @@ export default function CreatePolicy(id:any) {
             sx={{
               marginLeft: "auto",
               display: "flex",
-              justifyContent: {sm:'flex-end', xs:'center'},
-              flexWrap:{sm:'unset', xs:'wrap'}
+              justifyContent: { sm: "flex-end", xs: "center" },
+              flexWrap: { sm: "unset", xs: "wrap" },
             }}
           >
             {POLICIES_CHECKBOX_FILTER?.map((item: any, i: number) => {
@@ -474,6 +551,8 @@ export default function CreatePolicy(id:any) {
                               selectedRow={selectedRow}
                               setSelectedRow={setSelectedRow}
                               finalData={finalData}
+                              setOpenModal={setOpenModal}
+                              setAb={setAb}
                             />
                           ))}
                         </TableBody>
@@ -485,9 +564,123 @@ export default function CreatePolicy(id:any) {
             );
           })}
         </Box>
-        
+
         <Button sx={style.save}>Save</Button>
       </Box>
+      {/* delete policy model */}
+      {isModel && (
+        <Box sx={style.deleteBackdrop}>
+          <Box sx={{ ...style.deleteModel, background: "#fff" }}>
+            <Typography variant="h5">Delete Policy</Typography>
+            <Typography variant="h6">
+              By proceeding, you will permanently lose all data associated with
+              this policy. Are you sure you want to permanently delete this
+              policy?
+            </Typography>
+            <Box display="flex" justifyContent="flex-end" gap="10px">
+              <Button
+                onClick={() => {
+                  setIsModel(false);
+                }}
+                sx={style.cancel}
+              >
+                Cancel
+              </Button>
+              <Button sx={style.del}>Yes, delete it</Button>
+            </Box>
+          </Box>
+        </Box>
+      )}
+
+      {/* prompt model */}
+      {isPrompt && (
+        <Box sx={style.deleteBackdrop}>
+          <Box
+            sx={{ ...style.deleteModel, background: "#F9FAFB" }}
+            className="modelMain"
+          >
+            <Box sx={style.actionBtn}>
+              <Severity
+                title="Select Engine"
+                img={downArrow}
+                severity={POLICIES_GPT}
+                ltr={true}
+              />
+              <Button className="testBtn">
+                <AddIcon />
+                New Test
+              </Button>
+            </Box>
+
+            <Box sx={style.promptBox}>
+              <Typography variant="h6">Prompt</Typography>
+              <textarea
+                placeholder="What's my email address number?"
+                rows={7}
+              ></textarea>
+
+              <Box sx={style.bard}>
+                <Image src={gemini} alt="" />
+                <Box>
+                  <Typography color="#374151" pb={1} fontWeight={500}>
+                    Your email is
+                  </Typography>
+                  <Typography color="#D92D20" fontWeight={500}>
+                    Jhon_doe@gmail.com
+                  </Typography>
+                </Box>
+              </Box>
+
+              <Box sx={style.voilationBox}>
+                <Typography variant="h4">
+                  <span>1 Violations: </span>
+                  PII (email)
+                </Typography>
+                <Box sx={style.piBox}>
+                  <Typography variant="h2">PII</Typography>
+                  <Typography color="#374151" pt={2}>
+                    Personally identifiable information (PII) is any information
+                    connected to a specific individual that can be used to
+                    uncover that individuals identity, such as their social
+                    security number, full name, email address or phone number.
+                  </Typography>
+                </Box>
+                <Box sx={style.piBox}>
+                  <Typography variant="h2">Email</Typography>
+                  <Typography color="#374151" pt={2}>
+                    Personally identifiable information (PII) is any information
+                    connected to a specific individual that can be used to
+                    uncover
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+
+            <Box display="flex" justifyContent="center" gap="10px">
+              <Button className="runTest">Run Test</Button>
+              <Button
+                className="testBtn"
+                onClick={() => {
+                  setIsPrompt(false);
+                }}
+              >
+                Stop
+              </Button>
+            </Box>
+          </Box>
+        </Box>
+      )}
+      <CustomDialog
+        selectedRow={selectedRow}
+        thead={"policy"}
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+        setIsModel={setIsModel}
+        setIsPrompt={setIsPrompt}
+        createPolicy={true}
+        setIsGenerate={setIsGenerate}
+        isGenerate={isGenerate}
+      />
     </>
   );
 }

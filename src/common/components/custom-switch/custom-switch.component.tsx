@@ -1,8 +1,22 @@
-import { Switch, SwitchProps, styled } from "@mui/material";
+import React from 'react';
+import { Switch, SwitchProps, styled } from '@mui/material';
 
-export const CustomSwitch = styled((props: SwitchProps) => (
-  <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
-))(({ theme }) => ({
+interface CustomSwitchProps extends SwitchProps {
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const CustomSwitchComponent: React.FC<CustomSwitchProps> = ({ onChange, ...props }) => {
+  return (
+    <Switch
+      focusVisibleClassName=".Mui-focusVisible"
+      disableRipple
+      {...props}
+      onChange={onChange}
+    />
+  );
+};
+
+export const CustomSwitch = styled(CustomSwitchComponent)(({ theme }) => ({
   width: 38,
   height: 22,
   padding: 0,
