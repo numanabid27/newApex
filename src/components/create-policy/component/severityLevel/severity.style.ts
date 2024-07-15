@@ -61,6 +61,14 @@ export const styles = {
         borderBottom:'1px solid #EAECF0',
         borderRadius:'0px'
     },
+    typography2:{
+        color:Colors.primary_101,
+        fontWeight:500,
+        textAlign:'left',
+        textTransform:"capitalize",
+        justifyContent:'flex-start',
+        padding:'8px 8px',
+    },
     selected:{
         background:'#F9FAFB'
     },
@@ -70,8 +78,8 @@ export const styles = {
     },
     iconBtn: {
         "&:hover": { backgroundColor: "transparent" },
-        pl: 0,
-        pr: 0,
+        p: 0,
+
     },
     severityLevel: {
         fontSize: "8px",

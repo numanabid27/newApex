@@ -25,6 +25,7 @@ export default function useCreatePolicies() {
 
     const handleClicked = (e: any) => {
         setIsValue(e);
+
     };
 
     useEffect(() => {

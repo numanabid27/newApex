@@ -1,19 +1,18 @@
-import { Box, Button, Chip, IconButton } from "@mui/material";
+import { Box, Button, IconButton } from "@mui/material";
 import Image from "next/image";
 import { styles } from "./assetsDropdown.style";
 import downArrow from "@/common/assets/images/downs.svg";
 import useCreatePolicies from "../severityLevel/use-severity.hook";
-import { assets } from "../../createPolicy.constant";
 import tick from "@/common/assets/images/tick.svg";
 
 const AssetsDropdown = ({ title, img, ltr, onItemClick, data }: any) => {
   const { handleClick, isHide, handleClicked, isValue, dropdownRef } =
     useCreatePolicies();
 
-  const handleItemClick = (label: any) => {
-    handleClicked(label);
+  const handleItemClick = (item: any) => {
+    handleClicked(item);
     if (onItemClick) {
-      onItemClick(label);
+      onItemClick(item);
     }
   };
 
@@ -23,9 +22,17 @@ const AssetsDropdown = ({ title, img, ltr, onItemClick, data }: any) => {
         <Button sx={styles.dropdwonButton} onClick={handleClick}>
           {isValue ? (
             <Box display="flex" alignItems="center" gap="10px">
-              {!ltr && <Image src={img} alt="" />}
-              {isValue.length > 9 ? isValue.slice(0, 9) + "..." : isValue}
-              <Image src={downArrow} alt="" />
+              {isValue.actionImg && (
+                <>
+                  {!ltr && (
+                    <Image src={isValue.actionImg} alt={isValue.label} />
+                  )}
+                </>
+              )}
+              {isValue.label.length > 9
+                ? isValue.label.slice(0, 9) + "..."
+                : isValue.label}
+              <Image src={downArrow} alt="Down Arrow" />
             </Box>
           ) : (
             <>
@@ -50,16 +57,20 @@ const AssetsDropdown = ({ title, img, ltr, onItemClick, data }: any) => {
                 key={i.toString()}
                 sx={[
                   styles.typography,
-                  isValue == item.label && styles.selected,
+                  isValue && isValue.label === item.label && styles.selected,
                 ]}
-                onClick={() => handleItemClick(item.label)}
+                onClick={() => handleItemClick(item)}
               >
                 <>
                   <Box display="flex" alignItems="center" gap="10px">
-                    {item.actionImg && <Image src={item.actionImg} alt="" />}
+                    {item.actionImg && (
+                      <Image src={item.actionImg} alt={item.label} />
+                    )}
                     {item.label}
                   </Box>
-                  {isValue == item.label && <Image src={tick} alt="" />}
+                  {isValue && isValue.label === item.label && (
+                    <Image src={tick} alt="Selected" />
+                  )}
                 </>
               </Button>
             ))}

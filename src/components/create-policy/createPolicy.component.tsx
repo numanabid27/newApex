@@ -232,6 +232,7 @@ function Row(props: any) {
                 img={check}
                 severity={severity}
                 ltr={false}
+                policySeverity={true}
               />
             </Box>
           )}

@@ -25,7 +25,8 @@ import { useState } from "react";
  * @returns table component
  */
 
-function CustomTable({
+function 
+CustomTable({
   rows,
   column,
   setOpenModal,
