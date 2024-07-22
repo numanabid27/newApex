@@ -60,7 +60,7 @@ function Row(props: any) {
     }
   }, [selectedRow]);
 
-  const [isOpenSwitch, setIsOpenSwitch] = useState(false);
+  const [isOpenSwitch, setIsOpenSwitch] = useState(true);
 
   const switchChange = (e: any) => {
     setIsOpenSwitch(e.target.checked);
@@ -93,6 +93,7 @@ function Row(props: any) {
           <Box display="flex" gap="21px">
             {
               <Rows.component
+                defaultChecked
                 onClick={(e: any) => e.stopPropagation()}
                 onChange={switchChange}
               />
