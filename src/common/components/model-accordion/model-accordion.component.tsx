@@ -38,6 +38,7 @@ import { styles } from "./model-accordion.style";
 import useModalAccordion from "./use-modal-accordion.hook";
 import ReactEcharts from "echarts-for-react";
 import EastIcon from "@mui/icons-material/East";
+import { SIX_FILES } from "@/components/issues/issues.constant";
 
 function ModelAccordian({ modelData }: any) {
   const { expanded, handleChange } = useModalAccordion();
@@ -192,30 +193,41 @@ function ModelAccordian({ modelData }: any) {
                     <Typography sx={styles.label}>Mesages</Typography>
                     <Box display="flex" alignItems="center" gap="11px">
                       <Typography variant="h6">{items.messages[0]}</Typography>
-                      {items.messages && items.messages[1].includes("+") ? (
+                      {items.messages && items.messages[1]?.includes("+") ? (
                         <Image src={arrowUp} alt="" width={15} height={15} />
                       ) : (
-                        <Image src={arrowDown} alt="" width={15} height={15} />
+                        <>
+                          {items.messages && items.messages[1] && <Image src={arrowDown} alt="" width={15} height={15} /> }
+                        </>
                       )}
-                      <Typography sx={styles.msg}>
-                        {items.messages[1]}
-                        <span>from org</span>
-                      </Typography>
+                      {items.messages && items.messages[1]&& 
+                        <Typography sx={styles.msg}>
+                          {items.messages[1]}
+                          <span>from org</span>
+                        </Typography>
+                      }
                     </Box>
                   </Grid>
                   <Grid xl={1.7} xs={1.6}>
                     <Typography sx={styles.label}>Sessions</Typography>
                     <Box display="flex" alignItems="center" gap="11px">
                       <Typography variant="h6">{items.sessions[0]}</Typography>
-                      {items.sessions && items.sessions[1].includes("-") ? (
+                      {items.sessions && items.sessions[1]?.includes("-") ? (
                         <Image src={arrowDown} alt="" width={15} height={15} />
                       ) : (
-                        <Image src={arrowUp} alt="" width={15} height={15} />
+                        <>
+                          {items.sessions && items.sessions[1] && <Image src={arrowUp} alt="" width={15} height={15} />}
+                        </>
+                        
                       )}
+                      {
+                        items.sessions && items.sessions[1] &&
+                      
                       <Typography sx={styles.msg}>
                         {items.sessions[1]}
                         <span>from org</span>
                       </Typography>
+                      }
                     </Box>
                   </Grid>
                   <Grid xl={3.5} xs={4}>
@@ -440,7 +452,23 @@ retrieveStrategicDocs('alex.kim@company.com');
                 "61 Violations of Company's AI Ethics Standards"
               ) ? (
               <></>
-            ) : (
+            ) :
+            modelData?.name?.includes(
+              "GitHub Copilot collected and suggested invisible text instructions in 6 code files"
+            ) ?
+            (<Grid container alignItems="center" sx={styles.evidance_grid}>
+              <Grid xs={12} mb={4}>
+                File
+              </Grid>
+              {SIX_FILES.map((item: any, i: number) => {
+                return (
+                  <Box sx={styles.sixFiles} key={i.toString()}>
+                    <Link href={item.url}>{item.name}</Link>
+                  </Box>
+                );
+              })}
+            </Grid>)
+            : (
               <>
                 <Grid container alignItems="center" sx={styles.evidance_grid}>
                   <Grid xs={1.5}>Email</Grid>
@@ -493,7 +521,13 @@ retrieveStrategicDocs('alex.kim@company.com');
                               marginBottom: "10px",
                             }}
                           >
-                            {item.title}
+                            {
+                              modelData?.name?.includes("GitHub Copilot collected and suggested invisible text instructions in 6 code files") ?
+                              <Link href="ai-boom/view-issues" style={{color:"#374151", textDecoration:"none"}}>{item.title}</Link>
+                              :
+                              <>{item.title}</>
+                            }
+                           
 
                             {item.ans && <Box>{item.ans}</Box>}
                           </pre>
@@ -841,9 +875,8 @@ retrieveStrategicDocs('alex.kim@company.com');
                       <TableCell>#</TableCell>
                       <TableCell>Last event</TableCell>
 
-                      {modelData?.name?.includes(
-                        "Unauthorized automatic PR generation by GitHub Copilot Docker extension"
-                      ) ? (
+                      {modelData?.name?.includes("Unauthorized automatic PR generation by GitHub Copilot Docker extension") || 
+                        modelData?.name?.includes("GitHub Copilot collected and suggested invisible text instructions in 6 code files") ? (
                         <TableCell>Name</TableCell>
                       ) : (
                         <>

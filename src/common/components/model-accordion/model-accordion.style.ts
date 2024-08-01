@@ -358,5 +358,17 @@ export const styles = {
       height: "405px !important",
       
     }
+  },
+  sixFiles:{
+    width:"100%",
+    borderBottom:"1px solid #EAECF0",
+    padding:"18px 22px 9px",
+    "&:last-child":{
+      borderBottom:"unset",
+    },
+    "a":{
+      textDecoration:"none",
+      color:"#374151"
+    }
   }
 };

@@ -662,6 +662,46 @@ body {
   padding: 12px 19px; 
   margin: 0;
 }
+.hoverCLassIssues:hover .hoverView{
+  opacity: 1;
+  visibility: visible;
+}
+.hoverView{
+  opacity:0;
+  visibility: hidden;
+}
+.codeHoverView{
+  opacity:0;
+  visibility: hidden;
+}
+.codeRelativePath:hover .codeHoverView{
+  opacity: 1;
+  visibility: visible;
+}
+.codeHoverView{
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: unset;
+  max-width: 306px;
+  position: absolute;
+  top: 0;
+}
+.codeHoverView p{
+  color: #374151;
+}
+.codeHoverView p{
+  color: #667085;
+  display: flex;
+  gap: 18px;
+}
+.codeHoverView p span{
+width: 70%;
+}
+.codeHoverView p label{
+  width: 30%;
+  }
+  
 
 
 @media screen and (min-width: 1600px) {

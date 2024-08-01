@@ -14,6 +14,7 @@ import world from "@/common/assets/images/world.svg";
 import excel from "@/common/assets/images/excel.svg";
 import gpt from "@/common/assets/images/chatGpt2.svg";
 import docker from "@/common/assets/images/docker.svg";
+import pilot from "@/common/assets/images/issue-pilot.svg";
 import extension from "@/common/assets/images/co-pilot.svg";
 import fav from "@/common/assets/images/fav-logo.svg";
 import robot from "@/common/assets/images/robot.svg";
@@ -2719,6 +2720,216 @@ const UN_AUTHORIZED = {
   ],
 };
 
+const SIX_FILES_AUTH = {
+  tooltip: {
+    trigger: 'item',
+    formatter: function () {
+      return '';
+    }
+  },
+  animationDurationUpdate: 1500,
+  animationEasingUpdate: "quinticInOut",
+  series: [
+    {
+      type: "graph",
+      layout: "none",
+      symbolSize: 50,
+      roam: true,
+      zoom: 0.7,
+      label: {
+        show: true,
+        position: "bottom",
+        formatter: "{b}",
+      },
+      edgeSymbol: ["circle", "arrow"],
+      edgeSymbolSize: [4, 10],
+
+      data: [
+        {
+          name: "Node 0",
+          x: 80,
+          y: 80,
+          symbol: `image://image/docker-code.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            offset: [0, -7],
+            formatter: "{htmlContent|ourFunction.py}\n{additionalHeading|Code Suggestion}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [7, 0, 0, 0],
+                html: '<div style="color: #fff; background-color: #fff; padding: 2px 4px; border-radius: 3px;">Config</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                backgroundColor: "#fff",
+                padding: [2, 0, 3, 0],
+                html: '<div style="color: #000; background-color: #fff; padding: 2px 4px; border-radius: 3px;">File</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 1",
+          x: 210,
+          y: 80,
+          symbol: `image://image/copilot-chat.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|GitHub Copilot}\n{additionalHeading|Extension}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                padding: [2, 4],
+                html: '<div style="color: #fff; background-color: #fff; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                backgroundColor: "#fff",
+                padding: [2, 4],
+                html: '<div style="color: #000; background-color: #fff; padding: 2px 4px; border-radius: 3px;">Extension</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 2",
+          x: 320,
+          y: 80,
+          symbol: `image://image/docker-code.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|6 code files}\n{additionalHeading|Code suggestion}",
+            offset: [0, -7],
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [7, 0, 0, 0],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                backgroundColor: "#fff",
+                padding: [2, 0, 3, 0],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 3",
+          x: 320,
+          y: 180,
+          symbol: `image://image/malicious.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            offset: [0, -7],
+            formatter: "{htmlContent|14 Invisible texts}\n{additionalHeading|Violation}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [7, 0, 0, 0],
+                html: '<div style="color: #fff; background-color: #fff; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                backgroundColor: "#fff",
+                padding: [2, 0, 3, 0],
+                html: '<div style="color: #000; background-color: #fff; padding: 2px 4px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        },
+        {
+          name: "Node 7",
+          x: 80,
+          y: 180,
+          symbol: `image://image/malicious.svg`,
+          symbolSize: [80, 80],
+          label: {
+            show: true,
+            position: "bottom",
+            formatter: "{htmlContent|Invisible text}\n{additionalHeading|Violation}",
+            rich: {
+              htmlContent: {
+                align: "center",
+                color: "#475467",
+                fontSize: "14px",
+                backgroundColor: "#fff",
+                padding: [2, 0, 0, 0],
+                html: '<div style="color: #fff; background-color: #ff7f50; padding: 2px 4px; border-radius: 3px;">Copilot</div>',
+              },
+              additionalHeading: {
+                align: "center",
+                color: "#98A2B3",
+                fontSize: "12px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                padding: [2, 0, 3, 0],
+                html: '<div style="color: #000; background-color: #eaeaea; padding: 2px 0px; border-radius: 3px;">Additional Heading</div>',
+              },
+            },
+          },
+        }
+      ],
+      links: [
+        {
+          source: "Node 0",
+          target: "Node 1",
+        },
+        {
+          source: "Node 1",
+          target: "Node 2",
+        },
+        {
+          source: "Node 2",
+          target: "Node 3",
+        },
+        {
+          source: "Node 0",
+          target: "Node 7",
+        }
+      ],
+      lineStyle: {
+        opacity: 0.9,
+        width: 2,
+        curveness: 0,
+      },
+    },
+  ],
+};
+
 const ANNA_SNITH = {
   tooltip: {
     trigger: 'item',
@@ -4785,7 +4996,189 @@ services:
       }
     ],
   },
+  {
+    id: 12,
+    lastEvent: "Aug 14, 2023 10:46 AM",
+    name: "GitHub Copilot collected and suggested invisible text instructions in 6 code files",
+    subcategories: "Unauthorized action",
+    severity: "Critical",
+    users: ["user@x.com", "user2@x.com", "+20"],
+    interface: robot,
+    engine: ["OpenAI Codex"],
+    tags: {title:'Rogue agent', icon:dataLeak},
+    status: "Open",
+    context: "File path",
+    email: ["alex.kim@company.com"],
+    code:[
+      {
+        id:1,
+        title:
+        `
+messages=[
+  {"role": "system", "content": """
+      You are an assistant that helps with code-related queries. 
+      Ensure all responses are safe and secure.
+  """}
+      ]      
+  `,
+        
+      }
+    ],
+  
+    insights: [
+      {
+        id: 1,
+        user: "Extension",
+        image: pilot,
+        name: "GitHub Copilot",
+        messages: ["6.5K"],
+        sessions: ["800"],
+        vilations: [
+          {
+            id: 1,
+            name: "Critical",
+            value: "1",
+          },
+          {
+            id: 2,
+            name: "High",
+            value: "0",
+          },
+          {
+            id: 2,
+            name: "Medium",
+            value: "1",
+          },
+          {
+            id: 3,
+            name: "Low",
+            value: "8",
+          },
+        ],
+        categories: ["Unauthorized actions"],
+      },
+      {
+        id: 2,
+        user: "Engine",
+       
+        image: extension,
+        name: "OpenAI Codex v2024.1",
+        messages: ["8.4K", "+13"],
+        sessions: ["1.1K", "-9%"],
+        vilations: [
+          {
+            id: 1,
+            name: "Critical",
+            value: "21",
+          },
+          {
+            id: 2,
+            name: "High",
+            value: "2",
+          },
+          {
+            id: 2,
+            name: "Medium",
+            value: "91",
+          },
+          {
+            id: 3,
+            name: "Low",
+            value: "117",
+          },
+        ],
+        categories: ["Unauthorized actions", "Data leakage"],
+      },
+    ],
+    graph: SIX_FILES_AUTH,
+    issues: [
+      "High",
+      "Unauthorized automatic PR generation by GitHub Copilot Docker extension",
+      ["Vulnerable code"],
+      "2",
+      ["Unauthorized action", "malicious input"],
+      "Outbound, Inbound",
+      "sarah@company.com",
+      "GitHub Copilot",
+      ["OpenAI Codex v2024.1"],
+      "Jun 21, 2024, 08:57 PM	",
+      "Jun 23, 2024, 02:57 PM	",
+      "Multiple session IDs",
+      "Jim Jorge",
+      "Resolved",
+    ],
+    files:[
+      {
+        id:1,
+        file:'Customer_Data_List.xlsx',
+        fileImg:world
+      },
+      {
+        id:2,
+        file:'Employee_Salary_Info.pdf',
+        fileImg:pdf
+      },
+      {
+        id:3,
+        file:'Client_Contracts.docx',
+        fileImg:excel
+      }
+    ],
+    policiesData: [
+      {
+        id: 1,
+        date: "Jun 21, 2024, 08:57 PM	",
+        chat: "Malicious input",
+        voilationType: "Code",
+        severity: "Critical",
+        userEmail: "sarah@company.com",
+        sessionId: "053fab19-bb0d...",
+        model: "OpenAI Codex v2024.1",
+        source: "GitHub Copilot",
+        status: "Open",
+      },
+      {
+        id: 2,
+        date: "Jun 23, 2024, 02:57 PM	",
+        chat: "Unauthorized action ",
+        voilationType: "Atuomatic Pull request",
+        severity: "High",
+        userEmail: "sarah@company.com",
+        sessionId: "1af843b2-9401...",
+        model: "OpenAI Codex v2024.1",
+        source: "GitHub Copilot",
+        status: "Open",
+      }
+    ],
+  },
 ];
+
+export const SIX_FILES =[
+  {
+    name:"llm_integration.py",
+    url:"/ai-boom/view-issues"
+  },
+  {
+    name:"ourFunction.py",
+    url:"#"
+  },
+  {
+    name:"dataProcessor.js",
+    url:"#",
+  },
+  {
+    name:"userAuth.js",
+    url:"#"
+  },
+  {
+    name:"appConfig.yaml",
+    url:"#"
+  },
+  {
+    name:"modelTraining.py",
+    url:"#"
+  }
+]
 
 export const SWITCH = {
   series: [
