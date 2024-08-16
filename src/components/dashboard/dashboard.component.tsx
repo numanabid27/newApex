@@ -89,7 +89,7 @@ function Dashboard() {
                     <TrendingUpIcon sx={SessionTimeStyle.TrendingIcon} /> 23%
                   </Typography>
                   <Typography sx={SessionTimeStyle.increaseSession}>
-                    increase users
+                   users increase
                   </Typography>
                 </Box>
               </Box>

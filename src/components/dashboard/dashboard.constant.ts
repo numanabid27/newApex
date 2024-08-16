@@ -43,10 +43,10 @@ export const USAGE_BY_DEPARTMENT = [
 ];
 
 export const USAGE_BY_DEPARTMENT2 = [
-  { id: 1, value: 47, name: "Fixing code", icon: CodeIcon2 },
-  { id: 2, value: 23, name: "Content generation", icon: PIIIcon },
+  { id: 1, value: 47, name: "Fixing Code", icon: CodeIcon2 },
+  { id: 2, value: 23, name: "Content Generation", icon: PIIIcon },
   { id: 3, value: 15, name: "Decision Making", icon: PCIIcon },
-  { id: 4, value: 12, name: "Companie’s Strategy", icon: AccessDataIcon },
+  { id: 4, value: 12, name: "Company’s Strategy", icon: AccessDataIcon },
 ];
 
 
