@@ -86,16 +86,17 @@ function PieChart({
               sx={PieChartStyle.PieChartLabel}
             >
               <Grid item xs={4} sx={{ textAlign: { md: "center", xs: "end" } }} className="pieValue">
-                <Typography sx={PieChartStyle.PiePercentageStyling} display="flex">
-                  <Image
+                <Image
                     src={item.icon}
                     alt="pci-icon"
                     style={PieChartStyle.icon}
                   />
+                <Typography sx={PieChartStyle.PiePercentageStyling}>
+                  
                   {item.value}%
                 </Typography>
               </Grid>
-              <Grid item xs={8}>
+              <Grid item xs={8} className="pieText">
                 <Typography sx={PieChartStyle.PieLabelStyling}>
                   {item.name}
                 </Typography>

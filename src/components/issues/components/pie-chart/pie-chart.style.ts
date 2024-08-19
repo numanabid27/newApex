@@ -20,7 +20,7 @@ export const PieChartStyle = {
     justifyContent: "space-between",
     mb: 1,
     width: "100%",
-    gap:"19px"
+    gap:"13px"
   },
   PieLabelStyling: {
     fontSize: "14px",
@@ -28,6 +28,7 @@ export const PieChartStyle = {
     color: "#667085",
     display: "flex",
     alignItems: "center",
+    
     lineHeight:"1.1",
     "@media screen and (max-width:1600px)":{
       fontSize: "11.5px",

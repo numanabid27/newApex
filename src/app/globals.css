@@ -701,10 +701,16 @@ width: 70%;
 .codeHoverView p label{
   width: 30%;
 }
-.pieValue{
-  width: 10%;
+/* .pieValue{
+ margin-right: 10px;
+} */
+ .pieValue{
+  display: flex;
+  width: 26%;
+ }
+.pieText{
+  margin-left: 17px;
 }
-  
 
 
 @media screen and (min-width: 1600px) {
