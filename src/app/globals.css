@@ -700,7 +700,10 @@ width: 70%;
 }
 .codeHoverView p label{
   width: 30%;
-  }
+}
+.pieValue{
+  width: 10%;
+}
   
 
 

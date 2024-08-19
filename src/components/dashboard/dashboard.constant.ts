@@ -17,10 +17,6 @@ import claudwarning from "@/common/assets/images/o-warning.svg";
 import claudbell from "@/common/assets/images/o-bell.svg";
 import greenBell from "@/common/assets/images/green-bell.svg";
 import posterUser from "@/common/assets/images/poster-user.svg";
-import useWidth from "../issues/components/issue-table/use-width.hook";
-
-
-
 
 export const ISSUES_PER_ENGINE_DATA = [
   { id: 1, name: "Azure OpenAI General", value: 16, color: "#B42318" },

@@ -37,7 +37,7 @@ function SessionTimeUser() {
               <Typography sx={SessionTimeStyle.SessionTrendingValue}>
                 <TrendingUpIcon sx={SessionTimeStyle.TrendingIcon} /> 14.2%
               </Typography>
-              <Typography sx={SessionTimeStyle.increaseSession}>session increase</Typography>
+              <Typography sx={SessionTimeStyle.increaseSession}>sessions increase</Typography>
             </Box>
           </Box>
         </Box>
