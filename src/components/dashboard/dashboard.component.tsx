@@ -44,6 +44,7 @@ function Dashboard() {
     isModel,
   } = useDashboard();
 
+
   return (
     <>
       <Grid sx={DashboardStyles.DashboardGrid}>
@@ -145,7 +146,7 @@ function Dashboard() {
         <Grid item xs={12} md={5.85} lg={3.5}>
           <DataFlow detection={true} />
         </Grid>
-
+ 
         <Grid sx={DashboardStyles.TopIssuesMain} container>
           <Grid item xs={12} md={5.93}>
             <CustomTopIssues
