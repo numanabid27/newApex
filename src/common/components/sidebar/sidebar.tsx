@@ -55,9 +55,9 @@ const Sidebar = () => {
                 Settings
             </Typography>
             <List>
-                {sidebarLinks.map((item) => (
-                    <ListItem disablePadding>
-                        <Link sx={SidebarStyle.TabItem} href={item.url}>
+                {sidebarLinks.map((item, i) => (
+                    <ListItem disablePadding key={i.toString()}>
+                        <Link sx={SidebarStyle.TabItem} href={item.url} >
                             <Grid container alignItems="center">
                                 <Grid item xs={2}>
                                     <ListItemIcon>

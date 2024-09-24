@@ -27,7 +27,7 @@ export default function AccessibleTabs() {
                     
                 </Box> */}
                 {TabsButtons?.map((tab, index) => (
-                    <Tab label={tab.text} sx={SettingsStyle.TabButton} onClick={() => setValue(index)} />
+                    <Tab label={tab.text} sx={SettingsStyle.TabButton} onClick={() => setValue(index)} key={index} />
                 ))}
             </Tabs>
 

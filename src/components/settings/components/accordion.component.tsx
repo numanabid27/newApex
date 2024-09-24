@@ -39,8 +39,8 @@ export default function ControlledAccordions() {
                 </AccordionSummary>
                 <AccordionDetails sx={{ p: '0' }}>
                     <Grid container sx={SettingsStyle.GridContainer}>
-                        {AI_APPLICATION_TAB.map((platform) => (
-                            <Grid item sx={SettingsStyle.GridItem} xs={12} sm={5.8} lg={3.8}>
+                        {AI_APPLICATION_TAB.map((platform, i) => (
+                            <Grid item sx={SettingsStyle.GridItem} xs={12} sm={5.8} lg={3.8} key={i.toString()}>
 
                                 <Grid container sx={SettingsStyle.ChatIconWraper}>
                                     <Grid item>
@@ -96,8 +96,8 @@ export default function ControlledAccordions() {
                 </AccordionSummary>
                 <AccordionDetails sx={{ p: '0' }}>
                     <Grid container sx={SettingsStyle.GridContainer}>
-                        {NETWORK_AND_ENDPOINT_SECURITY_TAB.map((platform) => (
-                            <Grid item sx={SettingsStyle.GridItem} xs={12} sm={5.8} lg={3.8}>
+                        {NETWORK_AND_ENDPOINT_SECURITY_TAB.map((platform, i) => (
+                            <Grid item sx={SettingsStyle.GridItem} xs={12} sm={5.8} lg={3.8} key={i.toString()}>
 
                                 <Grid container sx={SettingsStyle.ChatIconWraper}>
                                     <Grid item>
@@ -155,8 +155,8 @@ export default function ControlledAccordions() {
                     sx={{ p: '0' }}
                 >
                     <Grid container sx={SettingsStyle.GridContainer}>
-                        {MESSAGING_TAB.map((platform) => (
-                            <Grid item sx={SettingsStyle.GridItem} xs={12} sm={5.8} lg={3.8}>
+                        {MESSAGING_TAB.map((platform, i) => (
+                            <Grid item sx={SettingsStyle.GridItem} xs={12} sm={5.8} lg={3.8} key={i.toString()}>
 
                                 <Grid container sx={SettingsStyle.ChatIconWraper}>
                                     <Grid item>
@@ -214,8 +214,8 @@ export default function ControlledAccordions() {
                     sx={{ p: '0' }}
                 >
                     <Grid container sx={SettingsStyle.GridContainer}>
-                        {FILE_SYSTEMS_TAB.map((platform) => (
-                            <Grid item sx={SettingsStyle.GridItem} xs={12} sm={5.8} lg={3.8}>
+                        {FILE_SYSTEMS_TAB.map((platform, i) => (
+                            <Grid item sx={SettingsStyle.GridItem} xs={12} sm={5.8} lg={3.8} key={i.toString()}>
 
                                 <Grid container sx={SettingsStyle.ChatIconWraper}>
                                     <Grid item>
@@ -273,8 +273,8 @@ export default function ControlledAccordions() {
                     sx={{ p: '0' }}
                 >
                     <Grid container sx={SettingsStyle.GridContainer}>
-                        {SSO_TAB.map((platform) => (
-                            <Grid item sx={SettingsStyle.GridItem} xs={12} sm={5.8} lg={3.8}>
+                        {SSO_TAB.map((platform, i) => (
+                            <Grid item sx={SettingsStyle.GridItem} xs={12} sm={5.8} lg={3.8} key={i.toString()}>
 
                                 <Grid container sx={SettingsStyle.ChatIconWraper}>
                                     <Grid item xs={2}>
@@ -332,8 +332,8 @@ export default function ControlledAccordions() {
                     sx={{ p: '0' }}
                 >
                     <Grid container sx={SettingsStyle.GridContainer}>
-                        {SIEM_AND_TICKETING_TAB.map((platform) => (
-                            <Grid item sx={SettingsStyle.GridItem} xs={12} sm={5.8} lg={3.8}>
+                        {SIEM_AND_TICKETING_TAB.map((platform, i) => (
+                            <Grid item sx={SettingsStyle.GridItem} xs={12} sm={5.8} lg={3.8} key={i.toString()}>
 
                                 <Grid container sx={SettingsStyle.ChatIconWraper}>
                                     <Grid item xs={2}>
@@ -391,8 +391,8 @@ export default function ControlledAccordions() {
                     sx={{ p: '0' }}
                 >
                     <Grid container sx={SettingsStyle.GridContainer}>
-                        {DETECTION_SERVICES_TABS.map((platform) => (
-                            <Grid item sx={SettingsStyle.GridItem} xs={12} sm={5.8} lg={3.8}>
+                        {DETECTION_SERVICES_TABS.map((platform, i) => (
+                            <Grid item sx={SettingsStyle.GridItem} xs={12} sm={5.8} lg={3.8} key={i.toString()}>
 
                                 <Grid container sx={SettingsStyle.ChatIconWraper}>
                                     <Grid item xs={2}>

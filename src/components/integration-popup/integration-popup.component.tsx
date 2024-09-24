@@ -44,8 +44,8 @@ function SimpleDialog(props: SimpleDialogProps) {
                 </Box>
             </Box>
 
-            {INTEGRATION_POP_UP_FIELDS.map((field) => (
-                <Box sx={{ mt: '26px' }}>
+            {INTEGRATION_POP_UP_FIELDS.map((field, i) => (
+                <Box sx={{ mt: '26px' }} key={i.toString()}>
                     <Typography sx={IntegrationPopUpStyle.InputLabel}>{field.label}</Typography>
                     <Box
                         component="input"
