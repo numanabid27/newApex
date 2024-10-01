@@ -42,6 +42,7 @@ const theme = createTheme({
       xl: 1440,
     },
   },
+
   spacing: 4,
 });
 
