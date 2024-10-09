@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Grid,
-  Tabs,
-  Tab,
-} from "@mui/material";
+import { Box, Grid, Tabs, Tab } from "@mui/material";
 import { styles } from "./session-explore.style";
 import useSessionExplore from "./use-session-explore.hook";
 import "react-datepicker/dist/react-datepicker.css";
@@ -13,6 +8,7 @@ import Messages from "./components/messages/messages.component";
 import Sessions from "./components/sessions/sessions.component";
 import Users from "./components/users/users.component";
 import Files from "./components/files/files.component";
+import DiscoveredApps from "./components/discovered-apps/discovered-apps.component";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -39,19 +35,21 @@ function TabPanel(props: TabPanelProps) {
 }
 
 function SessionExplorer() {
-  const {
-    handleChange,
-    value
-  } = useSessionExplore();
+  const { handleChange, value } = useSessionExplore();
 
   return (
     <Box sx={styles.mainGrid}>
-      <Tabs value={value} onChange={handleChange} aria-label="code tabs" sx={styles.tabs}>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        aria-label="code tabs"
+        sx={styles.tabs}
+      >
         <Tab label="Messages" />
         <Tab label="Sessions" />
         <Tab label="Users" />
         <Tab label="Files" />
-        <Tab label="Interfaces" />
+        <Tab label="Discovered apps" />
       </Tabs>
       <TabPanel value={value} index={0}>
         <Messages />
@@ -66,7 +64,7 @@ function SessionExplorer() {
         <Files />
       </TabPanel>
       <TabPanel value={value} index={4}>
-          <p>interfaces</p>
+        <DiscoveredApps />
       </TabPanel>
     </Box>
   );

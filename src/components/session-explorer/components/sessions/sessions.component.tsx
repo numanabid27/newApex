@@ -37,7 +37,7 @@ import { SESSION_USER_CHART, SESSION_GRAPH } from "./session.constant";
 import { styles } from "./sessions.style";
 import useSessions from "./use-seesions.hook";
 import filter from "@/common/assets/images/more-filters.svg";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export default function Sessions() {
   const {
@@ -102,13 +102,7 @@ export default function Sessions() {
       header: "Engine",
       accessor: "engineType",
       cell: (data: any) => {
-        return (
-          <Chip
-            sx={styles.engineItem}
-            label={data}
-            variant="outlined"
-          />
-        );
+        return <Chip sx={styles.engineItem} label={data} variant="outlined" />;
       },
     },
     { id: 9, header: "Context", accessor: "context" },
@@ -119,30 +113,27 @@ export default function Sessions() {
       cell: (data: any) => {
         return (
           <Box display="flex" className="issueTbaleChip">
-          {data?.map((item: any, i:number) => {
-            return (
-              <IconButton key={i.toString()}>
-                <Chip
-                  sx={styles.topicItem}
-                  icon={
-                    <>
-                      <Image src={item.img} width={20} height={20} alt="" />
-                    </>
-                  }
-                  label={item.title}
-                  variant="outlined"
-                />
-              </IconButton>
-              
-            );
-          })}
-        </Box>
+            {data?.map((item: any, i: number) => {
+              return (
+                <IconButton key={i.toString()}>
+                  <Chip
+                    sx={styles.topicItem}
+                    icon={
+                      <>
+                        <Image src={item.img} width={20} height={20} alt="" />
+                      </>
+                    }
+                    label={item.title}
+                    variant="outlined"
+                  />
+                </IconButton>
+              );
+            })}
+          </Box>
         );
       },
-    }
-    
+    },
   ];
-
 
   return (
     <>
@@ -188,15 +179,14 @@ export default function Sessions() {
           sx={styles.SessionEngine}
           className="border border-radius bg-white"
         >
-         <Grid mb={4} display="flex" alignItems="center">
-          <Grid xl={8} xs={7}>
-            <Typography variant="h5">Top 5 Active Users</Typography>
+          <Grid mb={4} display="flex" alignItems="center">
+            <Grid xl={8} xs={7}>
+              <Typography variant="h5">Top 5 Active Users</Typography>
+            </Grid>
+            <Grid xl={4} xs={5}>
+              <Typography className="sessions_state">Sessions</Typography>
+            </Grid>
           </Grid>
-          <Grid xl={4} xs={5}>
-            <Typography className="sessions_state">Sessions</Typography>
-          </Grid>
-           
-         </Grid>
           {SESSION_GRAPH.map((item: any, i: number) => {
             return (
               <Grid container sx={styles.activeUser} key={i.toString()}>
@@ -252,7 +242,11 @@ export default function Sessions() {
       >
         <Grid item sm={2} xs={12} sx={styles.engineFilter}>
           <FormControl fullWidth sx={styles.userFormControl}>
-            <InputLabel id="demo-simple-select-label-2" className="interLable" sx={styles.userText}>
+            <InputLabel
+              id="demo-simple-select-label-2"
+              className="interLable"
+              sx={styles.userText}
+            >
               Interface
             </InputLabel>
 
@@ -300,7 +294,9 @@ export default function Sessions() {
         </Grid>
         <Grid item sm={2} xs={12} sx={styles.engineFilter}>
           <FormControl sx={styles.formControl}>
-            <InputLabel sx={styles.engine} className="interLable2">Engine</InputLabel>
+            <InputLabel sx={styles.engine} className="interLable2">
+              Engine
+            </InputLabel>
             <Select
               sx={styles.sessionEngineFilter}
               multiple
@@ -341,7 +337,9 @@ export default function Sessions() {
 
         <Grid item sm={2} xs={12} sx={styles.engineFilter}>
           <FormControl sx={styles.formControl}>
-            <InputLabel sx={styles.engine} className="interLable2">Topics</InputLabel>
+            <InputLabel sx={styles.engine} className="interLable2">
+              Topics
+            </InputLabel>
             <Select
               sx={styles.sessionEngineFilter}
               multiple
@@ -382,7 +380,11 @@ export default function Sessions() {
 
         <Grid item sm={2} xs={12} sx={styles.user}>
           <FormControl fullWidth sx={styles.userFormControl}>
-            <InputLabel id="demo-simple-select-label-3" className="interLable" sx={styles.userText}>
+            <InputLabel
+              id="demo-simple-select-label-3"
+              className="interLable"
+              sx={styles.userText}
+            >
               Status
             </InputLabel>
 
@@ -422,8 +424,13 @@ export default function Sessions() {
             More Filters
           </Button>
         </Grid>
-        
-        <Grid sx={{...styles.searchBox, margin: "0 0 0 auto"}} className="sesson-search" sm={3} xs={12}>
+
+        <Grid
+          sx={{ ...styles.searchBox, margin: "0 0 0 auto" }}
+          className="sesson-search"
+          sm={3}
+          xs={12}
+        >
           <Box sx={styles.searchInner} className="session-search-input">
             <Box sx={styles.searchIcon}>
               <Image src={search} alt="" />
@@ -432,7 +439,7 @@ export default function Sessions() {
               options={allOptions}
               value={searchQuery}
               onChange={handleAutocompleteChange}
-              style={{ flexGrow: "1", width:"100%" }}
+              style={{ flexGrow: "1", width: "100%" }}
               renderInput={(params: any) => (
                 <TextField
                   {...params}
@@ -458,7 +465,7 @@ export default function Sessions() {
           isTableHead={true}
           isPagination={true}
         />
-        
+
         <CustomDialog
           thead={"session"}
           openModal={openModal}

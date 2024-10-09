@@ -16,7 +16,10 @@ import {
 import { styles } from "./styles";
 import ClearIcon from "@mui/icons-material/Clear";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { POLICY_GROUPS, TOPICS } from "@/components/create-policy/createPolicy.constant";
+import {
+  POLICY_GROUPS,
+  TOPICS,
+} from "@/components/create-policy/createPolicy.constant";
 
 const PolicyFilters = ({
   policies,
@@ -35,7 +38,7 @@ const PolicyFilters = ({
   setPolicyAction,
   PolicyAction,
   setWokFlow,
-  workFlow
+  workFlow,
 }: any) => {
   return (
     <>

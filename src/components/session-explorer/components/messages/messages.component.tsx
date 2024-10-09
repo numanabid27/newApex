@@ -83,7 +83,7 @@ export default function Message() {
     setisSentiment,
     isSentiment,
     isClick,
-    setIsClick
+    setIsClick,
   } = useMessage();
 
   const SESSION_EXPLORE_TABLE_HEADER = [
@@ -127,13 +127,7 @@ export default function Message() {
       header: "Engine",
       accessor: "engineType",
       cell: (data: any) => {
-        return (
-          <Chip
-            sx={styles.engineItem}
-            label={data}
-            variant="outlined"
-          />
-        );
+        return <Chip sx={styles.engineItem} label={data} variant="outlined" />;
       },
     },
     { id: 9, header: "Context", accessor: "context" },
@@ -165,7 +159,7 @@ export default function Message() {
       },
     },
   ];
- 
+
   return (
     <Box position="relative" width="100%">
       {/*query builder  */}
@@ -374,7 +368,6 @@ export default function Message() {
             ) : (
               <ReactEcharts option={MARKETING} />
             )}
-     
           </Box>
         </Grid>
         <Grid
