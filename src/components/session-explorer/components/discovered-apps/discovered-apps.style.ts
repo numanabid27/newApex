@@ -52,11 +52,17 @@ export const styles = {
   },
   tableRow: {
     width: "100%",
+    mt: '34px'
   },
   applicationCell: {
     display: "flex",
     gap: "20px",
     alignItems: "center",
+  },
+  riskWraper: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
   },
   categoryCell: {
     display: "flex",
@@ -68,4 +74,24 @@ export const styles = {
       borderRadius: "1px !important",
     },
   },
+  menuWraper: {
+    position: 'absolute',
+    top: '25px',
+    right: '0',
+    left: '-8%',
+    ".MuiList-root": {
+      py: '4px',
+    }
+  },
+  menuItem: {
+    p: '10px 14px',
+    display: 'grid',
+    gridTemplateColumns: '20px 1fr',
+    gap: '8px'
+  },
+  showOnHover: {
+    position: 'absolute',
+    top: '25px',
+    right: '0',
+  }
 };
