@@ -13,6 +13,11 @@ export const Dashboard2Style = {
         borderRadius: '8px',
         backgroundColor: '#FFF'
     },
+    Devider: {
+        backgroundColor: '#E2E8F0',
+        height: '1px',
+        mt: '20px'
+    },
     StaticAlert: {
         position: 'absolute',
         p: '10px 20px',

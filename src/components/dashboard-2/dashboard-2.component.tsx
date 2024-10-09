@@ -33,7 +33,7 @@ function Dashboard2() {
                             <Box sx={{ px: '24px' }}>
                                 <Typography variant="h2" sx={Dashboard2Style.GraphHeading}>Top open issues</Typography>
                             </Box>
-                            {/* <Box sx={{ background: 'red', height: '2px' }}></Box> */}
+                            <Box sx={Dashboard2Style.Devider}></Box>
                             {TOP_OPEN_ISSUES.map((item: any, i: number) => {
                                 return (
                                     <Grid container sx={Dashboard2Style.TopOpenIssues} key={i.toString()}>
@@ -60,6 +60,7 @@ function Dashboard2() {
                                 <Box sx={{ px: '24px' }}>
                                     <Typography variant="h2" sx={Dashboard2Style.GraphHeading}>Risky users</Typography>
                                 </Box>
+                                <Box sx={Dashboard2Style.Devider}></Box>
                                 {RISKY_USERS_CHARTS.map((item: any, i: number) => {
                                     return (
                                         <Grid container sx={Dashboard2Style.activeUser} key={i.toString()}>
