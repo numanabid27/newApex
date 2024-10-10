@@ -70,9 +70,8 @@ export const styles = {
     alignItems: "center",
   },
   cellChip: {
-    "& .MuiChip-root ": {
-      borderRadius: "1px !important",
-    },
+    borderRadius: "6px !important",
+   
   },
   menuWraper: {
     position: 'absolute',
@@ -81,7 +80,11 @@ export const styles = {
     left: '-8%',
     ".MuiList-root": {
       py: '4px',
-    }
+      
+    },
+   ".MuiMenu-paper":{
+      boxShadow:"0px 5px 5px -3px rgb(0 0 0 / 2%), 0px 8px 10px 1px rgb(0 0 0 / 0%), 0px 3px 14px 2px rgb(0 0 0 / 0%) !important"
+   }
   },
   menuItem: {
     p: '10px 14px',

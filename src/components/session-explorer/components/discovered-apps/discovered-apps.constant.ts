@@ -98,7 +98,25 @@ export const DISCOVERED_APP_TABLE_DATA = [
       {
         risk: 'Security risk',
         icon: unsanctioneApp,
-      }
+      },
+     { 
+      dataSource:[
+        {
+          icon: iso,
+          text: 'ISO 27001'
+        },
+        {
+          icon: iso,
+          text: 'ISO 27002'
+        },
+        {
+          icon: soc,
+          text: 'SOC 2'
+        },
+        {
+          text: 'GDPR'
+        },
+      ]}
     ]
   },
   {
@@ -124,7 +142,25 @@ export const DISCOVERED_APP_TABLE_DATA = [
       {
         risk: 'Security risk',
         icon: unsanctioneApp,
-      }
+      },
+      { 
+        dataSource:[
+          {
+            icon: iso,
+            text: 'ISO 27001'
+          },
+          {
+            icon: iso,
+            text: 'ISO 27002'
+          },
+          {
+            icon: soc,
+            text: 'SOC 2'
+          },
+          {
+            text: 'GDPR'
+          },
+        ]}
     ]
   },
   {

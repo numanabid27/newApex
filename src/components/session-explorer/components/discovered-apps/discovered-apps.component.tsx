@@ -23,6 +23,9 @@ import { actions, multiAction, multiActionApplication, multiActionDepartments, m
 import MultiSelect from './components/selector.componet';
 import CustomDialog from '@/common/components/custom-dialog/custom-dialog.component';
 import { useEffect } from "react";
+import { DISCOVERED_APP_STYLE } from '../discovered-app-accordion/discovered-app-accordion.style';
+import iso from "@/common/assets/images/iso.svg";
+import soc from "@/common/assets/images/soc.svg";
 
 interface FormData { }
 
@@ -104,7 +107,6 @@ export default function DiscoveredApps() {
       cell: (data: any) => {
         return (
           <Box sx={styles.categoryCell} onClick={(e)=>{
-              console.log("selectedRow@", data);
               e.stopPropagation();
             }}>
             {data.map((item: any, i: any) => (
@@ -185,63 +187,83 @@ export default function DiscoveredApps() {
       cell: (data: any) => {
         return (
           <Box sx={styles.riskWraper}>
-            {data.map((item: any, index: number) => (
-              <CustomTooltip placement="top" arrow 
-                title={
-                <Box sx={styles.tooltip}>
-                  <Box sx={styles.categoryCell}>
-                    <Image src={item.icon} alt={item.risk} width={20} height={20} />
-                    <Typography variant="body1" color="#334155" fontSize="14px">{item.risk}</Typography>
+            {data.map((item: any, index: number) => {
+              console.log("item#", item.dataSource)
+              return(
+                <CustomTooltip placement="top" arrow 
+                  title={
+                  <Box sx={styles.tooltip}>
+                    <Box sx={styles.categoryCell}>
+                      <Image src={item.icon} alt={item.risk} width={20} height={20} />
+                      <Typography variant="body1" color="#334155" fontSize="14px">{item.risk}</Typography>
+                    </Box>
+                   
+                    <Box sx={DISCOVERED_APP_STYLE.tagsWraper} mt={4}>
+                      <Box sx={DISCOVERED_APP_STYLE.tag} mb={2}>
+                        <Image src={iso} alt="icon" />
+                        <Typography>ISO 27001</Typography>
+                      </Box>
+                      <Box sx={DISCOVERED_APP_STYLE.tag} mb={2}>
+                        <Image src={iso} alt="icon" />
+                        <Typography>ISO 27002</Typography>
+                      </Box>
+                      <Box sx={DISCOVERED_APP_STYLE.tag} mb={2}>
+                        <Image src={soc} alt="icon" />
+                        <Typography>SOC 2</Typography>
+                      </Box>
+                      <Box sx={DISCOVERED_APP_STYLE.tag} mb={2}>
+                        <Typography>GDPR</Typography>
+                      </Box>
+                    </Box>
                   </Box>
-                  
-                </Box>
-              }>
-                <Box key={index.toString()}>
-                  <Box
-                    aria-controls={open ? 'basic-menu' : undefined}
-                    aria-haspopup="true"
-                    aria-expanded={open ? 'true' : undefined}
-                    sx={styles.categoryCell}
-                    key={index}
-                  >
-                    <Image src={item.icon} alt={item.risk} width={20} height={20} />
-                    <Typography variant="body1">{item.risk}</Typography>
+                }>
+                  <Box key={index.toString()} onClick={(e)=>{e.stopPropagation()}} >
+                    <Box
+                      aria-controls={open ? 'basic-menu' : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={open ? 'true' : undefined}
+                      sx={styles.categoryCell}
+                      key={index}
+                    >
+                      <Image src={item.icon} alt={item.risk} width={20} height={20} />
+                      <Typography variant="body1">{item.risk}</Typography>
+                    </Box>
+  
+                    <Menu
+                      sx={styles.menuWraper}
+                      anchorEl={anchorEl}
+                      open={open}
+                      onClose={handleClose}
+                      MenuListProps={{
+                        'aria-labelledby': 'basic-button',
+                      }}
+                    >
+                      <MenuItem
+                        sx={styles.menuItem}
+                        onClick={handleClose}
+                      >
+                        <Image src={usersList} alt='users' />
+                        <Typography>See users list</Typography>
+                      </MenuItem>
+                      <MenuItem
+                        sx={styles.menuItem}
+                        onClick={handleClose}
+                      >
+                        <Image src={multiSelectIcon} alt='users' />
+                        <Typography>Mark as a non-risky app</Typography>
+                      </MenuItem>
+                      <MenuItem
+                        sx={styles.menuItem}
+                        onClick={handleClose}
+                      >
+                        <Image src={ban} alt='users' />
+                        <Typography>Block app</Typography>
+                      </MenuItem>
+                    </Menu>
                   </Box>
-
-                  <Menu
-                    sx={styles.menuWraper}
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    MenuListProps={{
-                      'aria-labelledby': 'basic-button',
-                    }}
-                  >
-                    <MenuItem
-                      sx={styles.menuItem}
-                      onClick={handleClose}
-                    >
-                      <Image src={usersList} alt='users' />
-                      <Typography>See users list</Typography>
-                    </MenuItem>
-                    <MenuItem
-                      sx={styles.menuItem}
-                      onClick={handleClose}
-                    >
-                      <Image src={multiSelectIcon} alt='users' />
-                      <Typography>Mark as a non-risky app</Typography>
-                    </MenuItem>
-                    <MenuItem
-                      sx={styles.menuItem}
-                      onClick={handleClose}
-                    >
-                      <Image src={ban} alt='users' />
-                      <Typography>Block app</Typography>
-                    </MenuItem>
-                  </Menu>
-                </Box>
-              </CustomTooltip>
-            ))}
+                </CustomTooltip>
+              )
+            })}
           </Box>
         );
       },
