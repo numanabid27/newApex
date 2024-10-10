@@ -7,6 +7,15 @@ import ban from "@/common/assets/images/ban.svg";
 import impact from "@/common/assets/images/impact.svg";
 import iso from "@/common/assets/images/iso.svg";
 import soc from "@/common/assets/images/soc.svg";
+import finra from "@/common/assets/images/finra.svg";
+import soc2 from "@/common/assets/images/soc2.svg";
+import sae from "@/common/assets/images/sae.svg";
+import pci from "@/common/assets/images/pci.svg";
+import csa from "@/common/assets/images/csa.svg";
+import gdpr from "@/common/assets/images/gdpr.svg";
+import coppa from "@/common/assets/images/coppa.svg";
+import hippa from "@/common/assets/images/hippa.svg";
+import gaap from "@/common/assets/images/gaap.svg";
 
 export const FILTERES_DATA = [
   {
@@ -527,6 +536,48 @@ export const DISCOVERED_APP_MODEL = [
           { dataKey: 'Domain', dataValue: 'claude.anthropic.ai' },
           { dataKey: 'Data Center Location', dataValue: 'United States' },
           { dataKey: 'Privacy Policy', dataValue: 'Privacy Policy' },
+        ]
+      },
+      row2: {
+        title: "Security",
+        data: [
+          { dataKey: 'Latest Breach', dataValue: 'March 20, 2023' },
+          { dataKey: 'Data-at-Rest Encryption Method', dataValue: 'AES' },
+          { dataKey: ' Encryption Protocol', dataValue: 'TLS 1.3' },
+          { dataKey: 'Protected Against', dataValue: 'DROWN, Heartbleed patched' },
+          { dataKey: 'Multi-Factor Authentication', dataValue: 'Yes' },
+          { dataKey: 'Data Classification', dataValue: 'Yes' },
+          { dataKey: 'User Audit Trail', dataValue: 'Yes' },
+          { dataKey: 'Admin Audit Trail', dataValue: 'Yes' },
+          { dataKey: 'Supports SAML', dataValue: 'Yes' },
+          { dataKey: 'Password Policy', dataValue: 'Yes' },
+          { dataKey: 'Requires User Authentication', dataValue: 'Yes' },
+          { dataKey: 'IP Address Restriction', dataValue: 'Yes' },
+          { dataKey: 'File Sharing', dataValue: 'Yes' },
+          { dataKey: 'User Can Upload Data', dataValue: 'Yes' },
+        ]
+      },
+      row3: {
+        title: "Risks Identified",
+        data: [
+          { icon: iso, text: 'ISO 27001' },
+          { icon: iso, text: 'ISO 27002' },
+          { icon: finra, text: 'FINRA' },
+          { icon: hippa, text: 'HIPAA' },
+          { icon: gaap, text: 'GAAP' },
+          { icon: soc2, text: 'SOC 2' },
+          { icon: sae, text: 'SAE 16' },
+          { icon: pci, text: 'PCI DSS compliant' },
+          { icon: csa, text: 'CSA STAR level: Self-assessment' },
+          { icon: gdpr, text: 'GDPR' },
+          { icon: coppa, text: 'COPPA' },
+        ]
+      },
+      row4: {
+        title: "Security",
+        data: [
+          { text: 'Data Collection for Training Purposes:' },
+          { text: 'Need to turn off configuration for data collection used for training purposes to mitigate privacy risks.:' },
         ]
       },
     }
