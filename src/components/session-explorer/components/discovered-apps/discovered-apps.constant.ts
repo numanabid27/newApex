@@ -3,6 +3,10 @@ import high from "@/common/assets/images/high.svg";
 import microsoftcopilot from "@/common/assets/images/microsoftcopilot.svg";
 import complianceRisk from "@/common/assets/images/complianceRisk.svg";
 import unsanctioneApp from "@/common/assets/images/unsanctioneApp.svg";
+import ban from "@/common/assets/images/ban.svg";
+import impact from "@/common/assets/images/impact.svg";
+import iso from "@/common/assets/images/iso.svg";
+import soc from "@/common/assets/images/soc.svg";
 
 export const FILTERES_DATA = [
   {
@@ -173,7 +177,10 @@ export const DISCOVERED_APP_TABLE_DATA = [
     },
     category: [{ id: 1, name: "Content writing", }],
     user_dep: [
-      { id: 1, name: "Finance" },
+      {
+        id: 1, name: "Finance",
+        img: ban,
+      },
     ],
     risk_score: {
       level: "Hight",
@@ -404,4 +411,123 @@ export const DISCOVERED_APP_TABLE_DATA = [
       }
     ],
   },
+];
+
+export const SELECTOR_VALUES = [
+  'SaaS Web-app',
+  'Native Endpoint app',
+  'IDE endpoint calls',
+];
+
+export const DISCOVERED_APP_MODEL = [
+  {
+    accordion1: {
+      icon: impact,
+      heading: "Impact",
+      row1: {
+        title: "Risk score",
+        data: [
+          {
+            image: high,
+            text: 'High'
+          },
+        ]
+      },
+      row2: {
+        title: "Risky users",
+        data: [
+          {
+            text: 'marketing@companyxyz.com'
+          },
+          {
+            text: 'sales@companyxyz.com'
+          },
+          {
+            text: 'customerservice@companyxyz.com'
+          },
+          {
+            text: 'info@companyxyz.com'
+          },
+          {
+            text: 'support@companyxyz.com'
+          },
+          {
+            text: 'hr@companyxyz.com'
+          },
+          {
+            text: 'billing@companyxyz.com'
+          },
+          {
+            text: 'feedback@companyxyz.com'
+          },
+        ]
+      },
+      row3: {
+        title: "Departments",
+        data: [
+          {
+            text: 'R&D'
+          },
+          {
+            text: 'Marketing'
+          },
+        ]
+      },
+      row4: {
+        title: "Total users",
+        data: [
+          {
+            text: '3967'
+          },
+        ]
+      },
+      row5: {
+        title: "Total users",
+        data: [
+          {
+            icon: complianceRisk,
+            text: 'Compliance risk'
+          },
+        ]
+      },
+      row6: {
+        title: "",
+        data: [
+          {
+            icon: iso,
+            text: 'ISO 27001'
+          },
+          {
+            icon: iso,
+            text: 'ISO 27002'
+          },
+          {
+            icon: soc,
+            text: 'SOC 2'
+          },
+          {
+            text: 'GDPR'
+          },
+        ]
+      }
+    },
+    accordion2: {
+      icon: impact,
+      heading: "Application Information Schema",
+      row1: {
+        title: "General Information",
+        data: [
+          { dataKey: 'Application Name', dataValue: 'Anthropic Claude' },
+          { dataKey: 'Category', dataValue: 'Generative AI' },
+          { dataKey: 'Vendor', dataValue: 'Anthropic' },
+          { dataKey: 'Headquarters', dataValue: 'United States' },
+          { dataKey: 'Founded', dataValue: '2021' },
+          { dataKey: 'Domain', dataValue: 'claude.anthropic.ai' },
+          { dataKey: 'Data Center Location', dataValue: 'United States' },
+          { dataKey: 'Privacy Policy', dataValue: 'Privacy Policy' },
+        ]
+      },
+    }
+
+  }
 ];

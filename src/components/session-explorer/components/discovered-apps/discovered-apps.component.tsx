@@ -5,7 +5,7 @@ import CustomTextField from "@/common/components/custom-textfield/custom-textfie
 import Colors from "@/common/constants/color.constant";
 import CircleIcon from "@mui/icons-material/Circle";
 import menu from "@/common/assets/images/more_vert.svg";
-import multiSelect from "@/common/assets/images/multiSelect.svg";
+import multiSelectIcon from "@/common/assets/images/multiSelect.svg";
 import ban from "@/common/assets/images/ban.svg";
 import usersList from "@/common/assets/images/usersList.svg";
 import Image from "next/image";
@@ -13,21 +13,33 @@ import { FormProvider, useForm } from "react-hook-form";
 import {
   DISCOVERED_APP_TABLE_DATA,
   FILTERES_DATA,
+  SELECTOR_VALUES,
 } from "./discovered-apps.constant";
 import { styles } from "./discovered-apps.style";
 import claude from "@/common/assets/images/claude.png";
 import CustomTable from "@/common/components/custom-table/custom-table.component";
+import MultipleSelectCheckmarks from './components/selector.componet';
+import { actions, multiAction, multiActionApplication, multiActionDepartments, multiActionRisk } from './components/selector.constant';
+import MultiSelect from './components/selector.componet';
+import CustomDialog from '@/common/components/custom-dialog/custom-dialog.component';
 
 interface FormData { }
 
 export default function DiscoveredApps() {
-
+  const [openModal, setOpenModal] = React.useState(false);
+  const [selectedRow, setSelectedRow] = React.useState<any>();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+ 
+
+  
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation()
     setAnchorEl(event.currentTarget);
+
   };
-  const handleClose = () => {
+  const handleClose = (e: any) => {
+    e.stopPropagation();
     setAnchorEl(null);
   };
   const methods = useForm<FormData>({
@@ -79,7 +91,21 @@ export default function DiscoveredApps() {
               <Chip
                 sx={styles.cellChip}
                 key={item.id}
-                label={item.name}
+                label={
+                  <>
+                    {item.name}
+                    {item.img && (
+                      <Image
+                        src={item.img}
+                        alt="ban"
+                        width={16}
+                        height={16}
+                        style={{ paddingTop: '2px', paddingLeft: '2px' }}
+                      />
+                    )}
+                  </>
+                }
+
                 variant="outlined"
               />
             ))}
@@ -166,7 +192,7 @@ export default function DiscoveredApps() {
                     sx={styles.menuItem}
                     onClick={handleClose}
                   >
-                    <Image src={multiSelect} alt='users' />
+                    <Image src={multiSelectIcon} alt='users' />
                     <Typography>Mark as a non-risky app</Typography>
                   </MenuItem>
                   <MenuItem
@@ -219,7 +245,7 @@ export default function DiscoveredApps() {
                 sx={styles.menuItem}
                 onClick={handleClose}
               >
-                <Image src={multiSelect} alt='users' />
+                <Image src={multiSelectIcon} alt='users' />
                 <Typography>Mark as a non-risky app</Typography>
               </MenuItem>
               <MenuItem
@@ -237,33 +263,33 @@ export default function DiscoveredApps() {
   ];
 
   const onSubmit = (data: FormData) => {
-    // Handle form submission
     console.log(data);
   };
 
   return (
     <>
-      {/* filter */}
-      <Box sx={{ width: "100%" }}>
-        <FormProvider {...methods}>
-          <form>
-            <Grid container spacing={3} mt={3} sx={{ width: "100%" }}>
-              {FILTERES_DATA.map((field, index) => (
-                <Grid item xs={12} sm={field.col} key={index}>
-                  <CustomTextField {...field} />
-                </Grid>
-              ))}
-            </Grid>
-          </form>
-        </FormProvider>
+      <Box sx={styles.selectorsWraper}>
+        <MultiSelect data={multiActionDepartments} setForAllLabel="Departments" />
+        <MultiSelect data={multiActionApplication} setForAllLabel="Application" />
+        <MultiSelect data={multiActionRisk} setForAllLabel="Risk" />
+        <MultiSelect data={actions} setForAllLabel="Source" />
+        <MultiSelect data={multiAction} setForAllLabel="Type" />
       </Box>
       <Box sx={styles.tableRow}>
         <CustomTable
           rows={DISCOVERED_APP_TABLE_DATA}
           column={DISCOVERED_APP_TABLE_HEADER}
+          setOpenModal={setOpenModal}
           isSwitch={false}
+          setSelectedRow={setSelectedRow}
           isTableHead={true}
           isPagination={true}
+        />
+        <CustomDialog
+          thead={"discoverApp"}
+          openModal={openModal}
+          newData={selectedRow}
+          setOpenModal={setOpenModal}
         />
       </Box>
     </>

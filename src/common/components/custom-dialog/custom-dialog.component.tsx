@@ -14,6 +14,7 @@ import slack from "@/common/assets/images/slacke.svg"
 
 import Image from "next/image";
 import DashboardDrawer from "@/components/dashboard/components/dashboard-accordian/dashboard-accordian.component";
+import { DiscoveredAppAccordion } from "@/components/session-explorer/components/discovered-app-accordion/discovered-app-accordion.component";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -40,6 +41,7 @@ export default function CustomDialog({
   createPolicy
 }: any) {
   const [expandValue, setExpandValue] = useState(true);
+  console.log("newData", newData)
   return (
     <>
       <BootstrapDialog
@@ -89,6 +91,7 @@ export default function CustomDialog({
             />
           )}
           {thead === "session" && <SessionAccordion newData={newData} isMessage={isMessage} />}
+          {thead === "discoverApp" && <DiscoveredAppAccordion newData={newData} isMessage={isMessage} />}
           {thead === "issue" && <ModelAccordian modelData={openModal} />}
           {thead === "dashboard" && <DashboardDrawer modelData={modelData} />}
         </DialogContent>

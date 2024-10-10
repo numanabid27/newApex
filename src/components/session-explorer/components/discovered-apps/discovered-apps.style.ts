@@ -76,7 +76,7 @@ export const styles = {
   },
   menuWraper: {
     position: 'absolute',
-    top: '25px',
+    top: '15px',
     right: '0',
     left: '-8%',
     ".MuiList-root": {
@@ -93,5 +93,12 @@ export const styles = {
     position: 'absolute',
     top: '25px',
     right: '0',
+  },
+  selectorsWraper: {
+    mt: '13px',
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    gap: '12px',
   }
 };

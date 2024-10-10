@@ -81,7 +81,7 @@ export const SessionAccordion = ({ newData, isMessage }: any) => {
             <Grid xs={4}>
               <Typography variant="h6">Topics</Typography>
               <Box display="flex" gap="10px" sx={modelStyle.chip}>
-                {newData.topics.map((item: any, i: number) => {
+                {newData?.topics?.map((item: any, i: number) => {
                   return (
                     <Chip
                       key={i.toString()}
