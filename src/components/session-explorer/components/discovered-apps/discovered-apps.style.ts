@@ -100,5 +100,19 @@ export const styles = {
     flexWrap: 'wrap',
     alignItems: 'center',
     gap: '12px',
+  },
+  tooltip:{
+    "h5":{
+      fontSize:"14px",
+      paddingBottom:'5px',
+      paddingTop:'10px',
+      fontWeight:700,
+      color:"#344054"
+    },
+    "h6":{
+      fontSize:"12px",
+      paddingBottom:'8px',
+      color:"#667085"
+    }
   }
 };

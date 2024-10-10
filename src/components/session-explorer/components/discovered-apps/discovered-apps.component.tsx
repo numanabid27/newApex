@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Button, Chip, Grid, Menu, MenuItem, Typography } from "@mui/material";
+import { Box, Button, Chip, Grid, Menu, MenuItem, styled, Tooltip, Typography } from "@mui/material";
 
 import CustomTextField from "@/common/components/custom-textfield/custom-textfield.component";
 import Colors from "@/common/constants/color.constant";
@@ -22,12 +22,13 @@ import MultipleSelectCheckmarks from './components/selector.componet';
 import { actions, multiAction, multiActionApplication, multiActionDepartments, multiActionRisk } from './components/selector.constant';
 import MultiSelect from './components/selector.componet';
 import CustomDialog from '@/common/components/custom-dialog/custom-dialog.component';
+import { useEffect } from "react";
 
 interface FormData { }
 
 export default function DiscoveredApps() {
   const [openModal, setOpenModal] = React.useState(false);
-  const [selectedRow, setSelectedRow] = React.useState<any>();
+  const [selectedRow, setSelectedRow] = React.useState<any>('');
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
  
 
@@ -46,6 +47,22 @@ export default function DiscoveredApps() {
     mode: "onChange",
     defaultValues: {},
   });
+
+  const CustomTooltip = styled(({ className, ...props }:any) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+  ))(({ theme }) => ({
+    [`& .MuiTooltip-tooltip`]: {
+      backgroundColor: '#fff', 
+      borderRadius:'8px',
+      boxShadow:'0px 1px 6px #8080804f',
+      padding:'10px 10px'
+    },
+    [`& .MuiTooltip-arrow`]: {
+      color: '#fff' 
+    },
+  }));
+
+ 
 
   const DISCOVERED_APP_TABLE_HEADER = [
     {
@@ -86,28 +103,39 @@ export default function DiscoveredApps() {
       accessor: "user_dep",
       cell: (data: any) => {
         return (
-          <Box sx={styles.categoryCell}>
+          <Box sx={styles.categoryCell} onClick={(e)=>{
+              console.log("selectedRow@", data);
+              e.stopPropagation();
+            }}>
             {data.map((item: any, i: any) => (
-              <Chip
-                sx={styles.cellChip}
-                key={item.id}
-                label={
-                  <>
-                    {item.name}
-                    {item.img && (
-                      <Image
-                        src={item.img}
-                        alt="ban"
-                        width={16}
-                        height={16}
-                        style={{ paddingTop: '2px', paddingLeft: '2px' }}
-                      />
-                    )}
-                  </>
-                }
+              <CustomTooltip placement="top" arrow 
+                title={
+                <Box sx={styles.tooltip}>
+                  <Typography variant='h5'>Block this group</Typography>
+                  <Typography variant='h6'>Block group or department from using this application.</Typography>
+                </Box>
+              }>
+                <Chip
+                  sx={styles.cellChip}
+                  key={item.id}
+                  label={
+                    <>
+                      {item.name}
+                      {item.img && (
+                        <Image
+                          src={item.img}
+                          alt="ban"
+                          width={16}
+                          height={16}
+                          style={{ paddingTop: '2px', paddingLeft: '2px' }}
+                        />
+                      )}
+                    </>
+                  }
 
-                variant="outlined"
-              />
+                  variant="outlined"
+                />
+                </CustomTooltip>
             ))}
           </Box>
         );
@@ -158,53 +186,61 @@ export default function DiscoveredApps() {
         return (
           <Box sx={styles.riskWraper}>
             {data.map((item: any, index: number) => (
-              <Box key={index.toString()}>
-                <Box
-                  aria-controls={open ? 'basic-menu' : undefined}
-                  aria-haspopup="true"
-                  aria-expanded={open ? 'true' : undefined}
-                  // onMouseEnter={handleClick}
-                  // onMouseLeave={handleClose}
-                  sx={styles.categoryCell}
-                  key={index}
-                >
-                  <Image src={item.icon} alt={item.risk} width={20} height={20} />
-                  <Typography variant="body1">{item.risk}</Typography>
+              <CustomTooltip placement="top" arrow 
+                title={
+                <Box sx={styles.tooltip}>
+                  <Box sx={styles.categoryCell}>
+                    <Image src={item.icon} alt={item.risk} width={20} height={20} />
+                    <Typography variant="body1" color="#334155" fontSize="14px">{item.risk}</Typography>
+                  </Box>
+                  
                 </Box>
+              }>
+                <Box key={index.toString()}>
+                  <Box
+                    aria-controls={open ? 'basic-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                    sx={styles.categoryCell}
+                    key={index}
+                  >
+                    <Image src={item.icon} alt={item.risk} width={20} height={20} />
+                    <Typography variant="body1">{item.risk}</Typography>
+                  </Box>
 
-                <Menu
-                  sx={styles.menuWraper}
-                  anchorEl={anchorEl}
-                  open={open}
-                  onClose={handleClose}
-                  MenuListProps={{
-                    'aria-labelledby': 'basic-button',
-                  }}
-                >
-                  <MenuItem
-                    sx={styles.menuItem}
-                    onClick={handleClose}
+                  <Menu
+                    sx={styles.menuWraper}
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{
+                      'aria-labelledby': 'basic-button',
+                    }}
                   >
-                    <Image src={usersList} alt='users' />
-                    <Typography>See users list</Typography>
-                  </MenuItem>
-                  <MenuItem
-                    sx={styles.menuItem}
-                    onClick={handleClose}
-                  >
-                    <Image src={multiSelectIcon} alt='users' />
-                    <Typography>Mark as a non-risky app</Typography>
-                  </MenuItem>
-                  <MenuItem
-                    sx={styles.menuItem}
-                    onClick={handleClose}
-                  >
-                    <Image src={ban} alt='users' />
-                    <Typography>Block app</Typography>
-                  </MenuItem>
-                </Menu>
-              </Box>
-
+                    <MenuItem
+                      sx={styles.menuItem}
+                      onClick={handleClose}
+                    >
+                      <Image src={usersList} alt='users' />
+                      <Typography>See users list</Typography>
+                    </MenuItem>
+                    <MenuItem
+                      sx={styles.menuItem}
+                      onClick={handleClose}
+                    >
+                      <Image src={multiSelectIcon} alt='users' />
+                      <Typography>Mark as a non-risky app</Typography>
+                    </MenuItem>
+                    <MenuItem
+                      sx={styles.menuItem}
+                      onClick={handleClose}
+                    >
+                      <Image src={ban} alt='users' />
+                      <Typography>Block app</Typography>
+                    </MenuItem>
+                  </Menu>
+                </Box>
+              </CustomTooltip>
             ))}
           </Box>
         );

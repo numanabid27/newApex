@@ -70,9 +70,11 @@ export const DISCOVERED_APP_TABLE_DATA = [
     },
     category: [{ id: 1, name: "Chatbot", }],
     user_dep: [
-      { id: 1, name: "R&D" },
-      { id: 2, name: "Marketing" },
+      { id: 1, name: "R&D", tooltipData:"demoo" },
+      { id: 2, name: "Marketing" , tooltipData:"demoo"},
+      
     ],
+    
     risk_score: {
       level: "Hight",
       img: high,
@@ -101,7 +103,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
       { id: 2, name: "Chatbot" }
     ],
     user_dep: [
-      { id: 1, name: "Human Resources" },
+      { id: 1, name: "Human Resources", tooltipData:"demoo" },
     ],
     risk_score: {
       level: "Hight",
