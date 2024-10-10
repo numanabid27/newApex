@@ -88,7 +88,7 @@ export default function DiscoveredApps() {
       cell: (data: any) => {
         return (
           <Box sx={styles.categoryCell}>
-            {data.map((item: any, i: any) => (
+            {data.map((item: any) => (
               <Chip
                 sx={styles.cellChip}
                 key={item.id}
@@ -110,7 +110,7 @@ export default function DiscoveredApps() {
               e.stopPropagation();
             }}>
             {data.map((item: any, i: any) => (
-              <CustomTooltip placement="top" arrow 
+              <CustomTooltip placement="top" key={i.toString()} arrow 
                 title={
                 <Box sx={styles.tooltip}>
                   <Typography variant='h5'>Block this group</Typography>
@@ -190,7 +190,7 @@ export default function DiscoveredApps() {
             {data.map((item: any, index: number) => {
               console.log("item#", item.dataSource)
               return(
-                <CustomTooltip placement="top" arrow 
+                <CustomTooltip key={index.toString()} placement="top" arrow 
                   title={
                   <Box sx={styles.tooltip}>
                     <Box sx={styles.categoryCell}>

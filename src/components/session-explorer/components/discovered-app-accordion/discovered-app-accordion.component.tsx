@@ -67,16 +67,16 @@ export const DiscoveredAppAccordion = ({ newData, isMessage }: any) => {
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={modelStyle.desc2}>
-                    {DISCOVERED_APP_MODEL.map((model) => (
-                        <>
+                    {DISCOVERED_APP_MODEL.map((model, i) => (
+                        <Box key={i.toString()}>
                             <Grid container sx={modelStyle.text}>
                                 <Grid xs={3}>
                                     <Typography variant="h6">{model.accordion1.row1.title}</Typography>
                                 </Grid>
                                 <Grid xs={9}>
                                     <Box sx={DISCOVERED_APP_STYLE.rowsMainWraper}>
-                                        {model.accordion1.row1.data.map((data) => (
-                                            <Box sx={DISCOVERED_APP_STYLE.rowsWraper}>
+                                        {model.accordion1.row1.data.map((data, i) => (
+                                            <Box sx={DISCOVERED_APP_STYLE.rowsWraper} key={i.toString()}>
                                                 <Image src={data.image} alt="signal" />
                                                 <Typography>{data.text}</Typography>
                                             </Box>
@@ -91,8 +91,8 @@ export const DiscoveredAppAccordion = ({ newData, isMessage }: any) => {
                                 </Grid>
                                 <Grid xs={9}>
                                     <Box sx={DISCOVERED_APP_STYLE.tagsWraper}>
-                                        {model.accordion1.row2.data.map((data) => (
-                                            <Box sx={DISCOVERED_APP_STYLE.tag}>{data.text}</Box>
+                                        {model.accordion1.row2.data.map((data, i) => (
+                                            <Box sx={DISCOVERED_APP_STYLE.tag} key={i.toString()}>{data.text}</Box>
                                         ))}
                                     </Box>
                                 </Grid>
@@ -104,11 +104,12 @@ export const DiscoveredAppAccordion = ({ newData, isMessage }: any) => {
                                 </Grid>
                                 <Grid xs={9}>
                                     <Box sx={DISCOVERED_APP_STYLE.rowsMainWraper}>
-                                        {model.accordion1.row3.data.map((data) => (
+                                        {model.accordion1.row3.data.map((data, i) => (
                                             <Chip
                                                 sx={DISCOVERED_APP_STYLE.cellChip}
                                                 label={data.text}
                                                 variant="outlined"
+                                                key={i.toString()}
                                             />
                                         ))}
                                     </Box>
@@ -121,8 +122,8 @@ export const DiscoveredAppAccordion = ({ newData, isMessage }: any) => {
                                     <Typography variant="h6">{model.accordion1.row4.title}</Typography>
                                 </Grid>
                                 <Grid xs={9}>
-                                    {model.accordion1.row4.data.map((data) => (
-                                        <Typography>{data.text}</Typography>
+                                    {model.accordion1.row4.data.map((data, i) => (
+                                        <Typography key={i.toString()}>{data.text}</Typography>
                                     ))}
                                 </Grid>
                             </Grid>
@@ -134,8 +135,8 @@ export const DiscoveredAppAccordion = ({ newData, isMessage }: any) => {
                                 </Grid>
                                 <Grid xs={9}>
                                     <Box sx={DISCOVERED_APP_STYLE.rowsMainWraper}>
-                                        {model.accordion1.row5.data.map((data) => (
-                                            <Box sx={DISCOVERED_APP_STYLE.rowsWraper}>
+                                        {model.accordion1.row5.data.map((data, i) => (
+                                            <Box sx={DISCOVERED_APP_STYLE.rowsWraper} key={i.toString()}>
                                                 <Image src={data.icon} alt="signal" />
                                                 <Typography>{data.text}</Typography>
                                             </Box>
@@ -147,8 +148,8 @@ export const DiscoveredAppAccordion = ({ newData, isMessage }: any) => {
                                 <Grid xs={3}></Grid>
                                 <Grid xs={9}>
                                     <Box sx={DISCOVERED_APP_STYLE.tagsWraper}>
-                                        {model.accordion1.row6.data.map((data) => (
-                                            <Box sx={DISCOVERED_APP_STYLE.tag}>
+                                        {model.accordion1.row6.data.map((data, i) => (
+                                            <Box sx={DISCOVERED_APP_STYLE.tag} key={i.toString()}>
                                                 {data.icon ? <Image src={data.icon} alt="icon" /> : ''}
                                                 <Typography>{data.text}</Typography>
                                             </Box>
@@ -156,7 +157,7 @@ export const DiscoveredAppAccordion = ({ newData, isMessage }: any) => {
                                     </Box>
                                 </Grid>
                             </Grid>
-                        </>
+                        </Box>
                     ))}
 
                 </AccordionDetails>
@@ -180,8 +181,8 @@ export const DiscoveredAppAccordion = ({ newData, isMessage }: any) => {
                 </AccordionSummary>
                 <AccordionDetails sx={modelStyle.desc2}>
                     <Typography sx={DISCOVERED_APP_STYLE.accordionHeading} mb="8px" mt="30px">{DISCOVERED_APP_MODEL[0].accordion2.row1.title}</Typography>
-                    {DISCOVERED_APP_MODEL[0].accordion2.row1.data.map((data) => (
-                        <Grid container mt="12px">
+                    {DISCOVERED_APP_MODEL[0].accordion2.row1.data.map((data, i) => (
+                        <Grid container mt="12px" key={i.toString()}>
                             <Grid item xs={5}>
                                 <Typography color="#64758B">{data.dataKey}</Typography>
                             </Grid>
@@ -193,8 +194,8 @@ export const DiscoveredAppAccordion = ({ newData, isMessage }: any) => {
 
                     <Box sx={DISCOVERED_APP_STYLE.devider}></Box>
                     <Typography sx={DISCOVERED_APP_STYLE.accordionHeading} mb="8px">{DISCOVERED_APP_MODEL[0].accordion2.row2.title}</Typography>
-                    {DISCOVERED_APP_MODEL[0].accordion2.row2.data.map((data) => (
-                        <Grid container mt="12px">
+                    {DISCOVERED_APP_MODEL[0].accordion2.row2.data.map((data, i) => (
+                        <Grid container mt="12px" key={i.toString()}>
                             <Grid item xs={5}>
                                 <Typography color="#64758B">{data.dataKey}</Typography>
                             </Grid>
@@ -207,8 +208,8 @@ export const DiscoveredAppAccordion = ({ newData, isMessage }: any) => {
                     <Box sx={DISCOVERED_APP_STYLE.devider}></Box>
                     <Typography sx={DISCOVERED_APP_STYLE.accordionHeading} mb="20px">{DISCOVERED_APP_MODEL[0].accordion2.row3.title}</Typography>
                     <Box sx={DISCOVERED_APP_STYLE.tagsWraper}>
-                        {DISCOVERED_APP_MODEL[0].accordion2.row3.data.map((data) => (
-                            <Box sx={DISCOVERED_APP_STYLE.tag}>
+                        {DISCOVERED_APP_MODEL[0].accordion2.row3.data.map((data, i) => (
+                            <Box sx={DISCOVERED_APP_STYLE.tag} key={i.toString()}>
                                 {data.icon ? <Image src={data.icon} alt="icon" /> : ''}
                                 <Typography>{data.text}</Typography>
                             </Box>
@@ -218,8 +219,8 @@ export const DiscoveredAppAccordion = ({ newData, isMessage }: any) => {
                     <Box sx={DISCOVERED_APP_STYLE.devider}></Box>
                     <Typography sx={DISCOVERED_APP_STYLE.accordionHeading} mb="20px">{DISCOVERED_APP_MODEL[0].accordion2.row4.title}</Typography>
                     <Box pb={8}>
-                        {DISCOVERED_APP_MODEL[0].accordion2.row4.data.map((data) => (
-                            <Typography mb={4}>{data.text}</Typography>
+                        {DISCOVERED_APP_MODEL[0].accordion2.row4.data.map((data, i) => (
+                            <Typography mb={4} key={i.toString()}>{data.text}</Typography>
                         ))}
                     </Box>
                 </AccordionDetails>
