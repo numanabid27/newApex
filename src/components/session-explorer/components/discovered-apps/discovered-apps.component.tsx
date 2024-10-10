@@ -158,7 +158,7 @@ export default function DiscoveredApps() {
         return (
           <Box sx={styles.riskWraper}>
             {data.map((item: any, index: number) => (
-              <Box>
+              <Box key={index.toString()}>
                 <Box
                   aria-controls={open ? 'basic-menu' : undefined}
                   aria-haspopup="true"

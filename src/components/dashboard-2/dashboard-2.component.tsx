@@ -99,8 +99,8 @@ function Dashboard2() {
                         <Grid container sx={{ height: '100%' }} rowGap={6}>
                             <Grid item sm={3} width={'100%'}>
                                 <Box sx={Dashboard2Style.PriceCardsWrapper}>
-                                    {PRICE_CARDS.map((item) => (
-                                        <Box sx={Dashboard2Style.PriceBox}>
+                                    {PRICE_CARDS.map((item, i) => (
+                                        <Box sx={Dashboard2Style.PriceBox}  key={i.toString()}>
                                             <Typography variant="h2" sx={Dashboard2Style.GraphHeading}>{item.title}</Typography>
                                             <Typography variant="h2" sx={Dashboard2Style.PriceValue}>{item.price}</Typography>
                                             <Typography variant="h2" sx={Dashboard2Style.PrevMonthSmallText}>{item.text}</Typography>
@@ -149,8 +149,8 @@ function Dashboard2() {
                                         <Typography sx={Dashboard2Style.RulesText}>Rules which are disabled in your tenant</Typography>
 
                                         <Box sx={Dashboard2Style.DisabledRulesWraperMain}>
-                                            {DISABLED_RULES_CONTENT.map((item) => (
-                                                <Box sx={Dashboard2Style.DisabledRulesWraper}>
+                                            {DISABLED_RULES_CONTENT.map((item, i) => (
+                                                <Box sx={Dashboard2Style.DisabledRulesWraper}  key={i.toString()}>
                                                     <Box>
                                                         <Typography sx={Dashboard2Style.typography}>{item.title}</Typography>
                                                     </Box>
@@ -169,8 +169,8 @@ function Dashboard2() {
                     </Grid>
                     <Grid item md={6} pl={{ md: 4, xs: 0 }} width={'100%'}>
                         <Box sx={Dashboard2Style.ToolWraperMain}>
-                            {TOOLS_CONTENT.map((tool) => (
-                                <Box sx={Dashboard2Style.ToolWraper}>
+                            {TOOLS_CONTENT.map((tool, i) => (
+                                <Box sx={Dashboard2Style.ToolWraper} key={i.toString()}>
                                     <Image src={tool.icon} alt="chat gpt" width={37} height={37} />
                                     <Typography sx={Dashboard2Style.ToolText}>{tool.text}</Typography>
                                 </Box>
