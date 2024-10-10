@@ -1,9 +1,32 @@
 
 export const DISCOVERED_APP_STYLE = {
+    accordionHeader: {
+        p: '30px 24px'
+    },
+    accordionHeaderFlex: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '20px',
+    },
+    accordionHeaderTitle: {
+        fontSize: '24px',
+        lineHeight: '24px',
+        fontWeight: '700',
+        color: '#334155',
+    },
     rowsMainWraper: {
         display: 'flex',
         flexWrap: 'wrap',
         gap: '20px'
+    },
+    headerBoxes: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px',
+        p: '10px 16px',
+        borderRadius: '8px',
+        border: '1px solid #CBD5E1',
+        boxShadow: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)'
     },
     rowsWraper: {
         display: 'flex',
@@ -36,5 +59,12 @@ export const DISCOVERED_APP_STYLE = {
         lineHeight: '18px',
         fontWeight: '500',
         color: '#334155'
+    },
+    accordionHeading: {
+        fontSize: '14px',
+        lineHeight: '20px',
+        fontWeight: '700',
+        color: '#334155',
+        mt: "20px",
     }
 }

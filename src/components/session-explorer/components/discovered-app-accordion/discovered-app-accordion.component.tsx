@@ -9,24 +9,15 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import useModalAccordion from "@/common/components/model-accordion/use-modal-accordion.hook";
-import chat from "@/common/assets/images/chat.svg";
-import insights from "@/common/assets/images/insights.svg";
-import issuesby from "@/common/assets/images/issuesby.svg";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styles } from "../../../../common/components/model-accordion/model-accordion.style";
-import user from "@/common/assets/images/circle-user-round.svg";
-import panda from "@/common/assets/images/slack.svg";
-import right from "@/common/assets/images/move-right.svg";
-import msgs from "@/common/assets/images/messages-square.svg";
-import users from "@/common/assets/images/user-round.svg";
-import saprk from "@/common/assets/images/reply-user.svg";
-import { MESSAGES } from "../sessions/session.constant";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
-import DoneIcon from "@mui/icons-material/Done";
 import useSessionAccordion from "../session-accordion/use-session-accordion.hook";
 import { modelStyle } from "../session-accordion/session-accordion.style";
 import { DISCOVERED_APP_MODEL } from "../discovered-apps/discovered-apps.constant";
 import { DISCOVERED_APP_STYLE } from "./discovered-app-accordion.style";
+import usersList from "@/common/assets/images/usersList.svg";
+import ban from "@/common/assets/images/ban.svg";
+import multiSelect from "@/common/assets/images/multiSelect.svg";
 
 export const DiscoveredAppAccordion = ({ newData, isMessage }: any) => {
     const { expanded, handleChange } = useModalAccordion();
@@ -34,6 +25,31 @@ export const DiscoveredAppAccordion = ({ newData, isMessage }: any) => {
 
     return (
         <Box>
+            
+            <Box sx={DISCOVERED_APP_STYLE.accordionHeader}>
+                <Box sx={DISCOVERED_APP_STYLE.accordionHeaderFlex}>
+                    <Image src={newData.application.img} alt="users" />
+                    <Typography sx={DISCOVERED_APP_STYLE.accordionHeaderTitle}>{newData.application.name}</Typography>
+                </Box>
+                <Typography mt="20px">Claude is a family of large language models developed by Anthropic.</Typography>
+                <Typography>The first model was released in March 2023. Claude 3, released in March 2024, can also analyze images.</Typography>
+                <Box sx={DISCOVERED_APP_STYLE.accordionHeaderFlex} mt="20px">
+                    <Box sx={DISCOVERED_APP_STYLE.headerBoxes}>
+                        <Image src={usersList} alt="users" />
+                        <Typography>See users</Typography>
+                    </Box>
+                    <Box sx={DISCOVERED_APP_STYLE.headerBoxes}>
+                        <Image src={multiSelect} alt="users" />
+                        <Typography>Mark as a non-risky app</Typography>
+                    </Box>
+                    <Box sx={DISCOVERED_APP_STYLE.headerBoxes}>
+                        <Image src={ban} alt="users" />
+                        <Typography>Block app</Typography>
+                    </Box>
+                </Box>
+            </Box>
+
+
             <Accordion
                 expanded={expanded.includes("panel2")}
                 onChange={handleChange("panel2")}
@@ -163,110 +179,52 @@ export const DiscoveredAppAccordion = ({ newData, isMessage }: any) => {
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={modelStyle.desc2}>
+                    <Typography sx={DISCOVERED_APP_STYLE.accordionHeading} mb="8px" mt="30px">{DISCOVERED_APP_MODEL[0].accordion2.row1.title}</Typography>
                     {DISCOVERED_APP_MODEL[0].accordion2.row1.data.map((data) => (
                         <Grid container mt="12px">
                             <Grid item xs={5}>
-                                <Typography>{data.dataKey}</Typography>
+                                <Typography color="#64758B">{data.dataKey}</Typography>
                             </Grid>
                             <Grid item xs={7}>
-                                <Typography>{data.dataValue}</Typography>
+                                <Typography color="#334155">{data.dataValue}</Typography>
                             </Grid>
                         </Grid>
                     ))}
+
+                    <Box sx={DISCOVERED_APP_STYLE.devider}></Box>
+                    <Typography sx={DISCOVERED_APP_STYLE.accordionHeading} mb="8px">{DISCOVERED_APP_MODEL[0].accordion2.row2.title}</Typography>
+                    {DISCOVERED_APP_MODEL[0].accordion2.row2.data.map((data) => (
+                        <Grid container mt="12px">
+                            <Grid item xs={5}>
+                                <Typography color="#64758B">{data.dataKey}</Typography>
+                            </Grid>
+                            <Grid item xs={7}>
+                                <Typography color="#334155">{data.dataValue}</Typography>
+                            </Grid>
+                        </Grid>
+                    ))}
+
+                    <Box sx={DISCOVERED_APP_STYLE.devider}></Box>
+                    <Typography sx={DISCOVERED_APP_STYLE.accordionHeading} mb="20px">{DISCOVERED_APP_MODEL[0].accordion2.row3.title}</Typography>
+                    <Box sx={DISCOVERED_APP_STYLE.tagsWraper}>
+                        {DISCOVERED_APP_MODEL[0].accordion2.row3.data.map((data) => (
+                            <Box sx={DISCOVERED_APP_STYLE.tag}>
+                                {data.icon ? <Image src={data.icon} alt="icon" /> : ''}
+                                <Typography>{data.text}</Typography>
+                            </Box>
+                        ))}
+                    </Box>
+
+                    <Box sx={DISCOVERED_APP_STYLE.devider}></Box>
+                    <Typography sx={DISCOVERED_APP_STYLE.accordionHeading} mb="20px">{DISCOVERED_APP_MODEL[0].accordion2.row4.title}</Typography>
+                    <Box pb={8}>
+                        {DISCOVERED_APP_MODEL[0].accordion2.row4.data.map((data) => (
+                            <Typography mb={4}>{data.text}</Typography>
+                        ))}
+                    </Box>
                 </AccordionDetails>
             </Accordion>
 
-            {!isMessage && (
-                <>
-                    <Accordion
-                        expanded={expanded.includes("panel1")}
-                        onChange={handleChange("panel1")}
-                        className="accordians"
-                    >
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1bh-content"
-                            id="panel1bh-header"
-                            sx={styles.accordianBg}
-                        >
-                            <Typography sx={styles.title}>
-                                <Image src={insights} alt="" style={styles.icon} />
-                                Insights
-                            </Typography>
-                        </AccordionSummary>
-                        <AccordionDetails sx={modelStyle.desc2}>
-                            <Typography sx={modelStyle.insites}>
-                                This user has <span>50 violations</span>
-                            </Typography>
-                            <Typography sx={modelStyle.insites}>
-                                This user has total traffic of <span>2851 prompts</span>
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
-                    <Accordion
-                        expanded={expanded.includes("panel3")}
-                        onChange={handleChange("panel3")}
-                        sx={{ boxShadow: "none" }}
-                    >
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel3bh-content"
-                            id="panel3bh-header"
-                            sx={styles.accordianBg}
-                        >
-                            <Typography sx={styles.title}>
-                                <Image src={chat} alt="" style={styles.icon} />
-                                Prompt
-                            </Typography>
-                        </AccordionSummary>
-                        <AccordionDetails sx={modelStyle.desc2}>
-                            {Array.from({ length: 3 }, (_, i: any) => (
-                                <>
-                                    <Box key={i} sx={modelStyle.promptBox}>
-                                        {i < 2 && (
-                                            <Box sx={modelStyle.voilationBox}>
-                                                <Typography variant="h6">
-                                                    <span>3 Violations:</span> Email, Private key{" "}
-                                                </Typography>
-                                                <Image src={right} alt="" width={25} height={25} />
-                                            </Box>
-                                        )}
-
-                                        <Typography sx={modelStyle.promptDate}>
-                                            <span>15:41:03</span> Sunday 25 March 2024
-                                        </Typography>
-                                        <Box sx={modelStyle.promptName}>
-                                            <Image src={user} alt="" width={20} height={20} />
-                                            <Typography variant="h6">Sent prompt </Typography>
-                                        </Box>
-                                        <Box sx={{ ...modelStyle.codeBox, background: "#fff" }}>
-                                            <pre>
-                                                {`
-      // Import the package here
-      import MyPackage from 'my-package';...
-                    `}
-                                            </pre>
-                                        </Box>
-
-                                        <Box sx={modelStyle.promptName}>
-                                            <Image src={panda} alt="" width={20} height={20} />
-                                            <Typography variant="h6">Github Copilot</Typography>
-                                        </Box>
-                                        <Box sx={{ ...modelStyle.codeBox, background: "#475467" }}>
-                                            <pre style={{ color: "#fff" }}>
-                                                {`
-      // You can then use your package within this API route
-      export default function handler(req, res) {...
-                    `}
-                                            </pre>
-                                        </Box>
-                                    </Box>
-                                </>
-                            ))}
-                        </AccordionDetails>
-                    </Accordion>
-                </>
-            )}
         </Box>
     );
 };
