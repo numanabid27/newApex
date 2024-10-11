@@ -5,6 +5,7 @@ export const DISCOVERED_APP_STYLE = {
     },
     accordionHeaderFlex: {
         display: 'flex',
+        flexWrap: 'wrap',
         alignItems: 'center',
         gap: '20px',
     },

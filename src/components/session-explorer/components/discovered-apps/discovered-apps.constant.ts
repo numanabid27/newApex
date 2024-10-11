@@ -1,5 +1,7 @@
 import claude from "@/common/assets/images/claude.png";
 import high from "@/common/assets/images/high.svg";
+import medium from "@/common/assets/images/mediumSignals.svg";
+import low from "@/common/assets/images/lowSignals.svg";
 import microsoftcopilot from "@/common/assets/images/microsoftcopilot.svg";
 import complianceRisk from "@/common/assets/images/complianceRisk.svg";
 import unsanctioneApp from "@/common/assets/images/unsanctioneApp.svg";
@@ -16,6 +18,18 @@ import gdpr from "@/common/assets/images/gdpr.svg";
 import coppa from "@/common/assets/images/coppa.svg";
 import hippa from "@/common/assets/images/hippa.svg";
 import gaap from "@/common/assets/images/gaap.svg";
+import amazonPolly from "@/common/assets/images/amazonPolly.svg";
+import openai_ent from "@/common/assets/images/openai_ent.svg";
+import jasperAi from "@/common/assets/images/jasperAi.svg";
+import slack from "@/common/assets/images/slack2.svg";
+import copyAI from "@/common/assets/images/copyAI.svg";
+import salesforceEinstien from "@/common/assets/images/salesforceEinstien.svg";
+import synthesia from "@/common/assets/images/synthesia.svg";
+import writesonic from "@/common/assets/images/writesonic.svg";
+import rytr from "@/common/assets/images/rytr.svg";
+import descript from "@/common/assets/images/descript.svg";
+import adobeFirefly from "@/common/assets/images/adobeFirefly.svg";
+import zoomAI from "@/common/assets/images/zoomAI.svg";
 
 export const FILTERES_DATA = [
   {
@@ -143,31 +157,13 @@ export const DISCOVERED_APP_TABLE_DATA = [
         risk: 'Security risk',
         icon: unsanctioneApp,
       },
-      { 
-        dataSource:[
-          {
-            icon: iso,
-            text: 'ISO 27001'
-          },
-          {
-            icon: iso,
-            text: 'ISO 27002'
-          },
-          {
-            icon: soc,
-            text: 'SOC 2'
-          },
-          {
-            text: 'GDPR'
-          },
-        ]}
     ]
   },
   {
     id: 3,
     application: {
       name: "Amazon Polly",
-      img: claude,
+      img: amazonPolly,
     },
     category: [{ id: 1, name: "Text to speech", }],
     user_dep: [
@@ -194,7 +190,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     id: 4,
     application: {
       name: "OpenAI ChatGPT",
-      img: microsoftcopilot,
+      img: openai_ent,
     },
     category: [
       { id: 1, name: "Chatbot" },
@@ -220,7 +216,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     id: 5,
     application: {
       name: "Jasper AI",
-      img: claude,
+      img: jasperAi,
     },
     category: [{ id: 1, name: "Content writing", }],
     user_dep: [
@@ -246,7 +242,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     id: 6,
     application: {
       name: "Slack AI",
-      img: microsoftcopilot,
+      img: slack,
     },
     category: [{ id: 1, name: "Chat assistant" }],
     user_dep: [
@@ -270,7 +266,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     id: 7,
     application: {
       name: "Copy.ai",
-      img: claude,
+      img: copyAI,
     },
     category: [{ id: 1, name: "Content writing", }],
     user_dep: [
@@ -278,7 +274,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     ],
     risk_score: {
       level: "Medium",
-      img: high,
+      img: medium,
     },
     risk_users: "8",
     total_users: "789",
@@ -293,7 +289,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     id: 8,
     application: {
       name: "Salesforce Einstein",
-      img: microsoftcopilot,
+      img: salesforceEinstien,
     },
     category: [{ id: 1, name: "Text to video" }],
     user_dep: [
@@ -301,7 +297,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     ],
     risk_score: {
       level: "Medium",
-      img: high,
+      img: medium,
     },
     risk_users: "158",
     total_users: "2123",
@@ -316,7 +312,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     id: 9,
     application: {
       name: "Synthesia",
-      img: claude,
+      img: synthesia,
     },
     category: [{ id: 1, name: "Text to video", }],
     user_dep: [
@@ -324,7 +320,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     ],
     risk_score: {
       level: "Medium",
-      img: high,
+      img: medium,
     },
     risk_users: "19",
     total_users: "2765",
@@ -339,7 +335,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     id: 10,
     application: {
       name: "Writesonic",
-      img: microsoftcopilot,
+      img: writesonic,
     },
     category: [{ id: 1, name: "Content writing" }],
     user_dep: [
@@ -347,7 +343,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     ],
     risk_score: {
       level: "Medium",
-      img: high,
+      img: medium,
     },
     risk_users: "50",
     total_users: "50",
@@ -362,7 +358,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     id: 11,
     application: {
       name: "Rytr",
-      img: claude,
+      img: rytr,
     },
     category: [{ id: 1, name: "Content writing", }],
     user_dep: [
@@ -371,7 +367,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     ],
     risk_score: {
       level: "Medium",
-      img: high,
+      img: medium,
     },
     risk_users: "4",
     total_users: "3999",
@@ -386,7 +382,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     id: 12,
     application: {
       name: "Descript",
-      img: microsoftcopilot,
+      img: descript,
     },
     category: [{ id: 1, name: "Text to video" }],
     user_dep: [
@@ -394,7 +390,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     ],
     risk_score: {
       level: "Low",
-      img: high,
+      img: low,
     },
     risk_users: "31",
     total_users: "2123",
@@ -409,7 +405,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     id: 13,
     application: {
       name: "Adobe Firefly",
-      img: microsoftcopilot,
+      img: adobeFirefly,
     },
     category: [{ id: 1, name: "Text to image" }],
     user_dep: [
@@ -418,7 +414,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     ],
     risk_score: {
       level: "Low",
-      img: high,
+      img: low,
     },
     risk_users: "213",
     total_users: "123",
@@ -437,7 +433,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     id: 14,
     application: {
       name: "Zoom AI",
-      img: microsoftcopilot,
+      img: zoomAI,
     },
     category: [{ id: 1, name: "Content summarizer" }],
     user_dep: [
@@ -447,7 +443,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     ],
     risk_score: {
       level: "Low",
-      img: high,
+      img: low,
     },
     risk_users: "124",
     total_users: "2123",

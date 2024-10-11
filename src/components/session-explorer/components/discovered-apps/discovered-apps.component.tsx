@@ -75,7 +75,7 @@ export default function DiscoveredApps() {
       cell: (data: any) => {
         return (
           <Box sx={styles.applicationCell}>
-            <Image src={data.img} alt={data.name} width={20} height={20} />
+            <Image src={data.img} alt={data.name} width={30} />
             <Typography variant="body1">{data.name}</Typography>
           </Box>
         );
