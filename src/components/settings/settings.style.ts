@@ -5,7 +5,7 @@ export const SettingsStyle = {
         px: '45px',
         py: '50px',
         width: 'calc(100% - 350px)',
-        ['@media(max-width: 991px)']:{
+        ['@media(max-width: 991px)']: {
             px: '16px',
             py: '16px',
             width: 'calc(100% - 50px)',
@@ -29,13 +29,16 @@ export const SettingsStyle = {
         ".MuiTabs-flexContainer": {
             mt: '32px',
             display: 'flex',
-            flexWrap: 'nowrap',
-            overflowX: 'auto',
+            flexWrap: 'wrap',
             gap: '10px',
             "button.Mui-selected": {
                 background: "#039855",
                 color: "#fff",
                 border: '1px solid #039855'
+            },
+            ['@media(max-width: 991px)']: {
+                flexWrap: 'nowrap',
+                overflowX: 'auto',
             }
         },
     },
