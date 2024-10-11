@@ -17,15 +17,11 @@ export default function AccessibleTabs() {
     return (
         <Box sx={{ width: '100%' }}>
             <Tabs
-                // onChange={handleChange}
                 value={value}
                 aria-label="Tabs where each tab needs to be selected manually"
                 sx={SettingsStyle.tabs}
                 className='demoooo'
             >
-                {/* <Box sx={SettingsStyle.TabsWrapper}>
-                    
-                </Box> */}
                 {TabsButtons?.map((tab, index) => (
                     <Tab label={tab.text} sx={SettingsStyle.TabButton} onClick={() => setValue(index)} key={index} />
                 ))}

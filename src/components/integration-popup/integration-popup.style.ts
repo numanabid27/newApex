@@ -37,6 +37,10 @@ export const IntegrationPopUpStyle = {
         ".MuiPaper-elevation": {
             minWidth: '509px',
             p: '30px',
+            ["@media(max-width: 575px)"]: {
+                minWidth: '300px',
+                p: '16px',
+            }
         },
     },
     DialogHeader: {
@@ -78,6 +82,10 @@ export const IntegrationPopUpStyle = {
         ...baseFlexStyle,
         mt: '30px',
         justifyContent: 'space-between',
+        ["@media(max-width: 575px)"]: {
+            flexWrap: 'wrap',
+            gap: '12px'
+        }
     },
     ButtonsWraper: {
         ...baseFlexStyle,

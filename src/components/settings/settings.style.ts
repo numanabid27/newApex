@@ -5,7 +5,11 @@ export const SettingsStyle = {
         px: '45px',
         py: '50px',
         width: 'calc(100% - 350px)',
-        ml: '350px'
+        ['@media(max-width: 991px)']:{
+            px: '16px',
+            py: '16px',
+            width: 'calc(100% - 50px)',
+        }
     },
     MainHeading: {
         fontSize: '40px',
@@ -25,7 +29,8 @@ export const SettingsStyle = {
         ".MuiTabs-flexContainer": {
             mt: '32px',
             display: 'flex',
-            flexWrap: 'wrap',
+            flexWrap: 'nowrap',
+            overflowX: 'auto',
             gap: '10px',
             "button.Mui-selected": {
                 background: "#039855",
@@ -61,7 +66,10 @@ export const SettingsStyle = {
         px: '40px',
         borderRadius: '20px',
         borderLeft: '4px solid #22C55D',
-        boxShadow: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)'
+        boxShadow: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)',
+        ['@media(max-width: 768px)']: {
+            p: '12px'
+        }
     },
     ChatIconWraper: {
         alignItems: 'center',
