@@ -64,6 +64,7 @@ export const Dashboard2Style = {
         height: '48px',
         px: '24px',
         mt: '12px',
+        overflow: 'hidden',
         "&:last-child": {
             borderBottom: "unset",
             paddingBottom: '0px',
@@ -88,7 +89,7 @@ export const Dashboard2Style = {
                     width: "12.5vw !important",
                 },
                 "@media screen and (max-width:1440px)": {
-                    width: "14vw !important",
+                    width: "9vw !important",
                 }
             }
         }
@@ -99,6 +100,7 @@ export const Dashboard2Style = {
         border: '1px solid #E4E4E7',
         boxShadow: '0px 1px 2px -1px rgba(0, 0, 0, 0.10), 0px 1px 3px 0px rgba(0, 0, 0, 0.10)',
         backgroundColor: '#FFF',
+        height: '100%',
 
     },
     TopOpenIssues: {
@@ -133,7 +135,8 @@ export const Dashboard2Style = {
         backgroundColor: '#FFF',
         boxShadow: '0px 1.038px 3.114px 0px rgba(16, 24, 40, 0.10), 0px 1.038px 2.076px 0px rgba(16, 24, 40, 0.06)',
         borderRadius: '8px',
-        border: '1px solid #EAECF0'
+        border: '1px solid #EAECF0',
+        height: '100%'
     },
     PriceValue: {
         fontSize: '36px',
@@ -152,7 +155,7 @@ export const Dashboard2Style = {
     PriceCardsWrapper: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
         gap: '16px',
         height: '100%',
         ['@media (max-width:575px)']: {
@@ -211,9 +214,15 @@ export const Dashboard2Style = {
         gap: '10px',
     },
     ToolWraperMain: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '14px'
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr 1fr',
+        gap: '14px',
+        ['@media (max-width: 1440px)']:{
+            gridTemplateColumns: '1fr 1fr',
+        },
+        ['@media (max-width: 420px)']:{
+            gridTemplateColumns: '1fr',
+        }
     },
     ToolWraper: {
         borderRadius: '12px',
@@ -224,7 +233,7 @@ export const Dashboard2Style = {
         alignItems: 'center',
         gap: '26px',
         p: '14px 20px',
-        width: 'fit-content',
+        width: '100%',
         ['@media (max-width: 575px)']: {
             gap: '16px',
             p: '9px 10px',

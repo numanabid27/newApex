@@ -6,6 +6,7 @@ export const SidebarStyle = {
         paddingLeft: '60px',
         paddingTop: '56px',
         height: '100%',
+        minHeight: 'calc(100vh - 79px)',
         ['@media(max-width: 991px)']:{
             width: '50px',
             paddingLeft: '16px',

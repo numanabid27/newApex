@@ -45,8 +45,22 @@ function Dashboard2() {
                                         </Grid>
                                         <Grid xl={2}>
                                             <Box sx={Dashboard2Style.CriticalBox}>
-                                                <Box sx={Dashboard2Style.CriticalDot}></Box>
-                                                <Typography sx={Dashboard2Style.CriticalText}>{item.value}</Typography>
+                                                <Box sx={{
+                                                    ...Dashboard2Style.CriticalDot,
+                                                    backgroundColor: item.value === 'Critical' ? '#EF4444' :
+                                                        item.value === 'High' ? '#F97315' :
+                                                            item.value === 'Medium' ? '#F79009' : '#EF4444'
+                                                }}
+                                                ></Box>
+                                                <Typography sx={{
+                                                    ...Dashboard2Style.CriticalText,
+                                                    color: item.value === 'Critical' ? '#B91C1B' :
+                                                        item.value === 'High' ? '#C2410B' :
+                                                            item.value === 'Medium' ? '#B54708' : '#B91C1B'
+                                                }}
+                                                >
+                                                    {item.value}
+                                                </Typography>
                                             </Box>
                                         </Grid>
                                     </Grid>
@@ -55,7 +69,7 @@ function Dashboard2() {
                         </Box>
                     </Grid>
                     <Grid item md={6} width={'100%'}>
-                        <Box pl={{ md: 4, xs: 0 }}>
+                        <Box pl={{ md: 4, xs: 0 }} height={'100%'}>
                             <Box sx={Dashboard2Style.ChartsContainer}>
                                 <Box sx={{ px: '24px' }}>
                                     <Typography variant="h2" sx={Dashboard2Style.GraphHeading}>Risky users</Typography>
@@ -72,7 +86,7 @@ function Dashboard2() {
                                                     <Box sx={Dashboard2Style.user1}>
                                                         <Grid container gap={2}>
                                                             <Grid item>
-                                                                <Image src={signals} alt="image" width={26} height={12} />
+                                                                <Image src={item.icon} alt="image" width={26} height={12} />
                                                             </Grid>
                                                             <Grid item>
                                                                 <Typography sx={Dashboard2Style.typography}>{item.value}</Typography>
@@ -100,7 +114,7 @@ function Dashboard2() {
                             <Grid item sm={3} width={'100%'}>
                                 <Box sx={Dashboard2Style.PriceCardsWrapper}>
                                     {PRICE_CARDS.map((item, i) => (
-                                        <Box sx={Dashboard2Style.PriceBox}  key={i.toString()}>
+                                        <Box sx={Dashboard2Style.PriceBox} key={i.toString()}>
                                             <Typography variant="h2" sx={Dashboard2Style.GraphHeading}>{item.title}</Typography>
                                             <Typography variant="h2" sx={Dashboard2Style.PriceValue}>{item.price}</Typography>
                                             <Typography variant="h2" sx={Dashboard2Style.PrevMonthSmallText}>{item.text}</Typography>
@@ -113,7 +127,7 @@ function Dashboard2() {
                                 <Box sx={Dashboard2Style.DashboardSessionMain}
                                     className="border border-radius bg-white"
                                 >
-                                    <SessionTimeUser />
+                                    <SessionTimeUser dashboardChart={true} />
                                 </Box>
                             </Grid>
                         </Grid>
@@ -129,8 +143,8 @@ function Dashboard2() {
 
                 <Grid container sx={{ mt: '34px' }} rowGap={6}>
                     <Grid item md={6} width={'100%'}>
-                        <Box>
-                            <Grid container rowGap={6}>
+                        <Box height={'100%'} className="asdsadasdasdasdsadsadasds">
+                            <Grid container rowGap={6} height={'100%'}>
                                 <Grid item sm={4} width={'100%'}>
                                     <Box sx={Dashboard2Style.PriceBox}>
                                         <Typography variant="h2" sx={Dashboard2Style.GraphHeading}>Active rules</Typography>
@@ -150,7 +164,7 @@ function Dashboard2() {
 
                                         <Box sx={Dashboard2Style.DisabledRulesWraperMain}>
                                             {DISABLED_RULES_CONTENT.map((item, i) => (
-                                                <Box sx={Dashboard2Style.DisabledRulesWraper}  key={i.toString()}>
+                                                <Box sx={Dashboard2Style.DisabledRulesWraper} key={i.toString()}>
                                                     <Box>
                                                         <Typography sx={Dashboard2Style.typography}>{item.title}</Typography>
                                                     </Box>

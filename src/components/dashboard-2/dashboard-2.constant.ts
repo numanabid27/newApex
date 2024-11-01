@@ -7,6 +7,8 @@ import github from '@/common/assets/images/github.svg';
 import mscopilot from '@/common/assets/images/microsoft.svg';
 import gemini from '@/common/assets/images/gemini.svg';
 import hugingface from '@/common/assets/images/hugingface.svg';
+import highSignal from '@/common/assets/images/signals.svg';
+import mediumSignals from '@/common/assets/images/mediumSignals.svg';
 
 
 const USER_1 = {
@@ -272,36 +274,42 @@ export const RISKY_USERS_CHARTS = [
         id: 1,
         title: "John doe",
         value: "High",
+        icon: highSignal,
         chart: USER_1,
     },
     {
         id: 2,
         title: "James Patterson",
         value: "High",
+        icon: highSignal,
         chart: USER_2,
     },
     {
         id: 3,
         title: "Emily Johnson",
         value: "High",
+        icon: highSignal,
         chart: USER_1,
     },
     {
         id: 4,
         title: "Michael Thompson",
         value: "High",
+        icon: highSignal,
         chart: USER_2,
     },
     {
         id: 5,
         title: "Jessica Miller",
         value: "High",
+        icon: highSignal,
         chart: USER_3,
     },
     {
         id: 6,
         title: "Ashley Brown",
         value: "Medium",
+        icon: mediumSignals,
         chart: USER_3,
     },
 ];
@@ -440,15 +448,15 @@ export const DISABLED_RULES_CONTENT = [
 
 export const TOOLS_CONTENT = [
     {
-        text: 'OpenAI GPT-4',
+        text: 'Azure OpenAI GPT-4',
         icon: azure
     },
     {
-        text: 'OpenAI GPT-4',
+        text: 'ChatGPT Enterprise',
         icon: gptenterprise
     },
     {
-        text: 'OpenAI GPT-4',
+        text: 'Github Copilot',
         icon: github
     },
     {
@@ -456,19 +464,19 @@ export const TOOLS_CONTENT = [
         icon: gpt
     },
     {
-        text: 'OpenAI GPT-4',
+        text: 'Microsoft Copilot',
         icon: mscopilot
     },
     {
-        text: 'OpenAI GPT-4',
+        text: 'Google Gemini',
         icon: gemini
     },
     {
-        text: 'OpenAI GPT-4',
+        text: 'CompanyGPT',
         icon: gpt
     },
     {
-        text: 'OpenAI GPT-4',
+        text: 'Hugging Face',
         icon: hugingface
     },
 ]

@@ -51,11 +51,11 @@ export const STATUS = [
 
 export const TabsButtons = [
   { text: "AI applications" },
-  { text: "Network & Endpoint security" },
+  { text: "Network & endpoint security" },
   { text: "Messaging" },
   { text: "File systems" },
   { text: "SSO" },
-  { text: "SIEM & Ticketing" },
+  { text: "SIEM & ticketing" },
   { text: "Detection services" }
 ];
 
