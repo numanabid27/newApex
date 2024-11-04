@@ -10,7 +10,7 @@ import multiLayer from "@/common/assets/images/multiLayer.svg";
 import safe from "@/common/assets/images/safe-gaurd.svg";
 import { styles } from "./graph.style";
 
-const SwitchGraph2 = () => {
+const SwitchGraph2 = ({scale}:any) => {
   const [isHover, setIsHover] = useState(false);
   useEffect(() => {
     setIsHover(true);
@@ -65,7 +65,10 @@ const SwitchGraph2 = () => {
       alignItems="center"
       justifyContent="center"
       margin="27px 0px"
-      sx={!isHover ? styles.switchBox2 : styles.switchBox}
+      sx={{
+        ...(isHover ? styles.switchBox : styles.switchBox2),
+        ...(scale && styles.switchBox3),
+      }}
     >
       <Box display="flex" alignItems="flex-end">
         <Box>

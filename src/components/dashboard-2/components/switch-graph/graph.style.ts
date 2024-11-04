@@ -107,6 +107,15 @@ export const styles = {
             margin: "57px 0"
         }
     },
+    switchBox3:{
+        cursor: "pointer",
+       transform:'scale(1.3)',
+       transition:'1s',
+        "@media screen and (max-width:767px)":{
+            zoom: 0.34,
+            margin: "57px 0"
+        }
+    },
     openIssue:{
         color:"#98A2B3",
         fontSize:'14px'

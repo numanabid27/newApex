@@ -18,7 +18,7 @@ function Dashboard2() {
             <Box sx={Dashboard2Style.PageBG}>
                 <Box sx={Dashboard2Style.GraphWraper}>
                     <Typography variant="h2" sx={Dashboard2Style.GraphHeading}>Issues flow</Typography>
-                    <SwitchGraph2 />
+                    <SwitchGraph2 scale={true} />
 
                     <Box sx={Dashboard2Style.StaticAlert}>
                         <Image src={verifiedUser} alt="verified" width={17} height={17} />
