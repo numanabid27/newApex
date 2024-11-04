@@ -99,7 +99,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
     ],
     
     risk_score: {
-      level: "Hight",
+      level: "High",
       img: high,
     },
     risk_users: "602",
@@ -128,7 +128,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
           text: 'SOC 2'
         },
         {
-          text: 'GDPR'
+          text: 'GDPR',
         },
       ]}
     ]
@@ -147,7 +147,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
       { id: 1, name: "Human Resources", tooltipData:"demoo" },
     ],
     risk_score: {
-      level: "Hight",
+      level: "High",
       img: high,
     },
     risk_users: "404",
@@ -170,7 +170,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
       { id: 1, name: "Human Resources" },
     ],
     risk_score: {
-      level: "Hight",
+      level: "High",
       img: high,
     },
     risk_users: "23",
@@ -200,7 +200,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
       { id: 1, name: "Sales" },
     ],
     risk_score: {
-      level: "Hight",
+      level: "High",
       img: high,
     },
     risk_users: "6",
@@ -226,7 +226,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
       },
     ],
     risk_score: {
-      level: "Hight",
+      level: "High",
       img: high,
     },
     risk_users: "37",
@@ -250,7 +250,7 @@ export const DISCOVERED_APP_TABLE_DATA = [
       { id: 2, name: "Current State" },
     ],
     risk_score: {
-      level: "Hight",
+      level: "High",
       img: high,
     },
     risk_users: "289",

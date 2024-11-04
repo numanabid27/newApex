@@ -14,7 +14,11 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
  * @returns The SessionTimeUser chart component
  */
 
-function SessionTimeUser() {
+type SessionTimeUserProps = {
+  dashboardChart?: boolean;
+};
+
+function SessionTimeUser({dashboardChart} : SessionTimeUserProps) {
   const [session, setSession] = useState<any>("All Models");
   const SessionHandler = (event: any) => {
     setSession(event.target.value as string);
@@ -60,7 +64,10 @@ function SessionTimeUser() {
           </FormControl>
         </Box>
       </Box>
-      <Box sx={SessionTimeStyle.DashboardChart}>
+      <Box sx={{ 
+        ...SessionTimeStyle.DashboardChart,
+        ...(dashboardChart ? SessionTimeStyle.WidthFull : {})
+       }}>
         <ReactEcharts option={SESSION_USER_CHART} />
       </Box>
     </>

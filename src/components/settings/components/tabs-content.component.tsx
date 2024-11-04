@@ -10,7 +10,7 @@ export default function TabsContent(props: { index: number }) {
         case 1:
             return (
                 <Box>
-                    <Typography>Tab 1</Typography>
+                   <SiemAndTicketingTab />
                 </Box>
             )
             break;

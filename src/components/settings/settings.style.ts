@@ -20,22 +20,30 @@ export const SettingsStyle = {
         mt: '40px'
     },
     TabButton: {
-        border: '1px solid #CBD5E1',
-        py: '10px',
-        px: '20px',
-        borderRadius: '40px',
+        ".MuiFormControlLabel-label": {
+            border: '1px solid #CBD5E1',
+            py: '10px',
+            px: '20px',
+            borderRadius: '40px',
+            textTransform: 'unset',
+        },
+        '.MuiRadio-root': {
+            display: 'none',
+        },
+        '& .MuiRadio-root.Mui-checked + .MuiFormControlLabel-label': {
+            background: "#039855",
+            color: "#fff",
+            border: '1px solid #039855'        
+        },
+        
     },
     tabs: {
-        ".MuiTabs-flexContainer": {
+        ".MuiFormGroup-root": {
             mt: '32px',
             display: 'flex',
+            flexDirection: 'row',
             flexWrap: 'wrap',
             gap: '10px',
-            "button.Mui-selected": {
-                background: "#039855",
-                color: "#fff",
-                border: '1px solid #039855'
-            },
             ['@media(max-width: 991px)']: {
                 flexWrap: 'nowrap',
                 overflowX: 'auto',
@@ -64,6 +72,7 @@ export const SettingsStyle = {
         gap: '30px'
     },
     GridItem: {
+        cursor: 'pointer',
         alignItems: 'center',
         py: '30px',
         px: '40px',

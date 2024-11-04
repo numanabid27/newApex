@@ -48,6 +48,14 @@ export const IntegrationPopUpStyle = {
         justifyContent: 'center',
         gap: '10px',
     },
+    IconBox: {
+        width: '100px',
+        height: '100px',
+        ...baseFlexStyle,
+        justifyContent: 'center',
+        borderRadius: '10px',
+        border: '1px solid #E2E8F0',
+    },
     InputLabel: {
         fontSize: '14px',
         lineHeight: '20px',

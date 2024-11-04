@@ -27,14 +27,6 @@ const SettingsView = () => {
                         sx={SettingsStyle.SelectorWraper}>
                         <Grid item>
                             <Severity
-                                title="Type"
-                                img={downArrow}
-                                severity={TYPE}
-                                ltr={true}
-                            />
-                        </Grid>
-                        <Grid item ml={3}>
-                            <Severity
                                 title="Status"
                                 img={downArrow}
                                 severity={STATUS}

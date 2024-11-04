@@ -2,7 +2,7 @@ export const SessionTimeStyle = {
   SessionTimeMain: {
     display: "flex",
     justifyContent: "space-between",
-    borderBottom:'1px solid #EAECF0',
+    borderBottom: '1px solid #EAECF0',
     paddingBottom: "17px"
   },
 
@@ -12,16 +12,16 @@ export const SessionTimeStyle = {
     display: "flex",
     height: "50px",
     alignItems: "center",
-    marginTop:'15px',
-    gap:'10px',
-    "@media screen and (max-width:767px)":{
-      flexDirection:"row"
+    marginTop: '15px',
+    gap: '10px',
+    "@media screen and (max-width:767px)": {
+      flexDirection: "row"
     }
   },
   SessionOverTimeBox: {
     fontSize: "51px",
     flexDirection: { sm: "unset", xs: "column" },
-    "@media screen and (max-width:1600px)":{
+    "@media screen and (max-width:1600px)": {
       fontSize: "36px",
     }
   },
@@ -34,7 +34,7 @@ export const SessionTimeStyle = {
     padding: "4px 10px",
     fontSize: "12px",
     marginLeft: "2px",
-    width:'fit-content'
+    width: 'fit-content'
   },
   SessionOverTimeData: {
     fontSize: { sm: "42px", xs: "29px" },
@@ -73,10 +73,16 @@ export const SessionTimeStyle = {
       width: "120%",
     },
   },
-  engineOverTime : { 
+  WidthFull: {
+    "& .echarts-for-react": {
+      margin: "0 0 0 -34px",
+      width: "115%",
+    },
+  },
+  engineOverTime: {
     width: { sm: "100%", xs: "100%" },
-    "svg":{
-      color:"#344054"
+    "svg": {
+      color: "#344054"
     }
   },
   SessionText: {
@@ -99,8 +105,8 @@ export const SessionTimeStyle = {
       },
     },
   },
-  increaseSession:{
-    color:"#667085",
-    fontSize:"13.11px"
+  increaseSession: {
+    color: "#667085",
+    fontSize: "13.11px"
   }
 };

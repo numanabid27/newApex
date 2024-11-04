@@ -33,9 +33,9 @@ export default function DiscoveredApps() {
   const [openModal, setOpenModal] = React.useState(false);
   const [selectedRow, setSelectedRow] = React.useState<any>('');
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
- 
 
-  
+
+
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation()
@@ -51,21 +51,21 @@ export default function DiscoveredApps() {
     defaultValues: {},
   });
 
-  const CustomTooltip = styled(({ className, ...props }:any) => (
+  const CustomTooltip = styled(({ className, ...props }: any) => (
     <Tooltip {...props} classes={{ popper: className }} />
   ))(({ theme }) => ({
     [`& .MuiTooltip-tooltip`]: {
-      backgroundColor: '#fff', 
-      borderRadius:'8px',
-      boxShadow:'0px 1px 6px #8080804f',
-      padding:'10px 10px'
+      backgroundColor: '#fff',
+      borderRadius: '8px',
+      boxShadow: '0px 1px 6px #8080804f',
+      padding: '10px 10px'
     },
     [`& .MuiTooltip-arrow`]: {
-      color: '#fff' 
+      color: '#fff'
     },
   }));
 
- 
+
 
   const DISCOVERED_APP_TABLE_HEADER = [
     {
@@ -106,38 +106,55 @@ export default function DiscoveredApps() {
       accessor: "user_dep",
       cell: (data: any) => {
         return (
-          <Box sx={styles.categoryCell} onClick={(e)=>{
-              e.stopPropagation();
-            }}>
+          <Box sx={styles.categoryCell} onClick={(e) => {
+            e.stopPropagation();
+          }}>
             {data.map((item: any, i: any) => (
-              <CustomTooltip placement="top" key={i.toString()} arrow 
+              <CustomTooltip placement="top" key={i.toString()} arrow
                 title={
-                <Box sx={styles.tooltip}>
-                  <Typography variant='h5'>Block this group</Typography>
-                  <Typography variant='h6'>Block group or department from using this application.</Typography>
-                </Box>
-              }>
+                  <Box sx={styles.tooltip}>
+                    <Typography variant='h5'>Block this group</Typography>
+                    <Typography variant='h6'>Block group or department from using this application.</Typography>
+                  </Box>
+                }>
                 <Chip
-                  sx={styles.cellChip}
+                  sx={{
+                    ...styles.cellChip,
+                    ...styles.spanInChip,
+                    '&:hover .hoverIcon': {
+                      opacity: 1,
+                    }
+                  }}
                   key={item.id}
                   label={
                     <>
                       {item.name}
                       {item.img && (
-                        <Image
-                          src={item.img}
-                          alt="ban"
-                          width={16}
-                          height={16}
-                          style={{ paddingTop: '2px', paddingLeft: '2px' }}
-                        />
+                        <Box
+                          className="hoverIcon"
+                          sx={{
+                            opacity: 0,
+                            transition: 'opacity 0.2s ease-in-out',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            ml: 0.5,
+                          }}
+                        >
+                          <Image
+                            src={item.img}
+                            alt="ban"
+                            width={16}
+                            height={16}
+                            style={{ paddingTop: '2px', paddingLeft: '2px' }}
+                          />
+                        </Box>
                       )}
                     </>
                   }
 
                   variant="outlined"
                 />
-                </CustomTooltip>
+              </CustomTooltip>
             ))}
           </Box>
         );
@@ -189,35 +206,37 @@ export default function DiscoveredApps() {
           <Box sx={styles.riskWraper}>
             {data.map((item: any, index: number) => {
               console.log("item#", item.dataSource)
-              return(
-                <CustomTooltip key={index.toString()} placement="top" arrow 
+
+              return (
+                <CustomTooltip key={index.toString()} placement="top" arrow
                   title={
-                  <Box sx={styles.tooltip}>
-                    <Box sx={styles.categoryCell}>
-                      <Image src={item.icon} alt={item.risk} width={20} height={20} />
-                      <Typography variant="body1" color="#334155" fontSize="14px">{item.risk}</Typography>
+                    <Box sx={styles.tooltip}>
+                      <Box sx={styles.categoryCell}>
+
+                        <Image src={item.icon} alt={item.risk} width={20} height={20} />
+                        <Typography variant="body1" color="#334155" fontSize="14px">{item.risk}</Typography>
+                      </Box>
+
+                      <Box sx={DISCOVERED_APP_STYLE.tagsWraper} mt={4}>
+                        <Box sx={DISCOVERED_APP_STYLE.tag} mb={2}>
+                          <Image src={iso} alt="icon" />
+                          <Typography>ISO 27001</Typography>
+                        </Box>
+                        <Box sx={DISCOVERED_APP_STYLE.tag} mb={2}>
+                          <Image src={iso} alt="icon" />
+                          <Typography>ISO 27002</Typography>
+                        </Box>
+                        <Box sx={DISCOVERED_APP_STYLE.tag} mb={2}>
+                          <Image src={soc} alt="icon" />
+                          <Typography>SOC 2</Typography>
+                        </Box>
+                        <Box sx={DISCOVERED_APP_STYLE.tag} mb={2}>
+                          <Typography>GDPR</Typography>
+                        </Box>
+                      </Box>
                     </Box>
-                   
-                    <Box sx={DISCOVERED_APP_STYLE.tagsWraper} mt={4}>
-                      <Box sx={DISCOVERED_APP_STYLE.tag} mb={2}>
-                        <Image src={iso} alt="icon" />
-                        <Typography>ISO 27001</Typography>
-                      </Box>
-                      <Box sx={DISCOVERED_APP_STYLE.tag} mb={2}>
-                        <Image src={iso} alt="icon" />
-                        <Typography>ISO 27002</Typography>
-                      </Box>
-                      <Box sx={DISCOVERED_APP_STYLE.tag} mb={2}>
-                        <Image src={soc} alt="icon" />
-                        <Typography>SOC 2</Typography>
-                      </Box>
-                      <Box sx={DISCOVERED_APP_STYLE.tag} mb={2}>
-                        <Typography>GDPR</Typography>
-                      </Box>
-                    </Box>
-                  </Box>
-                }>
-                  <Box key={index.toString()} onClick={(e)=>{e.stopPropagation()}} >
+                  }>
+                  <Box key={index.toString()} onClick={(e) => { e.stopPropagation() }} >
                     <Box
                       aria-controls={open ? 'basic-menu' : undefined}
                       aria-haspopup="true"
@@ -225,10 +244,14 @@ export default function DiscoveredApps() {
                       sx={styles.categoryCell}
                       key={index}
                     >
-                      <Image src={item.icon} alt={item.risk} width={20} height={20} />
-                      <Typography variant="body1">{item.risk}</Typography>
+                      {!item.dataSource && (
+                        <>
+                          <Image src={item.icon} alt={item.risk} width={20} height={20} />
+                          <Typography variant="body1">{item.risk}</Typography>
+                        </>
+                      )}
                     </Box>
-  
+
                     <Menu
                       sx={styles.menuWraper}
                       anchorEl={anchorEl}

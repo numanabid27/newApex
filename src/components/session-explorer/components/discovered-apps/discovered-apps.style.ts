@@ -73,6 +73,13 @@ export const styles = {
     borderRadius: "6px !important",
    
   },
+  spanInChip: {
+    ".MuiChip-label": {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '3px'
+    }
+  },
   menuWraper: {
     position: 'absolute',
     top: '15px',

@@ -1,4 +1,4 @@
-import { Box, Grid, List,Link, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
+import { Box, Grid, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import { SidebarStyle } from "./sidebar.style";
 import generalIcon from '@/common/assets/images/generals.svg';
 import contactIcon from '@/common/assets/images/contact.svg';
@@ -7,6 +7,7 @@ import unplugIcon from '@/common/assets/images/unplug.svg';
 import databaseIcon from '@/common/assets/images/database-zap.svg';
 import bellIcon from '@/common/assets/images/bell-dot.svg';
 import Image from "next/image";
+import Link from "next/link";
 
 const Sidebar = () => {
 
@@ -23,7 +24,7 @@ const Sidebar = () => {
         },
         {
             icon: sparklesIcon,
-            url: "#",
+            url: "/engines",
             text: "Engines"
         },
         {
@@ -57,7 +58,7 @@ const Sidebar = () => {
             <List>
                 {sidebarLinks.map((item, i) => (
                     <ListItem disablePadding key={i.toString()}>
-                        <Link sx={SidebarStyle.TabItem} href={item.url} >
+                        <Link className="TabItem" href={item.url} >
                             <Grid container alignItems="center">
                                 <Grid item xs={2}>
                                     <ListItemIcon>
