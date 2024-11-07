@@ -6,9 +6,10 @@ import leftarrow from "@/common/assets/images/rightArrow.png";
 import rightArrow from "@/common/assets/images/leftArrow.png";
 import graphNode2 from "@/common/assets/images/graphNode2.svg";
 import danger from "@/common/assets/images/gpp_maybe.svg";
-import multiLayer from "@/common/assets/images/multiLayer.svg";
+import multiLayer from "@/common/assets/images/dashboardArrow.svg";
 import safe from "@/common/assets/images/safe-gaurd.svg";
 import { styles } from "./graph.style";
+import a2 from "@/common/assets/images/a2.png"
 
 const SwitchGraph2 = ({scale}:any) => {
   const [isHover, setIsHover] = useState(false);
@@ -114,13 +115,14 @@ const SwitchGraph2 = ({scale}:any) => {
           width={100}
           height={9}
         />
-        <Image src={apx} draggable="false" alt="abc" width={100} height={100} />
+        <Image src={a2} draggable="false" alt="abc" width={150} height={150} />
         <Image
           src={rightArrow}
           draggable="false"
           alt="abc"
           width={100}
           height={9}
+          className="rightArrowGraph"
         />
       </Box>
       <Box sx={styles.rightText}>
@@ -137,7 +139,7 @@ const SwitchGraph2 = ({scale}:any) => {
             height={125}
           />
         </Box>
-        <Box width={'100%'}>
+        <Box width={'57%'}>
           <Typography sx={styles.multiSide}>
             <span>51</span>
             Resolved
