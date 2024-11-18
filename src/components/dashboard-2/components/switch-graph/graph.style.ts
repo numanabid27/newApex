@@ -67,7 +67,7 @@ export const styles = {
     },
     typography:{
         color:"#98A2B3",
-        fontSize:'14px',
+        fontSize:'12px',
         userSelect:'none'
     },
     dangerText:{
@@ -127,7 +127,7 @@ export const styles = {
             borderRadius: "4px",
         },
         "h6":{
-            fontSize:'15px',
+            fontSize:'14px',
             fontWeight: 700
         }
     },
@@ -135,7 +135,7 @@ export const styles = {
         marginTop: "29px"
     },
     voilationTitle:{
-        fontSize:'14px'
+        fontSize:'12px'
     },
     switchBox2:{
         transform:'scale(0.4)',

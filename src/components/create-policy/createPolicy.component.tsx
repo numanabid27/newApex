@@ -482,7 +482,7 @@ export default function CreatePolicy(id: any) {
           <Box>
             <FormGroup sx={style.customCheckBoxFlex}>
               {CHECK_BOXES.map((item, index)=>(
-                <FormControlLabel key={index} control={<Checkbox />} label={item} sx={style.customCheckBox} />
+                <FormControlLabel control={<Checkbox />} label={item} sx={style.customCheckBox} key={index} />
               ))}
             </FormGroup>
           </Box>

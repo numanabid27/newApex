@@ -31,8 +31,8 @@ export const Dashboard2Style = {
         justifyContent: 'center',
         alignItems: 'center',
         gap: '5px',
-        top: '25%',
-        left: '44%',
+        top: '13%',
+        left: '50%',
         transform: 'translateX(-60%)',
         ['@media(max-width: 575px)']: {
             left: '50%',
