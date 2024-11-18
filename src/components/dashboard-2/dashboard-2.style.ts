@@ -57,6 +57,33 @@ export const Dashboard2Style = {
         fontWeight: '600',
         color: '#334155',
     },
+    GraphHeading2: {
+        fontSize: '20px',
+        lineHeight: '24px',
+        fontWeight: '600',
+        color: '#334155',
+    },
+    dashboardMain: {
+        position:'relative',
+        marginTop:'36px',
+        "h2":{
+            position: "absolute",
+            top: "11px",
+            left: "24px",
+            "@media screen and (max-width:767px)":{
+                fontSize: "8px",
+                top: "-2px",
+                left: "9px",
+            }
+        },
+        "img" : {
+            width:'100%',
+            height:"100%",
+            pointerEvents: "none",
+            userDrag: "none",
+            WebkitUserDrag: "none"
+        }
+    },
     activeUser: {
         borderBottom: "1px solid #D0D5DD",
         paddingBottom: '9px',

@@ -9,14 +9,15 @@ import signals from '@/common/assets/images/signals.svg';
 import verifiedUser from '@/common/assets/images/verified_user.svg';
 import Image from "next/image";
 import SessionTimeUser from "../dashboard/components/session-time-user/session-time-user.component";
-
+import dashboardGraph from '@/common/assets/images/dashboard-graph.png';
+import dashboardGraph2 from '@/common/assets/images/dashboard-graph2.svg';
 
 
 function Dashboard2() {
     return (
         <>
             <Box sx={Dashboard2Style.PageBG}>
-                <Box sx={Dashboard2Style.GraphWraper}>
+                {/* <Box sx={Dashboard2Style.GraphWraper}>
                     <Typography variant="h2" sx={Dashboard2Style.GraphHeading}>Issues flow</Typography>
                     <Box sx={{width:'100vw'}}>
                         <SwitchGraph2 scale={true} />
@@ -27,8 +28,13 @@ function Dashboard2() {
                         <Typography sx={Dashboard2Style.StaticAlertValue}>95%</Typography>
                         <Typography sx={Dashboard2Style.StaticAlertText}>Automatically prevented</Typography>
                     </Box>
-                </Box>
 
+                    
+                </Box> */}
+                <Box sx={Dashboard2Style.dashboardMain}>
+                    <Typography variant="h2" sx={Dashboard2Style.GraphHeading2}>Issues flow</Typography>
+                    <Image src={dashboardGraph2} alt="verified"  />
+                </Box>
                 <Grid container sx={{ mt: '45px' }} rowGap={6}>
                     <Grid item md={6}>
                         <Box sx={Dashboard2Style.ChartsContainer}>
