@@ -15,7 +15,7 @@ export const PolicyPage = () => {
   const [isPolicy, setIsPolicy] = useState(false);
 
   const [selectedValue, setSelectedValue] = useState('Policies');
-  const [counter, setCounter] = useState<Number>(65);
+  const [counter, setCounter] = useState<any>(65);
   const [skipClickCount, setSkipClickCount] = useState<number>(0);
   const [showToaster, setShowToaster] = useState(true);
 
