@@ -3,8 +3,11 @@
 import {
   Box,
   Button,
+  Checkbox,
   Chip,
   Collapse,
+  FormControlLabel,
+  FormGroup,
   Grid,
   IconButton,
   InputBase,
@@ -19,7 +22,8 @@ import {
 import { style } from "./createPolicy.style";
 import { actionsAction, assets, POLICIES_CHECKBOX_FILTER } from "./createPolicy.constant";
 import CheckBoxComponent from "./component/checkbox.component";
-import { Rows } from "../policies/policies.constant";
+import CustomTabPanel from "./component/policies-tabs.component";
+import { CHECK_BOXES, Rows } from "../policies/policies.constant";
 import Colors from "@/common/constants/color.constant";
 import CircleIcon from "@mui/icons-material/Circle";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -29,6 +33,7 @@ import { useEffect, useState } from "react";
 import msg from "@/common/assets/images/msg.svg";
 import file from "@/common/assets/images/file.svg";
 import bell from "@/common/assets/images/bell.svg";
+import editIcon from "@/common/assets/images/editIcon.svg";
 import Image from "next/image";
 import block from "@/common/assets/images/shield-off.svg";
 import redat from "@/common/assets/images/shield-minus.svg";
@@ -46,6 +51,7 @@ import { POLICIES_GPT } from "../policies/components/model-data/components/model
 import downArrow from "@/common/assets/images/downs.svg";
 import gemini from "@/common/assets/images/gemini.svg";
 import AddIcon from "@mui/icons-material/Add";
+import BasicTabs from "./component/policies-tabs.component";
 
 function Row(props: any) {
   const { Rows, selectedRow, setSelectedRow, finalData, setOpenModal, setAb } =
@@ -91,18 +97,22 @@ function Row(props: any) {
         </TableCell>
         <TableCell component="th" scope="row" sx={style.type}>
           <Box display="flex" gap="21px">
-            {
+            {/* {
               <Rows.component
                 defaultChecked
                 onClick={(e: any) => e.stopPropagation()}
                 onChange={switchChange}
               />
             }
-            {Rows.type}
+            {Rows.type} */}
+            <Box sx={style.rowLabel}>
+              <Box sx={style.rowLabelDot}></Box>
+              <Typography sx={style.rowLabelText}>Activated</Typography>
+            </Box>
           </Box>
         </TableCell>
         <TableCell>
-          {typeof Rows.action === "string" ? (
+          {/* {typeof Rows.action === "string" ? (
             <Button sx={{ gap: "10px", textTransform: "capitalize" }}>
               <Image src={bell} alt="" />
               <Typography sx={style.engineCell}>{Rows.action}</Typography>
@@ -117,10 +127,18 @@ function Row(props: any) {
                 data={actionsAction}
               />
             </Box>
-          )}
+          )} */}
+          <Box sx={style.flexcenterY} gap={3}>
+            <Typography sx={style.actionText}>{Rows.threat}</Typography>
+            <Box sx={{
+              ...style.threatTag,
+              color: Rows.type === "Intent" ? '#3B0764' : '#334155',
+              backgroundColor: Rows.type === "Intent" ? '#F3E8FF' : '#FEF3C7',
+            }}>{Rows.type}</Box>
+          </Box>
         </TableCell>
         <TableCell>
-          {typeof Rows.engines === "object" ? (
+          {/* {typeof Rows.engines === "object" ? (
             <Box display="flex" gap="5px">
               {Rows.engines?.map((item: any, i: number) => {
                 return (
@@ -138,10 +156,11 @@ function Row(props: any) {
             <Box onClick={(e: any) => e.stopPropagation()}>
               <Rows.engines />
             </Box>
-          )}
+          )} */}
+          <Typography sx={style.rowGaps}>{Rows.apps}</Typography>
         </TableCell>
         <TableCell>
-          {typeof Rows.headerAssets === "string" ? (
+          {/* {typeof Rows.headerAssets === "string" ? (
             <Button sx={{ gap: "10px", textTransform: "capitalize" }}>
               <Typography sx={style.engineCell}>{Rows.headerAssets}</Typography>
             </Button>
@@ -155,10 +174,11 @@ function Row(props: any) {
                 data={assets}
               />
             </Box>
-          )}
+          )} */}
+          <Typography sx={style.rowGaps}>{Rows.groups}</Typography>
         </TableCell>
-        <TableCell align="right">
-          {typeof Rows.integration === "object" ? (
+        <TableCell>
+          {/* {typeof Rows.integration === "object" ? (
             <Box display="flex" gap="5px">
               {Rows.integration.map((item: any, i: number) => {
                 return (
@@ -175,10 +195,11 @@ function Row(props: any) {
             <Box onClick={(e: any) => e.stopPropagation()}>
               <Rows.integration />
             </Box>
-          )}
+          )} */}
+          <Typography sx={style.rowGaps}>{Rows.severity}</Typography>
         </TableCell>
         <TableCell>
-          {typeof Rows.headerSeverityevel === "string" ? (
+          {/* {typeof Rows.headerSeverityevel === "string" ? (
             <IconButton sx={style.iconBtn}>
               <Chip
                 label={Rows.headerSeverityevel}
@@ -188,22 +209,22 @@ function Row(props: any) {
                     Rows.headerSeverityevel === "Medium"
                       ? Colors.brown
                       : Rows.headerSeverityevel === "Critical"
-                      ? Colors.darkBrown
-                      : Rows.headerSeverityevel === "Low"
-                      ? Colors.textGreen
-                      : Rows.headerSeverityevel === "High"
-                      ? Colors.textHigh
-                      : "",
+                        ? Colors.darkBrown
+                        : Rows.headerSeverityevel === "Low"
+                          ? Colors.textGreen
+                          : Rows.headerSeverityevel === "High"
+                            ? Colors.textHigh
+                            : "",
                   bgcolor:
                     Rows.headerSeverityevel === "Medium"
                       ? Colors.primaryWhite
                       : Rows.headerSeverityevel === "Critical"
-                      ? Colors.secondaryWhite
-                      : Rows.headerSeverityevel === "Low"
-                      ? Colors.primaryGreen
-                      : Rows.headerSeverityevel === "High"
-                      ? Colors.defaultWhite
-                      : "",
+                        ? Colors.secondaryWhite
+                        : Rows.headerSeverityevel === "Low"
+                          ? Colors.primaryGreen
+                          : Rows.headerSeverityevel === "High"
+                            ? Colors.defaultWhite
+                            : "",
                   p: 0,
                 }}
                 icon={
@@ -213,12 +234,12 @@ function Row(props: any) {
                         Rows.headerSeverityevel === "Medium"
                           ? `${Colors.orange} !important`
                           : Rows.headerSeverityevel === "Critical"
-                          ? `${Colors.darkBrown} !important`
-                          : Rows.headerSeverityevel === "High"
-                          ? Colors.circleHigh
-                          : Rows.headerSeverityevel === "Low"
-                          ? Colors.circleLow
-                          : `${Colors.defaultBrown} !important`,
+                            ? `${Colors.darkBrown} !important`
+                            : Rows.headerSeverityevel === "High"
+                              ? Colors.circleHigh
+                              : Rows.headerSeverityevel === "Low"
+                                ? Colors.circleLow
+                                : `${Colors.defaultBrown} !important`,
 
                       ...style.severityLevel,
                     }}
@@ -236,7 +257,13 @@ function Row(props: any) {
                 policySeverity={true}
               />
             </Box>
-          )}
+          )} */}
+          <Typography sx={style.rowGaps}>{Rows.actions}</Typography>
+        </TableCell>
+        <TableCell>
+          <Button>
+            <Image width={24} height={24} src={editIcon} alt="Edit icon" />
+          </Button>
         </TableCell>
       </TableRow>
 
@@ -346,22 +373,22 @@ function Row(props: any) {
                                 historyRow.severityLevel === "Medium"
                                   ? Colors.brown
                                   : historyRow.severityLevel === "Critical"
-                                  ? Colors.darkBrown
-                                  : historyRow.severityLevel === "Low"
-                                  ? Colors.textGreen
-                                  : historyRow.severityLevel === "High"
-                                  ? Colors.textHigh
-                                  : "",
+                                    ? Colors.darkBrown
+                                    : historyRow.severityLevel === "Low"
+                                      ? Colors.textGreen
+                                      : historyRow.severityLevel === "High"
+                                        ? Colors.textHigh
+                                        : "",
                               bgcolor:
                                 historyRow.severityLevel === "Medium"
                                   ? Colors.primaryWhite
                                   : historyRow.severityLevel === "Critical"
-                                  ? Colors.secondaryWhite
-                                  : historyRow.severityLevel === "Low"
-                                  ? Colors.primaryGreen
-                                  : historyRow.severityLevel === "High"
-                                  ? Colors.defaultWhite
-                                  : "",
+                                    ? Colors.secondaryWhite
+                                    : historyRow.severityLevel === "Low"
+                                      ? Colors.primaryGreen
+                                      : historyRow.severityLevel === "High"
+                                        ? Colors.defaultWhite
+                                        : "",
                               p: 0,
                             }}
                             icon={
@@ -371,12 +398,12 @@ function Row(props: any) {
                                     historyRow.severityLevel === "Medium"
                                       ? `${Colors.orange} !important`
                                       : historyRow.severityLevel === "Critical"
-                                      ? `${Colors.darkBrown} !important`
-                                      : historyRow.severityLevel === "High"
-                                      ? Colors.circleHigh
-                                      : historyRow.severityLevel === "Low"
-                                      ? Colors.circleLow
-                                      : `${Colors.defaultBrown} !important`,
+                                        ? `${Colors.darkBrown} !important`
+                                        : historyRow.severityLevel === "High"
+                                          ? Colors.circleHigh
+                                          : historyRow.severityLevel === "Low"
+                                            ? Colors.circleLow
+                                            : `${Colors.defaultBrown} !important`,
 
                                   ...style.severityLevel,
                                 }}
@@ -425,6 +452,8 @@ export default function CreatePolicy(id: any) {
   } = usePolicies();
   const [ab, setAb] = useState("");
   const [isGenerate, setIsGenerate] = useState(false);
+  const [activeTab, setActiveTab] = useState<string>("Data Exposure");
+
   return (
     <>
       <Box sx={style.createPolicy}>
@@ -447,126 +476,95 @@ export default function CreatePolicy(id: any) {
               tags={tags}
             />
           </Grid>
-          <Grid sm={3.5} xs={12}>
-            <Paper
-              component="form"
-              sx={{
-                p: "3px 9px",
-                border: "1px solid #CFD4DC",
-                boxShadow: "0px 1px 2px 0px #1018280D",
-                borderRadius: "8px",
-                display: { sm: "block", xs: "none" },
-              }}
-            >
-              <IconButton sx={{ p: "10px" }} aria-label="menu">
-                <Image src={search} alt="" />
-              </IconButton>
-              <InputBase
-                sx={{ ml: 1, flex: 1 }}
-                placeholder="Search"
-                inputProps={{ "aria-label": "Search" }}
-              />
-            </Paper>
-          </Grid>
         </Grid>
 
         <Box sx={style.createPolicyGrid}>
-          <Box
-            sx={{
-              marginLeft: "auto",
-              display: "flex",
-              justifyContent: { sm: "flex-end", xs: "center" },
-              flexWrap: { sm: "unset", xs: "wrap" },
-            }}
-          >
-            {POLICIES_CHECKBOX_FILTER?.map((item: any, i: number) => {
-              return (
-                <CheckBoxComponent
-                  id={item?.id}
-                  key={i.toString()}
-                  label={item?.value}
-                  check={item?.check}
-                  policy={true}
-                  checkedValue={item?.checkedValue}
-                  enable={item?.enable}
-                />
-              );
-            })}
+          <Box>
+            <FormGroup sx={style.customCheckBoxFlex}>
+              {CHECK_BOXES.map((item, index)=>(
+                <FormControlLabel control={<Checkbox />} label={item} sx={style.customCheckBox} />
+              ))}
+            </FormGroup>
           </Box>
 
-          {finalData?.map((item: any) => {
+          {finalData?.map((item: any, index: Number) => {
             return (
-              <Box key={item.id}>
-                <CustomizedAccordions
-                  id={item.id}
-                  title={item.value}
-                  component={
-                    <TableContainer component={Paper} className="scrollStyle">
-                      <Table aria-label="collapsible table">
-                        {item.value === "Responsible AI usage" ? (
-                          <TableHead>
-                            <TableRow sx={style.tableRow}>
-                              <TableCell></TableCell>
-                              <TableCell sx={style.typography}>Type</TableCell>
-                              <TableCell sx={style.typography}>
-                                Action
-                              </TableCell>
-                              <TableCell sx={style.typography}>
-                                Engines
-                              </TableCell>
-                              <TableCell sx={style.typography}>
-                                Assets
-                              </TableCell>
-                              <TableCell sx={style.typography}>Tags</TableCell>
-                              <TableCell sx={style.typography}>
-                                Criticality
-                              </TableCell>
-                            </TableRow>
-                          </TableHead>
-                        ) : (
-                          <TableHead>
-                            <TableRow sx={style.tableRow}>
-                              <TableCell></TableCell>
-                              <TableCell sx={style.typography}>Type</TableCell>
-                              <TableCell sx={style.typography}>
-                                Action
-                              </TableCell>
-                              <TableCell sx={style.typography}>
-                                Engines
-                              </TableCell>
-                              <TableCell sx={style.typography}>
-                                Groups
-                              </TableCell>
-                              <TableCell sx={style.typography}>Tags</TableCell>
-                              <TableCell sx={style.typography}>
-                                Criticality
-                              </TableCell>
-                            </TableRow>
-                          </TableHead>
-                        )}
 
-                        <TableBody>
-                          {item?.policiesMainData?.map((Rows: any) => (
-                            <Row
-                              key={Rows.name}
-                              Rows={Rows}
-                              selectedRow={selectedRow}
-                              setSelectedRow={setSelectedRow}
-                              finalData={finalData}
-                              setOpenModal={setOpenModal}
-                              setAb={setAb}
-                            />
-                          ))}
-                        </TableBody>
-                      </Table>
-                    </TableContainer>
-                  }
-                />
-              </Box>
+              <>
+                <Button sx={{
+                  ...style.tabButton,
+                  borderBottom: activeTab === item.value ? '1px solid #0F172A; color:#1E293B' : '1px solid #E2E8F0',
+                }}
+                  onClick={() => {
+                    setActiveTab(item.value);
+                  }}
+                >{item.value}</Button>
+              </>
+
             );
           })}
         </Box>
+        <Box>  <TableContainer component={Paper} className="scrollStyle">
+          <Table aria-label="collapsible table">
+            {activeTab === "Responsible AI usage" ? (
+              <TableHead>
+                <TableRow sx={style.tableRow}>
+                  <TableCell></TableCell>
+                  <TableCell sx={style.typography}>Status</TableCell>
+                  <TableCell sx={style.typography}>
+                    Threat
+                  </TableCell>
+                  <TableCell sx={style.typography}>
+                    Apps
+                  </TableCell>
+                  <TableCell sx={style.typography}>
+                    Groups
+                  </TableCell>
+                  <TableCell sx={style.typography}>Severity</TableCell>
+                  <TableCell sx={style.typography}>
+                    Actions
+                  </TableCell>
+                  <TableCell sx={style.typography}></TableCell>
+                </TableRow>
+              </TableHead>
+            ) : (
+              <TableHead>
+                <TableRow sx={style.tableRow}>
+                  <TableCell></TableCell>
+                  <TableCell sx={style.typography}>Status</TableCell>
+                  <TableCell sx={style.typography}>
+                    Threat
+                  </TableCell>
+                  <TableCell sx={style.typography}>
+                    Apps
+                  </TableCell>
+                  <TableCell sx={style.typography}>
+                    Groups
+                  </TableCell>
+                  <TableCell sx={style.typography}>Severity</TableCell>
+                  <TableCell sx={style.typography}>
+                    Actions
+                  </TableCell>
+                  <TableCell sx={style.typography}></TableCell>
+                </TableRow>
+              </TableHead>
+            )}
 
+            <TableBody>
+              {finalData.filter((element: any) => element.value === activeTab)[0]?.policiesMainData?.map((Rows: any) => (
+                <Row
+                  key={Rows.name}
+                  Rows={Rows}
+                  selectedRow={selectedRow}
+                  setSelectedRow={setSelectedRow}
+                  finalData={finalData}
+                  setOpenModal={setOpenModal}
+                  setAb={setAb}
+                />
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer></Box>
         <Button sx={style.save}>Save</Button>
       </Box>
       {/* delete policy model */}
