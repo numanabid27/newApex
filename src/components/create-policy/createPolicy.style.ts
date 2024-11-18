@@ -1,12 +1,17 @@
 import Colors from "@/common/constants/color.constant";
 
 export const style = {
+  flexcenterY: {
+    display: 'flex',
+    alignItems: 'center'
+  },
   createPolicy: {
     px: "4%",
-    my: 5,
+    mb: 5,
+    mt: '69px'
   },
   createPolicyGrid: {
-    padding: "31px 0px 0px",
+    padding: "13px 0px 0px",
   },
   label: {
     color: Colors.primary_101,
@@ -63,23 +68,23 @@ export const style = {
   },
   parentRow: {
     background: "#F2F3F6",
-    cursor:'pointer',
+    cursor: 'pointer',
     ".MuiTableCell-root": {
       padding: "15px 18px",
     },
-    "td":{
-        "&:nth-child(3)":{
-            width:"13%"
-        },
-        "&:nth-child(4)":{
-            width:"13.5%"
-        },
-        "&:nth-child(5)":{
-            width:"13.98%"
-        }
+    "td": {
+      "&:nth-child(3)": {
+        width: "13%"
+      },
+      "&:nth-child(4)": {
+        width: "13.5%"
+      },
+      "&:nth-child(5)": {
+        width: "13.98%"
+      }
     },
-    "th":{
-        width:"17%",
+    "th": {
+      width: "17%",
     }
   },
   type: {
@@ -98,31 +103,31 @@ export const style = {
   nestedTableRow: {
     margin: "0 0 0 auto",
     tr: {
-        th: {
-            width: "15%",
-           
+      th: {
+        width: "15%",
+
+      },
+      td: {
+        "&:nth-child(1)": {
+          width: "8%",
+          border: 'none',
+          "@media screen and (max-width:1440px)": {
+            width: "5%",
+          }
         },
-        td: {
-            "&:nth-child(1)": {
-                width: "8%",
-                border:'none',
-                "@media screen and (max-width:1440px)":{
-                    width:"5%",
-                }
-            },
-            "&:nth-child(3)": {
-                width: "13%",
-            },
-            "&:nth-child(4)": {
-                width: "14.3%",
-            },
-            "&:nth-child(5)": {
-                width: "12.7%",
-            },
-            "&:nth-child(6)": {
-                width: "25%",
-            },
+        "&:nth-child(3)": {
+          width: "13%",
         },
+        "&:nth-child(4)": {
+          width: "14.3%",
+        },
+        "&:nth-child(5)": {
+          width: "12.7%",
+        },
+        "&:nth-child(6)": {
+          width: "25%",
+        },
+      },
     },
   },
   save: {
@@ -220,14 +225,14 @@ export const style = {
   cancel: {
     border: " 1px solid #D0D5DD",
   },
-  del:{
-    background: "#FEF3F2", 
-    color: "#B42318" 
+  del: {
+    background: "#FEF3F2",
+    color: "#B42318"
   },
-  actionBtn:{
-    position:"relative",
-    display:"flex",
-    justifyContent:"space-between"
+  actionBtn: {
+    position: "relative",
+    display: "flex",
+    justifyContent: "space-between"
   },
   promptBox: {
     borderTop: "1px solid #EAECF0",
@@ -252,35 +257,108 @@ export const style = {
   },
   bard: {
     background: "#fff",
-    display:'flex',
-    alignItems:'center',
-    padding:" 15px 19px",
+    display: 'flex',
+    alignItems: 'center',
+    padding: " 15px 19px",
     borderRadius: "8px",
-    gap:'16px',
-    margin:'30px 0px',
+    gap: '16px',
+    margin: '30px 0px',
     boxShadow: "0px 1px 2px 0px #1018280D"
 
   },
-  voilationBox:{
-    background:"#FEF3F2",
-    borderRadius:'8px',
+  voilationBox: {
+    background: "#FEF3F2",
+    borderRadius: '8px',
     padding: "16px 22px",
     marginBottom: "30px",
-    "h4":{
-      color:"#D92D20",
-      fontSize:'14px',
-      fontWeight:500,
-      "span":{
-        fontWeight:600,
+    "h4": {
+      color: "#D92D20",
+      fontSize: '14px',
+      fontWeight: 500,
+      "span": {
+        fontWeight: 600,
       }
     }
   },
-  piBox:{
-    paddingTop:'22px',
-    "h2":{
-      color:"#374151",
-      fontSize:'16px',
-      fontWeight:600
+  piBox: {
+    paddingTop: '22px',
+    "h2": {
+      color: "#374151",
+      fontSize: '16px',
+      fontWeight: 600
     }
   },
+  tabButton: {
+    p: '16px 24px',
+    fontSize: '16px',
+    lineHeight: '20px',
+    fontWeight: 'semibold',
+    color: '#64748B',
+    my: '14px',
+    borderRadius: '0px'
+  },
+  rowLabel: {
+    p: '6px 12px',
+    borderRadius: '40px',
+    backgroundColor: '#ECFDF5',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '6px',
+  },
+  rowLabelDot: {
+    width: '8px',
+    height: '8px',
+    borderRadius: '50%',
+    backgroundColor: '#059669'
+  },
+  rowLabelText: {
+    fontSize: '14px',
+    fontWeight: '500',
+    lineHeight: '20px',
+    color: '#059669',
+  },
+  actionText: {
+    fontSize: '14px',
+    fontWeight: '600',
+    lineHeight: '20px',
+    color: '#334155',
+    whiteSpace: 'nowrap',
+  },
+  threatTag: {
+    p: '2px 12px',
+    fontSize: '14px',
+    fontWeight: '500',
+    lineHeight: '20px',
+    borderRadius: '40px',
+  },
+  rowGaps: {
+    fontSize: '14px',
+    fontWeight: '400',
+    lineHeight: '20px',
+    color: '#334155',
+  },
+  customCheckBox: {
+    "& .MuiCheckbox-root ": {
+      "& .MuiSvgIcon-root": {
+        "& path": {
+          strokeWidth: '0.5px',
+          fill: '#94A3B8'
+        }
+      }
+    },
+    ".MuiFormControlLabel-label": {
+      fontSize: '16px',
+      fontWeight: '400',
+      lineHeight: '24px',
+      color: '#334155',
+    }
+  },
+  customCheckBoxFlex: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: "row",
+    flexWrap: 'Wrap',
+    gap: '10px',
+  }
 };
