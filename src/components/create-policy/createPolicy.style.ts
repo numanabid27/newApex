@@ -11,7 +11,7 @@ export const style = {
     mt: '69px'
   },
   createPolicyGrid: {
-    padding: "13px 0px 0px",
+    padding: "13.1px 0px 0px",
   },
   label: {
     color: Colors.primary_101,
