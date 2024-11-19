@@ -22,7 +22,7 @@ export const PolicyPage = () => {
   const mockupData= [
     {
       text1: "outside the Executive department",
-      text2: "have requested access to the",
+      text2: "have requested access to",
       text3: "Nexus project.",
       text4: "",
       count: 65,
@@ -30,14 +30,14 @@ export const PolicyPage = () => {
     {
       text1: "not in security department",
       text2: "asked to",
-      text3: "analyze incident report",
+      text3: "analyze Incident report",
       text4: "data",
       count: 12,
     },
     {
       text1: "not in Legal department",
       text2: "asked to",
-      text3: "share contract file",
+      text3: "share Contract file",
       text4: "data",
       count: 10,
     }

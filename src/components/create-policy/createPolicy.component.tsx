@@ -130,11 +130,13 @@ function Row(props: any) {
           )} */}
           <Box sx={style.flexcenterY} gap={3}>
             <Typography sx={style.actionText}>{Rows.threat}</Typography>
-            <Box sx={{
-              ...style.threatTag,
-              color: Rows.type === "Intent" ? '#3B0764' : '#334155',
-              backgroundColor: Rows.type === "Intent" ? '#F3E8FF' : '#FEF3C7',
-            }}>{Rows.type}</Box>
+            {Rows.type &&
+              <Box sx={{
+                ...style.threatTag,
+                color: Rows.type === "Intent" ? '#3B0764' : '#334155',
+                backgroundColor: Rows.type === "Intent" ? '#F3E8FF' : '#FEF3C7',
+              }}>{Rows.type}</Box>
+            }
           </Box>
         </TableCell>
         <TableCell>
@@ -481,7 +483,7 @@ export default function CreatePolicy(id: any) {
         <Box sx={style.createPolicyGrid}>
           <Box>
             <FormGroup sx={style.customCheckBoxFlex}>
-              {CHECK_BOXES.map((item, index)=>(
+              {CHECK_BOXES.map((item, index) => (
                 <FormControlLabel control={<Checkbox />} label={item} sx={style.customCheckBox} key={index} />
               ))}
             </FormGroup>

@@ -849,7 +849,7 @@ export const Rows: any = [
       },
       {
         threat: "PII data leaked to the engine",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "Multiple",
@@ -905,7 +905,7 @@ export const Rows: any = [
       },
       {
         threat: "PII data exposed to the user",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "Multiple",
@@ -1071,7 +1071,7 @@ export const Rows: any = [
       },
       {
         threat: "PCI data leaked to the engine",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "Multiple",
@@ -1155,7 +1155,7 @@ export const Rows: any = [
       },
       {
         threat: "PCI data exposed to the user",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "Multiple",
@@ -1211,7 +1211,7 @@ export const Rows: any = [
       },
       {
         threat: "PHI data leaked to the engine",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "Multiple",
@@ -1315,11 +1315,11 @@ export const Rows: any = [
       },
       {
         threat: "PHI data exposed to the user",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "Multiple",
-        actions: "Mask",
+        actions: "Redact",
         component: CustomSwitch,
         // action: "Notify",
         action: AssetsDropdown,
@@ -1377,7 +1377,7 @@ export const Rows: any = [
       },
       {
         threat: "Code leaked to engine",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "Informational",
@@ -1461,7 +1461,7 @@ export const Rows: any = [
       },
       {
         threat: "Code suggested to the user by the engine",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "Informational",
@@ -2051,7 +2051,7 @@ export const Rows: any = [
         apps: "All",
         groups: "Not in Finance or Accounting",
         severity: "Medium",
-        actions: "Mask",
+        actions: "Block",
         component: CustomSwitch,
         action: AssetsDropdown,
         // engines: [{text:"GPT 4", icon:gpt}],
@@ -2471,7 +2471,7 @@ export const Rows: any = [
     policiesMainData: [
       {
         threat: "Attempts to pass model’s alignment ",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "Multiple",
@@ -2545,7 +2545,7 @@ export const Rows: any = [
       },
       {
         threat: "Direct prompt injection attempt",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "High",
@@ -2617,7 +2617,7 @@ export const Rows: any = [
       },
       {
         threat: "Indirect prompt injection attempt",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "High",
@@ -2671,7 +2671,7 @@ export const Rows: any = [
       },
       {
         threat: "Jailbreak",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "Critical",
@@ -2704,7 +2704,7 @@ export const Rows: any = [
       },
       {
         threat: "Vulnerable code shared with the engine",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "Low",
@@ -2758,7 +2758,7 @@ export const Rows: any = [
       },
       {
         threat: "Vulnerable code suggested to the user",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "Medium",
@@ -2881,7 +2881,7 @@ export const Rows: any = [
       },
       {
         threat: "Undesired behavior of the user",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "Multiple",
@@ -2901,7 +2901,7 @@ export const Rows: any = [
       },
       {
         threat: "Unethical behavior of the engine",
-        type: "Custom",
+        // type: "Custom",
         apps: "All",
         groups: "All",
         severity: "Multiple",
