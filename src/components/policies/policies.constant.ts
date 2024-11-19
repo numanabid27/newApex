@@ -765,7 +765,7 @@ export const Rows: any = [
       },
       {
         threat: "Posture assessment [report] access attempt ",
-        type: "Acmi",
+        type: "Acme",
         apps: "All",
         groups: "not in Security",
         severity: "High",
@@ -1009,7 +1009,7 @@ export const Rows: any = [
       },
       {
         threat: "Annual [report] share attempt ",
-        type: "Acmi",
+        type: "Acme",
         apps: "All",
         groups: "not in Finance",
         severity: "Multiple",
