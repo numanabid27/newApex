@@ -135,58 +135,50 @@ function Row(props: any) {
       </TableRow>
 
       {/* nested row */}
-      <TableRow>
-        <TableCell style={{ padding: "0px" }} colSpan={8}>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box>
-              <Table
-                size="small"
-                aria-label="purchases"
-                sx={style.nestedTableRow}
-              >
-                <TableBody sx={style.thBorder}>
-                  {Rows.policiesData?.map((historyRow: any) => (
-                    <TableRow key={historyRow.date}>
-                      <TableCell></TableCell>
-                      <TableCell
-                        component="th"
-                        scope="row"
-                        sx={style.nestedCell}
-                      >
-                        <Box display="flex" alignItems="center" gap="16px">
-                          {isOpenSwitch && isOpenSwitch ? (
-                            <> {<historyRow.component defaultChecked />}</>
-                          ) : (
-                            <>{<historyRow.component />}</>
-                          )}
+      {Rows.policiesData &&
+        <TableRow>
+          <TableCell style={{ padding: "0px" }} colSpan={8}>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <Box>
+                <Table
+                  size="small"
+                  aria-label="purchases"
+                  sx={style.nestedTableRow}
+                >
+                  <TableBody sx={style.thBorder}>
+                    {Rows.policiesData?.map((historyRow: any) => (
+                      <TableRow key={historyRow.date}>
+                        <TableCell sx={{ opacity: '0' }}>dddd</TableCell>
+                        <TableCell>
 
-                          {historyRow.keyWord && <historyRow.keyWord />}
-                          {historyRow.policyName}
-                        </Box>
-                      </TableCell>
-                      <TableCell sx={style.nestedCell}>
-                        <Typography sx={style.rowGaps}>{historyRow.threat}</Typography>
-                      </TableCell>
-                      <TableCell sx={style.nestedCell}>
-                        <Typography sx={style.rowGaps}>{historyRow.apps}</Typography>
-                      </TableCell>
-                      <TableCell sx={style.nestedCell}>
-                        <Typography sx={style.rowGaps}>{historyRow.groups}</Typography>
-                      </TableCell>
-                      <TableCell sx={style.nestedCell}>
-                        <Typography sx={style.rowGaps}>{historyRow.severity}</Typography>
-                      </TableCell>
-                      <TableCell sx={style.nestedCell}>
-                        <Typography sx={style.rowGaps}>{historyRow.actions}</Typography>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </Box>
-          </Collapse>
-        </TableCell>
-      </TableRow>
+                        </TableCell>
+                        <TableCell sx={style.nestedCell}>
+                          <Typography sx={{
+                            ...style.rowGaps,
+                            width: '90%'
+                          }}>{historyRow.threat}</Typography>
+                        </TableCell>
+                        <TableCell sx={style.nestedCell}>
+                          <Typography sx={style.rowGaps}>{historyRow.apps}</Typography>
+                        </TableCell>
+                        <TableCell sx={style.nestedCell}>
+                          <Typography sx={style.rowGaps}>{historyRow.groups}</Typography>
+                        </TableCell>
+                        <TableCell sx={style.nestedCell}>
+                          <Typography sx={style.rowGaps}>{historyRow.severity}</Typography>
+                        </TableCell>
+                        <TableCell sx={style.nestedCell}>
+                          <Typography sx={style.rowGaps}>{historyRow.actions}</Typography>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </Box>
+            </Collapse>
+          </TableCell>
+        </TableRow>
+      }
     </>
   );
 }

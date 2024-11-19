@@ -67,8 +67,9 @@ export const style = {
     background: "#F8F9FB",
   },
   parentRow: {
-    background: "#F2F3F6",
+    background: "#fff",
     cursor: 'pointer',
+    border: 'none',
     ".MuiTableCell-root": {
       padding: "15px 18px",
     },
@@ -104,28 +105,28 @@ export const style = {
     margin: "0 0 0 auto",
     tr: {
       th: {
-        width: "17.5%",
+        // width: "17.5%",
 
       },
       td: {
         "&:nth-child(1)": {
-          width: "8%",
+          width: "15%",
           border: 'none',
           "@media screen and (max-width:1440px)": {
-            width: "5%",
+            // width: "5%",
           }
         },
         "&:nth-child(3)": {
-          width: "13.3%",
+          width: "20%",
         },
         "&:nth-child(4)": {
-          width: "13.7%",
+          width: "14%",
         },
         "&:nth-child(5)": {
           width: "14%",
         },
         "&:nth-child(6)": {
-          width: "11%",
+          width: "8%",
         },
       },
     },
