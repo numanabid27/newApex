@@ -97,14 +97,6 @@ function Row(props: any) {
         </TableCell>
         <TableCell component="th" scope="row" sx={style.type}>
           <Box display="flex" gap="21px">
-            {/* {
-              <Rows.component
-                defaultChecked
-                onClick={(e: any) => e.stopPropagation()}
-                onChange={switchChange}
-              />
-            }
-            {Rows.type} */}
             <Box sx={style.rowLabel}>
               <Box sx={style.rowLabelDot}></Box>
               <Typography sx={style.rowLabelText}>Activated</Typography>
@@ -112,22 +104,6 @@ function Row(props: any) {
           </Box>
         </TableCell>
         <TableCell>
-          {/* {typeof Rows.action === "string" ? (
-            <Button sx={{ gap: "10px", textTransform: "capitalize" }}>
-              <Image src={bell} alt="" />
-              <Typography sx={style.engineCell}>{Rows.action}</Typography>
-            </Button>
-          ) : (
-            <Box onClick={(e: any) => e.stopPropagation()}>
-              <Rows.action
-                title="Set for all"
-                img={check}
-                severity={severity}
-                ltr={false}
-                data={actionsAction}
-              />
-            </Box>
-          )} */}
           <Box sx={style.flexcenterY} gap={3}>
             <Typography sx={style.actionText}>{Rows.threat}</Typography>
             {Rows.type &&
@@ -140,126 +116,15 @@ function Row(props: any) {
           </Box>
         </TableCell>
         <TableCell>
-          {/* {typeof Rows.engines === "object" ? (
-            <Box display="flex" gap="5px">
-              {Rows.engines?.map((item: any, i: number) => {
-                return (
-                  <Button
-                    sx={{ gap: "5px", textTransform: "capitalize" }}
-                    key={i.toString()}
-                  >
-                    <Image src={item.icon} alt="" />
-                    <Typography sx={style.engineCell}>{item.text}</Typography>
-                  </Button>
-                );
-              })}
-            </Box>
-          ) : (
-            <Box onClick={(e: any) => e.stopPropagation()}>
-              <Rows.engines />
-            </Box>
-          )} */}
           <Typography sx={style.rowGaps}>{Rows.apps}</Typography>
         </TableCell>
         <TableCell>
-          {/* {typeof Rows.headerAssets === "string" ? (
-            <Button sx={{ gap: "10px", textTransform: "capitalize" }}>
-              <Typography sx={style.engineCell}>{Rows.headerAssets}</Typography>
-            </Button>
-          ) : (
-            <Box onClick={(e: any) => e.stopPropagation()}>
-              <Rows.headerAssets
-                title="Set for all"
-                img={check}
-                severity={severity}
-                ltr={false}
-                data={assets}
-              />
-            </Box>
-          )} */}
           <Typography sx={style.rowGaps}>{Rows.groups}</Typography>
         </TableCell>
         <TableCell>
-          {/* {typeof Rows.integration === "object" ? (
-            <Box display="flex" gap="5px">
-              {Rows.integration.map((item: any, i: number) => {
-                return (
-                  <Chip
-                    label={item}
-                    variant="outlined"
-                    key={i.toString()}
-                    sx={style.integration}
-                  />
-                );
-              })}
-            </Box>
-          ) : (
-            <Box onClick={(e: any) => e.stopPropagation()}>
-              <Rows.integration />
-            </Box>
-          )} */}
           <Typography sx={style.rowGaps}>{Rows.severity}</Typography>
         </TableCell>
         <TableCell>
-          {/* {typeof Rows.headerSeverityevel === "string" ? (
-            <IconButton sx={style.iconBtn}>
-              <Chip
-                label={Rows.headerSeverityevel}
-                sx={{
-                  ...style.severityChip,
-                  color:
-                    Rows.headerSeverityevel === "Medium"
-                      ? Colors.brown
-                      : Rows.headerSeverityevel === "Critical"
-                        ? Colors.darkBrown
-                        : Rows.headerSeverityevel === "Low"
-                          ? Colors.textGreen
-                          : Rows.headerSeverityevel === "High"
-                            ? Colors.textHigh
-                            : "",
-                  bgcolor:
-                    Rows.headerSeverityevel === "Medium"
-                      ? Colors.primaryWhite
-                      : Rows.headerSeverityevel === "Critical"
-                        ? Colors.secondaryWhite
-                        : Rows.headerSeverityevel === "Low"
-                          ? Colors.primaryGreen
-                          : Rows.headerSeverityevel === "High"
-                            ? Colors.defaultWhite
-                            : "",
-                  p: 0,
-                }}
-                icon={
-                  <CircleIcon
-                    sx={{
-                      fill:
-                        Rows.headerSeverityevel === "Medium"
-                          ? `${Colors.orange} !important`
-                          : Rows.headerSeverityevel === "Critical"
-                            ? `${Colors.darkBrown} !important`
-                            : Rows.headerSeverityevel === "High"
-                              ? Colors.circleHigh
-                              : Rows.headerSeverityevel === "Low"
-                                ? Colors.circleLow
-                                : `${Colors.defaultBrown} !important`,
-
-                      ...style.severityLevel,
-                    }}
-                  />
-                }
-              />
-            </IconButton>
-          ) : (
-            <Box onClick={(e: any) => e.stopPropagation()}>
-              <Rows.headerSeverityevel
-                title="Set for all"
-                img={check}
-                severity={severity}
-                ltr={false}
-                policySeverity={true}
-              />
-            </Box>
-          )} */}
           <Typography sx={style.rowGaps}>{Rows.actions}</Typography>
         </TableCell>
         <TableCell>
@@ -300,119 +165,19 @@ function Row(props: any) {
                         </Box>
                       </TableCell>
                       <TableCell sx={style.nestedCell}>
-                        <Box display="flex" gap="10px">
-                          {historyRow.type === "Block" ? (
-                            <Image src={block} alt="" />
-                          ) : historyRow.type === "Redact" ? (
-                            <Image src={redat} alt="" />
-                          ) : historyRow.type === "Notify" ? (
-                            <Image src={bell} alt="" />
-                          ) : (
-                            ""
-                          )}
-                          {historyRow.type}
-                        </Box>
+                        <Typography sx={style.rowGaps}>{historyRow.threat}</Typography>
                       </TableCell>
                       <TableCell sx={style.nestedCell}>
-                        <Box display="flex" gap="5px">
-                          {historyRow.engine?.map((item: any, i: number) => {
-                            return (
-                              <Box display="flex" gap="5px" key={item.id}>
-                                <Image
-                                  src={item.icon}
-                                  alt=""
-                                  width={17}
-                                  height={17}
-                                />
-                                <Typography
-                                  fontSize="14px"
-                                  color={`${Colors.primary_101}`}
-                                >
-                                  {item.text}
-                                </Typography>
-                              </Box>
-                            );
-                          })}
-                        </Box>
+                        <Typography sx={style.rowGaps}>{historyRow.apps}</Typography>
                       </TableCell>
                       <TableCell sx={style.nestedCell}>
-                        <Box display="flex" gap="10px">
-                          {historyRow.assets === "File" ? (
-                            <Image src={file} alt="" />
-                          ) : historyRow.assets === "Message" ? (
-                            <Image src={msg} alt="" />
-                          ) : (
-                            ""
-                          )}
-                          {historyRow.assets}
-                        </Box>
+                        <Typography sx={style.rowGaps}>{historyRow.groups}</Typography>
                       </TableCell>
                       <TableCell sx={style.nestedCell}>
-                        <Box display="flex" gap="10px">
-                          <Box display="flex" gap="5px">
-                            {historyRow.integration.map(
-                              (item: any, i: number) => {
-                                return (
-                                  <Chip
-                                    label={item}
-                                    variant="outlined"
-                                    key={i.toString()}
-                                    sx={style.integration}
-                                  />
-                                );
-                              }
-                            )}
-                          </Box>
-                        </Box>
+                        <Typography sx={style.rowGaps}>{historyRow.severity}</Typography>
                       </TableCell>
                       <TableCell sx={style.nestedCell}>
-                        <IconButton sx={style.iconBtn}>
-                          <Chip
-                            label={historyRow.severityLevel}
-                            sx={{
-                              ...style.severityChip,
-                              color:
-                                historyRow.severityLevel === "Medium"
-                                  ? Colors.brown
-                                  : historyRow.severityLevel === "Critical"
-                                    ? Colors.darkBrown
-                                    : historyRow.severityLevel === "Low"
-                                      ? Colors.textGreen
-                                      : historyRow.severityLevel === "High"
-                                        ? Colors.textHigh
-                                        : "",
-                              bgcolor:
-                                historyRow.severityLevel === "Medium"
-                                  ? Colors.primaryWhite
-                                  : historyRow.severityLevel === "Critical"
-                                    ? Colors.secondaryWhite
-                                    : historyRow.severityLevel === "Low"
-                                      ? Colors.primaryGreen
-                                      : historyRow.severityLevel === "High"
-                                        ? Colors.defaultWhite
-                                        : "",
-                              p: 0,
-                            }}
-                            icon={
-                              <CircleIcon
-                                sx={{
-                                  fill:
-                                    historyRow.severityLevel === "Medium"
-                                      ? `${Colors.orange} !important`
-                                      : historyRow.severityLevel === "Critical"
-                                        ? `${Colors.darkBrown} !important`
-                                        : historyRow.severityLevel === "High"
-                                          ? Colors.circleHigh
-                                          : historyRow.severityLevel === "Low"
-                                            ? Colors.circleLow
-                                            : `${Colors.defaultBrown} !important`,
-
-                                  ...style.severityLevel,
-                                }}
-                              />
-                            }
-                          />
-                        </IconButton>
+                        <Typography sx={style.rowGaps}>{historyRow.actions}</Typography>
                       </TableCell>
                     </TableRow>
                   ))}

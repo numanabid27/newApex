@@ -104,7 +104,7 @@ export const style = {
     margin: "0 0 0 auto",
     tr: {
       th: {
-        width: "15%",
+        width: "17.5%",
 
       },
       td: {
@@ -116,16 +116,16 @@ export const style = {
           }
         },
         "&:nth-child(3)": {
-          width: "13%",
+          width: "13.3%",
         },
         "&:nth-child(4)": {
-          width: "14.3%",
+          width: "13.7%",
         },
         "&:nth-child(5)": {
-          width: "12.7%",
+          width: "14%",
         },
         "&:nth-child(6)": {
-          width: "25%",
+          width: "11%",
         },
       },
     },
