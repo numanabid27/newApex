@@ -43,8 +43,6 @@ export const PolicyPage = () => {
     }
   ];
   
-  console.log("mockupData[skipClickCount]: ", mockupData[skipClickCount].count)
-
   const handleSkipClick = () => {
     setSkipClickCount((prev) => prev + 1);
     if(skipClickCount > 1){
