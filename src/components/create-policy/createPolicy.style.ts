@@ -112,21 +112,33 @@ export const style = {
         "&:nth-child(1)": {
           width: "15%",
           border: 'none',
-          "@media screen and (max-width:1440px)": {
-            // width: "5%",
+          "@media screen and (min-width:1510px)": {
+            width: "15%",
           }
         },
         "&:nth-child(3)": {
           width: "20%",
+          "@media screen and (min-width:1510px)": {
+            width: "14%",
+          }
         },
         "&:nth-child(4)": {
           width: "14%",
+          "@media screen and (min-width:1510px)": {
+            width: "14%",
+          }
         },
         "&:nth-child(5)": {
           width: "14%",
+          "@media screen and (min-width:1510px)": {
+            width: "13%",
+          }
         },
         "&:nth-child(6)": {
           width: "8%",
+          "@media screen and (min-width:1510px)": {
+            width: "11%",
+          }
         },
       },
     },

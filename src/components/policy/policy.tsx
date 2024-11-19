@@ -7,9 +7,11 @@ import { ButtonComponent } from "@/common/components/button/button";
 import AddIcon from "@mui/icons-material/Add";
 import importImg from "@/common/assets/images/import.svg";
 import exportImg from "@/common/assets/images/export.svg";
+import meeasegIcon from "@/common/assets/images/meeasegIcon.svg";
 import switchGraph from "@/common/assets/images/switchGraph.svg";
 import { styles } from "./policy.style";
 import { style } from "../create-policy/createPolicy.style";
+import Image from "next/image";
 
 export const PolicyPage = () => {
   const [isPolicy, setIsPolicy] = useState(false);
@@ -19,33 +21,36 @@ export const PolicyPage = () => {
   const [skipClickCount, setSkipClickCount] = useState<number>(0);
   const [showToaster, setShowToaster] = useState(true);
 
-  const mockupData= [
+  const mockupData = [
     {
-      text1: "outside the Executive department",
-      text2: "have requested access to",
-      text3: "Nexus project.",
+      text1: " not in the Executive department",
+      text2: "requested",
+      text3: "Nexus project data",
+      text4: "from GPT-4o via the Apex Portal",
+      message: "“What is Nexus project?”",
+      count: 30,
+    },
+    {
+      text1: "not in the Security department",
+      text2: "asked M365 to",
+      text3: "retrieve incident report data",
       text4: "",
-      count: 65,
+      message: "“Share with me the latest Acme incident report”",
+      count: 5,
     },
     {
-      text1: "not in security department",
-      text2: "asked to",
-      text3: "analyze Incident report",
-      text4: "data",
-      count: 12,
-    },
-    {
-      text1: "not in Legal department",
-      text2: "asked to",
-      text3: "share Contract file",
-      text4: "data",
-      count: 10,
+      text1: "not in the Legal department",
+      text2: "requested to",
+      text3: " share contract file data",
+      text4: "in messages sent to Gemini via the Apex Portal",
+      message: "“Correct grammar in the following email: Attached is the latest contract of Acme and Dragon company”",
+      count: 4,
     }
   ];
-  
+
   const handleSkipClick = () => {
     setSkipClickCount((prev) => prev + 1);
-    if(skipClickCount > 1){
+    if (skipClickCount > 1) {
       setSkipClickCount(0);
     }
     if (skipClickCount === 0) {
@@ -53,7 +58,7 @@ export const PolicyPage = () => {
     } else if (skipClickCount === 1) {
       setCounter(12);
     }
-    
+
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -81,7 +86,7 @@ export const PolicyPage = () => {
             <Box>
               <Box sx={styles.toasterBox}>
                 <Box sx={styles.svgBox}>
-                  <Button onClick={()=>setShowToaster(false)}>
+                  <Button onClick={() => setShowToaster(false)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M16.809 7.19102C17.0637 7.44571 17.0637 7.85864 16.809 8.11333L8.11333 16.809C7.85864 17.0637 7.44571 17.0637 7.19102 16.809C6.93633 16.5543 6.93633 16.1414 7.19102 15.8867L15.8867 7.19102C16.1414 6.93633 16.5543 6.93633 16.809 7.19102Z" fill="#334155" />
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M7.19102 7.19102C7.44571 6.93633 7.85864 6.93633 8.11333 7.19102L16.809 15.8867C17.0637 16.1414 17.0637 16.5543 16.809 16.809C16.5543 17.0637 16.1414 17.0637 15.8867 16.809L7.19102 8.11333C6.93633 7.85864 6.93633 7.44571 7.19102 7.19102Z" fill="#334155" />
@@ -104,6 +109,10 @@ export const PolicyPage = () => {
                       <Typography sx={styles.counter65}>{mockupData[skipClickCount].count}</Typography>
                       <Typography sx={styles.detectedMessages}>detected messages</Typography>
                     </Box>
+                    <Box sx={styles.messagesWraper}>
+                      <Image width={24} height={24} src={meeasegIcon} alt="message" />
+                      <Typography sx={styles.messageText}>{mockupData[skipClickCount].message}</Typography>
+                    </Box>
                   </Box>
                   <Box sx={styles.buttonsWraper}>
                     <Button sx={styles.buttonskip} onClick={handleSkipClick}
@@ -113,6 +122,7 @@ export const PolicyPage = () => {
                       ...styles.buttonskipPrevent
                     }}>Prevent</Button>
                   </Box>
+
                 </Box>
               </Box>
             </Box>

@@ -117,5 +117,19 @@ export const styles = {
     buttonskipPrevent: {
         backgroundColor: '#059669',
         color: '#FFF'
+    },
+    messagesWraper: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px',
+        backgroundColor: '#FEF2F2',
+        borderRadius: '8px',
+        p: '8px 13px',
+    },
+    messageText: {
+        fontSize: '16px',
+        fontWeight: '400',
+        lineHeight: '24px',
+        color: '#000000',
     }
 }
