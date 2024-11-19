@@ -19,13 +19,43 @@ export const PolicyPage = () => {
   const [skipClickCount, setSkipClickCount] = useState<number>(0);
   const [showToaster, setShowToaster] = useState(true);
 
+  const mockupData= [
+    {
+      text1: "outside the Executive department",
+      text2: "have requested access to the",
+      text3: "Nexus project.",
+      text4: "",
+      count: 65,
+    },
+    {
+      text1: "not in security department",
+      text2: "asked to",
+      text3: "analyze incident report",
+      text4: "data",
+      count: 12,
+    },
+    {
+      text1: "not in Legal department",
+      text2: "asked to",
+      text3: "share contract file",
+      text4: "data",
+      count: 10,
+    }
+  ];
+  
+  console.log("mockupData[skipClickCount]: ", mockupData[skipClickCount].count)
+
   const handleSkipClick = () => {
     setSkipClickCount((prev) => prev + 1);
+    if(skipClickCount > 1){
+      setSkipClickCount(0);
+    }
     if (skipClickCount === 0) {
       setCounter(10);
     } else if (skipClickCount === 1) {
       setCounter(12);
     }
+    
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -68,17 +98,18 @@ export const PolicyPage = () => {
                   </svg>
                   <Typography sx={styles.toasterHeading}>Potential Data Exposure</Typography>
                 </Box>
-                <Typography sx={styles.toasterHeading2}>Users <span>outside the Executive department</span> have requested access to the Nexus project.</Typography>
+                <Typography sx={styles.toasterHeading2}>Users <span>{mockupData[skipClickCount].text1}</span> {mockupData[skipClickCount].text2} <span>{mockupData[skipClickCount].text3} </span>{mockupData[skipClickCount].text4}</Typography>
                 <Box sx={styles.tagsWraper}>
                   <Box sx={styles.tagsWraperCenter}>
                     <Box sx={styles.toasterTag}>Unusual evidence</Box>
                     <Box sx={styles.counterWraper}>
-                      <Typography sx={styles.counter65}>{counter}</Typography>
+                      <Typography sx={styles.counter65}>{mockupData[skipClickCount].count}</Typography>
                       <Typography sx={styles.detectedMessages}>detected messages</Typography>
                     </Box>
                   </Box>
                   <Box sx={styles.buttonsWraper}>
-                    <Button sx={styles.buttonskip} onClick={handleSkipClick} >Skip</Button>
+                    <Button sx={styles.buttonskip} onClick={handleSkipClick}
+                    >Skip</Button>
                     <Button sx={{
                       ...styles.buttonskip,
                       ...styles.buttonskipPrevent

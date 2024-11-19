@@ -132,8 +132,8 @@ function Row(props: any) {
             <Typography sx={style.actionText}>{Rows.threat}</Typography>
             <Box sx={{
               ...style.threatTag,
-              color: Rows.type === "Intent" ? '#3B0764' : '#334155',
-              backgroundColor: Rows.type === "Intent" ? '#F3E8FF' : '#FEF3C7',
+              color: Rows.type === "Intent" ? '#3B0764' : Rows.type === "Acmi" ? '#046db3':'#334155',
+              backgroundColor: Rows.type === "Intent" ? '#F3E8FF' : Rows.type === "Acmi" ? '#9ed4f7' : '#FEF3C7',
             }}>{Rows.type}</Box>
           </Box>
         </TableCell>
