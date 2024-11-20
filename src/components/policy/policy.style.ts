@@ -53,6 +53,7 @@ export const styles = {
         fontWeight: '400',
         lineHeight: '24px',
         color: '#334155',
+        whiteSpace: 'nowrap',
     },
     counterWraper: {
         display: 'flex',
@@ -70,6 +71,7 @@ export const styles = {
         fontWeight: '400',
         lineHeight: '20px',
         color: '#334155',
+        whiteSpace: 'nowrap',
     },
     topFiltersWraper: {
         display: 'flex',

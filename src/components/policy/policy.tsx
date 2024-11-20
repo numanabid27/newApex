@@ -23,25 +23,25 @@ export const PolicyPage = () => {
 
   const mockupData = [
     {
-      text1: " not in the Executive department",
-      text2: "requested",
-      text3: "Nexus project data",
-      text4: "from GPT-4o via the Apex Portal",
+      text1: "not in the Executive department",
+      text2: "attempted to",
+      text3: "access Nexus project data",
+      text4: "in a message sent to GPT-4o via the Apex Portal",
       message: "“What is Nexus project?”",
       count: 30,
     },
     {
       text1: "not in the Security department",
-      text2: "asked M365 to",
+      text2: "attempted to",
       text3: "retrieve incident report data",
-      text4: "",
+      text4: "using M365",
       message: "“Share with me the latest Acme incident report”",
       count: 5,
     },
     {
       text1: "not in the Legal department",
-      text2: "requested to",
-      text3: " share contract file data",
+      text2: "attempted to",
+      text3: "share contract file data",
       text4: "in messages sent to Gemini via the Apex Portal",
       message: "“Correct grammar in the following email: Attached is the latest contract of Acme and Dragon company”",
       count: 4,
