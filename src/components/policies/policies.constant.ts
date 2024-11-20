@@ -910,29 +910,6 @@ export const Rows: any = [
         policiesData: [],
       },
       {
-        threat: "Unauthorized user attempt to share client data",
-        type: "Intent",
-        apps: "All",
-        groups: "Not in Client leadership or Executive",
-        severity: "Critical",
-        actions: "Block",
-        component: CustomSwitch,
-        action: AssetsDropdown,
-        // engines: [{text:"Azure GPT 4o", icon:engine}],
-        engines: ActionDropdown,
-        // headerAssets: "R&D",
-        headerAssets: AssetsDropdown,
-        integration: ["GDPR", "HIPPA", "NIST AI RMF"],
-        // headerSeverityevel: "Medium",
-        headerSeverityevel: Severity,
-        desc:"This policy is intended to mitigate data leakage. It will monitor when your users are including PII in their prompts, as they interact with LLMs. Your users will be notified, when they use ApexPortal, as they make these actions. You will be able to monitor these actions via Apex security platform.\nPII includes email addresses, social security numbers and US zip codes.",
-        count: "195",
-        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
-        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
-        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
-        policiesData: [],
-      },
-      {
         threat: "Unauthorized user attempt to access HR data",
         type: "Intent",
         apps: "All",
@@ -954,29 +931,6 @@ export const Rows: any = [
         policiesData: [],
       },
       {
-        threat: "Unauthorized user attempt to share HR data",
-        type: "Intent",
-        apps: "All",
-        groups: "Not in HR",
-        severity: "High",
-        actions: "Block",
-        component: CustomSwitch,
-        action: AssetsDropdown,
-        // engines: [{text:"Gemini", icon:gemini}],
-        engines: ActionDropdown,
-        // headerAssets: "*",
-        headerAssets: AssetsDropdown,
-        integration: ["GDPR", "HIPPA", "NIST AI RMF"],
-        // headerSeverityevel: "Medium",
-        headerSeverityevel: Severity,
-        desc:"This policy is intended to mitigate data leakage. It will monitor when your users are including PCI in their prompts, as they interact with LLMs.\nYour users will be notified, when they use ApexPortal, as they make these actions. You will be able to monitor these actions via Apex security platform. PCI includes credit card numbers, SWIFT, IBANs, and Bitcoin addresses.",
-        count: "150",
-        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
-        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
-        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
-        policiesData: [],
-      },
-      {
         threat: "Unauthorized user attempt to access executive communications",
         type: "Intent",
         apps: "All",
@@ -992,29 +946,6 @@ export const Rows: any = [
         integration: ["EU AI Act", "NIST AI RMF", " CSF - NIST"],
         headerSeverityevel: Severity,
         desc:"This policy is intended to ensure company policy compliance by monitoring file access and content being discussed. Notifications will be sent via ApexPortal and monitored through the Apex security platform. company custom policy include the following sub-types: Sensitive file patterns, Github copilot file access, custom words, file denial list.",
-        count: "150",
-        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
-        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
-        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
-        policiesData: [],
-      },
-      {
-        threat: "Unauthorized user attempt to share executive communications",
-        type: "Intent",
-        apps: "All",
-        groups: "Not in Executive",
-        severity: "High",
-        actions: "Block",
-        component: CustomSwitch,
-        action: AssetsDropdown,
-        // engines: [{text:"Gemini", icon:gemini}],
-        engines: ActionDropdown,
-        // headerAssets: "*",
-        headerAssets: AssetsDropdown,
-        integration: ["GDPR", "HIPPA", "NIST AI RMF"],
-        // headerSeverityevel: "Medium",
-        headerSeverityevel: Severity,
-        desc:"This policy is intended to mitigate data leakage. It will monitor when your users are including PCI in their prompts, as they interact with LLMs.\nYour users will be notified, when they use ApexPortal, as they make these actions. You will be able to monitor these actions via Apex security platform. PCI includes credit card numbers, SWIFT, IBANs, and Bitcoin addresses.",
         count: "150",
         highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
         mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
@@ -1044,29 +975,6 @@ export const Rows: any = [
         policiesData: [],
       },
       {
-        threat: "Unauthorized user attempt to share finance data",
-        type: "Intent",
-        apps: "All",
-        groups: "Not in Finance or Accounting",
-        severity: "High",
-        actions: "Block",
-        component: CustomSwitch,
-        action: AssetsDropdown,
-        // engines: [{text:"Azure GPT 4o", icon:engine}],
-        engines: ActionDropdown,
-        // headerAssets: "R&D",
-        headerAssets: AssetsDropdown,
-        integration: ["GDPR", "HIPPA", "NIST AI RMF"],
-        // headerSeverityevel: "Medium",
-        headerSeverityevel: Severity,
-        desc:"This policy is intended to mitigate data leakage. It will monitor when your users are including PII in their prompts, as they interact with LLMs. Your users will be notified, when they use ApexPortal, as they make these actions. You will be able to monitor these actions via Apex security platform.\nPII includes email addresses, social security numbers and US zip codes.",
-        count: "195",
-        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
-        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
-        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
-        policiesData: [],
-      },
-      {
         threat: "Unauthorized user attempt to access M&A data",
         type: "Intent",
         apps: "All",
@@ -1088,52 +996,7 @@ export const Rows: any = [
         policiesData: [],
       },
       {
-        threat: "Unauthorized user attempt to share M&A data",
-        type: "Intent",
-        apps: "All",
-        groups: "Not in M&A or Finance",
-        severity: "Critical",
-        actions: "Block",
-        component: CustomSwitch,
-        action: AssetsDropdown,
-        // engines: [{text:"Gemini", icon:gemini}],
-        engines: ActionDropdown,
-        // headerAssets: "*",
-        headerAssets: AssetsDropdown,
-        integration: ["GDPR", "HIPPA", "NIST AI RMF"],
-        // headerSeverityevel: "Medium",
-        headerSeverityevel: Severity,
-        desc:"This policy is intended to mitigate data leakage. It will monitor when your users are including PCI in their prompts, as they interact with LLMs.\nYour users will be notified, when they use ApexPortal, as they make these actions. You will be able to monitor these actions via Apex security platform. PCI includes credit card numbers, SWIFT, IBANs, and Bitcoin addresses.",
-        count: "150",
-        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
-        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
-        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
-        policiesData: [],
-      },
-      {
         threat: "Unauthorized user attempt to access security information",
-        type: "Intent",
-        apps: "All",
-        groups: "Not in Security",
-        severity: "Critical",
-        actions: "Block",
-        component: CustomSwitch,
-        action: AssetsDropdown,
-        // engines: [{text:"GPT 4", icon:gpt}],
-        engines: ActionDropdown,
-        // headerAssets: "*",
-        headerAssets: AssetsDropdown,
-        integration: ["EU AI Act", "NIST AI RMF", " CSF - NIST"],
-        headerSeverityevel: Severity,
-        desc:"This policy is intended to ensure company policy compliance by monitoring file access and content being discussed. Notifications will be sent via ApexPortal and monitored through the Apex security platform. company custom policy include the following sub-types: Sensitive file patterns, Github copilot file access, custom words, file denial list.",
-        count: "150",
-        highData: [6, 6, 14, 14, 0, 5, 5, 0, 6, 5, 5, 0], //red
-        mediumData: [4, 4, 8, 8, 20, 3, 3, 14, 4, 2, 3, 6], //orange
-        lowData: [10, 8, 8, 8, 5, 8, 6, 5, 4, 6, 8, 10], //green
-        policiesData: [],
-      },
-      {
-        threat: "Unauthorized user attempt to share security information",
         type: "Intent",
         apps: "All",
         groups: "Not in Security",
