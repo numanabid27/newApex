@@ -203,6 +203,7 @@ export const styles = {
       padding: "16px 17px 25px",
       boxShadow: "0px 1px 3px #8080804a",
       marginBottom: { md: "unset", xs: "10px" },
+      overflow: 'hidden',
     },
     BoxStyling: {
       display: "flex",
