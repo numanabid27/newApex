@@ -382,7 +382,7 @@ export const SESSION_EXPLORE_DATA = [
     title: "Financial reports analysis",
     mails:"john@email.com",
     lastUpdate:"19 Nov, 2024 10:35 AM",
-    interface:"Microsoft copilot (Take the icon that you have in the issues page for Microsoft, l have attached the logo in below)",
+    interface:"365 Copilot",
     engineType:"GPT 4",
     context:"https://Acme.sharepoint.com/sites/finance/reports",
     sessionId:"99876",

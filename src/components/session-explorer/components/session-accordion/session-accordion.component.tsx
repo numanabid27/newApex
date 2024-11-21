@@ -69,7 +69,7 @@ export const SessionAccordion = ({ newData, isMessage }: any) => {
             </Grid>
             <Grid xs={4}>
               <Typography variant="h6">Context</Typography>
-              <Typography variant="h5" sx={{ wordBreak: 'break-all' }}>{newData.context}</Typography>
+              <Typography variant="h5" sx={{ wordBreak: 'break-all', pr:{ sm: '80px', xs: '30px' } }}>{newData.context}</Typography>
             </Grid>
             <Grid xs={3.5}>
               <Typography variant="h6">User</Typography>
@@ -328,12 +328,9 @@ export const SessionAccordion = ({ newData, isMessage }: any) => {
                       <Image src={user} alt="" width={20} height={20} />
                       <Typography variant="h6">Sent prompt </Typography>
                     </Box>
-                    <Box sx={{ ...modelStyle.codeBox, background: "#fff" }}>
+                    <Box sx={{ ...modelStyle.codeBox, background: "#fff", p:'13px 20px' }}>
                       <pre>
-                        {`
-    // Import the package here
-    import MyPackage from 'my-package';...
-                  `}
+                        {`Now phrase the report summary as an email `}
                       </pre>
                     </Box>
 
@@ -341,12 +338,9 @@ export const SessionAccordion = ({ newData, isMessage }: any) => {
                       <Image src={msCopilot} alt="" width={20} height={20} />
                       <Typography variant="h6">Microsoft Copilot</Typography>
                     </Box>
-                    <Box sx={{ ...modelStyle.codeBox, background: "#475467" }}>
+                    <Box sx={{ ...modelStyle.codeBox, background: "#475467", p:'13px 20px' }}>
                       <pre style={{ color: "#fff" }}>
-                        {`
-    // You can then use your package within this API route
-    export default function handler(req, res) {...
-                  `}
+                        {`The annual financial report details the 2024 financial data conclusion...`}
                       </pre>
                     </Box>
                   </Box>
