@@ -91,12 +91,17 @@ export default function Sessions() {
       id: 4,
       header: "Last updated",
       accessor: "lastUpdate",
+      cell: (data: any) => {
+        return <Typography sx={{ whiteSpace: 'nowrap' }}>{data}</Typography>;
+      },
     },
     {
       id: 7,
       header: "Interface",
       accessor: "interface",
-     
+      cell: (data: any) => {
+        return <Typography sx={{ whiteSpace: 'nowrap' }}>{data}</Typography>;
+      },
     },
     {
       id: 8,
@@ -106,7 +111,11 @@ export default function Sessions() {
         return <Chip sx={styles.engineItem} label={data} variant="outlined" />;
       },
     },
-    { id: 9, header: "Context", accessor: "context" },
+    { id: 9, header: "Context", accessor: "context",
+      cell: (data: any) => {
+        return <Typography sx={{ maxWidth:'610px', minWidth: '250px', wordBreak: 'break-all' }}>{data}</Typography>;
+      },
+     },
     {
       id: 10,
       header: "Topics",
