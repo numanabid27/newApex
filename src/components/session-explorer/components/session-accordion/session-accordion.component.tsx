@@ -312,14 +312,14 @@ export const SessionAccordion = ({ newData, isMessage }: any) => {
               {Array.from({ length: 3 }, (_, i: any) => (
                 <>
                   <Box key={i} sx={modelStyle.promptBox}>
-                    {i < 2 && (
+                    {/* {i < 2 && (
                       <Box sx={modelStyle.voilationBox}>
                         <Typography variant="h6">
                           <span>3 Violations:</span> Email, Private key{" "}
                         </Typography>
                         <Image src={right} alt="" width={25} height={25} />
                       </Box>
-                    )}
+                    )} */}
 
                     <Typography sx={modelStyle.promptDate}>
                       <span>110:35</span> Tuesday 19 November 2024
