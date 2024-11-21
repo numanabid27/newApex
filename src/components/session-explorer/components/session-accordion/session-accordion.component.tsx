@@ -17,6 +17,7 @@ import { styles } from "../../../../common/components/model-accordion/model-acco
 import { modelStyle } from "./session-accordion.style";
 import user from "@/common/assets/images/circle-user-round.svg";
 import panda from "@/common/assets/images/slack.svg";
+import msCopilot from "@/common/assets/images/microsoft.svg";
 import right from "@/common/assets/images/move-right.svg";
 import msgs from "@/common/assets/images/messages-square.svg";
 import users from "@/common/assets/images/user-round.svg";
@@ -68,7 +69,7 @@ export const SessionAccordion = ({ newData, isMessage }: any) => {
             </Grid>
             <Grid xs={4}>
               <Typography variant="h6">Context</Typography>
-              <Typography variant="h5">{newData.context}</Typography>
+              <Typography variant="h5" sx={{ wordBreak: 'break-all' }}>{newData.context}</Typography>
             </Grid>
             <Grid xs={3.5}>
               <Typography variant="h6">User</Typography>
@@ -284,7 +285,7 @@ export const SessionAccordion = ({ newData, isMessage }: any) => {
             </AccordionSummary>
             <AccordionDetails sx={modelStyle.desc2}>
               <Typography sx={modelStyle.insites}>
-                This user has <span>50 violations</span>
+                This user has <span>30 violations</span>
               </Typography>
               <Typography sx={modelStyle.insites}>
                 This user has total traffic of <span>2851 prompts</span>
@@ -321,7 +322,7 @@ export const SessionAccordion = ({ newData, isMessage }: any) => {
                     )}
 
                     <Typography sx={modelStyle.promptDate}>
-                      <span>15:41:03</span> Sunday 25 March 2024
+                      <span>110:35</span> Tuesday 19 November 2024
                     </Typography>
                     <Box sx={modelStyle.promptName}>
                       <Image src={user} alt="" width={20} height={20} />
@@ -337,8 +338,8 @@ export const SessionAccordion = ({ newData, isMessage }: any) => {
                     </Box>
 
                     <Box sx={modelStyle.promptName}>
-                      <Image src={panda} alt="" width={20} height={20} />
-                      <Typography variant="h6">Github Copilot</Typography>
+                      <Image src={msCopilot} alt="" width={20} height={20} />
+                      <Typography variant="h6">Microsoft Copilot</Typography>
                     </Box>
                     <Box sx={{ ...modelStyle.codeBox, background: "#475467" }}>
                       <pre style={{ color: "#fff" }}>

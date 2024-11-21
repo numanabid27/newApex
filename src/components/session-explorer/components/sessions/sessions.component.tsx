@@ -96,6 +96,9 @@ export default function Sessions() {
       id: 7,
       header: "Interface",
       accessor: "interface",
+      cell: (data: any) => {
+        return <Typography sx={{ minWidth:'220px' }}>{data}</Typography>;
+      },
     },
     {
       id: 8,

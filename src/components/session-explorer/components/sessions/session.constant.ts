@@ -379,6 +379,26 @@ export const SESSION_USER_CHART = {
 export const SESSION_EXPLORE_DATA = [
   {
     id: 1,
+    title: "Financial reports analysis",
+    mails:"john@email.com",
+    lastUpdate:"19 Nov, 2024 10:35 AM",
+    interface:"Microsoft copilot (Take the icon that you have in the issues page for Microsoft, l have attached the logo in below)",
+    engineType:"GPT 4",
+    context:"https://Acme.sharepoint.com/sites/finance/reports",
+    sessionId:"99876",
+    topics:[
+      {
+        id:1,
+        title:'Finance',
+        img:coin,
+      }
+    ],
+
+    violation: "30",
+    violationCat: "ChatGPT",
+  },
+  {
+    id: 2,
     title: "Content Strategy Development",
     mails:"cindy@email.com",
     lastUpdate:"Apr 24, 2024 10:46 PM",
@@ -398,7 +418,7 @@ export const SESSION_EXPLORE_DATA = [
     violationCat: "ChatGPT",
   },
   {
-    id: 2,
+    id: 3,
     title: "SEO Best Practices",
     mails:"james@email.com",
     lastUpdate:"Apr 12, 2024 09:21 PM",
@@ -423,7 +443,7 @@ export const SESSION_EXPLORE_DATA = [
     violationCat: "Bard",
   },
   {
-    id: 3,
+    id: 4,
     title: "Social Media Campaign Ideas",
     mails:"george@email.com",
     lastUpdate:"Apr 12, 2024 07:42 AM",
@@ -448,7 +468,7 @@ export const SESSION_EXPLORE_DATA = [
     violationCat: "OpenAI",
   },
   {
-    id: 4,
+    id: 5,
     title: "Effective Email Marketing",
     mails:"barbara@email.com",
     lastUpdate:"Apr 11, 2024 8:30 AM",
@@ -473,7 +493,7 @@ export const SESSION_EXPLORE_DATA = [
     violationCat: "OpenAI",
   },
   {
-    id: 5,
+    id: 6,
     title: " Product Launch Planning",
     mails:"john@email.com",
     lastUpdate:"Apr 10, 2024 11:45 AM",
@@ -498,7 +518,7 @@ export const SESSION_EXPLORE_DATA = [
     violationCat: "OpenAI",
   },
   {
-    id: 6,
+    id: 7,
     title: "Competitive Market Analysis",
     mails:"john@email.com",
     lastUpdate:"Aug 12, 2023 10:46 AM",
@@ -518,7 +538,7 @@ export const SESSION_EXPLORE_DATA = [
     violationCat: "OpenAI",
   },
   {
-    id: 7,
+    id: 8,
     title: "Customer Feedback Interpretation",
     mails:"ben@email.com",
     lastUpdate:"Aug 12, 2023 10:46 AM",
@@ -543,7 +563,7 @@ export const SESSION_EXPLORE_DATA = [
     violationCat: "OpenAI",
   },
   {
-    id: 8,
+    id: 9,
     title: "Team Building Activities",
     mails:"rita@email.com",
     lastUpdate:"Aug 12, 2023 10:46 AM",
@@ -568,7 +588,7 @@ export const SESSION_EXPLORE_DATA = [
     violationCat: "OpenAI",
   },
   {
-    id: 9,
+    id: 10,
     title: " Leadership Skills Enhancement",
     mails:"sarah@email.com",
     lastUpdate:"Aug 12, 2023 10:46 AM",
@@ -593,7 +613,7 @@ export const SESSION_EXPLORE_DATA = [
     violationCat: "OpenAI",
   },
   {
-    id: 10,
+    id: 11,
     title: "Time Management Techniques",
     mails:"li@email.com",
     lastUpdate:"Aug 12, 2023 10:46 AM",
@@ -618,7 +638,7 @@ export const SESSION_EXPLORE_DATA = [
     violationCat: "OpenAI",
   },
   {
-    id: 11,
+    id: 12,
     title: "Advanced Data Analytics",
     mails:"ben@email.com",
     lastUpdate:"Aug 12, 2023 10:46 AM",
@@ -648,7 +668,7 @@ export const SESSION_EXPLORE_DATA = [
     violationCat: "OpenAI",
   },
   {
-    id: 12,
+    id: 13,
     title: "Sales Pitch Preparation",
     mails:"ben@email.com",
     lastUpdate:"Aug 12, 2023 10:46 AM",
